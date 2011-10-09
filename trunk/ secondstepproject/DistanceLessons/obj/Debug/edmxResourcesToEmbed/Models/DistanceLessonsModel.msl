@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DistanceLessonsModelStoreContainer" CdmEntityContainer="dbEntities">
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Answer">
+        <MappingFragment StoreEntitySet="Answers">
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="Answer1" ColumnName="Answer" />
+          <ScalarProperty Name="Valid" ColumnName="Valid" />
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Category1" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Contact">
+        <MappingFragment StoreEntitySet="Contacts">
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="Skype" ColumnName="Skype" />
+          <ScalarProperty Name="ICQ_QIP" ColumnName="ICQ_QIP" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Other" ColumnName="Other" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Cours">
+        <MappingFragment StoreEntitySet="Courses">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Access" ColumnName="Access" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Informations">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Information">
+        <MappingFragment StoreEntitySet="Informations">
+          <ScalarProperty Name="InformationId" ColumnName="InformationId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MidName" ColumnName="MidName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="About" ColumnName="About" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lessons">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Lesson">
+        <MappingFragment StoreEntitySet="Lessons">
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Publication" ColumnName="Publication" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Message">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="Message1" ColumnName="Message" />
+          <ScalarProperty Name="DateOfSender" ColumnName="DateOfSender" />
+          <ScalarProperty Name="UserId_From" ColumnName="UserId_From" />
+          <ScalarProperty Name="UserId_To" ColumnName="UserId_To" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModuleLessons">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.ModuleLesson">
+        <MappingFragment StoreEntitySet="ModuleLessons">
+          <ScalarProperty Name="ModuleLessonId" ColumnName="ModuleLessonId" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modules">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Module">
+        <MappingFragment StoreEntitySet="Modules">
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
+          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="NewId" ColumnName="NewId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Publication" ColumnName="Publication" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tests">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Test">
+        <MappingFragment StoreEntitySet="Tests">
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserCourses">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.UserCours">
+        <MappingFragment StoreEntitySet="UserCourses">
+          <ScalarProperty Name="UserCourseId" ColumnName="UserCourseId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserModules">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.UserModule">
+        <MappingFragment StoreEntitySet="UserModules">
+          <ScalarProperty Name="UserModuleId" ColumnName="UserModuleId" />
+          <ScalarProperty Name="Passed" ColumnName="Passed" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="IsActived" ColumnName="IsActived" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
