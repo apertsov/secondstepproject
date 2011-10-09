@@ -9,6 +9,16 @@
             <h1>@ViewBag.Title.</h1>
             <h2>@ViewBag.Message</h2>
         </hgroup>
+
+        <ul>
+                      @foreach (DistanceLessons.Models.DataEntitiesManager.RQCourses i in ViewBag.A.QCourses())
+                      {
+                          <b>@i.title</b>
+                          <br />
+                          foreach (DistanceLessons.Models.DataEntitiesManager.RQLessons j in ViewBag.A.QLessons(i.title))
+                          {<li>@j.title</li>}
+                      }
+        </ul>
         <p>
             To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>. 
             The page features <span class="highlight">videos, tutorials, and samples</span> to help you get the most from 
