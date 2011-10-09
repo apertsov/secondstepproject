@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DistanceLessons.Models;
 
 namespace DistanceLessons.Controllers
 {
@@ -12,6 +13,8 @@ namespace DistanceLessons.Controllers
         {
             ViewBag.Message = "Modify this template to kick-start your ASP.NET MVC application.";
 
+            DataEntitiesManager A = new DataEntitiesManager();
+            ViewBag.A=A;
             return View();
         }
 
