@@ -104,12 +104,11 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AttributeEntitiesModelClass.cs" />
     <Compile Include="Models\DataEntitiesManager.cs" />
-    <Compile Include="Models\DistanceLessons.Designer.cs">
+    <Compile Include="Models\DistanceLessonsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DistanceLessons.edmx</DependentUpon>
+      <DependentUpon>DistanceLessonsModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\EducationModel.Designer.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -161,7 +160,9 @@
     <Content Include="Scripts\knockout-1.3.0beta.debug.js" />
     <Content Include="Scripts\knockout-1.3.0beta.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -199,9 +200,9 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\DistanceLessons.edmx">
+    <EntityDeploy Include="Models\DistanceLessonsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DistanceLessons.Designer.cs</LastGenOutput>
+      <LastGenOutput>DistanceLessonsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

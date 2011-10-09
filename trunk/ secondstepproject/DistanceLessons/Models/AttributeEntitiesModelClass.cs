@@ -6,7 +6,7 @@ using System.Web;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Distance_Lesson.Models
+namespace DistanceLessons.Models
 {
     [MetadataType(typeof(LoginMetaData))]
     public partial class Login

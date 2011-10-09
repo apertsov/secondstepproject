@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Security;
 using System.Security.Cryptography;
 
-namespace Distance_Lesson.Models
+namespace DistanceLessons.Models
 {
     public class UserRepository
     {
@@ -48,15 +48,15 @@ namespace Distance_Lesson.Models
                 username = username.Trim();
                 password = password.Trim();
                 email = email.Trim();
-
+                user.UserId = Guid.NewGuid();
                 user.Login = username;
                 user.Email = email;
                 user.Role = 1;
                 user.PasswordSalt = CreateSalt();
-                user.CreatedData = DateTime.Now;
+                user.CreatedDate = DateTime.Now;
                 user.IsActived = true;
                 user.IsLockedOut = false;
-                user.LastLoginData = DateTime.Now;
+                user.LastLoginDate = DateTime.Now;
                 user.Password = CreatePasswordHash(password, user.PasswordSalt);
                 db.AddToUsers(user);
                 db.SaveChanges();
@@ -99,13 +99,13 @@ namespace Distance_Lesson.Models
                     string _comment = "";
                     bool _isApproved = dbuser.IsActived;
                     bool _isLockedOut = dbuser.IsLockedOut;
-                    DateTime _creationDate = dbuser.CreatedData;
-                    DateTime _lastLoginDate = dbuser.LastLoginData;
+                    DateTime _creationDate = dbuser.CreatedDate;
+                    DateTime _lastLoginDate = dbuser.LastLoginDate;
                     DateTime _lastActivityDate = DateTime.Now;
                     DateTime _lastPasswordChangedDate = DateTime.Now;
                     DateTime _lastLockedOutDate = DateTime.Now;
 
-                    MembershipUser user = new MembershipUser("CustomMembershipProvider",
+                    MembershipUser user = new MembershipUser("DefaultMembershipProvider",
                                               _username,
                                               _providerUserKey,
                                               _email,
