@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DistanceLessons.Models" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="dbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Answers" EntityType="DistanceLessons.Models.Answer" />
+    <EntitySet Name="Categories" EntityType="DistanceLessons.Models.Category" />
+    <EntitySet Name="Contacts" EntityType="DistanceLessons.Models.Contact" />
+    <EntitySet Name="Courses" EntityType="DistanceLessons.Models.Cours" />
+    <EntitySet Name="Informations" EntityType="DistanceLessons.Models.Information" />
+    <EntitySet Name="Lessons" EntityType="DistanceLessons.Models.Lesson" />
+    <EntitySet Name="Messages" EntityType="DistanceLessons.Models.Message" />
+    <EntitySet Name="ModuleLessons" EntityType="DistanceLessons.Models.ModuleLesson" />
+    <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Module" />
+    <EntitySet Name="News" EntityType="DistanceLessons.Models.News" />
+    <EntitySet Name="Tests" EntityType="DistanceLessons.Models.Test" />
+    <EntitySet Name="UserCourses" EntityType="DistanceLessons.Models.UserCours" />
+    <EntitySet Name="UserModules" EntityType="DistanceLessons.Models.UserModule" />
+    <EntitySet Name="Users" EntityType="DistanceLessons.Models.User" />
+    <AssociationSet Name="FK_Answers_Tests" Association="DistanceLessons.Models.FK_Answers_Tests">
+      <End Role="Tests" EntitySet="Tests" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_Categories" Association="DistanceLessons.Models.FK_Courses_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contacts_Users" Association="DistanceLessons.Models.FK_Contacts_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Contacts" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_Users" Association="DistanceLessons.Models.FK_Courses_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lessons_Courses" Association="DistanceLessons.Models.FK_Lessons_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Lessons" EntitySet="Lessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Modules_Courses" Association="DistanceLessons.Models.FK_Modules_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Modules" EntitySet="Modules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCourses_Courses" Association="DistanceLessons.Models.FK_UserCourses_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="UserCourses" EntitySet="UserCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Informations_Users" Association="DistanceLessons.Models.FK_Informations_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Informations" EntitySet="Informations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lessons_Users" Association="DistanceLessons.Models.FK_Lessons_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Lessons" EntitySet="Lessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleLessons_Lessons" Association="DistanceLessons.Models.FK_ModuleLessons_Lessons">
+      <End Role="Lessons" EntitySet="Lessons" />
+      <End Role="ModuleLessons" EntitySet="ModuleLessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tests_Lessons" Association="DistanceLessons.Models.FK_Tests_Lessons">
+      <End Role="Lessons" EntitySet="Lessons" />
+      <End Role="Tests" EntitySet="Tests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users" Association="DistanceLessons.Models.FK_Messages_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Messages_Users1" Association="DistanceLessons.Models.FK_Messages_Users1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Messages" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ModuleLessons_Modules" Association="DistanceLessons.Models.FK_ModuleLessons_Modules">
+      <End Role="Modules" EntitySet="Modules" />
+      <End Role="ModuleLessons" EntitySet="ModuleLessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserModules_Modules" Association="DistanceLessons.Models.FK_UserModules_Modules">
+      <End Role="Modules" EntitySet="Modules" />
+      <End Role="UserModules" EntitySet="UserModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Users" Association="DistanceLessons.Models.FK_News_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCourses_Users" Association="DistanceLessons.Models.FK_UserCourses_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserCourses" EntitySet="UserCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserModules_Users" Association="DistanceLessons.Models.FK_UserModules_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserModules" EntitySet="UserModules" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="AnswerId" />
+    </Key>
+    <Property Name="AnswerId" Type="Guid" Nullable="false" />
+    <Property Name="Answer1" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Valid" Type="Byte" Nullable="false" />
+    <Property Name="TestId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Test" Relationship="DistanceLessons.Models.FK_Answers_Tests" FromRole="Answers" ToRole="Tests" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Guid" Nullable="false" />
+    <Property Name="Category1" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Courses" Relationship="DistanceLessons.Models.FK_Courses_Categories" FromRole="Categories" ToRole="Courses" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactId" />
+    </Key>
+    <Property Name="ContactId" Type="Guid" Nullable="false" />
+    <Property Name="Skype" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ICQ_QIP" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Other" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Contacts_Users" FromRole="Contacts" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="Guid" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
+    <Property Name="CategoryId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Access" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="DistanceLessons.Models.FK_Courses_Categories" FromRole="Courses" ToRole="Categories" />
+    <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Courses_Users" FromRole="Courses" ToRole="Users" />
+    <NavigationProperty Name="Lessons" Relationship="DistanceLessons.Models.FK_Lessons_Courses" FromRole="Courses" ToRole="Lessons" />
+    <NavigationProperty Name="Modules" Relationship="DistanceLessons.Models.FK_Modules_Courses" FromRole="Courses" ToRole="Modules" />
+    <NavigationProperty Name="UserCourses" Relationship="DistanceLessons.Models.FK_UserCourses_Courses" FromRole="Courses" ToRole="UserCourses" />
+  </EntityType>
+  <EntityType Name="Information">
+    <Key>
+      <PropertyRef Name="InformationId" />
+    </Key>
+    <Property Name="InformationId" Type="Guid" Nullable="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MidName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DateOfBirth" Type="DateTime" />
+    <Property Name="About" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Avatar" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Informations_Users" FromRole="Informations" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Lesson">
+    <Key>
+      <PropertyRef Name="LessonId" />
+    </Key>
+    <Property Name="LessonId" Type="Guid" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="Text" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Publication" Type="DateTime" Nullable="false" />
+    <Property Name="CourseId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Cours" Relationship="DistanceLessons.Models.FK_Lessons_Courses" FromRole="Lessons" ToRole="Courses" />
+    <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Lessons_Users" FromRole="Lessons" ToRole="Users" />
+    <NavigationProperty Name="ModuleLessons" Relationship="DistanceLessons.Models.FK_ModuleLessons_Lessons" FromRole="Lessons" ToRole="ModuleLessons" />
+    <NavigationProperty Name="Tests" Relationship="DistanceLessons.Models.FK_Tests_Lessons" FromRole="Lessons" ToRole="Tests" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="MessageId" />
+    </Key>
+    <Property Name="MessageId" Type="Guid" Nullable="false" />
+    <Property Name="Message1" Type="String" Nullable="false" MaxLength="512" Unicode="false" FixedLength="false" />
+    <Property Name="DateOfSender" Type="DateTime" Nullable="false" />
+    <Property Name="UserId_From" Type="Guid" Nullable="false" />
+    <Property Name="UserId_To" Type="Guid" Nullable="false" />
+    <Property Name="Status" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Messages_Users" FromRole="Messages" ToRole="Users" />
+    <NavigationProperty Name="User1" Relationship="DistanceLessons.Models.FK_Messages_Users1" FromRole="Messages" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="ModuleLesson">
+    <Key>
+      <PropertyRef Name="ModuleLessonId" />
+    </Key>
+    <Property Name="ModuleLessonId" Type="Guid" Nullable="false" />
+    <Property Name="LessonId" Type="Guid" Nullable="false" />
+    <Property Name="ModuleId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Lesson" Relationship="DistanceLessons.Models.FK_ModuleLessons_Lessons" FromRole="ModuleLessons" ToRole="Lessons" />
+    <NavigationProperty Name="Module" Relationship="DistanceLessons.Models.FK_ModuleLessons_Modules" FromRole="ModuleLessons" ToRole="Modules" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="ModuleId" />
+    </Key>
+    <Property Name="ModuleId" Type="Guid" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Time" Type="Int32" Nullable="false" />
+    <Property Name="DateBegin" Type="DateTime" Nullable="false" />
+    <Property Name="DateEnd" Type="DateTime" Nullable="false" />
+    <Property Name="CourseId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Cours" Relationship="DistanceLessons.Models.FK_Modules_Courses" FromRole="Modules" ToRole="Courses" />
+    <NavigationProperty Name="ModuleLessons" Relationship="DistanceLessons.Models.FK_ModuleLessons_Modules" FromRole="Modules" ToRole="ModuleLessons" />
+    <NavigationProperty Name="UserModules" Relationship="DistanceLessons.Models.FK_UserModules_Modules" FromRole="Modules" ToRole="UserModules" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="NewId" />
+    </Key>
+    <Property Name="NewId" Type="Guid" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Publication" Type="DateTime" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_News_Users" FromRole="News" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="TestId" />
+    </Key>
+    <Property Name="TestId" Type="Guid" Nullable="false" />
+    <Property Name="Question" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="LessonId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Answers" Relationship="DistanceLessons.Models.FK_Answers_Tests" FromRole="Tests" ToRole="Answers" />
+    <NavigationProperty Name="Lesson" Relationship="DistanceLessons.Models.FK_Tests_Lessons" FromRole="Tests" ToRole="Lessons" />
+  </EntityType>
+  <EntityType Name="UserCours">
+    <Key>
+      <PropertyRef Name="UserCourseId" />
+    </Key>
+    <Property Name="UserCourseId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="CourseId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Cours" Relationship="DistanceLessons.Models.FK_UserCourses_Courses" FromRole="UserCourses" ToRole="Courses" />
+    <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_UserCourses_Users" FromRole="UserCourses" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="UserModule">
+    <Key>
+      <PropertyRef Name="UserModuleId" />
+    </Key>
+    <Property Name="UserModuleId" Type="Guid" Nullable="false" />
+    <Property Name="Passed" Type="Double" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="ModuleId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Module" Relationship="DistanceLessons.Models.FK_UserModules_Modules" FromRole="UserModules" ToRole="Modules" />
+    <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_UserModules_Users" FromRole="UserModules" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Role" Type="Byte" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
+    <Property Name="IsActived" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Contacts" Relationship="DistanceLessons.Models.FK_Contacts_Users" FromRole="Users" ToRole="Contacts" />
+    <NavigationProperty Name="Courses" Relationship="DistanceLessons.Models.FK_Courses_Users" FromRole="Users" ToRole="Courses" />
+    <NavigationProperty Name="Informations" Relationship="DistanceLessons.Models.FK_Informations_Users" FromRole="Users" ToRole="Informations" />
+    <NavigationProperty Name="Lessons" Relationship="DistanceLessons.Models.FK_Lessons_Users" FromRole="Users" ToRole="Lessons" />
+    <NavigationProperty Name="Messages" Relationship="DistanceLessons.Models.FK_Messages_Users" FromRole="Users" ToRole="Messages" />
+    <NavigationProperty Name="Messages1" Relationship="DistanceLessons.Models.FK_Messages_Users1" FromRole="Users" ToRole="Messages" />
+    <NavigationProperty Name="News" Relationship="DistanceLessons.Models.FK_News_Users" FromRole="Users" ToRole="News" />
+    <NavigationProperty Name="UserCourses" Relationship="DistanceLessons.Models.FK_UserCourses_Users" FromRole="Users" ToRole="UserCourses" />
+    <NavigationProperty Name="UserModules" Relationship="DistanceLessons.Models.FK_UserModules_Users" FromRole="Users" ToRole="UserModules" />
+  </EntityType>
+  <Association Name="FK_Answers_Tests">
+    <End Role="Tests" Type="DistanceLessons.Models.Test" Multiplicity="1" />
+    <End Role="Answers" Type="DistanceLessons.Models.Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tests">
+        <PropertyRef Name="TestId" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="TestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_Categories">
+    <End Role="Categories" Type="DistanceLessons.Models.Category" Multiplicity="1" />
+    <End Role="Courses" Type="DistanceLessons.Models.Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contacts_Users">
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+    <End Role="Contacts" Type="DistanceLessons.Models.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Contacts">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_Users">
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+    <End Role="Courses" Type="DistanceLessons.Models.Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lessons_Courses">
+    <End Role="Courses" Type="DistanceLessons.Models.Cours" Multiplicity="1" />
+    <End Role="Lessons" Type="DistanceLessons.Models.Lesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Modules_Courses">
+    <End Role="Courses" Type="DistanceLessons.Models.Cours" Multiplicity="1" />
+    <End Role="Modules" Type="DistanceLessons.Models.Module" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="Modules">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserCourses_Courses">
+    <End Role="Courses" Type="DistanceLessons.Models.Cours" Multiplicity="1" />
+    <End Role="UserCourses" Type="DistanceLessons.Models.UserCours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="UserCourses">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Informations_Users">
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+    <End Role="Informations" Type="DistanceLessons.Models.Information" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Informations">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lessons_Users">
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+    <End Role="Lessons" Type="DistanceLessons.Models.Lesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleLessons_Lessons">
+    <End Role="Lessons" Type="DistanceLessons.Models.Lesson" Multiplicity="1" />
+    <End Role="ModuleLessons" Type="DistanceLessons.Models.ModuleLesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lessons">
+        <PropertyRef Name="LessonId" />
+      </Principal>
+      <Dependent Role="ModuleLessons">
+        <PropertyRef Name="LessonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tests_Lessons">
+    <End Role="Lessons" Type="DistanceLessons.Models.Lesson" Multiplicity="1" />
+    <End Role="Tests" Type="DistanceLessons.Models.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lessons">
+        <PropertyRef Name="LessonId" />
+      </Principal>
+      <Dependent Role="Tests">
+        <PropertyRef Name="LessonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users">
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+    <End Role="Messages" Type="DistanceLessons.Models.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="UserId_From" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Messages_Users1">
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+    <End Role="Messages" Type="DistanceLessons.Models.Message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Messages">
+        <PropertyRef Name="UserId_To" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ModuleLessons_Modules">
+    <End Role="Modules" Type="DistanceLessons.Models.Module" Multiplicity="1" />
+    <End Role="ModuleLessons" Type="DistanceLessons.Models.ModuleLesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modules">
+        <PropertyRef Name="ModuleId" />
+      </Principal>
+      <Dependent Role="ModuleLessons">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserModules_Modules">
+    <End Role="Modules" Type="DistanceLessons.Models.Module" Multiplicity="1" />
+    <End Role="UserModules" Type="DistanceLessons.Models.UserModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modules">
+        <PropertyRef Name="ModuleId" />
+      </Principal>
+      <Dependent Role="UserModules">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Users">
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+    <End Role="News" Type="DistanceLessons.Models.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserCourses_Users">
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+    <End Role="UserCourses" Type="DistanceLessons.Models.UserCours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserCourses">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserModules_Users">
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+    <End Role="UserModules" Type="DistanceLessons.Models.UserModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserModules">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
