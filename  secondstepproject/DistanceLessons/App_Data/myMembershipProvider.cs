@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.Security;
 using System.Collections.Specialized;
 using System.Text.RegularExpressions;
+using DistanceLessons.Models;
 
 
 
-namespace Distance_Lesson.Models
+namespace DistanceLessons
 {
     public class myMembershipProvider : MembershipProvider
     {

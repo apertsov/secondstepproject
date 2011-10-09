@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Distance_Lesson.Models
+
+namespace DistanceLessons.Models
 {
     public class DataEntitiesManager
     {
@@ -60,7 +61,7 @@ namespace Distance_Lesson.Models
 //===========================================
 //>>>METHOD's THAT RETURN LIST OF MODEL-TABLE
 //===========================================
-        public List<Answer> GetAnswerList()
+       public List<Answer> GetAnswerList()
         {
             return _distancel.Answers.ToList<Answer>();
         }
