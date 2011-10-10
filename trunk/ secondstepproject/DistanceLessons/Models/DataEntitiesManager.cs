@@ -183,6 +183,35 @@ namespace DistanceLessons.Models
             return lst;
         }
 
+    
+
+        //Курси, які відповідають пошуку - айді, Назва курсу, опис курсу, категорія, викладач(логін), доступність курсу
+        public List<RQCourses> QCoursesSeak(string Course)
+        {
+            var Query =
+                (
+                from cou in GetCourseList()
+                from u in GetUserList()
+                from cat in GetCategoryList()
+                where cou.CategoryId == cat.CategoryId && cou.UserId == u.UserId && cou.Title.ToLower().IndexOf(Course.ToLower())>-1
+                orderby cou.Title
+                select new RQCourses
+                {
+                    id = cou.CourseId,
+                    title = cou.Title,
+                    description = cou.Description,
+                    category = cat.Category1,
+                    teacher = u.Login,
+                    access = cou.Access
+                }
+                ).ToList<RQCourses>();
+
+            List<RQCourses> lst = new List<RQCourses>();
+            foreach (var i in Query)
+                lst.Add(i);
+
+            return lst;
+        }
 
         //in progress... =)
         //===========================================
