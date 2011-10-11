@@ -15,62 +15,13 @@ namespace DistanceLessons.Models
             _distancel = new dbEntities();
         }
 
-        //example of using this method's:
+        public class RQCategorys
+        {
+            public Guid id { get; set; }
+            public string title { get; set; }
+        }
+        
 
-        //in namespace:
-        //using DistanceLessons.Models;
-
-        //in DataEntitesManager :
-        //(CLASS-MODEL)
-        //      public class UC
-        //      {
-        //          public Guid id { get; set; }
-        //          public string user { get; set; }
-        //          public string course { get; set; }
-        //      }
-
-        //in DataEntitiesManager :
-        //(QUERY METHOD's)
-        //      public List<UC> UCs2()
-        //      {
-        //          System.Guid g = new Guid("5d94f0c6-4fa4-472e-ab81-9ce251e35b73");
-        //          var Query =
-        //              (
-        //              from uc in GetUserCourseList()
-        //              from u in GetUserList()
-        //              from c in GetCourseList()
-        //              where uc.UserId == u.UserId
-        //              select new UC
-        //              {
-        //                  id = uc.UserCourseId,
-        //                  user = u.Login,
-        //                  course = c.Title
-        //              }
-        //              ).ToList<UC>();
-
-        //          List<UC> testik = new List<UC>();
-        //          foreach (var i in Query)
-        //              testik.Add(i);
-
-        //          return testik;
-        //      }
-
-        //in controll :
-        //            DataEntitiesManager _distancel = new DataEntitiesManager();
-        //            var t = _distancel.UCs2();
-        //            ViewBag.qwe = t;
-
-        //in view : (ПЕРЕВІРИТИ ПРОСТІР ІМЕН ПЕРЕД КОПІПАСТОМ)
-        //          <ol>
-        //              @foreach (DistanceLesson.Models.DataEntitiesManager.UC k in ViewBag.qwe)
-        //                  {<li>@k.id - @k.user - @k.course</li>}
-        //          </ol>
-
-
-        //===========================================
-        //>>>CLASS-MODEL TABLE FOR RESULT QUERY
-        //===========================================
-        //Courses_+String(Category,User)
         public class RQCourses
         {
             public Guid id { get; set; }
@@ -102,8 +53,30 @@ namespace DistanceLessons.Models
         //===========================================
         //>>>QUERY METHOD's
         //===========================================
-        
+
+        public List<RQCategorys> QCategorys()
+        {
+            var Query =
+                (
+                from cat in GetCategoryList()
+                select new RQCategorys
+                {
+                    id = cat.CategoryId,
+                    title = cat.Category1
+                }
+                ).ToList<RQCategorys>();
+
+            List<RQCategorys> lst = new List<RQCategorys>();
+            foreach (var i in Query)
+                lst.Add(i);
+
+            return lst;
+        }
+
         //Всі курси - айді, Назва курсу, опис курсу, категорія, викладач(логін), доступність курсу
+
+        
+        
         public List<RQCourses> QCourses()
         {
             var Query =

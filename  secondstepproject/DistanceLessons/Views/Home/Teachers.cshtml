@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Teachers";
+}
+
+<h2>Teachers</h2>
+
+<table border="1" width="90%">
+<tr style="color:blue;text-align:center">
+<th> Прізвище</th>
+<th> Ім"я</th>
+<th> Побатькові</th>
+<th> Курси,які викладає</th>
+</tr>
+
+@foreach (DistanceLessons.Models.DataEntitiesManager.RQTeachers obj in ViewBag.Teachers)
+{
+    <tr style="text-align:center"%>
+    <th>@obj.first</th>
+    <th>@obj.mid</th>
+    <th>@obj.last</th>
+    <th>@obj.course</th>
+    </tr>
+}
+
+</table>
