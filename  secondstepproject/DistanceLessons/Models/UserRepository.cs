@@ -39,7 +39,7 @@ namespace DistanceLessons.Models
             return hashedPwd;
         }
 
-        public MembershipUser CreateUser(string username, string password, string email)
+        public MembershipUser CreateUser(string username, string password, string email, bool IsApproved)
         {
             using (dbEntities db = new dbEntities())
             {
@@ -51,10 +51,10 @@ namespace DistanceLessons.Models
                 user.UserId = Guid.NewGuid();
                 user.Login = username;
                 user.Email = email;
-                user.Role = 1;
+                user.RoleId = this.GetRole(UserRoles.Student.ToString()).RoleId;
                 user.PasswordSalt = CreateSalt();
                 user.CreatedDate = DateTime.Now;
-                user.IsActived = true;
+                user.IsActived = IsApproved;
                 user.IsLockedOut = false;
                 user.LastLoginDate = DateTime.Now;
                 user.Password = CreatePasswordHash(password, user.PasswordSalt);
@@ -94,7 +94,6 @@ namespace DistanceLessons.Models
                     string _username = dbuser.Login;
                     Guid _providerUserKey = dbuser.UserId;
                     string _email = dbuser.Email;
-                    int _permissions = dbuser.Role;
                     string _passwordQuestion = "";
                     string _comment = "";
                     bool _isApproved = dbuser.IsActived;
@@ -132,6 +131,22 @@ namespace DistanceLessons.Models
         {
             var dbuser = db.Users.FirstOrDefault(x => x.Login == username);
             return dbuser != null && dbuser.Password == CreatePasswordHash(password, dbuser.PasswordSalt);
+        }
+
+        public User GetDBUser(string rolename)
+        {
+            return db.Users.SingleOrDefault(x => x.Login == rolename);
+
+        }
+
+        public Role GetRole(string name)
+        {
+            return db.Roles.SingleOrDefault(x => x.Name == name);
+        }
+
+        public List<User> GetAllUsers()
+        {
+            return db.Users.ToList();
         }
     }
 }

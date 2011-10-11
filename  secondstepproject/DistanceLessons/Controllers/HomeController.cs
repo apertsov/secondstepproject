@@ -32,6 +32,7 @@ namespace DistanceLessons.Controllers
             return View();
         }
 
+       
         public ActionResult Teachers()
         {
             DataEntitiesManager dataManager = new DataEntitiesManager();
@@ -39,6 +40,7 @@ namespace DistanceLessons.Controllers
 
             return View();
         }
+
 
         public ActionResult Categories()
         {

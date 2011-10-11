@@ -11,6 +11,7 @@
     <EntitySet Name="ModuleLessons" EntityType="DistanceLessons.Models.ModuleLesson" />
     <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Module" />
     <EntitySet Name="News" EntityType="DistanceLessons.Models.News" />
+    <EntitySet Name="Roles" EntityType="DistanceLessons.Models.Role" />
     <EntitySet Name="Tests" EntityType="DistanceLessons.Models.Test" />
     <EntitySet Name="UserCourses" EntityType="DistanceLessons.Models.UserCours" />
     <EntitySet Name="UserModules" EntityType="DistanceLessons.Models.UserModule" />
@@ -78,6 +79,10 @@
     <AssociationSet Name="FK_News_Users" Association="DistanceLessons.Models.FK_News_Users">
       <End Role="Users" EntitySet="Users" />
       <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="DistanceLessons.Models.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
     </AssociationSet>
     <AssociationSet Name="FK_UserCourses_Users" Association="DistanceLessons.Models.FK_UserCourses_Users">
       <End Role="Users" EntitySet="Users" />
@@ -211,6 +216,14 @@
     <Property Name="UserId" Type="Guid" Nullable="false" />
     <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_News_Users" FromRole="News" ToRole="Users" />
   </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Users" Relationship="DistanceLessons.Models.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+  </EntityType>
   <EntityType Name="Test">
     <Key>
       <PropertyRef Name="TestId" />
@@ -251,7 +264,7 @@
     <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
     <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
     <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-    <Property Name="Role" Type="Byte" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
     <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
     <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
     <Property Name="IsActived" Type="Boolean" Nullable="false" />
@@ -265,6 +278,7 @@
     <NavigationProperty Name="Messages" Relationship="DistanceLessons.Models.FK_Messages_Users" FromRole="Users" ToRole="Messages" />
     <NavigationProperty Name="Messages1" Relationship="DistanceLessons.Models.FK_Messages_Users1" FromRole="Users" ToRole="Messages" />
     <NavigationProperty Name="News" Relationship="DistanceLessons.Models.FK_News_Users" FromRole="Users" ToRole="News" />
+    <NavigationProperty Name="Role" Relationship="DistanceLessons.Models.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
     <NavigationProperty Name="UserCourses" Relationship="DistanceLessons.Models.FK_UserCourses_Users" FromRole="Users" ToRole="UserCourses" />
     <NavigationProperty Name="UserModules" Relationship="DistanceLessons.Models.FK_UserModules_Users" FromRole="Users" ToRole="UserModules" />
   </EntityType>
@@ -457,6 +471,18 @@
       </Principal>
       <Dependent Role="News">
         <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="DistanceLessons.Models.Role" Multiplicity="1" />
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

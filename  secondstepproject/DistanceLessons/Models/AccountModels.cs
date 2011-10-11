@@ -64,4 +64,48 @@ namespace DistanceLessons.Models
         [Compare("Password", ErrorMessage = "Пароль і підтвердження пароля не співпадають")]
         public string ConfirmPassword { get; set; }
     }
+
+    public class AccountRoleService 
+    {
+        private readonly RoleProvider _provider;
+
+        public AccountRoleService()
+            : this(null)
+        {
+        }
+
+        public AccountRoleService(RoleProvider provider)
+        {
+            _provider = provider;
+        }
+
+        public bool AdminExists()
+        {
+            var users = _provider.GetUsersInRole("Admin");
+
+            if (users.Length == 0)
+                return false;
+
+            return true;
+        }
+
+        public void AddUsersToRoles(string[] usernames, string[] rolenames)
+        {
+            _provider.AddUsersToRoles(usernames, rolenames);
+        }
+
+        public void RemoveUsersFromRoles(string[] usernames, string[] rolenames)
+        {
+            _provider.RemoveUsersFromRoles(usernames, rolenames);
+        }
+
+        public void CreateRole(string roleName)
+        {
+            _provider.CreateRole(roleName);
+        }
+        public bool RoleExists(string roleName)
+        {
+            return _provider.RoleExists(roleName);
+        }
+    }
 }

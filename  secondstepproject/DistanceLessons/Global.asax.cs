@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using DistanceLessons.Models;
 
 namespace DistanceLessons
 {
@@ -35,6 +36,16 @@ namespace DistanceLessons
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            AccountRoleService roleService = new AccountRoleService(new MyRoleProvider());
+            if (!roleService.RoleExists(UserRoles.Student.ToString()))
+                roleService.CreateRole(UserRoles.Student.ToString());
+            if (!roleService.RoleExists(UserRoles.Teacher.ToString()))
+                roleService.CreateRole(UserRoles.Teacher.ToString());
+            if (!roleService.RoleExists(UserRoles.Dean.ToString()))
+                roleService.CreateRole(UserRoles.Dean.ToString());
+            if (!roleService.RoleExists(UserRoles.Admin.ToString()))
+                roleService.CreateRole(UserRoles.Admin.ToString());
         }
     }
 }

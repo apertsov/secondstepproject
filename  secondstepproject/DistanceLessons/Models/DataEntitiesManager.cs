@@ -112,7 +112,7 @@ namespace DistanceLessons.Models
                 from cou in GetCourseList()
                 from u in GetUserList()
                 from i in GetInfoList()
-                where u.UserId==i.UserId && u.UserId==cou.UserId && u.Role==1
+                where u.UserId==i.UserId && u.UserId==cou.UserId //&& u.Role==1
                 orderby i.FirstName
                 select new RQTeachers
                 {

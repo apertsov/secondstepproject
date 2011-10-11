@@ -4,93 +4,98 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DistanceLessons.Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="DistanceLessonsModelStoreContainer">
-          <EntitySet Name="Answers" EntityType="DistanceLessons.Model.Store.Answers" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Categories" EntityType="DistanceLessons.Model.Store.Categories" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Contacts" EntityType="DistanceLessons.Model.Store.Contacts" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Courses" EntityType="DistanceLessons.Model.Store.Courses" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Informations" EntityType="DistanceLessons.Model.Store.Informations" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Lessons" EntityType="DistanceLessons.Model.Store.Lessons" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Messages" EntityType="DistanceLessons.Model.Store.Messages" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ModuleLessons" EntityType="DistanceLessons.Model.Store.ModuleLessons" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Modules" EntityType="DistanceLessons.Model.Store.Modules" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="News" EntityType="DistanceLessons.Model.Store.News" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Tests" EntityType="DistanceLessons.Model.Store.Tests" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserCourses" EntityType="DistanceLessons.Model.Store.UserCourses" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="UserModules" EntityType="DistanceLessons.Model.Store.UserModules" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Users" EntityType="DistanceLessons.Model.Store.Users" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_Answers_Tests" Association="DistanceLessons.Model.Store.FK_Answers_Tests">
+      <Schema Namespace="DistanceLessons.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DistanceLessonsModelsStoreContainer">
+          <EntitySet Name="Answers" EntityType="DistanceLessons.Models.Store.Answers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categories" EntityType="DistanceLessons.Models.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contacts" EntityType="DistanceLessons.Models.Store.Contacts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Courses" EntityType="DistanceLessons.Models.Store.Courses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Informations" EntityType="DistanceLessons.Models.Store.Informations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lessons" EntityType="DistanceLessons.Models.Store.Lessons" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Messages" EntityType="DistanceLessons.Models.Store.Messages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ModuleLessons" EntityType="DistanceLessons.Models.Store.ModuleLessons" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Store.Modules" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="News" EntityType="DistanceLessons.Models.Store.News" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="DistanceLessons.Models.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tests" EntityType="DistanceLessons.Models.Store.Tests" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserCourses" EntityType="DistanceLessons.Models.Store.UserCourses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserModules" EntityType="DistanceLessons.Models.Store.UserModules" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="DistanceLessons.Models.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Answers_Tests" Association="DistanceLessons.Models.Store.FK_Answers_Tests">
             <End Role="Tests" EntitySet="Tests" />
             <End Role="Answers" EntitySet="Answers" />
           </AssociationSet>
-          <AssociationSet Name="FK_Contacts_Users" Association="DistanceLessons.Model.Store.FK_Contacts_Users">
+          <AssociationSet Name="FK_Contacts_Users" Association="DistanceLessons.Models.Store.FK_Contacts_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Contacts" EntitySet="Contacts" />
           </AssociationSet>
-          <AssociationSet Name="FK_Courses_Categories" Association="DistanceLessons.Model.Store.FK_Courses_Categories">
+          <AssociationSet Name="FK_Courses_Categories" Association="DistanceLessons.Models.Store.FK_Courses_Categories">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Courses" EntitySet="Courses" />
           </AssociationSet>
-          <AssociationSet Name="FK_Courses_Users" Association="DistanceLessons.Model.Store.FK_Courses_Users">
+          <AssociationSet Name="FK_Courses_Users" Association="DistanceLessons.Models.Store.FK_Courses_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Courses" EntitySet="Courses" />
           </AssociationSet>
-          <AssociationSet Name="FK_Informations_Users" Association="DistanceLessons.Model.Store.FK_Informations_Users">
+          <AssociationSet Name="FK_Informations_Users" Association="DistanceLessons.Models.Store.FK_Informations_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Informations" EntitySet="Informations" />
           </AssociationSet>
-          <AssociationSet Name="FK_Lessons_Courses" Association="DistanceLessons.Model.Store.FK_Lessons_Courses">
+          <AssociationSet Name="FK_Lessons_Courses" Association="DistanceLessons.Models.Store.FK_Lessons_Courses">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Lessons" EntitySet="Lessons" />
           </AssociationSet>
-          <AssociationSet Name="FK_Lessons_Users" Association="DistanceLessons.Model.Store.FK_Lessons_Users">
+          <AssociationSet Name="FK_Lessons_Users" Association="DistanceLessons.Models.Store.FK_Lessons_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Lessons" EntitySet="Lessons" />
           </AssociationSet>
-          <AssociationSet Name="FK_Messages_Users" Association="DistanceLessons.Model.Store.FK_Messages_Users">
+          <AssociationSet Name="FK_Messages_Users" Association="DistanceLessons.Models.Store.FK_Messages_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Messages" EntitySet="Messages" />
           </AssociationSet>
-          <AssociationSet Name="FK_Messages_Users1" Association="DistanceLessons.Model.Store.FK_Messages_Users1">
+          <AssociationSet Name="FK_Messages_Users1" Association="DistanceLessons.Models.Store.FK_Messages_Users1">
             <End Role="Users" EntitySet="Users" />
             <End Role="Messages" EntitySet="Messages" />
           </AssociationSet>
-          <AssociationSet Name="FK_ModuleLessons_Lessons" Association="DistanceLessons.Model.Store.FK_ModuleLessons_Lessons">
+          <AssociationSet Name="FK_ModuleLessons_Lessons" Association="DistanceLessons.Models.Store.FK_ModuleLessons_Lessons">
             <End Role="Lessons" EntitySet="Lessons" />
             <End Role="ModuleLessons" EntitySet="ModuleLessons" />
           </AssociationSet>
-          <AssociationSet Name="FK_ModuleLessons_Modules" Association="DistanceLessons.Model.Store.FK_ModuleLessons_Modules">
+          <AssociationSet Name="FK_ModuleLessons_Modules" Association="DistanceLessons.Models.Store.FK_ModuleLessons_Modules">
             <End Role="Modules" EntitySet="Modules" />
             <End Role="ModuleLessons" EntitySet="ModuleLessons" />
           </AssociationSet>
-          <AssociationSet Name="FK_Modules_Courses" Association="DistanceLessons.Model.Store.FK_Modules_Courses">
+          <AssociationSet Name="FK_Modules_Courses" Association="DistanceLessons.Models.Store.FK_Modules_Courses">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="Modules" EntitySet="Modules" />
           </AssociationSet>
-          <AssociationSet Name="FK_News_Users" Association="DistanceLessons.Model.Store.FK_News_Users">
+          <AssociationSet Name="FK_News_Users" Association="DistanceLessons.Models.Store.FK_News_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="News" EntitySet="News" />
           </AssociationSet>
-          <AssociationSet Name="FK_Tests_Lessons" Association="DistanceLessons.Model.Store.FK_Tests_Lessons">
+          <AssociationSet Name="FK_Tests_Lessons" Association="DistanceLessons.Models.Store.FK_Tests_Lessons">
             <End Role="Lessons" EntitySet="Lessons" />
             <End Role="Tests" EntitySet="Tests" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserCourses_Courses" Association="DistanceLessons.Model.Store.FK_UserCourses_Courses">
+          <AssociationSet Name="FK_UserCourses_Courses" Association="DistanceLessons.Models.Store.FK_UserCourses_Courses">
             <End Role="Courses" EntitySet="Courses" />
             <End Role="UserCourses" EntitySet="UserCourses" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserCourses_Users" Association="DistanceLessons.Model.Store.FK_UserCourses_Users">
+          <AssociationSet Name="FK_UserCourses_Users" Association="DistanceLessons.Models.Store.FK_UserCourses_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="UserCourses" EntitySet="UserCourses" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserModules_Modules" Association="DistanceLessons.Model.Store.FK_UserModules_Modules">
+          <AssociationSet Name="FK_UserModules_Modules" Association="DistanceLessons.Models.Store.FK_UserModules_Modules">
             <End Role="Modules" EntitySet="Modules" />
             <End Role="UserModules" EntitySet="UserModules" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserModules_Users" Association="DistanceLessons.Model.Store.FK_UserModules_Users">
+          <AssociationSet Name="FK_UserModules_Users" Association="DistanceLessons.Models.Store.FK_UserModules_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="UserModules" EntitySet="UserModules" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Roles" Association="DistanceLessons.Models.Store.FK_Users_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Answers">
@@ -195,6 +200,13 @@
           <Property Name="Publication" Type="datetime" Nullable="false" />
           <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="32" />
+        </EntityType>
         <EntityType Name="Tests">
           <Key>
             <PropertyRef Name="TestId" />
@@ -229,7 +241,7 @@
           <Property Name="Password" Type="varchar" Nullable="false" MaxLength="128" />
           <Property Name="PasswordSalt" Type="varchar" Nullable="false" MaxLength="128" />
           <Property Name="Email" Type="varchar" Nullable="false" MaxLength="100" />
-          <Property Name="Role" Type="tinyint" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="CreatedDate" Type="datetime" Nullable="false" />
           <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
           <Property Name="IsActived" Type="bit" Nullable="false" />
@@ -238,8 +250,8 @@
           <Property Name="PasswordAnswer" Type="varchar" MaxLength="64" />
         </EntityType>
         <Association Name="FK_Answers_Tests">
-          <End Role="Tests" Type="DistanceLessons.Model.Store.Tests" Multiplicity="1" />
-          <End Role="Answers" Type="DistanceLessons.Model.Store.Answers" Multiplicity="*" />
+          <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="1" />
+          <End Role="Answers" Type="DistanceLessons.Models.Store.Answers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tests">
               <PropertyRef Name="TestId" />
@@ -250,8 +262,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Contacts_Users">
-          <End Role="Users" Type="DistanceLessons.Model.Store.Users" Multiplicity="1" />
-          <End Role="Contacts" Type="DistanceLessons.Model.Store.Contacts" Multiplicity="*" />
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+          <End Role="Contacts" Type="DistanceLessons.Models.Store.Contacts" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -262,8 +274,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Courses_Categories">
-          <End Role="Categories" Type="DistanceLessons.Model.Store.Categories" Multiplicity="1" />
-          <End Role="Courses" Type="DistanceLessons.Model.Store.Courses" Multiplicity="*" />
+          <End Role="Categories" Type="DistanceLessons.Models.Store.Categories" Multiplicity="1" />
+          <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categories">
               <PropertyRef Name="CategoryId" />
@@ -274,8 +286,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Courses_Users">
-          <End Role="Users" Type="DistanceLessons.Model.Store.Users" Multiplicity="1" />
-          <End Role="Courses" Type="DistanceLessons.Model.Store.Courses" Multiplicity="*" />
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+          <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -286,8 +298,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Informations_Users">
-          <End Role="Users" Type="DistanceLessons.Model.Store.Users" Multiplicity="1" />
-          <End Role="Informations" Type="DistanceLessons.Model.Store.Informations" Multiplicity="*" />
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+          <End Role="Informations" Type="DistanceLessons.Models.Store.Informations" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -298,8 +310,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Lessons_Courses">
-          <End Role="Courses" Type="DistanceLessons.Model.Store.Courses" Multiplicity="1" />
-          <End Role="Lessons" Type="DistanceLessons.Model.Store.Lessons" Multiplicity="*" />
+          <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="1" />
+          <End Role="Lessons" Type="DistanceLessons.Models.Store.Lessons" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Courses">
               <PropertyRef Name="CourseId" />
@@ -310,8 +322,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Lessons_Users">
-          <End Role="Users" Type="DistanceLessons.Model.Store.Users" Multiplicity="1" />
-          <End Role="Lessons" Type="DistanceLessons.Model.Store.Lessons" Multiplicity="*" />
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+          <End Role="Lessons" Type="DistanceLessons.Models.Store.Lessons" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -322,8 +334,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Messages_Users">
-          <End Role="Users" Type="DistanceLessons.Model.Store.Users" Multiplicity="1" />
-          <End Role="Messages" Type="DistanceLessons.Model.Store.Messages" Multiplicity="*" />
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+          <End Role="Messages" Type="DistanceLessons.Models.Store.Messages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -334,8 +346,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Messages_Users1">
-          <End Role="Users" Type="DistanceLessons.Model.Store.Users" Multiplicity="1" />
-          <End Role="Messages" Type="DistanceLessons.Model.Store.Messages" Multiplicity="*" />
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+          <End Role="Messages" Type="DistanceLessons.Models.Store.Messages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -346,8 +358,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ModuleLessons_Lessons">
-          <End Role="Lessons" Type="DistanceLessons.Model.Store.Lessons" Multiplicity="1" />
-          <End Role="ModuleLessons" Type="DistanceLessons.Model.Store.ModuleLessons" Multiplicity="*" />
+          <End Role="Lessons" Type="DistanceLessons.Models.Store.Lessons" Multiplicity="1" />
+          <End Role="ModuleLessons" Type="DistanceLessons.Models.Store.ModuleLessons" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lessons">
               <PropertyRef Name="LessonId" />
@@ -358,8 +370,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ModuleLessons_Modules">
-          <End Role="Modules" Type="DistanceLessons.Model.Store.Modules" Multiplicity="1" />
-          <End Role="ModuleLessons" Type="DistanceLessons.Model.Store.ModuleLessons" Multiplicity="*" />
+          <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="1" />
+          <End Role="ModuleLessons" Type="DistanceLessons.Models.Store.ModuleLessons" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Modules">
               <PropertyRef Name="ModuleId" />
@@ -370,8 +382,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Modules_Courses">
-          <End Role="Courses" Type="DistanceLessons.Model.Store.Courses" Multiplicity="1" />
-          <End Role="Modules" Type="DistanceLessons.Model.Store.Modules" Multiplicity="*" />
+          <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="1" />
+          <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Courses">
               <PropertyRef Name="CourseId" />
@@ -382,8 +394,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_News_Users">
-          <End Role="Users" Type="DistanceLessons.Model.Store.Users" Multiplicity="1" />
-          <End Role="News" Type="DistanceLessons.Model.Store.News" Multiplicity="*" />
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+          <End Role="News" Type="DistanceLessons.Models.Store.News" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -394,8 +406,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Tests_Lessons">
-          <End Role="Lessons" Type="DistanceLessons.Model.Store.Lessons" Multiplicity="1" />
-          <End Role="Tests" Type="DistanceLessons.Model.Store.Tests" Multiplicity="*" />
+          <End Role="Lessons" Type="DistanceLessons.Models.Store.Lessons" Multiplicity="1" />
+          <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Lessons">
               <PropertyRef Name="LessonId" />
@@ -406,8 +418,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UserCourses_Courses">
-          <End Role="Courses" Type="DistanceLessons.Model.Store.Courses" Multiplicity="1" />
-          <End Role="UserCourses" Type="DistanceLessons.Model.Store.UserCourses" Multiplicity="*" />
+          <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="1" />
+          <End Role="UserCourses" Type="DistanceLessons.Models.Store.UserCourses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Courses">
               <PropertyRef Name="CourseId" />
@@ -418,8 +430,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UserCourses_Users">
-          <End Role="Users" Type="DistanceLessons.Model.Store.Users" Multiplicity="1" />
-          <End Role="UserCourses" Type="DistanceLessons.Model.Store.UserCourses" Multiplicity="*" />
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+          <End Role="UserCourses" Type="DistanceLessons.Models.Store.UserCourses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -430,8 +442,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UserModules_Modules">
-          <End Role="Modules" Type="DistanceLessons.Model.Store.Modules" Multiplicity="1" />
-          <End Role="UserModules" Type="DistanceLessons.Model.Store.UserModules" Multiplicity="*" />
+          <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="1" />
+          <End Role="UserModules" Type="DistanceLessons.Models.Store.UserModules" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Modules">
               <PropertyRef Name="ModuleId" />
@@ -442,14 +454,26 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_UserModules_Users">
-          <End Role="Users" Type="DistanceLessons.Model.Store.Users" Multiplicity="1" />
-          <End Role="UserModules" Type="DistanceLessons.Model.Store.UserModules" Multiplicity="*" />
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+          <End Role="UserModules" Type="DistanceLessons.Models.Store.UserModules" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
             </Principal>
             <Dependent Role="UserModules">
               <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Roles">
+          <End Role="Roles" Type="DistanceLessons.Models.Store.Roles" Multiplicity="1" />
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="RoleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -469,6 +493,7 @@
           <EntitySet Name="ModuleLessons" EntityType="DistanceLessons.Models.ModuleLesson" />
           <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Module" />
           <EntitySet Name="News" EntityType="DistanceLessons.Models.News" />
+          <EntitySet Name="Roles" EntityType="DistanceLessons.Models.Role" />
           <EntitySet Name="Tests" EntityType="DistanceLessons.Models.Test" />
           <EntitySet Name="UserCourses" EntityType="DistanceLessons.Models.UserCours" />
           <EntitySet Name="UserModules" EntityType="DistanceLessons.Models.UserModule" />
@@ -536,6 +561,10 @@
           <AssociationSet Name="FK_News_Users" Association="DistanceLessons.Models.FK_News_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="News" EntitySet="News" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Roles" Association="DistanceLessons.Models.FK_Users_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
           <AssociationSet Name="FK_UserCourses_Users" Association="DistanceLessons.Models.FK_UserCourses_Users">
             <End Role="Users" EntitySet="Users" />
@@ -669,6 +698,14 @@
           <Property Name="UserId" Type="Guid" Nullable="false" />
           <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_News_Users" FromRole="News" ToRole="Users" />
         </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Users" Relationship="DistanceLessons.Models.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+        </EntityType>
         <EntityType Name="Test">
           <Key>
             <PropertyRef Name="TestId" />
@@ -709,7 +746,7 @@
           <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="Role" Type="Byte" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
           <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
           <Property Name="LastLoginDate" Type="DateTime" Nullable="false" />
           <Property Name="IsActived" Type="Boolean" Nullable="false" />
@@ -723,6 +760,7 @@
           <NavigationProperty Name="Messages" Relationship="DistanceLessons.Models.FK_Messages_Users" FromRole="Users" ToRole="Messages" />
           <NavigationProperty Name="Messages1" Relationship="DistanceLessons.Models.FK_Messages_Users1" FromRole="Users" ToRole="Messages" />
           <NavigationProperty Name="News" Relationship="DistanceLessons.Models.FK_News_Users" FromRole="Users" ToRole="News" />
+          <NavigationProperty Name="Role" Relationship="DistanceLessons.Models.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
           <NavigationProperty Name="UserCourses" Relationship="DistanceLessons.Models.FK_UserCourses_Users" FromRole="Users" ToRole="UserCourses" />
           <NavigationProperty Name="UserModules" Relationship="DistanceLessons.Models.FK_UserModules_Users" FromRole="Users" ToRole="UserModules" />
         </EntityType>
@@ -918,6 +956,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Users_Roles">
+          <End Role="Roles" Type="DistanceLessons.Models.Role" Multiplicity="1" />
+          <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_UserCourses_Users">
           <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
           <End Role="UserCourses" Type="DistanceLessons.Models.UserCours" Multiplicity="*" />
@@ -947,7 +997,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DistanceLessonsModelStoreContainer" CdmEntityContainer="dbEntities">
+        <EntityContainerMapping StorageEntityContainer="DistanceLessonsModelsStoreContainer" CdmEntityContainer="dbEntities">
           <EntitySetMapping Name="Answers"><EntityTypeMapping TypeName="DistanceLessons.Models.Answer"><MappingFragment StoreEntitySet="Answers">
             <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
             <ScalarProperty Name="Answer1" ColumnName="Answer" />
@@ -1020,6 +1070,10 @@
             <ScalarProperty Name="Publication" ColumnName="Publication" />
             <ScalarProperty Name="UserId" ColumnName="UserId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Roles"><EntityTypeMapping TypeName="DistanceLessons.Models.Role"><MappingFragment StoreEntitySet="Roles">
+            <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Tests"><EntityTypeMapping TypeName="DistanceLessons.Models.Test"><MappingFragment StoreEntitySet="Tests">
             <ScalarProperty Name="TestId" ColumnName="TestId" />
             <ScalarProperty Name="Question" ColumnName="Question" />
@@ -1042,7 +1096,7 @@
             <ScalarProperty Name="Password" ColumnName="Password" />
             <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
             <ScalarProperty Name="Email" ColumnName="Email" />
-            <ScalarProperty Name="Role" ColumnName="Role" />
+            <ScalarProperty Name="RoleId" ColumnName="RoleId" />
             <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
             <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
             <ScalarProperty Name="IsActived" ColumnName="IsActived" />
@@ -1071,124 +1125,125 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="DistanceLessonsModel">
-        <EntityTypeShape EntityType="DistanceLessons.Models.Answer" Width="1.5" PointX="12.75" PointY="17.625" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Category" Width="1.5" PointX="3.75" PointY="12.125" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Contact" Width="1.5" PointX="3" PointY="7.875" Height="2.3648893229166665" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Cours" Width="1.5" PointX="6" PointY="12.375" Height="3.1340950520833317" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Information" Width="1.5" PointX="3" PointY="14.875" Height="2.7494921874999978" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Lesson" Width="1.5" PointX="8.25" PointY="12.375" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Message" Width="1.5" PointX="3" PointY="18.375" Height="2.5571907552083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.ModuleLesson" Width="1.5" PointX="13.5" PointY="14.75" Height="1.98028645833333" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Module" Width="1.5" PointX="8.25" PointY="16.25" Height="2.749492187499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.News" Width="1.5" PointX="3" PointY="21.625" Height="2.172587890624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Test" Width="1.5" PointX="10.5" PointY="17.625" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.UserCours" Width="1.5" PointX="11.25" PointY="10.875" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.UserModule" Width="1.5" PointX="10.5" PointY="14.125" Height="2.172587890624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.User" Width="1.5" PointX="0.75" PointY="11.375" Height="5.0571093750000014" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Answer" Width="1.5" PointX="15" PointY="17.625" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Category" Width="1.5" PointX="6" PointY="12.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Contact" Width="1.5" PointX="5.25" PointY="7.875" Height="2.3648893229166648" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Cours" Width="1.5" PointX="8.25" PointY="12.375" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Information" Width="1.5" PointX="5.25" PointY="14.875" Height="2.7494921875000014" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Lesson" Width="1.5" PointX="10.5" PointY="12.375" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Message" Width="1.5" PointX="5.25" PointY="18.375" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.ModuleLesson" Width="1.5" PointX="15.75" PointY="14.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Module" Width="1.5" PointX="10.5" PointY="16.25" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.News" Width="1.5" PointX="5.25" PointY="21.625" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Role" Width="1.5" PointX="0.75" PointY="13.125" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Test" Width="1.5" PointX="12.75" PointY="17.625" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.UserCours" Width="1.5" PointX="13.5" PointY="10.875" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.UserModule" Width="1.5" PointX="12.75" PointY="14" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.User" Width="1.5" PointX="3" PointY="11.25" Height="5.2494108072916656" IsExpanded="true" />
         <AssociationConnector Association="DistanceLessons.Models.FK_Answers_Tests" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="18.615143229166666" />
-          <ConnectorPoint PointX="12.75" PointY="18.615143229166666" />
+          <ConnectorPoint PointX="14.25" PointY="18.615143229166666" />
+          <ConnectorPoint PointX="15" PointY="18.615143229166666" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Courses_Categories" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.25" PointY="13.047841796875" />
-          <ConnectorPoint PointX="5.666666666666667" PointY="13.047841796875" />
-          <ConnectorPoint PointX="5.833333333333333" PointY="13.047841796875" />
-          <ConnectorPoint PointX="6" PointY="13.047841796875" />
+          <ConnectorPoint PointX="7.5" PointY="13.047841796875" />
+          <ConnectorPoint PointX="8.25" PointY="13.047841796875" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Contacts_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="11.375" />
-          <ConnectorPoint PointX="1.5" PointY="9.0574446614583337" />
-          <ConnectorPoint PointX="3" PointY="9.0574446614583337" />
+          <ConnectorPoint PointX="3.75" PointY="11.25" />
+          <ConnectorPoint PointX="3.75" PointY="9.0574446614583319" />
+          <ConnectorPoint PointX="5.25" PointY="9.0574446614583319" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Courses_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="14.297841796875" />
-          <ConnectorPoint PointX="5.666666666666667" PointY="14.297841796875" />
-          <ConnectorPoint PointX="5.833333333333333" PointY="14.297841796875" />
-          <ConnectorPoint PointX="6" PointY="14.297841796875" />
+          <ConnectorPoint PointX="4.5" PointY="14.297841796875" />
+          <ConnectorPoint PointX="8.25" PointY="14.297841796875" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Lessons_Courses" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.5" PointY="13.845896809895834" />
-          <ConnectorPoint PointX="8.25" PointY="13.845896809895834" />
+          <ConnectorPoint PointX="9.75" PointY="13.845896809895834" />
+          <ConnectorPoint PointX="10.5" PointY="13.845896809895834" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Modules_Courses" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="15.509095052083332" />
-          <ConnectorPoint PointX="6.75" PointY="17.624746093749998" />
-          <ConnectorPoint PointX="8.25" PointY="17.624746093749998" />
+          <ConnectorPoint PointX="9" PointY="15.509095052083332" />
+          <ConnectorPoint PointX="9" PointY="17.624746093749998" />
+          <ConnectorPoint PointX="10.5" PointY="17.624746093749998" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserCourses_Courses" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="12.375" />
-          <ConnectorPoint PointX="6.75" PointY="11.624999500000001" />
-          <ConnectorPoint PointX="11.25" PointY="11.624999500000001" />
+          <ConnectorPoint PointX="9" PointY="12.375" />
+          <ConnectorPoint PointX="9" PointY="11.624999500000001" />
+          <ConnectorPoint PointX="13.5" PointY="11.624999500000001" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Informations_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="15.653554687500002" />
-          <ConnectorPoint PointX="3" PointY="15.653554687500002" />
+          <ConnectorPoint PointX="4.5" PointY="15.687205403645834" />
+          <ConnectorPoint PointX="5.25" PointY="15.687205403645834" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Lessons_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="11.84374975" />
-          <ConnectorPoint PointX="6.666666666666667" PointY="11.84374975" />
-          <ConnectorPoint PointX="6.833333333333333" PointY="11.84374975" />
-          <ConnectorPoint PointX="9" PointY="11.84374975" />
-          <ConnectorPoint PointX="9" PointY="12.375" />
+          <ConnectorPoint PointX="4.5" PointY="11.84374975" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="11.84374975" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="11.84374975" />
+          <ConnectorPoint PointX="11.25" PointY="11.84374975" />
+          <ConnectorPoint PointX="11.25" PointY="12.375" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_ModuleLessons_Lessons" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="13.490143229166666" />
-          <ConnectorPoint PointX="11.166666666666666" PointY="13.490143229166666" />
-          <ConnectorPoint PointX="11.333333333333334" PointY="13.490143229166666" />
-          <ConnectorPoint PointX="14.25" PointY="13.490143229166666" />
-          <ConnectorPoint PointX="14.25" PointY="14.75" />
+          <ConnectorPoint PointX="12" PointY="13.427643229166669" />
+          <ConnectorPoint PointX="16.5" PointY="13.427643229166669" />
+          <ConnectorPoint PointX="16.5" PointY="14.75" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Tests_Lessons" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="15.316793619791667" />
-          <ConnectorPoint PointX="10.125" PointY="15.691793619791667" />
-          <ConnectorPoint PointX="10.125" PointY="18.615143229166666" />
-          <ConnectorPoint PointX="10.5" PointY="18.615143229166666" />
+          <ConnectorPoint PointX="12" PointY="15.316793619791667" />
+          <ConnectorPoint PointX="12.375" PointY="15.691793619791667" />
+          <ConnectorPoint PointX="12.375" PointY="18.615143229166666" />
+          <ConnectorPoint PointX="12.75" PointY="18.615143229166666" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Messages_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="16.432109375000003" />
-          <ConnectorPoint PointX="1.5" PointY="19.653595377604166" />
-          <ConnectorPoint PointX="3" PointY="19.653595377604166" />
+          <ConnectorPoint PointX="3.75" PointY="16.499410807291667" />
+          <ConnectorPoint PointX="3.75" PointY="19.653595377604166" />
+          <ConnectorPoint PointX="5.25" PointY="19.653595377604166" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Messages_Users1" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.9062525" PointY="16.432109375000003" />
-          <ConnectorPoint PointX="1.9062525" PointY="18.98304518880208" />
-          <ConnectorPoint PointX="3" PointY="18.98304518880208" />
+          <ConnectorPoint PointX="4.1562525" PointY="16.499410807291667" />
+          <ConnectorPoint PointX="4.1562525" PointY="18.98304518880208" />
+          <ConnectorPoint PointX="5.25" PointY="18.98304518880208" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_ModuleLessons_Modules" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="16.545187174479164" />
-          <ConnectorPoint PointX="10.041666666666666" PointY="16.545187174479164" />
-          <ConnectorPoint PointX="10.208333333333334" PointY="16.545187174479164" />
-          <ConnectorPoint PointX="13.5" PointY="16.545187174479164" />
+          <ConnectorPoint PointX="12" PointY="16.490143229166666" />
+          <ConnectorPoint PointX="12.291666666666666" PointY="16.490143229166666" />
+          <ConnectorPoint PointX="12.458333333333334" PointY="16.490143229166666" />
+          <ConnectorPoint PointX="15.75" PointY="16.490143229166666" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserModules_Modules" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.75" PointY="16.31230669230769" />
-          <ConnectorPoint PointX="10.06607443490112" PointY="15.996232257406568" />
-          <ConnectorPoint PointX="10.183925565098878" PointY="15.878381127208812" />
-          <ConnectorPoint PointX="10.3125" PointY="15.74980669230769" />
-          <ConnectorPoint PointX="10.3125" PointY="16.485087890624996" />
-          <ConnectorPoint PointX="10.5" PointY="16.297587890624996" />
+          <ConnectorPoint PointX="12" PointY="16.31230669230769" />
+          <ConnectorPoint PointX="12.19107443490112" PointY="16.121232257406568" />
+          <ConnectorPoint PointX="12.308925565098878" PointY="16.003381127208812" />
+          <ConnectorPoint PointX="12.31607443490112" PointY="15.996232257406568" />
+          <ConnectorPoint PointX="12.433925565098878" PointY="15.878381127208812" />
+          <ConnectorPoint PointX="12.5625" PointY="15.74980669230769" />
+          <ConnectorPoint PointX="12.5625" PointY="16.360087890624996" />
+          <ConnectorPoint PointX="12.75" PointY="16.172587890624996" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_News_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.0937475" PointY="16.432109375000003" />
-          <ConnectorPoint PointX="1.0937475" PointY="22.711293945312498" />
-          <ConnectorPoint PointX="3" PointY="22.711293945312498" />
+          <ConnectorPoint PointX="3.3437475" PointY="16.499410807291667" />
+          <ConnectorPoint PointX="3.3437475" PointY="22.711293945312498" />
+          <ConnectorPoint PointX="5.25" PointY="22.711293945312498" />
+        </AssociationConnector>
+        <AssociationConnector Association="DistanceLessons.Models.FK_Users_Roles" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="13.922841796875002" />
+          <ConnectorPoint PointX="3" PointY="13.922841796875002" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserCourses_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="11.43749975" />
-          <ConnectorPoint PointX="11.25" PointY="11.43749975" />
+          <ConnectorPoint PointX="4.5" PointY="11.37499975" />
+          <ConnectorPoint PointX="13.5" PointY="11.37499975" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserModules_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="14.586423398437493" />
-          <ConnectorPoint PointX="5.75" PointY="14.586423398437493" />
-          <ConnectorPoint PointX="5.75" PointY="12.125" />
-          <ConnectorPoint PointX="6.666666666666667" PointY="12.125" />
-          <ConnectorPoint PointX="6.833333333333333" PointY="12.125" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="12.125" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="12.125" />
-          <ConnectorPoint PointX="11" PointY="12.125" />
-          <ConnectorPoint PointX="11" PointY="13.105286458333332" />
-          <ConnectorPoint PointX="11.25" PointY="13.105286458333332" />
-          <ConnectorPoint PointX="11.25" PointY="14.125" />
+          <ConnectorPoint PointX="4.5" PointY="14.586423398437493" />
+          <ConnectorPoint PointX="8" PointY="14.586423398437493" />
+          <ConnectorPoint PointX="8" PointY="15.759095052083332" />
+          <ConnectorPoint PointX="8.9166666666666661" PointY="15.759095052083332" />
+          <ConnectorPoint PointX="9.0833333333333339" PointY="15.759095052083332" />
+          <ConnectorPoint PointX="12.25" PointY="15.759095052083332" />
+          <ConnectorPoint PointX="12.25" PointY="16.297587890624996" />
+          <ConnectorPoint PointX="12.291666666666666" PointY="16.297587890624996" />
+          <ConnectorPoint PointX="12.458333333333334" PointY="16.297587890624996" />
+          <ConnectorPoint PointX="13.531252" PointY="16.297587890624996" />
+          <ConnectorPoint PointX="13.531252" PointY="16.172587890624996" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
