@@ -8,6 +8,9 @@
         <hgroup class="title">
             <h1>@ViewBag.Title.</h1>
         </hgroup>
+        Current: @ViewBag.CurrentRole<br />
+        Student? @ViewBag.Student <br />
+        Admin? @ViewBag.Admin <br />
 
                       @foreach (DistanceLessons.Models.DataEntitiesManager.RQCourses i in ViewBag.A.QCourses())
                       {

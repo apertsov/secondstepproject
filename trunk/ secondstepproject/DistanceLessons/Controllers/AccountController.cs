@@ -150,7 +150,7 @@ namespace DistanceLessons.Controllers
                 {
                     ViewBag.info = "unknown";
                     FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Student");
                 }
                 else
                 {
@@ -216,7 +216,7 @@ namespace DistanceLessons.Controllers
                     MyRoles.AddUsersToRoles(new string[] { model.UserName }, new string[] { UserRoles.Admin.ToString() });
                     ViewBag.info = "Fuck";
                     FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Admin");
                 }
 
                 else
