@@ -34,6 +34,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_ModuleLessons_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Module), "ModuleLessons", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.ModuleLesson), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserModules_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Module), "UserModules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserModule), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_News_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "News", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.News), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Users_Roles", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Role), "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.User), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserCourses_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "UserCourses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserCours), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserModules_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "UserModules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserModule), true)]
 
@@ -250,6 +251,22 @@ namespace DistanceLessons.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<Role> Roles
+        {
+            get
+            {
+                if ((_Roles == null))
+                {
+                    _Roles = base.CreateObjectSet<Role>("Roles");
+                }
+                return _Roles;
+            }
+        }
+        private ObjectSet<Role> _Roles;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<Test> Tests
         {
             get
@@ -392,6 +409,14 @@ namespace DistanceLessons.Models
         public void AddToNews(News news)
         {
             base.AddObject("News", news);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Roles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToRoles(Role role)
+        {
+            base.AddObject("Roles", role);
         }
     
         /// <summary>
@@ -2763,6 +2788,112 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Role")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Role : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Role object.
+        /// </summary>
+        /// <param name="roleId">Initial value of the RoleId property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        public static Role CreateRole(global::System.Guid roleId, global::System.String name)
+        {
+            Role role = new Role();
+            role.RoleId = roleId;
+            role.Name = name;
+            return role;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid RoleId
+        {
+            get
+            {
+                return _RoleId;
+            }
+            set
+            {
+                if (_RoleId != value)
+                {
+                    OnRoleIdChanging(value);
+                    ReportPropertyChanging("RoleId");
+                    _RoleId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("RoleId");
+                    OnRoleIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _RoleId;
+        partial void OnRoleIdChanging(global::System.Guid value);
+        partial void OnRoleIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Name
+        {
+            get
+            {
+                return _Name;
+            }
+            set
+            {
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
+            }
+        }
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Users_Roles", "Users")]
+        public EntityCollection<User> Users
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("DistanceLessons.Models.FK_Users_Roles", "Users");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("DistanceLessons.Models.FK_Users_Roles", "Users", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Test")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2948,12 +3079,12 @@ namespace DistanceLessons.Models
         /// <param name="password">Initial value of the Password property.</param>
         /// <param name="passwordSalt">Initial value of the PasswordSalt property.</param>
         /// <param name="email">Initial value of the Email property.</param>
-        /// <param name="role">Initial value of the Role property.</param>
+        /// <param name="roleId">Initial value of the RoleId property.</param>
         /// <param name="createdDate">Initial value of the CreatedDate property.</param>
         /// <param name="lastLoginDate">Initial value of the LastLoginDate property.</param>
         /// <param name="isActived">Initial value of the IsActived property.</param>
         /// <param name="isLockedOut">Initial value of the IsLockedOut property.</param>
-        public static User CreateUser(global::System.Guid userId, global::System.String login, global::System.String password, global::System.String passwordSalt, global::System.String email, global::System.Byte role, global::System.DateTime createdDate, global::System.DateTime lastLoginDate, global::System.Boolean isActived, global::System.Boolean isLockedOut)
+        public static User CreateUser(global::System.Guid userId, global::System.String login, global::System.String password, global::System.String passwordSalt, global::System.String email, global::System.Guid roleId, global::System.DateTime createdDate, global::System.DateTime lastLoginDate, global::System.Boolean isActived, global::System.Boolean isLockedOut)
         {
             User user = new User();
             user.UserId = userId;
@@ -2961,7 +3092,7 @@ namespace DistanceLessons.Models
             user.Password = password;
             user.PasswordSalt = passwordSalt;
             user.Email = email;
-            user.Role = role;
+            user.RoleId = roleId;
             user.CreatedDate = createdDate;
             user.LastLoginDate = lastLoginDate;
             user.IsActived = isActived;
@@ -3100,24 +3231,24 @@ namespace DistanceLessons.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Byte Role
+        public global::System.Guid RoleId
         {
             get
             {
-                return _Role;
+                return _RoleId;
             }
             set
             {
-                OnRoleChanging(value);
-                ReportPropertyChanging("Role");
-                _Role = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Role");
-                OnRoleChanged();
+                OnRoleIdChanging(value);
+                ReportPropertyChanging("RoleId");
+                _RoleId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("RoleId");
+                OnRoleIdChanged();
             }
         }
-        private global::System.Byte _Role;
-        partial void OnRoleChanging(global::System.Byte value);
-        partial void OnRoleChanged();
+        private global::System.Guid _RoleId;
+        partial void OnRoleIdChanging(global::System.Guid value);
+        partial void OnRoleIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -3417,6 +3548,44 @@ namespace DistanceLessons.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<News>("DistanceLessons.Models.FK_News_Users", "News", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Users_Roles", "Roles")]
+        public Role Role
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("DistanceLessons.Models.FK_Users_Roles", "Roles").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("DistanceLessons.Models.FK_Users_Roles", "Roles").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Role> RoleReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("DistanceLessons.Models.FK_Users_Roles", "Roles");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Role>("DistanceLessons.Models.FK_Users_Roles", "Roles", value);
                 }
             }
         }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DistanceLessonsModelStoreContainer" CdmEntityContainer="dbEntities">
+  <EntityContainerMapping StorageEntityContainer="DistanceLessonsModelsStoreContainer" CdmEntityContainer="dbEntities">
     <EntitySetMapping Name="Answers">
       <EntityTypeMapping TypeName="DistanceLessons.Models.Answer">
         <MappingFragment StoreEntitySet="Answers">
@@ -113,6 +113,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Tests">
       <EntityTypeMapping TypeName="DistanceLessons.Models.Test">
         <MappingFragment StoreEntitySet="Tests">
@@ -149,7 +157,7 @@
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
           <ScalarProperty Name="IsActived" ColumnName="IsActived" />

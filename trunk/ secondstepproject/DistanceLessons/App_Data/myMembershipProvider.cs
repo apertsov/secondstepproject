@@ -99,7 +99,7 @@ namespace DistanceLessons
             {
                 UserRepository _user = new UserRepository();
 
-                _user.CreateUser(username, password, email);
+                _user.CreateUser(username, password, email,isApproved);
                 status = MembershipCreateStatus.Success;
 
                 return GetUser(username, false);
