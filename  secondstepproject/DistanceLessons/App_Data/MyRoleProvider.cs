@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Collections.Specialized;
+using DistanceLessons.Models;
 
-namespace DistanceLessons.Models
+namespace DistanceLessons
 {
     public class MyRoleProvider : RoleProvider
     {
@@ -98,7 +99,6 @@ namespace DistanceLessons.Models
 
         public override string[] GetUsersInRole(string roleName)
         {
-            if (roleName == null) throw new ArgumentNullException("roleName", "Unknown role");
             var role = userRepo.GetRole(roleName);
             if (role == null) throw new ArgumentNullException("roleName", "Unknown role");
           /*  var usernames = userRepo.GetAllUsers()
@@ -112,7 +112,11 @@ namespace DistanceLessons.Models
 
         public override bool IsUserInRole(string username, string roleName)
         {
-            throw new NotImplementedException();
+            var role = userRepo.GetRole(roleName);
+            if (role == null) throw new ArgumentNullException("roleName", "Unknown role");
+            return ((from u in userRepo.GetAllUsers()
+                     where u.Login == username && u.RoleId == role.RoleId
+                     select u) == null ? false : true);
         }
 
         public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)

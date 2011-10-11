@@ -11,8 +11,8 @@ namespace DistanceLessons.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to kick-start your ASP.NET MVC application.";
-
+            ViewBag.Student = User.IsInRole("Student");
+            ViewBag.Admin = User.IsInRole("Admin");
             DataEntitiesManager A = new DataEntitiesManager();
             ViewBag.A=A;
             return View();
