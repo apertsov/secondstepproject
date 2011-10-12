@@ -1,0 +1,61 @@
+﻿@model IEnumerable<DistanceLessons.Models.Cours>
+
+@{
+    ViewBag.Title = "Courses";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Предмети</h2>
+<p>Список предметів (справа можливість редагування, видалення) (при натисканні на предмет виводиться список всіх лекцій з можливістю додавання, редагування, видалення)</p>
+
+
+<p>
+    @Html.ActionLink("Створити предмет", "CreateCours")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Access)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Access)
+        </td>
+        <td>
+            @Html.ActionLink("Редагувати", "EditCours", new { id = item.CourseId }) |
+        @*    @Html.ActionLink("Лекції до предмету", "DetailsCours", new { id = item.CourseId }) |*@
+            @Html.ActionLink("Видалити", "DeleteCours", new { id = item.CourseId })
+        </td>
+    </tr>
+}
+
+</table>

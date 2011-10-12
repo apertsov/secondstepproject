@@ -1,0 +1,22 @@
+﻿@model DistanceLessons.Models.Category
+
+@{
+    ViewBag.Title = "Перегляд категорії";
+}
+
+<h2>Перегляд категорії</h2>
+
+<fieldset>
+    <legend>Категорія</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Category1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Category1)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Редагувати", "EditCategory", new { id=Model.CategoryId }) |
+    @Html.ActionLink("Back to List", "Categories")
+</p>

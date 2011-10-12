@@ -1,0 +1,53 @@
+﻿@model DistanceLessons.Models.Cours
+
+@{
+    ViewBag.Title = "Видалення предмету";
+}
+
+<h2>Видалення предмету</h2>
+
+<h3>Ви дійсно хочете видалити предмет?</h3>
+<fieldset>
+    <legend>Предмет</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CategoryId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Access)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Access)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+      @*  <input type="submit" value="Delete" /> |*@
+        @Html.ActionLink("Back to List", "Courses")
+    </p>
+}
