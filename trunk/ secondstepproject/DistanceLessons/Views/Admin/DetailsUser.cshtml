@@ -1,0 +1,65 @@
+﻿@model DistanceLessons.Models.User
+
+@{
+    ViewBag.Title = "DetailsUser";
+}
+
+<h2>DetailsUser</h2>
+
+<fieldset>
+    <legend>Користувач</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Login)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Login)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Role)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Role)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreatedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastLoginDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastLoginDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsActived)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActived)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsLockedOut)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsLockedOut)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Редагувати", "EditUser", new { id=Model.UserId }) |
+    @Html.ActionLink("Back to List", "Users")
+</p>

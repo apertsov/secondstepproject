@@ -1,0 +1,73 @@
+﻿@model IEnumerable<DistanceLessons.Models.User>
+
+@{
+    ViewBag.Title = "Користувачі";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p>Переглянути список всіх студентів (видалити)</p>
+<p>Переглянути список всіх викладачів (видалити (якщо у викладача немає предметів))</p>
+<p>Змінити права користувача(виводиться список всіх користувачів з їхніми правати, справа змінити на протилежний)</p>
+
+<p>
+    @Html.ActionLink("Додати користувача", "CreateUser")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Login)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastLoginDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsLockedOut)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Login)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastLoginDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsLockedOut)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Редагувати", "EditUser", new { id=item.UserId }) |
+           @* @Html.ActionLink("Переглянути", "DetailsUser", new { id=item.UserId }) |*@
+            @Html.ActionLink("Видалити", "DeleteUser", new { id=item.UserId })
+        </td>
+    </tr>
+}
+
+</table>
