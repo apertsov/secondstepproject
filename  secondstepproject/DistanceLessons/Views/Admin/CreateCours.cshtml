@@ -33,18 +33,28 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.CategoryId)
+            @Html.LabelFor(model => model.Category.CategoryId)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.CategoryId)
-            @Html.ValidationMessageFor(model => model.CategoryId)
+        @{
+             List<DistanceLessons.Models.Category> Category_list =  ViewBag.Categories;
+    var cat_items = new SelectList(Category_list, "CategoryID", "Category1");
+            }
+        @Html.DropDownListFor(model => model.CategoryId, @cat_items)
+
+           @Html.ValidationMessageFor(model => model.CategoryId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserId)
+            @Html.LabelFor(model => model.User.Login)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.UserId)
+        @{
+             List<DistanceLessons.Models.User> User_list = ViewBag.Users;
+    var user_items = new SelectList(User_list, "UserID", "Login");
+            }
+
+      @Html.DropDownListFor(model => model.UserId, @user_items)
             @Html.ValidationMessageFor(model => model.UserId)
         </div>
 
@@ -57,7 +67,7 @@
         </div>
 
         <p>
-           @* <input type="submit" value="Create" />*@
+            <input type="submit" value="Create" />
         </p>
     </fieldset>
 }

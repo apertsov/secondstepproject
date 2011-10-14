@@ -6,13 +6,13 @@
 }
 
 <h2>Предмети</h2>
-<p>Список предметів (справа можливість редагування, видалення) (при натисканні на предмет виводиться список всіх лекцій з можливістю додавання, редагування, видалення)</p>
+<p>Список предметів (при натисканні на предмет виводиться список всіх лекцій з можливістю додавання, редагування, видалення)</p>
 
 
 <p>
     @Html.ActionLink("Створити предмет", "CreateCours")
 </p>
-<table>
+<table border=1>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
@@ -21,10 +21,10 @@
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CategoryId)
+            @Html.DisplayNameFor(model => model.Category)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserId)
+            @Html.DisplayNameFor(model => model.User.Login)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Access)
@@ -42,19 +42,19 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CategoryId)
+            @Html.DisplayFor(modelItem => item.Category.Category1)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserId)
+            @Html.DisplayFor(modelItem => item.User.Login)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Access)
         </td>
         <td>
             @Html.ActionLink("Редагувати", "EditCours", new { id = item.CourseId }) |
-        @*    @Html.ActionLink("Лекції до предмету", "DetailsCours", new { id = item.CourseId }) |*@
-            @Html.ActionLink("Видалити", "DeleteCours", new { id = item.CourseId })
-        </td>
+           @Html.ActionLink("Деталі", "DetailsCours", new { id = item.CourseId }) |
+            @Html.ActionLink("Видалити", "DeleteCours", new { id = item.CourseId }, new { onclick="return confirm('Дійсно бажаєте видалити?')"})
+                    </td>
     </tr>
 }
 

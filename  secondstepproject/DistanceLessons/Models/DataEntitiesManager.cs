@@ -15,6 +15,97 @@ namespace DistanceLessons.Models
             _distancel = new dbEntities();
         }
 
+        public Category GetCategory(Guid id)
+        {
+            return _distancel.Categories.SingleOrDefault(c => c.CategoryId == id);
+        }
+
+
+        public void DeleteCategory(Guid id)
+        {
+            var cat = _distancel.Categories.SingleOrDefault(c => c.CategoryId == id);
+            _distancel.DeleteObject(cat);
+            _distancel.SaveChanges();
+        }
+
+        public void AddCategory(Category obj)
+        {
+            _distancel.Categories.AddObject(obj);
+            _distancel.SaveChanges();
+        }
+
+        public IQueryable<Category> GetCategories()
+        {
+            return _distancel.Categories;
+        }
+
+
+        public Cours GetCourse(Guid id)
+        {
+            return _distancel.Courses.SingleOrDefault(c => c.CourseId == id);
+        }
+
+        public IQueryable<Cours> GetCourses()
+        {
+            return _distancel.Courses;
+        }
+
+        public void DeleteCourse(Guid id)
+        {
+            var cat = _distancel.Courses.SingleOrDefault(c => c.CourseId == id);
+            _distancel.DeleteObject(cat);
+            _distancel.SaveChanges();
+        }
+
+        public void AddCours(Cours obj)
+        {
+            _distancel.Courses.AddObject(obj);
+            _distancel.SaveChanges();
+        }
+
+        public User GetUser(Guid id)
+        {
+            return _distancel.Users.SingleOrDefault(c => c.UserId == id);
+        }
+
+
+        public void DeleteUser(Guid id)
+        {
+            var cat = _distancel.Users.SingleOrDefault(c => c.UserId == id);
+            _distancel.DeleteObject(cat);
+            _distancel.SaveChanges();
+        }
+
+        public void AddUser(User obj)
+        {
+            _distancel.Users.AddObject(obj);
+            _distancel.SaveChanges();
+        }
+
+        public News GetNew(Guid id)
+        {
+            return _distancel.News.SingleOrDefault(c => c.NewId == id);
+        }
+
+
+        public void DeleteNew(Guid id)
+        {
+            var cat = _distancel.News.SingleOrDefault(c => c.NewId == id);
+            _distancel.DeleteObject(cat);
+            _distancel.SaveChanges();
+        }
+
+        public void AddNew(News obj)
+        {
+            _distancel.News.AddObject(obj);
+            _distancel.SaveChanges();
+        }
+
+        public void Save()
+        {
+            _distancel.SaveChanges();
+        }
+
         public class RQCategorys
         {
             public Guid id { get; set; }
@@ -204,6 +295,12 @@ namespace DistanceLessons.Models
         {
             return _distancel.Contacts.ToList<Contact>();
         }
+
+        public List<Role> GetRoleList()
+        {
+            return _distancel.Roles.ToList<Role>();
+        }
+
 
         public List<Cours> GetCourseList()
         {

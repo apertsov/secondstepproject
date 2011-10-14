@@ -28,8 +28,8 @@
         </td>
         <td>
             @Html.ActionLink("Редагувати", "EditCategory", new { id=item.CategoryId }) |
-          @*  @Html.ActionLink("Переглянути", "DetailsCategory", new { id=item.CategoryId }) |*@
-            @Html.ActionLink("Видалити", "DeleteCategory", new { id=item.CategoryId })
+            @Html.ActionLink("Переглянути", "DetailsCategory", new { id=item.CategoryId }) |
+            @Html.ActionLink("Видалити", "DeleteCategory", new { id = item.CategoryId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
         </td>
     </tr>
 }

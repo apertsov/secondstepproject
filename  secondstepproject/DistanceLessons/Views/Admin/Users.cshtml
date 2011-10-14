@@ -10,7 +10,7 @@
 <p>Змінити права користувача(виводиться список всіх користувачів з їхніми правати, справа змінити на протилежний)</p>
 
 <p>
-    @Html.ActionLink("Додати користувача", "CreateUser")
+  @*  @Html.ActionLink("Додати користувача", "CreateUser")*@
 </p>
 <table>
     <tr>
@@ -47,7 +47,7 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Role)
+            @Html.DisplayFor(modelItem => item.Role.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedDate)
@@ -64,8 +64,8 @@
        
         <td>
             @Html.ActionLink("Редагувати", "EditUser", new { id=item.UserId }) |
-           @* @Html.ActionLink("Переглянути", "DetailsUser", new { id=item.UserId }) |*@
-            @Html.ActionLink("Видалити", "DeleteUser", new { id=item.UserId })
+            @Html.ActionLink("Переглянути", "DetailsUser", new { id=item.UserId }) |
+            @Html.ActionLink("Видалити", "DeleteUser", new { id = item.UserId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
         </td>
     </tr>
 }
