@@ -1,92 +1,51 @@
-﻿@model DistanceLessons.Models.User
+﻿@model DistanceLessons.Models.Cours
 
 @{
     ViewBag.Title = "DetailsCours";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h2>DetailsCours</h2>
 
 <fieldset>
-    <legend>User</legend>
+    <legend>Cours</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Login)
+         @Html.DisplayNameFor(model => model.Title)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Login)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Password)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Password)
+        @Html.DisplayFor(model => model.Title)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.PasswordSalt)
+         @Html.DisplayNameFor(model => model.Description)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.PasswordSalt)
+        @Html.DisplayFor(model => model.Description)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Email)
+         @Html.DisplayNameFor(model => model.Category.Category1)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Email)
+        @Html.DisplayFor(model => model.Category.Category1)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Role)
+         @Html.DisplayNameFor(model => model.User.Login)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Role)
+        @Html.DisplayFor(model => model.User.Login)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.CreatedDate)
+         @Html.DisplayNameFor(model => model.Access)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.CreatedDate)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.LastLoginDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.LastLoginDate)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsActived)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsActived)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsLockedOut)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsLockedOut)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PasswordQuestion)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PasswordQuestion)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.PasswordAnswer)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PasswordAnswer)
+        @Html.DisplayFor(model => model.Access)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Редагувати", "EditCours", new { id=Model.UserId }) |
-    @Html.ActionLink("Back to List", "Courses")
+    @Html.ActionLink("Редагувати", "EditCours", new { id=Model.CourseId }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

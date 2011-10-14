@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Перегляд категорії";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h2>Перегляд категорії</h2>
@@ -17,6 +18,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Редагувати", "EditCategory", new { id=Model.CategoryId }) |
+    @Html.ActionLink("Редагувати", "EditCategory", new { id = Model.CategoryId }) |
     @Html.ActionLink("Back to List", "Categories")
 </p>
