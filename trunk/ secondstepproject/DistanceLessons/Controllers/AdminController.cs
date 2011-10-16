@@ -27,7 +27,7 @@ namespace DistanceLessons.Controllers
         public ActionResult Categories()
         {
             DataEntitiesManager A = new DataEntitiesManager();
-            return View(A.GetCategories());
+            return View(A.GetCategoryList());
         }
 
         public ActionResult Courses()
