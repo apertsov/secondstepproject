@@ -243,6 +243,8 @@
     <Property Name="IsLockedOut" Type="bit" Nullable="false" />
     <Property Name="PasswordQuestion" Type="varchar" MaxLength="64" />
     <Property Name="PasswordAnswer" Type="varchar" MaxLength="64" />
+    <Property Name="EmailKey" Type="varchar" MaxLength="128" />
+    <Property Name="LastLoginIp" Type="varchar" MaxLength="40" />
   </EntityType>
   <Association Name="FK_Answers_Tests">
     <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="1" />

@@ -152,6 +152,8 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="DistanceLessons.Models.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="LastLoginIp" ColumnName="LastLoginIp" />
+          <ScalarProperty Name="EmailKey" ColumnName="EmailKey" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Login" ColumnName="Login" />
           <ScalarProperty Name="Password" ColumnName="Password" />

@@ -281,6 +281,8 @@
     <NavigationProperty Name="Role" Relationship="DistanceLessons.Models.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
     <NavigationProperty Name="UserCourses" Relationship="DistanceLessons.Models.FK_UserCourses_Users" FromRole="Users" ToRole="UserCourses" />
     <NavigationProperty Name="UserModules" Relationship="DistanceLessons.Models.FK_UserModules_Users" FromRole="Users" ToRole="UserModules" />
+    <Property Type="String" Name="EmailKey" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LastLoginIp" MaxLength="40" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK_Answers_Tests">
     <End Role="Tests" Type="DistanceLessons.Models.Test" Multiplicity="1" />

@@ -21,7 +21,16 @@ namespace DistanceLessons
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(
+                "Activate",
+                "Account/Activate/{username}/{key}",
+                new
+                {
+                  controller = "Account",
+                  action = "Activate",
+                  username = UrlParameter.Optional,
+                  key = UrlParameter.Optional
+                 });
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
@@ -37,15 +46,15 @@ namespace DistanceLessons
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            AccountRoleService roleService = new AccountRoleService(new MyRoleProvider());
-            if (!roleService.RoleExists(UserRoles.Student.ToString()))
-                roleService.CreateRole(UserRoles.Student.ToString());
-            if (!roleService.RoleExists(UserRoles.Teacher.ToString()))
-                roleService.CreateRole(UserRoles.Teacher.ToString());
-            if (!roleService.RoleExists(UserRoles.Dean.ToString()))
-                roleService.CreateRole(UserRoles.Dean.ToString());
-            if (!roleService.RoleExists(UserRoles.Admin.ToString()))
-                roleService.CreateRole(UserRoles.Admin.ToString());
+            MyRoleProvider roleProv = new MyRoleProvider();
+            if (!roleProv.RoleExists(UserRoles.Student.ToString()))
+                roleProv.CreateRole(UserRoles.Student.ToString());
+            if (!roleProv.RoleExists(UserRoles.Teacher.ToString()))
+                roleProv.CreateRole(UserRoles.Teacher.ToString());
+            if (!roleProv.RoleExists(UserRoles.Dean.ToString()))
+                roleProv.CreateRole(UserRoles.Dean.ToString());
+            if (!roleProv.RoleExists(UserRoles.Admin.ToString()))
+                roleProv.CreateRole(UserRoles.Admin.ToString());
         }
     }
 }

@@ -9,25 +9,25 @@ namespace DistanceLessons.Models
     {
         public List<Category> GetCategoryList()
         {
-            return _distancel.Categories.ToList<Category>();
+            return _db.Categories.ToList<Category>();
         }
 
         public Category GetCategory(Guid id)
         {
-            return _distancel.Categories.SingleOrDefault(c => c.CategoryId == id);
+            return _db.Categories.SingleOrDefault(c => c.CategoryId == id);
         }
 
         public void DeleteCategory(Guid id)
         {
-            var cat = _distancel.Categories.SingleOrDefault(c => c.CategoryId == id);
-            _distancel.DeleteObject(cat);
-            _distancel.SaveChanges();
+            var cat = _db.Categories.SingleOrDefault(c => c.CategoryId == id);
+            _db.DeleteObject(cat);
+            _db.SaveChanges();
         }
 
         public void AddCategory(Category obj)
         {
-            _distancel.Categories.AddObject(obj);
-            _distancel.SaveChanges();
+            _db.Categories.AddObject(obj);
+            _db.SaveChanges();
         }
 
         public List<RQCategorys> QCategorys()

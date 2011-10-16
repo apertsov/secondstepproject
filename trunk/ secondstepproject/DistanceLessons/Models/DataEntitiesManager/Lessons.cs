@@ -9,7 +9,7 @@ namespace DistanceLessons.Models
     {
         public List<Lesson> GetLessonList()
         {
-            return _distancel.Lessons.ToList<Lesson>();
+            return _db.Lessons.ToList<Lesson>();
         }
 
         public List<RQLessons> QLessons(string Course)

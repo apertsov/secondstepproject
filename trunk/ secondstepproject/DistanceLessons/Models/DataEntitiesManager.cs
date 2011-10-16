@@ -8,16 +8,16 @@ namespace DistanceLessons.Models
 {
     public partial class DataEntitiesManager
     {
-        private dbEntities _distancel { get; set; }
+        private dbEntities _db { get; set; }
 
         public DataEntitiesManager()
         {
-            _distancel = new dbEntities();
+            _db = new dbEntities();
         }
 
         public void Save()
         {
-            _distancel.SaveChanges();
+            _db.SaveChanges();
         }
     }
 }

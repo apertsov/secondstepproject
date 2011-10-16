@@ -10,7 +10,7 @@ namespace DistanceLessons
 {
     public class MyRoleProvider : RoleProvider
     {
-        private UserRepository userRepo = new UserRepository();
+        private DataEntitiesManager userRepo = new DataEntitiesManager();
 
         private string _ApplicationName;
         public override void Initialize(string name, NameValueCollection config)
@@ -51,29 +51,19 @@ namespace DistanceLessons
             return configValue;
         }
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
-        {
-            foreach (var username in usernames)
-            {
-                var user = userRepo.GetDBUser(username);
-                if (user != null)
-                {
-                    foreach (var rolename in roleNames)
-                    {
-                        var role = userRepo.GetRole(rolename);
-                        if (role != null)
-                        {
-                            user.RoleId = role.RoleId;
-                        }
-                    }
-                    userRepo.db.SaveChanges();
-                }
-            }
+        {            
+            throw new NotImplementedException();
         }
+
+        public void ChangeUserRole(string username, string rolename)
+        {
+            userRepo.ChangeUserRole(rolename, username);
+        }
+
         public override void CreateRole(string roleName)
         {
             Role newRole = new Role { RoleId = Guid.NewGuid(), Name = roleName };
-            userRepo.db.AddToRoles(newRole);
-            userRepo.db.SaveChanges();
+            userRepo.AddRole(newRole);
         }
 
         public override bool DeleteRole(string roleName, bool throwOnPopulatedRole)
@@ -93,8 +83,7 @@ namespace DistanceLessons
 
         public override string[] GetRolesForUser(string username)
         {
-             var user = userRepo.GetDBUser(username);
-             return (userRepo.db.Roles.Where(x => x.RoleId==user.RoleId)).Select(x => x.Name).ToArray();
+            return new string[] { userRepo.UserRole(username) };
         }
 
         public override string[] GetUsersInRole(string roleName)
@@ -104,7 +93,7 @@ namespace DistanceLessons
           /*  var usernames = userRepo.GetAllUsers()
                 .Where(x => x.Role==role.IdRole)
                 .Select(x => x.Login);*/
-            return (from u in userRepo.GetAllUsers()
+            return (from u in userRepo.GetUserList()
                     where u.RoleId==role.RoleId
                     select u.Login
                         ).ToArray();
@@ -114,7 +103,7 @@ namespace DistanceLessons
         {
             var role = userRepo.GetRole(roleName);
             if (role == null) throw new ArgumentNullException("roleName", "Unknown role");
-            return ((from u in userRepo.GetAllUsers()
+            return ((from u in userRepo.GetUserList()
                      where u.Login == username && u.RoleId == role.RoleId
                      select u) == null ? false : true);
         }

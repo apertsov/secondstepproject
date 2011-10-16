@@ -9,7 +9,7 @@ namespace DistanceLessons.Models
     {
         public List<UserModule> GetUserModuleList()
         {
-            return _distancel.UserModules.ToList<UserModule>();
+            return _db.UserModules.ToList<UserModule>();
         }
     }
 }

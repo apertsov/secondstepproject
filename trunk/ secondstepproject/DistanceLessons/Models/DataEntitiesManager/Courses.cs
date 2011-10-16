@@ -9,25 +9,25 @@ namespace DistanceLessons.Models
     {
         public List<Cours> GetCourseList()
         {
-            return _distancel.Courses.ToList<Cours>();
+            return _db.Courses.ToList<Cours>();
         }
 
         public Cours GetCourse(Guid id)
         {
-            return _distancel.Courses.SingleOrDefault(c => c.CourseId == id);
+            return _db.Courses.SingleOrDefault(c => c.CourseId == id);
         }
 
         public void DeleteCourse(Guid id)
         {
-            var cat = _distancel.Courses.SingleOrDefault(c => c.CourseId == id);
-            _distancel.DeleteObject(cat);
-            _distancel.SaveChanges();
+            var cat = _db.Courses.SingleOrDefault(c => c.CourseId == id);
+            _db.DeleteObject(cat);
+            _db.SaveChanges();
         }
 
         public void AddCours(Cours obj)
         {
-            _distancel.Courses.AddObject(obj);
-            _distancel.SaveChanges();
+            _db.Courses.AddObject(obj);
+            _db.SaveChanges();
         }
 
         public List<RQCourses> QCourses()
