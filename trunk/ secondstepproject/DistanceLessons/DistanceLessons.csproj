@@ -230,6 +230,26 @@
   <ItemGroup>
     <Content Include="Views\Student\Index.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Categories.cshtml" />
+    <Content Include="Views\Admin\Courses.cshtml" />
+    <Content Include="Views\Admin\CreateCategory.cshtml" />
+    <Content Include="Views\Admin\CreateCours.cshtml" />
+    <Content Include="Views\Admin\CreateUser.cshtml" />
+    <Content Include="Views\Admin\DetailsCategory.cshtml" />
+    <Content Include="Views\Admin\DetailsUser.cshtml" />
+    <Content Include="Views\Admin\EditCategory.cshtml" />
+    <Content Include="Views\Admin\EditCours.cshtml" />
+    <Content Include="Views\Admin\EditUser.cshtml" />
+    <Content Include="Views\Admin\Message.cshtml" />
+    <Content Include="Views\Admin\Users.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\DetailsCours.cshtml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
