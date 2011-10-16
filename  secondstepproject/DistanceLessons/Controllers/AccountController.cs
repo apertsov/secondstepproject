@@ -23,32 +23,8 @@ namespace DistanceLessons.Controllers
 
         [AllowAnonymous]
         public ActionResult LogOn()
-        {            
-            return ContextDependentView();
-        }
-
-        //
-        // POST: /Account/JsonLogOn
-        
-        [AllowAnonymous]
-        [HttpPost]
-        public JsonResult JsonLogOn(LogOnModel model, string returnUrl)
         {
-            if (ModelState.IsValid)
-            {
-                if (Membership.ValidateUser(model.UserName, model.Password))
-                {
-                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    return Json(new { success = true, redirect = returnUrl });
-                }
-                else
-                {
-                    ModelState.AddModelError("", "The user name or password provided is incorrect.");
-                }
-            }
-
-            // If we got this far, something failed
-            return Json(new { errors = GetErrorsFromModelState() });
+            return View();
         }
 
         //
@@ -102,37 +78,9 @@ namespace DistanceLessons.Controllers
             {
                 return RedirectToAction("AdminSetup");
             }
-            return ContextDependentView();
+            return View();//ContextDependentView();
         }
 
-        //
-        // POST: /Account/JsonRegister
-        
-        [AllowAnonymous]
-        [HttpPost]
-        public ActionResult JsonRegister(RegisterModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                // Attempt to register the user
-                MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
-
-                if (createStatus == MembershipCreateStatus.Success)
-                {
-                    FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
-                    return Json(new { success = true });
-                }
-                else
-                {
-                    ModelState.AddModelError("", ErrorCodeToString(createStatus));
-                }
-            }
-
-            // If we got this far, something failed
-            return Json(new { errors = GetErrorsFromModelState() });
-        }
-        
         //
         // POST: /Account/Register
 
@@ -144,13 +92,11 @@ namespace DistanceLessons.Controllers
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
+                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, false, null, out createStatus);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    ViewBag.info = "unknown";
-                    FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
-                    return RedirectToAction("Index", "Student");
+                    return RedirectToAction("Welcome", "Account");
                 }
                 else
                 {
@@ -171,35 +117,9 @@ namespace DistanceLessons.Controllers
         {
             if (MyRoles.IsExistUsersInRole(UserRoles.Admin.ToString()))
                 return RedirectToAction("Register");
-            return ContextDependentView();
+            return View();//ContextDependentView();
         }
-
-        
-        [AllowAnonymous]
-        [HttpPost]
-        public ActionResult JsonAdminSetup(RegisterModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, null, null, true, null, out createStatus);
-
-                if (createStatus == MembershipCreateStatus.Success)
-                {
-                    MyRoles.AddUsersToRoles(new string[] { model.UserName }, new string[] { UserRoles.Admin.ToString() });
-                    FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
-                    return Json(new { success = true });
-                }
-
-                else
-                {
-                    ModelState.AddModelError("", ErrorCodeToString(createStatus));
-                }
-            }
-            return Json(new { errors = GetErrorsFromModelState() });
-        }
-        //
-     
+   
 
         [AllowAnonymous]
         [HttpPost]
@@ -213,8 +133,7 @@ namespace DistanceLessons.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    MyRoles.AddUsersToRoles(new string[] { model.UserName }, new string[] { UserRoles.Admin.ToString() });
-                    ViewBag.info = "Fuck";
+                    MyRoles.ChangeUserRole( model.UserName, UserRoles.Admin.ToString());
                     FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
                     return RedirectToAction("Index", "Admin");
                 }
@@ -280,22 +199,44 @@ namespace DistanceLessons.Controllers
         {
             return View();
         }
-
-        private ActionResult ContextDependentView()
+        [AllowAnonymous]
+        public ActionResult Welcome()
         {
-            string actionName = ControllerContext.RouteData.GetRequiredString("action");
-  
-            if ((Request.QueryString["content"] != null) || (actionName == "AdminSetup"))
-            {
-                ViewBag.FormAction = "Json" + actionName;
-                return PartialView();
-            }
-            else
-            {
-                ViewBag.FormAction = actionName;
-                return View();
-            }
+            return View();
         }
+
+        // **************************************
+        // URL: /Account/Activate/username/key
+        // **************************************
+        [AllowAnonymous]
+        public ActionResult Activate(string username, string key)
+        {
+            DataEntitiesManager _user = new DataEntitiesManager();
+            if (_user.ActivateUser(username, key) == false)
+                ViewBag.active = false;
+            else
+                ViewBag.active = true;
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult EditProfile()
+        {
+            return View();
+        }
+        /*
+        [HttpPost]
+        public ActionResult EditProfile()//ContactsModel Contacts , InformationModel Info)
+        {
+           /* UserRepository userRepo=new UserRepository();
+            User user= userRepo.GetDBUser(User.Identity.Name);
+            UserInformation info = new UserInformation();
+            Info.UserId=Contacts.UserId = user.UserId;
+            Info.InformationId = Guid.NewGuid();
+            Contacts.ContactId = Guid.NewGuid();
+            info.AddInfo(Info, Contacts);*/
+        //    return View();
+       // }
 
         private IEnumerable<string> GetErrorsFromModelState()
         {

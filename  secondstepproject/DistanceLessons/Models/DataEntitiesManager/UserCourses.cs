@@ -9,7 +9,7 @@ namespace DistanceLessons.Models
     {
         public List<UserCours> GetUserCourseList()
         {
-            return _distancel.UserCourses.ToList<UserCours>();
+            return _db.UserCourses.ToList<UserCours>();
         }
     }
 }

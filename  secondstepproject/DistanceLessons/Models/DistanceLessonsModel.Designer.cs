@@ -3393,6 +3393,54 @@ namespace DistanceLessons.Models
         private global::System.String _PasswordAnswer;
         partial void OnPasswordAnswerChanging(global::System.String value);
         partial void OnPasswordAnswerChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String EmailKey
+        {
+            get
+            {
+                return _EmailKey;
+            }
+            set
+            {
+                OnEmailKeyChanging(value);
+                ReportPropertyChanging("EmailKey");
+                _EmailKey = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("EmailKey");
+                OnEmailKeyChanged();
+            }
+        }
+        private global::System.String _EmailKey;
+        partial void OnEmailKeyChanging(global::System.String value);
+        partial void OnEmailKeyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String LastLoginIp
+        {
+            get
+            {
+                return _LastLoginIp;
+            }
+            set
+            {
+                OnLastLoginIpChanging(value);
+                ReportPropertyChanging("LastLoginIp");
+                _LastLoginIp = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("LastLoginIp");
+                OnLastLoginIpChanged();
+            }
+        }
+        private global::System.String _LastLoginIp;
+        partial void OnLastLoginIpChanging(global::System.String value);
+        partial void OnLastLoginIpChanged();
 
         #endregion
     

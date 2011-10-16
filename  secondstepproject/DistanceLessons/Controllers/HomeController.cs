@@ -11,6 +11,7 @@ namespace DistanceLessons.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Name = User.Identity.Name;
             ViewBag.Student = User.IsInRole("Student");
             ViewBag.Admin = User.IsInRole("Admin");
             DataEntitiesManager A = new DataEntitiesManager();

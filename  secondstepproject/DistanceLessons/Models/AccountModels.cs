@@ -54,7 +54,7 @@ namespace DistanceLessons.Models
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "Пароль {0} повинен бути менше ніж {2} символів.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
         public string Password { get; set; }
@@ -65,16 +65,16 @@ namespace DistanceLessons.Models
         public string ConfirmPassword { get; set; }
     }
 
-    public class AccountRoleService 
+    public class AccountRoleService
     {
-        private readonly RoleProvider _provider;
+        private readonly MyRoleProvider _provider;
 
         public AccountRoleService()
             : this(null)
         {
         }
 
-        public AccountRoleService(RoleProvider provider)
+        public AccountRoleService(MyRoleProvider provider)
         {
             _provider = provider;
         }
@@ -83,15 +83,10 @@ namespace DistanceLessons.Models
         {
             var users = _provider.GetUsersInRole("Admin");
 
-            if (users.Length == 0)
+            if ((users[0] == null) || (users[0] ==""))
                 return false;
 
             return true;
-        }
-
-        public void AddUsersToRoles(string[] usernames, string[] rolenames)
-        {
-            _provider.AddUsersToRoles(usernames, rolenames);
         }
 
         public void RemoveUsersFromRoles(string[] usernames, string[] rolenames)
@@ -102,10 +97,6 @@ namespace DistanceLessons.Models
         public void CreateRole(string roleName)
         {
             _provider.CreateRole(roleName);
-        }
-        public bool RoleExists(string roleName)
-        {
-            return _provider.RoleExists(roleName);
         }
     }
 }

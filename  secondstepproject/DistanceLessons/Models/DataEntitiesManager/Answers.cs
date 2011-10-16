@@ -9,7 +9,7 @@ namespace DistanceLessons.Models
     {
         public List<Answer> GetAnswerList()
         {
-            return _distancel.Answers.ToList<Answer>();
+            return _db.Answers.ToList<Answer>();
         }
     }
 }

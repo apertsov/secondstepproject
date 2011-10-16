@@ -97,7 +97,7 @@ namespace DistanceLessons
 
             if (u == null)
             {
-                UserRepository _user = new UserRepository();
+                DataEntitiesManager _user = new DataEntitiesManager();
 
                 _user.CreateUser(username, password, email,isApproved);
                 status = MembershipCreateStatus.Success;
@@ -160,15 +160,15 @@ namespace DistanceLessons
 
         public override MembershipUser GetUser(string username, bool userIsOnline)
         {
-            UserRepository _user = new UserRepository();
+            DataEntitiesManager _user = new DataEntitiesManager();
 
-            return _user.GetUser(username);
+            return _user.GetMembershipUser(username);
         }
 
 
         public override string GetUserNameByEmail(string email)
         {
-            UserRepository _user = new UserRepository();
+            DataEntitiesManager _user = new DataEntitiesManager();
 
             return _user.GetUserNameByEmail(email);
         }
@@ -231,7 +231,7 @@ namespace DistanceLessons
 
         public override bool ValidateUser(string username, string password)
         {
-            UserRepository user = new UserRepository();
+            DataEntitiesManager user = new DataEntitiesManager();
             return user.ValidateUser(username, password);
         }
 

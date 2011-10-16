@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DistanceLessons.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="DistanceLessons.Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="DistanceLessonsModelsStoreContainer">
           <EntitySet Name="Answers" EntityType="DistanceLessons.Models.Store.Answers" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Categories" EntityType="DistanceLessons.Models.Store.Categories" store:Type="Tables" Schema="dbo" />
@@ -248,6 +248,8 @@
           <Property Name="IsLockedOut" Type="bit" Nullable="false" />
           <Property Name="PasswordQuestion" Type="varchar" MaxLength="64" />
           <Property Name="PasswordAnswer" Type="varchar" MaxLength="64" />
+          <Property Name="EmailKey" Type="varchar" MaxLength="128" />
+          <Property Name="LastLoginIp" Type="varchar" MaxLength="40" />
         </EntityType>
         <Association Name="FK_Answers_Tests">
           <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="1" />
@@ -477,8 +479,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DistanceLessons.Models" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -763,6 +764,8 @@
           <NavigationProperty Name="Role" Relationship="DistanceLessons.Models.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
           <NavigationProperty Name="UserCourses" Relationship="DistanceLessons.Models.FK_UserCourses_Users" FromRole="Users" ToRole="UserCourses" />
           <NavigationProperty Name="UserModules" Relationship="DistanceLessons.Models.FK_UserModules_Users" FromRole="Users" ToRole="UserModules" />
+          <Property Type="String" Name="EmailKey" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastLoginIp" MaxLength="40" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Answers_Tests">
           <End Role="Tests" Type="DistanceLessons.Models.Test" Multiplicity="1" />
@@ -1091,7 +1094,9 @@
             <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="DistanceLessons.Models.User"><MappingFragment StoreEntitySet="Users">
-            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="LastLoginIp" ColumnName="LastLoginIp" />
+                <ScalarProperty Name="EmailKey" ColumnName="EmailKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
             <ScalarProperty Name="Login" ColumnName="Login" />
             <ScalarProperty Name="Password" ColumnName="Password" />
             <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
@@ -1118,7 +1123,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
