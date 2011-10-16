@@ -107,6 +107,22 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AttributeEntitiesModelClass.cs" />
     <Compile Include="Models\DataEntitiesManager.cs" />
+    <Compile Include="Models\DataEntitiesManager\Answers.cs" />
+    <Compile Include="Models\DataEntitiesManager\Categories.cs" />
+    <Compile Include="Models\DataEntitiesManager\Contacts.cs" />
+    <Compile Include="Models\DataEntitiesManager\Courses.cs" />
+    <Compile Include="Models\DataEntitiesManager\Informations.cs" />
+    <Compile Include="Models\DataEntitiesManager\Lessons.cs" />
+    <Compile Include="Models\DataEntitiesManager\Messages.cs" />
+    <Compile Include="Models\DataEntitiesManager\ModuleLessons.cs" />
+    <Compile Include="Models\DataEntitiesManager\Modules.cs" />
+    <Compile Include="Models\DataEntitiesManager\News.cs" />
+    <Compile Include="Models\DataEntitiesManager\Roles.cs" />
+    <Compile Include="Models\DataEntitiesManager\TableResultQuery.cs" />
+    <Compile Include="Models\DataEntitiesManager\Tests.cs" />
+    <Compile Include="Models\DataEntitiesManager\UserCourses.cs" />
+    <Compile Include="Models\DataEntitiesManager\UserModules.cs" />
+    <Compile Include="Models\DataEntitiesManager\Users.cs" />
     <Compile Include="Models\DistanceLessonsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
