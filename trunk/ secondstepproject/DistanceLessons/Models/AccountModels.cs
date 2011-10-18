@@ -65,6 +65,12 @@ namespace DistanceLessons.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class AllUserInformationModel
+    {
+    public Information Information{get; set;}
+    public Contact Contact {get; set;}
+    }
+
     public class AccountRoleService
     {
         private readonly MyRoleProvider _provider;

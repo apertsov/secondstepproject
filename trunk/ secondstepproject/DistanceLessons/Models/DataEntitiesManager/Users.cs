@@ -157,8 +157,8 @@ namespace DistanceLessons.Models
         public bool ValidateUser(string username, string password)
         {
             var dbuser = _db.Users.FirstOrDefault(x => x.Login == username);
-            if (!dbuser.IsActived) return false;
-            return dbuser != null && dbuser.Password == CreatePasswordHash(password, dbuser.PasswordSalt);
+       //     if (!dbuser.IsActived) return false;
+            return dbuser != null && (dbuser.IsActived) && dbuser.Password == CreatePasswordHash(password, dbuser.PasswordSalt);
         }
 
         public User GetUser(string username)

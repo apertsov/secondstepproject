@@ -8,10 +8,8 @@
         <hgroup class="title">
             <h1>@ViewBag.Title.</h1>
         </hgroup>
-        Name: @ViewBag.Name<br />
-        Student? @ViewBag.Student <br />
-        Admin? @ViewBag.Admin <br />
-
+        @Html.ActionLink("додати контактні дані","CreateProfile","Account")
+        @Html.ActionLink("редагувати контактні дані","EditProfile","Account")
                       @foreach (DistanceLessons.Models.DataEntitiesManager.RQCourses i in ViewBag.A.QCourses())
                       {
                           <h3>@i.title</h3>

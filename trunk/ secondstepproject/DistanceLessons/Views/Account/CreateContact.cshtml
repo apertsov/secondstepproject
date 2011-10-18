@@ -1,0 +1,34 @@
+﻿@model DistanceLessons.Models.Contact
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Skype)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Skype)
+            @Html.ValidationMessageFor(model => model.Skype)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ICQ_QIP)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ICQ_QIP)
+            @Html.ValidationMessageFor(model => model.ICQ_QIP)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Telephone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Telephone)
+            @Html.ValidationMessageFor(model => model.Telephone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Other)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Other)
+            @Html.ValidationMessageFor(model => model.Other)
+        </div>
+

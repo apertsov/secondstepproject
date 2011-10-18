@@ -39,6 +39,13 @@ namespace DistanceLessons.Controllers
                 if (Membership.ValidateUser(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+
+                    DataEntitiesManager db = new DataEntitiesManager();
+                    if (!db.ExistInformation(User.Identity.Name))
+                    {
+                        return RedirectToAction("CreateProfile", "Account");
+                    }
+                    
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
@@ -220,23 +227,51 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult EditProfile()
+        public ActionResult CreateProfile()
         {
+            DataEntitiesManager db = new DataEntitiesManager();
+            if (db.ExistInformation(User.Identity.Name))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
-        /*
+        
         [HttpPost]
-        public ActionResult EditProfile()//ContactsModel Contacts , InformationModel Info)
+        public ActionResult CreateProfile(Information info,Contact contact)
         {
-           /* UserRepository userRepo=new UserRepository();
-            User user= userRepo.GetDBUser(User.Identity.Name);
-            UserInformation info = new UserInformation();
-            Info.UserId=Contacts.UserId = user.UserId;
-            Info.InformationId = Guid.NewGuid();
-            Contacts.ContactId = Guid.NewGuid();
-            info.AddInfo(Info, Contacts);*/
-        //    return View();
-       // }
+            DataEntitiesManager userRepo = new DataEntitiesManager();
+            User user= userRepo.GetUser(User.Identity.Name);
+            info.UserId=contact.UserId = user.UserId;
+            info.InformationId = Guid.NewGuid();
+            contact.ContactId = Guid.NewGuid();
+            userRepo.AddContact(contact);
+            userRepo.AddInformation(info);
+            return RedirectToAction("Index","Home");
+        }
+
+        [HttpGet]
+        public ActionResult EditProfile()
+        {
+            DataEntitiesManager db = new DataEntitiesManager();
+            if (!db.ExistInformation(User.Identity.Name))
+            {
+                return RedirectToAction("CreateProfile", "Account");
+            }
+            AllUserInformationModel model = new AllUserInformationModel 
+                                              { Information = db.UserInformation(User.Identity.Name), Contact = db.UserContacts(User.Identity.Name) };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult EditProfile(AllUserInformationModel model)
+        {
+            DataEntitiesManager dataManager = new DataEntitiesManager();
+            dataManager.UpdateInformation(model.Information);
+            ViewBag.success = "Дані успішно оновлені";
+            return View(model);
+        }
+        
 
         private IEnumerable<string> GetErrorsFromModelState()
         {
