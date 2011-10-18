@@ -1,0 +1,71 @@
+﻿@model DistanceLessons.Models.Information
+
+@{
+    ViewBag.Title = "Профайл";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Створення профайлу</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Information</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MidName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MidName)
+            @Html.ValidationMessageFor(model => model.MidName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateOfBirth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateOfBirth)
+            @Html.ValidationMessageFor(model => model.DateOfBirth)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.About)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.About)
+            @Html.ValidationMessageFor(model => model.About)
+        </div>
+@*
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Avatar)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Avatar)
+            @Html.ValidationMessageFor(model => model.Avatar)
+        </div>
+*@
+         @Html.Partial("CreateContact")
+        <p>
+            <input type="submit" value="Зберегти" />
+        </p>
+    </fieldset>
+}
