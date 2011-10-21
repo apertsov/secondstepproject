@@ -1,18 +1,6 @@
 ﻿@{
-    ViewBag.Title = "";
+    ViewBag.Title = "Index";
 }
 
-@section featured {
-<section class="featured">
-    <div class="content-wrapper">
-        <hgroup class="title">
-            <h1>@ViewBag.Title.</h1>
-        </hgroup>
-        @Html.ActionLink("додати контактні дані","CreateProfile","Account")
-        @Html.ActionLink("редагувати контактні дані","EditProfile","Account")
-    </div>
-</section>
-}
-<section class="features">
-   
-</section>
+@Html.ActionLink("додати контактні дані", "CreateProfile", "Account")
+@Html.ActionLink("редагувати контактні дані", "EditProfile", "Account")

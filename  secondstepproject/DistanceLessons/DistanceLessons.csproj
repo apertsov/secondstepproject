@@ -140,6 +140,28 @@
       <DependentUpon>distance_lessons.mdf</DependentUpon>
     </Content>
     <Content Include="App_Data\GmailAccount.txt" />
+    <Content Include="Content\Browser.css" />
+    <Content Include="Content\img\background\background.png" />
+    <Content Include="Content\img\background\background2.png" />
+    <Content Include="Content\img\flags\flag_ru.png" />
+    <Content Include="Content\img\flags\flag_ua.png" />
+    <Content Include="Content\img\flags\flag_us.png" />
+    <Content Include="Content\img\header\header.png" />
+    <Content Include="Content\img\header\logo_1.png" />
+    <Content Include="Content\img\header\logo_2.jpg" />
+    <Content Include="Content\img\header\lower.png" />
+    <Content Include="Content\img\header\middle.png" />
+    <Content Include="Content\img\header\upper_left.png" />
+    <Content Include="Content\img\header\upper_right.png" />
+    <Content Include="Content\img\navigation\arrow_down.png" />
+    <Content Include="Content\img\navigation\arrow_right.png" />
+    <Content Include="Content\img\passive_active\buttonpattern_active.png" />
+    <Content Include="Content\img\passive_active\buttonpattern_passive.png" />
+    <Content Include="Content\img\passive_active\fill_active.png" />
+    <Content Include="Content\img\passive_active\fill_passive.png" />
+    <Content Include="Content\Layout.css" />
+    <Content Include="Content\script\browser_selector.js" />
+    <Content Include="Content\script\jquerycssmenu.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -309,6 +331,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Teacher\EditLessonTests.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Shared\_Navigation_PartialPage.cshtml" />
+    <Content Include="Views\Shared\_News_PartialPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\img\background\Thumbs.db" />
+    <None Include="Content\img\flags\Thumbs.db" />
+    <None Include="Content\img\header\Thumbs.db" />
+    <None Include="Content\img\navigation\Thumbs.db" />
+    <None Include="Content\img\passive_active\Thumbs.db" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

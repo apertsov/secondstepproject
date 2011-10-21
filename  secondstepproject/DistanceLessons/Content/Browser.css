@@ -1,0 +1,130 @@
+/* 
+ОС-коди:
+win - Microsoft Windows
+vista - Microsoft Windows Vista
+linux - Linux
+mac - Mac OS
+freebsd - FreeBSD
+ipod - iPod Touch
+iphone - iPhone
+ipad - iPad
+webtv - WebTV
+j2me - J2ME Devices (аля Opera mini)
+blackberry - BlackBerry
+android - Google Android
+mobile - mobile devices
+
+Браузер-коди:
+ie - Internet Explorer
+ie8 - Internet Explorer 8.x
+ie7 - Internet Explorer 7.x
+ie6 - Internet Explorer 6.x
+ie5 - Internet Explorer 5.x
+gecko - Mozilla, Firefox, Camino
+ff2 - Firefox 2
+ff3 - Firefox 3
+ff3_5 - Firefox 3.5
+ff3_6 - Firefox 3.6 new
+opera - Opera
+opera8 - Opera 8.x
+opera9 - Opera 9.x
+opera10 - Opera 10.x
+konqueror - Konqueror
+webkit or safari - Safari, NetNewsWire, OmniWeb, Shiira, Google Chrome
+safari3 - Safari 3.x
+chrome - Google Chrome
+iron - SRWare Iron
+*/
+
+html .nav
+{
+    height: 1%;
+}
+
+.ie body
+{
+    background-image: url('~/Content/img/background/background2.png');
+}
+
+.ie #container
+{
+    background: black;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=95);
+}
+.ie #header
+{
+    width: 0;
+    height: 0;
+}
+
+.ie #header_logo
+{
+    height: 0;
+    width: 0;
+}
+
+.ie #header_upper_left
+{
+    height: 0;
+    width: 0;
+}
+
+.ie #header_upper_right
+{
+    background-image: none;
+    height: 35px;
+    width: 100%;
+    border-left: 0px solid white;
+}
+
+.ie #header_middle
+{
+    background-image: none;
+    height: 80px;
+    width: 100%;
+}
+
+.ie #header_lower
+{
+    background-image: none;
+    height: 35px;
+    width: 100%;
+}
+
+.ie #news, .ie #text
+{
+    background-image: none;
+}
+
+.ie .nav ul li a, .ie .nav ul li ul li a, .ie .nav ul li ul li a:hover, .ie .nav ul li a:hover
+{
+    background-image: none;
+}
+
+
+.gecko #header_logo
+{
+    border-right: 0px solid white; /*painting piece of distance between blocks*/
+}
+
+.gecko #header_upper_right
+{
+    border-left: 0px solid white;
+}
+
+.no_js
+{
+    display: block;
+}
+.has_js
+{
+    display: none;
+}
+.js .no_js
+{
+    display: none;
+}
+.js .has_js
+{
+    display: block;
+}

@@ -1,7 +1,8 @@
 ﻿@{
-    ViewBag.Title = "IsActivate";
+    ViewBag.Title = "Реєстрація. Активація аккаунту.";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @if (ViewBag.active)
 {<h4>Ваш акаунт активовано. Тепер можете   @Html.ActionLink("ввійти", "LogOn", "Account")</h4>}
 else
