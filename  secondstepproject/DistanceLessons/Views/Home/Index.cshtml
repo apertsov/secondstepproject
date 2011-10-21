@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Тестовий запит";
+    ViewBag.Title = "";
 }
 
 @section featured {
@@ -10,14 +10,6 @@
         </hgroup>
         @Html.ActionLink("додати контактні дані","CreateProfile","Account")
         @Html.ActionLink("редагувати контактні дані","EditProfile","Account")
-                      @foreach (DistanceLessons.Models.DataEntitiesManager.RQCourses i in ViewBag.A.QCourses())
-                      {
-                          <h3>@i.title</h3>
-                          <ul>
-                          @foreach (DistanceLessons.Models.DataEntitiesManager.RQLessons j in ViewBag.A.QLessons(i.title))
-                          {<li>@j.title</li>}
-                          </ul>
-                      }
     </div>
 </section>
 }
