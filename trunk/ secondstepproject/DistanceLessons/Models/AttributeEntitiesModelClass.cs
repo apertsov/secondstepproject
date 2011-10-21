@@ -32,8 +32,9 @@ namespace DistanceLessons.Models
             [StringLength(50, ErrorMessage = "Поле по-батькові повинно мати менше 50 символів")]
             public string MidName { get; set; }
 
+       //     [DataType=
             [DisplayName("Дата народження")]
-            [DisplayFormat(DataFormatString="{0:MM.dd.yyyy}",ApplyFormatInEditMode=true)]
+            [DisplayFormat(ApplyFormatInEditMode=true,DataFormatString="{0:MM.dd.yyyy}")]
             [Required(ErrorMessage = "Заповніть поле дата народження.")]
             public DateTime DateOfBirth { get; set; }
 
@@ -79,6 +80,44 @@ namespace DistanceLessons.Models
         }
     }
 
+    [MetadataType(typeof(TestMetadata))]
+    public partial class Test
+    {
+
+        public class TestMetadata
+        {
+            [ScaffoldColumn(false)]
+            public Guid TestId { get; set; }
+
+            [DisplayName("Запитання")]
+            [StringLength(256, ErrorMessage = "Запитання обмежене 256 символами")]
+            public string Question { get; set; }
+
+            [ScaffoldColumn(false)]
+            public Guid LessonId { get; set; }
+        }
+    }
+
+    [MetadataType(typeof(AnswerMetadata))]
+    public partial class Answer
+    {
+
+        public class AnswerMetadata
+        {
+            [ScaffoldColumn(false)]
+            public Guid AnswerId { get; set; }
+
+            [DisplayName("Текст відповіді")]
+            [StringLength(128, ErrorMessage = "Відповідь обмежена 128 символами")]
+            public string Answer1 { get; set; }
+
+            [DisplayName("Чи правильна відповідь?")]
+            public bool Valid { get; set; }
+
+            [ScaffoldColumn(false)]
+            public Guid TestId { get; set; }
+        }
+    }
 
 
     [MetadataType(typeof(LoginMetaData))]

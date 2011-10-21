@@ -12,6 +12,14 @@ namespace DistanceLessons.Models
             return _db.Lessons.ToList<Lesson>();
         }
 
+        public List<Lesson> UserLessons(string username)
+        {
+            Guid userId = GetUserId(username);
+            return (from lessons in _db.Lessons
+                   where lessons.UserId == userId
+                   select lessons).ToList();
+        }
+
         public List<RQLessons> QLessons(string Course)
         {
             var Query =

@@ -1,0 +1,13 @@
+﻿@model List<DistanceLessons.Models.Lesson>
+
+@{
+    ViewBag.Title = "Сторінка викладача";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Сторінка викладача</h2>
+@foreach (var lesson in Model)
+{
+     @Html.ActionLink("Редагувати тести з лекції : " + lesson.Title.ToString(), "EditLessonTests", new { id = lesson.LessonId }) 
+    <br />
+}

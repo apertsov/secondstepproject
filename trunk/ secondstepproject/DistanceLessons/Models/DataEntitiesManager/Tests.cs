@@ -11,5 +11,12 @@ namespace DistanceLessons.Models
         {
             return _db.Tests.ToList<Test>();
         }
+
+        public List<Test> LessonTests(Guid lessonId)
+        {
+            return (from tests in _db.Tests
+                    where tests.LessonId == lessonId
+                    select tests).ToList();
+        }
     }
 }

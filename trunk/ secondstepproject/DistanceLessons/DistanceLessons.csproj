@@ -101,12 +101,29 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AttributeEntitiesModelClass.cs" />
     <Compile Include="Models\DataEntitiesManager.cs" />
+    <Compile Include="Models\DataEntitiesManager\Answers.cs" />
+    <Compile Include="Models\DataEntitiesManager\Categories.cs" />
+    <Compile Include="Models\DataEntitiesManager\Contacts.cs" />
+    <Compile Include="Models\DataEntitiesManager\Courses.cs" />
+    <Compile Include="Models\DataEntitiesManager\Informations.cs" />
+    <Compile Include="Models\DataEntitiesManager\Lessons.cs" />
+    <Compile Include="Models\DataEntitiesManager\Messages.cs" />
+    <Compile Include="Models\DataEntitiesManager\ModuleLessons.cs" />
+    <Compile Include="Models\DataEntitiesManager\Modules.cs" />
+    <Compile Include="Models\DataEntitiesManager\News.cs" />
+    <Compile Include="Models\DataEntitiesManager\Roles.cs" />
+    <Compile Include="Models\DataEntitiesManager\TableResultQuery.cs" />
+    <Compile Include="Models\DataEntitiesManager\Tests.cs" />
+    <Compile Include="Models\DataEntitiesManager\UserCourses.cs" />
+    <Compile Include="Models\DataEntitiesManager\UserModules.cs" />
+    <Compile Include="Models\DataEntitiesManager\Users.cs" />
     <Compile Include="Models\DistanceLessonsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,8 +131,7 @@
     </Compile>
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Enums.cs" />
-    <Compile Include="Models\UserInformation.cs" />
-    <Compile Include="Models\UserRepository.cs" />
+    <Compile Include="Models\TeacherModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -228,7 +244,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Teacher\" />
+    <Content Include="Views\Teacher\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Student\Index.cshtml" />
@@ -238,6 +254,61 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Activate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Categories.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Courses.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\CreateCategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\CreateCours.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\CreateUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\DetailsCategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\DetailsCours.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\DetailsUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\EditCategory.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\EditCours.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\EditUser.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Message.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\Users.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\CreateContact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\CreateProfile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\EditProfile.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Teacher\EditLessonTests.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

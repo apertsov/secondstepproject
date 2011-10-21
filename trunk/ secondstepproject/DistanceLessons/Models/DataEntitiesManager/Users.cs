@@ -171,6 +171,14 @@ namespace DistanceLessons.Models
             return GetRole(GetUserRoleId(username)).Name;
         }
 
+        public Guid GetUserId(string username)
+        {
+            var userId = (from x in _db.Users
+                       where x.Login == username
+                       select x.UserId).FirstOrDefault();
+            return userId;
+        }
+
         public Guid GetUserRoleId(string username)
         {
             return (_db.Users.SingleOrDefault(x => x.Login == username)).RoleId;
