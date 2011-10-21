@@ -119,8 +119,9 @@ a
 {
     margin: auto 7px auto 0;
     width: 32px;
-    height: 32px;
+    height: 24px;
     background-image: url('img/flags/flag_ua.png');
+    background-repeat: no-repeat;
     float: right;
 }
 
@@ -128,8 +129,9 @@ a
 {
     margin: auto 7px auto 0;
     width: 32px;
-    height: 32px;
+    height: 24px;
     background-image: url('img/flags/flag_ru.png');
+    background-repeat: no-repeat;
     float: right;
 }
 
@@ -137,8 +139,9 @@ a
 {
     margin: auto 7px auto 0;
     width: 32px;
-    height: 32px;
+    height: 24px;
     background-image: url('img/flags/flag_us.png');
+    background-repeat: no-repeat;
     float: right;
 }
 
