@@ -11,7 +11,15 @@ namespace DistanceLessons.Models
         {
             return _db.News.ToList<News>();
         }
-        
+
+        public List<News> GetThreeNews()
+        {
+            List<News> temp = new List<News>();
+            for (int i = GetNewsList().Count; i > GetNewsList().Count - 3; i--)
+                temp.Add(GetNewsList()[i]);
+            return temp;
+        }
+
         public News GetNew(Guid id)
         {
             return _db.News.SingleOrDefault(c => c.NewId == id);
