@@ -1,4 +1,6 @@
-﻿<ul>
+﻿@if (Request.IsAuthenticated)
+{
+<ul>
     <li>@Html.ActionLink("Головна", "Index", "Home")</li>
     <li><a href="#">Меню</a>
         <ul>
@@ -31,3 +33,4 @@
         </ul>
     </li>
 </ul>
+}
