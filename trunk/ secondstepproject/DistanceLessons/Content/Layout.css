@@ -375,6 +375,7 @@ a
 {
     background: white;
     width: 235px;
+    min-height: 355px;
     margin: 10px 20px;
     float: left;
     border-left: 1px solid black;
