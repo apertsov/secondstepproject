@@ -43,6 +43,11 @@ a
 
 .prologue
 {
+    margin: 5px 0;
+    padding: 2px;
+    border: 1px;
+    border-style: dashed;
+    border-color: Black;
     font-size: 75%;
     color: #555;
     font-style: italic;
