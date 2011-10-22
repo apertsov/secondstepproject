@@ -11,5 +11,43 @@ namespace DistanceLessons.Models
         {
             return _db.Messages.ToList<Message>();
         }
+
+        public List<Message> GetMessageList_UserID(string username, byte type)
+        {
+            // type - 0 - вхідні, інше - вихідні
+            Guid userId = GetUserId(username);
+            if (type == 0)
+            {
+                var Query =
+                    (
+                    from m in GetMessageList()
+                    where m.UserId_To == userId
+                    orderby m.DateOfSender descending
+                    select m
+                    ).ToList<Message>();
+
+                List<Message> lst = new List<Message>();
+                foreach (var i in Query)
+                    lst.Add(i);
+                
+                return lst;
+            }
+            else
+            {
+                var Query =
+                 (
+                 from m in GetMessageList()
+                 where m.UserId_From == userId
+                 orderby m.DateOfSender descending
+                 select m
+                 ).ToList<Message>();
+
+                List<Message> lst = new List<Message>();
+                foreach (var i in Query)
+                    lst.Add(i);
+                
+                return lst;
+            }
+        }
     }
 }
