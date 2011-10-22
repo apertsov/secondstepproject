@@ -59,17 +59,15 @@
                 @RenderBody()
             </div>
         </div>
-        <div id="news">
-            @Html.Partial("_News_PartialPage")
-            <div id="footer">
-                <p>
-                    <a href="#top_page">Go to top of page</a></p>
-                <p>
-                    &copy; First Team, CHNU &amp; SoftServe Course, @System.DateTime.Now.Year | All
-                    right reserved.</p>
-                <p>
-                    e-mail: <a href="mailto:chnudotnet_forwardstep@googlegroups.com">chnudotnet_forwardstep@googlegroups.com</a></p>
-            </div>
+        <div id="news">@Html.Partial("_News_PartialPage")</div>
+        <div id="footer">
+            <p>
+                <a href="#top_page">Go to top of page</a></p>
+            <p>
+                &copy; First Team, CHNU &amp; SoftServe Course, @System.DateTime.Now.Year | All
+                right reserved.</p>
+            <p>
+                e-mail: <a href="mailto:chnudotnet_forwardstep@googlegroups.com">chnudotnet_forwardstep@googlegroups.com</a></p>
         </div>
     </div>
 </body>
