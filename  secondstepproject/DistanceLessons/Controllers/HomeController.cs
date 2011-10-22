@@ -11,8 +11,6 @@ namespace DistanceLessons.Controllers
     {
         public ActionResult Index()
         {
-            DataEntitiesManager dataManager = new DataEntitiesManager();
-            ViewBag.News = dataManager.GetNewsThree();
             return View();
         }
 
