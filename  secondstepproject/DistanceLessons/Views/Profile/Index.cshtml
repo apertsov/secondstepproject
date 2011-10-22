@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (DistanceLessons.Models.Message a in ViewBag.Mes)
+{
+    <table>
+        <tr>@a.Message1</tr>
+    </table> 
+}
