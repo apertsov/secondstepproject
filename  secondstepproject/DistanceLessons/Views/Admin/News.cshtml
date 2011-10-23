@@ -4,20 +4,21 @@
     ViewBag.Title = "News";
 }
 
-<h2>News</h2>
+<div class="item">
+@Html.ActionLink("Створити новину", "CreateNew")
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "CreateNew")
-</p>
 <ul>
     @{
         DistanceLessons.Models.DataEntitiesManager _db = new DistanceLessons.Models.DataEntitiesManager();
         foreach (DistanceLessons.Models.News _new in _db.GetNewsList_time())
         {
-        <div class="underline">
-        <li>@_new.Title<div class="prologue">@_new.Text</div>
+        <div class="item">
+        <li>
+            <h4>@_new.Title</h4>
+            <div class="prologue">@_new.Text</div>
             <div class="time-author">
-                -@_new.User.Login, @_new.Publication</div>
+                -@_new.User.Login, @_new.Publication @Html.ActionLink("Редагувати", "EditNew", new { id = _new.NewId }) @Html.ActionLink("Видалити", "DeleteNew", new { id = _new.NewId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })</div>
         </li>
         </div>
         }

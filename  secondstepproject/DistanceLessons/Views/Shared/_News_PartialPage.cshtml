@@ -5,7 +5,7 @@
         DistanceLessons.Models.DataEntitiesManager _db = new DistanceLessons.Models.DataEntitiesManager();
         foreach (DistanceLessons.Models.News _new in _db.GetNewsThree())
         {
-        <li>@_new.Title<div class="prologue">@_new.Text</div>
+        <li><h4>@_new.Title</h4><div class="prologue">@_new.Text</div>
             <div class="time-author">
                 -@_new.User.Login, @_new.Publication</div>
         </li>

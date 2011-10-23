@@ -232,7 +232,32 @@ namespace DistanceLessons.Controllers
             }
             catch { }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("News");
+        }
+
+        [HttpGet]
+        public ActionResult EditNew(Guid id)
+        {
+            DataEntitiesManager _db = new DataEntitiesManager();
+            return View(_db.GetNew(id));
+        }
+
+        [HttpPost]
+        public ActionResult EditNew(News obj)
+        {
+            DataEntitiesManager _db = new DataEntitiesManager();
+            News old = _db.GetNew(obj.NewId);
+            UpdateModel(old);
+            _db.Save();
+            return RedirectToAction("News");
+        }
+
+        [HttpGet]
+        public ActionResult DeleteNew(Guid id)
+        {
+            DataEntitiesManager _db = new DataEntitiesManager();
+            _db.DeleteNew(id);
+            return RedirectToAction("News");
         }
     }
 }
