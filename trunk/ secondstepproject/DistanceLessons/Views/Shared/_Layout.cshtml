@@ -25,22 +25,24 @@
     <!--Container for page-->
     <div id="container">
         <!--Header-->
-        <div id="header_logo">
-        </div>
-        <div id="header_upper_left">
-        </div>
-        <div id="header_upper_right">
-            <div id="#lang">
-                <a href="#" id="us"></a><a href="#" id="ru"></a><a href="#" id="ua"></a>
+        <div id="full_header">
+            <div id="header_logo">
             </div>
-        </div>
-        <div id="header_middle">
-            <div id="header">
+            <div id="header_upper_left">
             </div>
-        </div>
-        <div id="header_lower">
-            <div id="auth">
-                @Html.Partial("_LogOnPartial")
+            <div id="header_upper_right">
+                <div id="#lang">
+                    <a href="#" id="us"></a><a href="#" id="ru"></a><a href="#" id="ua"></a>
+                </div>
+            </div>
+            <div id="header_middle">
+                <div id="header">
+                </div>
+            </div>
+            <div id="header_lower">
+                <div id="auth">
+                    @Html.Partial("_LogOnPartial")
+                </div>
             </div>
         </div>
         <!--Navigation-->
@@ -51,15 +53,21 @@
             <br style="clear: left" />
         </div>
         <!--Base Fragment Page-->
-        <div id="text">
-            <div class="title">
-                @ViewBag.Title
-            </div>
-            <div class="dyn">
-                @RenderBody()
+        <!--LEFT-->
+        <div id="left">
+            <div id="text">
+                <div class="title">
+                    @ViewBag.Title
+                </div>
+                <div class="dyn">
+                    @RenderBody()
+                </div>
             </div>
         </div>
-        <div id="news">@Html.Partial("_News_PartialPage")</div>
+        <!--RIGHT-->
+        <div id="right">
+            <div id="news">@Html.Partial("_News_PartialPage")</div>
+        </div>
         <div id="footer">
             <p>
                 <a href="#top_page">Go to top of page</a></p>
