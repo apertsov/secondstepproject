@@ -175,7 +175,7 @@ namespace DistanceLessons.Models
         public Guid GetUserId(string username)
         {
             var userId = (from x in _db.Users
-                       where x.Login == username
+                       where x.Login.ToUpper() == username.ToUpper()
                        select x.UserId).FirstOrDefault();
             return userId;
         }

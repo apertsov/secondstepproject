@@ -19,8 +19,8 @@ namespace DistanceLessons.Controllers
 
         public ActionResult Users()
         {
-           DataEntitiesManager A = new DataEntitiesManager();
-           return View(A.GetUserList());
+            DataEntitiesManager A = new DataEntitiesManager();
+            return View(A.GetUserList());
 
         }
 
@@ -32,67 +32,67 @@ namespace DistanceLessons.Controllers
 
         public ActionResult Courses()
         {
-            DataEntitiesManager A = new DataEntitiesManager(); 
+            DataEntitiesManager A = new DataEntitiesManager();
             return View(A.GetCourseList());
         }
 
-    [HttpGet]
+        [HttpGet]
         public ActionResult CreateCours()
         {
-        DataEntitiesManager A = new DataEntitiesManager();
-        ViewBag.Categories = A.GetCategoryList();
-        ViewBag.Users = A.GetUserList();
-        return View();
+            DataEntitiesManager A = new DataEntitiesManager();
+            ViewBag.Categories = A.GetCategoryList();
+            ViewBag.Users = A.GetUserList();
+            return View();
         }
 
 
-    [HttpPost]
-    public ActionResult CreateCours(Cours obj)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-        obj.CourseId = Guid.NewGuid();
-        A.AddCours(obj);
-        return RedirectToAction("Courses");
-    }
+        [HttpPost]
+        public ActionResult CreateCours(Cours obj)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            obj.CourseId = Guid.NewGuid();
+            A.AddCours(obj);
+            return RedirectToAction("Courses");
+        }
 
 
-    [HttpGet]
-    public ActionResult EditCours(Guid id)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-        ViewBag.Categories = A.GetCategoryList();
-        ViewBag.Users = A.GetUserList();
-        return View(A.GetCourse(id));
-    }
+        [HttpGet]
+        public ActionResult EditCours(Guid id)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            ViewBag.Categories = A.GetCategoryList();
+            ViewBag.Users = A.GetUserList();
+            return View(A.GetCourse(id));
+        }
 
-    [HttpPost]
-    public ActionResult EditCours(Cours obj)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-        Cours old = A.GetCourse(obj.CourseId);
-        UpdateModel(old);
-        A.Save();
-        return RedirectToAction("Courses");
-    }
+        [HttpPost]
+        public ActionResult EditCours(Cours obj)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            Cours old = A.GetCourse(obj.CourseId);
+            UpdateModel(old);
+            A.Save();
+            return RedirectToAction("Courses");
+        }
 
-    [HttpGet]
-    public ActionResult DeleteCours(Guid id)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-        A.DeleteCourse(id);
-        return RedirectToAction("Courses");
-    }
-
-
-    [HttpGet]
-    public ActionResult DetailsCours(Guid id)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-         return View(A.GetCourse(id));
-    }
+        [HttpGet]
+        public ActionResult DeleteCours(Guid id)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            A.DeleteCourse(id);
+            return RedirectToAction("Courses");
+        }
 
 
-    [HttpGet]
+        [HttpGet]
+        public ActionResult DetailsCours(Guid id)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            return View(A.GetCourse(id));
+        }
+
+
+        [HttpGet]
         public ActionResult CreateUser()
         {
             DataEntitiesManager A = new DataEntitiesManager();
@@ -100,105 +100,139 @@ namespace DistanceLessons.Controllers
             return View();
         }
 
-    [HttpPost]
-    public ActionResult CreateUser(User obj)
-    {
+        [HttpPost]
+        public ActionResult CreateUser(User obj)
+        {
 
-        obj.UserId = Guid.NewGuid();
-        obj.CreatedDate = DateTime.Now;
-        obj.LastLoginDate = DateTime.Now;
-        DataEntitiesManager A = new DataEntitiesManager();
-        A.AddUser(obj);
-        return RedirectToAction("Users");
- 
-    }
+            obj.UserId = Guid.NewGuid();
+            obj.CreatedDate = DateTime.Now;
+            obj.LastLoginDate = DateTime.Now;
+            DataEntitiesManager A = new DataEntitiesManager();
+            A.AddUser(obj);
+            return RedirectToAction("Users");
 
-    [HttpGet]
-    public ActionResult EditUser(Guid id)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-        ViewBag.Roles = A.GetRoleList();
-        return View(A.GetUser(id));
-    }
+        }
 
-
-    [HttpPost]
-    public ActionResult EditUser(User obj)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-        User old = A.GetUser(obj.UserId);
-        UpdateModel(old);
-        A.Save();
-        return RedirectToAction("Users");
-    }
+        [HttpGet]
+        public ActionResult EditUser(Guid id)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            ViewBag.Roles = A.GetRoleList();
+            return View(A.GetUser(id));
+        }
 
 
-    [HttpGet]
-    public ActionResult DeleteUser(Guid id)
-    {   
-        DataEntitiesManager A = new DataEntitiesManager();
-        A.DeleteUser(id);
-        return RedirectToAction("Users");
-    }
-
-    [HttpGet]
-    public ActionResult DetailsUser(Guid id)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-        return View(A.GetUser(id));
-    }
+        [HttpPost]
+        public ActionResult EditUser(User obj)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            User old = A.GetUser(obj.UserId);
+            UpdateModel(old);
+            A.Save();
+            return RedirectToAction("Users");
+        }
 
 
-    [HttpGet]
+        [HttpGet]
+        public ActionResult DeleteUser(Guid id)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            A.DeleteUser(id);
+            return RedirectToAction("Users");
+        }
+
+        [HttpGet]
+        public ActionResult DetailsUser(Guid id)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            return View(A.GetUser(id));
+        }
+
+
+        [HttpGet]
         public ActionResult CreateCategory()
         {
             return View();
         }
 
-    [HttpPost]
-    public ActionResult CreateCategory(Category obj)
-    {
-        obj.CategoryId = Guid.NewGuid();
-        DataEntitiesManager A = new DataEntitiesManager();
-        A.AddCategory(obj);
-        return RedirectToAction("Categories");
-    }
+        [HttpPost]
+        public ActionResult CreateCategory(Category obj)
+        {
+            obj.CategoryId = Guid.NewGuid();
+            DataEntitiesManager A = new DataEntitiesManager();
+            A.AddCategory(obj);
+            return RedirectToAction("Categories");
+        }
 
-    [HttpGet]
-    public ActionResult EditCategory(Guid id)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-        return View(A.GetCategory(id));
-    }
+        [HttpGet]
+        public ActionResult EditCategory(Guid id)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            return View(A.GetCategory(id));
+        }
 
-    [HttpPost]
-    public ActionResult EditCategory(Category obj)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-        Category old = A.GetCategory(obj.CategoryId);
-        UpdateModel(old);
-        A.Save();
-        return RedirectToAction("Categories");
-    }
+        [HttpPost]
+        public ActionResult EditCategory(Category obj)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            Category old = A.GetCategory(obj.CategoryId);
+            UpdateModel(old);
+            A.Save();
+            return RedirectToAction("Categories");
+        }
 
-    [HttpGet]
-    public ActionResult DeleteCategory(Guid id)
-    {   
-        DataEntitiesManager A = new DataEntitiesManager();
-        A.DeleteCategory(id);
-        return RedirectToAction("Categories");
-    }
+        [HttpGet]
+        public ActionResult DeleteCategory(Guid id)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            A.DeleteCategory(id);
+            return RedirectToAction("Categories");
+        }
 
-    [HttpGet]
-    public ActionResult DetailsCategory(Guid id)
-    {
-        DataEntitiesManager A = new DataEntitiesManager();
-        return View(A.GetCategory(id));
-    }
+        [HttpGet]
+        public ActionResult DetailsCategory(Guid id)
+        {
+            DataEntitiesManager A = new DataEntitiesManager();
+            return View(A.GetCategory(id));
+        }
 
         public ActionResult Message()
         {
             return View();
+        }
+
+
+
+        public ActionResult News()
+        {
+            DataEntitiesManager _db = new DataEntitiesManager();
+            return View(_db.GetNewsList_time());
+        }
+
+
+        [HttpGet]
+        public ActionResult CreateNew()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult CreateNew(News obj)
+        {
+            try
+            {
+                DataEntitiesManager _db = new DataEntitiesManager();
+                obj.NewId = Guid.NewGuid();
+                obj.Publication = System.DateTime.Now;
+                obj.UserId = _db.GetUserId(User.Identity.Name);
+
+                _db.AddNew(obj);
+                _db.Save();
+            }
+            catch { }
+
+            return RedirectToAction("Index");
         }
     }
 }
