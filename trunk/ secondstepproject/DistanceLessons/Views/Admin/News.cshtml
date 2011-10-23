@@ -1,0 +1,25 @@
+﻿@model IEnumerable<DistanceLessons.Models.News>
+
+@{
+    ViewBag.Title = "News";
+}
+
+<h2>News</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateNew")
+</p>
+<ul>
+    @{
+        DistanceLessons.Models.DataEntitiesManager _db = new DistanceLessons.Models.DataEntitiesManager();
+        foreach (DistanceLessons.Models.News _new in _db.GetNewsList_time())
+        {
+        <div class="underline">
+        <li>@_new.Title<div class="prologue">@_new.Text</div>
+            <div class="time-author">
+                -@_new.User.Login, @_new.Publication</div>
+        </li>
+        </div>
+        }
+    }
+</ul>
