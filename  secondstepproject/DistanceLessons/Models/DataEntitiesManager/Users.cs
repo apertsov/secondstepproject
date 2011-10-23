@@ -168,7 +168,8 @@ namespace DistanceLessons.Models
 
         public string UserRole(string username)
         {
-            return GetRole(GetUserRoleId(username)).Name;
+            Role role = GetRole(GetUserRoleId(username));
+            return (role==null?null:role.Name);
         }
 
         public Guid GetUserId(string username)
@@ -181,7 +182,18 @@ namespace DistanceLessons.Models
 
         public Guid GetUserRoleId(string username)
         {
-            return (_db.Users.SingleOrDefault(x => x.Login == username)).RoleId;
+            return (from user in _db.Users
+                    where user.Login == username
+                    select user.RoleId).FirstOrDefault();
+        }
+
+        public bool ExistUser(string username)
+        {
+            if ((from user in _db.Users
+                    where user.Login==username
+                    select user).Count()==0)
+                        return false;
+            else return true;
         }
 
         public void ChangeUserRole(string roleName, string userName)
