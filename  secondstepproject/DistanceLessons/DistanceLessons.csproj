@@ -105,6 +105,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Paging.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AttributeEntitiesModelClass.cs" />
     <Compile Include="Models\DataEntitiesManager.cs" />

@@ -3,7 +3,7 @@
 <ul>
     @{
         DistanceLessons.Models.DataEntitiesManager _db = new DistanceLessons.Models.DataEntitiesManager();
-        foreach (DistanceLessons.Models.News _new in _db.GetNewsThree())
+        foreach (DistanceLessons.Models.News _new in _db.GetNewsList_time(3,0))
         {
         <li><h4>@_new.Title</h4><div class="prologue">@_new.Text</div>
             <div class="time-author">

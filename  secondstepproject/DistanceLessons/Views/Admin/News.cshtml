@@ -10,8 +10,7 @@
 
 <ul>
     @{
-        DistanceLessons.Models.DataEntitiesManager _db = new DistanceLessons.Models.DataEntitiesManager();
-        foreach (DistanceLessons.Models.News _new in _db.GetNewsList_time())
+        foreach (DistanceLessons.Models.News _new in Model)
         {
         <div class="item">
         <li>
@@ -24,3 +23,8 @@
         }
     }
 </ul>
+
+@using DistanceLessons.Helpers
+<div class="item">
+@Html.Pages((int)ViewBag.numPage,(int)ViewBag.itemsCount,(int)ViewBag.itemOnPage)
+</div>
