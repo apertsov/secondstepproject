@@ -12,7 +12,7 @@ namespace DistanceLessons.Controllers
         //
         // GET: /Admin/
 
-        private int itemOnPage = 10;
+        private int itemOnPage = 5;
         private DataEntitiesManager _db = new DataEntitiesManager();
 
         public ActionResult Index()
@@ -186,10 +186,18 @@ namespace DistanceLessons.Controllers
 
         public ActionResult News(int numPage=0)
         {
-            ViewBag.numPage = numPage;
-            ViewBag.itemsCount = _db.GetNewsList().Count();
-            ViewBag.itemOnPage = itemOnPage;
-            return View(_db.GetNewsList_time(itemOnPage, numPage));
+            ViewData["numPage"] = numPage;
+            ViewData["itemsCount"] = _db.GetNewsList().Count;
+            ViewData["itemOnPage"] = itemOnPage;
+
+            if (!Request.IsAjaxRequest())
+            {
+                return View(_db.GetNewsList_time(itemOnPage, numPage));
+            }
+            else
+            {
+                return PartialView("_News", _db.GetNewsList_time(itemOnPage, numPage));
+            }
         }
 
 
