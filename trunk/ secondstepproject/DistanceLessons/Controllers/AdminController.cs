@@ -12,6 +12,9 @@ namespace DistanceLessons.Controllers
         //
         // GET: /Admin/
 
+        private int itemOnPage = 10;
+        private DataEntitiesManager _db = new DataEntitiesManager();
+
         public ActionResult Index()
         {
             return View();
@@ -19,29 +22,25 @@ namespace DistanceLessons.Controllers
 
         public ActionResult Users()
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            return View(A.GetUserList());
+            return View(_db.GetUserList());
 
         }
 
         public ActionResult Categories()
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            return View(A.GetCategoryList());
+            return View(_db.GetCategoryList());
         }
 
         public ActionResult Courses()
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            return View(A.GetCourseList());
+            return View(_db.GetCourseList());
         }
 
         [HttpGet]
         public ActionResult CreateCours()
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            ViewBag.Categories = A.GetCategoryList();
-            ViewBag.Users = A.GetUserList();
+            ViewBag.Categories = _db.GetCategoryList();
+            ViewBag.Users = _db.GetUserList();
             return View();
         }
 
@@ -49,9 +48,8 @@ namespace DistanceLessons.Controllers
         [HttpPost]
         public ActionResult CreateCours(Cours obj)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
             obj.CourseId = Guid.NewGuid();
-            A.AddCours(obj);
+            _db.AddCours(obj);
             return RedirectToAction("Courses");
         }
 
@@ -59,27 +57,24 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult EditCours(Guid id)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            ViewBag.Categories = A.GetCategoryList();
-            ViewBag.Users = A.GetUserList();
-            return View(A.GetCourse(id));
+            ViewBag.Categories = _db.GetCategoryList();
+            ViewBag.Users = _db.GetUserList();
+            return View(_db.GetCourse(id));
         }
 
         [HttpPost]
         public ActionResult EditCours(Cours obj)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            Cours old = A.GetCourse(obj.CourseId);
+            Cours old = _db.GetCourse(obj.CourseId);
             UpdateModel(old);
-            A.Save();
+            _db.Save();
             return RedirectToAction("Courses");
         }
 
         [HttpGet]
         public ActionResult DeleteCours(Guid id)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            A.DeleteCourse(id);
+            _db.DeleteCourse(id);
             return RedirectToAction("Courses");
         }
 
@@ -87,16 +82,14 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult DetailsCours(Guid id)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            return View(A.GetCourse(id));
+            return View(_db.GetCourse(id));
         }
 
 
         [HttpGet]
         public ActionResult CreateUser()
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            ViewBag.Roles = A.GetRoleList();
+            ViewBag.Roles = _db.GetRoleList();
             return View();
         }
 
@@ -107,8 +100,7 @@ namespace DistanceLessons.Controllers
             obj.UserId = Guid.NewGuid();
             obj.CreatedDate = DateTime.Now;
             obj.LastLoginDate = DateTime.Now;
-            DataEntitiesManager A = new DataEntitiesManager();
-            A.AddUser(obj);
+            _db.AddUser(obj);
             return RedirectToAction("Users");
 
         }
@@ -116,19 +108,17 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult EditUser(Guid id)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            ViewBag.Roles = A.GetRoleList();
-            return View(A.GetUser(id));
+            ViewBag.Roles = _db.GetRoleList();
+            return View(_db.GetUser(id));
         }
 
 
         [HttpPost]
         public ActionResult EditUser(User obj)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            User old = A.GetUser(obj.UserId);
+            User old = _db.GetUser(obj.UserId);
             UpdateModel(old);
-            A.Save();
+            _db.Save();
             return RedirectToAction("Users");
         }
 
@@ -136,16 +126,14 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult DeleteUser(Guid id)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            A.DeleteUser(id);
+            _db.DeleteUser(id);
             return RedirectToAction("Users");
         }
 
         [HttpGet]
         public ActionResult DetailsUser(Guid id)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            return View(A.GetUser(id));
+            return View(_db.GetUser(id));
         }
 
 
@@ -159,41 +147,36 @@ namespace DistanceLessons.Controllers
         public ActionResult CreateCategory(Category obj)
         {
             obj.CategoryId = Guid.NewGuid();
-            DataEntitiesManager A = new DataEntitiesManager();
-            A.AddCategory(obj);
+            _db.AddCategory(obj);
             return RedirectToAction("Categories");
         }
 
         [HttpGet]
         public ActionResult EditCategory(Guid id)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            return View(A.GetCategory(id));
+            return View(_db.GetCategory(id));
         }
 
         [HttpPost]
         public ActionResult EditCategory(Category obj)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            Category old = A.GetCategory(obj.CategoryId);
+            Category old = _db.GetCategory(obj.CategoryId);
             UpdateModel(old);
-            A.Save();
+            _db.Save();
             return RedirectToAction("Categories");
         }
 
         [HttpGet]
         public ActionResult DeleteCategory(Guid id)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            A.DeleteCategory(id);
+            _db.DeleteCategory(id);
             return RedirectToAction("Categories");
         }
 
         [HttpGet]
         public ActionResult DetailsCategory(Guid id)
         {
-            DataEntitiesManager A = new DataEntitiesManager();
-            return View(A.GetCategory(id));
+            return View(_db.GetCategory(id));
         }
 
         public ActionResult Message()
@@ -201,12 +184,12 @@ namespace DistanceLessons.Controllers
             return View();
         }
 
-
-
-        public ActionResult News()
+        public ActionResult News(int numPage=0)
         {
-            DataEntitiesManager _db = new DataEntitiesManager();
-            return View(_db.GetNewsList_time());
+            ViewBag.numPage = numPage;
+            ViewBag.itemsCount = _db.GetNewsList().Count();
+            ViewBag.itemOnPage = itemOnPage;
+            return View(_db.GetNewsList_time(itemOnPage, numPage));
         }
 
 
@@ -222,7 +205,6 @@ namespace DistanceLessons.Controllers
         {
             try
             {
-                DataEntitiesManager _db = new DataEntitiesManager();
                 obj.NewId = Guid.NewGuid();
                 obj.Publication = System.DateTime.Now;
                 obj.UserId = _db.GetUserId(User.Identity.Name);
@@ -238,14 +220,12 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult EditNew(Guid id)
         {
-            DataEntitiesManager _db = new DataEntitiesManager();
             return View(_db.GetNew(id));
         }
 
         [HttpPost]
         public ActionResult EditNew(News obj)
         {
-            DataEntitiesManager _db = new DataEntitiesManager();
             News old = _db.GetNew(obj.NewId);
             UpdateModel(old);
             _db.Save();
@@ -255,7 +235,6 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult DeleteNew(Guid id)
         {
-            DataEntitiesManager _db = new DataEntitiesManager();
             _db.DeleteNew(id);
             return RedirectToAction("News");
         }

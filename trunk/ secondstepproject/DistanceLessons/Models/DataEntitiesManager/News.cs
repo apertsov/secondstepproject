@@ -12,29 +12,15 @@ namespace DistanceLessons.Models
             return _db.News.ToList<News>();
         }
 
-        public List<News> GetNewsList_time()
+        public List<News> GetNewsList_time(int pageSize, int numPage)
         {
-            var Query =  from n in GetNewsList() orderby n.Publication descending select n;
+            var Query =  (from n in GetNewsList() orderby n.Publication descending select n).Skip(pageSize*numPage).Take(pageSize);
            
             List<News> lst = new List<News>();
             foreach (var i in Query)
                 lst.Add(i);
 
             return lst;
-        }
-
-        public List<News> GetNewsThree()
-        {
-            List<News> temp = new List<News>();
-
-            int j = 1;
-            foreach (News _new in GetNewsList_time())
-            {
-                if (j <= 3) { temp.Add(_new); j++; }
-                else break;
-            }
-
-            return temp;
         }
 
         public News GetNew(Guid id)
