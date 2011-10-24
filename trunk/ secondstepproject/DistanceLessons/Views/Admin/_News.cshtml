@@ -1,0 +1,22 @@
+﻿@model IEnumerable<DistanceLessons.Models.News>
+
+<ul>
+    @{
+        foreach (DistanceLessons.Models.News _new in Model)
+        {
+        <div class="item">
+        <li>
+            <h4>@_new.Title</h4>
+            <div class="prologue">@_new.Text</div>
+            <div class="time-author">
+                -@_new.User.Login, @_new.Publication @Html.ActionLink("Редагувати", "EditNew", new { id = _new.NewId }) @Html.ActionLink("Видалити", "DeleteNew", new { id = _new.NewId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })</div>
+        </li>
+        </div>
+        }
+    }
+</ul>
+
+@using DistanceLessons.Helpers
+<div class="item">
+    @Ajax.Pages((int)ViewData["numPage"], (int)ViewData["itemsCount"], (int)ViewData["itemOnPage"], "news_ajax")
+</div>

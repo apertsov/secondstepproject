@@ -347,6 +347,7 @@
     <Content Include="Views\Admin\CreateNew.cshtml" />
     <Content Include="Views\Admin\News.cshtml" />
     <Content Include="Views\Admin\EditNew.cshtml" />
+    <Content Include="Views\Admin\_News.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
