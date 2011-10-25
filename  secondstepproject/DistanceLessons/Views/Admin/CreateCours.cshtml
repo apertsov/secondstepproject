@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Створення предмету";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Створення предмету</h2>
@@ -37,7 +37,7 @@
         </div>
         <div class="editor-field">
         @{
-             List<DistanceLessons.Models.Category> Category_list =  ViewBag.Categories;
+    List<DistanceLessons.Models.Category> Category_list = ViewBag.Categories;
     var cat_items = new SelectList(Category_list, "CategoryID", "Category1");
             }
         @Html.DropDownListFor(model => model.CategoryId, @cat_items)
@@ -50,7 +50,7 @@
         </div>
         <div class="editor-field">
         @{
-             List<DistanceLessons.Models.User> User_list = ViewBag.Users;
+    List<DistanceLessons.Models.User> User_list = ViewBag.Users;
     var user_items = new SelectList(User_list, "UserID", "Login");
             }
 

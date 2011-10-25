@@ -1,0 +1,11 @@
+5
+A
+A.bmp
+C
+C.bmp
+H
+H.bmp
+X
+X.bmp
+Z
+Z.bmp

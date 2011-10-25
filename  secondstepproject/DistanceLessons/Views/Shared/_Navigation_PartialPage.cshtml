@@ -51,7 +51,12 @@
            }
            else if (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Teacher.ToString())
            {
-            <li><a href="#">Викладач</a></li>
+               <li>@Html.ActionLink("Мої предмети", "MyCourses", "Teacher")
+                <ul>
+                    <li>@Html.ActionLink("Мої предмети", "MyCourses", "Teacher")</li>
+
+                </ul>
+            </li>
            }
         }
     </ul>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DistanceLessons.Models.Lesson>
+
+@{
+    ViewBag.Title = "Lesson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lesson</h2>
+
+<p>
+    @Html.ActionLink("Добавити лекцію", "UploadLesson", new {moduleId=(Guid)ViewBag.ModuleId })
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Publication)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Title, "ShowFile" , new { filename=item.Text})
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Publication)
+        </td>
+         <td>
+            @Html.ActionLink("Edit", "EditLesson", new { id=item.LessonId, moduleId=(Guid)ViewBag.ModuleId}) |
+            @Html.ActionLink("Details", "DetailsLesson", new { id=item.LessonId }) |
+            @Html.ActionLink("Delete", "DeleteLesson", new { id = item.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
+        </td>
+    </tr>
+}
+
+</table>

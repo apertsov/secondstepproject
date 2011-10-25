@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Категорії";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Категорії предметів</h2>
@@ -21,14 +21,15 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Category1)
         </td>
         <td>
-            @Html.ActionLink("Редагувати", "EditCategory", new { id=item.CategoryId }) |
-            @Html.ActionLink("Переглянути", "DetailsCategory", new { id=item.CategoryId }) |
+            @Html.ActionLink("Редагувати", "EditCategory", new { id = item.CategoryId }) |
+            @Html.ActionLink("Переглянути", "DetailsCategory", new { id = item.CategoryId }) |
             @Html.ActionLink("Видалити", "DeleteCategory", new { id = item.CategoryId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
         </td>
     </tr>

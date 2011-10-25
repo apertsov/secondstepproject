@@ -1,0 +1,46 @@
+﻿@model DistanceLessons.Models.Module
+
+@{
+    ViewBag.Title = "DetailsModule";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DetailsModule</h2>
+
+<fieldset>
+    <legend>Module</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Time)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Time)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateBegin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateBegin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DateEnd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateEnd)
+    </div>
+
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "EditModule", new { id=Model.ModuleId }) |
+    @Html.ActionLink("Back to List", "Modules", new { courseId=Model.CourseId})
+</p>

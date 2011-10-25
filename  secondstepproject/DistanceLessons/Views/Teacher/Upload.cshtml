@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upload</h2>
+<p>Обовязково скопіюйте посилання і в майбутньому вставте в поле Техт</p>
+<p>@ViewBag.Path</p>
+
+  @Html.ActionLink("Продовжити створення лекції", "CreateLesson", new { mod_id = ViewBag.ModuleId })

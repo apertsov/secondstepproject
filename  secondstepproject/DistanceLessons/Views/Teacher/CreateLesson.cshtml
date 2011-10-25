@@ -1,0 +1,60 @@
+﻿@model DistanceLessons.Models.Lesson
+
+@{
+    ViewBag.Title = "CreateLesson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateLesson</h2>
+
+
+
+      <div id="dialog" title="Upload files">
+        @using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <p><input type="file" id="fileUpload" name="fileUpload" size="23"/> </p>
+            
+            <p><input type="submit" value="Upload file" /></p>
+        } 
+    </div>
+
+@using (Html.BeginForm(new { mod_id=(Guid)ViewBag.ModuleId}))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Lesson</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+             <div class="editor-label">
+            @Html.LabelFor(model => model.Text)
+        </div>
+        <div class="editor-field">
+   
+            @Html.EditorFor(model => model.Text)
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+
+           <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+   
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Lesson")
+</div>
