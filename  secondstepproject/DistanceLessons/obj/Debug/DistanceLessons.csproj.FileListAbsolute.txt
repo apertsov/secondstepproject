@@ -78,3 +78,19 @@ C:\Documents and Settings\ammi_lee\Рабочий стол\1secondstepproject\Di
 C:\Documents and Settings\ammi_lee\Рабочий стол\1secondstepproject\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\ammi_lee\Рабочий стол\1secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.dll
 C:\Documents and Settings\ammi_lee\Рабочий стол\1secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.pdb
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\DistanceLessons.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\DistanceLessons.pdb
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\EntityFramework.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\Microsoft.Web.Infrastructure.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\Microsoft.Web.Optimization.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\System.Web.Helpers.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\System.Web.Mvc.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\System.Web.Providers.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\System.Web.Razor.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\System.Web.WebPages.Deployment.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\System.Web.WebPages.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\System.Web.WebPages.Razor.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\bin\EntityFramework.xml
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\obj\Debug\DistanceLessons.dll
+D:\Prog\dotNET_project\Новая папка\DistanceLessons\obj\Debug\DistanceLessons.pdb
