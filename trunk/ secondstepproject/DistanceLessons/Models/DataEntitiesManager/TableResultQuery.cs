@@ -39,5 +39,15 @@ namespace DistanceLessons.Models
             public string title { get; set; }
             public string text { get; set; }
         }
+		public class RQUserModules
+        {
+            public Guid id { get; set; }
+            public string firstname { get; set; }
+            public string lastname { get; set; }
+            public string course { get; set; }
+            public string module { get; set; }
+            public double progress { get; set; }
+
+        }
     }
 }
