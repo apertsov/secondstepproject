@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "UploadLesson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        $("#dialog").dialog({
+            bgiframe: true,
+            height: 200,
+            modal: true,
+            autoOpen: false,
+            resizable: false
+        })
+    });
+        
+    </script>
+
+<h2>UploadLesson</h2>
+  
+
+      <div id="dialog" title="Upload files">
+      @{ Guid buf=(Guid)ViewBag.ModuleId;}
+        @using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <p><input type="file" id="fileUpload" name="fileUpload" size="23"/> </p>
+            <input type="hidden" id="mod_id" name="mod_id" value="@buf" runat="server"/>
+            <p><input type="submit" value="Upload file" /></p>
+        } 
+    </div>
+
+          <a href="#" onclick="jQuery('#dialog').dialog('open'); return false">Upload File</a>
+      <p>@ViewBag.Path</p>

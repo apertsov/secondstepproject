@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "DetailsCours";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>DetailsCours</h2>
@@ -46,6 +46,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Редагувати", "EditCours", new { id=Model.CourseId }) |
+    @Html.ActionLink("Редагувати", "EditCours", new { id = Model.CourseId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

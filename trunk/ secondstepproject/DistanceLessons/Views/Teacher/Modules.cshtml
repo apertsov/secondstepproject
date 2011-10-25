@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DistanceLessons.Models.DataEntitiesManager.RQModules>
+
+@{
+    ViewBag.Title = "Modules";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Modules</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateModule", new { courseId=(Guid)ViewBag.CourseId})
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.course)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.title, "Lesson", new { id_mod=item.id })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.course)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditModule", new { id = item.id }) |
+            @Html.ActionLink("Details", "DetailsModule", new { id = item.id }) |
+            @Html.ActionLink("Delete", "DeleteModule", new { id = item.id }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
+        </td>
+    </tr>
+}
+
+</table>

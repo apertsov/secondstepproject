@@ -7,7 +7,6 @@
     <EntitySet Name="Informations" EntityType="DistanceLessons.Models.Information" />
     <EntitySet Name="Lessons" EntityType="DistanceLessons.Models.Lesson" />
     <EntitySet Name="Messages" EntityType="DistanceLessons.Models.Message" />
-    <EntitySet Name="ModuleLessons" EntityType="DistanceLessons.Models.ModuleLesson" />
     <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Module" />
     <EntitySet Name="News" EntityType="DistanceLessons.Models.News" />
     <EntitySet Name="Roles" EntityType="DistanceLessons.Models.Role" />
@@ -47,10 +46,6 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Lessons" EntitySet="Lessons" />
     </AssociationSet>
-    <AssociationSet Name="FK_ModuleLessons_Lessons" Association="DistanceLessons.Models.FK_ModuleLessons_Lessons">
-      <End Role="Lessons" EntitySet="Lessons" />
-      <End Role="ModuleLessons" EntitySet="ModuleLessons" />
-    </AssociationSet>
     <AssociationSet Name="FK_Tests_Lessons" Association="DistanceLessons.Models.FK_Tests_Lessons">
       <End Role="Lessons" EntitySet="Lessons" />
       <End Role="Tests" EntitySet="Tests" />
@@ -62,10 +57,6 @@
     <AssociationSet Name="FK_Messages_Users1" Association="DistanceLessons.Models.FK_Messages_Users1">
       <End Role="Users" EntitySet="Users" />
       <End Role="Messages" EntitySet="Messages" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ModuleLessons_Modules" Association="DistanceLessons.Models.FK_ModuleLessons_Modules">
-      <End Role="Modules" EntitySet="Modules" />
-      <End Role="ModuleLessons" EntitySet="ModuleLessons" />
     </AssociationSet>
     <AssociationSet Name="FK_UserModules_Modules" Association="DistanceLessons.Models.FK_UserModules_Modules">
       <End Role="Modules" EntitySet="Modules" />
@@ -105,6 +96,10 @@
       <End Role="Answer" EntitySet="Answers" />
       <End Role="UserAnswer" EntitySet="UserAnswers" />
     </AssociationSet>
+    <AssociationSet Name="FK_Lessons_Modules" Association="DistanceLessons.Models.FK_Lessons_Modules">
+      <End Role="Module" EntitySet="Modules" />
+      <End Role="Lesson" EntitySet="Lessons" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Category">
     <Key>
@@ -138,7 +133,6 @@
     <Property Name="Access" Type="Byte" Nullable="false" />
     <NavigationProperty Name="Category" Relationship="DistanceLessons.Models.FK_Courses_Categories" FromRole="Courses" ToRole="Categories" />
     <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Courses_Users" FromRole="Courses" ToRole="Users" />
-    <NavigationProperty Name="Lessons" Relationship="DistanceLessons.Models.FK_Lessons_Courses" FromRole="Courses" ToRole="Lessons" />
     <NavigationProperty Name="Modules" Relationship="DistanceLessons.Models.FK_Modules_Courses" FromRole="Courses" ToRole="Modules" />
     <NavigationProperty Name="UserCourses" Relationship="DistanceLessons.Models.FK_UserCourses_Courses" FromRole="Courses" ToRole="UserCourses" />
   </EntityType>
@@ -164,12 +158,10 @@
     <Property Name="Title" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="false" />
     <Property Name="Text" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
     <Property Name="Publication" Type="DateTime" Nullable="false" />
-    <Property Name="CourseId" Type="Guid" Nullable="false" />
-    <Property Name="UserId" Type="Guid" Nullable="false" />
-    <NavigationProperty Name="Cours" Relationship="DistanceLessons.Models.FK_Lessons_Courses" FromRole="Lessons" ToRole="Courses" />
-    <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Lessons_Users" FromRole="Lessons" ToRole="Users" />
-    <NavigationProperty Name="ModuleLessons" Relationship="DistanceLessons.Models.FK_ModuleLessons_Lessons" FromRole="Lessons" ToRole="ModuleLessons" />
     <NavigationProperty Name="Tests" Relationship="DistanceLessons.Models.FK_Tests_Lessons" FromRole="Lessons" ToRole="Tests" />
+    <Property Type="Guid" Name="ModuleId" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Module" Relationship="DistanceLessons.Models.FK_Lessons_Modules" FromRole="Lesson" ToRole="Module" />
   </EntityType>
   <EntityType Name="Message">
     <Key>
@@ -184,16 +176,6 @@
     <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Messages_Users" FromRole="Messages" ToRole="Users" />
     <NavigationProperty Name="User1" Relationship="DistanceLessons.Models.FK_Messages_Users1" FromRole="Messages" ToRole="Users" />
   </EntityType>
-  <EntityType Name="ModuleLesson">
-    <Key>
-      <PropertyRef Name="ModuleLessonId" />
-    </Key>
-    <Property Name="ModuleLessonId" Type="Guid" Nullable="false" />
-    <Property Name="LessonId" Type="Guid" Nullable="false" />
-    <Property Name="ModuleId" Type="Guid" Nullable="false" />
-    <NavigationProperty Name="Lesson" Relationship="DistanceLessons.Models.FK_ModuleLessons_Lessons" FromRole="ModuleLessons" ToRole="Lessons" />
-    <NavigationProperty Name="Module" Relationship="DistanceLessons.Models.FK_ModuleLessons_Modules" FromRole="ModuleLessons" ToRole="Modules" />
-  </EntityType>
   <EntityType Name="Module">
     <Key>
       <PropertyRef Name="ModuleId" />
@@ -205,8 +187,8 @@
     <Property Name="DateEnd" Type="DateTime" Nullable="false" />
     <Property Name="CourseId" Type="Guid" Nullable="false" />
     <NavigationProperty Name="Cours" Relationship="DistanceLessons.Models.FK_Modules_Courses" FromRole="Modules" ToRole="Courses" />
-    <NavigationProperty Name="ModuleLessons" Relationship="DistanceLessons.Models.FK_ModuleLessons_Modules" FromRole="Modules" ToRole="ModuleLessons" />
     <NavigationProperty Name="UserModules" Relationship="DistanceLessons.Models.FK_UserModules_Modules" FromRole="Modules" ToRole="UserModules" />
+    <NavigationProperty Name="Lessons" Relationship="DistanceLessons.Models.FK_Lessons_Modules" FromRole="Module" ToRole="Lesson" />
   </EntityType>
   <EntityType Name="News">
     <Key>
@@ -385,18 +367,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ModuleLessons_Lessons">
-    <End Role="Lessons" Type="DistanceLessons.Models.Lesson" Multiplicity="1" />
-    <End Role="ModuleLessons" Type="DistanceLessons.Models.ModuleLesson" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Lessons">
-        <PropertyRef Name="LessonId" />
-      </Principal>
-      <Dependent Role="ModuleLessons">
-        <PropertyRef Name="LessonId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Tests_Lessons">
     <End Role="Lessons" Type="DistanceLessons.Models.Lesson" Multiplicity="1" />
     <End Role="Tests" Type="DistanceLessons.Models.Test" Multiplicity="*" />
@@ -430,18 +400,6 @@
       </Principal>
       <Dependent Role="Messages">
         <PropertyRef Name="UserId_To" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ModuleLessons_Modules">
-    <End Role="Modules" Type="DistanceLessons.Models.Module" Multiplicity="1" />
-    <End Role="ModuleLessons" Type="DistanceLessons.Models.ModuleLesson" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Modules">
-        <PropertyRef Name="ModuleId" />
-      </Principal>
-      <Dependent Role="ModuleLessons">
-        <PropertyRef Name="ModuleId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -573,6 +531,18 @@
       </Principal>
       <Dependent Role="UserAnswer">
         <PropertyRef Name="IdAnswer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lessons_Modules">
+    <End Type="DistanceLessons.Models.Module" Role="Module" Multiplicity="1" />
+    <End Type="DistanceLessons.Models.Lesson" Role="Lesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="ModuleId" />
+      </Principal>
+      <Dependent Role="Lesson">
+        <PropertyRef Name="ModuleId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

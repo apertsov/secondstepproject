@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Користувачі";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <p>Переглянути список всіх студентів (видалити)</p>
@@ -38,7 +38,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Login)
@@ -63,8 +64,8 @@
         </td>
        
         <td>
-            @Html.ActionLink("Редагувати", "EditUser", new { id=item.UserId }) |
-            @Html.ActionLink("Переглянути", "DetailsUser", new { id=item.UserId }) |
+            @Html.ActionLink("Редагувати", "EditUser", new { id = item.UserId }) |
+            @Html.ActionLink("Переглянути", "DetailsUser", new { id = item.UserId }) |
             @Html.ActionLink("Видалити", "DeleteUser", new { id = item.UserId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
         </td>
     </tr>

@@ -50,12 +50,12 @@
     <EntitySetMapping Name="Lessons">
       <EntityTypeMapping TypeName="DistanceLessons.Models.Lesson">
         <MappingFragment StoreEntitySet="Lessons">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
           <ScalarProperty Name="LessonId" ColumnName="LessonId" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Text" ColumnName="Text" />
           <ScalarProperty Name="Publication" ColumnName="Publication" />
-          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -68,15 +68,6 @@
           <ScalarProperty Name="UserId_From" ColumnName="UserId_From" />
           <ScalarProperty Name="UserId_To" ColumnName="UserId_To" />
           <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ModuleLessons">
-      <EntityTypeMapping TypeName="DistanceLessons.Models.ModuleLesson">
-        <MappingFragment StoreEntitySet="ModuleLessons">
-          <ScalarProperty Name="ModuleLessonId" ColumnName="ModuleLessonId" />
-          <ScalarProperty Name="LessonId" ColumnName="LessonId" />
-          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -156,16 +147,6 @@
           <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
           <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
           <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="UserAnswers">
-      <EntityTypeMapping TypeName="DistanceLessons.Models.UserAnswer">
-        <MappingFragment StoreEntitySet="UserAnswers">
-          <ScalarProperty Name="IdAnswer" ColumnName="IdAnswer" />
-          <ScalarProperty Name="IdTest" ColumnName="IdTest" />
-          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
-          <ScalarProperty Name="IdUserAnswer" ColumnName="IdUserAnswer" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Courses";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Предмети</h2>
@@ -53,7 +53,7 @@
         <td>
             @Html.ActionLink("Редагувати", "EditCours", new { id = item.CourseId }) |
            @Html.ActionLink("Деталі", "DetailsCours", new { id = item.CourseId }) |
-            @Html.ActionLink("Видалити", "DeleteCours", new { id = item.CourseId }, new { onclick="return confirm('Дійсно бажаєте видалити?')"})
+            @Html.ActionLink("Видалити", "DeleteCours", new { id = item.CourseId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
                     </td>
     </tr>
 }

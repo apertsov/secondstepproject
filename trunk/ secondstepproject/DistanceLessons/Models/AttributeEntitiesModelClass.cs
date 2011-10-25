@@ -17,17 +17,15 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid InformationId { get; set; }
 
-            [DisplayName("Ім'я")]
-            [Required(ErrorMessage= "Введіть своє ім'я.")]
-            [StringLength(50,ErrorMessage="Ім'я повинно мати менше 50 символів")]
-            public string FirstName { get; set; }
-
             [DisplayName("Прізвище")]
             [Required(ErrorMessage = "Введіть своє прізвище.")]
             [StringLength(50, ErrorMessage = "Прізвище повинно мати менше 50 символів")]
-            public string LastName { get; set; }
+            public string LastName { get; set; }[DisplayName("Ім'я")]
 
-            [DisplayName("По-батькові")]
+            [Required(ErrorMessage= "Введіть своє ім'я.")]
+            [StringLength(50,ErrorMessage="Ім'я повинно мати менше 50 символів")]
+            public string FirstName { get; set; }
+                        [DisplayName("По-батькові")]
             [Required(ErrorMessage = "Заповніть поле по-батькові.")]
             [StringLength(50, ErrorMessage = "Поле по-батькові повинно мати менше 50 символів")]
             public string MidName { get; set; }

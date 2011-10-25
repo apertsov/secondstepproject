@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Створення користувача";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Свореня користувача</h2>
@@ -53,8 +53,8 @@
         </div>
         <div class="editor-field">
            @{
-             List<DistanceLessons.Models.Role> list =  ViewBag.Roles;
-             var items = new SelectList(list, "RoleID", "Name");
+    List<DistanceLessons.Models.Role> list = ViewBag.Roles;
+    var items = new SelectList(list, "RoleID", "Name");
             }
             @Html.DropDownListFor(model => model.RoleId, @items)
             @Html.ValidationMessageFor(model => model.Role)
