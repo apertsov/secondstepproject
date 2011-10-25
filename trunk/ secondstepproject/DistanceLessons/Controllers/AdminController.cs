@@ -12,7 +12,7 @@ namespace DistanceLessons.Controllers
         //
         // GET: /Admin/
 
-        private int itemOnPage = 5;
+        private int itemOnPage = 3;
         private DataEntitiesManager _db = new DataEntitiesManager();
 
         public ActionResult Index()

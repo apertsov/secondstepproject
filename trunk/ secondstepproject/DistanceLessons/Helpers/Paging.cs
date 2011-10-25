@@ -11,27 +11,27 @@ namespace DistanceLessons.Helpers
 {
     public static class Paging
     {
-        public static MvcHtmlString Pages(this HtmlHelper helper, int numPage, int itemsCount, int itemOnPage)
+        public static MvcHtmlString Pages(this HtmlHelper helper, int numPage, int itemsCount, int itemOnPage, string ViewName)
         {
             StringBuilder sb = new StringBuilder();
 
             if (numPage > 0)
             {
-                sb.Append(helper.ActionLink(" < ", "News", new { numPage = numPage - 1 }));
+                sb.Append(helper.ActionLink(" < ", ViewName, new { numPage = numPage - 1 }));
             }
 
             int PageCount = (int)Math.Ceiling((double)itemsCount / itemOnPage);
 
             if (numPage < PageCount - 1)
             {
-                sb.Append(helper.ActionLink(" > ", "News", new { numPage = numPage + 1 }));
+                sb.Append(helper.ActionLink(" > ", ViewName, new { numPage = numPage + 1 }));
             }
 
 
             return MvcHtmlString.Create(sb.ToString());
         }
 
-        public static MvcHtmlString Pages(this AjaxHelper helper, int numPage, int itemsCount, int itemOnPage, string target)
+        public static MvcHtmlString Pages(this AjaxHelper helper, int numPage, int itemsCount, int itemOnPage, string target, string ViewName)
         {
             StringBuilder sb = new StringBuilder();
             AjaxOptions ao = new AjaxOptions();
@@ -39,14 +39,14 @@ namespace DistanceLessons.Helpers
 
             if (numPage > 0)
             {
-                sb.Append(helper.ActionLink(" < ", "News", new { numPage = numPage - 1 }, ao));
+                sb.Append(helper.ActionLink(" < ", ViewName, new { numPage = numPage - 1 }, ao));
             }
 
             int PageCount = (int)Math.Ceiling((double)itemsCount / itemOnPage);
 
             if (numPage < PageCount - 1)
             {
-                sb.Append(helper.ActionLink(" > ", "News", new { numPage = numPage + 1 }, ao));
+                sb.Append(helper.ActionLink(" > ", ViewName, new { numPage = numPage + 1 }, ao));
             }
 
 
