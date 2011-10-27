@@ -12,7 +12,6 @@ namespace DistanceLessons.Controllers
         //
         // GET: /Admin/
 
-        private int itemOnPage = 3;
         private DataEntitiesManager _db = new DataEntitiesManager();
 
         public ActionResult Index()
@@ -182,69 +181,6 @@ namespace DistanceLessons.Controllers
         public ActionResult Message()
         {
             return View();
-        }
-
-        public ActionResult News(int numPage=0)
-        {
-            ViewData["numPage"] = numPage;
-            ViewData["itemsCount"] = _db.GetNewsList().Count;
-            ViewData["itemOnPage"] = itemOnPage;
-
-            if (!Request.IsAjaxRequest())
-            {
-                return View(_db.GetNewsList_time(itemOnPage, numPage));
-            }
-            else
-            {
-                return PartialView("_News", _db.GetNewsList_time(itemOnPage, numPage));
-            }
-        }
-
-
-        [HttpGet]
-        public ActionResult CreateNew()
-        {
-            return View();
-        }
-
-
-        [HttpPost]
-        public ActionResult CreateNew(News obj)
-        {
-            try
-            {
-                obj.NewId = Guid.NewGuid();
-                obj.Publication = System.DateTime.Now;
-                obj.UserId = _db.GetUserId(User.Identity.Name);
-
-                _db.AddNew(obj);
-                _db.Save();
-            }
-            catch { }
-
-            return RedirectToAction("News");
-        }
-
-        [HttpGet]
-        public ActionResult EditNew(Guid id)
-        {
-            return View(_db.GetNew(id));
-        }
-
-        [HttpPost]
-        public ActionResult EditNew(News obj)
-        {
-            News old = _db.GetNew(obj.NewId);
-            UpdateModel(old);
-            _db.Save();
-            return RedirectToAction("News");
-        }
-
-        [HttpGet]
-        public ActionResult DeleteNew(Guid id)
-        {
-            _db.DeleteNew(id);
-            return RedirectToAction("News");
         }
     }
 }
