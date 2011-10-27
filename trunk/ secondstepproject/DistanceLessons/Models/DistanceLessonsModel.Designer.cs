@@ -18,22 +18,26 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Answers_Tests", "Tests", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Test), "Answers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Answer), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Courses_Categories", "Categories", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Category), "Courses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Cours), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Contacts_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Contacts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Contact), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Courses_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Courses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Cours), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Modules_Courses", "Courses", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Cours), "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Module), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_UserCourses_Courses", "Courses", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Cours), "UserCourses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserCours), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Informations_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Informations", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Information), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Lessons_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Module), "Lessons", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Lesson), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Tests_Lessons", "Lessons", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Lesson), "Tests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Test), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Messages_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Messages", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Message), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Messages_Users1", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Messages", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Message), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_UserModules_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Module), "UserModules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserModule), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_News_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "News", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.News), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_Users_Roles", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Role), "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.User), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_UserCourses_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "UserCourses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserCours), true)]
-[assembly: EdmRelationshipAttribute("distance_lessonsModel", "FK_UserModules_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "UserModules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserModule), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Answers_Tests", "Tests", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Test), "Answers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Answer), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserAnswers_Answers", "Answers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Answer), "UserAnswers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserAnswer), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Courses_Categories", "Categories", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Category), "Courses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Cours), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Contacts_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Contacts", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Contact), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Courses_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Courses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Cours), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Modules_Courses", "Courses", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Cours), "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Module), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserCourses_Courses", "Courses", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Cours), "UserCourses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserCours), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Informations_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Informations", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Information), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Lessons_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Module), "Lessons", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Lesson), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Lessons_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Lessons", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Lesson), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Tests_Lessons", "Lessons", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Lesson), "Tests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Test), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Messages_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Messages", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Message), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Messages_Users1", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Messages", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Message), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserModules_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Module), "UserModules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserModule), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_News_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "News", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.News), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Users_Roles", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Role), "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.User), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserAnswers_Tests", "Tests", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Test), "UserAnswers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserAnswer), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserAnswers_UserAnswers", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "UserAnswers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserAnswer), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserCourses_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "UserCourses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserCours), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserModules_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "UserModules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserModule), true)]
 
 #endregion
 
@@ -264,6 +268,22 @@ namespace DistanceLessons.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<UserAnswer> UserAnswers
+        {
+            get
+            {
+                if ((_UserAnswers == null))
+                {
+                    _UserAnswers = base.CreateObjectSet<UserAnswer>("UserAnswers");
+                }
+                return _UserAnswers;
+            }
+        }
+        private ObjectSet<UserAnswer> _UserAnswers;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<UserCours> UserCourses
         {
             get
@@ -401,6 +421,14 @@ namespace DistanceLessons.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the UserAnswers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToUserAnswers(UserAnswer userAnswer)
+        {
+            base.AddObject("UserAnswers", userAnswer);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the UserCourses EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToUserCourses(UserCours userCours)
@@ -435,7 +463,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="Answer")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Answer")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Answer : EntityObject
@@ -571,16 +599,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Answers_Tests", "Tests")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Answers_Tests", "Tests")]
         public Test Test
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("distance_lessonsModel.FK_Answers_Tests", "Tests").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("DistanceLessons.Models.FK_Answers_Tests", "Tests").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("distance_lessonsModel.FK_Answers_Tests", "Tests").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("DistanceLessons.Models.FK_Answers_Tests", "Tests").Value = value;
             }
         }
         /// <summary>
@@ -592,13 +620,35 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("distance_lessonsModel.FK_Answers_Tests", "Tests");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("DistanceLessons.Models.FK_Answers_Tests", "Tests");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Test>("distance_lessonsModel.FK_Answers_Tests", "Tests", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Test>("DistanceLessons.Models.FK_Answers_Tests", "Tests", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserAnswers_Answers", "UserAnswers")]
+        public EntityCollection<UserAnswer> UserAnswers
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserAnswer>("DistanceLessons.Models.FK_UserAnswers_Answers", "UserAnswers");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserAnswer>("DistanceLessons.Models.FK_UserAnswers_Answers", "UserAnswers", value);
                 }
             }
         }
@@ -609,7 +659,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="Category")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Category")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Category : EntityObject
@@ -693,18 +743,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Courses_Categories", "Courses")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Courses_Categories", "Courses")]
         public EntityCollection<Cours> Courses
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cours>("distance_lessonsModel.FK_Courses_Categories", "Courses");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cours>("DistanceLessons.Models.FK_Courses_Categories", "Courses");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cours>("distance_lessonsModel.FK_Courses_Categories", "Courses", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cours>("DistanceLessons.Models.FK_Courses_Categories", "Courses", value);
                 }
             }
         }
@@ -715,7 +765,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="Contact")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Contact")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Contact : EntityObject
@@ -895,16 +945,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Contacts_Users", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Contacts_Users", "Users")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Contacts_Users", "Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Contacts_Users", "Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Contacts_Users", "Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Contacts_Users", "Users").Value = value;
             }
         }
         /// <summary>
@@ -916,13 +966,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Contacts_Users", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Contacts_Users", "Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("distance_lessonsModel.FK_Contacts_Users", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_Contacts_Users", "Users", value);
                 }
             }
         }
@@ -933,7 +983,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="Cours")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Cours")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Cours : EntityObject
@@ -1119,16 +1169,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Courses_Categories", "Categories")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Courses_Categories", "Categories")]
         public Category Category
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("distance_lessonsModel.FK_Courses_Categories", "Categories").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("DistanceLessons.Models.FK_Courses_Categories", "Categories").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("distance_lessonsModel.FK_Courses_Categories", "Categories").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("DistanceLessons.Models.FK_Courses_Categories", "Categories").Value = value;
             }
         }
         /// <summary>
@@ -1140,13 +1190,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("distance_lessonsModel.FK_Courses_Categories", "Categories");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Category>("DistanceLessons.Models.FK_Courses_Categories", "Categories");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Category>("distance_lessonsModel.FK_Courses_Categories", "Categories", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Category>("DistanceLessons.Models.FK_Courses_Categories", "Categories", value);
                 }
             }
         }
@@ -1157,16 +1207,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Courses_Users", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Courses_Users", "Users")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Courses_Users", "Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Courses_Users", "Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Courses_Users", "Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Courses_Users", "Users").Value = value;
             }
         }
         /// <summary>
@@ -1178,13 +1228,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Courses_Users", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Courses_Users", "Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("distance_lessonsModel.FK_Courses_Users", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_Courses_Users", "Users", value);
                 }
             }
         }
@@ -1195,18 +1245,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Modules_Courses", "Modules")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Modules_Courses", "Modules")]
         public EntityCollection<Module> Modules
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Module>("distance_lessonsModel.FK_Modules_Courses", "Modules");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Module>("DistanceLessons.Models.FK_Modules_Courses", "Modules");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Module>("distance_lessonsModel.FK_Modules_Courses", "Modules", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Module>("DistanceLessons.Models.FK_Modules_Courses", "Modules", value);
                 }
             }
         }
@@ -1217,18 +1267,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_UserCourses_Courses", "UserCourses")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserCourses_Courses", "UserCourses")]
         public EntityCollection<UserCours> UserCourses
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserCours>("distance_lessonsModel.FK_UserCourses_Courses", "UserCourses");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserCours>("DistanceLessons.Models.FK_UserCourses_Courses", "UserCourses");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserCours>("distance_lessonsModel.FK_UserCourses_Courses", "UserCourses", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserCours>("DistanceLessons.Models.FK_UserCourses_Courses", "UserCourses", value);
                 }
             }
         }
@@ -1239,7 +1289,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="Information")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Information")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Information : EntityObject
@@ -1473,16 +1523,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Informations_Users", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Informations_Users", "Users")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Informations_Users", "Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Informations_Users", "Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Informations_Users", "Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Informations_Users", "Users").Value = value;
             }
         }
         /// <summary>
@@ -1494,13 +1544,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Informations_Users", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Informations_Users", "Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("distance_lessonsModel.FK_Informations_Users", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_Informations_Users", "Users", value);
                 }
             }
         }
@@ -1511,7 +1561,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="Lesson")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Lesson")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Lesson : EntityObject
@@ -1526,7 +1576,9 @@ namespace DistanceLessons.Models
         /// <param name="text">Initial value of the Text property.</param>
         /// <param name="publication">Initial value of the Publication property.</param>
         /// <param name="moduleId">Initial value of the ModuleId property.</param>
-        public static Lesson CreateLesson(global::System.Guid lessonId, global::System.String title, global::System.String text, global::System.DateTime publication, global::System.Guid moduleId)
+        /// <param name="userId">Initial value of the UserId property.</param>
+        /// <param name="isAcceptMainTeacher">Initial value of the IsAcceptMainTeacher property.</param>
+        public static Lesson CreateLesson(global::System.Guid lessonId, global::System.String title, global::System.String text, global::System.DateTime publication, global::System.Guid moduleId, global::System.Guid userId, global::System.Boolean isAcceptMainTeacher)
         {
             Lesson lesson = new Lesson();
             lesson.LessonId = lessonId;
@@ -1534,6 +1586,8 @@ namespace DistanceLessons.Models
             lesson.Text = text;
             lesson.Publication = publication;
             lesson.ModuleId = moduleId;
+            lesson.UserId = userId;
+            lesson.IsAcceptMainTeacher = isAcceptMainTeacher;
             return lesson;
         }
 
@@ -1686,6 +1740,54 @@ namespace DistanceLessons.Models
         private global::System.String _Description;
         partial void OnDescriptionChanging(global::System.String value);
         partial void OnDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid UserId
+        {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                OnUserIdChanging(value);
+                ReportPropertyChanging("UserId");
+                _UserId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UserId");
+                OnUserIdChanged();
+            }
+        }
+        private global::System.Guid _UserId;
+        partial void OnUserIdChanging(global::System.Guid value);
+        partial void OnUserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsAcceptMainTeacher
+        {
+            get
+            {
+                return _IsAcceptMainTeacher;
+            }
+            set
+            {
+                OnIsAcceptMainTeacherChanging(value);
+                ReportPropertyChanging("IsAcceptMainTeacher");
+                _IsAcceptMainTeacher = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsAcceptMainTeacher");
+                OnIsAcceptMainTeacherChanged();
+            }
+        }
+        private global::System.Boolean _IsAcceptMainTeacher;
+        partial void OnIsAcceptMainTeacherChanging(global::System.Boolean value);
+        partial void OnIsAcceptMainTeacherChanged();
 
         #endregion
     
@@ -1697,16 +1799,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Lessons_Modules", "Modules")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Lessons_Modules", "Modules")]
         public Module Module
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("distance_lessonsModel.FK_Lessons_Modules", "Modules").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("DistanceLessons.Models.FK_Lessons_Modules", "Modules").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("distance_lessonsModel.FK_Lessons_Modules", "Modules").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("DistanceLessons.Models.FK_Lessons_Modules", "Modules").Value = value;
             }
         }
         /// <summary>
@@ -1718,13 +1820,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("distance_lessonsModel.FK_Lessons_Modules", "Modules");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("DistanceLessons.Models.FK_Lessons_Modules", "Modules");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Module>("distance_lessonsModel.FK_Lessons_Modules", "Modules", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Module>("DistanceLessons.Models.FK_Lessons_Modules", "Modules", value);
                 }
             }
         }
@@ -1735,18 +1837,56 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Tests_Lessons", "Tests")]
-        public EntityCollection<Test> Tests
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Lessons_Users", "Users")]
+        public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Test>("distance_lessonsModel.FK_Tests_Lessons", "Tests");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Lessons_Users", "Users").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Lessons_Users", "Users").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User> UserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Lessons_Users", "Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Test>("distance_lessonsModel.FK_Tests_Lessons", "Tests", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_Lessons_Users", "Users", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Tests_Lessons", "Tests")]
+        public EntityCollection<Test> Tests
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Test>("DistanceLessons.Models.FK_Tests_Lessons", "Tests");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Test>("DistanceLessons.Models.FK_Tests_Lessons", "Tests", value);
                 }
             }
         }
@@ -1757,7 +1897,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="Message")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Message")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Message : EntityObject
@@ -1945,16 +2085,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Messages_Users", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Messages_Users", "Users")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Messages_Users", "Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Messages_Users", "Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Messages_Users", "Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Messages_Users", "Users").Value = value;
             }
         }
         /// <summary>
@@ -1966,13 +2106,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Messages_Users", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Messages_Users", "Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("distance_lessonsModel.FK_Messages_Users", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_Messages_Users", "Users", value);
                 }
             }
         }
@@ -1983,16 +2123,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Messages_Users1", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Messages_Users1", "Users")]
         public User User1
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Messages_Users1", "Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Messages_Users1", "Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Messages_Users1", "Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Messages_Users1", "Users").Value = value;
             }
         }
         /// <summary>
@@ -2004,13 +2144,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_Messages_Users1", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Messages_Users1", "Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("distance_lessonsModel.FK_Messages_Users1", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_Messages_Users1", "Users", value);
                 }
             }
         }
@@ -2021,7 +2161,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="Module")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Module")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Module : EntityObject
@@ -2209,16 +2349,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Modules_Courses", "Courses")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Modules_Courses", "Courses")]
         public Cours Cours
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("distance_lessonsModel.FK_Modules_Courses", "Courses").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("DistanceLessons.Models.FK_Modules_Courses", "Courses").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("distance_lessonsModel.FK_Modules_Courses", "Courses").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("DistanceLessons.Models.FK_Modules_Courses", "Courses").Value = value;
             }
         }
         /// <summary>
@@ -2230,13 +2370,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("distance_lessonsModel.FK_Modules_Courses", "Courses");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("DistanceLessons.Models.FK_Modules_Courses", "Courses");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Cours>("distance_lessonsModel.FK_Modules_Courses", "Courses", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Cours>("DistanceLessons.Models.FK_Modules_Courses", "Courses", value);
                 }
             }
         }
@@ -2247,18 +2387,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Lessons_Modules", "Lessons")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Lessons_Modules", "Lessons")]
         public EntityCollection<Lesson> Lessons
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Lesson>("distance_lessonsModel.FK_Lessons_Modules", "Lessons");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Lesson>("DistanceLessons.Models.FK_Lessons_Modules", "Lessons");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Lesson>("distance_lessonsModel.FK_Lessons_Modules", "Lessons", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Lesson>("DistanceLessons.Models.FK_Lessons_Modules", "Lessons", value);
                 }
             }
         }
@@ -2269,18 +2409,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_UserModules_Modules", "UserModules")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserModules_Modules", "UserModules")]
         public EntityCollection<UserModule> UserModules
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserModule>("distance_lessonsModel.FK_UserModules_Modules", "UserModules");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserModule>("DistanceLessons.Models.FK_UserModules_Modules", "UserModules");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserModule>("distance_lessonsModel.FK_UserModules_Modules", "UserModules", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserModule>("DistanceLessons.Models.FK_UserModules_Modules", "UserModules", value);
                 }
             }
         }
@@ -2291,7 +2431,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="News")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="News")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class News : EntityObject
@@ -2453,16 +2593,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_News_Users", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_News_Users", "Users")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_News_Users", "Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_News_Users", "Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_News_Users", "Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_News_Users", "Users").Value = value;
             }
         }
         /// <summary>
@@ -2474,13 +2614,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_News_Users", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_News_Users", "Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("distance_lessonsModel.FK_News_Users", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_News_Users", "Users", value);
                 }
             }
         }
@@ -2491,7 +2631,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="Role")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Role")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Role : EntityObject
@@ -2575,18 +2715,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Users_Roles", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Users_Roles", "Users")]
         public EntityCollection<User> Users
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("distance_lessonsModel.FK_Users_Roles", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<User>("DistanceLessons.Models.FK_Users_Roles", "Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("distance_lessonsModel.FK_Users_Roles", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<User>("DistanceLessons.Models.FK_Users_Roles", "Users", value);
                 }
             }
         }
@@ -2597,7 +2737,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="Test")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Test")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class Test : EntityObject
@@ -2707,18 +2847,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Answers_Tests", "Answers")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Answers_Tests", "Answers")]
         public EntityCollection<Answer> Answers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Answer>("distance_lessonsModel.FK_Answers_Tests", "Answers");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Answer>("DistanceLessons.Models.FK_Answers_Tests", "Answers");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Answer>("distance_lessonsModel.FK_Answers_Tests", "Answers", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Answer>("DistanceLessons.Models.FK_Answers_Tests", "Answers", value);
                 }
             }
         }
@@ -2729,16 +2869,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Tests_Lessons", "Lessons")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Tests_Lessons", "Lessons")]
         public Lesson Lesson
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lesson>("distance_lessonsModel.FK_Tests_Lessons", "Lessons").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lesson>("DistanceLessons.Models.FK_Tests_Lessons", "Lessons").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lesson>("distance_lessonsModel.FK_Tests_Lessons", "Lessons").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lesson>("DistanceLessons.Models.FK_Tests_Lessons", "Lessons").Value = value;
             }
         }
         /// <summary>
@@ -2750,13 +2890,35 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lesson>("distance_lessonsModel.FK_Tests_Lessons", "Lessons");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Lesson>("DistanceLessons.Models.FK_Tests_Lessons", "Lessons");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Lesson>("distance_lessonsModel.FK_Tests_Lessons", "Lessons", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Lesson>("DistanceLessons.Models.FK_Tests_Lessons", "Lessons", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserAnswers_Tests", "UserAnswers")]
+        public EntityCollection<UserAnswer> UserAnswers
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserAnswer>("DistanceLessons.Models.FK_UserAnswers_Tests", "UserAnswers");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserAnswer>("DistanceLessons.Models.FK_UserAnswers_Tests", "UserAnswers", value);
                 }
             }
         }
@@ -2767,7 +2929,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="User")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="User")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class User : EntityObject
@@ -3155,18 +3317,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Contacts_Users", "Contacts")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Contacts_Users", "Contacts")]
         public EntityCollection<Contact> Contacts
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Contact>("distance_lessonsModel.FK_Contacts_Users", "Contacts");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Contact>("DistanceLessons.Models.FK_Contacts_Users", "Contacts");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Contact>("distance_lessonsModel.FK_Contacts_Users", "Contacts", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Contact>("DistanceLessons.Models.FK_Contacts_Users", "Contacts", value);
                 }
             }
         }
@@ -3177,18 +3339,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Courses_Users", "Courses")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Courses_Users", "Courses")]
         public EntityCollection<Cours> Courses
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cours>("distance_lessonsModel.FK_Courses_Users", "Courses");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Cours>("DistanceLessons.Models.FK_Courses_Users", "Courses");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cours>("distance_lessonsModel.FK_Courses_Users", "Courses", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Cours>("DistanceLessons.Models.FK_Courses_Users", "Courses", value);
                 }
             }
         }
@@ -3199,18 +3361,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Informations_Users", "Informations")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Informations_Users", "Informations")]
         public EntityCollection<Information> Informations
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Information>("distance_lessonsModel.FK_Informations_Users", "Informations");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Information>("DistanceLessons.Models.FK_Informations_Users", "Informations");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Information>("distance_lessonsModel.FK_Informations_Users", "Informations", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Information>("DistanceLessons.Models.FK_Informations_Users", "Informations", value);
                 }
             }
         }
@@ -3221,18 +3383,40 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Messages_Users", "Messages")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Lessons_Users", "Lessons")]
+        public EntityCollection<Lesson> Lessons
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Lesson>("DistanceLessons.Models.FK_Lessons_Users", "Lessons");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Lesson>("DistanceLessons.Models.FK_Lessons_Users", "Lessons", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Messages_Users", "Messages")]
         public EntityCollection<Message> Messages
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Message>("distance_lessonsModel.FK_Messages_Users", "Messages");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Message>("DistanceLessons.Models.FK_Messages_Users", "Messages");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Message>("distance_lessonsModel.FK_Messages_Users", "Messages", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Message>("DistanceLessons.Models.FK_Messages_Users", "Messages", value);
                 }
             }
         }
@@ -3243,18 +3427,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Messages_Users1", "Messages")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Messages_Users1", "Messages")]
         public EntityCollection<Message> Messages1
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Message>("distance_lessonsModel.FK_Messages_Users1", "Messages");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Message>("DistanceLessons.Models.FK_Messages_Users1", "Messages");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Message>("distance_lessonsModel.FK_Messages_Users1", "Messages", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Message>("DistanceLessons.Models.FK_Messages_Users1", "Messages", value);
                 }
             }
         }
@@ -3265,18 +3449,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_News_Users", "News")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_News_Users", "News")]
         public EntityCollection<News> News
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<News>("distance_lessonsModel.FK_News_Users", "News");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<News>("DistanceLessons.Models.FK_News_Users", "News");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<News>("distance_lessonsModel.FK_News_Users", "News", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<News>("DistanceLessons.Models.FK_News_Users", "News", value);
                 }
             }
         }
@@ -3287,16 +3471,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_Users_Roles", "Roles")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Users_Roles", "Roles")]
         public Role Role
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("distance_lessonsModel.FK_Users_Roles", "Roles").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("DistanceLessons.Models.FK_Users_Roles", "Roles").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("distance_lessonsModel.FK_Users_Roles", "Roles").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("DistanceLessons.Models.FK_Users_Roles", "Roles").Value = value;
             }
         }
         /// <summary>
@@ -3308,13 +3492,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("distance_lessonsModel.FK_Users_Roles", "Roles");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Role>("DistanceLessons.Models.FK_Users_Roles", "Roles");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Role>("distance_lessonsModel.FK_Users_Roles", "Roles", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Role>("DistanceLessons.Models.FK_Users_Roles", "Roles", value);
                 }
             }
         }
@@ -3325,18 +3509,40 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_UserCourses_Users", "UserCourses")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserAnswers_UserAnswers", "UserAnswers")]
+        public EntityCollection<UserAnswer> UserAnswers
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserAnswer>("DistanceLessons.Models.FK_UserAnswers_UserAnswers", "UserAnswers");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserAnswer>("DistanceLessons.Models.FK_UserAnswers_UserAnswers", "UserAnswers", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserCourses_Users", "UserCourses")]
         public EntityCollection<UserCours> UserCourses
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserCours>("distance_lessonsModel.FK_UserCourses_Users", "UserCourses");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserCours>("DistanceLessons.Models.FK_UserCourses_Users", "UserCourses");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserCours>("distance_lessonsModel.FK_UserCourses_Users", "UserCourses", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserCours>("DistanceLessons.Models.FK_UserCourses_Users", "UserCourses", value);
                 }
             }
         }
@@ -3347,18 +3553,18 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_UserModules_Users", "UserModules")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserModules_Users", "UserModules")]
         public EntityCollection<UserModule> UserModules
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserModule>("distance_lessonsModel.FK_UserModules_Users", "UserModules");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<UserModule>("DistanceLessons.Models.FK_UserModules_Users", "UserModules");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserModule>("distance_lessonsModel.FK_UserModules_Users", "UserModules", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<UserModule>("DistanceLessons.Models.FK_UserModules_Users", "UserModules", value);
                 }
             }
         }
@@ -3369,7 +3575,257 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="UserCours")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="UserAnswer")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class UserAnswer : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new UserAnswer object.
+        /// </summary>
+        /// <param name="userAnswerId">Initial value of the UserAnswerId property.</param>
+        /// <param name="userId">Initial value of the UserId property.</param>
+        /// <param name="answerId">Initial value of the AnswerId property.</param>
+        /// <param name="testId">Initial value of the TestId property.</param>
+        public static UserAnswer CreateUserAnswer(global::System.Guid userAnswerId, global::System.Guid userId, global::System.Guid answerId, global::System.Guid testId)
+        {
+            UserAnswer userAnswer = new UserAnswer();
+            userAnswer.UserAnswerId = userAnswerId;
+            userAnswer.UserId = userId;
+            userAnswer.AnswerId = answerId;
+            userAnswer.TestId = testId;
+            return userAnswer;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid UserAnswerId
+        {
+            get
+            {
+                return _UserAnswerId;
+            }
+            set
+            {
+                if (_UserAnswerId != value)
+                {
+                    OnUserAnswerIdChanging(value);
+                    ReportPropertyChanging("UserAnswerId");
+                    _UserAnswerId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("UserAnswerId");
+                    OnUserAnswerIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _UserAnswerId;
+        partial void OnUserAnswerIdChanging(global::System.Guid value);
+        partial void OnUserAnswerIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid UserId
+        {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                OnUserIdChanging(value);
+                ReportPropertyChanging("UserId");
+                _UserId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UserId");
+                OnUserIdChanged();
+            }
+        }
+        private global::System.Guid _UserId;
+        partial void OnUserIdChanging(global::System.Guid value);
+        partial void OnUserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid AnswerId
+        {
+            get
+            {
+                return _AnswerId;
+            }
+            set
+            {
+                OnAnswerIdChanging(value);
+                ReportPropertyChanging("AnswerId");
+                _AnswerId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AnswerId");
+                OnAnswerIdChanged();
+            }
+        }
+        private global::System.Guid _AnswerId;
+        partial void OnAnswerIdChanging(global::System.Guid value);
+        partial void OnAnswerIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid TestId
+        {
+            get
+            {
+                return _TestId;
+            }
+            set
+            {
+                OnTestIdChanging(value);
+                ReportPropertyChanging("TestId");
+                _TestId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TestId");
+                OnTestIdChanged();
+            }
+        }
+        private global::System.Guid _TestId;
+        partial void OnTestIdChanging(global::System.Guid value);
+        partial void OnTestIdChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserAnswers_Answers", "Answers")]
+        public Answer Answer
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Answer>("DistanceLessons.Models.FK_UserAnswers_Answers", "Answers").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Answer>("DistanceLessons.Models.FK_UserAnswers_Answers", "Answers").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Answer> AnswerReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Answer>("DistanceLessons.Models.FK_UserAnswers_Answers", "Answers");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Answer>("DistanceLessons.Models.FK_UserAnswers_Answers", "Answers", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserAnswers_Tests", "Tests")]
+        public Test Test
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("DistanceLessons.Models.FK_UserAnswers_Tests", "Tests").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("DistanceLessons.Models.FK_UserAnswers_Tests", "Tests").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Test> TestReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("DistanceLessons.Models.FK_UserAnswers_Tests", "Tests");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Test>("DistanceLessons.Models.FK_UserAnswers_Tests", "Tests", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserAnswers_UserAnswers", "Users")]
+        public User User
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_UserAnswers_UserAnswers", "Users").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_UserAnswers_UserAnswers", "Users").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User> UserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_UserAnswers_UserAnswers", "Users");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_UserAnswers_UserAnswers", "Users", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="UserCours")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class UserCours : EntityObject
@@ -3479,16 +3935,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_UserCourses_Courses", "Courses")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserCourses_Courses", "Courses")]
         public Cours Cours
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("distance_lessonsModel.FK_UserCourses_Courses", "Courses").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("DistanceLessons.Models.FK_UserCourses_Courses", "Courses").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("distance_lessonsModel.FK_UserCourses_Courses", "Courses").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("DistanceLessons.Models.FK_UserCourses_Courses", "Courses").Value = value;
             }
         }
         /// <summary>
@@ -3500,13 +3956,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("distance_lessonsModel.FK_UserCourses_Courses", "Courses");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Cours>("DistanceLessons.Models.FK_UserCourses_Courses", "Courses");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Cours>("distance_lessonsModel.FK_UserCourses_Courses", "Courses", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Cours>("DistanceLessons.Models.FK_UserCourses_Courses", "Courses", value);
                 }
             }
         }
@@ -3517,16 +3973,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_UserCourses_Users", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserCourses_Users", "Users")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_UserCourses_Users", "Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_UserCourses_Users", "Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_UserCourses_Users", "Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_UserCourses_Users", "Users").Value = value;
             }
         }
         /// <summary>
@@ -3538,13 +3994,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_UserCourses_Users", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_UserCourses_Users", "Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("distance_lessonsModel.FK_UserCourses_Users", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_UserCourses_Users", "Users", value);
                 }
             }
         }
@@ -3555,7 +4011,7 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="distance_lessonsModel", Name="UserModule")]
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="UserModule")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class UserModule : EntityObject
@@ -3691,16 +4147,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_UserModules_Modules", "Modules")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserModules_Modules", "Modules")]
         public Module Module
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("distance_lessonsModel.FK_UserModules_Modules", "Modules").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("DistanceLessons.Models.FK_UserModules_Modules", "Modules").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("distance_lessonsModel.FK_UserModules_Modules", "Modules").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("DistanceLessons.Models.FK_UserModules_Modules", "Modules").Value = value;
             }
         }
         /// <summary>
@@ -3712,13 +4168,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("distance_lessonsModel.FK_UserModules_Modules", "Modules");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("DistanceLessons.Models.FK_UserModules_Modules", "Modules");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Module>("distance_lessonsModel.FK_UserModules_Modules", "Modules", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Module>("DistanceLessons.Models.FK_UserModules_Modules", "Modules", value);
                 }
             }
         }
@@ -3729,16 +4185,16 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("distance_lessonsModel", "FK_UserModules_Users", "Users")]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserModules_Users", "Users")]
         public User User
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_UserModules_Users", "Users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_UserModules_Users", "Users").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_UserModules_Users", "Users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_UserModules_Users", "Users").Value = value;
             }
         }
         /// <summary>
@@ -3750,13 +4206,13 @@ namespace DistanceLessons.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("distance_lessonsModel.FK_UserModules_Users", "Users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_UserModules_Users", "Users");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("distance_lessonsModel.FK_UserModules_Users", "Users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_UserModules_Users", "Users", value);
                 }
             }
         }
