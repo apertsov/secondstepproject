@@ -9,7 +9,7 @@
 
 @for(int i=0;i<Model.Count;i++)
 {
-    @Model[i].Test.Question :<br />
+    @Model[i].Test.Question <br />
     @for(int j=0;j<Model[i].AnswerList.Count;j++)
     {
         @Html.CheckBoxFor(model => model[i].AnswerList[j].Valid)

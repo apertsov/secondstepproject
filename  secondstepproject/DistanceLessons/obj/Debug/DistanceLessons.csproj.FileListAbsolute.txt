@@ -110,3 +110,19 @@ C:\proj_dist_lear\test_new\DistanceLessons\bin\EntityFramework.xml
 C:\proj_dist_lear\test_new\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
 C:\proj_dist_lear\test_new\DistanceLessons\obj\Debug\DistanceLessons.dll
 C:\proj_dist_lear\test_new\DistanceLessons\obj\Debug\DistanceLessons.pdb
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\DistanceLessons.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\DistanceLessons.pdb
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\EntityFramework.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\Microsoft.Web.Optimization.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\System.Web.Helpers.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\System.Web.Mvc.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\System.Web.Providers.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\System.Web.Razor.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\System.Web.WebPages.Deployment.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\System.Web.WebPages.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\System.Web.WebPages.Razor.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\bin\EntityFramework.xml
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.dll
+E:\Project\check Project\trunk\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.pdb
