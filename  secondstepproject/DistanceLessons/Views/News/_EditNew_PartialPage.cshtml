@@ -10,9 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>News</legend>
-
+    <div id="formation">
         @Html.HiddenFor(model => model.NewId)
 
         <div class="editor-label">
@@ -30,13 +28,10 @@
             @Html.TextAreaFor(model => model.Text, new { @class = "textboxarea" })
             @Html.ValidationMessageFor(model => model.Text)
         </div>
-
-        <div class="item">
-            <input type="submit" value="Зберегти" />
-        </div>
-    </fieldset>
-}
-
+    </div>
+    
 <div class="item">
+    <input type="submit" value="Зберегти" />
     @Ajax.ActionLink("Назад", "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
 </div>
+}
