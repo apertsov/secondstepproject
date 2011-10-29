@@ -7,17 +7,6 @@
 
 <h2>CreateLesson</h2>
 
-
-
-      <div id="dialog" title="Upload files">
-        @using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <p><input type="file" id="fileUpload" name="fileUpload" size="23"/> </p>
-            
-            <p><input type="submit" value="Upload file" /></p>
-        } 
-    </div>
-
 @using (Html.BeginForm(new { mod_id=(Guid)ViewBag.ModuleId}))
 {
     @Html.ValidationSummary(true)
@@ -32,15 +21,9 @@
             @Html.ValidationMessageFor(model => model.Title)
         </div>
              <div class="editor-label">
-            @Html.LabelFor(model => model.Text)
+            @Html.HiddenFor(model => model.Text)
         </div>
-        <div class="editor-field">
-   
-            @Html.EditorFor(model => model.Text)
-            @Html.ValidationMessageFor(model => model.Text)
-        </div>
-
-           <div class="editor-label">
+            <div class="editor-label">
             @Html.LabelFor(model => model.Description)
         </div>
         <div class="editor-field">
@@ -56,5 +39,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Lesson")
+    @Html.ActionLink("Back to List", "Lesson", new { id_mod=(Guid)ViewBag.ModuleId})
 </div>

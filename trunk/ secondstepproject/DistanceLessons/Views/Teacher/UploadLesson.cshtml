@@ -2,18 +2,6 @@
     ViewBag.Title = "UploadLesson";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script type="text/javascript">
-    $(function () {
-        $("#dialog").dialog({
-            bgiframe: true,
-            height: 200,
-            modal: true,
-            autoOpen: false,
-            resizable: false
-        })
-    });
-        
-    </script>
 
 <h2>UploadLesson</h2>
   
@@ -27,6 +15,4 @@
             <p><input type="submit" value="Upload file" /></p>
         } 
     </div>
-
-          <a href="#" onclick="jQuery('#dialog').dialog('open'); return false">Upload File</a>
       <p>@ViewBag.Path</p>
