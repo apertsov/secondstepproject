@@ -1,10 +1,9 @@
 ﻿@{
-    ViewBag.Title = "Upload";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "ErrorUpload";
 }
 
-<h2>Upload</h2>
-<p>Обовязково скопіюйте посилання і в майбутньому вставте в поле Техт</p>
-<p>@ViewBag.Path</p>
+<h2>ErrorUpload</h2>
 
-  @Html.ActionLink("Продовжити створення лекції", "CreateLesson", new { mod_id = ViewBag.ModuleId })
+невладе завантаження!!!!
+@Html.ActionLink("Повторити завантаження", "UploadLesson", new { moduleId = ViewBag.ModuleId })
+@Html.ActionLink("Повернутися до списку лекцій", "Lesson", new { id_mod = ViewBag.ModuleId })
