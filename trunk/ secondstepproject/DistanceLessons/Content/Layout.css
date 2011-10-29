@@ -76,11 +76,23 @@ a
     background-repeat: no-repeat;
 }
 
+
+#formation
+{
+    margin: 3%;
+}
+
+.editor-label
+{
+    font: 16px Arial, Verdana, Sans-Serif;
+}
+
 .editor-field .textboxarea
 {
-    min-width: 500px;
-    max-width: 500px;
-    font: 12px Arial, Verdana, Sans-Serif;
+    min-height: 200px;
+    min-width: 300px;
+    max-width: 300px;
+    font: 15px Arial, Verdana, Sans-Serif;
     color: black;
     -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
     -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;
@@ -89,9 +101,9 @@ a
 
 .editor-field .editor
 {
-    min-width: 500px;
-    max-width: 500px;
-    font: 12px Arial, Verdana, Sans-Serif;
+    min-width: 300px;
+    max-width: 300px;
+    font: 16px Arial, Verdana, Sans-Serif;
     color: black;
     -webkit-box-shadow: 0px 1px 5px 0px #4a4a4a;
     -moz-box-shadow: 0px 1px 5px 0px #4a4a4a;

@@ -4,7 +4,7 @@
             @Html.LabelFor(model => model.Skype)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Skype)
+            @Html.TextBoxFor(model => model.Skype, new { @class = "editor" })
             @Html.ValidationMessageFor(model => model.Skype)
         </div>
 
@@ -12,7 +12,7 @@
             @Html.LabelFor(model => model.ICQ_QIP)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.ICQ_QIP)
+            @Html.TextBoxFor(model => model.ICQ_QIP, new { @class = "editor" })
             @Html.ValidationMessageFor(model => model.ICQ_QIP)
         </div>
 
@@ -20,7 +20,7 @@
             @Html.LabelFor(model => model.Telephone)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Telephone)
+            @Html.TextBoxFor(model => model.Telephone, new { @class = "editor" })
             @Html.ValidationMessageFor(model => model.Telephone)
         </div>
 
@@ -28,7 +28,6 @@
             @Html.LabelFor(model => model.Other)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Other)
+            @Html.TextAreaFor(model => model.Other, new { @class = "textboxarea" })
             @Html.ValidationMessageFor(model => model.Other)
         </div>
-
