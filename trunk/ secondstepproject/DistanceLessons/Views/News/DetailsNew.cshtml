@@ -1,0 +1,16 @@
+﻿@model DistanceLessons.Models.News
+
+@{
+    ViewBag.Title = "Детальніше про: "+Model.Title;
+}
+
+<h2>@Model.Title</h2>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+    <br/>
+<div class="time-author">-@Model.User.Login, @Model.Publication</div>
+
+<div class="item">
+    @Ajax.ActionLink("До списку всіх новин", "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+</div>

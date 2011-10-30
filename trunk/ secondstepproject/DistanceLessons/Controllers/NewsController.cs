@@ -24,11 +24,11 @@ namespace DistanceLessons.Controllers
 
             if (!Request.IsAjaxRequest())
             {
-                return View(_db.GetNewsList_time(itemOnPage, numPage));
+                return View(_db.GetNewsList_time(itemOnPage, numPage,1));
             }
             else
             {
-                return PartialView("_New_PartialPage", _db.GetNewsList_time(itemOnPage, numPage));
+                return PartialView("_New_PartialPage", _db.GetNewsList_time(itemOnPage, numPage,1));
             }
         }
 
@@ -87,8 +87,34 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult DeleteNew(Guid id)
         {
+            if (!Request.IsAjaxRequest())
+            {
+                return View(_db.GetNew(id));
+            }
+            else
+            {
+                return PartialView("_DeleteNew_PartialPage", _db.GetNew(id));
+            }
+        }
+
+        [HttpPost]
+        public ActionResult DeleteNew(Guid id, FormCollection collection)
+        {
             _db.DeleteNew(id);
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult DetailsNew(Guid id)
+        {
+            if (!Request.IsAjaxRequest())
+            {
+                return View(_db.GetNew(id));
+            }
+            else
+            {
+                return PartialView("_DetailsNew_PartialPage", _db.GetNew(id));
+            }
         }
     }
 }

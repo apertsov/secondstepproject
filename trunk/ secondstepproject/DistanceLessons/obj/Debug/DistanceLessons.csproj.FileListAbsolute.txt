@@ -142,3 +142,19 @@ C:\proj_dist_lear\project\DistanceLessons\bin\EntityFramework.xml
 C:\proj_dist_lear\project\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
 C:\proj_dist_lear\project\DistanceLessons\obj\Debug\DistanceLessons.dll
 C:\proj_dist_lear\project\DistanceLessons\obj\Debug\DistanceLessons.pdb
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\DistanceLessons.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\DistanceLessons.pdb
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\EntityFramework.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\Microsoft.Web.Infrastructure.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\Microsoft.Web.Optimization.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\System.Web.Helpers.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\System.Web.Mvc.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\System.Web.Providers.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\System.Web.Razor.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\System.Web.WebPages.Deployment.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\System.Web.WebPages.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\System.Web.WebPages.Razor.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\bin\EntityFramework.xml
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.dll
+C:\Documents and Settings\ammi_lee\Рабочий стол\last_secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.pdb
