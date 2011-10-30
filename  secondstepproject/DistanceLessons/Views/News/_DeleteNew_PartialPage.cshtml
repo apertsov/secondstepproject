@@ -1,0 +1,15 @@
+﻿@model DistanceLessons.Models.News
+
+<h2>Ви справді впевнені, що варто видаляти новину "@Model.Title" ?</h2>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+    <br/>
+<div class="time-author">-@Model.User.Login, @Model.Publication</div>
+@using (Html.BeginForm()) 
+{
+<div class="item">
+    <input type="submit" value="Видалити" />
+    @Ajax.ActionLink("Назад", "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+</div>
+}

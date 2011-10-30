@@ -372,6 +372,9 @@
     <Content Include="Views\News\_CreateNew_PartialPage.cshtml" />
     <Content Include="Views\News\_EditNew_PartialPage.cshtml" />
     <Content Include="Views\Teacher\Upload.cshtml" />
+    <Content Include="Views\News\_DetailsNew_PartialPage.cshtml" />
+    <Content Include="Views\News\DetailsNew.cshtml" />
+    <Content Include="Views\News\_DeleteNew_PartialPage.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
