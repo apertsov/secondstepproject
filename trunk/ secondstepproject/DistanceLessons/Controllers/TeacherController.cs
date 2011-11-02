@@ -23,17 +23,10 @@ namespace DistanceLessons.Controllers
 
         public ActionResult Index()
         {
-            return View(db.GetLessonsByTeacherId(db.GetUserId(User.Identity.Name)));
+            return View(db.UserLessons(User.Identity.Name)); 
         }
-        [HttpGet]
-        public ActionResult EditLessonTests(Guid lessonId)
-        {
-            List<TestAndAnswersModel> testAndAnswersList = new List<TestAndAnswersModel>();
-            List<Test> testList = db.LessonTests(lessonId);
-            foreach (var test in testList)
-                testAndAnswersList.Add(new TestAndAnswersModel { Test=test, AnswerList=db.TestAnswers(test.TestId) });
-            return View(testAndAnswersList);
-        }
+
+
         public ActionResult Lesson(Guid id_mod)
         {
             ViewBag.ModuleId = id_mod;

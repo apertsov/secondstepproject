@@ -104,10 +104,12 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\VirtualJournalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DivCreator.cs" />
     <Compile Include="Helpers\Paging.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AttributeEntitiesModelClass.cs" />
@@ -223,6 +225,7 @@
     <Content Include="Images\aspNetHome.png" />
     <Content Include="Images\NuGetGallery.png" />
     <Content Include="Images\findHosting.png" />
+    <Content Include="Scripts\MyScripts\DisableDoubleClick.js" />
     <Content Include="Uploads\333letters.txt" />
     <Content Include="Uploads\H.bmp" />
     <Content Include="Uploads\let1.txt" />
@@ -239,6 +242,8 @@
     <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
     <Content Include="Views\Account\LogOn.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
@@ -325,9 +330,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Teacher\EditLessonTests.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Shared\_Navigation_PartialPage.cshtml" />
     <Content Include="Views\Shared\_News_PartialPage.cshtml" />
@@ -349,6 +351,7 @@
     <Content Include="Views\Teacher\Lesson.cshtml" />
     <Content Include="Views\Teacher\Modules.cshtml" />
     <Content Include="Views\Teacher\MyCourses.cshtml" />
+    <Content Include="Views\Teacher\Upload.cshtml" />
     <Content Include="Views\Teacher\UploadLesson.cshtml" />
     <Content Include="packages.config" />
     <EntityDeploy Include="Models\DistanceLessonsModel.edmx">
@@ -371,10 +374,12 @@
     <Content Include="Views\News\_New_PartialPage.cshtml" />
     <Content Include="Views\News\_CreateNew_PartialPage.cshtml" />
     <Content Include="Views\News\_EditNew_PartialPage.cshtml" />
-    <Content Include="Views\Teacher\Upload.cshtml" />
-    <Content Include="Views\News\_DetailsNew_PartialPage.cshtml" />
-    <Content Include="Views\News\DetailsNew.cshtml" />
-    <Content Include="Views\News\_DeleteNew_PartialPage.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Test\QuestionsAndAnswersPartialPage.cshtml" />
+    <Content Include="Views\Test\ShowTestPartial.cshtml" />
+    <Content Include="Views\Test\ShowAnswersPartial.cshtml" />
+    <Content Include="Views\Test\EditTestPartial.cshtml" />
+    <Content Include="Views\Test\EditTest.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

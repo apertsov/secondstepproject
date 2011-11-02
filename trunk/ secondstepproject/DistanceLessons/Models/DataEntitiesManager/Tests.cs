@@ -18,5 +18,59 @@ namespace DistanceLessons.Models
                     where tests.LessonId == lessonId
                     select tests).ToList();
         }
+
+        public List<TestAndAnswersModel> LessonTestsAndAnswers(Guid lessonId)
+        {
+            List<TestAndAnswersModel> testAndAnswersList = new List<TestAndAnswersModel>();
+            List<Test> testList = LessonTests(lessonId);
+            foreach (var test in testList)
+                testAndAnswersList.Add(new TestAndAnswersModel { Test = test, AnswerList = TestAnswers(test.TestId) });
+            return testAndAnswersList;
+        }
+
+        public Test Test(Guid testId)
+        {
+            return (from test in _db.Tests
+                    where test.TestId == testId
+                    select test).FirstOrDefault();
+        }
+
+        public void AddTest(Test test)
+        {
+            if (test != null)
+            {
+                _db.AddToTests(test);
+                Save();
+            }
+        }
+
+        public void DeleteTestWithAnswers(Guid TestId)
+        {
+            Test test = (from _test in _db.Tests
+                        where _test.TestId == TestId
+                        select _test).FirstOrDefault();
+            if (test != null)
+            {
+            List<Answer> answers = TestAnswers(TestId);
+            foreach (Answer answer in answers)
+                DeleteAnswer(answer.AnswerId);
+             _db.DeleteObject(test);
+             _db.SaveChanges();
+            }
+        }
+
+        public void UpdateTest(Test test)
+        {
+                Test tmp = Test(test.TestId);
+                tmp.Question = test.Question;
+                Save();
+        }
+
+        public bool IsTest(Guid id)
+        {
+            return (from test in _db.Tests
+                    where test.TestId == id
+                    select test).FirstOrDefault() == null ? false : true;
+        }
     }
 }
