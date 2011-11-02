@@ -225,7 +225,6 @@
     <Content Include="Images\aspNetHome.png" />
     <Content Include="Images\NuGetGallery.png" />
     <Content Include="Images\findHosting.png" />
-    <Content Include="Scripts\MyScripts\DisableDoubleClick.js" />
     <Content Include="Uploads\333letters.txt" />
     <Content Include="Uploads\H.bmp" />
     <Content Include="Uploads\let1.txt" />
