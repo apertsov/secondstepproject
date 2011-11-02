@@ -1,0 +1,9 @@
+﻿@model DistanceLessons.Models.TestAndAnswersModel
+
+
+<div> @Model.Test.Question      
+@Ajax.ActionLink("Редагувати тест", "EditTest", new { id=Model.Test.TestId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace }) 
+@Ajax.ActionLink("Видалити тест", "DeleteTest", new { testId = Model.Test.TestId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace }, new { onclick = "return confirm('Дійсно бажаєте видалити тест? З ним знищаться і всі відповіді на цей тест.')" }) 
+</div>   
+ @{Html.RenderPartial("ShowAnswersPartial", Model.AnswerList, Html.ViewData);}
+

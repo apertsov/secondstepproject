@@ -1,0 +1,13 @@
+﻿@model List<DistanceLessons.Models.TestAndAnswersModel>
+  <h2>Редагування тестів лекції</h2>
+  <ul>
+             @if (Model != null)
+             {
+                 foreach (DistanceLessons.Models.TestAndAnswersModel model in Model)
+                 {    <li>
+                    @{Html.RenderPartial("ShowTestPartial", model, Html.ViewData);}
+                   </li>
+                 }
+             }
+  </ul>
+  @Ajax.ActionLink("Додати новий тест", "AddTest", new { id = (Guid)Session["LessonId"] }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace })

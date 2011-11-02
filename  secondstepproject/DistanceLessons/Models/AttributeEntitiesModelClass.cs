@@ -88,6 +88,7 @@ namespace DistanceLessons.Models
             public Guid TestId { get; set; }
 
             [DisplayName("Запитання")]
+            [Required(ErrorMessage = "Заповніть поле запитання.")]
             [StringLength(256, ErrorMessage = "Запитання обмежене 256 символами")]
             public string Question { get; set; }
 
@@ -105,6 +106,7 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid AnswerId { get; set; }
 
+            [Required(ErrorMessage = "Заповніть поле відповіді.")]
             [DisplayName("Текст відповіді")]
             [StringLength(128, ErrorMessage = "Відповідь обмежена 128 символами")]
             public string Answer1 { get; set; }

@@ -12,14 +12,14 @@ namespace DistanceLessons.Models
             return _db.Lessons.ToList<Lesson>();
         }
 
-      /*  public List<Lesson> UserLessons(string username)
+        public List<Lesson> UserLessons(string username)
         {
             Guid userId = GetUserId(username);
             return (from lessons in _db.Lessons
                    where lessons.UserId == userId
                    select lessons).ToList();
         }
-        */
+        
         public Lesson GetLessonByID(Guid id)
         {
             return _db.Lessons.SingleOrDefault(c => c.LessonId == id);
@@ -140,6 +140,13 @@ namespace DistanceLessons.Models
                 lst.Add(i);
 
             return lst;
+        }
+
+        public bool IsLesson(Guid id)
+        {
+            return (from lesson in _db.Lessons
+                    where lesson.LessonId==id
+                    select lesson).FirstOrDefault()==null?false:true;
         }
     }
 }
