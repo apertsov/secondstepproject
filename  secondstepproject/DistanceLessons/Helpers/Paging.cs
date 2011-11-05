@@ -39,16 +39,30 @@ namespace DistanceLessons.Helpers
 
             if (numPage > 0)
             {
+                sb.Append(helper.ActionLink(" << ", ViewName, new { numPage = 0 }, ao));
                 sb.Append(helper.ActionLink(" < ", ViewName, new { numPage = numPage - 1 }, ao));
             }
 
             int PageCount = (int)Math.Ceiling((double)itemsCount / itemOnPage);
 
+            if (numPage-1>=0)
+            {
+                sb.Append(helper.ActionLink((numPage).ToString(), ViewName, new { numPage = numPage-1 }, ao));
+            }
+
+            sb.Append("<span class=\"current_page\">" + (numPage+1).ToString() + "</span>");
+
+            if (numPage + 1 <= PageCount-1)
+            {
+                sb.Append(helper.ActionLink((numPage+2).ToString(), ViewName, new { numPage = numPage +1 }, ao));
+            }
+
+
             if (numPage < PageCount - 1)
             {
                 sb.Append(helper.ActionLink(" > ", ViewName, new { numPage = numPage + 1 }, ao));
+                sb.Append(helper.ActionLink(" >> ", ViewName, new { numPage = PageCount-1 }, ao));
             }
-
 
             return MvcHtmlString.Create(sb.ToString());
         }
