@@ -33,7 +33,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult CreateNew()
+        public ActionResult Create()
         {
             if (!Request.IsAjaxRequest())
             {
@@ -41,12 +41,12 @@ namespace DistanceLessons.Controllers
             }
             else
             {
-                return PartialView("_CreateNew_PartialPage");
+                return PartialView("_Create_PartialPage");
             }
         }
 
         [HttpPost]
-        public ActionResult CreateNew(News obj)
+        public ActionResult Create(News obj)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult EditNew(Guid id)
+        public ActionResult Edit(Guid id)
         {
             if (!Request.IsAjaxRequest())
             {
@@ -71,12 +71,12 @@ namespace DistanceLessons.Controllers
             }
             else
             {
-                return PartialView("_EditNew_PartialPage", _db.GetNew(id));
+                return PartialView("_Edit_PartialPage", _db.GetNew(id));
             }
         }
 
         [HttpPost]
-        public ActionResult EditNew(News obj)
+        public ActionResult Edit(News obj)
         {
             News old = _db.GetNew(obj.NewId);
             UpdateModel(old);
@@ -85,7 +85,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult DeleteNew(Guid id)
+        public ActionResult Delete(Guid id)
         {
             if (!Request.IsAjaxRequest())
             {
@@ -93,19 +93,19 @@ namespace DistanceLessons.Controllers
             }
             else
             {
-                return PartialView("_DeleteNew_PartialPage", _db.GetNew(id));
+                return PartialView("_Delete_PartialPage", _db.GetNew(id));
             }
         }
 
         [HttpPost]
-        public ActionResult DeleteNew(Guid id, FormCollection collection)
+        public ActionResult Delete(Guid id, FormCollection collection)
         {
             _db.DeleteNew(id);
             return RedirectToAction("Index");
         }
 
         [HttpGet]
-        public ActionResult DetailsNew(Guid id)
+        public ActionResult Detail(Guid id)
         {
             if (!Request.IsAjaxRequest())
             {
@@ -113,7 +113,7 @@ namespace DistanceLessons.Controllers
             }
             else
             {
-                return PartialView("_DetailsNew_PartialPage", _db.GetNew(id));
+                return PartialView("_Detail_PartialPage", _db.GetNew(id));
             }
         }
     }
