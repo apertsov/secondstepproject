@@ -42,14 +42,16 @@ namespace DistanceLessons.Models
 
             for (int i = 0; i < lst.Count;i++ )
             {
-                lst[i].Text = Regex.Replace(lst[i].Text, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?", "<a href='http://"+"'>[url]</a>");
+                lst[i].Text = Regex.Replace(lst[i].Text, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?", "[<a href=\"http://" + "\">url</a>]");
             }
                 return lst;
         }
 
         public News GetNew(Guid id)
         {
-            return _db.News.SingleOrDefault(c => c.NewId == id);
+            News temp = _db.News.SingleOrDefault(c => c.NewId == id);
+            temp.Text = Regex.Replace(temp.Text, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?", "[<a href=\"http://" + "\">url</a>]");
+            return temp;
         }
 
         public void DeleteNew(Guid id)

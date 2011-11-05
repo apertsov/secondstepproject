@@ -11,6 +11,15 @@ namespace DistanceLessons.Helpers
 {
     public static class Paging
     {
+        public static MvcHtmlString TextHtml(this HtmlHelper helper, string text)
+        {
+            StringBuilder sb = new StringBuilder();
+            
+            sb.Append(text);
+
+            return MvcHtmlString.Create(sb.ToString());
+        }
+
         public static MvcHtmlString Pages(this HtmlHelper helper, int numPage, int itemsCount, int itemOnPage, string ViewName)
         {
             StringBuilder sb = new StringBuilder();
