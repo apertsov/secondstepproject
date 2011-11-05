@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 
 namespace DistanceLessons.Models
@@ -38,7 +39,12 @@ namespace DistanceLessons.Models
                     }
                 }
 
-            return lst;
+
+            for (int i = 0; i < lst.Count;i++ )
+            {
+                lst[i].Text = Regex.Replace(lst[i].Text, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?", "<a href='http://"+"'>[url]</a>");
+            }
+                return lst;
         }
 
         public News GetNew(Guid id)
