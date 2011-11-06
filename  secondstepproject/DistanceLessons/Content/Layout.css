@@ -80,6 +80,24 @@ body
     list-style: none;
 }
 
+.item .no_button a, .item .no_button input
+{
+    color: silver;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+    -webkit-box-shadow: 0px 0px 0px 0px #4a4a4a;
+    -moz-box-shadow: 0px 0px 0px 0px #4a4a4a;
+    box-shadow: 0px 0px 0px 0px #4a4a4a;
+}
+
+.item .no_button a:hover, .item .no_button input:hover
+{
+    color: orange;
+    background: none;
+}
+
 .item a, .item input
 {
     font: bold 12px Arial, Verdana, Sans-Serif;
