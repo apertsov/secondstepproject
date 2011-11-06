@@ -89,11 +89,11 @@ namespace DistanceLessons.Controllers
         {
             if (!Request.IsAjaxRequest())
             {
-                return View(_db.GetNew(id));
+                return View(_db.GetNew_withTag(id));
             }
             else
             {
-                return PartialView("_Delete_PartialPage", _db.GetNew(id));
+                return PartialView("_Delete_PartialPage", _db.GetNew_withTag(id));
             }
         }
 
@@ -109,11 +109,11 @@ namespace DistanceLessons.Controllers
         {
             if (!Request.IsAjaxRequest())
             {
-                return View(_db.GetNew(id));
+                return View(_db.GetNew_withTag(id));
             }
             else
             {
-                return PartialView("_Detail_PartialPage", _db.GetNew(id));
+                return PartialView("_Detail_PartialPage", _db.GetNew_withTag(id));
             }
         }
     }

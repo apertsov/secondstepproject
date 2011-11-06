@@ -18,7 +18,7 @@
         <div class="item">
         <li>
             <h4>@_new.Title</h4>
-            <div class="prologue">@_new.Text</div>
+            <div class="prologue">@Html.TextHtml(_new.Text)</div>
             <div class="time-author">
                 -@_new.User.Login, @_new.Publication        
                 @{

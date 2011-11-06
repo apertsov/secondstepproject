@@ -2,7 +2,7 @@
 
 <h2>Ви справді впевнені, що варто видаляти новину "@Model.Title" ?</h2>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Text)
+        @Html.TextHtml(Model.Text)
     </div>
     <br/>
 <div class="time-author">-@Model.User.Login, @Model.Publication</div>
