@@ -39,19 +39,51 @@ namespace DistanceLessons.Models
                     }
                 }
 
-
-            for (int i = 0; i < lst.Count;i++ )
+            for (int current_obj = 0; current_obj < lst.Count; current_obj++)
             {
-                lst[i].Text = Regex.Replace(lst[i].Text, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?", "[<a href=\"http://" + "\">url</a>]");
+                string[] temp = Regex.Split(lst[current_obj].Text, "( )|(\r\n)");
+
+                string str = "";
+                foreach (string current in temp)
+                {
+                    if (Regex.IsMatch(current, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?"))
+                        str += current.Replace(current, "[<a href=\"" +current+ "\">url</a>]") + " ";
+                    else if (Regex.IsMatch(current, @"\r\n"))
+                        str += current.Replace(current, "<br />") + " ";
+                    else str += current + " ";
+                }
+
+                lst[current_obj].Text = str;
             }
+
                 return lst;
+        }
+
+        public News GetNew_withTag(Guid id)
+        {
+            News current_obj = _db.News.SingleOrDefault(c => c.NewId == id);
+
+            string[] temp = Regex.Split(current_obj.Text, "( )|(\r\n)");
+
+            string str = "";
+            foreach (string current in temp)
+            {
+                if (Regex.IsMatch(current, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?"))
+                    str += current.Replace(current, "[<a href=\"" + current + "\">url</a>]") + " ";
+                else if (Regex.IsMatch(current, @"\r\n"))
+                    str += current.Replace(current, "<br />") + " ";
+                else str += current + " ";
+            }
+
+            current_obj.Text = str;
+
+            return current_obj;
         }
 
         public News GetNew(Guid id)
         {
-            News temp = _db.News.SingleOrDefault(c => c.NewId == id);
-            temp.Text = Regex.Replace(temp.Text, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?", "[<a href=\"http://" + "\">url</a>]");
-            return temp;
+            News current_obj = _db.News.SingleOrDefault(c => c.NewId == id);
+            return current_obj;
         }
 
         public void DeleteNew(Guid id)

@@ -6,8 +6,8 @@
         DistanceLessons.Models.DataEntitiesManager _db = new DistanceLessons.Models.DataEntitiesManager();
         foreach (DistanceLessons.Models.News _new in _db.GetNewsList_time(3,0,2))
         {
-        <li>@Html.ActionLink(_new.Title.ToString(),"DetailsNew","News", new {id=_new.NewId},null)
-        <div class="prologue">@_new.Text</div>
+        <li>@Html.ActionLink(_new.Title.ToString(),"Detail","News", new {id=_new.NewId},null)
+        <div class="prologue">@Html.TextHtml(_new.Text)</div>
             <div class="time-author">
                 -@_new.User.Login, @_new.Publication</div>
         </li>
