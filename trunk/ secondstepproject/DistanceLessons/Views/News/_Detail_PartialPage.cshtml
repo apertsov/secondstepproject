@@ -1,5 +1,16 @@
 ﻿@model DistanceLessons.Models.News
 
+<div class="item" align="right">
+@{
+            DistanceLessons.Models.DataEntitiesManager _db = new DistanceLessons.Models.DataEntitiesManager();
+            if ((_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Admin.ToString()) || (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Teacher.ToString()) || (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Dean.ToString()))
+            {
+                        @Ajax.ActionLink("Редагувати", "Edit", new { id = Model.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+                        @Ajax.ActionLink("Видалити", "Delete", new { id = Model.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+            }
+}
+</div>
+
 <h2>@Model.Title</h2>
     <div>
         @Html.TextHtml(Model.Text)

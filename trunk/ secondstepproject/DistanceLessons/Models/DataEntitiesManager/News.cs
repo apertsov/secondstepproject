@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
+using Microsoft.Security.Application;
 
 namespace DistanceLessons.Models
 {
@@ -18,26 +19,27 @@ namespace DistanceLessons.Models
             //type - 1 - 500char
             //type - 2 - 200char
 
-            var Query =  (from n in GetNewsList() orderby n.Publication descending select n).Skip(pageSize*numPage).Take(pageSize);
-           
+            var Query = (from n in GetNewsList() orderby n.Publication descending select n).Skip(pageSize * numPage).Take(pageSize);
+
             List<News> lst = new List<News>();
             foreach (var i in Query)
                 lst.Add(i);
-            
-            if (type==2)
+
+            if (type == 2)
             {
                 for (int i = 0; i < lst.Count; i++)
                 {
-                    if (lst[i].Text.Length>200) lst[i].Text = lst[i].Text.Substring(0, 197) + "...";
+                    if (lst[i].Title.Length > 50) lst[i].Title = lst[i].Title.Substring(0, 47) + "...";
+                    if (lst[i].Text.Length > 200) lst[i].Text = lst[i].Text.Substring(0, 197) + "...";
                 }
             }
-            else if (type==1)
+            else if (type == 1)
+            {
+                for (int i = 0; i < lst.Count; i++)
                 {
-                    for (int i = 0; i < lst.Count; i++)
-                    {
-                        if (lst[i].Text.Length > 500) lst[i].Text = lst[i].Text.Substring(0, 497) + "...";
-                    }
+                    if (lst[i].Text.Length > 500) lst[i].Text = lst[i].Text.Substring(0, 497) + "...";
                 }
+            }
 
             for (int current_obj = 0; current_obj < lst.Count; current_obj++)
             {
@@ -47,7 +49,7 @@ namespace DistanceLessons.Models
                 foreach (string current in temp)
                 {
                     if (Regex.IsMatch(current, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?"))
-                        str += current.Replace(current, "[<a href=\"" +current+ "\">url</a>]") + " ";
+                        str += current.Replace(current, "[<a href=\"" + current + "\" target=\"_new\">url</a>]") + " ";
                     else if (Regex.IsMatch(current, @"\r\n"))
                         str += current.Replace(current, "<br />") + " ";
                     else str += current + " ";
@@ -56,7 +58,10 @@ namespace DistanceLessons.Models
                 lst[current_obj].Text = str;
             }
 
-                return lst;
+            foreach (var newse in lst)
+                newse.Text = Sanitizer.GetSafeHtmlFragment(newse.Text);
+
+            return lst;
         }
 
         public News GetNew_withTag(Guid id)
@@ -69,13 +74,13 @@ namespace DistanceLessons.Models
             foreach (string current in temp)
             {
                 if (Regex.IsMatch(current, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?"))
-                    str += current.Replace(current, "[<a href=\"" + current + "\">url</a>]") + " ";
+                    str += current.Replace(current, "[<a href=\"" + current + "\" target=\"_new\">url</a>]") + " ";
                 else if (Regex.IsMatch(current, @"\r\n"))
                     str += current.Replace(current, "<br />") + " ";
                 else str += current + " ";
             }
 
-            current_obj.Text = str;
+            current_obj.Text = Sanitizer.GetSafeHtmlFragment(str);
 
             return current_obj;
         }
