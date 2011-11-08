@@ -248,10 +248,10 @@ body
 
 #header_upper_left
 {
-    background: white;
+    background: white;/*
     background-image: url('img/header/upper_left.png');
     background-position: bottom left;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     width: 40%;
     height: 25px;
     margin: auto;
@@ -302,10 +302,10 @@ body
 
 #header_middle
 {
-    background: white;
+    background: white;/*
     background-image: url('img/header/middle.png');
     background-position: top left;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     width: 80%;
     height: 90px;
     margin: auto;

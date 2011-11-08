@@ -120,22 +120,27 @@ namespace DistanceLessons.Models
     }
 
 
-    [MetadataType(typeof(LoginMetaData))]
-    public partial class Login
+    [MetadataType(typeof(NewsMetadata))]
+    public partial class News
     {
+        public class NewsMetadata
+        {
+            [ScaffoldColumn(false)]
+            public Guid NewId { get; set; }
+
+            [DisplayName("Заголовок")]
+            public string Title { get; set; }
+
+            [AllowHtml]
+            [DisplayName("Введіть текст:")]
+            public string Text { get; set; }
+
+            [ScaffoldColumn(false)]
+            [DisplayName("Дата:")]
+            public DateTime Publication { get; set; }
+
+            [ScaffoldColumn(false)]
+            public Guid UserId { get; set; }
+        }
     }
-
-    public class LoginMetaData
-    {
-        [Required]
-        [DisplayName("Логін")]
-        public string Login { get; set; }
-
-        [Required]
-        [DisplayName("Пароль")]
-        public string Password { get; set; }
-            
-        //etc...
-        //...
-    } 
 }

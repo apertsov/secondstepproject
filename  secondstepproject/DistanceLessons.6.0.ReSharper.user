@@ -1,25 +1,8 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Home/f:Categories.cshtml" caret="264" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Modules.cshtml" caret="539" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Navigation_PartialPage.cshtml" caret="751" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:UploadLesson.cshtml" caret="625" fromTop="17" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Upload.cshtml" caret="43" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Index.cshtml" caret="415" fromTop="8" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Site.css" caret="198" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="2717" fromTop="65" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Helpers/f:Paging.cs" caret="188" fromTop="8" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Edit_PartialPage.cshtml" caret="295" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Detail.cshtml" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="2896" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_News_PartialPage.cshtml" caret="312" fromTop="8" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Delete_PartialPage.cshtml" caret="323" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Create_PartialPage.cshtml" caret="358" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="1480" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="837" fromTop="4" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:Welcome.cshtml" caret="188" fromTop="7" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:LogOn.cshtml" caret="582" fromTop="17" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:EditProfile.cshtml" caret="858" fromTop="21" />
@@ -31,44 +14,61 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:Activate.cshtml" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:Register.cshtml" caret="786" fromTop="19" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_Data/f:GmailAccount.txt" caret="86" fromTop="4" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Helpers/f:Paging.cs" caret="265" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:AttributeEntitiesModelClass.cs" caret="4243" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="869" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:DataEntitiesManager.cs" caret="213" fromTop="9" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="3519" fromTop="98" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Index.cshtml" caret="418" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="489" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Edit_PartialPage.cshtml" caret="81" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Delete_PartialPage.cshtml" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Edit.cshtml" caret="81" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Detail.cshtml" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="5992" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_News_PartialPage.cshtml" caret="18" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Create_PartialPage.cshtml" caret="320" fromTop="9" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="2719" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="2272" fromTop="27" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="529" fromTop="6" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="709" fromTop="12" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="69" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="2049" fromTop="33" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="1463" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="1908" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="2034" fromTop="25" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_News_PartialPage.cshtml" caret="407" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="3371" fromTop="22" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="1391" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="2282" fromTop="18" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="2129" fromTop="2" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="2878" fromTop="23" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="2896" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="2400" fromTop="13" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="2532" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="2942" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="3074" fromTop="28" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Delete_PartialPage.cshtml" caret="177" fromTop="4" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="1065" fromTop="12" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="2060" fromTop="21" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="2118" fromTop="25" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="1508" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="837" fromTop="4" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="851" fromTop="4" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="2212" fromTop="24" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="2212" fromTop="23" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="2212" fromTop="8" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="1800" fromTop="25" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="1415" fromTop="7" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:Register.cshtml" caret="1750" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:DataEntitiesManager.cs" caret="213" fromTop="9" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:AttributeEntitiesModelClass.cs" caret="4130" fromTop="9" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:AttributeEntitiesModelClass.cs" caret="4776" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="3651" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="3519" fromTop="19" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="1038" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="1038" fromTop="14" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="1038" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="68" fromTop="2" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="489" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Detail.cshtml" caret="942" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Detail.cshtml" caret="100" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="869" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Detail.cshtml" caret="942" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Edit.cshtml" caret="1259" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="563" fromTop="15" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="79" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Edit_PartialPage.cshtml" caret="81" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Edit.cshtml" caret="81" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="3262" fromTop="15" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_News_PartialPage.cshtml" caret="18" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="4988" fromTop="13" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="6118" fromTop="11" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
     <ItemStatistics item="RazorTransitionCompletionContext">
       <Item value="Ajax" priority="9" />
-      <Item value="Html" priority="47" />
+      <Item value="Html" priority="55" />
       <Item value="Model" priority="19" />
     </ItemStatistics>
     <ItemStatistics item="CSharpCodeCompletionContext">
@@ -92,8 +92,8 @@
       <Item value="true" priority="31" />
       <Item value="false" priority="63" />
       <Item value="id" priority="31" />
-      <Item value="Model" priority="251" />
-      <Item value="Html" priority="149" />
+      <Item value="Model" priority="347" />
+      <Item value="Html" priority="179" />
       <Item value="RouteValueDictionary" priority="28" />
       <Item value="null" priority="31" />
       <Item value="DetailsNew" priority="32" />
@@ -120,16 +120,30 @@
       <Item value="str" priority="31" />
     </ItemStatistics>
     <ItemStatistics item="HtmlCodeCompletionContext">
-      <Item value="div" priority="38" />
+      <Item value="div" priority="62" />
       <Item value="little" priority="13" />
       <Item value="id" priority="11" />
-      <Item value="class" priority="23" />
-      <Item value="item" priority="11" />
+      <Item value="class" priority="35" />
+      <Item value="item" priority="17" />
       <Item value="br" priority="18" />
       <Item value="hr" priority="5" />
       <Item value="formation" priority="5" />
       <Item value="test" priority="6" />
       <Item value="box" priority="5" />
+      <Item value="align" priority="23" />
+      <Item value="left" priority="14" />
+      <Item value="right" priority="33" />
+      <Item value="span" priority="5" />
+      <Item value="style" priority="29" />
+      <Item value="text-align" priority="8" />
+      <Item value="a" priority="5" />
+      <Item value="href" priority="5" />
+      <Item value="_Layout.cshtml" priority="5" />
+      <Item value="display" priority="13" />
+      <Item value="inline" priority="17" />
+      <Item value="time-author" priority="5" />
+      <Item value="title" priority="6" />
+      <Item value="float" priority="13" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@DistanceLessons.Models.UserRoles">
       <Item value="Teacher" priority="26" />
@@ -145,7 +159,7 @@
       <Item value="red" priority="20" />
       <Item value="border-bottom" priority="5" />
       <Item value="dotted" priority="5" />
-      <Item value="width" priority="5" />
+      <Item value="width" priority="11" />
       <Item value="auto" priority="5" />
       <Item value="h1" priority="5" />
       <Item value="h2" priority="5" />
@@ -153,7 +167,7 @@
       <Item value="h4" priority="5" />
       <Item value="h5" priority="5" />
       <Item value="h6" priority="5" />
-      <Item value="text-align" priority="5" />
+      <Item value="text-align" priority="6" />
       <Item value="margin" priority="5" />
       <Item value="color" priority="17" />
       <Item value="cornflowerblue" priority="5" />
@@ -166,6 +180,11 @@
       <Item value="text-decoration" priority="5" />
       <Item value="underline" priority="6" />
       <Item value="no_button" priority="4" />
+      <Item value="right" priority="1" />
+      <Item value="display" priority="1" />
+      <Item value="inline" priority="3" />
+      <Item value="float" priority="1" />
+      <Item value="left" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DistanceLessons.Models.News">
       <Item value="Text" priority="404" />
@@ -188,7 +207,7 @@
       <Item value="GetNew`0" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.Mvc.HtmlHelper`1">
-      <Item value="ActionLink`0" priority="53" />
+      <Item value="ActionLink`0" priority="80" />
       <Item value="Text`0" priority="134" />
       <Item value="TextHtml`0" priority="107" />
     </ItemStatistics>
