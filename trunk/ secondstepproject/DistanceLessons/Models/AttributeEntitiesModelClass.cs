@@ -30,9 +30,8 @@ namespace DistanceLessons.Models
             [StringLength(50, ErrorMessage = "Поле по-батькові повинно мати менше 50 символів")]
             public string MidName { get; set; }
 
-       //     [DataType=
             [DisplayName("Дата народження")]
-            [DisplayFormat(ApplyFormatInEditMode=true,DataFormatString="{0:MM.dd.yyyy}")]
+            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]     
             [Required(ErrorMessage = "Заповніть поле дата народження.")]
             public DateTime DateOfBirth { get; set; }
 

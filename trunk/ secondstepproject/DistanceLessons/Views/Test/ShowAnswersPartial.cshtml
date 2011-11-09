@@ -2,9 +2,7 @@
 
  @for (int j = 0; j < Model.Count; j++)
  {
-      @Html.AddDiv("test"  + "question", j);
         @Html.CheckBoxFor(model => model[j].Valid, new { disabled="true" })  @*<text>  видалити відповідь </text>   *@
         @Model[j].Answer1
       <br />
-      @Html.AddEndDiv()
  }

@@ -131,6 +131,7 @@
     <Compile Include="Models\DataEntitiesManager\Roles.cs" />
     <Compile Include="Models\DataEntitiesManager\TableResultQuery.cs" />
     <Compile Include="Models\DataEntitiesManager\Tests.cs" />
+    <Compile Include="Models\DataEntitiesManager\UserAnswers.cs" />
     <Compile Include="Models\DataEntitiesManager\UserCourses.cs" />
     <Compile Include="Models\DataEntitiesManager\UserModules.cs" />
     <Compile Include="Models\DataEntitiesManager\Users.cs" />
@@ -143,6 +144,8 @@
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\FileRepository.cs" />
     <Compile Include="Models\TeacherModels.cs" />
+    <Compile Include="Models\TestModels.cs" />
+    <Compile Include="Other Classes\TestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

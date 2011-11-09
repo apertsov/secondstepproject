@@ -55,7 +55,7 @@ namespace DistanceLessons.Models
             public string lastname { get; set; }
             public string course { get; set; }
             public string module { get; set; }
-            public double progress { get; set; }
+            public double? progress { get; set; }
 
         }
     }

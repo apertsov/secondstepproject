@@ -214,3 +214,7 @@ C:\Users\gAmmi\Desktop\secondstepproject\DistanceLessons\bin\AntiXSSLibrary.dll
 C:\Users\gAmmi\Desktop\secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.dll
 C:\Users\gAmmi\Desktop\secondstepproject\DistanceLessons\bin\AntiXSSLibrary.xml
 C:\Users\gAmmi\Desktop\secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.xml
+E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\bin\AntiXSSLibrary.dll
+E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.dll
+E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\bin\AntiXSSLibrary.xml
+E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.xml

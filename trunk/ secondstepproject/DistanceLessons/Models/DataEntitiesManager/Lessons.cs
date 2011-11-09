@@ -38,7 +38,7 @@ namespace DistanceLessons.Models
             _db.Lessons.AddObject(obj);
             Save();
         }
-
+        /*
         public List<RQLessons> QLessons(string Course)
         {
             var Query =
@@ -46,7 +46,7 @@ namespace DistanceLessons.Models
                   from l in GetLessonList()
                   from c in GetCourseList()
                   from m in GetModuleList()
-                  where c.Title == Course && m.CourseId == c.CategoryId && l.ModuleId == m.ModuleId
+                  where c.Title == Course && m.CourseId == c.CategoryId && //l.ModuleId == m.ModuleId
                   orderby l.Title
                   select new RQLessons
                   {
@@ -113,6 +113,13 @@ namespace DistanceLessons.Models
 
             return lst;
         }
+*/
+        public List<Lesson> GetLessonsByModule(Guid id_mod)
+        {
+            return (from lessons in _db.Lessons
+                    where lessons.ModuleId == id_mod
+                    select lessons).ToList();
+        }
 
         public List<Lesson> GetLessonsByTeacherId(Guid UserId)
         {
@@ -121,14 +128,14 @@ namespace DistanceLessons.Models
                 from l in GetLessonList()
                 from c in GetCourseList()
                 from m in GetModuleList()
-                where c.UserId == UserId && m.CourseId == c.CategoryId && l.ModuleId == m.ModuleId
-                orderby l.ModuleId
+                where c.UserId == UserId && m.CourseId == c.CategoryId //&& l.ModuleId == m.ModuleId
+                //orderby l.ModuleId
                 select new Lesson
                 {
                     LessonId = l.LessonId,
                     Title = l.Title,
                     Publication = l.Publication,
-                    ModuleId = l.ModuleId,
+                   // ModuleId = l.ModuleId,
                     Text = l.Text,
                     Description = l.Description
                 }
