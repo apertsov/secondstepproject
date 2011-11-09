@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="distance_lessonsModelStoreContainer" CdmEntityContainer="dbEntities">
+  <EntityContainerMapping StorageEntityContainer="DistanceLessonsModelsStoreContainer" CdmEntityContainer="dbEntities">
     <EntitySetMapping Name="Answers">
-      <EntityTypeMapping TypeName="distance_lessonsModel.Answer">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Answer">
         <MappingFragment StoreEntitySet="Answers">
           <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
           <ScalarProperty Name="Answer1" ColumnName="Answer" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Categories">
-      <EntityTypeMapping TypeName="distance_lessonsModel.Category">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Category">
         <MappingFragment StoreEntitySet="Categories">
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
           <ScalarProperty Name="Category1" ColumnName="Category" />
@@ -20,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Contacts">
-      <EntityTypeMapping TypeName="distance_lessonsModel.Contact">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Contact">
         <MappingFragment StoreEntitySet="Contacts">
           <ScalarProperty Name="ContactId" ColumnName="ContactId" />
           <ScalarProperty Name="Skype" ColumnName="Skype" />
@@ -32,7 +32,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Courses">
-      <EntityTypeMapping TypeName="distance_lessonsModel.Cours">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Cours">
         <MappingFragment StoreEntitySet="Courses">
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -44,7 +44,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Informations">
-      <EntityTypeMapping TypeName="distance_lessonsModel.Information">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Information">
         <MappingFragment StoreEntitySet="Informations">
           <ScalarProperty Name="InformationId" ColumnName="InformationId" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -58,7 +58,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Lessons">
-      <EntityTypeMapping TypeName="distance_lessonsModel.Lesson">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Lesson">
         <MappingFragment StoreEntitySet="Lessons">
           <ScalarProperty Name="LessonId" ColumnName="LessonId" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -66,11 +66,13 @@
           <ScalarProperty Name="Publication" ColumnName="Publication" />
           <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsAcceptMainTeacher" ColumnName="IsAcceptMainTeacher" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Messages">
-      <EntityTypeMapping TypeName="distance_lessonsModel.Message">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Message">
         <MappingFragment StoreEntitySet="Messages">
           <ScalarProperty Name="MessageId" ColumnName="MessageId" />
           <ScalarProperty Name="Message1" ColumnName="Message" />
@@ -82,19 +84,19 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Modules">
-      <EntityTypeMapping TypeName="distance_lessonsModel.Module">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Module">
         <MappingFragment StoreEntitySet="Modules">
           <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
           <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Time" ColumnName="Time" />
-          <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
-          <ScalarProperty Name="DateEnd" ColumnName="DateEnd" />
+          <ScalarProperty Name="TimeForPassTest" ColumnName="TimeForPassTest" />
+          <ScalarProperty Name="DateBeginTesting" ColumnName="DateBeginTesting" />
+          <ScalarProperty Name="DateEndTesting" ColumnName="DateEndTesting" />
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="News">
-      <EntityTypeMapping TypeName="distance_lessonsModel.News">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.News">
         <MappingFragment StoreEntitySet="News">
           <ScalarProperty Name="NewId" ColumnName="NewId" />
           <ScalarProperty Name="Title" ColumnName="Title" />
@@ -105,7 +107,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
-      <EntityTypeMapping TypeName="distance_lessonsModel.Role">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Role">
         <MappingFragment StoreEntitySet="Roles">
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           <ScalarProperty Name="Name" ColumnName="Name" />
@@ -113,7 +115,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tests">
-      <EntityTypeMapping TypeName="distance_lessonsModel.Test">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Test">
         <MappingFragment StoreEntitySet="Tests">
           <ScalarProperty Name="TestId" ColumnName="TestId" />
           <ScalarProperty Name="Question" ColumnName="Question" />
@@ -121,8 +123,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="UserAnswers">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.UserAnswer">
+        <MappingFragment StoreEntitySet="UserAnswers">
+          <ScalarProperty Name="UserAnswerId" ColumnName="UserAnswerId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="IsShowed" ColumnName="IsShowed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="UserCourses">
-      <EntityTypeMapping TypeName="distance_lessonsModel.UserCours">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.UserCours">
         <MappingFragment StoreEntitySet="UserCourses">
           <ScalarProperty Name="UserCourseId" ColumnName="UserCourseId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -131,17 +144,19 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="UserModules">
-      <EntityTypeMapping TypeName="distance_lessonsModel.UserModule">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.UserModule">
         <MappingFragment StoreEntitySet="UserModules">
           <ScalarProperty Name="UserModuleId" ColumnName="UserModuleId" />
           <ScalarProperty Name="Passed" ColumnName="Passed" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="SpendTime" ColumnName="SpendTime" />
+          <ScalarProperty Name="PassedTime" ColumnName="PassedTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="distance_lessonsModel.User">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.User">
         <MappingFragment StoreEntitySet="Users">
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Login" ColumnName="Login" />

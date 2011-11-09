@@ -53,6 +53,13 @@ namespace DistanceLessons.Models
 
             return lst;
         }
+
+        public Module Module(Guid ModuleId)
+        {
+            return (from module in _db.Modules
+                    where module.ModuleId == ModuleId
+                    select module).FirstOrDefault();
+        }
         /*
                 public List<Lesson> GetModulesByTeacherId(Guid UserId)
                 {

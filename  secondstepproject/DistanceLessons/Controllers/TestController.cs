@@ -7,7 +7,7 @@ using DistanceLessons.Models;
 
 namespace DistanceLessons.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Teacher")]
     public class TestController : Controller
     {
         private DataEntitiesManager _db = new DataEntitiesManager();
@@ -133,26 +133,44 @@ namespace DistanceLessons.Controllers
                 return PartialView("QuestionsAndAnswersPartialPage", _db.LessonTestsAndAnswers((Guid)Session["LessonId"]));
             }
         }
-        /*
-                [HttpPost]
-                public ActionResult ShowTest(List<TestAndAnswersModel> model)
+
+        [HttpGet]
+        public ActionResult PassModule(Guid id)
+        {
+            Module module = _db.Module(id);
+            if ((DateTime.Now < module.DateBeginTesting) && (DateTime.Now >= module.DateEndTesting))
+                return View("NotInTestTime", module);
+
+            if (!_db.IsExistModuleUserAnswers(id, User.Identity.Name)) // чи користувач починав тестування з цього модуля 
+            {// не починав
+                List<Test> tests = _db.ModuleTests(id);
+                if (module.CountQuestions != null)
                 {
-                   /* if (!Request.IsAjaxRequest())
-                    {
-                        return View(model);
-                    }
-                    else
-                    {    
-                    Test newTest = new Test { TestId = Guid.NewGuid() };
-                    Answer newAnswer = new Answer { AnswerId = Guid.NewGuid() };
-                    List<Answer> Answers=new List<Answer>();
-                    Answers.Add(newAnswer);
-                //    List<TestAndAnswersModel> model = (List<TestAndAnswersModel>)ViewData["Tests&Answers"];
-                    model.Add(new TestAndAnswersModel { Test = newTest, AnswerList = Answers });
-                    return PartialView("QuestionsAndAnswersPartialPage",model);
-                  //  }
+                    TestHelper.FilterTests(ref tests, (int)module.CountQuestions);
                 }
-         */
+                _db.AddNullAnswersOnTests(tests, id, User.Identity.Name);
+            }
+
+         //   if (_db.IsAllShowedModuleUserAnswers(id,User.Identity.Name)) // модуль вже зданий
+                //return View("ShowModuleResults");
+            Session.Add("TestTime", module.TimeForPassTest);
+            return View(NextNotShowedTest(id, User.Identity.Name));
+        }
+/*
+        [HttpPost]
+        public ActionResult PassModule(Guid id)
+        {
+
+        }
+        */
+        private PassTestModel NextNotShowedTest(Guid ModuleId, string username)
+        {
+            List<UserAnswer> answers = _db.GetUserAnswersNotShowed(ModuleId, username);
+            Random rand = new Random();
+            Guid? TestId = answers[rand.Next(answers.Count)].TestId;
+            if (TestId == null) throw new Exception();
+            return new PassTestModel { ModuleId = ModuleId, TestAndAnswers = new TestAndAnswersModel { Test = _db.Test((Guid)TestId), AnswerList = _db.TestAnswers((Guid)TestId) } };
+        }
 
     }
 }

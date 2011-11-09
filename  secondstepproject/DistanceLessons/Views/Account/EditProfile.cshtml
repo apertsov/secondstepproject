@@ -42,7 +42,7 @@
             @Html.LabelFor(model => model.Information.DateOfBirth)
         </div>
         <div class="editor-field">
-            @Html.TextBoxFor(model => model.Information.DateOfBirth, new { @class = "editor" })
+            @Html.EditorFor(model => model.Information.DateOfBirth, new { @class = "editor" })
             @Html.ValidationMessageFor(model => model.Information.DateOfBirth)
         </div>
 

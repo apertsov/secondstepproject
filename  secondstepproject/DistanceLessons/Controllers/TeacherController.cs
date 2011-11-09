@@ -10,6 +10,7 @@ using System.IO;
 namespace DistanceLessons.Controllers
 {
 
+     [Authorize(Roles = "Admin, Teacher")]
     public class TeacherController : Controller
     {
         DataEntitiesManager db;
@@ -30,7 +31,7 @@ namespace DistanceLessons.Controllers
         public ActionResult Lesson(Guid id_mod)
         {
             ViewBag.ModuleId = id_mod;
-            return View(db.GetLessonsByModule(id_mod));
+            return View();//db.GetLessonsByModule(id_mod));
         }
 
         public ActionResult AllMyLesson()
@@ -88,10 +89,10 @@ namespace DistanceLessons.Controllers
         [HttpPost]
         public ActionResult CreateLesson(Lesson obj, Guid mod_id)
         {
-            obj.ModuleId = mod_id;
+          //  obj.ModuleId = mod_id;
             obj.LessonId = Guid.NewGuid();
             obj.UserId = db.GetUser(User.Identity.Name).UserId;
-           if (obj.UserId==db.GetCourse(db.GetModulesByID(obj.ModuleId).CourseId).UserId) obj.IsAcceptMainTeacher = true;
+         //  if (obj.UserId==db.GetCourse(db.GetModulesByID(obj.ModuleId).CourseId).UserId) obj.IsAcceptMainTeacher = true;
             obj.Publication = DateTime.Now;
             db.AddLesson(obj);
             return RedirectToAction("Lesson", new { id_mod = mod_id });
@@ -102,16 +103,16 @@ namespace DistanceLessons.Controllers
         public ActionResult DeleteLesson(Guid id)
         {
 
-            Guid mod_id = db.GetLessonByID(id).ModuleId;
+         //   Guid mod_id = db.GetLessonByID(id).ModuleId;
             db.DeleteLesson(id);
-            return RedirectToAction("Lesson", new { id_mod = mod_id });
+            return RedirectToAction("Lesson");//, new { id_mod = mod_id });
         }
 
 
         [HttpGet]
         public ActionResult EditLesson(Guid id)
         {
-            ViewBag.Modules = db.GetModulesByCourseId(db.GetModulesByID(db.GetLessonByID(id).ModuleId).CourseId);
+         //   ViewBag.Modules = db.GetModulesByCourseId(db.GetModulesByID(db.GetLessonByID(id).ModuleId).CourseId);
             return View(db.GetLessonByID(id));
         }
 
@@ -121,8 +122,8 @@ namespace DistanceLessons.Controllers
             Lesson old = db.GetLessonByID(obj.LessonId);
             UpdateModel(old);
             db.Save();
-            Guid mod_id = obj.ModuleId;
-            return RedirectToAction("Lesson", new { id_mod = mod_id });
+     //       Guid mod_id = obj.ModuleId;
+            return RedirectToAction("Lesson");//, new { id_mod = mod_id });
         }
 
 

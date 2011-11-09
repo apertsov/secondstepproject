@@ -7,15 +7,17 @@ using DistanceLessons.Models;
 
 namespace DistanceLessons.Controllers
 {
-    [Authorize(Roles = "Student")]
+    [Authorize(Roles = "Student, Admin")]
    // [Authorize]
     public class StudentController : Controller
     {
         //
         // GET: /Student/
+        private DataEntitiesManager _db = new DataEntitiesManager();
 
         public ActionResult Index()
         {
+            ViewBag.ModuleId = new Guid("3e71d198-6326-468e-b57a-f5ffc1c9090b");
             return View();
         }
 

@@ -66,6 +66,15 @@ namespace DistanceLessons.Models
                 Save();
         }
 
+        public List<Test> ModuleTests(Guid ModuleId)
+        {
+            List<Test> testList = new List<Test>();
+            List<Lesson> lessons=GetLessonsByModule(ModuleId);
+            foreach (Lesson lesson in lessons)
+                testList.AddRange(LessonTests(lesson.LessonId));
+            return testList;
+        }
+
         public bool IsTest(Guid id)
         {
             return (from test in _db.Tests
