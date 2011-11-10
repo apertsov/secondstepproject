@@ -41,67 +41,6 @@ html .nav
     height: 1%;
 }
 
-.ie body
-{
-    background-image: url('~/Content/img/background/background2.png');
-}
-
-.ie #container
-{
-    background: black;
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=95);
-}
-.ie #header
-{
-    width: 0;
-    height: 0;
-}
-
-.ie #header_logo
-{
-    height: 0;
-    width: 0;
-}
-
-.ie #header_upper_left
-{
-    height: 0;
-    width: 0;
-}
-
-.ie #header_upper_right
-{
-    background-image: none;
-    height: 35px;
-    width: 100%;
-    border-left: 0px solid white;
-}
-
-.ie #header_middle
-{
-    background-image: none;
-    height: 80px;
-    width: 100%;
-}
-
-.ie #header_lower
-{
-    background-image: none;
-    height: 35px;
-    width: 100%;
-}
-
-.ie #news, .ie #text
-{
-    background-image: none;
-}
-
-.ie .nav ul li a, .ie .nav ul li ul li a, .ie .nav ul li ul li a:hover, .ie .nav ul li a:hover
-{
-    background-image: none;
-}
-
-
 .gecko #header_logo
 {
     border-right: 0px solid white; /*painting piece of distance between blocks*/

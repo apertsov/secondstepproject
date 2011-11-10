@@ -14,7 +14,7 @@ namespace DistanceLessons.Helpers
         public static MvcHtmlString TextHtml(this HtmlHelper helper, string text)
         {
             StringBuilder sb = new StringBuilder();
-            
+
             sb.Append(text);
 
             return MvcHtmlString.Create(sb.ToString());
@@ -54,23 +54,23 @@ namespace DistanceLessons.Helpers
 
             int PageCount = (int)Math.Ceiling((double)itemsCount / itemOnPage);
 
-            if (numPage-1>=0)
+            if (numPage - 1 >= 0)
             {
-                sb.Append(helper.ActionLink((numPage).ToString(), ViewName, new { numPage = numPage-1 }, ao));
+                sb.Append(helper.ActionLink((numPage).ToString(), ViewName, new { numPage = numPage - 1 }, ao));
             }
 
-            sb.Append("<span class=\"current_page\">" + (numPage+1).ToString() + "</span>");
+            sb.Append("<span class=\"current_page\">" + (numPage + 1).ToString() + "</span>");
 
-            if (numPage + 1 <= PageCount-1)
+            if (numPage + 1 <= PageCount - 1)
             {
-                sb.Append(helper.ActionLink((numPage+2).ToString(), ViewName, new { numPage = numPage +1 }, ao));
+                sb.Append(helper.ActionLink((numPage + 2).ToString(), ViewName, new { numPage = numPage + 1 }, ao));
             }
 
 
             if (numPage < PageCount - 1)
             {
                 sb.Append(helper.ActionLink(" > ", ViewName, new { numPage = numPage + 1 }, ao));
-                sb.Append(helper.ActionLink(" >> ", ViewName, new { numPage = PageCount-1 }, ao));
+                sb.Append(helper.ActionLink(" >> ", ViewName, new { numPage = PageCount - 1 }, ao));
             }
 
             return MvcHtmlString.Create(sb.ToString());

@@ -17,6 +17,8 @@ namespace DistanceLessons.Controllers
             if (MyRoles == null) { MyRoles = new MyRoleProvider(); }
         }
 
+        private DataEntitiesManager _db = new DataEntitiesManager();
+
         public MyRoleProvider MyRoles { get; set; }
         //
         // GET: /Account/LogOn
@@ -40,12 +42,11 @@ namespace DistanceLessons.Controllers
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
 
-                    DataEntitiesManager db = new DataEntitiesManager();
-                    if (!db.ExistInformation(User.Identity.Name))
+                    if (!_db.ExistInformation(User.Identity.Name))
                     {
                         return RedirectToAction("CreateProfile", "Account");
                     }
-                    
+
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
@@ -126,7 +127,7 @@ namespace DistanceLessons.Controllers
                 return RedirectToAction("Register");
             return View();//ContextDependentView();
         }
-   
+
 
         [AllowAnonymous]
         [HttpPost]
@@ -140,7 +141,7 @@ namespace DistanceLessons.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    MyRoles.ChangeUserRole( model.UserName, UserRoles.Admin.ToString());
+                    MyRoles.ChangeUserRole(model.UserName, UserRoles.Admin.ToString());
                     FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
                     return RedirectToAction("Index", "Admin");
                 }
@@ -215,11 +216,11 @@ namespace DistanceLessons.Controllers
         // **************************************
         // URL: /Account/Activate/username/key
         // **************************************
+
         [AllowAnonymous]
         public ActionResult Activate(string username, string key)
         {
-            DataEntitiesManager _user = new DataEntitiesManager();
-            if (_user.ActivateUser(username, key) == false)
+            if (_db.ActivateUser(username, key) == false)
                 ViewBag.active = false;
             else
                 ViewBag.active = true;
@@ -229,49 +230,44 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult CreateProfile()
         {
-            DataEntitiesManager db = new DataEntitiesManager();
-            if (db.ExistInformation(User.Identity.Name))
+            if (_db.ExistInformation(User.Identity.Name))
             {
                 return RedirectToAction("Index", "Home");
             }
             return View();
         }
-        
+
         [HttpPost]
-        public ActionResult CreateProfile(Information info,Contact contact)
+        public ActionResult CreateProfile(Information info, Contact contact)
         {
-            DataEntitiesManager userRepo = new DataEntitiesManager();
-            User user= userRepo.GetUser(User.Identity.Name);
-            info.UserId=contact.UserId = user.UserId;
+            User user = _db.GetUser(User.Identity.Name);
+            info.UserId = contact.UserId = user.UserId;
             info.InformationId = Guid.NewGuid();
             contact.ContactId = Guid.NewGuid();
-            userRepo.AddContact(contact);
-            userRepo.AddInformation(info);
-            return RedirectToAction("Index","Home");
+            _db.AddContact(contact);
+            _db.AddInformation(info);
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
         public ActionResult EditProfile()
         {
-            DataEntitiesManager db = new DataEntitiesManager();
-            if (!db.ExistInformation(User.Identity.Name))
+            if (!_db.ExistInformation(User.Identity.Name))
             {
                 return RedirectToAction("CreateProfile", "Account");
             }
-            AllUserInformationModel model = new AllUserInformationModel 
-                                              { Information = db.UserInformation(User.Identity.Name), Contact = db.UserContacts(User.Identity.Name) };
+            AllUserInformationModel model = new AllUserInformationModel { Information = _db.UserInformation(User.Identity.Name), Contact = _db.UserContacts(User.Identity.Name) };
             return View(model);
         }
 
         [HttpPost]
         public ActionResult EditProfile(AllUserInformationModel model)
         {
-            DataEntitiesManager dataManager = new DataEntitiesManager();
-            dataManager.UpdateInformation(model.Information);
+            _db.UpdateInformation(model.Information);
             ViewBag.success = "Дані успішно оновлені";
             return View(model);
         }
-        
+
 
         private IEnumerable<string> GetErrorsFromModelState()
         {
