@@ -22,22 +22,17 @@
 </head>
 <body>
     <a name="top_page"></a>
-    <!--Container for page-->
-    <div id="container">
+    <div id="header">
         <!--Header-->
         <div id="full_header">
             <div id="header_logo">
             </div>
-            <div id="header_upper_left">
-            </div>
-            <div id="header_upper_right">
-                <div id="#lang">
-                    <a href="#" id="us"></a><a href="#" id="ru"></a><a href="#" id="ua"></a>
-                </div>
+            <div id="header_upper">
+                    <a href="#us" id="us"></a>
+                    <a href="#ru" id="ru"></a>
+                    <a href="#ua" id="ua"></a>
             </div>
             <div id="header_middle">
-                <div id="header">
-                </div>
             </div>
             <div id="header_lower">
                 <div id="auth">
@@ -45,6 +40,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!--Container for page-->
+    <div id="container">
         <!--Navigation-->
         <div id="myjquerymenu" class="nav">
             @Html.Partial("_Navigation_PartialPage")
@@ -67,7 +65,7 @@
         </div>
         <div id="footer">
             <p>
-                <a href="#top_page">Go to top of page</a></p>
+                <a href="#top_page">В початок сторінки</a></p>
             <p>
                 &copy; First Team, CHNU &amp; SoftServe Course, @System.DateTime.Now.Year | All
                 right reserved.</p>

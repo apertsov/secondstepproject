@@ -17,25 +17,27 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid InformationId { get; set; }
 
-            [DisplayName("Прізвище")]
-            [Required(ErrorMessage = "Введіть своє прізвище.")]
+            [DisplayName("Прізвище:")]
+            [Required(ErrorMessage = "Введіть прізвище")]
             [StringLength(50, ErrorMessage = "Прізвище повинно мати менше 50 символів")]
-            public string LastName { get; set; }[DisplayName("Ім'я")]
+            public string LastName { get; set; }
 
-            [Required(ErrorMessage= "Введіть своє ім'я.")]
-            [StringLength(50,ErrorMessage="Ім'я повинно мати менше 50 символів")]
+            [DisplayName("Ім'я:")]
+            [Required(ErrorMessage = "Введіть ім'я")]
+            [StringLength(50, ErrorMessage = "Ім'я повинно мати менше 50 символів")]
             public string FirstName { get; set; }
-                        [DisplayName("По-батькові")]
-            [Required(ErrorMessage = "Заповніть поле по-батькові.")]
+
+            [DisplayName("По-батькові:")]
+            [Required(ErrorMessage = "Введіть по-батькові")]
             [StringLength(50, ErrorMessage = "Поле по-батькові повинно мати менше 50 символів")]
             public string MidName { get; set; }
 
-            [DisplayName("Дата народження")]
-            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]     
-            [Required(ErrorMessage = "Заповніть поле дата народження.")]
+            [ScaffoldColumn(false)]
+            [DisplayName("Дата народження:")]
+            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
             public DateTime DateOfBirth { get; set; }
 
-            [DisplayName("Додаткова інформація про вас")]
+            [DisplayName("Додаткова інформація:")]
             [StringLength(256, ErrorMessage = "Поле додаткової інформації обмежено 256 символами")]
             public string About { get; set; }
 

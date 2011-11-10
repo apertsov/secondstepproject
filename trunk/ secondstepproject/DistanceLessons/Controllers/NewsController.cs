@@ -24,25 +24,18 @@ namespace DistanceLessons.Controllers
 
             if (!Request.IsAjaxRequest())
             {
-                return View(_db.GetNewsList_time(itemOnPage, numPage,1));
+                return View(_db.GetNewsList_time(itemOnPage, numPage, 1));
             }
             else
             {
-                return PartialView("_New_PartialPage", _db.GetNewsList_time(itemOnPage, numPage,1));
+                return PartialView("_New_PartialPage", _db.GetNewsList_time(itemOnPage, numPage, 1));
             }
         }
 
         [HttpGet]
         public ActionResult Create()
         {
-            if (!Request.IsAjaxRequest())
-            {
-                return View();
-            }
-            else
-            {
-                return PartialView("_Create_PartialPage");
-            }
+            return PartialView("_Create_PartialPage");
         }
 
         [HttpPost]

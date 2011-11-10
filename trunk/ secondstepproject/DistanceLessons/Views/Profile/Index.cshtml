@@ -1,12 +1,24 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Особистий кабінет";
+        Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
-@foreach (DistanceLessons.Models.Message a in ViewBag.Mes)
+@if (Request.IsAuthenticated)
 {
-    <table>
-        <tr>@a.Message1</tr>
-    </table> 
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"> </script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"> </script>
+
+    <div id="profile">
+        <div id="navigation" style="padding-right:1%; margin-top: 15px;" class="box_shdw_right">
+        <div>@Ajax.ActionLink("Профіль", "UserInfo", new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</div>
+        <div>@Ajax.ActionLink("Особиста інформація", "UserInfo", new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</div>
+        <div>@Ajax.ActionLink("Контактні дані", "UserInfo", new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</div>
+        </div>
+        <div id="profile_ajax" class="box_shdw_bottom">@{ Html.RenderPartial("_Information_PartialPage", Model, Html.ViewData); }</div>
+    </div>
+}
+else
+{
+    <div>Будь-ласка, зареєструйтесь. 
+    У випадку, якщо у Вас вже є аккаунт - зайдіть під своїм імя'м.</div>
 }

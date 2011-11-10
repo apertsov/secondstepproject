@@ -29,18 +29,18 @@ namespace DistanceLessons.Models
         {
             var result = from user in GetUserList()
                          from info in GetInfoList()
-                         where user.Login == username && user.UserId == info.UserId
+                         where user.Login.ToUpper() == username.ToUpper() && user.UserId == info.UserId
                          select info;
             if (result.Count() > 0) return true;
             return false;
         }
-       
+
         public Information UserInformation(string username)
         {
             var userInfo = (from user in _db.Users
                             from info in _db.Informations
-                         where user.Login == username && user.UserId == info.UserId
-                         select info).First();
+                            where user.Login.ToUpper() == username.ToUpper() && user.UserId == info.UserId
+                            select info).First();
             return userInfo;
         }
 
