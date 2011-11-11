@@ -1,6 +1,6 @@
 ﻿@if (Request.IsAuthenticated) {
     <ul> 
-        <li>Привіт, @Html.ActionLink(User.Identity.Name, "Index", "Profile")</li>
+        <li><i><font size="2">Привіт,</font></i>@Html.ActionLink(User.Identity.Name, "Index", "Profile")</li>
         <li>@Html.ActionLink("Вийти", "LogOff", "Account")</li>
     </ul>
 }

@@ -15,7 +15,7 @@
 <table width="100%" cellspacing="10">
     <tr>
         <td class="editor-label">@Html.LabelFor(model => model.LastName)</td>
-        <td class="editor-field">@Html.TextBoxFor(model => model.LastName, new { @class = "editor" }) *</td>
+        <td class="editor-field">@Html.TextBoxFor(model => model.LastName, new { @class = "editor" }) <font color="red">*</font></td>
     </tr>
     <tr>
         <td></td>
@@ -23,7 +23,7 @@
     </tr>
     <tr>
         <td class="editor-label">@Html.LabelFor(model => model.FirstName)</td>
-        <td class="editor-field">@Html.TextBoxFor(model => model.FirstName, new { @class = "editor" }) *</td>
+        <td class="editor-field">@Html.TextBoxFor(model => model.FirstName, new { @class = "editor" }) <font color="red">*</font></td>
     </tr>
     <tr>
         <td></td>
@@ -31,7 +31,7 @@
     </tr>
     <tr>
         <td class="editor-label">@Html.LabelFor(model => model.MidName)</td>
-        <td class="editor-field">@Html.TextBoxFor(model => model.MidName, new { @class = "editor" }) *</td>
+        <td class="editor-field">@Html.TextBoxFor(model => model.MidName, new { @class = "editor" }) <font color="red">*</font></td>
     </tr>
     <tr>
         <td></td>
@@ -58,7 +58,7 @@
         <td class="error">@Html.ValidationMessageFor(model => model.About)</td>
     </tr>
     <tr>
-        <td class="error" colspan="2" align="center" style="border-top: 1px solid rgb(240,240,240); padding-top: 20px;">У випадку, якщо Ви захочете заповнити особисті дані: поля, що відмічені * - є обовязкові.</td>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;">У випадку, якщо Ви захочете заповнити особисті дані: поля, що відмічені <font color="red">*</font> - є обовязкові.</td>
     </tr>
 </table>
 
