@@ -1,5 +1,5 @@
 var jquerycssmenu = {
-    fadesettings: { overduration: 0, outduration: 500 },
+    fadesettings: { overduration: 600, outduration: 600 }, // 600 - повільно, 200 - швидко
 
     buildmenu: function (menuid, arrowsvar) {
         jQuery(document).ready(function ($) {
