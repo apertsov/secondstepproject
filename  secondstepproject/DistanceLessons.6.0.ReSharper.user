@@ -1,15 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Browser.css" caret="846" fromTop="41" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Site.css" caret="623" fromTop="33" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:modernizr-2.0.6-development-only.js" caret="1784" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Information_PartialPage.cshtml" caret="336" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:knockout-1.3.0beta.js" caret="381" fromTop="6" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/f:Web.config" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/f:packages.config" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/f:Global.asax.cs" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/f:Web.config" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/f:_ViewStart.cshtml" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery-ui-1.8.11.js" caret="238739" fromTop="17" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.unobtrusive-ajax.js" caret="737" fromTop="0" />
@@ -17,52 +8,61 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery-1.6.2.min.js" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery-1.6.2-vsdoc.js" caret="1185" fromTop="17" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:script/f:browser_selector.js" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/f:TestHelper.cs" caret="193" fromTop="6" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:AjaxLogin.js" caret="587" fromTop="14" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_LogOnPartial.cshtml" caret="92" fromTop="2" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="7139" fromTop="17" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.ui.datepicker.min.js" caret="260" fromTop="10" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:themes/d:base/f:jquery.ui.datepicker.css" caret="35" fromTop="1" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:themes/d:base/f:jquery.ui.theme.css" caret="1724" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="120" fromTop="4" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.ui.datepicker.js" caret="5257" fromTop="85" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:Index.cshtml" caret="83" fromTop="2" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:Calendar/d:js/f:jquery-1.6.2.min.js" caret="362" fromTop="13" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="3174" fromTop="3" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:Calendar/d:js/f:jquery-ui-1.8.16.custom.min.js" caret="11441" fromTop="13" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:script/f:jquerycssmenu.js" caret="113" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/f:TestHelper.cs" caret="557" fromTop="14" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:AttributeEntitiesModelClass.cs" caret="482" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Navigation_PartialPage.cshtml" caret="56" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="2106" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="10588" fromTop="542" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:Index.cshtml" caret="503" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Helpers/f:Paging.cs" caret="2154" fromTop="21" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="1877" fromTop="23" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Information_PartialPage.cshtml" caret="1512" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="915" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Informations.cs" caret="329" fromTop="13" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="1984" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="1218" fromTop="14" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Edit.cshtml" caret="522" fromTop="16" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="7322" fromTop="26" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="7139" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_LogOnPartial.cshtml" caret="92" fromTop="2" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="2260" fromTop="18" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="2368" fromTop="14" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="318" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="3169" fromTop="29" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="2368" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="2678" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="3169" fromTop="28" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.ui.datepicker.js" caret="4341" fromTop="6" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="2258" fromTop="22" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="2258" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="2258" fromTop="5" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="3169" fromTop="28" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="3169" fromTop="20" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="2258" fromTop="8" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.ui.datepicker.js" caret="55574" fromTop="14" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.ui.datepicker.js" caret="5477" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="773" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="773" fromTop="19" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="773" fromTop="20" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="3178" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="3178" fromTop="19" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="3677" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="3606" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="316" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="3425" fromTop="8" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:script/f:jquerycssmenu.js" caret="1769" fromTop="20" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:script/f:jquerycssmenu.js" caret="113" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="0" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="0" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="0" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="0" fromTop="25" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="2083" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="0" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="2197" fromTop="15" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="0" fromTop="15" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="0" fromTop="32" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="2875" fromTop="20" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="1276" fromTop="13" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="1028" fromTop="9" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="10766" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="11631" fromTop="33" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="854" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="1074" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="1451" fromTop="18" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Helpers/f:Paging.cs" caret="2038" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Helpers/f:Paging.cs" caret="2154" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Create_Information_PartialPage.cshtml" caret="2197" fromTop="20" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Information_PartialPage.cshtml" caret="476" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Information_PartialPage.cshtml" caret="1512" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="915" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Information_PartialPage.cshtml" caret="1512" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Informations.cs" caret="329" fromTop="14" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Information_PartialPage.cshtml" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Information_PartialPage.cshtml" caret="1512" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Informations.cs" caret="329" fromTop="13" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
@@ -70,17 +70,18 @@
       <Item value="Ajax" priority="9" />
       <Item value="Html" priority="55" />
       <Item value="Model" priority="19" />
+      <Item value="if" priority="7" />
     </ItemStatistics>
     <ItemStatistics item="CSharpCodeCompletionContext">
       <Item value="Ajax" priority="29" />
-      <Item value="new" priority="191" />
+      <Item value="new" priority="255" />
       <Item value="AjaxOptions" priority="28" />
       <Item value="Index" priority="230" />
       <Item value="News" priority="65" />
       <Item value="_new" priority="191" />
       <Item value="byte" priority="63" />
-      <Item value="bool" priority="31" />
-      <Item value="if" priority="159" />
+      <Item value="bool" priority="63" />
+      <Item value="if" priority="317" />
       <Item value="partial_news" priority="31" />
       <Item value="foreach" priority="31" />
       <Item value="LdapStyleUriParser`0" priority="31" />
@@ -89,26 +90,26 @@
       <Item value="lst" priority="287" />
       <Item value="var" priority="31" />
       <Item value="for" priority="31" />
-      <Item value="true" priority="63" />
-      <Item value="false" priority="63" />
+      <Item value="true" priority="95" />
+      <Item value="false" priority="95" />
       <Item value="id" priority="31" />
-      <Item value="Model" priority="347" />
+      <Item value="Model" priority="603" />
       <Item value="Html" priority="179" />
       <Item value="RouteValueDictionary" priority="28" />
-      <Item value="null" priority="31" />
+      <Item value="null" priority="223" />
       <Item value="DetailsNew" priority="32" />
       <Item value="type" priority="63" />
-      <Item value="else" priority="31" />
+      <Item value="else" priority="63" />
       <Item value="Message`0" priority="31" />
       <Item value="Guid`0" priority="31" />
       <Item value="FormCollection`0" priority="31" />
       <Item value="collection" priority="32" />
-      <Item value="public" priority="63" />
+      <Item value="public" priority="95" />
       <Item value="static" priority="31" />
       <Item value="MvcApplication`0" priority="31" />
       <Item value="this" priority="31" />
       <Item value="HtmlHelper`0" priority="31" />
-      <Item value="string" priority="63" />
+      <Item value="string" priority="92" />
       <Item value="text" priority="31" />
       <Item value="temp" priority="160" />
       <Item value="current_obj" priority="127" />
@@ -119,13 +120,32 @@
       <Item value="html_text" priority="31" />
       <Item value="str" priority="31" />
       <Item value="object" priority="57" />
+      <Item value="Home" priority="32" />
+      <Item value="old" priority="31" />
+      <Item value="obj" priority="191" />
+      <Item value="itemsCount" priority="30" />
+      <Item value="Nullable" priority="31" />
+      <Item value="System" priority="94" />
+      <Item value="DateTime`0" priority="208" />
+      <Item value="NullReferenceException`0" priority="31" />
+      <Item value="Information`0" priority="63" />
+      <Item value="return" priority="31" />
+      <Item value="obj_date" priority="63" />
+      <Item value="_db" priority="95" />
+      <Item value="DistanceLessons" priority="31" />
+      <Item value="Models" priority="26" />
+      <Item value="dbEntities`0" priority="26" />
+      <Item value="DataEntitiesManager`0" priority="26" />
+      <Item value="DataEntitiesManager" priority="28" />
+      <Item value="a" priority="95" />
+      <Item value="default" priority="31" />
     </ItemStatistics>
     <ItemStatistics item="HtmlCodeCompletionContext">
-      <Item value="div" priority="86" />
+      <Item value="div" priority="98" />
       <Item value="little" priority="13" />
-      <Item value="id" priority="30" />
-      <Item value="class" priority="69" />
-      <Item value="item" priority="17" />
+      <Item value="id" priority="36" />
+      <Item value="class" priority="75" />
+      <Item value="item" priority="23" />
       <Item value="br" priority="24" />
       <Item value="hr" priority="5" />
       <Item value="formation" priority="5" />
@@ -163,6 +183,9 @@
       <Item value="td" priority="5" />
       <Item value="colspan" priority="5" />
       <Item value="ui-datepicker" priority="5" />
+      <Item value="toStartPage" priority="5" />
+      <Item value="h1" priority="5" />
+      <Item value="h6" priority="5" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@DistanceLessons.Models.UserRoles">
       <Item value="Teacher" priority="26" />
@@ -171,56 +194,56 @@
     <ItemStatistics item="CssCodeCompletionContext">
       <Item value="background-repeat" priority="5" />
       <Item value="repeat-x" priority="6" />
-      <Item value="background" priority="89" />
-      <Item value="black" priority="76" />
-      <Item value="white" priority="104" />
+      <Item value="background" priority="107" />
+      <Item value="black" priority="83" />
+      <Item value="white" priority="110" />
       <Item value="little" priority="21" />
       <Item value="red" priority="20" />
       <Item value="border-bottom" priority="11" />
       <Item value="dotted" priority="5" />
-      <Item value="width" priority="17" />
-      <Item value="auto" priority="19" />
+      <Item value="width" priority="47" />
+      <Item value="auto" priority="33" />
       <Item value="h1" priority="5" />
       <Item value="h2" priority="5" />
       <Item value="h3" priority="5" />
       <Item value="h4" priority="5" />
       <Item value="h5" priority="5" />
       <Item value="h6" priority="5" />
-      <Item value="text-align" priority="12" />
-      <Item value="margin" priority="35" />
-      <Item value="color" priority="23" />
+      <Item value="text-align" priority="18" />
+      <Item value="margin" priority="47" />
+      <Item value="color" priority="41" />
       <Item value="cornflowerblue" priority="11" />
       <Item value="crimson" priority="5" />
-      <Item value="a" priority="17" />
-      <Item value="hover" priority="4" />
-      <Item value="silver" priority="34" />
+      <Item value="a" priority="23" />
+      <Item value="hover" priority="9" />
+      <Item value="silver" priority="40" />
       <Item value="yellow" priority="20" />
       <Item value="none" priority="13" />
       <Item value="text-decoration" priority="11" />
       <Item value="underline" priority="12" />
       <Item value="no_button" priority="4" />
-      <Item value="right" priority="47" />
+      <Item value="right" priority="59" />
       <Item value="display" priority="13" />
       <Item value="inline" priority="3" />
-      <Item value="float" priority="31" />
-      <Item value="left" priority="32" />
+      <Item value="float" priority="37" />
+      <Item value="left" priority="38" />
       <Item value="margin-bottom" priority="11" />
       <Item value="no-repeat" priority="13" />
       <Item value="background-color" priority="17" />
-      <Item value="padding" priority="59" />
-      <Item value="margin-right" priority="6" />
-      <Item value="header_upper" priority="30" />
+      <Item value="padding" priority="71" />
+      <Item value="margin-right" priority="12" />
+      <Item value="header_upper" priority="35" />
       <Item value="#lang" priority="9" />
       <Item value="ul" priority="5" />
       <Item value="li" priority="5" />
-      <Item value="lang" priority="4" />
+      <Item value="lang" priority="14" />
       <Item value="position" priority="11" />
       <Item value="padding-top" priority="5" />
       <Item value="padding-bottom" priority="11" />
       <Item value="background-position" priority="5" />
-      <Item value="center" priority="6" />
+      <Item value="center" priority="13" />
       <Item value="padding-left" priority="11" />
-      <Item value="height" priority="17" />
+      <Item value="height" priority="47" />
       <Item value="green" priority="6" />
       <Item value="violet" priority="6" />
       <Item value="margin-top" priority="17" />
@@ -244,6 +267,10 @@
       <Item value="focus" priority="4" />
       <Item value="blue" priority="6" />
       <Item value="input" priority="5" />
+      <Item value="toPage1" priority="4" />
+      <Item value="margin-left" priority="5" />
+      <Item value="toStartPage" priority="14" />
+      <Item value="top" priority="5" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DistanceLessons.Models.News">
       <Item value="Text" priority="404" />
@@ -264,6 +291,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:DistanceLessons.Models.DataEntitiesManager">
       <Item value="GetNew`0" priority="26" />
+      <Item value="CheckDoB`0" priority="80" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.Mvc.HtmlHelper`1">
       <Item value="ActionLink`0" priority="80" />
@@ -283,6 +311,16 @@
     </ItemStatistics>
     <ItemStatistics item="JavaScriptSpecificContext">
       <Item value="true" priority="54" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DistanceLessons.Models.Information">
+      <Item value="InformationId" priority="53" />
+      <Item value="DateOfBirth" priority="269" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Nullable`1">
+      <Item value="HasValue" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DBNull">
+      <Item value="Value" priority="26" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <NAntValidationSettings>

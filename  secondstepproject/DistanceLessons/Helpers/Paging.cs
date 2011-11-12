@@ -59,7 +59,10 @@ namespace DistanceLessons.Helpers
                 sb.Append(helper.ActionLink((numPage).ToString(), ViewName, new { numPage = numPage - 1 }, ao));
             }
 
-            sb.Append("<span class=\"current_page\">" + (numPage + 1).ToString() + "</span>");
+            if (itemsCount!=0)
+            {
+                sb.Append("<span class=\"current_page\">" + (numPage + 1).ToString() + "</span>");   
+            }
 
             if (numPage + 1 <= PageCount - 1)
             {

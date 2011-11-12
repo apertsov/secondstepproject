@@ -33,21 +33,21 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
-        public ActionResult UserInfo(Information model)
+        public ActionResult UserInfo(Information obj)
         {
             if (_db.ExistInformation(User.Identity.Name))
             {
-                Information old = _db.GetInformation(model.InformationId);
-                UpdateModel(model);
+                Information old = _db.GetInformation(obj.InformationId);
+                UpdateModel(old);
                 _db.Save();
                 return RedirectToAction("Index");
             }
             else
             {
                 User user = _db.GetUser(User.Identity.Name);
-                model.UserId = user.UserId;
-                model.InformationId = Guid.NewGuid();
-                _db.AddInformation(model);
+                obj.UserId = user.UserId;
+                obj.InformationId = Guid.NewGuid();
+                _db.AddInformation(obj);
                 return RedirectToAction("Index");
             }
         }
