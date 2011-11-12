@@ -1,4 +1,5 @@
-﻿@model DistanceLessons.Models.Information
+﻿@using DistanceLessons.Models
+@model DistanceLessons.Models.Information
 
 @{
     ViewBag.Title = "Редагування профілю";
@@ -13,6 +14,7 @@
 @using (Html.BeginForm())
 {
 @Html.ValidationSummary(true)
+@Html.HiddenFor(model => model.InformationId)
 <table width="100%" cellspacing="10">
     <tr>
         <td class="editor-label">@Html.LabelFor(model => model.LastName)</td>

@@ -301,26 +301,41 @@ body
     float: left;
 }
 
-#header_upper #ua
+#header_upper .lang
 {
-    background: white;
     padding: 5px;
-    padding-left: 10px;
+    border-radius:0 0 5px 5px;
+    -moz-border-radius:0 0 5px 5px;
+    -webkit-border-radius:0 0 5px 5px;
+    margin-right: 20px;
+    float: right;
+    background: white;
+    border-bottom: 1px solid silver;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    -webkit-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    -moz-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+}
+
+#header_upper .lang  > *
+{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#ua
+{
     width: 32px;
     height: 24px;
     background-image: url('img/flags/flag_ua.png');
     background-repeat: no-repeat;
     background-position: center;
     float: right;
-    border-radius: 0 0 0 10px;
-    -moz-border-radius: 0 0 0 10px;
-    -webkit-border-radius: 0 0 0 10px;
 }
 
-#header_upper #ru
+#ru
 {
-    background: white;
-    padding: 5px;
     width: 32px;
     height: 24px;
     background-image: url('img/flags/flag_ru.png');
@@ -329,20 +344,14 @@ body
     float: right;
 }
 
-#header_upper #us
+#us
 {
-    background: white;
-    padding: 5px;
-    padding-right: 10px;
     width: 32px;
     height: 24px;
     background-image: url('img/flags/flag_us.png');
     background-repeat: no-repeat;
     background-position: center;
     float: right;
-    border-radius: 0 0 10px 0;
-    -moz-border-radius:  0 0 10px 0;
-    -webkit-border-radius:  0 0 10px 0;
 }
 
 #header_middle
@@ -599,3 +608,44 @@ body
     text-align: center;
 }
 
+.rotate 
+{
+    -moz-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -o-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);    
+}
+
+#toStartPage
+{
+    z-index: 9999;
+    background-color: white;
+    color: black;
+    position: fixed;
+    top:0;
+    width: auto;
+    padding: 5px 10px;
+
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+
+    border-right: 1px solid silver;
+    border-left: 1px solid silver;
+    border-bottom: 1px solid silver;
+
+    -webkit-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    -moz-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+}
+
+#toStartPage:hover
+{
+    background-color: #eee;
+}
+
+#toStartPage a
+{
+    color: black;
+}
