@@ -49,5 +49,18 @@ namespace DistanceLessons.Models
                 return lst;
             }
         }
+
+        public void AddMessage(Message obj)
+        {
+            _db.Messages.AddObject(obj);
+            Save();
+        }
+
+        public void DeleteMessage(Guid id)
+        {
+            var cat = _db.Messages.SingleOrDefault(c => c.MessageId == id);
+            _db.DeleteObject(cat);
+            Save();
+        }
     }
 }

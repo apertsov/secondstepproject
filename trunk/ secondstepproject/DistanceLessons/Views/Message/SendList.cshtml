@@ -1,0 +1,88 @@
+﻿@model IEnumerable<DistanceLessons.Models.Message>
+
+@{
+    ViewBag.Title = "SendList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SendList</h2>
+
+<p>
+    @Html.ActionLink("Прийняті", "Index", "Message")   
+    @Html.ActionLink("Надіслані", "SendList", "Message")
+</p>
+<table>
+    <tr align=center valign=middle>
+        <th>
+            @Html.DisplayNameFor(model => model.Message1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfSender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId_From)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId_To)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr align=center valign=middle>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfSender)
+        </td>
+        <td>
+            @{
+             
+    List<DistanceLessons.Models.User> userList = ViewBag.Users;
+
+    string name = " ";
+
+    foreach (DistanceLessons.Models.User obj in userList)
+    {
+        if (obj.UserId == item.UserId_From) { name = obj.Login; break; }
+    }
+
+         
+            }
+            @Html.Label(name)
+            
+        </td>
+        <td>
+            @{
+             
+    List<DistanceLessons.Models.User> usersList = ViewBag.Users;
+
+    string names = " ";
+
+    foreach (DistanceLessons.Models.User obj in usersList)
+    {
+        if (obj.UserId == item.UserId_To) { names = obj.Login; break; }
+    }
+
+         
+            }
+            @Html.Label(names)
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @*Html.ActionLink("Edit", "Edit", new { id = item.MessageId }) |*@
+            
+            @Html.ActionLink("Delete", "Delete", new { id = item.MessageId })
+        </td>
+    </tr>
+}
+
+</table>
