@@ -20,24 +20,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult CreateInfo()
-        {
-            return PartialView("_CreateInfo_PartialPage");
-        }
-
-        [HttpPost]
-        public ActionResult CreateInfo(Information obj)
-        {
-            obj.UserId = _db.GetUserId(User.Identity.Name);
-            obj.InformationId = Guid.NewGuid();
-            _db.AddInformation(obj);
-            _db.Save();
-
-            return RedirectToAction("Index");
-        }
-
-        [HttpGet]
-        public ActionResult EditInfo()
+        public ActionResult Information()
         {
             if (_db.ExistInformation(User.Identity.Name))
             {
@@ -50,7 +33,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
-        public ActionResult EditInfo(Information obj)
+        public ActionResult Information(Information obj)
         {
             if (_db.ExistInformation(User.Identity.Name))
             {
@@ -67,6 +50,5 @@ namespace DistanceLessons.Controllers
             }
             return RedirectToAction("Index");
         }
-
     }
 }
