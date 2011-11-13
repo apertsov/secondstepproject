@@ -37,8 +37,8 @@ namespace DistanceLessons.Models
 
         public Information UserInformation(string username)
         {
-            var userInfo = (from user in _db.Users
-                            from info in _db.Informations
+            var userInfo = (from user in GetUserList()
+                            from info in GetInfoList()
                             where user.Login.ToUpper() == username.ToUpper() && user.UserId == info.UserId
                             select info).First();
             return userInfo;
@@ -46,7 +46,7 @@ namespace DistanceLessons.Models
 
         public Information GetInformation(Guid infoId)
         {
-            var userInfo = (from info in _db.Informations
+            var userInfo = (from info in GetInfoList()
                             where infoId == info.InformationId
                             select info).First();
             return userInfo;
@@ -54,7 +54,7 @@ namespace DistanceLessons.Models
 
         public Information UserInformation(Guid userID)
         {
-            var userInfo = (from info in _db.Informations
+            var userInfo = (from info in GetInfoList()
                             where userID == info.UserId
                             select info).First();
             return userInfo;

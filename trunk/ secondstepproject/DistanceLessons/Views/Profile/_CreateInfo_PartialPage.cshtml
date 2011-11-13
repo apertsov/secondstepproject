@@ -15,8 +15,8 @@
 
 <h3>Особиста інформація</h3>
 
-@using (Html.BeginForm())
-{
+
+@using (Html.BeginForm()) {
 @Html.ValidationSummary(true)
 <table width="100%" cellspacing="10">
     <tr>
@@ -45,12 +45,12 @@
     </tr>
     <tr>
         <td class="editor-label">@Html.LabelFor(model => model.DateOfBirth)</td>
-        <td class="editor-field">@Html.TextBoxFor(model => model.DateOfBirth, new { @class = "editor", @id = "datePicker" })</td>
+        <td class="editor-field">@Html.TextBoxFor(model => model.DateOfBirth, new { @class = "editor", @id = "datePicker", @readonly=true })</td>
     </tr>
     <tr>
         <td>
         </td>
-        <td class="error"><u>Примітка</u>: 11/21/1991 = 21 листопада 1991р.</td>
+        <td class="error"><u>Примітка</u>: 1991-11-21 = 21 листопада 1991р.</td>
     </tr>
     <tr>
         <td></td>
@@ -68,24 +68,20 @@
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;">У випадку, якщо Ви захочете заповнити особисті дані: поля, що відмічені <font color="red">*</font> - є обовязкові.</td>
     </tr>
 </table>
-
 <div class="item" align="center">
     <input type="submit" value="Створити" />
 </div>
 }
 
-
 <script type="text/javascript">
     //http://jqueryui.com/demos/datepicker
     $(document).ready(function () {
-        $('#datePicker').datepicker({ firstDay: 1, dateFormat: 'mm/dd/yy', changeMonth: true, changeYear: true, yearRange: "1930:2003", showOtherMonths: true });
+        $('#datePicker').datepicker({ firstDay: 1, dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true, yearRange: "1930:2003", showOtherMonths: true });
     });
-</script>
-<script type="text/javascript">
+
     $(function () {
         $.datepicker.setDefaults(
-        $.extend($.datepicker.regional["uk"])
-  );
+        $.extend($.datepicker.regional["uk"]));
         $("#datepicker").datepicker();
     });
 </script>
