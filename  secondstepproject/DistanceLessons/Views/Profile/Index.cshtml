@@ -1,20 +1,20 @@
-﻿@{
+﻿@using DistanceLessons.Models
+@{
     ViewBag.Title = "Особистий кабінет";
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @if (Request.IsAuthenticated)
 {
+    DistanceLessons.Models.DataEntitiesManager _db = new DataEntitiesManager();
     <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"> </script>
-    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"> </script>
 
     <div id="profile">
         <div id="navigation" style="padding-right:1%;" class="box_shdw_right">
-        <div>@Ajax.ActionLink("Профіль", "UserInfo", new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</div>
-        <div>@Ajax.ActionLink("Особиста інформація", "UserInfo", new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</div>
-        <div>@Ajax.ActionLink("Контактні дані", "UserInfo", new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</div>
+            <div>@Ajax.ActionLink("Edit", "EditInfo", new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</div>
+            <div>@Ajax.ActionLink("Create", "CreateInfo", new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</div>
         </div>
-        <div id="profile_ajax" class="box_shdw_bottom">@{ Html.RenderPartial("_Information_PartialPage", Model, Html.ViewData); }</div>
+        <div id="profile_ajax" class="box_shdw_bottom"></div>
     </div>
 }
 else

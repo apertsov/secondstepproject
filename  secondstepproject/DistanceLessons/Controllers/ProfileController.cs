@@ -20,36 +20,53 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult UserInfo()
+        public ActionResult CreateInfo()
+        {
+            return PartialView("_CreateInfo_PartialPage");
+        }
+
+        [HttpPost]
+        public ActionResult CreateInfo(Information obj)
+        {
+            obj.UserId = _db.GetUserId(User.Identity.Name);
+            obj.InformationId = Guid.NewGuid();
+            _db.AddInformation(obj);
+            _db.Save();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult EditInfo()
         {
             if (_db.ExistInformation(User.Identity.Name))
             {
-                return PartialView("_Information_PartialPage", _db.UserInformation(_db.GetUserId(User.Identity.Name)));
+                return PartialView("_EditInfo_PartialPage", _db.UserInformation(_db.GetUserId(User.Identity.Name)));
             }
             else
             {
-                return PartialView("_Create_Information_PartialPage");
+                return PartialView("_CreateInfo_PartialPage");
             }
         }
 
         [HttpPost]
-        public ActionResult UserInfo(Information obj)
+        public ActionResult EditInfo(Information obj)
         {
             if (_db.ExistInformation(User.Identity.Name))
             {
                 Information old = _db.GetInformation(obj.InformationId);
                 UpdateModel(old);
                 _db.Save();
-                return RedirectToAction("Index");
             }
             else
             {
-                User user = _db.GetUser(User.Identity.Name);
-                obj.UserId = user.UserId;
+                obj.UserId = _db.GetUserId(User.Identity.Name);
                 obj.InformationId = Guid.NewGuid();
                 _db.AddInformation(obj);
-                return RedirectToAction("Index");
+                _db.Save();
             }
+            return RedirectToAction("Index");
         }
+
     }
 }
