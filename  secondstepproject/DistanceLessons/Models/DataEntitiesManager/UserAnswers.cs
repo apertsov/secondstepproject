@@ -7,37 +7,113 @@ namespace DistanceLessons.Models
 {
     public partial class DataEntitiesManager
     {
-        public bool IsExistModuleUserAnswers(Guid ModuleId, string username)
+        public UserAnswer UserAnswer(Guid UserAnswerId)
         {
-            return (from user in _db.Users
-                    from answers in _db.UserAnswers
-                    where user.Login==username && user.UserId==answers.UserId && answers.ModuleId==ModuleId
-                    select answers).Count()>0?true:false;
+            return (from userAnswer in _db.UserAnswers
+                    where userAnswer.UserAnswerId == UserAnswerId
+                    select userAnswer).FirstOrDefault();
         }
 
-        public bool IsAllShowedModuleUserAnswers(Guid ModuleId, string username)
+        public UserAnswer UserAnswer(Guid testId, Guid moduleId, string username)
         {
-            return (from user in _db.Users
-                    from answers in _db.UserAnswers
-                    where user.Login == username && user.UserId == answers.UserId && answers.ModuleId == ModuleId && answers.IsShowed==false
-                    select answers).Count() > 0 ? false : true;
+            return (from userAnswer in _db.UserAnswers
+                    from user in _db.Users
+                    where userAnswer.TestId == testId && userAnswer.ModuleId == moduleId &&
+                    user.Login == username && user.UserId == userAnswer.UserId
+                    select userAnswer).FirstOrDefault();
+        }
+
+        public List<UserAnswer> UserAnswers(Guid moduleId, string username)
+        {
+            return (from userAnswer in _db.UserAnswers
+                    from user in _db.Users
+                    where userAnswer.ModuleId == moduleId &&
+                    user.Login == username && user.UserId == userAnswer.UserId
+                    select userAnswer).ToList();
+        }
+
+        public void AddUserAnswer(Guid testId, Guid moduleId, string username, Guid answerId)
+        {
+            _db.AddToUserAnswers(new UserAnswer { UserAnswerId = Guid.NewGuid(), UserId = GetUserId(username), TestId = testId, AnswerId = answerId, ModuleId = moduleId });
+            Save();
+        }
+/*
+
+*/
+
+        public void UpdateUserAnswer(UserAnswer answer)
+        {
+            UserAnswer tmp = UserAnswer(answer.UserAnswerId);
+            tmp.AnswerId = answer.AnswerId;
+            tmp.ModuleId = answer.ModuleId;
+            tmp.TestId = answer.TestId;
+            tmp.UserId = answer.UserId;
+            Save();
+        }
+
+        public void DeleteAnswers(Guid moduleId, string username)
+        {
+            List<UserAnswer> answers = UserAnswers(moduleId, username);
+            if (answers.Count > 0)
+            {
+                foreach (UserAnswer answer in answers)
+                    _db.DeleteObject(answer);
+                Save();
+            }
+        }
+
+        public float CalcUserModuleResults(Guid moduleId, string username)
+        {
+            List<UserAnswer> userAnswers = (from answers in _db.UserAnswers
+                                            from user in _db.Users
+                                            where answers.ModuleId == moduleId && user.Login == username && user.UserId == answers.UserId && answers.TestId!=null && answers.AnswerId!=null
+                                            orderby answers.TestId
+                                            select answers).ToList();
+            return  CalcGrade(userAnswers);
         }
 
 
-        public void AddNullAnswersOnTests(List<Test> tests,Guid ModuleId ,string username)
+
+        private float CalcGrade(List<UserAnswer> userAnswers)
         {
-            Guid UserId = GetUserId(username);
-            foreach (Test test in tests)
-                _db.AddToUserAnswers(new UserAnswer { UserAnswerId = Guid.NewGuid(), UserId = UserId, TestId = test.TestId, IsShowed = false, AnswerId = null, ModuleId = ModuleId });
+            int countQuestions = 0, countTrueAnswers = 0;
+            int indexOneTest, indexAnswer = 0;
+            while (indexAnswer < userAnswers.Count)
+            {
+                indexOneTest = indexAnswer + 1;
+                while ((indexOneTest < userAnswers.Count) && (userAnswers[indexAnswer].TestId == userAnswers[indexOneTest].TestId))   //
+                {
+                    indexOneTest++;
+                }
+
+                countQuestions++;
+                if (IsTrueAnswer(userAnswers.GetRange(indexAnswer,indexOneTest-indexAnswer), TestTrueAnswers((Guid)userAnswers[indexAnswer].TestId))) 
+                    countTrueAnswers++;
+                indexAnswer = indexOneTest;
+            }
+
+            return (float)Math.Round((double)(100 * countTrueAnswers / countQuestions),(int) 4);
         }
 
-        public List<UserAnswer> GetUserAnswersNotShowed(Guid ModuleId, string username)
+        private bool IsTrueAnswer(List<UserAnswer> userAnswers, List<Answer> trueAnswers)
         {
-            Guid UserId = GetUserId(username);
-            return (from userAnswers in _db.UserAnswers
-                    where userAnswers.ModuleId == ModuleId && userAnswers.UserId == UserId && userAnswers.IsShowed == false
-                    select userAnswers).ToList();
+            bool inTrueAnswers;
+            foreach(UserAnswer userAnswer in userAnswers)
+            {
+                inTrueAnswers=false;
+                foreach (Answer answer in trueAnswers)
+                    if (userAnswer.Answer == answer)
+                    {
+                        inTrueAnswers = true;
+                        trueAnswers.Remove(answer);
+                        break;
+                    }
+                if (!inTrueAnswers) return false;
+            }
+            if (trueAnswers.Count > 0) return false;
+            return true;
         }
+
 
     }
 }

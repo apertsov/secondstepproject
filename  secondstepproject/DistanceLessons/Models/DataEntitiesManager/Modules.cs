@@ -60,6 +60,15 @@ namespace DistanceLessons.Models
                     where module.ModuleId == ModuleId
                     select module).FirstOrDefault();
         }
+
+        public string ModuleName(Guid moduleId)
+        {
+            Module mod= (from module in _db.Modules
+                    where module.ModuleId == moduleId
+                    select module).FirstOrDefault();
+            if (mod == null) return String.Empty;
+            return mod.Title;
+        }
         /*
                 public List<Lesson> GetModulesByTeacherId(Guid UserId)
                 {

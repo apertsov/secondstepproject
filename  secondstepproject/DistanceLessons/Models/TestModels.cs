@@ -8,6 +8,6 @@ namespace DistanceLessons.Models
     public class PassTestModel
     {
         public TestAndAnswersModel TestAndAnswers { get; set; }
-        public Guid ModuleId { get; set; }
+        public Module PassedModule { get; set; }
     }
 }

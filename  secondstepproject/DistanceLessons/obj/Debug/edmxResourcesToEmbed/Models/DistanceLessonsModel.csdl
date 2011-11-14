@@ -11,6 +11,7 @@
     <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Module" />
     <EntitySet Name="News" EntityType="DistanceLessons.Models.News" />
     <EntitySet Name="Roles" EntityType="DistanceLessons.Models.Role" />
+    <EntitySet Name="ShowTests" EntityType="DistanceLessons.Models.ShowTest" />
     <EntitySet Name="Tests" EntityType="DistanceLessons.Models.Test" />
     <EntitySet Name="UserAnswers" EntityType="DistanceLessons.Models.UserAnswer" />
     <EntitySet Name="UserCourses" EntityType="DistanceLessons.Models.UserCours" />
@@ -72,6 +73,10 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Messages" EntitySet="Messages" />
     </AssociationSet>
+    <AssociationSet Name="FK_ShowTests_Modules" Association="DistanceLessons.Models.FK_ShowTests_Modules">
+      <End Role="Modules" EntitySet="Modules" />
+      <End Role="ShowTests" EntitySet="ShowTests" />
+    </AssociationSet>
     <AssociationSet Name="FK_UserAnswers_Modules" Association="DistanceLessons.Models.FK_UserAnswers_Modules">
       <End Role="Modules" EntitySet="Modules" />
       <End Role="UserAnswers" EntitySet="UserAnswers" />
@@ -87,6 +92,14 @@
     <AssociationSet Name="FK_Users_Roles" Association="DistanceLessons.Models.FK_Users_Roles">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShowTests_Tests" Association="DistanceLessons.Models.FK_ShowTests_Tests">
+      <End Role="Tests" EntitySet="Tests" />
+      <End Role="ShowTests" EntitySet="ShowTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShowTests_Users" Association="DistanceLessons.Models.FK_ShowTests_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ShowTests" EntitySet="ShowTests" />
     </AssociationSet>
     <AssociationSet Name="FK_UserAnswers_Tests" Association="DistanceLessons.Models.FK_UserAnswers_Tests">
       <End Role="Tests" EntitySet="Tests" />
@@ -210,6 +223,7 @@
     <Property Name="CountQuestions" Type="Int32" />
     <NavigationProperty Name="Cours" Relationship="DistanceLessons.Models.FK_Modules_Courses" FromRole="Modules" ToRole="Courses" />
     <NavigationProperty Name="Lessons" Relationship="DistanceLessons.Models.FK_Lessons_Modules" FromRole="Modules" ToRole="Lessons" />
+    <NavigationProperty Name="ShowTests" Relationship="DistanceLessons.Models.FK_ShowTests_Modules" FromRole="Modules" ToRole="ShowTests" />
     <NavigationProperty Name="UserAnswers" Relationship="DistanceLessons.Models.FK_UserAnswers_Modules" FromRole="Modules" ToRole="UserAnswers" />
     <NavigationProperty Name="UserModules" Relationship="DistanceLessons.Models.FK_UserModules_Modules" FromRole="Modules" ToRole="UserModules" />
   </EntityType>
@@ -232,6 +246,19 @@
     <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Users" Relationship="DistanceLessons.Models.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
   </EntityType>
+  <EntityType Name="ShowTest">
+    <Key>
+      <PropertyRef Name="ShowTestId" />
+    </Key>
+    <Property Name="ShowTestId" Type="Guid" Nullable="false" />
+    <Property Name="IsShowed" Type="Boolean" Nullable="false" />
+    <Property Name="TestId" Type="Guid" Nullable="false" />
+    <Property Name="ModuleId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Module" Relationship="DistanceLessons.Models.FK_ShowTests_Modules" FromRole="ShowTests" ToRole="Modules" />
+    <NavigationProperty Name="Test" Relationship="DistanceLessons.Models.FK_ShowTests_Tests" FromRole="ShowTests" ToRole="Tests" />
+    <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_ShowTests_Users" FromRole="ShowTests" ToRole="Users" />
+  </EntityType>
   <EntityType Name="Test">
     <Key>
       <PropertyRef Name="TestId" />
@@ -241,6 +268,7 @@
     <Property Name="LessonId" Type="Guid" Nullable="false" />
     <NavigationProperty Name="Answers" Relationship="DistanceLessons.Models.FK_Answers_Tests" FromRole="Tests" ToRole="Answers" />
     <NavigationProperty Name="Lesson" Relationship="DistanceLessons.Models.FK_Tests_Lessons" FromRole="Tests" ToRole="Lessons" />
+    <NavigationProperty Name="ShowTests" Relationship="DistanceLessons.Models.FK_ShowTests_Tests" FromRole="Tests" ToRole="ShowTests" />
     <NavigationProperty Name="UserAnswers" Relationship="DistanceLessons.Models.FK_UserAnswers_Tests" FromRole="Tests" ToRole="UserAnswers" />
   </EntityType>
   <EntityType Name="UserAnswer">
@@ -251,7 +279,6 @@
     <Property Name="UserId" Type="Guid" Nullable="false" />
     <Property Name="AnswerId" Type="Guid" />
     <Property Name="TestId" Type="Guid" />
-    <Property Name="IsShowed" Type="Boolean" Nullable="false" />
     <Property Name="ModuleId" Type="Guid" Nullable="false" />
     <NavigationProperty Name="Answer" Relationship="DistanceLessons.Models.FK_UserAnswers_Answers" FromRole="UserAnswers" ToRole="Answers" />
     <NavigationProperty Name="Module" Relationship="DistanceLessons.Models.FK_UserAnswers_Modules" FromRole="UserAnswers" ToRole="Modules" />
@@ -307,6 +334,7 @@
     <NavigationProperty Name="Messages1" Relationship="DistanceLessons.Models.FK_Messages_Users1" FromRole="Users" ToRole="Messages" />
     <NavigationProperty Name="News" Relationship="DistanceLessons.Models.FK_News_Users" FromRole="Users" ToRole="News" />
     <NavigationProperty Name="Role" Relationship="DistanceLessons.Models.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+    <NavigationProperty Name="ShowTests" Relationship="DistanceLessons.Models.FK_ShowTests_Users" FromRole="Users" ToRole="ShowTests" />
     <NavigationProperty Name="UserAnswers" Relationship="DistanceLessons.Models.FK_User_UserAnswers" FromRole="Users" ToRole="UserAnswers" />
     <NavigationProperty Name="UserCourses" Relationship="DistanceLessons.Models.FK_UserCourses_Users" FromRole="Users" ToRole="UserCourses" />
     <NavigationProperty Name="UserModules" Relationship="DistanceLessons.Models.FK_UserModules_Users" FromRole="Users" ToRole="UserModules" />
@@ -479,6 +507,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ShowTests_Modules">
+    <End Role="Modules" Type="DistanceLessons.Models.Module" Multiplicity="1" />
+    <End Role="ShowTests" Type="DistanceLessons.Models.ShowTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modules">
+        <PropertyRef Name="ModuleId" />
+      </Principal>
+      <Dependent Role="ShowTests">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UserAnswers_Modules">
     <End Role="Modules" Type="DistanceLessons.Models.Module" Multiplicity="1" />
     <End Role="UserAnswers" Type="DistanceLessons.Models.UserAnswer" Multiplicity="*" />
@@ -524,6 +564,30 @@
       </Principal>
       <Dependent Role="Users">
         <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShowTests_Tests">
+    <End Role="Tests" Type="DistanceLessons.Models.Test" Multiplicity="1" />
+    <End Role="ShowTests" Type="DistanceLessons.Models.ShowTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tests">
+        <PropertyRef Name="TestId" />
+      </Principal>
+      <Dependent Role="ShowTests">
+        <PropertyRef Name="TestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShowTests_Users">
+    <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+    <End Role="ShowTests" Type="DistanceLessons.Models.ShowTest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ShowTests">
+        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

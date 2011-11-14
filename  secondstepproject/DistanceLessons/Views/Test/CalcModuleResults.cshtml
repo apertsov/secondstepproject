@@ -1,0 +1,13 @@
+﻿@model DistanceLessons.Models.UserModule
+
+@{
+    ViewBag.Title = "Результати тестування";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+Ваш результат тестування з модуля @ViewBag.ModuleName <br />
+@Model.Passed %
+ <br />
+ @Html.ActionLink("Повернутись у викладацьку", "Index", "Teacher", new { id = Session["LessonId"] }, null)
+
+
