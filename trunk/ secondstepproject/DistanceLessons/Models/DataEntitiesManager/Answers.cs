@@ -19,6 +19,13 @@ namespace DistanceLessons.Models
                     select answers).ToList();
         }
 
+        public List<Answer> TestTrueAnswers(Guid TestId)
+        {
+            return (from answers in _db.Answers
+                    where answers.TestId == TestId && answers.Valid==true
+                    select answers).ToList();
+        }
+
         public Answer Answer(Guid AnswerId)
         {
             return (from answer in _db.Answers

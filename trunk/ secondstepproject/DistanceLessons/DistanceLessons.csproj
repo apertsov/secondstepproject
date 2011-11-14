@@ -131,6 +131,7 @@
     <Compile Include="Models\DataEntitiesManager\Modules.cs" />
     <Compile Include="Models\DataEntitiesManager\News.cs" />
     <Compile Include="Models\DataEntitiesManager\Roles.cs" />
+    <Compile Include="Models\DataEntitiesManager\ShowTests.cs" />
     <Compile Include="Models\DataEntitiesManager\TableResultQuery.cs" />
     <Compile Include="Models\DataEntitiesManager\Tests.cs" />
     <Compile Include="Models\DataEntitiesManager\UserAnswers.cs" />
@@ -472,6 +473,9 @@
     <Content Include="Views\Message\Index.cshtml" />
     <Content Include="Views\Message\SendList.cshtml" />
     <Content Include="Views\Message\Users.cshtml" />
+    <Content Include="Views\Test\CalcModuleResults.cshtml" />
+    <Content Include="Views\Test\NotInTestTime.cshtml" />
+    <Content Include="Views\Test\PassModule.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

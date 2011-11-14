@@ -141,36 +141,80 @@ namespace DistanceLessons.Controllers
             if ((DateTime.Now < module.DateBeginTesting) && (DateTime.Now >= module.DateEndTesting))
                 return View("NotInTestTime", module);
 
-            if (!_db.IsExistModuleUserAnswers(id, User.Identity.Name)) // чи користувач починав тестування з цього модуля 
+            if (!_db.IsStartModuleTest(id, User.Identity.Name)) // чи користувач починав тестування з цього модуля 
             {// не починав
                 List<Test> tests = _db.ModuleTests(id);
                 if (module.CountQuestions != null)
                 {
                     TestHelper.FilterTests(ref tests, (int)module.CountQuestions);
                 }
-                _db.AddNullAnswersOnTests(tests, id, User.Identity.Name);
+                _db.AddNotShowedTests(tests, id, User.Identity.Name);
+                _db.AddUserModules(new UserModule { UserModuleId = Guid.NewGuid(), ModuleId = id, UserId = _db.GetUserId(User.Identity.Name), Passed = null, PassedTime = null, SpendTime = new DateTime(2011, 1, 1, 0, module.TimeForPassTest,0) });
+       /*         if (Session["TestModule"]==null) Session.Add("TestModule", id);
+                else  Session["TestModule"]=id;
+                if (Session["TestTimeMin"] == null) Session.Add("TestTimeMin", module.TimeForPassTest);
+                else Session["TestTimeMin"] = module.TimeForPassTest;
+                if (Session["TestTimeSec"] == null) Session.Add("TestTimeSec", 0);
+                else Session["TestTimeSec"] = 0;*/
+                return View(NextNotShowedTest(id, User.Identity.Name));
             }
 
-         //   if (_db.IsAllShowedModuleUserAnswers(id,User.Identity.Name)) // модуль вже зданий
-                //return View("ShowModuleResults");
-            Session.Add("TestTime", module.TimeForPassTest);
+            if (_db.IsAllShowedModuleUserTests(id, User.Identity.Name)) // модуль вже зданий
+                return RedirectToAction("CalcModuleResults", new { id = id });
+           // уже починав тестування і не закінчив його
+            UserModule previousResult = _db.UserModule(id, User.Identity.Name);
+            if (Session["TestModule"] == null) Session.Add("TestModule", id);
+            else Session["TestModule"] = id;
+            if (Session["TestTimeMin"] == null) Session.Add("TestTimeMin", previousResult.SpendTime.Value.Minute);
+            else Session["TestTimeMin"] = previousResult.SpendTime.Value.Minute;
+            if (Session["TestTimeSec"] == null) Session.Add("TestTimeSec", previousResult.SpendTime.Value.Second);
+            else Session["TestTimeSec"] = previousResult.SpendTime.Value.Second;
             return View(NextNotShowedTest(id, User.Identity.Name));
         }
-/*
+
         [HttpPost]
-        public ActionResult PassModule(Guid id)
+        public ActionResult PassModule(Guid moduleId, Guid testId)
         {
+            // PassTestModel { PassedModule = _db.Module(moduleId), TestAndAnswers = new TestAndAnswersModel { Test = _db.Test((Guid)answerforPass.TestId), AnswerList = _db.TestAnswers((Guid)answerforPass.TestId) } };
+            List<Answer> answers = _db.TestAnswers(testId);
+            bool isChecked;
+            foreach (Answer answer in answers)
+                if ((Request.Form.GetValues(answer.AnswerId.ToString())[0] != null) && (Boolean.TryParse(Request.Form.GetValues(answer.AnswerId.ToString())[0], out isChecked) == true))
+                {
+                    if (isChecked) _db.AddUserAnswer(testId, moduleId, User.Identity.Name, answer.AnswerId);
+                }
+            if (_db.IsAllShowedModuleUserTests(moduleId, User.Identity.Name))
+                return RedirectToAction("CalcModuleResults", new { id = moduleId });
+            return View("PassModule", NextNotShowedTest(moduleId, User.Identity.Name));
+        }
+
+        [HttpGet]
+        public ActionResult DeletePassModule(Guid id)
+        {
+            _db.DeleteModuleTest(id, User.Identity.Name);
+            return RedirectToAction("Index", "Teacher");
+        }
+
+        [HttpGet]
+        public ActionResult CalcModuleResults(Guid id)
+        {
+            //  if (_db.IsAllShowedModuleUserAnswers(id, User.Identity.Name)) redirect..
+            _db.UpdateUserModule(id, User.Identity.Name, _db.CalcUserModuleResults(id, User.Identity.Name), DateTime.Now);
+            ViewBag.ModuleName = _db.ModuleName(id);
+            return View(_db.UserModule(id, User.Identity.Name));
 
         }
-        */
-        private PassTestModel NextNotShowedTest(Guid ModuleId, string username)
+
+        private PassTestModel NextNotShowedTest(Guid moduleId, string username)
         {
-            List<UserAnswer> answers = _db.GetUserAnswersNotShowed(ModuleId, username);
+            List<Guid> testsId = _db.GetNotShowedTestsId(moduleId, username); // вибираємо всі тести з модуля що не показані користувачу
+            if (testsId.Count == 0) throw new Exception();
             Random rand = new Random();
-            Guid? TestId = answers[rand.Next(answers.Count)].TestId;
-            if (TestId == null) throw new Exception();
-            return new PassTestModel { ModuleId = ModuleId, TestAndAnswers = new TestAndAnswersModel { Test = _db.Test((Guid)TestId), AnswerList = _db.TestAnswers((Guid)TestId) } };
+            Guid testIdForPass = testsId[rand.Next(testsId.Count)]; // вибираємо один з тестів
+            _db.MarkShowedTest(testIdForPass, moduleId, User.Identity.Name); // позначаємо обраний тест як показаний
+            return new PassTestModel { PassedModule = _db.Module(moduleId), TestAndAnswers = new TestAndAnswersModel { Test = _db.Test(testIdForPass), AnswerList = _db.TestAnswers(testIdForPass) } };
         }
+
 
     }
 }

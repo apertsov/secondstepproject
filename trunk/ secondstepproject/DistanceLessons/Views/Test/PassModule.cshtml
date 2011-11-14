@@ -1,0 +1,39 @@
+﻿@model DistanceLessons.Models.PassTestModel
+
+@{
+    ViewBag.Title = "Здача модуля";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script language="javascript" type="text/javascript">
+    window.onload = function () {
+        minutes = "@Session["TestTime"]";
+        seconds = 0;
+        document.getElementById('timer').innerHTML = minutes+' хвилин '+seconds + ' секунд';
+        timer = setInterval(
+            function () {
+                seconds--;
+                document.getElementById('timer').innerHTML = minutes+' хвилин '+seconds + ' секунд';
+            },
+            1000
+        );    
+    }
+</script>
+<h2>Залишилось часу <span id="timer"></span> </h2> <br />
+<h2>@Model.PassedModule.Title</h2>
+@using (Html.BeginForm("PassModule", "Test", new { moduleId=Model.PassedModule.ModuleId, testId=Model.TestAndAnswers.Test.TestId}, FormMethod.Post))
+{
+    /*
+ @Html.HiddenFor(model => model.PassedModule.ModuleId)
+ @Html.HiddenFor(model => model.PassedModule.CourseId)
+ @Html.HiddenFor(model => model.TestAndAnswers.Test.TestId)
+ */
+ @Model.TestAndAnswers.Test.Question <br />
+    for (int answer = 0; answer < Model.TestAndAnswers.AnswerList.Count; answer++)
+    {
+     @Html.CheckBox(Model.TestAndAnswers.AnswerList[answer].AnswerId.ToString(), false) 
+     @Model.TestAndAnswers.AnswerList[answer].Answer1 <br />
+    }
+  <p>
+    <input type="submit"  value="Перейти до наступного запитання" />
+  </p>      
+}

@@ -32,10 +32,13 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Tests_Lessons", "Lessons", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Lesson), "Tests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Test), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Messages_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Messages", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Message), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Messages_Users1", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Messages", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Message), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_ShowTests_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Module), "ShowTests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.ShowTest), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserAnswers_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Module), "UserAnswers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserAnswer), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserModules_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DistanceLessons.Models.Module), "UserModules", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserModule), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_News_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "News", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.News), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Users_Roles", "Roles", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Role), "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.User), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_ShowTests_Tests", "Tests", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Test), "ShowTests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.ShowTest), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_ShowTests_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "ShowTests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.ShowTest), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserAnswers_Tests", "Tests", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DistanceLessons.Models.Test), "UserAnswers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserAnswer), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_User_UserAnswers", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "UserAnswers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserAnswer), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_UserCourses_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "UserCourses", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.UserCours), true)]
@@ -254,6 +257,22 @@ namespace DistanceLessons.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<ShowTest> ShowTests
+        {
+            get
+            {
+                if ((_ShowTests == null))
+                {
+                    _ShowTests = base.CreateObjectSet<ShowTest>("ShowTests");
+                }
+                return _ShowTests;
+            }
+        }
+        private ObjectSet<ShowTest> _ShowTests;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<Test> Tests
         {
             get
@@ -412,6 +431,14 @@ namespace DistanceLessons.Models
         public void AddToRoles(Role role)
         {
             base.AddObject("Roles", role);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the ShowTests EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToShowTests(ShowTest showTest)
+        {
+            base.AddObject("ShowTests", showTest);
         }
     
         /// <summary>
@@ -2517,6 +2544,28 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_ShowTests_Modules", "ShowTests")]
+        public EntityCollection<ShowTest> ShowTests
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ShowTest>("DistanceLessons.Models.FK_ShowTests_Modules", "ShowTests");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ShowTest>("DistanceLessons.Models.FK_ShowTests_Modules", "ShowTests", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_UserAnswers_Modules", "UserAnswers")]
         public EntityCollection<UserAnswer> UserAnswers
         {
@@ -2867,6 +2916,282 @@ namespace DistanceLessons.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="ShowTest")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ShowTest : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ShowTest object.
+        /// </summary>
+        /// <param name="showTestId">Initial value of the ShowTestId property.</param>
+        /// <param name="isShowed">Initial value of the IsShowed property.</param>
+        /// <param name="testId">Initial value of the TestId property.</param>
+        /// <param name="moduleId">Initial value of the ModuleId property.</param>
+        /// <param name="userId">Initial value of the UserId property.</param>
+        public static ShowTest CreateShowTest(global::System.Guid showTestId, global::System.Boolean isShowed, global::System.Guid testId, global::System.Guid moduleId, global::System.Guid userId)
+        {
+            ShowTest showTest = new ShowTest();
+            showTest.ShowTestId = showTestId;
+            showTest.IsShowed = isShowed;
+            showTest.TestId = testId;
+            showTest.ModuleId = moduleId;
+            showTest.UserId = userId;
+            return showTest;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid ShowTestId
+        {
+            get
+            {
+                return _ShowTestId;
+            }
+            set
+            {
+                if (_ShowTestId != value)
+                {
+                    OnShowTestIdChanging(value);
+                    ReportPropertyChanging("ShowTestId");
+                    _ShowTestId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("ShowTestId");
+                    OnShowTestIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _ShowTestId;
+        partial void OnShowTestIdChanging(global::System.Guid value);
+        partial void OnShowTestIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean IsShowed
+        {
+            get
+            {
+                return _IsShowed;
+            }
+            set
+            {
+                OnIsShowedChanging(value);
+                ReportPropertyChanging("IsShowed");
+                _IsShowed = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsShowed");
+                OnIsShowedChanged();
+            }
+        }
+        private global::System.Boolean _IsShowed;
+        partial void OnIsShowedChanging(global::System.Boolean value);
+        partial void OnIsShowedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid TestId
+        {
+            get
+            {
+                return _TestId;
+            }
+            set
+            {
+                OnTestIdChanging(value);
+                ReportPropertyChanging("TestId");
+                _TestId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("TestId");
+                OnTestIdChanged();
+            }
+        }
+        private global::System.Guid _TestId;
+        partial void OnTestIdChanging(global::System.Guid value);
+        partial void OnTestIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid ModuleId
+        {
+            get
+            {
+                return _ModuleId;
+            }
+            set
+            {
+                OnModuleIdChanging(value);
+                ReportPropertyChanging("ModuleId");
+                _ModuleId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ModuleId");
+                OnModuleIdChanged();
+            }
+        }
+        private global::System.Guid _ModuleId;
+        partial void OnModuleIdChanging(global::System.Guid value);
+        partial void OnModuleIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid UserId
+        {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                OnUserIdChanging(value);
+                ReportPropertyChanging("UserId");
+                _UserId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UserId");
+                OnUserIdChanged();
+            }
+        }
+        private global::System.Guid _UserId;
+        partial void OnUserIdChanging(global::System.Guid value);
+        partial void OnUserIdChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_ShowTests_Modules", "Modules")]
+        public Module Module
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("DistanceLessons.Models.FK_ShowTests_Modules", "Modules").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("DistanceLessons.Models.FK_ShowTests_Modules", "Modules").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Module> ModuleReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Module>("DistanceLessons.Models.FK_ShowTests_Modules", "Modules");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Module>("DistanceLessons.Models.FK_ShowTests_Modules", "Modules", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_ShowTests_Tests", "Tests")]
+        public Test Test
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("DistanceLessons.Models.FK_ShowTests_Tests", "Tests").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("DistanceLessons.Models.FK_ShowTests_Tests", "Tests").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Test> TestReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Test>("DistanceLessons.Models.FK_ShowTests_Tests", "Tests");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Test>("DistanceLessons.Models.FK_ShowTests_Tests", "Tests", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_ShowTests_Users", "Users")]
+        public User User
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_ShowTests_Users", "Users").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_ShowTests_Users", "Users").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User> UserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_ShowTests_Users", "Users");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_ShowTests_Users", "Users", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Test")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -3025,6 +3350,28 @@ namespace DistanceLessons.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Lesson>("DistanceLessons.Models.FK_Tests_Lessons", "Lessons", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_ShowTests_Tests", "ShowTests")]
+        public EntityCollection<ShowTest> ShowTests
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ShowTest>("DistanceLessons.Models.FK_ShowTests_Tests", "ShowTests");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ShowTest>("DistanceLessons.Models.FK_ShowTests_Tests", "ShowTests", value);
                 }
             }
         }
@@ -3637,6 +3984,28 @@ namespace DistanceLessons.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_ShowTests_Users", "ShowTests")]
+        public EntityCollection<ShowTest> ShowTests
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ShowTest>("DistanceLessons.Models.FK_ShowTests_Users", "ShowTests");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ShowTest>("DistanceLessons.Models.FK_ShowTests_Users", "ShowTests", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_User_UserAnswers", "UserAnswers")]
         public EntityCollection<UserAnswer> UserAnswers
         {
@@ -3715,14 +4084,12 @@ namespace DistanceLessons.Models
         /// </summary>
         /// <param name="userAnswerId">Initial value of the UserAnswerId property.</param>
         /// <param name="userId">Initial value of the UserId property.</param>
-        /// <param name="isShowed">Initial value of the IsShowed property.</param>
         /// <param name="moduleId">Initial value of the ModuleId property.</param>
-        public static UserAnswer CreateUserAnswer(global::System.Guid userAnswerId, global::System.Guid userId, global::System.Boolean isShowed, global::System.Guid moduleId)
+        public static UserAnswer CreateUserAnswer(global::System.Guid userAnswerId, global::System.Guid userId, global::System.Guid moduleId)
         {
             UserAnswer userAnswer = new UserAnswer();
             userAnswer.UserAnswerId = userAnswerId;
             userAnswer.UserId = userId;
-            userAnswer.IsShowed = isShowed;
             userAnswer.ModuleId = moduleId;
             return userAnswer;
         }
@@ -3828,30 +4195,6 @@ namespace DistanceLessons.Models
         private Nullable<global::System.Guid> _TestId;
         partial void OnTestIdChanging(Nullable<global::System.Guid> value);
         partial void OnTestIdChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Boolean IsShowed
-        {
-            get
-            {
-                return _IsShowed;
-            }
-            set
-            {
-                OnIsShowedChanging(value);
-                ReportPropertyChanging("IsShowed");
-                _IsShowed = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("IsShowed");
-                OnIsShowedChanged();
-            }
-        }
-        private global::System.Boolean _IsShowed;
-        partial void OnIsShowedChanging(global::System.Boolean value);
-        partial void OnIsShowedChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

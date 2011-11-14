@@ -116,6 +116,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ShowTests">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.ShowTest">
+        <MappingFragment StoreEntitySet="ShowTests">
+          <ScalarProperty Name="ShowTestId" ColumnName="ShowTestId" />
+          <ScalarProperty Name="IsShowed" ColumnName="IsShowed" />
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Tests">
       <EntityTypeMapping TypeName="DistanceLessons.Models.Test">
         <MappingFragment StoreEntitySet="Tests">
@@ -132,7 +143,6 @@
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
           <ScalarProperty Name="TestId" ColumnName="TestId" />
-          <ScalarProperty Name="IsShowed" ColumnName="IsShowed" />
           <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
         </MappingFragment>
       </EntityTypeMapping>
