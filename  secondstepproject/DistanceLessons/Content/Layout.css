@@ -256,6 +256,18 @@ body
     text-align: right;
 }
 
+#up_line
+{
+    background: white;
+    border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    width: 100%;
+    height:5px;
+    z-index:1;
+    position:relative;
+}
+
 /*ACTIVE PLACE ON PAGE*/
 #container
 {
@@ -619,22 +631,18 @@ body
 
 #toStartPage
 {
-    z-index: 9999;
+    z-index: 9950;
     background-color: white;
     color: black;
     position: fixed;
     top:0;
     width: auto;
-    padding: 5px 10px;
+    padding: 10px 10px;
 
     border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
     -webkit-border-radius: 0 0 5px 5px;
-
-    border-right: 1px solid silver;
-    border-left: 1px solid silver;
-    border-bottom: 1px solid silver;
-
+    
     -webkit-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
     -moz-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
     box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
