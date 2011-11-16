@@ -44,12 +44,12 @@ namespace DistanceLessons.Controllers
             ViewBag.CourseId = courseId;
             return View(db.GetModulesByCourseId(courseId));
         }
-
+/*
         public ActionResult MyCourses()
         {
             return View(db.GetCoursesByTeacherId(db.GetUser(User.Identity.Name).UserId));
         }
-
+*/
         [HttpGet]
         public ActionResult CreateModule(Guid courseId)
         {

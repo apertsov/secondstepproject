@@ -69,6 +69,14 @@ namespace DistanceLessons.Models
             if (mod == null) return String.Empty;
             return mod.Title;
         }
+
+        public int CountModuleQuestions(Guid moduleId)
+        {
+            Module module = Module(moduleId);
+            if ((module!=null) && (module.CountQuestions != null)) return (int)module.CountQuestions;
+            return ModuleTests(moduleId).Count;
+        }
+
         /*
                 public List<Lesson> GetModulesByTeacherId(Guid UserId)
                 {

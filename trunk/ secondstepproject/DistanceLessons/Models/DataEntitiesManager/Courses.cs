@@ -29,7 +29,7 @@ namespace DistanceLessons.Models
             _db.Courses.AddObject(obj);
             _db.SaveChanges();
         }
-
+        /*
         public List<RQCourses> QCourses()
         {
             var Query =
@@ -108,6 +108,6 @@ namespace DistanceLessons.Models
                 lst.Add(i);
 
             return lst;
-        }
+        }*/
     }
 }

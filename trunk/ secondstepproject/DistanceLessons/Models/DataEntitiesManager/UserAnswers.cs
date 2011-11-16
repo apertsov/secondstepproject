@@ -69,14 +69,14 @@ namespace DistanceLessons.Models
                                             where answers.ModuleId == moduleId && user.Login == username && user.UserId == answers.UserId && answers.TestId!=null && answers.AnswerId!=null
                                             orderby answers.TestId
                                             select answers).ToList();
-            return  CalcGrade(userAnswers);
+            return CalcGrade(userAnswers, CountModuleQuestions(moduleId));
         }
 
 
 
-        private float CalcGrade(List<UserAnswer> userAnswers)
+        private float CalcGrade(List<UserAnswer> userAnswers,int countQuestions)
         {
-            int countQuestions = 0, countTrueAnswers = 0;
+            int countTrueAnswers = 0;
             int indexOneTest, indexAnswer = 0;
             while (indexAnswer < userAnswers.Count)
             {
@@ -86,7 +86,6 @@ namespace DistanceLessons.Models
                     indexOneTest++;
                 }
 
-                countQuestions++;
                 if (IsTrueAnswer(userAnswers.GetRange(indexAnswer,indexOneTest-indexAnswer), TestTrueAnswers((Guid)userAnswers[indexAnswer].TestId))) 
                     countTrueAnswers++;
                 indexAnswer = indexOneTest;

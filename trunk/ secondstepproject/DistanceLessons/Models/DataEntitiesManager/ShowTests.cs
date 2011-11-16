@@ -53,6 +53,21 @@ namespace DistanceLessons.Models
             }
         }
 
+        public void MarkModuleTestsShowed(Guid ModuleId, string username)
+        {
+            List<ShowTest> notShowedTests = (from user in _db.Users
+                                 from showTests in _db.ShowTests
+                                 where user.Login == username && user.UserId == showTests.UserId &&
+                                 showTests.ModuleId == ModuleId && showTests.IsShowed == false
+                                 select showTests).ToList();
+            if (notShowedTests != null)
+            {
+                foreach (ShowTest showTest in notShowedTests)
+                  showTest.IsShowed = true;
+                Save();
+            }
+        }
+
         public void DeleteShowTestsInUserModule(Guid moduleId, string username)
         {
             List<ShowTest> showTests = ShowTestsInModule(moduleId, username);
