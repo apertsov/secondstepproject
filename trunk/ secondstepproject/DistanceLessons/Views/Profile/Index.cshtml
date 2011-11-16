@@ -4,20 +4,35 @@
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (Request.IsAuthenticated)
-{
+@{
     DistanceLessons.Models.DataEntitiesManager _db = new DataEntitiesManager();
     <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"> </script>
+    <script src="@Url.Content("~/Content/script/scriptbreaker-multiple-accordion.js")" type="text/javascript"> </script>
+    <script language="JavaScript">
+        		    $(document).ready(function() {
+        		        $(".topnav").accordion({
+        		                accordion: true,
+        		                speed: 600
+        		            });
+        		    });
+    </script>
 
     <div id="profile">
-        <div id="navigation" style="padding-right:1%;" class="box_shdw_right">
-            <div>@Ajax.ActionLink("Особиста інформація", "Information", new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</div>
-        </div>
+        <ul class="topnav" class=box_shdw_right>
+            <li>@Ajax.ActionLink("Особиста інформація", "Information", new AjaxOptions() {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
+            <li><a href="#">Меню1</a>
+                <ul style="display: block;">
+                    <li class="active"><a href="#">Підменю</a></li>
+                    <li><a href="#">підменю</a></li>
+                    <li><a href="#">під</a>
+                        <ul>
+                            <li><a href="#">під-під</a></li>
+                            <li><a href="#">пііід</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
         <div id="profile_ajax" class="box_shdw_bottom"></div>
     </div>
-}
-else
-{
-    <div>Будь-ласка, зареєструйтесь. 
-    У випадку, якщо у Вас вже є аккаунт - зайдіть під своїм імя'м.</div>
 }

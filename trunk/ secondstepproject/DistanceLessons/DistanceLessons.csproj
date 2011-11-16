@@ -172,7 +172,6 @@
     <Content Include="Content\Calendar\css\flick\images\ui-icons_ff0084_256x240.png" />
     <Content Include="Content\Calendar\css\flick\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\Calendar\css\flick\jquery-ui-1.8.16.custom.css" />
-    <Content Include="Content\Calendar\index.html" />
     <Content Include="Content\Calendar\js\i18n\jquery-ui-i18n.js" />
     <Content Include="Content\Calendar\js\i18n\jquery.ui.datepicker-af.js" />
     <Content Include="Content\Calendar\js\i18n\jquery.ui.datepicker-ar-DZ.js" />
