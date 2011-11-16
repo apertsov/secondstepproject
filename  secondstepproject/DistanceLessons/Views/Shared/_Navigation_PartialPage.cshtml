@@ -4,19 +4,29 @@
         <li>@Html.ActionLink("Головна", "Index", "Home")</li>
         <li>@Html.ActionLink("Новини", "Index", "News")</li>
         <li>@Html.ActionLink("Профіль", "Index", "Profile")</li>
-        <li>@Html.ActionLink("Користувачі","Users","Message")</li>
-        <li>@Html.ActionLink("Повідомлення","Index","Message")</li>
+        <li><a>Предмети</a></li>
+        <li><a>КАТОЛИКА</a>
+            <ul>
+                <li>@Html.ActionLink("Користувачі", "Users", "Message")</li>
+                <li>@Html.ActionLink("Повідомлення", "Index", "Message")</li>
+            </ul>
+        </li>
+        <li><a>Курси</a>
+            <ul>
+                <li><a>Всі курси</a></li>
+                <li><a>Загальнодоступні</a></li>
+                <li><a>З обмеженим доступом</a></li>
+                <li><a>Курси на які підписаний ЙА</a></li>
+            </ul>
+        </li>
+
         @{ DistanceLessons.Models.DataEntitiesManager _db = new DistanceLessons.Models.DataEntitiesManager();
            if (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Admin.ToString())
            {
-            <li>@Html.ActionLink("Адмін", "Index", "Admin")
-                <ul>
-                    <li>@Html.ActionLink("Користувачі", "Users", "Admin")</li>
-                    <li>@Html.ActionLink("Категорії предметів", "Categories", "Admin")</li>
-                    <li>@Html.ActionLink("Предмети", "Courses", "Admin")</li>
-                    <li>@Html.ActionLink("Оповіщення", "Message", "Admin")</li>
-                </ul>
-            </li>
+            <li>@Html.ActionLink("Користувачі", "Users", "Admin")</li>
+            <li>@Html.ActionLink("Категорії предметів", "Categories", "Admin")</li>
+            <!--<li>@Html.ActionLink("Предмети", "Courses", "Admin")</li>
+            <li>@Html.ActionLink("Оповіщення", "Message", "Admin")</li>-->
            }
            else if (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Dean.ToString())
            {
@@ -24,13 +34,15 @@
            }
            else if (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Teacher.ToString())
            {
-               <li>@Html.ActionLink("Мої предмети", "MyCourses", "Teacher")
+               <li><a>Викладацька</a>
                 <ul>
                     <li>@Html.ActionLink("Мої предмети", "MyCourses", "Teacher")</li>
-
+                    <li><a>Журнал успішності(загальне)</a></li>
                 </ul>
             </li>
            }
         }
+
+        <li><a href="#">Корисні посилання</a></li>
     </ul>
 }
