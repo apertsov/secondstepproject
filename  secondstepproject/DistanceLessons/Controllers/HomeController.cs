@@ -30,7 +30,7 @@ namespace DistanceLessons.Controllers
 
             return View();
         }
-
+/*
         public ActionResult Courses(DataEntitiesManager.RQCategorys cat)
         {
             DataEntitiesManager dataManager = new DataEntitiesManager();
@@ -47,5 +47,6 @@ namespace DistanceLessons.Controllers
             ViewBag.Courses = lst;
             return View();
         }
+ */
     }
 }

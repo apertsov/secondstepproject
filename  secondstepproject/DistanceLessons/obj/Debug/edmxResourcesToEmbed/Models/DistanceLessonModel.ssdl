@@ -11,6 +11,7 @@
     <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Store.Modules" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="News" EntityType="DistanceLessons.Models.Store.News" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Roles" EntityType="DistanceLessons.Models.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ShowTests" EntityType="DistanceLessons.Models.Store.ShowTests" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Tests" EntityType="DistanceLessons.Models.Store.Tests" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserAnswers" EntityType="DistanceLessons.Models.Store.UserAnswers" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserCourses" EntityType="DistanceLessons.Models.Store.UserCourses" store:Type="Tables" Schema="dbo" />
@@ -36,6 +37,10 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Informations" EntitySet="Informations" />
     </AssociationSet>
+    <AssociationSet Name="FK_Lessons_Courses" Association="DistanceLessons.Models.Store.FK_Lessons_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="Lessons" EntitySet="Lessons" />
+    </AssociationSet>
     <AssociationSet Name="FK_Lessons_Modules" Association="DistanceLessons.Models.Store.FK_Lessons_Modules">
       <End Role="Modules" EntitySet="Modules" />
       <End Role="Lessons" EntitySet="Lessons" />
@@ -60,20 +65,36 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="News" EntitySet="News" />
     </AssociationSet>
+    <AssociationSet Name="FK_ShowTests_Modules" Association="DistanceLessons.Models.Store.FK_ShowTests_Modules">
+      <End Role="Modules" EntitySet="Modules" />
+      <End Role="ShowTests" EntitySet="ShowTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShowTests_Tests" Association="DistanceLessons.Models.Store.FK_ShowTests_Tests">
+      <End Role="Tests" EntitySet="Tests" />
+      <End Role="ShowTests" EntitySet="ShowTests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShowTests_Users" Association="DistanceLessons.Models.Store.FK_ShowTests_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ShowTests" EntitySet="ShowTests" />
+    </AssociationSet>
     <AssociationSet Name="FK_Tests_Lessons" Association="DistanceLessons.Models.Store.FK_Tests_Lessons">
       <End Role="Lessons" EntitySet="Lessons" />
       <End Role="Tests" EntitySet="Tests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserAnswers" Association="DistanceLessons.Models.Store.FK_User_UserAnswers">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserAnswers" EntitySet="UserAnswers" />
     </AssociationSet>
     <AssociationSet Name="FK_UserAnswers_Answers" Association="DistanceLessons.Models.Store.FK_UserAnswers_Answers">
       <End Role="Answers" EntitySet="Answers" />
       <End Role="UserAnswers" EntitySet="UserAnswers" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserAnswers_Tests" Association="DistanceLessons.Models.Store.FK_UserAnswers_Tests">
-      <End Role="Tests" EntitySet="Tests" />
+    <AssociationSet Name="FK_UserAnswers_Modules" Association="DistanceLessons.Models.Store.FK_UserAnswers_Modules">
+      <End Role="Modules" EntitySet="Modules" />
       <End Role="UserAnswers" EntitySet="UserAnswers" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserAnswers_UserAnswers" Association="DistanceLessons.Models.Store.FK_UserAnswers_UserAnswers">
-      <End Role="Users" EntitySet="Users" />
+    <AssociationSet Name="FK_UserAnswers_Tests" Association="DistanceLessons.Models.Store.FK_UserAnswers_Tests">
+      <End Role="Tests" EntitySet="Tests" />
       <End Role="UserAnswers" EntitySet="UserAnswers" />
     </AssociationSet>
     <AssociationSet Name="FK_UserCourses_Courses" Association="DistanceLessons.Models.Store.FK_UserCourses_Courses">
@@ -133,7 +154,7 @@
     <Property Name="Description" Type="varchar" MaxLength="512" />
     <Property Name="CategoryId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Access" Type="tinyint" Nullable="false" />
+    <Property Name="IsSubscribing" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Informations">
     <Key>
@@ -156,10 +177,11 @@
     <Property Name="Title" Type="varchar" Nullable="false" MaxLength="64" />
     <Property Name="Text" Type="varchar(max)" Nullable="false" />
     <Property Name="Publication" Type="datetime" Nullable="false" />
-    <Property Name="ModuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CourseId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Description" Type="varchar" MaxLength="50" />
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="IsAcceptMainTeacher" Type="bit" Nullable="false" />
+    <Property Name="ModuleId" Type="uniqueidentifier" />
   </EntityType>
   <EntityType Name="Messages">
     <Key>
@@ -178,10 +200,11 @@
     </Key>
     <Property Name="ModuleId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Title" Type="varchar" Nullable="false" MaxLength="256" />
-    <Property Name="TimeForPassTest" Type="datetime" />
+    <Property Name="TimeForPassTest" Type="int" Nullable="false" />
     <Property Name="DateBeginTesting" Type="datetime" Nullable="false" />
     <Property Name="DateEndTesting" Type="datetime" Nullable="false" />
     <Property Name="CourseId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CountQuestions" Type="int" />
   </EntityType>
   <EntityType Name="News">
     <Key>
@@ -200,6 +223,16 @@
     <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Name" Type="varchar" Nullable="false" MaxLength="32" />
   </EntityType>
+  <EntityType Name="ShowTests">
+    <Key>
+      <PropertyRef Name="ShowTestId" />
+    </Key>
+    <Property Name="ShowTestId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsShowed" Type="bit" Nullable="false" />
+    <Property Name="TestId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
   <EntityType Name="Tests">
     <Key>
       <PropertyRef Name="TestId" />
@@ -214,9 +247,9 @@
     </Key>
     <Property Name="UserAnswerId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="AnswerId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="TestId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="IsShowed" Type="bit" Nullable="false" />
+    <Property Name="AnswerId" Type="uniqueidentifier" />
+    <Property Name="TestId" Type="uniqueidentifier" />
+    <Property Name="ModuleId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <EntityType Name="UserCourses">
     <Key>
@@ -233,7 +266,7 @@
     <Property Name="UserModuleId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Passed" Type="float" />
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="ModuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ModuleId" Type="uniqueidentifier" />
     <Property Name="SpendTime" Type="datetime" />
     <Property Name="PassedTime" Type="datetime" />
   </EntityType>
@@ -316,8 +349,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Lessons_Courses">
+    <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="1" />
+    <End Role="Lessons" Type="DistanceLessons.Models.Store.Lessons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="Lessons">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Lessons_Modules">
-    <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="1" />
+    <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="0..1" />
     <End Role="Lessons" Type="DistanceLessons.Models.Store.Lessons" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Modules">
@@ -388,6 +433,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ShowTests_Modules">
+    <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="1" />
+    <End Role="ShowTests" Type="DistanceLessons.Models.Store.ShowTests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modules">
+        <PropertyRef Name="ModuleId" />
+      </Principal>
+      <Dependent Role="ShowTests">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShowTests_Tests">
+    <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="1" />
+    <End Role="ShowTests" Type="DistanceLessons.Models.Store.ShowTests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tests">
+        <PropertyRef Name="TestId" />
+      </Principal>
+      <Dependent Role="ShowTests">
+        <PropertyRef Name="TestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShowTests_Users">
+    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+    <End Role="ShowTests" Type="DistanceLessons.Models.Store.ShowTests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="ShowTests">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Tests_Lessons">
     <End Role="Lessons" Type="DistanceLessons.Models.Store.Lessons" Multiplicity="1" />
     <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="*" />
@@ -400,8 +481,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_User_UserAnswers">
+    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+    <End Role="UserAnswers" Type="DistanceLessons.Models.Store.UserAnswers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserAnswers">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UserAnswers_Answers">
-    <End Role="Answers" Type="DistanceLessons.Models.Store.Answers" Multiplicity="1" />
+    <End Role="Answers" Type="DistanceLessons.Models.Store.Answers" Multiplicity="0..1" />
     <End Role="UserAnswers" Type="DistanceLessons.Models.Store.UserAnswers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Answers">
@@ -412,8 +505,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_UserAnswers_Modules">
+    <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="1" />
+    <End Role="UserAnswers" Type="DistanceLessons.Models.Store.UserAnswers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modules">
+        <PropertyRef Name="ModuleId" />
+      </Principal>
+      <Dependent Role="UserAnswers">
+        <PropertyRef Name="ModuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UserAnswers_Tests">
-    <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="1" />
+    <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="0..1" />
     <End Role="UserAnswers" Type="DistanceLessons.Models.Store.UserAnswers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tests">
@@ -421,18 +526,6 @@
       </Principal>
       <Dependent Role="UserAnswers">
         <PropertyRef Name="TestId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserAnswers_UserAnswers">
-    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
-    <End Role="UserAnswers" Type="DistanceLessons.Models.Store.UserAnswers" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Users">
-        <PropertyRef Name="UserId" />
-      </Principal>
-      <Dependent Role="UserAnswers">
-        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -461,7 +554,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserModules_Modules">
-    <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="1" />
+    <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="0..1" />
     <End Role="UserModules" Type="DistanceLessons.Models.Store.UserModules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Modules">

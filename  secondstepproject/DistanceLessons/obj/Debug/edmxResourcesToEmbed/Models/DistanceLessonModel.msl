@@ -39,7 +39,7 @@
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="Access" ColumnName="Access" />
+          <ScalarProperty Name="IsSubscribing" ColumnName="IsSubscribing" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -64,10 +64,11 @@
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Text" ColumnName="Text" />
           <ScalarProperty Name="Publication" ColumnName="Publication" />
-          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="IsAcceptMainTeacher" ColumnName="IsAcceptMainTeacher" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -92,6 +93,7 @@
           <ScalarProperty Name="DateBeginTesting" ColumnName="DateBeginTesting" />
           <ScalarProperty Name="DateEndTesting" ColumnName="DateEndTesting" />
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="CountQuestions" ColumnName="CountQuestions" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -114,6 +116,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ShowTests">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.ShowTest">
+        <MappingFragment StoreEntitySet="ShowTests">
+          <ScalarProperty Name="ShowTestId" ColumnName="ShowTestId" />
+          <ScalarProperty Name="IsShowed" ColumnName="IsShowed" />
+          <ScalarProperty Name="TestId" ColumnName="TestId" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Tests">
       <EntityTypeMapping TypeName="DistanceLessons.Models.Test">
         <MappingFragment StoreEntitySet="Tests">
@@ -130,7 +143,7 @@
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="AnswerId" ColumnName="AnswerId" />
           <ScalarProperty Name="TestId" ColumnName="TestId" />
-          <ScalarProperty Name="IsShowed" ColumnName="IsShowed" />
+          <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

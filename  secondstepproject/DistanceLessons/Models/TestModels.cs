@@ -9,5 +9,6 @@ namespace DistanceLessons.Models
     {
         public TestAndAnswersModel TestAndAnswers { get; set; }
         public Module PassedModule { get; set; }
+        public TimeSpan TimeToResolve { get; set; }
     }
 }

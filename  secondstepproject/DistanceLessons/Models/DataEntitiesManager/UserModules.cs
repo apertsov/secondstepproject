@@ -43,13 +43,12 @@ namespace DistanceLessons.Models
             Save();
         }
 
-        public void UpdateUserModule(Guid moduleId, string username, float result, DateTime passedTime)
+        public void UpdateUserModule(Guid moduleId, string username, float result)
         {
             UserModule userResult = UserModule(moduleId, username);
             if (userResult != null)
             {
                 userResult.Passed = result;
-                userResult.PassedTime = passedTime;
                 Save();
             }
         }
@@ -60,6 +59,14 @@ namespace DistanceLessons.Models
                     from user in _db.Users
                     where userResults.ModuleId == ModuleId && user.Login == username && user.UserId == userResults.UserId
                     select userResults).Count() == 0 ? false : true;
+        }
+
+        public bool IsPassedTest(Guid ModuleId, string username)
+        {
+            return (from userResults in _db.UserModules
+                    from user in _db.Users
+                    where userResults.ModuleId == ModuleId && user.Login == username && user.UserId == userResults.UserId && userResults.Passed==null
+                    select userResults).Count() == 0 ? true : false;
         }
 
         public void DeleteModuleTest(Guid moduleId, string username)
