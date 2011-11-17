@@ -103,6 +103,12 @@
   <ItemGroup>
     <Compile Include="App_Data\myMembershipProvider.cs" />
     <Compile Include="App_Data\MyRoleProvider.cs" />
+    <Compile Include="App_GlobalResources\test.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>test.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Attributes\LocalizationAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\FileController.cs" />
@@ -117,6 +123,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Localization.cs" />
     <Compile Include="Helpers\Paging.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AttributeEntitiesModelClass.cs" />
@@ -492,6 +499,21 @@
     <Content Include="Views\Test\PassModule.cshtml" />
     <Content Include="Views\Teacher\EditLessonTests.cshtml" />
     <Content Include="Views\Test\TestingNotPrepared.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\test.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>test.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\App_LocalResources\Index.cshtml.en-us.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\App_LocalResources\Index.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\App_LocalResources\Index.cshtml.ru-ru.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
