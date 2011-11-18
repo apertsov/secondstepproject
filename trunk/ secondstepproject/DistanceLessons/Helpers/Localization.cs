@@ -8,11 +8,11 @@ namespace DistanceLessons.Helpers
     {
         public static string Resource(this HtmlHelper helper, string expr, params object[] args)
         {
-            string path = ((RazorView) helper.ViewContext.View).ViewPath;
+            string path = ((RazorView)helper.ViewContext.View).ViewPath;
 
             ResourceExpressionFields fields =
                 (ResourceExpressionFields)
-                (new ResourceExpressionBuilder()).ParseExpression(expr, typeof (string),
+                (new ResourceExpressionBuilder()).ParseExpression(expr, typeof(string),
                                                                   new ExpressionBuilderContext(path));
             return (!string.IsNullOrEmpty(fields.ClassKey))
                        ? string.Format(

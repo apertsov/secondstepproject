@@ -103,6 +103,21 @@
   <ItemGroup>
     <Compile Include="App_Data\myMembershipProvider.cs" />
     <Compile Include="App_Data\MyRoleProvider.cs" />
+    <Compile Include="App_GlobalResources\Layout.ru-ru.designer.cs">
+      <DependentUpon>Layout.ru-ru.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Layout.en-us.designer.cs">
+      <DependentUpon>Layout.en-us.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="App_GlobalResources\Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
     <Compile Include="Attributes\LocalizationAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -119,6 +134,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ElementToText.cs" />
+    <Compile Include="Helpers\Localization.cs" />
     <Compile Include="Helpers\Paging.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\DistanceLessonsModel.Designer.cs">
@@ -151,6 +167,7 @@
     <Compile Include="Models\FileRepository.cs" />
     <Compile Include="Models\TeacherModels.cs" />
     <Compile Include="Models\TestModels.cs" />
+    <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Other Classes\TestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -499,7 +516,27 @@
     <Content Include="Views\Home\Courses.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_GlobalResources\" />
+    <Content Include="App_GlobalResources\Layout.en-us.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Layout.en-us.designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\App_LocalResources\Index.cshtml.en-us.resx" />
+    <Content Include="Views\News\App_LocalResources\Index.cshtml.resx" />
+    <Content Include="Views\News\App_LocalResources\Index.cshtml.ru-ru.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Layout.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Layout.ru-ru.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Layout.ru-ru.designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

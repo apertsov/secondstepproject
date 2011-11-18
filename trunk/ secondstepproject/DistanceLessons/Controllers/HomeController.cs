@@ -1,35 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DistanceLessons.Attributes;
 using DistanceLessons.Models;
 
 namespace DistanceLessons.Controllers
 {
+    [Localization]
     public class HomeController : Controller
     {
-       DataEntitiesManager _db;
+        private DataEntitiesManager _db = new DataEntitiesManager();
+        private HttpCookie university_cookies;
+        private string choseLang = "uk-ua";
 
-        public HomeController()
-            : base()
-        {
-             _db= new DataEntitiesManager();
-        }
         public ActionResult Index()
         {
             return View();
         }
-        
-        public ActionResult Courses()
-        {
-            return View(_db.GetValidCourses());
-        }
- /*     
+
         public ActionResult Teachers()
         {
-            DataEntitiesManager dataManager = new DataEntitiesManager();
-            ViewBag.Teachers = dataManager.QTeachers();
+            ViewBag.Teachers = _db.QTeachers();
 
             return View();
         }
@@ -37,28 +28,66 @@ namespace DistanceLessons.Controllers
 
         public ActionResult Categories()
         {
-            DataEntitiesManager dataManager = new DataEntitiesManager();
-            ViewBag.Categories = dataManager.QCategorys();
+            ViewBag.Categories = _db.QCategorys();
 
             return View();
         }
 
-        public ActionResult Courses(DataEntitiesManager.RQCategorys cat)
+        /*
+                public ActionResult Courses(DataEntitiesManager.RQCategorys cat)
+                {
+                    DataEntitiesManager dataManager = new DataEntitiesManager();
+                    List<DataEntitiesManager.RQCourses> lst = new List<DataEntitiesManager.RQCourses>();
+
+                    var courseLst = dataManager.QCourses();
+
+                    foreach (DataEntitiesManager.RQCourses obj in courseLst)
+                    {
+                        if (obj.category == cat.title)
+                        lst.Add(obj);
+                    }
+
+                    ViewBag.Courses = lst;
+                    return View();
+                }
+         */
+
+        private void ReplaceCookie(string cookie, string culture)
         {
-            DataEntitiesManager dataManager = new DataEntitiesManager();
-            List<DataEntitiesManager.RQCourses> lst = new List<DataEntitiesManager.RQCourses>();
+            Response.Cookies[cookie].Value = null;
+            Response.Cookies[cookie].Expires = DateTime.Now.AddMonths(-1);
 
-            var courseLst = dataManager.QCourses();
-
-            foreach (DataEntitiesManager.RQCourses obj in courseLst)
-            {
-                if (obj.category == cat.title)
-                lst.Add(obj);
-            }
-
-            ViewBag.Courses = lst;
-            return View();
+            university_cookies = new HttpCookie(cookie);
+            university_cookies.Value = culture;
+            university_cookies.Expires = DateTime.Now.AddMonths(1);
+            Response.Cookies.Add(university_cookies);
         }
- */
+
+        public ActionResult English()
+        {
+            Session["culture"] = "en-us";
+            choseLang = Session["culture"].ToString();
+            ReplaceCookie("University_Lang", choseLang);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Ukraine()
+        {
+            Session["culture"] = "uk-ua";
+            choseLang = Session["culture"].ToString();
+            ReplaceCookie("University_Lang", choseLang);
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Russian()
+        {
+            Session["culture"] = "ru-ru";
+            choseLang = Session["culture"].ToString();
+            ReplaceCookie("University_Lang", choseLang);
+
+            return RedirectToAction("Index");
+        }
     }
 }

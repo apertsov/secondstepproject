@@ -14,7 +14,7 @@
         <img src="@Url.Content("~/Content/img/slider/slide_reclame.png")" alt=""  title="#htmlcaption" />
     </div>
     <div id="htmlcaption" class="nivo-html-caption">
-        Перейти на сторінку @Html.ActionLink("реєстрації", "Register", "Account") !
+        @Html.Resource("Layout, Slider_ToPage") @Html.ActionLink(Html.Resource("Layout, Slider_ToRegister"), "Register", "Account") !
     </div>
 </div>
 <script src="@Url.Content("~/Content/script/jquery.nivo.slider.pack.js")" type="text/javascript"></script>

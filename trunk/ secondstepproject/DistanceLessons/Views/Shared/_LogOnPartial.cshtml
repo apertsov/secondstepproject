@@ -1,13 +1,13 @@
 ﻿@if (Request.IsAuthenticated) {
     <ul> 
-        <li><i><font size="2">Привіт,</font></i>@Html.ActionLink(User.Identity.Name, "Index", "Profile")</li>
-        <li>@Html.ActionLink("Вийти", "LogOff", "Account")</li>
+        <li><i><font size="2">@Html.Resource("Layout, _LogOnPartial_Hello")</font></i>@Html.ActionLink(User.Identity.Name, "Index", "Profile")</li>
+        <li>@Html.ActionLink(Html.Resource("Layout, _LogOnPartial_Exit"), "LogOff", "Account")</li>
     </ul>
 }
 else
 {
     <ul>
-        <li>@Html.ActionLink("Реєстрація", "Register", "Account")@*, routeValues: null, htmlAttributes: new { id = "registerLink", data_dialog_title = "Реєстрація" })*@</li>
-        <li>@Html.ActionLink("Ввійти", "LogOn", "Account")@*, routeValues: null,htmlAttributes: new { id = "logonLink", data_dialog_title = "Ідентифікація" })*@</li>
+        <li>@Html.ActionLink(Html.Resource("Layout, _LogOnPartial_Register"), "Register", "Account")@*, routeValues: null, htmlAttributes: new { id = "registerLink", data_dialog_title = "Реєстрація" })*@</li>
+        <li>@Html.ActionLink(Html.Resource("Layout, _LogOnPartial_SignIn"), "LogOn", "Account")@*, routeValues: null,htmlAttributes: new { id = "logonLink", data_dialog_title = "Ідентифікація" })*@</li>
     </ul>
 }
