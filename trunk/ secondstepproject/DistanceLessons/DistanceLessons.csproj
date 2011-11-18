@@ -140,16 +140,26 @@
     <Compile Include="Models\DataEntitiesManager\UserCourses.cs" />
     <Compile Include="Models\DataEntitiesManager\UserModules.cs" />
     <Compile Include="Models\DataEntitiesManager\Users.cs" />
-    <Compile Include="Models\DistanceLessonModel.Designer.cs">
+    <Compile Include="Models\DistanceLessonModel.Designer.cs" />
+    <Compile Include="Models\DistanceLessonModel1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DistanceLessonModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DistanceLessonsModel.Designer.cs" />
+    <Compile Include="Models\DistanceLessonsModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DistanceLessonsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EducationModel.Designer.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\FileRepository.cs" />
     <Compile Include="Models\TeacherModels.cs" />
     <Compile Include="Models\TestModels.cs" />
+    <Compile Include="Models\UserInformation.cs" />
+    <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Other Classes\TestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -453,7 +463,11 @@
     <None Include="Content\img\Thumbs.db" />
     <EntityDeploy Include="Models\DistanceLessonModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DistanceLessonModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DistanceLessonModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Models\DistanceLessonsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DistanceLessonsModel1.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Uploads\035474_603F9_vatolin_d_ratushnyak_a_smirnov_m_yukin_v_metody_szhatiya_dan.pdf" />
     <None Include="Uploads\2.rar" />

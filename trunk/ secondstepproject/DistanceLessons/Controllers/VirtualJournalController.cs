@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using DistanceLessons.Attributes;
 using DistanceLessons.Models;
 
 namespace DistanceLessons.Controllers
 {
+    [Localization]
     public class VirtualJournalController : Controller
     {
         //
@@ -14,8 +13,6 @@ namespace DistanceLessons.Controllers
 
         public ActionResult Index()
         {
-
-            
             DataEntitiesManager dataMeneger = new DataEntitiesManager();
             List<DataEntitiesManager.RQUserModules> lst = new List<DataEntitiesManager.RQUserModules>();
 
@@ -29,7 +26,6 @@ namespace DistanceLessons.Controllers
             ViewBag.UserModules = lst;
 
             return View();
-
         }
     }
 

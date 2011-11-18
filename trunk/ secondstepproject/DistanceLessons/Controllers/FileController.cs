@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Mvc.Ajax;
+using DistanceLessons.Attributes;
 using DistanceLessons.Models;
 using System.IO;
 
 namespace DistanceLessons.Controllers
 {
+    [Localization]
     public class FileDescription
     {
         public string Name { get; set; }

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Globalization;
 using System.Threading;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DistanceLessons.Attributes
@@ -12,14 +8,23 @@ namespace DistanceLessons.Attributes
     {
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            string culture = (filterContext.HttpContext.Session["culture"] != null)
-                                 ? filterContext.HttpContext.Session["culture"].ToString()
-                                 : "uk-ua";
+            string culture= "uk-ua";
+
+            if (filterContext.RequestContext.HttpContext.Request.Cookies["University_Lang"] != null)
+            {
+                culture = (filterContext.RequestContext.HttpContext.Request.Cookies["University_Lang"] != null)
+                              ? string.Format(
+                                  filterContext.RequestContext.HttpContext.Request.Cookies["University_Lang"].Value)
+                              : "uk-ua";
+            }
 
             CultureInfo cultureInfo = new CultureInfo(culture);
 
-            Thread.CurrentThread.CurrentCulture = cultureInfo;
-            Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            if (!Thread.CurrentThread.CurrentUICulture.Name.ToLower().StartsWith(culture.ToLower()))
+            {
+                Thread.CurrentThread.CurrentCulture = cultureInfo;
+                Thread.CurrentThread.CurrentUICulture = cultureInfo;
+            }
         }
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using DistanceLessons.Attributes;
 using DistanceLessons.Models;
 
 namespace DistanceLessons.Controllers
 {
+    [Localization]
     public class AdminController : Controller
     {
         //
