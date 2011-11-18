@@ -10,6 +10,7 @@
     <!--NotDefaultResources-->
     <script type="text/javascript">
         var ie = (document.getElementById && document.documentElement.behaviorUrns) ? true : false;
+        
         if (ie) {
             alert("Наш сайт не підтримує ваш браузер.\nДля корректної роботи, встановіть інший браузер.\nНаприклад: Google Chrome(рекомендуємо), Opera, Mozilla Firefox, Safari, etc...\n\nВибачте за будь-які можливі незручності ;)");
             //location.replace("http://www.google.com/chrome?hl=uk");
@@ -61,7 +62,7 @@
     <!--Container for page-->
     <div id="container">
 		<div>
-            @Html.ActionLink("На головну сторінку", "Index", "Home",null, new { @id = "toStartPage" })
+            @Html.ActionLink(Html.Resource("Layout, App_HomePage"), "Index", "Home",null, new { @id = "toStartPage" })
         </div>
         <!--Navigation-->
         <div id="myjquerymenu" class="nav">
@@ -85,7 +86,7 @@
         </div>
         <div id="footer">
             <p>
-                <a href="#top_page">В початок сторінки</a></p>
+                <a href="#top_page">@Html.Resource("Layout, App_Footer_TopPage")</a></p>
             <p>
                 &copy; First Team, CHNU &amp; SoftServe Course, @System.DateTime.Now.Year | All
                 right reserved.</p>
