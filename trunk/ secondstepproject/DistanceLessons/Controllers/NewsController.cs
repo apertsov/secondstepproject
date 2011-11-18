@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DistanceLessons.Attributes;
@@ -11,7 +9,6 @@ namespace DistanceLessons.Controllers
     [Localization]
     public class NewsController : Controller
     {
-
         private int itemOnPage = 5;
         private DataEntitiesManager _db = new DataEntitiesManager();
 
@@ -112,24 +109,70 @@ namespace DistanceLessons.Controllers
             }
         }
 
+
+
+
+
+
+        private HttpCookie university_cookies;
+        private string choseLang = "uk-ua";
+
+        private void LangCookie(string cookie, string culture)
+        {
+            if (Request.Cookies[cookie] != null)
+            {
+                if (Request.Cookies[cookie].Value != null)
+                    culture = string.Format(Request.Cookies[cookie].Value);
+            }
+
+            if (!System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLower().StartsWith(culture.ToLower()))
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture =
+                    System.Globalization.CultureInfo.CreateSpecificCulture(culture);
+                System.Threading.Thread.CurrentThread.CurrentCulture =
+                    System.Globalization.CultureInfo.CreateSpecificCulture(culture);
+            }
+        }
+
+        private void ReplaceCookie(string cookie, string culture)
+        {
+            Response.Cookies[cookie].Value = null;
+            Response.Cookies[cookie].Expires = DateTime.Now.AddMonths(-1);
+
+            university_cookies = new HttpCookie(cookie);
+            university_cookies.Value = culture;
+            university_cookies.Expires = DateTime.Now.AddMonths(1);
+            Response.Cookies.Add(university_cookies);
+        }
+
+
+
         public ActionResult English()
         {
             Session["culture"] = "en-us";
+            choseLang = Session["culture"].ToString();
+            ReplaceCookie("University_Lang", choseLang);
 
-            return RedirectToAction("Index","News");
+            return RedirectToAction("Index");
         }
 
         public ActionResult Ukraine()
         {
             Session["culture"] = "uk-ua";
+            choseLang = Session["culture"].ToString();
+            ReplaceCookie("University_Lang", choseLang);
 
-            return RedirectToAction("Index", "News");
+            return RedirectToAction("Index");
         }
+
         public ActionResult Russian()
         {
             Session["culture"] = "ru-ru";
+            choseLang = Session["culture"].ToString();
+            ReplaceCookie("University_Lang", choseLang);
 
-            return RedirectToAction("Index", "News");
+            return RedirectToAction("Index");
         }
+
     }
 }
