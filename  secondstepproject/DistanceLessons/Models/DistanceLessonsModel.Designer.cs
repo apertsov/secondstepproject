@@ -1024,15 +1024,15 @@ namespace DistanceLessons.Models
         /// <param name="title">Initial value of the Title property.</param>
         /// <param name="categoryId">Initial value of the CategoryId property.</param>
         /// <param name="userId">Initial value of the UserId property.</param>
-        /// <param name="access">Initial value of the Access property.</param>
-        public static Cours CreateCours(global::System.Guid courseId, global::System.String title, global::System.Guid categoryId, global::System.Guid userId, global::System.Byte access)
+        /// <param name="isSubscribing">Initial value of the IsSubscribing property.</param>
+        public static Cours CreateCours(global::System.Guid courseId, global::System.String title, global::System.Guid categoryId, global::System.Guid userId, global::System.Boolean isSubscribing)
         {
             Cours cours = new Cours();
             cours.CourseId = courseId;
             cours.Title = title;
             cours.CategoryId = categoryId;
             cours.UserId = userId;
-            cours.Access = access;
+            cours.IsSubscribing = isSubscribing;
             return cours;
         }
 
@@ -1167,24 +1167,24 @@ namespace DistanceLessons.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Byte Access
+        public global::System.Boolean IsSubscribing
         {
             get
             {
-                return _Access;
+                return _IsSubscribing;
             }
             set
             {
-                OnAccessChanging(value);
-                ReportPropertyChanging("Access");
-                _Access = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Access");
-                OnAccessChanged();
+                OnIsSubscribingChanging(value);
+                ReportPropertyChanging("IsSubscribing");
+                _IsSubscribing = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsSubscribing");
+                OnIsSubscribingChanged();
             }
         }
-        private global::System.Byte _Access;
-        partial void OnAccessChanging(global::System.Byte value);
-        partial void OnAccessChanged();
+        private global::System.Boolean _IsSubscribing;
+        partial void OnIsSubscribingChanging(global::System.Boolean value);
+        partial void OnIsSubscribingChanged();
 
         #endregion
     
@@ -4580,11 +4580,15 @@ namespace DistanceLessons.Models
         /// </summary>
         /// <param name="userModuleId">Initial value of the UserModuleId property.</param>
         /// <param name="userId">Initial value of the UserId property.</param>
-        public static UserModule CreateUserModule(global::System.Guid userModuleId, global::System.Guid userId)
+        /// <param name="startTime">Initial value of the StartTime property.</param>
+        /// <param name="endTime">Initial value of the EndTime property.</param>
+        public static UserModule CreateUserModule(global::System.Guid userModuleId, global::System.Guid userId, global::System.DateTime startTime, global::System.DateTime endTime)
         {
             UserModule userModule = new UserModule();
             userModule.UserModuleId = userModuleId;
             userModule.UserId = userId;
+            userModule.StartTime = startTime;
+            userModule.EndTime = endTime;
             return userModule;
         }
 
@@ -4693,50 +4697,50 @@ namespace DistanceLessons.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> SpendTime
+        public global::System.DateTime StartTime
         {
             get
             {
-                return _SpendTime;
+                return _StartTime;
             }
             set
             {
-                OnSpendTimeChanging(value);
-                ReportPropertyChanging("SpendTime");
-                _SpendTime = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("SpendTime");
-                OnSpendTimeChanged();
+                OnStartTimeChanging(value);
+                ReportPropertyChanging("StartTime");
+                _StartTime = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StartTime");
+                OnStartTimeChanged();
             }
         }
-        private Nullable<global::System.DateTime> _SpendTime;
-        partial void OnSpendTimeChanging(Nullable<global::System.DateTime> value);
-        partial void OnSpendTimeChanged();
+        private global::System.DateTime _StartTime;
+        partial void OnStartTimeChanging(global::System.DateTime value);
+        partial void OnStartTimeChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> PassedTime
+        public global::System.DateTime EndTime
         {
             get
             {
-                return _PassedTime;
+                return _EndTime;
             }
             set
             {
-                OnPassedTimeChanging(value);
-                ReportPropertyChanging("PassedTime");
-                _PassedTime = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("PassedTime");
-                OnPassedTimeChanged();
+                OnEndTimeChanging(value);
+                ReportPropertyChanging("EndTime");
+                _EndTime = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EndTime");
+                OnEndTimeChanged();
             }
         }
-        private Nullable<global::System.DateTime> _PassedTime;
-        partial void OnPassedTimeChanging(Nullable<global::System.DateTime> value);
-        partial void OnPassedTimeChanged();
+        private global::System.DateTime _EndTime;
+        partial void OnEndTimeChanging(global::System.DateTime value);
+        partial void OnEndTimeChanged();
 
         #endregion
     

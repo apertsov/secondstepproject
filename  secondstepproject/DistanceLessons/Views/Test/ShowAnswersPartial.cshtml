@@ -2,7 +2,6 @@
 
  @for (int j = 0; j < Model.Count; j++)
  {
-        @Html.CheckBoxFor(model => model[j].Valid, new { disabled="true" })  @*<text>  видалити відповідь </text>   *@
-        @Model[j].Answer1
-      <br />
+        @Html.CheckBoxFor(model => model[j].Valid, new { disabled="true" })
+        @Model[j].Answer1<br />
  }

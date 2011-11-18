@@ -14,13 +14,13 @@ namespace DistanceLessons.Models
                     select userAnswer).FirstOrDefault();
         }
 
-        public UserAnswer UserAnswer(Guid testId, Guid moduleId, string username)
+        public List<UserAnswer> UserAnswersOnTest(Guid testId, Guid moduleId, string username)
         {
             return (from userAnswer in _db.UserAnswers
                     from user in _db.Users
                     where userAnswer.TestId == testId && userAnswer.ModuleId == moduleId &&
                     user.Login == username && user.UserId == userAnswer.UserId
-                    select userAnswer).FirstOrDefault();
+                    select userAnswer).ToList();
         }
 
         public List<UserAnswer> UserAnswers(Guid moduleId, string username)
@@ -37,9 +37,6 @@ namespace DistanceLessons.Models
             _db.AddToUserAnswers(new UserAnswer { UserAnswerId = Guid.NewGuid(), UserId = GetUserId(username), TestId = testId, AnswerId = answerId, ModuleId = moduleId });
             Save();
         }
-/*
-
-*/
 
         public void UpdateUserAnswer(UserAnswer answer)
         {
@@ -86,7 +83,7 @@ namespace DistanceLessons.Models
                     indexOneTest++;
                 }
 
-                if (IsTrueAnswer(userAnswers.GetRange(indexAnswer,indexOneTest-indexAnswer), TestTrueAnswers((Guid)userAnswers[indexAnswer].TestId))) 
+                if (IsTrueAnswer(userAnswers.GetRange(indexAnswer, indexOneTest - indexAnswer), (Guid)userAnswers[indexAnswer].TestId)) 
                     countTrueAnswers++;
                 indexAnswer = indexOneTest;
             }
@@ -94,8 +91,10 @@ namespace DistanceLessons.Models
             return (float)Math.Round((double)(100 * countTrueAnswers / countQuestions),(int) 4);
         }
 
-        private bool IsTrueAnswer(List<UserAnswer> userAnswers, List<Answer> trueAnswers)
+        public bool IsTrueAnswer(List<UserAnswer> userAnswers, Guid testId)
         {
+            List<Answer> trueAnswers = TestTrueAnswers(testId);
+            if (trueAnswers.Count == 0) return false;
             bool inTrueAnswers;
             foreach(UserAnswer userAnswer in userAnswers)
             {

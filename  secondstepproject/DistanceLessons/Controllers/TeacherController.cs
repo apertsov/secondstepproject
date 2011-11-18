@@ -12,8 +12,7 @@ namespace DistanceLessons.Controllers
     public class TeacherController : Controller
     {
         DataEntitiesManager db;
-         //
-        // GET: /Teacher/
+
         public TeacherController()
             : base()
         {
