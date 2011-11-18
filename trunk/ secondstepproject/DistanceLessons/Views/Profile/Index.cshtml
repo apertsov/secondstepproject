@@ -5,7 +5,6 @@
 }
 
 @{
-    DistanceLessons.Models.DataEntitiesManager _db = new DataEntitiesManager();
     <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"> </script>
     <script src="@Url.Content("~/Content/script/scriptbreaker-multiple-accordion.js")" type="text/javascript"> </script>
     <script language="JavaScript">
@@ -21,8 +20,8 @@
         <ul class="topnav" class=box_shdw_right>
             <li>@Ajax.ActionLink("Особиста інформація", "Information", new AjaxOptions() {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
             <li><a href="#">Меню1</a>
-                <ul style="display: block;">
-                    <li class="active"><a href="#">Підменю</a></li>
+                <ul>@*style="display: block;">*@
+                    <li>@* class="active">*@<a href="#">Підменю</a></li>
                     <li><a href="#">підменю</a></li>
                     <li><a href="#">під</a>
                         <ul>

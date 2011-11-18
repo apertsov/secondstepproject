@@ -5,14 +5,14 @@
 }
 
 <h2>Ви справді впевнені, що варто видаляти новину "@Model.Title" ?</h2>
-    <div class="display-field">
+    <div>
         @Html.TextHtml(Model.Text)
     </div>
     <br/>
 <div class="time-author">-@Model.User.Login, @Model.Publication</div>
 @using (Html.BeginForm()) 
 {
-<div class="item">
+<div class="item" align="center">
     <input type="submit" value="Видалити" />
     @Ajax.ActionLink("Назад", "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
 </div>

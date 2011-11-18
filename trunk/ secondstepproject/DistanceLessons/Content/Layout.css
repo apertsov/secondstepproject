@@ -115,6 +115,7 @@ body
     -webkit-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
     -moz-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
     box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    cursor: pointer;
 }
 
 .item a:hover, .item input:hover
@@ -157,13 +158,31 @@ body
     margin: auto;
 }
 
+.editor-field .textboxarea_short
+{
+    min-height: 200px;
+    min-width: 300px;
+    max-width: 300px;
+    font: 12px Arial, Verdana, Sans-Serif;
+    font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 3px;
+    margin: 5px 0;
+    color: black;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border: 1px solid silver;  
+}
+
 .editor-field .textboxarea
 {
     min-height: 200px;
-    width: 100%;
-    max-width: 100%;
+    min-width: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
     font: 12px Arial, Verdana, Sans-Serif;
-        font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
+    font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
     font-size: 12px;
     padding: 3px;
     margin: 5px 0;
@@ -172,7 +191,6 @@ body
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border: 1px solid silver;
-    
 }
 
 .editor-field .editor
@@ -729,4 +747,51 @@ ul.topnav ul ul li a:hover {
  
 ul.topnav span{
     float:right;
+}
+
+
+/*obj pos*/
+.right
+{
+    float: right;
+}
+
+.center
+{
+    margin: 0 auto;
+}
+
+.left
+{
+    float: left;
+}
+
+table.center
+{
+    width: 100%;
+}
+
+table.left, table.right
+{
+    width: 95%;
+}
+
+table.center tr td.editor-label
+{
+    width: 35%;
+}
+
+table.center tr td.editor-field
+{
+    width: 65%;
+}
+
+table.left tr td.editor-label, table.right tr td.editor-label
+{
+    width: 15%;
+}
+
+table.left tr td.editor-field, table.right tr td.editor-field
+{
+    width: 85%;
 }
