@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DistanceLessons.Attributes;
 using DistanceLessons.Models;
-using DistanceLessons.Controllers;
 using System.IO;
 
 namespace DistanceLessons.Controllers
 {
-
-     [Authorize(Roles = "Admin, Teacher")]
+    [Localization]
+    [Authorize(Roles = "Admin, Teacher")]
     public class TeacherController : Controller
     {
         DataEntitiesManager db;
