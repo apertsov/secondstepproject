@@ -18,7 +18,7 @@
 
 @using (Html.BeginForm()) {
 @Html.ValidationSummary(true)
-<table width="100%" cellspacing="10">
+<table class="center" cellspacing="10">
     <tr>
         <td class="editor-label">@Html.LabelFor(model => model.LastName)</td>
         <td class="editor-field">@Html.TextBoxFor(model => model.LastName, new { @class = "editor" }) <font color="red">*</font></td>
@@ -58,7 +58,7 @@
     </tr>
     <tr>
         <td class="editor-label">@Html.LabelFor(model => model.About)</td>
-        <td class="editor-field">@Html.TextBoxFor(model => model.About, new { @class = "editor" })</td>
+        <td class="editor-field">@Html.TextAreaFor(model => model.About, new { @class = "textboxarea_short" })</td>
     </tr>
     <tr>
         <td></td>

@@ -9,26 +9,28 @@
 
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary(true)
-<div id="formation">
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Title)
-        </div>
-        <div class="editor-field">
-            @Html.TextBoxFor(model => model.Title, new { @class = "editor" })
-            @Html.ValidationMessageFor(model => model.Title)
-        </div>
+@Html.ValidationSummary(true)
+<table class="left" cellspacing="10">
+        <tr>
+            <td class="editor-label">@Html.LabelFor(model => model.Title)</td>
+            <td class="editor-field">@Html.TextBoxFor(model => model.Title, new { @class = "editor" })</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="error">@Html.ValidationMessageFor(model => model.Title)</td>
+        </tr>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Text)
-        </div>
-        <div class="editor-field">
-            @Html.TextAreaFor(model => model.Text, new { @class = "textboxarea" })
-            @Html.ValidationMessageFor(model => model.Text)
-        </div>
-</div>
-
-<div class="item">
+        <tr>
+            <td class="editor-label">@Html.LabelFor(model => model.Text)</td>
+            <td class="editor-field">@Html.TextAreaFor(model => model.Text, new { @class = "textboxarea" })</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="error">@Html.ValidationMessageFor(model => model.Text)</td>
+        </tr>
+</table>
+    
+<div class="item" align="right">
     <input type="submit" value="Створити" />
     @Ajax.ActionLink("Назад", "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
 </div>
