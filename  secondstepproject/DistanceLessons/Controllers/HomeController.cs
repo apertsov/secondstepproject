@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using DistanceLessons.Models;
 
 namespace DistanceLessons.Controllers
@@ -30,6 +26,7 @@ namespace DistanceLessons.Controllers
 
             return View();
         }
+
 /*
         public ActionResult Courses(DataEntitiesManager.RQCategorys cat)
         {
