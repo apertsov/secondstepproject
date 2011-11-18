@@ -1,36 +1,35 @@
-﻿@{
-    ViewBag.Title = "Courses";
+﻿@model List<DistanceLessons.Models.CategoryCourse>
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Courses</h2>
-
-<table border="1">
-<tr style="color:blue;text-align:center" >
-    <th>Назва курсу </th>
-    <th>Викладач</th>
-    <th>Короткий опис</th>
-    <th>Лекції</th>
-</tr>
-    @foreach (DistanceLessons.Models.DataEntitiesManager.RQCourses obj in ViewBag.Courses)
-    {
-        DistanceLessons.Models.DataEntitiesManager rq=new DistanceLessons.Models.DataEntitiesManager();
-        List<DistanceLessons.Models.DataEntitiesManager.RQLessons> lstRq=new List<DistanceLessons.Models.DataEntitiesManager.RQLessons>();
-        lstRq=rq.QLessons(obj.title);
-        
-        <tr style="text-align:center">
-            <th>@obj.title</th>       
-            <th>@obj.teacher</th>
-            <th>@obj.description</th>
-            <th>
-            <ul>
-            @foreach (DistanceLessons.Models.DataEntitiesManager.RQLessons j in lstRq )
-            {
-                <li>@j.title</li>
-            }
-                          
-                
-            </ul>
-            </th> 
+<table style="border: 2px solid black; width: 100%;">
+    <caption>
+        <h2>
+            Курси</h2>
+    </caption>
+    <tbody align="center">
+        <tr>
+            <td style="width: 33%;">
+                Курс
+            </td>
+            <td>
+                Опис
+            </td>
+            <td>
+                Категорія
+            </td>
         </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CourseTitle
+                </td>
+                <td>@item.CourseDescription
+                </td>
+                <td>@item.CategoryTitle
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>

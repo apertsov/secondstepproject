@@ -39,7 +39,7 @@
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="Access" ColumnName="Access" />
+          <ScalarProperty Name="IsSubscribing" ColumnName="IsSubscribing" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -163,8 +163,8 @@
           <ScalarProperty Name="Passed" ColumnName="Passed" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
-          <ScalarProperty Name="SpendTime" ColumnName="SpendTime" />
-          <ScalarProperty Name="PassedTime" ColumnName="PassedTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

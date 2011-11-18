@@ -158,7 +158,7 @@
     <Property Name="Description" Type="String" MaxLength="512" Unicode="false" FixedLength="false" />
     <Property Name="CategoryId" Type="Guid" Nullable="false" />
     <Property Name="UserId" Type="Guid" Nullable="false" />
-    <Property Name="Access" Type="Byte" Nullable="false" />
+    <Property Name="IsSubscribing" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Category" Relationship="DistanceLessons.Models.FK_Courses_Categories" FromRole="Courses" ToRole="Categories" />
     <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Courses_Users" FromRole="Courses" ToRole="Users" />
     <NavigationProperty Name="Lessons" Relationship="DistanceLessons.Models.FK_Lessons_Courses" FromRole="Courses" ToRole="Lessons" />
@@ -303,8 +303,8 @@
     <Property Name="Passed" Type="Double" />
     <Property Name="UserId" Type="Guid" Nullable="false" />
     <Property Name="ModuleId" Type="Guid" />
-    <Property Name="SpendTime" Type="DateTime" />
-    <Property Name="PassedTime" Type="DateTime" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="Module" Relationship="DistanceLessons.Models.FK_UserModules_Modules" FromRole="UserModules" ToRole="Modules" />
     <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_UserModules_Users" FromRole="UserModules" ToRole="Users" />
   </EntityType>

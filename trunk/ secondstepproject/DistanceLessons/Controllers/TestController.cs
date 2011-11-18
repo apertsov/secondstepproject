@@ -150,19 +150,19 @@ namespace DistanceLessons.Controllers
                     TestHelper.FilterTests(ref tests, (int)module.CountQuestions);
                 }
                 _db.AddNotShowedTests(tests, id, User.Identity.Name);
-                DateTime passedTime = new DateTime();
-                passedTime=DateTime.Now.AddMinutes(module.TimeForPassTest);
-                _db.AddUserModules(new UserModule { UserModuleId = Guid.NewGuid(), ModuleId = id, UserId = _db.GetUserId(User.Identity.Name), Passed = null, PassedTime = passedTime, SpendTime = DateTime.Now });
-                return View(NextNotShowedTest(id, User.Identity.Name,passedTime.Subtract(DateTime.Now)));
+                DateTime endTime = new DateTime();
+                endTime=DateTime.Now.AddMinutes(module.TimeForPassTest);
+                _db.AddUserModules(new UserModule { UserModuleId = Guid.NewGuid(), ModuleId = id, UserId = _db.GetUserId(User.Identity.Name), Passed = null, EndTime = endTime, StartTime = DateTime.Now });
+                return View(NextNotShowedTest(id, User.Identity.Name,endTime.Subtract(DateTime.Now)));
             }
             UserModule previousResult = _db.UserModule(id, User.Identity.Name);
             if (previousResult.Passed!=null) // модуль вже зданий
                 return View("CalcModuleResults", previousResult);
            // уже починав тестування і не закінчив його
             // якщо час закінчився то рахуємо результат
-            if (previousResult.PassedTime.Value.CompareTo(DateTime.Now) < 0)
+            if (previousResult.EndTime.CompareTo(DateTime.Now) < 0)
                 return RedirectToAction("CalcModuleResults", new { id = id });
-            return View(NextNotShowedTest(id, User.Identity.Name,previousResult.PassedTime.Value.Subtract(DateTime.Now)));
+            return View(NextNotShowedTest(id, User.Identity.Name,previousResult.EndTime.Subtract(DateTime.Now)));
         }
 
         [HttpPost]
@@ -179,9 +179,9 @@ namespace DistanceLessons.Controllers
             if (_db.IsAllShowedModuleUserTests(moduleId, User.Identity.Name))
                 return RedirectToAction("CalcModuleResults", new { id = moduleId });
             UserModule previousResult = _db.UserModule(moduleId, User.Identity.Name);            
-          if (previousResult.PassedTime.Value.CompareTo(DateTime.Now) < 0)
+          if (previousResult.EndTime.CompareTo(DateTime.Now) < 0)
                return RedirectToAction("CalcModuleResults", new { id = moduleId });
-            return View("PassModule", NextNotShowedTest(moduleId, User.Identity.Name, previousResult.PassedTime.Value.Subtract(DateTime.Now)));
+            return View("PassModule", NextNotShowedTest(moduleId, User.Identity.Name, previousResult.EndTime.Subtract(DateTime.Now)));
         }
 
         [HttpGet]
@@ -203,6 +203,34 @@ namespace DistanceLessons.Controllers
             ViewBag.ModuleName = _db.ModuleName(id);
             return View(_db.UserModule(id, User.Identity.Name));
 
+        }
+
+        [HttpGet]
+        public ActionResult DetailsModuleUserAnswers(Guid id, string username)
+        {
+            UserModule userResult=_db.UserModule(id, username);
+            ViewBag.Username = username;
+            if (userResult==null) return View((object)null);
+            ViewBag.ModuleName=userResult.Module.Title;
+            ViewBag.UserResult=userResult.Passed;
+            
+            List<DetailAnswersModel> model = new List<DetailAnswersModel>();
+            List<ShowTest> showedTests = _db.ShowTestsInModule(id, username);
+            List<Answer> answers=new List<Answer>();
+            foreach (ShowTest test in showedTests)
+            {
+                answers.Clear();
+                List<UserAnswer> userAnswers = _db.UserAnswersOnTest(test.TestId,id, username);
+              /*  foreach (UserAnswer tmp in userAnswers)
+                    if(tmp.AnswerId!=null) answers.Add(_db.Answer((Guid)tmp.AnswerId));*/
+                model.Add(new DetailAnswersModel
+                {
+                    UserAnswers = userAnswers,
+                    TestAndAnswers = new TestAndAnswersModel { Test = test.Test, AnswerList = _db.TestAnswers(test.TestId) },
+                    IsRightAnswer = _db.IsTrueAnswer(userAnswers, test.TestId)
+                });
+            }
+            return View(model);
         }
 
         private PassTestModel NextNotShowedTest(Guid moduleId, string username,TimeSpan timeToResolve)

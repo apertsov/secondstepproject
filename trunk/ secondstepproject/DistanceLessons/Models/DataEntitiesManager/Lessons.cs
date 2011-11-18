@@ -134,7 +134,7 @@ namespace DistanceLessons.Models
                 {
                     LessonId = l.LessonId,
                     Title = l.Title,
-                    Publication = l.Publication,
+                    Publication = l.Publication, 
                    // ModuleId = l.ModuleId,
                     Text = l.Text,
                     Description = l.Description

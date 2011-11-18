@@ -118,10 +118,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\Localization.cs" />
+    <Compile Include="Helpers\ElementToText.cs" />
     <Compile Include="Helpers\Paging.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\AttributeEntitiesModelClass.cs" />
+    <Compile Include="Models\DistanceLessonsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DistanceLessonsModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HomeModels.cs" />
+    <Compile Include="Models\MetadataClass.cs" />
     <Compile Include="Models\DataEntitiesManager.cs" />
     <Compile Include="Models\DataEntitiesManager\Answers.cs" />
     <Compile Include="Models\DataEntitiesManager\Categories.cs" />
@@ -140,26 +146,11 @@
     <Compile Include="Models\DataEntitiesManager\UserCourses.cs" />
     <Compile Include="Models\DataEntitiesManager\UserModules.cs" />
     <Compile Include="Models\DataEntitiesManager\Users.cs" />
-    <Compile Include="Models\DistanceLessonModel.Designer.cs" />
-    <Compile Include="Models\DistanceLessonModel1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DistanceLessonModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DistanceLessonsModel.Designer.cs" />
-    <Compile Include="Models\DistanceLessonsModel1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DistanceLessonsModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EducationModel.Designer.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\FileRepository.cs" />
     <Compile Include="Models\TeacherModels.cs" />
     <Compile Include="Models\TestModels.cs" />
-    <Compile Include="Models\UserInformation.cs" />
-    <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Other Classes\TestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -357,7 +348,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Courses.cshtml" />
+    <Content Include="Views\Home\Courses%28old%29.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Categories.cshtml" />
@@ -461,13 +452,9 @@
     <Content Include="Views\Teacher\UploadLesson.cshtml" />
     <Content Include="packages.config" />
     <None Include="Content\img\Thumbs.db" />
-    <EntityDeploy Include="Models\DistanceLessonModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DistanceLessonModel1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <EntityDeploy Include="Models\DistanceLessonsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DistanceLessonsModel1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DistanceLessonsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Uploads\035474_603F9_vatolin_d_ratushnyak_a_smirnov_m_yukin_v_metody_szhatiya_dan.pdf" />
     <None Include="Uploads\2.rar" />
@@ -508,15 +495,8 @@
     <Content Include="Views\Test\PassModule.cshtml" />
     <Content Include="Views\Teacher\EditLessonTests.cshtml" />
     <Content Include="Views\Test\TestingNotPrepared.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\News\App_LocalResources\Index.cshtml.en-us.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\News\App_LocalResources\Index.cshtml.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\News\App_LocalResources\Index.cshtml.ru-ru.resx" />
+    <Content Include="Views\Test\DetailsModuleUserAnswers.cshtml" />
+    <Content Include="Views\Home\Courses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_GlobalResources\" />

@@ -37,8 +37,8 @@ namespace DistanceLessons.Models
         {
             UserModule old = UserModule(userResult.UserModuleId);
             old.Passed = userResult.Passed;
-            old.PassedTime = userResult.PassedTime;
-            old.SpendTime = userResult.SpendTime;
+            old.EndTime = userResult.EndTime;
+            old.StartTime = userResult.StartTime;
             old.UserId = userResult.UserId;
             Save();
         }

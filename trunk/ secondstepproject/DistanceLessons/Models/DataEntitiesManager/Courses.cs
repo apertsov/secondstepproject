@@ -29,6 +29,21 @@ namespace DistanceLessons.Models
             _db.Courses.AddObject(obj);
             _db.SaveChanges();
         }
+
+        public List<CategoryCourse> GetValidCourses()
+        {
+            var coursesInLessons=(from lesson in _db.Lessons
+                       group lesson by lesson.CourseId into lessonGroups
+                        select lessonGroups.Key);
+            var validCourses = (from courses in _db.Courses
+                     from couesesId in coursesInLessons 
+                     join category in _db.Categories on courses.CategoryId equals category.CategoryId
+                     orderby courses.Title
+                     where courses.CourseId==couesesId
+                                select new CategoryCourse { CourseTitle = courses.Title, CourseDescription = courses.Description, CategoryTitle = category.Category1 });
+            return validCourses.ToList();
+        }
+
         /*
         public List<RQCourses> QCourses()
         {
