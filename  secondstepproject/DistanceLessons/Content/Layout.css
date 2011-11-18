@@ -36,10 +36,10 @@ a:hover
 
 body
 {
-    background: black;
-    background-image: url('img/background/background_book.png');
-    background-repeat: no-repeat;
-    background-position: top right;
+    background: white;
+    background-image: url('img/background/background.png');
+    background-repeat: repeat-x;
+    background-position: top left;
     color: white;
     font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
 }
@@ -251,6 +251,10 @@ body
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
+    
+    -webkit-box-shadow: 0 0 15px 1px rgba(100,100,100,0.5);
+    -moz-box-shadow: 0 0 15px 1px rgba(100,100,100,0.5);
+    box-shadow: 0 0 15px 1px rgba(100,100,100,0.5);
 }
 
 #full_header
@@ -294,9 +298,6 @@ body
     margin-right: 20px;
     float: right;
     background: white;
-    border-bottom: 1px solid silver;
-    border-left: 1px solid silver;
-    border-right: 1px solid silver;
     -webkit-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
     -moz-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
     box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
@@ -358,12 +359,16 @@ body
 {
     color: black;
     float: right;
-    margin: 20px 20px 0 0;
+    margin: 18px 20px 0 0;
     background-color: white;
-    padding: 10px 15px 11px 20px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    padding: 10px 15px 6px 20px;
+    border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    border-left: 1px solid silver;
+    border-top: 1px solid silver;
+    border-right: 1px solid silver;
+
 }
 
 #header_lower #auth ul li
