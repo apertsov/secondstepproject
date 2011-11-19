@@ -1,21 +1,36 @@
 ﻿@model DistanceLessons.Models.Module
 
 @{
-    ViewBag.Title = "CreateModule";
+    ViewBag.Title = "Створення модулю";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>CreateModule</h2>
+<h2>Створення модулю</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<link href="@Url.Content("~/Content/Calendar/css/flick/jquery-ui-1.8.16.custom.css")" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Content/Calendar/js/jquery-1.6.2.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/Calendar/js/jquery-ui-1.8.16.custom.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/Calendar/js/i18n/jquery-ui-i18n.js")" type="text/javascript"></script>
 
-@using (Html.BeginForm(new { courseId=(Guid)ViewBag.CourseId}))
+<script type="text/javascript">
+    //http://jqueryui.com/demos/datepicker
+    $(document).ready(function () {
+        $('#datePicker').datepicker({ firstDay: 1, dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true, yearRange: "1930:2003", showOtherMonths: true });
+    });
+
+    $(function () {
+        $.datepicker.setDefaults(
+        $.extend($.datepicker.regional["uk"]));
+        $("#datepicker").datepicker();
+    });
+</script>
+
+@using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Module</legend>
-
         <div class="editor-label">
             @Html.LabelFor(model => model.Title)
         </div>
@@ -26,35 +41,41 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Time)
+            @Html.LabelFor(model => model.TimeForPassTest)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Time)
-            @Html.ValidationMessageFor(model => model.Time)
+            @Html.EditorFor(model => model.TimeForPassTest)
+            @Html.ValidationMessageFor(model => model.TimeForPassTest)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateBeginTesting)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateBeginTesting, new { @class = "editor", @id = "datePicker", @readonly = true })
+            @Html.ValidationMessageFor(model => model.DateBeginTesting)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DateBegin)
+            @Html.LabelFor(model => model.DateEndTesting)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DateBegin)
-            @Html.ValidationMessageFor(model => model.DateBegin)
+            @Html.EditorFor(model => model.DateEndTesting, new { @class = "editor", @id = "datePicker", @readonly = true })
+           @Html.ValidationMessageFor(model => model.DateEndTesting) 
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DateEnd)
+                <div class="editor-label">
+            @Html.LabelFor(model => model.CountQuestions)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DateEnd)
-            @Html.ValidationMessageFor(model => model.DateEnd)
+            @Html.EditorFor(model => model.CountQuestions)
+            @Html.ValidationMessageFor(model => model.CountQuestions)
         </div>
-
-        <p>
-            <input type="submit" value="Create" />
+       <p>
+            <input type="submit" value="Створити" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Повернутись до предмету", "Course", new { id = ViewBag.CourseId })
 </div>

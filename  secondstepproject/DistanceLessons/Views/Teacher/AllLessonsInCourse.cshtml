@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "НЕ предмету @ViewBag.Course";
+}
+
+<h2>Всі навчальні елементи предмету @ViewBag.Course</h2>
+
+
+
+@foreach (DistanceLessons.Models.Lesson les in ViewBag.Lessons)
+{
+    
+    
+      @Html.ActionLink(les.Title, "ShowFile", new { filename = les.Text })
+      @les.Module.Title
+
+    
+}
+
