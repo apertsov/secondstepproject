@@ -19,6 +19,7 @@
     <div id="profile">
         <ul class="topnav" class=box_shdw_right>
             <li>@Ajax.ActionLink("Особиста інформація", "Information", new AjaxOptions() {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
+            <li>@Html.ActionLink("Detail","Info", new {user=User.Identity.Name})</li>
             <li><a href="#">Меню1</a>
                 <ul>@*style="display: block;">*@
                     <li>@* class="active">*@<a href="#">Підменю</a></li>
