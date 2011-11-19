@@ -1,10 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserModules.cs" caret="68" fromTop="2" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Users.cs" caret="68" fromTop="2" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:AccountModels.cs" caret="153" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:DataEntitiesManager.cs" caret="27" fromTop="1" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:Email.cs" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:Enums.cs" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:FileRepository.cs" caret="0" fromTop="0" />
@@ -31,18 +27,12 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Edit.cshtml" caret="1319" fromTop="22" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Edit_PartialPage.cshtml" caret="328" fromTop="10" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="667" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/f:_ViewStart.cshtml" caret="8" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="77" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Helpers/f:Localization.cs" caret="166" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="1800" fromTop="60" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Create_PartialPage.cshtml" caret="1108" fromTop="18" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_EditInfo_PartialPage.cshtml" caret="1616" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_EditInfo_PartialPage.cshtml" caret="243" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="14848" fromTop="20" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="14574" fromTop="33" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="14468" fromTop="14" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="14722" fromTop="33" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="14722" fromTop="18" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="14777" fromTop="25" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_CreateInfo_PartialPage.cshtml" caret="889" fromTop="11" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Create_PartialPage.cshtml" caret="376" fromTop="4" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="14862" fromTop="26" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="14950" fromTop="31" />
@@ -63,6 +53,16 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Detail.cshtml" caret="1141" fromTop="24" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Edit.cshtml" caret="328" fromTop="7" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Edit.cshtml" caret="1319" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="761" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="761" fromTop="20" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="762" fromTop="19" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="1865" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="404" fromTop="14" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="1751" fromTop="14" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="2122" fromTop="24" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="2387" fromTop="21" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="2651" fromTop="30" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="697" fromTop="16" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
@@ -83,7 +83,7 @@
       <Item value="_new" priority="191" />
       <Item value="byte" priority="63" />
       <Item value="bool" priority="63" />
-      <Item value="if" priority="381" />
+      <Item value="if" priority="413" />
       <Item value="partial_news" priority="31" />
       <Item value="foreach" priority="31" />
       <Item value="LdapStyleUriParser`0" priority="31" />
@@ -98,10 +98,10 @@
       <Item value="Model" priority="603" />
       <Item value="Html" priority="552" />
       <Item value="RouteValueDictionary" priority="28" />
-      <Item value="null" priority="607" />
+      <Item value="null" priority="671" />
       <Item value="DetailsNew" priority="32" />
       <Item value="type" priority="63" />
-      <Item value="else" priority="95" />
+      <Item value="else" priority="127" />
       <Item value="Message`0" priority="31" />
       <Item value="Guid`0" priority="31" />
       <Item value="FormCollection`0" priority="31" />
@@ -111,7 +111,7 @@
       <Item value="MvcApplication`0" priority="31" />
       <Item value="this" priority="63" />
       <Item value="HtmlHelper`0" priority="31" />
-      <Item value="string" priority="573" />
+      <Item value="string" priority="605" />
       <Item value="text" priority="31" />
       <Item value="temp" priority="160" />
       <Item value="current_obj" priority="127" />
@@ -159,9 +159,9 @@
       <Item value="RazorView`0" priority="32" />
       <Item value="override" priority="31" />
       <Item value="void" priority="95" />
-      <Item value="filterContext" priority="96" />
+      <Item value="filterContext" priority="128" />
       <Item value="CultureInfo" priority="28" />
-      <Item value="culture" priority="255" />
+      <Item value="culture" priority="287" />
       <Item value="ThreadStaticAttribute`0" priority="31" />
       <Item value="cultureInfo" priority="63" />
       <Item value="Thread`0" priority="31" />
@@ -176,7 +176,7 @@
       <Item value="Request" priority="63" />
       <Item value="Cookies" priority="26" />
       <Item value="HttpCookie`0" priority="31" />
-      <Item value="university_cookies" priority="63" />
+      <Item value="university_cookies" priority="95" />
       <Item value="private" priority="159" />
       <Item value="LangToUserCookie`0" priority="31" />
       <Item value="cookie" priority="191" />
@@ -187,6 +187,7 @@
       <Item value="choseLang" priority="159" />
       <Item value="lang" priority="95" />
       <Item value="table" priority="59" />
+      <Item value="IFilterProvider`0" priority="31" />
     </ItemStatistics>
     <ItemStatistics item="HtmlCodeCompletionContext">
       <Item value="div" priority="105" />
@@ -431,12 +432,14 @@
       <Item value="GetGlobalResourceObject`0" priority="26" />
       <Item value="GetLocalResourceObject`0" priority="26" />
       <Item value="Session" priority="53" />
+      <Item value="RemapHandler`0" priority="26" />
+      <Item value="Request" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Globalization.CultureInfo">
       <Item value="CurrentUICulture" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.Mvc.ActionExecutedContext">
-      <Item value="HttpContext" priority="53" />
+      <Item value="HttpContext" priority="80" />
       <Item value="RequestContext" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Object">
@@ -450,18 +453,20 @@
       <Item value="CurrentUICulture" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.HttpRequestBase">
-      <Item value="Cookies" priority="26" />
+      <Item value="Cookies" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.HttpCookie">
-      <Item value="Name" priority="54" />
+      <Item value="Name" priority="163" />
       <Item value="Expires" priority="26" />
       <Item value="lang" priority="27" />
+      <Item value="Value" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.DateTime">
       <Item value="Now" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.DateTime">
       <Item value="AddMonths`0" priority="26" />
+      <Item value="AddDays`0" priority="53" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <NAntValidationSettings>
