@@ -37,115 +37,26 @@ namespace DistanceLessons.Models
             _db.Lessons.AddObject(obj);
             Save();
         }
-        /*
-        public List<RQLessons> QLessons(string Course)
+        public List<Lesson> GetLessonsByCourse(Guid courseId)
         {
-            var Query =
-                (
-                  from l in GetLessonList()
-                  from c in GetCourseList()
-                  from m in GetModuleList()
-                  where c.Title == Course && m.CourseId == c.CategoryId && //l.ModuleId == m.ModuleId
-                  orderby l.Title
-                  select new RQLessons
-                  {
-                      id = l.LessonId,
-                      title = l.Title,
-                      text = l.Text,
-                      module = m.Title,
-                      descripton = l.Description
-                  }
-                ).ToList<RQLessons>();
-
-            List<RQLessons> lst = new List<RQLessons>();
-            foreach (var i in Query)
-                lst.Add(i);
-
-            return lst;
+            return (from lessons in _db.Lessons
+                    where lessons.CourseId == courseId
+                    orderby lessons.ModuleId, lessons.Title
+                    select lessons).ToList();
         }
 
-        public List<RQLessons> GetLessonsByCourse(string Course)
+        public List<Lesson> GetOrphanLessonsByCourse(Guid courseId)
         {
-            var Query =
-                (
-                  from l in GetLessonList()
-                  from c in GetCourseList()
-                  from m in GetModuleList()
-                  where c.Title == Course && m.CourseId == c.CategoryId && l.ModuleId == m.ModuleId
-                  orderby l.Title
-                  select new RQLessons
-                  {
-                      id = l.LessonId,
-                      title = l.Title,
-                      text = l.Text,
-                      module = m.Title,
-                      descripton = l.Description
-                  }
-                ).ToList<RQLessons>();
-
-            List<RQLessons> lst = new List<RQLessons>();
-            foreach (var i in Query)
-                lst.Add(i);
-
-            return lst;
+            return (from lessons in _db.Lessons
+                    where lessons.CourseId == courseId && lessons.ModuleId == null
+                    select lessons).ToList();
         }
 
-        public List<Lesson> GetLessonsByModule(Guid id_mod)
-        {
-            var Query =
-                (
-                from l in GetLessonList()
-                where l.ModuleId == id_mod
-                orderby l.Title
-                select new Lesson
-                {
-                    LessonId = l.LessonId,
-                    Title = l.Title,
-                    Text = l.Text,
-                    Description = l.Description
-                }
-                ).ToList<Lesson>();
-
-            List<Lesson> lst = new List<Lesson>();
-            foreach (var i in Query)
-                lst.Add(i);
-
-            return lst;
-        }
-*/
         public List<Lesson> GetLessonsByModule(Guid id_mod)
         {
             return (from lessons in _db.Lessons
                     where lessons.ModuleId == id_mod
                     select lessons).ToList();
-        }
-
-        public List<Lesson> GetLessonsByTeacherId(Guid UserId)
-        {
-            var Query =
-                (
-                from l in GetLessonList()
-                from c in GetCourseList()
-                from m in GetModuleList()
-                where c.UserId == UserId && m.CourseId == c.CategoryId //&& l.ModuleId == m.ModuleId
-                //orderby l.ModuleId
-                select new Lesson
-                {
-                    LessonId = l.LessonId,
-                    Title = l.Title,
-                    Publication = l.Publication, 
-                   // ModuleId = l.ModuleId,
-                    Text = l.Text,
-                    Description = l.Description
-                }
-
-                ).ToList<Lesson>();
-
-            List<Lesson> lst = new List<Lesson>();
-            foreach (var i in Query)
-                lst.Add(i);
-
-            return lst;
         }
 
         public bool IsLesson(Guid id)

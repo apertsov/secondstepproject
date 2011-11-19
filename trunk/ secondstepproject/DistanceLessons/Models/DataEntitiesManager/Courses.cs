@@ -97,31 +97,14 @@ namespace DistanceLessons.Models
 
             return lst;
         }
-        public List<RQCourses> GetCoursesByTeacherId(Guid UserId)
-        {
-            var Query =
-                (
-                from cou in GetCourseList()
-                from u in GetUserList()
-                from cat in GetCategoryList()
-                where cou.CategoryId == cat.CategoryId && cou.UserId == u.UserId && cou.UserId == UserId
-                orderby cou.Title
-                select new RQCourses
-                {
-                    id = cou.CourseId,
-                    title = cou.Title,
-                    description = cou.Description,
-                    category = cat.Category1,
-                    teacher = u.Login,
-                    access = cou.Access
-                }
-                ).ToList<RQCourses>();
 
-            List<RQCourses> lst = new List<RQCourses>();
-            foreach (var i in Query)
-                lst.Add(i);
-
-            return lst;
         }*/
+        public List<Cours> GetCoursesByTeacherId(Guid UserId)
+        {
+
+            return (from courses in _db.Courses
+                    where courses.UserId == UserId
+                    select courses).ToList();
+        }
     }
 }
