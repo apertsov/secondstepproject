@@ -693,7 +693,7 @@ ul.topnav li a {
     line-height: 10px;
     font-size: 11px;
     padding: 10px 5px;
-    color: #000;
+    color: black;
     display: block;
     text-decoration: none;
     font-weight: bolder;
@@ -731,18 +731,18 @@ ul.topnav ul li a:hover {
     border-radius: 5px 3px 3px 0;
     background-color:#0073ea;
     background-image: url('img/passive_active/fill_passive.png');
-    color:black;
+    color:white;
 }
  
 ul.topnav ul ul li a {
-    color:silver;
+    color:black;
     padding-left: 40px;
 }
  
 ul.topnav ul ul li a:hover {
     background-color:#0073ea;
     background-image: url('img/passive_active/fill_passive.png');
-    color:black;
+    color:white;
 }
  
 ul.topnav span{
