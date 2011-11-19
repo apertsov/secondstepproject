@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using DistanceLessons.Attributes;
 using DistanceLessons.Models;
+using NotFoundMvc;
 
 namespace DistanceLessons.Controllers
 {
@@ -48,6 +49,19 @@ namespace DistanceLessons.Controllers
                 _db.Save();
             }
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Info(string user)
+        {
+            if(_db.ExistInformation(user))
+            {
+                return View(_db.UserInformation(user));
+            }
+            else
+            {
+                return new NotFoundViewResult();
+            }
         }
     }
 }

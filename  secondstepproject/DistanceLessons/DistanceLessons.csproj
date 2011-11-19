@@ -168,6 +168,13 @@
     <Compile Include="Models\TeacherModels.cs" />
     <Compile Include="Models\TestModels.cs" />
     <Compile Include="Models\UserRepository.cs" />
+    <Compile Include="Other Classes\Error\ActionInvokerWrapper.cs" />
+    <Compile Include="Other Classes\Error\ControllerFactoryWrapper.cs" />
+    <Compile Include="Other Classes\Error\InstallerModule.cs" />
+    <Compile Include="Other Classes\Error\NotFoundController.cs" />
+    <Compile Include="Other Classes\Error\NotFoundHandler.cs" />
+    <Compile Include="Other Classes\Error\NotFoundViewResult.cs" />
+    <Compile Include="Other Classes\Error\PreApplicationStarter.cs" />
     <Compile Include="Other Classes\TestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -319,6 +326,7 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\nivo-slider.css" />
     <Content Include="Global.asax" />
+    <Content Include="Other Classes\Error\NotFoundMvc.csproj" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
     <Content Include="Scripts\jquery-1.6.2.min.js" />
@@ -514,6 +522,8 @@
     <Content Include="Views\Test\TestingNotPrepared.cshtml" />
     <Content Include="Views\Test\DetailsModuleUserAnswers.cshtml" />
     <Content Include="Views\Home\Courses.cshtml" />
+    <Content Include="Views\Profile\info.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">
