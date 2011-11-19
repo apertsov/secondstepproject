@@ -11,7 +11,7 @@ namespace DistanceLessons.Controllers
     {
         private DataEntitiesManager _db = new DataEntitiesManager();
         private HttpCookie university_cookies;
-        private string choseLang = "uk-ua";
+        private string chooseLang = "uk-ua";
 
         public ActionResult Index()
         {
@@ -55,19 +55,19 @@ namespace DistanceLessons.Controllers
         private void ReplaceCookie(string cookie, string culture)
         {
             Response.Cookies[cookie].Value = null;
-            Response.Cookies[cookie].Expires = DateTime.Now.AddMonths(-1);
+            Response.Cookies[cookie].Expires = DateTime.Now.AddDays(-7);
 
             university_cookies = new HttpCookie(cookie);
             university_cookies.Value = culture;
-            university_cookies.Expires = DateTime.Now.AddMonths(1);
+            university_cookies.Expires = DateTime.Now.AddDays(7);
             Response.Cookies.Add(university_cookies);
         }
 
         public ActionResult English()
         {
             Session["culture"] = "en-us";
-            choseLang = Session["culture"].ToString();
-            ReplaceCookie("University_Lang", choseLang);
+            chooseLang = Session["culture"].ToString();
+            ReplaceCookie("language", chooseLang);
 
             return RedirectToAction("Index");
         }
@@ -75,8 +75,8 @@ namespace DistanceLessons.Controllers
         public ActionResult Ukraine()
         {
             Session["culture"] = "uk-ua";
-            choseLang = Session["culture"].ToString();
-            ReplaceCookie("University_Lang", choseLang);
+            chooseLang = Session["culture"].ToString();
+            ReplaceCookie("language", chooseLang);
 
             return RedirectToAction("Index");
         }
@@ -84,8 +84,8 @@ namespace DistanceLessons.Controllers
         public ActionResult Russian()
         {
             Session["culture"] = "ru-ru";
-            choseLang = Session["culture"].ToString();
-            ReplaceCookie("University_Lang", choseLang);
+            chooseLang = Session["culture"].ToString();
+            ReplaceCookie("language", chooseLang);
 
             return RedirectToAction("Index");
         }

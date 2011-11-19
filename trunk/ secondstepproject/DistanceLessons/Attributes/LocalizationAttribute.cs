@@ -10,11 +10,11 @@ namespace DistanceLessons.Attributes
         {
             string culture= "uk-ua";
 
-            if (filterContext.RequestContext.HttpContext.Request.Cookies["University_Lang"] != null)
+            if (filterContext.RequestContext.HttpContext.Request.Cookies["language"] != null)
             {
-                culture = (filterContext.RequestContext.HttpContext.Request.Cookies["University_Lang"] != null)
+                culture = (filterContext.RequestContext.HttpContext.Request.Cookies["language"].Value != null)
                               ? string.Format(
-                                  filterContext.RequestContext.HttpContext.Request.Cookies["University_Lang"].Value)
+                                  filterContext.RequestContext.HttpContext.Request.Cookies["language"].Value)
                               : "uk-ua";
             }
 
