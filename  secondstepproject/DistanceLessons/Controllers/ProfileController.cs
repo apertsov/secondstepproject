@@ -14,10 +14,37 @@ namespace DistanceLessons.Controllers
         //
         // GET: /Profile/
 
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            ViewData["exist"] = false;
+            if (_db.ExistInformation(User.Identity.Name)) ViewData["exist"] = true;
+
+            if (!Request.IsAjaxRequest())
+                {
+                    if (_db.ExistInformation(User.Identity.Name)) return View(_db.UserInformation(User.Identity.Name));
+                    else return View();
+                }
+                else
+                {
+                    if (_db.ExistInformation(User.Identity.Name)) return PartialView("_Info_PartialPage", _db.UserInformation(User.Identity.Name));
+                    else return PartialView("_CreateInfo_PartialPage");
+                }
         }
+
+        [HttpPost]
+        public ActionResult Index(Information obj)
+        {
+            if (!_db.ExistInformation(User.Identity.Name))
+            {
+                obj.UserId = _db.GetUserId(User.Identity.Name);
+                obj.InformationId = Guid.NewGuid();
+                _db.AddInformation(obj);
+                _db.Save();
+            }
+            return RedirectToAction("Index");
+        }
+
 
         [HttpGet]
         public ActionResult Information()
@@ -56,7 +83,7 @@ namespace DistanceLessons.Controllers
         {
             if(_db.ExistInformation(user))
             {
-                return View(_db.UserInformation(user));
+                return PartialView("_Info_PartialPage",_db.UserInformation(user));
             }
             else
             {
