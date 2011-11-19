@@ -142,10 +142,10 @@ namespace DistanceLessons.Models
         }
     }
 
-    [MetadataType(typeof(CategoriesMetadata))]
-    public partial class Categories
+    [MetadataType(typeof(CategoryMetadata))]
+    public partial class Category
     {
-        public class CategoriesMetadata
+        public class CategoryMetadata
         {
             [ScaffoldColumn(false)]
             public Guid CategoryId { get; set; }
@@ -153,14 +153,14 @@ namespace DistanceLessons.Models
             [Required(ErrorMessage = "Заповніть поле категорії.")]
             [DisplayName("Категорія")]
             [StringLength(64, ErrorMessage = "Назва категорії обмежена 64 символами")]
-            public string Category { get; set; }
+            public string Category1 { get; set; }
         }
     }
 
-    [MetadataType(typeof(CourseMetadata))]
-    public partial class Course
+    [MetadataType(typeof(CoursMetadata))]
+    public partial class Cours
     {
-        public class CourseMetadata
+        public class CoursMetadata
         {
             [ScaffoldColumn(false)]
             public Guid CourseId { get; set; }
@@ -181,6 +181,9 @@ namespace DistanceLessons.Models
             public Guid UserId { get; set; }
 
             [DisplayName("Чи потрібна підписка")]
+            [Required(ErrorMessage = "Задайте доступність до предмету  (0 - загальнодоступний, 1 - лише за підпискою)")]
+            [Range(typeof(int), "0", "1", ErrorMessage = "Значення має бути між 0 та 1")]
+         
             public bool IsSubscribing { get; set; }
         }
     }
@@ -199,8 +202,8 @@ namespace DistanceLessons.Models
             public string Title { get; set; }
 
             [ScaffoldColumn(false)]
-            [DisplayName("Дата публікації")]
-            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
+            [DisplayName("Час публікації")]
+            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy HH:mm}")]
             public DateTime Publication { get; set; }
 
             [ScaffoldColumn(false)]
@@ -211,6 +214,7 @@ namespace DistanceLessons.Models
             public string Description { get; set; }
 
             [ScaffoldColumn(false)]
+            [DisplayName("Автор лекції")]
             public Guid UserId { get; set; }
 
             [DisplayName("Затверджена викладачем курсу")]
@@ -265,23 +269,25 @@ namespace DistanceLessons.Models
             public string Title { get; set; }
 
             [Required(ErrorMessage = "Час здачі тестів модуля відсутній")]
-            [DisplayName("Час здачі тестів модуля")]
+            [DisplayName("Час здачі тестів модуля, хв")]
+            [Range(1, 300, ErrorMessage = "Час на проходження модульного контролю повинен бути в межах від 1 до 300 хвилин")]
+
             public int TimeForPassTest { get; set; }
 
             [ScaffoldColumn(false)]
             [DisplayName("Час початку тестування")]
-            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
+            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
             public DateTime DateBeginTesting { get; set; }
 
             [ScaffoldColumn(false)]
             [DisplayName("Час закінчення тестування")]
-            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
-            public DateTime DatEndTesting { get; set; }
+            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+            public DateTime DateEndTesting { get; set; }
 
             [ScaffoldColumn(false)]
             public Guid CourseId { get; set; }
 
-            [Required(ErrorMessage = "Час здачі тестів модуля відсутній")]
+
             [DisplayName("Кількість запитань для здачі модуля")]
             public int? CountQuestions { get; set; }
         }
