@@ -1,4 +1,11 @@
 ﻿@model DistanceLessons.Models.News
+<script>
+$( function() {
+$('.delete').click(function() {
+return confirm('Ви впевнені, що хочете видалити цей елемент?');
+});
+});
+</script>
 
 <h2>Ви справді впевнені, що варто видаляти новину "@Model.Title" ?</h2>
     <div>
@@ -9,7 +16,7 @@
 @using (Html.BeginForm()) 
 {
 <div class="item" align="center">
-    <input type="submit" value="Видалити" />
+    <input type="submit" value="Видалити" class="delete" />
     @Ajax.ActionLink("Назад", "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
 </div>
 }
