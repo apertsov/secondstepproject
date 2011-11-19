@@ -1,14 +1,14 @@
 ﻿@model DistanceLessons.Models.Module
 
 @{
-    ViewBag.Title = "DetailsModule";
+    ViewBag.Title = "Летульна інформація про модуль";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>DetailsModule</h2>
+<h2>Детальна інформація про модуль</h2>
 
 <fieldset>
-    <legend>Module</legend>
+    <legend>Модуль</legend>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Title)
@@ -18,29 +18,35 @@
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.Time)
+         @Html.DisplayNameFor(model => model.TimeForPassTest)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Time)
+        @Html.DisplayFor(model => model.TimeForPassTest)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.DateBegin)
+         @Html.DisplayNameFor(model => model.DateBeginTesting)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.DateBegin)
+        @Html.DisplayFor(model => model.DateBeginTesting)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.DateEnd)
+         @Html.DisplayNameFor(model => model.DateEndTesting)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.DateEnd)
+        @Html.DisplayFor(model => model.DateEndTesting)
+    </div>
+        <div class="display-label">
+         @Html.DisplayNameFor(model => model.CountQuestions)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CountQuestions)
     </div>
 
 
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "EditModule", new { id=Model.ModuleId }) |
-    @Html.ActionLink("Back to List", "Modules", new { courseId=Model.CourseId})
+    @Html.ActionLink("Редагувати", "EditModule", new { id = Model.ModuleId }) |
+    @Html.ActionLink("Повернутись до списку модулів", "Modules", new { courseId = Model.CourseId, owner=true })
 </p>

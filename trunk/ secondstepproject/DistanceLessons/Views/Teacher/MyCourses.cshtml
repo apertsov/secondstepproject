@@ -1,39 +1,40 @@
-﻿@model IEnumerable<DistanceLessons.Models.DataEntitiesManager.RQCourses>
+﻿@model IEnumerable<DistanceLessons.Models.Cours>
 
 @{
-    ViewBag.Title = "MyCourses";
+    ViewBag.Title = "Мої предмети";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>MyCourses</h2>
+<h2>Мої предмети</h2>
 
 
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.title)
+            @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.description)
+            @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.category)
+            @Html.DisplayNameFor(model => model.Category.Category1)
         </th>
         
 
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
-          @Html.ActionLink(item.title, "Modules" , new { courseId=item.id})
+          @Html.ActionLink(item.Title, "Course", new { id = item.CourseId })
           
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.description)
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.category)
+            @Html.DisplayFor(modelItem => item.Category.Category1)
         </td>
 
 

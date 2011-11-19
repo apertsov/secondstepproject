@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = ViewBag.Course;
+}
+
+<h2>@ViewBag.Course</h2>
+
+<h4>Лекції, що не належать до модуля</h4>
+
+
+  @Html.ActionLink("Створити навчальний елемент", "UploadLesson", new { courseId=ViewBag.CourseId, moduleId=Guid.Empty})<br/>
+ <br/>
+ <table>
+@foreach (DistanceLessons.Models.Lesson les in ViewBag.OrphanLessons)
+{
+   <tr>
+     <td>@Html.ActionLink(les.Title, "ShowFile", new { filename = les.Text })</td>
+     <td>  @Html.ActionLink("Редагувати", "EditLesson", new { id=les.LessonId, moduleId=les.ModuleId}) |
+            @Html.ActionLink("Деталі", "DetailsLesson", new { id=les.LessonId }) |
+            @Html.ActionLink("Видалити", "DeleteLesson", new { id = les.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
+     </td>
+    </tr>
+    
+}
+</table>
+<br/>
+<h4>Модулі предмету</h4>
+  @Html.ActionLink("Створити модуль", "CreateModule", new { courseId = ViewBag.CourseId }) <br/>
+<br/>
+ <table>
+@foreach (DistanceLessons.Models.Module mod in ViewBag.Modules)
+{
+  
+
+       <tr>
+     <td>@Html.ActionLink(mod.Title, "Lesson", new { id = mod.ModuleId })</td>
+     <td>  @Html.ActionLink("Редагувати", "EditModule", new { id = mod.ModuleId}) |
+            @Html.ActionLink("Деталі", "DetailsModule", new { id = mod.ModuleId }) |
+            @Html.ActionLink("Видалити", "DeleteModule", new { id = mod.ModuleId }, new { onclick = "return confirm('Дійсно бажаєте видалити модуль? З видаленням модуля пропадуть також всі лекції, тести і все, що з ним зв`язане!')" })
+     </td>
+    </tr>
+}
+ </table>

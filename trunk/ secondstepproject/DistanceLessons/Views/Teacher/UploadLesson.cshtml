@@ -1,18 +1,19 @@
 ﻿@{
-    ViewBag.Title = "UploadLesson";
+    ViewBag.Title = "Завантаження";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>UploadLesson</h2>
+<h2>Завантаження навчального елементу</h2>
   
 
-      <div id="dialog" title="Upload files">
-      @{ Guid buf=(Guid)ViewBag.ModuleId;}
+
+      @{ Guid mod=(Guid)ViewBag.ModuleId;
+         Guid course=(Guid)ViewBag.CourseId;
+         }
         @using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <p><input type="file" id="fileUpload" name="fileUpload" size="23"/> </p>
-            <input type="hidden" id="mod_id" name="mod_id" value="@buf" runat="server"/>
-            <p><input type="submit" value="Upload file" /></p>
+            <input type="hidden" id="mod_id" name="mod_id" value="@mod" runat="server"/>
+            <input type="hidden" id="course_id" name="course_id" value="@course" runat="server"/>
+            <p><input type="submit" value="Завантажити" /></p>
         } 
-    </div>
-      <p>@ViewBag.Path</p>

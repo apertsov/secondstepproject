@@ -1,14 +1,12 @@
 ﻿@model DistanceLessons.Models.Lesson
 @{
-    ViewBag.Title = "DetailsLesson";
+    ViewBag.Title = "Лекція";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>DetailsLesson</h2>
+<h2>Інформація по даній лекції</h2>
 
 <fieldset>
-    <legend>RQLessons</legend>
-
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Title)
     </div>
@@ -22,22 +20,35 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Text)
+        <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserId)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Text)
+        @Html.DisplayFor(model => model.User.Login)
     </div>
-
+@if (Model.ModuleId != null)
+{
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Module.Title)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Module.Title)
     </div>
+}
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cours.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cours.Title)
+    </div>
+
+
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "EditLesson", new { id=Model.LessonId }) |
-    @Html.ActionLink("Back to List", "Index")
+@if (( Model.ModuleId != null) && (Model.ModuleId != Guid.Empty))
+{
+    Html.ActionLink("Повернутись до модулю", "Lesson", new { id = Model.ModuleId });
+}
+@Html.ActionLink("Повернутись до предмету", "Course", new { id = Model.CourseId })
 </p>

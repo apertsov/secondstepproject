@@ -8,10 +8,9 @@
 <h2>Сторінка викладача</h2>
 @foreach (var lesson in Model)
 {
-   <ul>   @Html.ActionLink("Редагувати тести з лекції : " + lesson.Title.ToString(),"Index","Test", new { id = lesson.LessonId },null)
-      <li>@Html.ActionLink("Здати тести з модуля " + lesson.Module.Title, "PassModule", "Test", new { id = (Guid)lesson.ModuleId }, null) </li>
-      <li>@Html.ActionLink("Онулити результат тестування з модуля " + lesson.Module.Title, "DeletePassModule", "Test", new { id = (Guid)lesson.ModuleId }, null) </li>
-      <li>@Html.ActionLink("Переглянути результат тестування з модуля " + lesson.Module.Title, "DetailsModuleUserAnswers", "Test", new { id = (Guid)lesson.ModuleId, username=User.Identity.Name }, null) </li>
-   </ul>
+     @Html.ActionLink("Редагувати тести з лекції : " + lesson.Title.ToString(),"Index","Test", new { id = lesson.LessonId },null) <pre>
+     @Html.ActionLink("Здати тести з модуля " + lesson.Module.Title, "PassModule", "Test", new { id = (Guid)lesson.ModuleId }, null) </pre>
+    <pre>
+     @Html.ActionLink("Онулити результат тестування з модуя " + lesson.Module.Title, "DeletePassModule", "Test", new { id = (Guid)lesson.ModuleId }, null) </pre>
     <br />
 }

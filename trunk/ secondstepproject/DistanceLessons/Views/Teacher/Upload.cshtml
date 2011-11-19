@@ -1,9 +1,17 @@
 ﻿@{
-    ViewBag.Title = "ErrorUpload";
+    ViewBag.Title = "Помилка завантаження";
 }
 
-<h2>ErrorUpload</h2>
+<h2>Помилка завантаження</h2>
 
-невладе завантаження!!!!
-@Html.ActionLink("Повторити завантаження", "UploadLesson", new { moduleId = ViewBag.ModuleId })
-@Html.ActionLink("Повернутися до списку лекцій", "Lesson", new { id_mod = ViewBag.ModuleId })
+
+@Html.ActionLink("Повторити завантаження", "UploadLesson", new {courseId=ViewBag.CourseId, moduleId = ViewBag.ModuleId })
+@if (ViewBag.ModuleId == Guid.Empty.ToString() || ViewBag.ModuleId==null)
+{
+    Html.ActionLink("Повернутися до предмету", "Course", new { id = ViewBag.CourseId });
+}
+else 
+
+{
+Html.ActionLink("Повернутися до списку лекцій", "Lesson", new {id = ViewBag.ModuleId });
+}
