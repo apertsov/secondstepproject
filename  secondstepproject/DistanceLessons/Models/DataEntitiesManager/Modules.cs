@@ -30,29 +30,13 @@ namespace DistanceLessons.Models
         }
 
 
-        public List<RQModules> GetModulesByCourseId(Guid courseId)
+        public List<Module> GetModulesByCourseId(Guid courseId)
         {
-            var Query =
-                (
-                from m in GetModuleList()
-                from c in GetCourseList()
-                where m.CourseId == c.CourseId && c.CourseId == courseId
-                orderby m.Title
-                select new RQModules
-                {
-                    id = m.ModuleId,
-                    title = m.Title,
-                    course = c.Title
-                }
-                ).ToList<RQModules>();
+            return (from modules in _db.Modules
+                    where modules.CourseId == courseId
+                    select modules).ToList();
 
-            List<RQModules> lst = new List<RQModules>();
-            foreach (var i in Query)
-                lst.Add(i);
-
-            return lst;
         }
-
         public Module Module(Guid ModuleId)
         {
             return (from module in _db.Modules
