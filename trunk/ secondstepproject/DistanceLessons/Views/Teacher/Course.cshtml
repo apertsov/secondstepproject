@@ -15,8 +15,7 @@
    <tr>
      <td>@Html.ActionLink(les.Title, "ShowFile", new { filename = les.Text })</td>
      <td>  @Html.ActionLink("Редагувати", "EditLesson", new { id=les.LessonId}) |
-             @Html.ActionLink("Перемістити до іншого модулю", "ChangeModule", new { id = les.LessonId }) |
-             @Html.ActionLink("Деталі", "DetailsLesson", new { id=les.LessonId }) |
+            @Html.ActionLink("Деталі", "DetailsLesson", new { id=les.LessonId }) |
             @Html.ActionLink("Видалити", "DeleteLesson", new { id = les.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
      </td>
     </tr>

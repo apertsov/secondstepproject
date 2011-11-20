@@ -14,8 +14,6 @@
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Категорія</legend>
-
         @Html.HiddenFor(model => model.CategoryId)
 
         <div class="editor-label">
@@ -33,5 +31,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Categories")
+    @Html.ActionLink("Повернутись без збереження", "Categories")
 </div>

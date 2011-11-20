@@ -1,33 +1,28 @@
 ﻿@model IEnumerable<DistanceLessons.Models.Cours>
 
 @{
-    ViewBag.Title = "Courses";
+    ViewBag.Title = "Предмети";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Предмети</h2>
-<p>Список предметів (при натисканні на предмет виводиться список всіх лекцій з можливістю додавання, редагування, видалення)</p>
-
-
 <p>
     @Html.ActionLink("Створити предмет", "CreateCours")
 </p>
-<table border=1>
+<table >
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
+        
         <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category)
+            @Html.DisplayNameFor(model => model.Category.Category1)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.User.Login)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Access)
+            @Html.DisplayNameFor(model => model.IsSubscribing)
         </th>
         <th></th>
     </tr>
@@ -36,10 +31,8 @@
 {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
+         @*Html.ActionLink("model => model.Title", "Lesson", new { id = item.CourseId });*@
+      @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Category.Category1)
@@ -48,13 +41,13 @@
             @Html.DisplayFor(modelItem => item.User.Login)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Access)
+            @Html.DisplayFor(modelItem => item.IsSubscribing)
         </td>
         <td>
             @Html.ActionLink("Редагувати", "EditCours", new { id = item.CourseId }) |
            @Html.ActionLink("Деталі", "DetailsCours", new { id = item.CourseId }) |
-            @Html.ActionLink("Видалити", "DeleteCours", new { id = item.CourseId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
-                    </td>
+            @Html.ActionLink("Видалити", "DeleteCours", new { id = item.CourseId }, new { onclick = "return confirm('Дійсно бажаєте видалити?Всі модулі, лекції, тести і все, що пов`язане з цим предметом буде видалено')" })
+        </td>
     </tr>
 }
 

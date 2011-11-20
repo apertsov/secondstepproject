@@ -1,15 +1,13 @@
 ﻿@model DistanceLessons.Models.User
 
 @{
-    ViewBag.Title = "DetailsUser";
+    ViewBag.Title = "Інформація про користувача";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>DetailsUser</h2>
+<h2>Інформація про користувача</h2>
 
 <fieldset>
-    <legend>Користувач</legend>
-
     <div class="display-label">
          @Html.DisplayNameFor(model => model.Login)
     </div>
@@ -62,5 +60,5 @@
 </fieldset>
 <p>
     @Html.ActionLink("Редагувати", "EditUser", new { id = Model.UserId }) |
-    @Html.ActionLink("Back to List", "Users")
+    @Html.ActionLink("Повернутись до списку користувачів", "Users")
 </p>

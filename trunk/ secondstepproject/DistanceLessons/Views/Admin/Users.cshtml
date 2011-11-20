@@ -5,10 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>Переглянути список всіх студентів (видалити)</p>
-<p>Переглянути список всіх викладачів (видалити (якщо у викладача немає предметів))</p>
-<p>Змінити права користувача(виводиться список всіх користувачів з їхніми правати, справа змінити на протилежний)</p>
-
 <p>
   @*  @Html.ActionLink("Додати користувача", "CreateUser")*@
 </p>
@@ -18,23 +14,10 @@
             @Html.DisplayNameFor(model => model.Login)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => model.Role.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Role)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastLoginDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsActived)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsLockedOut)
-        </th>
+      
         <th></th>
     </tr>
 
@@ -44,29 +27,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.Login)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
+       <td>
             @Html.DisplayFor(modelItem => item.Role.Name)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastLoginDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActived)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsLockedOut)
-        </td>
-       
+             
         <td>
             @Html.ActionLink("Редагувати", "EditUser", new { id = item.UserId }) |
             @Html.ActionLink("Переглянути", "DetailsUser", new { id = item.UserId }) |
-            @Html.ActionLink("Видалити", "DeleteUser", new { id = item.UserId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
+            @Html.ActionLink("Видалити", "DeleteUser", new { id = item.UserId }, new { onclick = "return confirm('Дійсно бажаєте видалити користувача? Все, що повязане з цим користувачем (предмети, тести і т.п.) також буде видалено!!!')" })
         </td>
     </tr>
 }

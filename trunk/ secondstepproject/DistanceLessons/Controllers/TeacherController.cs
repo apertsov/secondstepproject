@@ -137,6 +137,7 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult EditLesson(Guid id)
         {
+           ViewBag.Modules = db.GetModulesByCourseId(db.GetLessonByID(id).CourseId);
            return View(db.GetLessonByID(id));
         }
 
@@ -144,48 +145,32 @@ namespace DistanceLessons.Controllers
         public ActionResult EditLesson(Lesson obj)
         {
             Lesson old = db.GetLessonByID(obj.LessonId);
-            if (ModelState.IsValid)
-            {
-                UpdateModel(old);
-                db.Save();
-            }
-            else return View(old.LessonId);
-     
-            if (obj.ModuleId!=null)
-            return RedirectToAction("Lesson", new { id = obj.ModuleId });
-            else return RedirectToAction("Course", new { id = obj.CourseId });
-        }
-
-        [HttpGet]
-        public ActionResult ChangeModule(Guid id)
-        {
-            ViewBag.Modules = db.GetModulesByCourseId(db.GetLessonByID(id).CourseId);
-            return View(db.GetLessonByID(id));
-        }
-
-        [HttpPost]
-        public ActionResult ChangeModule(Lesson obj)
-        {
-            Lesson old = db.GetLessonByID(obj.LessonId);
-
-
-            if (ModelState.IsValid)
-            {
-                UpdateModel(old);
-                db.Save();
-            }
-            else return RedirectToAction("ChangeModule", new { id = old.LessonId });
-
-            return RedirectToAction("Lesson", new { id = obj.ModuleId });
+            UpdateModel(old);
+            bool isChecked = false;
+            if (Boolean.TryParse(Request.Form.GetValues("NoModule")[0], out isChecked) && isChecked)
+                old.ModuleId = null;
+            else
+                old.ModuleId = obj.ModuleId;
             
+
+            if (ModelState.IsValid)
+            {
+                db.Save();
+            }
+            else return RedirectToAction("EditModule", new { id = old.LessonId });
+     
+            if (old.ModuleId!=null)
+            return RedirectToAction("Lesson", new { id = old.ModuleId });
+            else return RedirectToAction("Course", new { id = old.CourseId });
         }
 
+       
         [HttpGet]
         public ActionResult DeleteModule(Guid id)
         {
             Guid course_id = db.GetModulesByID(id).CourseId;
             db.DeleteModule(id);
-            return RedirectToAction("Modules", new { courseId = course_id });
+            return RedirectToAction("Course", new { id = course_id });
         }
 
 
