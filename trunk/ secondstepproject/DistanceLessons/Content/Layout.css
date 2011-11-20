@@ -84,23 +84,6 @@ body
     list-style: none;
 }
 
-.item .no_button a, .item .no_button input
-{
-    color: silver;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    -webkit-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
-    -moz-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
-    box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
-}
-
-.item .no_button a:hover, .item .no_button input:hover
-{
-    color: orange;
-    background: none;
-}
-
 .item a, .item input
 {
     font: bold 12px Arial, Verdana, Sans-Serif;
@@ -137,6 +120,23 @@ body
     box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
 }
 
+.no_button a, .no_button input
+{
+    color: black;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.no_button a:hover, .no_button input:hover
+{
+    color: orange;
+    background: none;
+}
+
 #formation
 {
     margin: 3%;
@@ -144,11 +144,10 @@ body
 
 .editor-label
 {
-    width: 45%;
     text-align: right;
     margin: 0;
     font: 14px Arial, Verdana, Sans-Serif;
-        font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
+    font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
 
@@ -766,6 +765,13 @@ ul.topnav span{
     float: left;
 }
 
+.text_left
+{ text-align: left;}
+.text_right
+{ text-align: right;}
+.text_center
+{ text-align: center;}
+
 table.center
 {
     width: 100%;
@@ -779,6 +785,12 @@ table.left, table.right
 table.center tr td.editor-label
 {
     width: 35%;
+}
+
+table.center tr td
+{
+     font-size: 14px;
+     width: 50%;
 }
 
 table.center tr td.editor-field

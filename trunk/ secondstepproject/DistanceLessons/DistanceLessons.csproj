@@ -521,10 +521,10 @@
     <Content Include="Views\Test\TestingNotPrepared.cshtml" />
     <Content Include="Views\Test\DetailsModuleUserAnswers.cshtml" />
     <Content Include="Views\Home\Courses.cshtml" />
-    <Content Include="Views\Profile\info.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Profile\_Info_PartialPage.cshtml" />
     <Content Include="Views\Teacher\AllMyLesson.cshtml" />
+    <Content Include="Views\Profile\profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">
