@@ -13,9 +13,9 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Модуль</legend>
 
         @Html.HiddenFor(model => model.ModuleId)
+         @Html.HiddenFor(model => model.CourseId)
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Title)
@@ -63,5 +63,5 @@
 }
 
 <div>
-    @Html.ActionLink("Повернутись без збереження змін", "Modules", new { courseId = Model.CourseId, owner = true })
+    @Html.ActionLink("Повернутись без збереження змін", "Course", new { id = Model.CourseId})
 </div>

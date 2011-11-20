@@ -3,15 +3,10 @@
 }
 
 <h2>Помилка завантаження</h2>
+@{
+    string c_id = ViewBag.CourseId;
+    string m_id = (ViewBag.ModuleId != null) ? ViewBag.ModuleId : Guid.Empty.ToString();
+    
+    }
 
-
-@Html.ActionLink("Повторити завантаження", "UploadLesson", new {courseId=ViewBag.CourseId, moduleId = ViewBag.ModuleId })
-@if (ViewBag.ModuleId == Guid.Empty.ToString() || ViewBag.ModuleId==null)
-{
-    Html.ActionLink("Повернутися до предмету", "Course", new { id = ViewBag.CourseId });
-}
-else 
-
-{
-Html.ActionLink("Повернутися до списку лекцій", "Lesson", new {id = ViewBag.ModuleId });
-}
+@Html.ActionLink("Повторити завантаження", "UploadLesson", new { courseId = c_id, moduleId =m_id })

@@ -263,8 +263,8 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid ModuleId { get; set; }
 
-            [Required(ErrorMessage = "Опис модуля відсутній")]
-            [DisplayName("Опис модуля")]
+            [Required(ErrorMessage = "Назва модуля відсутня")]
+            [DisplayName("Назва модуля")]
             [StringLength(256, ErrorMessage = "Опис модуля обмежений 256 символами")]
             public string Title { get; set; }
 
@@ -275,12 +275,14 @@ namespace DistanceLessons.Models
             public int TimeForPassTest { get; set; }
 
             [ScaffoldColumn(false)]
-            [DisplayName("Час початку тестування")]
+            [DisplayName("Дата початку тестування")]
+            [Required(ErrorMessage = "Дата початку тестування відсутня")]
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
             public DateTime DateBeginTesting { get; set; }
 
             [ScaffoldColumn(false)]
-            [DisplayName("Час закінчення тестування")]
+            [Required(ErrorMessage = "Дата закінчення тестування відсутня")]
+            [DisplayName("Дата закінчення тестування")]
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
             public DateTime DateEndTesting { get; set; }
 

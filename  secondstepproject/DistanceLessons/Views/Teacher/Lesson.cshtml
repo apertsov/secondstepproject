@@ -5,10 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Навчальні елементи модуля @ViewBag.Module</h2>
+<h2>Навчальні елементи модуля @Html.ActionLink((string)ViewBag.Module, "Course", new { id = (Guid)ViewBag.CourseId })
+</h2>
 
 <p>
-    @Html.ActionLink("Добавити лекцію", "UploadLesson", new {courseId=(Guid) ViewBag.CourseId,moduleId=(Guid)ViewBag.ModuleId })
+    @Html.ActionLink("Добавити лекцію", "UploadLesson", new { courseId = (Guid)ViewBag.CourseId, moduleId = (Guid)ViewBag.ModuleId })
 </p>
 <table>
     <tr>
@@ -23,17 +24,19 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
-            @Html.ActionLink(item.Title, "ShowFile" , new { filename=item.Text})
+            @Html.ActionLink(item.Title, "ShowFile", new { filename = item.Text })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Publication)
         </td>
          <td>
-            @Html.ActionLink("Редагувати", "EditLesson", new { id=item.LessonId, moduleId=(Guid)ViewBag.ModuleId}) |
-            @Html.ActionLink("Деталі", "DetailsLesson", new { id=item.LessonId }) |
+            @Html.ActionLink("Редагувати", "EditLesson", new { id = item.LessonId}) |
+            @Html.ActionLink("Перемістити до іншого модулю", "ChangeModule", new { id = item.LessonId }) |
+            @Html.ActionLink("Деталі", "DetailsLesson", new { id = item.LessonId }) |
             @Html.ActionLink("Видалити", "DeleteLesson", new { id = item.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
         </td>
     </tr>

@@ -17,3 +17,12 @@
             <input type="hidden" id="course_id" name="course_id" value="@course" runat="server"/>
             <p><input type="submit" value="Завантажити" /></p>
         } 
+
+        @if (mod == Guid.Empty)
+{
+    @Html.ActionLink("Повернутися до предмету", "Course", new { id = course });
+}
+else
+{
+    @Html.ActionLink("Повернутися до списку лекцій", "Lesson", new { id = mod });
+}
