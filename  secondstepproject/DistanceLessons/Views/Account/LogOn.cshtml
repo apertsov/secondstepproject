@@ -11,31 +11,35 @@
 
 @using (Html.BeginForm((string)ViewBag.FormAction, "Account"))
 {
-<div id="formation">
-<div class="editor-label">
-                @Html.LabelFor(m => m.UserName)
-</div>
-<div class="editor-field">
-                @Html.TextBoxFor(m => m.UserName, new { @class = "editor" })
-                @Html.ValidationMessageFor(m => m.UserName)
-</div>
+<table class="center" cellspacing="10" width="50%">
+    <tr>
+        <td class="editor-label">@Html.LabelFor(m => m.UserName)</td>
+        <td class="editor-field">@Html.TextBoxFor(m => m.UserName, new { @class = "editor" })</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(m => m.UserName)</td>
+    </tr>
 
-    <div class="editor-label">
-                @Html.LabelFor(m => m.Password)
-    </div>
-    <div class="editor-field">
-                @Html.PasswordFor(m => m.Password, new { @class = "editor" })
-                @Html.ValidationMessageFor(m => m.Password)
-    </div>
-    <div class="editor-label">
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-    </div>
-</div>
-
-<div class="item">
-    <input type="submit" value="Ввійти" title="Ввійти" />
-    <br /><br />
-    Якщо Ви ще не маєте аккаунту - @Html.ActionLink("зареєструйтись", "Register","Account")
-</div>
+    <tr>
+        <td class="editor-label">@Html.LabelFor(m => m.Password)</td>
+        <td class="editor-field">@Html.PasswordFor(m => m.Password, new { @class = "editor" })</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(m => m.Password)</td>
+    </tr>
+    <tr>
+        <td class="editor-label">@Html.CheckBoxFor(m => m.RememberMe)</td>
+        <td class="editor-field">@Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })</td>
+    </tr>
+    <tr>
+        <td>
+            <div class="item" align="right">
+                <input type="submit" value="Ввійти" title="Ввійти" />
+            </div>
+        </td>
+        <td>Якщо Ви ще не маєте аккаунту - @Html.ActionLink("зареєструйтись", "Register", "Account")</td>
+    </tr>
+</table>
 }

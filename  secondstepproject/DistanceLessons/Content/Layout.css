@@ -44,6 +44,18 @@ body
     font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
 }
 
+#error_body
+{
+    float: left;
+    background: white;
+    background-image: url('img/background/error.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    color: black;
+    width: 200px;
+    height: 255px;
+}
+
 .box_shdw_bottom
 {
     width: 75%;
@@ -772,7 +784,7 @@ ul.topnav span{
 .text_center
 { text-align: center;}
 
-table.center
+table.center,table.center2
 {
     width: 100%;
 }
@@ -785,12 +797,6 @@ table.left, table.right
 table.center tr td.editor-label
 {
     width: 35%;
-}
-
-table.center tr td
-{
-     font-size: 14px;
-     width: 50%;
 }
 
 table.center tr td.editor-field
@@ -806,4 +812,10 @@ table.left tr td.editor-label, table.right tr td.editor-label
 table.left tr td.editor-field, table.right tr td.editor-field
 {
     width: 85%;
+}
+
+table.center2 tr td
+{
+     font-size: 14px;
+     width: 50%;
 }
