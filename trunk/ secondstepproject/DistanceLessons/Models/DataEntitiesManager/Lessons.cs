@@ -13,10 +13,11 @@ namespace DistanceLessons.Models
 
         public List<Lesson> UserLessons(string username)
         {
-            Guid userId = GetUserId(username);
-            return (from lessons in _db.Lessons
-                   where lessons.UserId == userId
-                   select lessons).ToList();
+            Guid userId = new Guid(GetUserId(username).ToString());
+            var result = (from l in GetLessonList()
+                         where l.UserId == userId
+                         select l).ToList<Lesson>();
+            return result;
         }
         
         public Lesson GetLessonByID(Guid id)

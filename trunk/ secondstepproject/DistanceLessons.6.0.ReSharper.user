@@ -1,20 +1,13 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="364" fromTop="14" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Detail.cshtml" caret="942" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Edit_PartialPage.cshtml" caret="328" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="77" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Helpers/f:Localization.cs" caret="166" fromTop="7" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="758" fromTop="8" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:AdminController.cs" caret="4155" fromTop="10" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:Categories.cshtml" caret="1002" fromTop="20" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Delete_PartialPage.cshtml" caret="462" fromTop="17" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="12631" fromTop="5" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Home/f:Courses.cshtml" caret="414" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Users.cs" caret="6334" fromTop="10" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:info.cshtml" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Informations.cs" caret="858" fromTop="7" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Edit.cshtml" caret="296" fromTop="8" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/f:Global.asax.cs" caret="697" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/f:Web.config" caret="3697" fromTop="11" />
@@ -31,15 +24,14 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="1496" fromTop="27" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_EditInfo_PartialPage.cshtml" caret="2534" fromTop="25" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_CreateInfo_PartialPage.cshtml" caret="118" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Users.cs" caret="667" fromTop="25" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Lesson.cshtml" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Informations.cs" caret="1272" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Lessons.cs" caret="281" fromTop="13" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:TeacherController.cs" caret="903" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:AllMyLesson.cshtml" caret="120" fromTop="7" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="2749" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="2749" fromTop="5" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="466" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="2847" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:NotFound.cshtml" caret="191" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:NotFound.cshtml" caret="185" fromTop="5" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="2720" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="807" fromTop="19" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="1074" fromTop="11" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Info_PartialPage.cshtml" caret="1545" fromTop="18" />
@@ -63,12 +55,19 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="373" fromTop="9" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="1507" fromTop="31" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="1189" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Lessons.cs" caret="575" fromTop="20" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Lessons.cs" caret="575" fromTop="18" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Lessons.cs" caret="571" fromTop="18" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:AllMyLesson.cshtml" caret="1088" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:AllMyLesson.cshtml" caret="437" fromTop="21" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:AllMyLesson.cshtml" caret="49" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:AllMyLesson.cshtml" caret="1047" fromTop="22" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
     <ItemStatistics item="RazorTransitionCompletionContext">
       <Item value="Ajax" priority="19" />
-      <Item value="Html" priority="127" />
+      <Item value="Html" priority="135" />
       <Item value="Model" priority="19" />
       <Item value="if" priority="23" />
       <Item value="using" priority="9" />
@@ -90,13 +89,13 @@
       <Item value="i" priority="31" />
       <Item value="News`0" priority="95" />
       <Item value="lst" priority="287" />
-      <Item value="var" priority="31" />
+      <Item value="var" priority="63" />
       <Item value="for" priority="31" />
       <Item value="true" priority="159" />
       <Item value="false" priority="159" />
-      <Item value="id" priority="63" />
+      <Item value="id" priority="117" />
       <Item value="Model" priority="635" />
-      <Item value="Html" priority="614" />
+      <Item value="Html" priority="644" />
       <Item value="RouteValueDictionary" priority="28" />
       <Item value="null" priority="671" />
       <Item value="DetailsNew" priority="32" />
@@ -134,8 +133,8 @@
       <Item value="return" priority="255" />
       <Item value="obj_date" priority="63" />
       <Item value="_db" priority="351" />
-      <Item value="DistanceLessons" priority="31" />
-      <Item value="Models" priority="26" />
+      <Item value="DistanceLessons" priority="63" />
+      <Item value="Models" priority="53" />
       <Item value="dbEntities`0" priority="26" />
       <Item value="DataEntitiesManager`0" priority="26" />
       <Item value="DataEntitiesManager" priority="28" />
@@ -198,11 +197,20 @@
       <Item value="GetUserId`0" priority="31" />
       <Item value="User`0" priority="31" />
       <Item value="username" priority="31" />
-      <Item value="Guid" priority="28" />
+      <Item value="Guid" priority="57" />
       <Item value="Index.cshtml" priority="27" />
       <Item value="ViewData" priority="95" />
       <Item value="PartialView`0" priority="31" />
       <Item value="HttpGet" priority="31" />
+      <Item value="GetLessonList`0" priority="95" />
+      <Item value="from" priority="31" />
+      <Item value="where" priority="31" />
+      <Item value="l" priority="63" />
+      <Item value="userId" priority="31" />
+      <Item value="select" priority="31" />
+      <Item value="result" priority="31" />
+      <Item value="Lesson`0" priority="85" />
+      <Item value="item" priority="31" />
     </ItemStatistics>
     <ItemStatistics item="HtmlCodeCompletionContext">
       <Item value="div" priority="105" />
@@ -397,6 +405,7 @@
       <Item value="ViewData" priority="26" />
       <Item value="RenderPartial`0" priority="26" />
       <Item value="RenderAction`0" priority="53" />
+      <Item value="DisplayNameFor`2" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DistanceLessons.Models.User">
       <Item value="Login" priority="26" />
@@ -499,11 +508,21 @@
       <Item value="Name" priority="134" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Guid">
-      <Item value="ToString`0" priority="26" />
+      <Item value="ToString`0" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.Mvc.AjaxHelper`1">
       <Item value="RouteCollection" priority="26" />
       <Item value="Pages`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DistanceLessons.Models.Lesson">
+      <Item value="UserId" priority="26" />
+      <Item value="Title" priority="53" />
+      <Item value="Text" priority="53" />
+      <Item value="Module" priority="53" />
+      <Item value="LessonId" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToList`1" priority="26" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <NAntValidationSettings>

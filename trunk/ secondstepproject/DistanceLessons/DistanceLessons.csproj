@@ -463,7 +463,6 @@
     <None Include="Content\img\navigation\Thumbs.db" />
     <None Include="Content\img\passive_active\Thumbs.db" />
     <Content Include="Views\VirtualJournal\Index.cshtml" />
-    <Content Include="Views\Teacher\AllMyLesson.cshtml" />
     <Content Include="Views\Teacher\CreateLesson.cshtml" />
     <Content Include="Views\Teacher\CreateModule.cshtml" />
     <Content Include="Views\Teacher\DetailsLesson.cshtml" />
@@ -525,6 +524,7 @@
     <Content Include="Views\Profile\info.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Profile\_Info_PartialPage.cshtml" />
+    <Content Include="Views\Teacher\AllMyLesson.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">
