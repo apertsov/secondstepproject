@@ -5,10 +5,17 @@
         <li>@Html.ActionLink(Html.Resource("Layout, _HorizontalNavigation_News"), "Index", "News")</li>
         <li>@Html.ActionLink(Html.Resource("Layout, _HorizontalNavigation_Profile"), "Index", "Profile")</li>
         <li>@Html.ActionLink(Html.Resource("Layout, _HorizontalNavigation_Courses"), "Courses", "Home")</li>
-        <li><a>КАТОЛИКА</a>
+        <li><a>Повідомлення</a>
             <ul>
-                <li>@Html.ActionLink("Користувачі", "Users", "Message")</li>
-                <li>@Html.ActionLink("Повідомлення", "Index", "Message")</li>
+                <!--<li>@Html.ActionLink("Користувачі", "Users", "Message")</li>-->
+                <li>
+                    @Html.ActionLink("Повідомлення", "Index", "Message")
+                    <ul>
+                        <li> @Html.ActionLink("Прийняті", "Index", "Message")</li>
+                        <li> @Html.ActionLink("Надіслані", "SendList","Message")</li>
+                    </ul>
+                </li>
+                <li>@Html.ActionLink("Написати повідомлення", "Create", "Message")</li>
             </ul>
         </li>
         <li><a>Курси</a>
