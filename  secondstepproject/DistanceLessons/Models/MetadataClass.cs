@@ -76,6 +76,50 @@ namespace DistanceLessons.Models
         }
     }
 
+    [MetadataType(typeof(UserMetadata))]
+    public partial class User
+    {
+
+        public class UserMetadata
+        {
+            [ScaffoldColumn(false)]
+            public Guid UserId { get; set; }
+
+  
+            [Display(Name = "Логін")]
+            public string Login { get; set; }
+
+            [DisplayName("Електронна скринька")]
+            [DataType("Email",ErrorMessage="Текст не є електронною скринькою")]
+            public string Email { get; set; }
+
+            [DisplayName("Дата реєстрації")]
+            public DateTime CreatedDate { get; set; }
+
+            [DisplayName("Час останнього входження на сторінку")]
+            public string LastLoginDate { get; set; }
+
+            [DisplayName("Чи активувався")]
+             public bool IsActived { get; set; }
+
+            [DisplayName("Чи заблокований")]
+            public bool IsLockedOut { get; set; }
+
+        }
+    }
+
+    [MetadataType(typeof(RoleMetadata))]
+    public partial class Role
+    {
+        public class RoleMetadata
+        {
+            [ScaffoldColumn(false)]
+            public Guid RoleId { get; set; }
+
+            [DisplayName("Роль")]
+            public string Name { get; set; }
+        }
+    }
     [MetadataType(typeof(TestMetadata))]
     public partial class Test
     {
@@ -180,10 +224,7 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid UserId { get; set; }
 
-            [DisplayName("Чи потрібна підписка")]
-            [Required(ErrorMessage = "Задайте доступність до предмету  (0 - загальнодоступний, 1 - лише за підпискою)")]
-            [Range(typeof(int), "0", "1", ErrorMessage = "Значення має бути між 0 та 1")]
-         
+            [DisplayName("Потрібна підписка")]
             public bool IsSubscribing { get; set; }
         }
     }

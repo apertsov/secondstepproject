@@ -35,7 +35,6 @@
         </td>
          <td>
             @Html.ActionLink("Редагувати", "EditLesson", new { id = item.LessonId}) |
-            @Html.ActionLink("Перемістити до іншого модулю", "ChangeModule", new { id = item.LessonId }) |
             @Html.ActionLink("Деталі", "DetailsLesson", new { id = item.LessonId }) |
             @Html.ActionLink("Видалити", "DeleteLesson", new { id = item.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
         </td>

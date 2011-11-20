@@ -38,7 +38,7 @@ namespace DistanceLessons.Controllers
         public ActionResult CreateCours()
         {
             ViewBag.Categories = _db.GetCategoryList();
-            ViewBag.Users = _db.GetUserList();
+            ViewBag.Users = _db.GetGetUserByRole("Teacher");
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace DistanceLessons.Controllers
         public ActionResult EditCours(Guid id)
         {
             ViewBag.Categories = _db.GetCategoryList();
-            ViewBag.Users = _db.GetUserList();
+            ViewBag.Users = _db.GetGetUserByRole("Teacher");
             return View(_db.GetCourse(id));
         }
 

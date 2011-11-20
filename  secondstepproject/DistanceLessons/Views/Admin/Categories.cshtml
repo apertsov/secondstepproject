@@ -7,9 +7,6 @@
 
 <h2>Категорії предметів</h2>
 
-<p>Список категорій(редагування, видалення(у випадку, що категорія не містить предметів ), при натисненні на категорії виводиться список предметів)</p>
-
-
 <p>
     @Html.ActionLink("Створити категорію", "CreateCategory")
 </p>
@@ -29,8 +26,7 @@
         </td>
         <td>
             @Html.ActionLink("Редагувати", "EditCategory", new { id = item.CategoryId }) |
-            @Html.ActionLink("Переглянути", "DetailsCategory", new { id = item.CategoryId }) |
-            @Html.ActionLink("Видалити", "DeleteCategory", new { id = item.CategoryId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
+            @Html.ActionLink("Видалити", "DeleteCategory", new { id = item.CategoryId }, new { onclick = "return confirm('Дійсно бажаєте видалити категорію? З видаленням категорії автоматично будуть видалені всі предмети, які містить категорія, і всі дані, що з ними пов`язані!!!')" })
         </td>
     </tr>
 }

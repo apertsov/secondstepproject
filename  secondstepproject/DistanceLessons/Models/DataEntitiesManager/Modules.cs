@@ -60,33 +60,5 @@ namespace DistanceLessons.Models
             return ModuleTests(moduleId).Count;
         }
 
-        /*
-                public List<Lesson> GetModulesByTeacherId(Guid UserId)
-                {
-                    var Query =
-                        (
-                        from m in GetModuleList()
-                        from c in GetCourseList()
-                        where c.UserId == UserId && m.CourseId == c.CourseId
-                        orderby l.CourseId
-                        select new Lesson
-                        {
-                            LessonId = l.LessonId,
-                            Title = l.Title,
-                            Publication = l.Publication,
-                            CourseId = l.CourseId,
-                            Text = l.Text,
-                            UserId = l.UserId
-                        }
-
-                        ).ToList<Lesson>();
-
-                    List<Lesson> lst = new List<Lesson>();
-                    foreach (var i in Query)
-                        lst.Add(i);
-
-                    return lst;
-
-                }*/
-    }
+     }
 }
