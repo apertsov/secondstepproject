@@ -81,13 +81,20 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult Info(string user)
         {
-            if(_db.ExistInformation(user))
+            if ((String.IsNullOrEmpty(user)) || (!_db.ExistInformation(user)))
             {
-                return PartialView("_Info_PartialPage",_db.UserInformation(user));
+                return new NotFoundViewResult();
             }
             else
             {
-                return new NotFoundViewResult();
+                if (User.Identity.Name == user)
+                {
+                    return RedirectToAction("Index", "Profile");
+                }
+                else
+                {
+                    return View("profile", _db.UserInformation(user));
+                }
             }
         }
     }

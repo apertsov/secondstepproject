@@ -8,7 +8,7 @@
         <li>@Html.ActionLink(_new.Title.ToString(), "Detail", "News", new { id = _new.NewId }, null)
         <div class="prologue">@Html.TextHtml(_new.Text)</div>
             <div class="time-author">
-                -@_new.User.Login, @_new.Publication</div>
+                <span class="no_button">-@Html.ActionLink(_new.User.Login, "Info", "Profile", new { user = _new.User.Login }, null), @_new.Publication</span></div>
         </li>
         }
     }
