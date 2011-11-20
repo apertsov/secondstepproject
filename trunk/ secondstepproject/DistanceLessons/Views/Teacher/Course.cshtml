@@ -2,7 +2,7 @@
     ViewBag.Title = ViewBag.Course;
 }
 
-<h2>@ViewBag.Course</h2>
+<h2>@Html.ActionLink((string)ViewBag.Course, "MyCourses") </h2>
 
 <h4>Лекції, що не належать до модуля</h4>
 
@@ -14,8 +14,9 @@
 {
    <tr>
      <td>@Html.ActionLink(les.Title, "ShowFile", new { filename = les.Text })</td>
-     <td>  @Html.ActionLink("Редагувати", "EditLesson", new { id=les.LessonId, moduleId=les.ModuleId}) |
-            @Html.ActionLink("Деталі", "DetailsLesson", new { id=les.LessonId }) |
+     <td>  @Html.ActionLink("Редагувати", "EditLesson", new { id=les.LessonId}) |
+             @Html.ActionLink("Перемістити до іншого модулю", "ChangeModule", new { id = les.LessonId }) |
+             @Html.ActionLink("Деталі", "DetailsLesson", new { id=les.LessonId }) |
             @Html.ActionLink("Видалити", "DeleteLesson", new { id = les.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
      </td>
     </tr>

@@ -51,7 +51,7 @@
             @Html.LabelFor(model => model.DateBeginTesting)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DateBeginTesting, new { @class = "editor", @id = "datePicker", @readonly = true })
+            @Html.EditorFor(model => model.DateBeginTesting)
             @Html.ValidationMessageFor(model => model.DateBeginTesting)
         </div>
 
@@ -59,7 +59,7 @@
             @Html.LabelFor(model => model.DateEndTesting)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DateEndTesting, new { @class = "editor", @id = "datePicker", @readonly = true })
+            @Html.EditorFor(model => model.DateEndTesting)
            @Html.ValidationMessageFor(model => model.DateEndTesting) 
         </div>
 

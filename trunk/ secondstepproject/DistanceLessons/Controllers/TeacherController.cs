@@ -38,12 +38,7 @@ namespace DistanceLessons.Controllers
             return View(db.UserLessons(User.Identity.Name));
         }
       
-        public ActionResult Modules(Guid courseId)
-        {
-            ViewBag.CourseId = courseId;
-            return View(db.GetModulesByCourseId(courseId));
-        }
-
+       
         public ActionResult AllLessonsInCourse(Guid courseId)
         {
             ViewBag.CourseId = courseId;
@@ -118,7 +113,7 @@ namespace DistanceLessons.Controllers
                   obj.Publication = DateTime.Now;
                   if (ModelState.IsValid)
                       db.AddLesson(obj);
-                  else return View(obj);
+                  else return RedirectToAction("CreateLesson",new {courseId=obj.CourseId, mod_id = obj.ModuleId, path = obj.Text});
                   if (obj.ModuleId==null)
                   return RedirectToAction("Course", new { id = obj.CourseId });
                   else return RedirectToAction("Lesson", new { id = obj.ModuleId });
@@ -142,26 +137,48 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult EditLesson(Guid id)
         {
-            //ViewBag.Modules = db.GetModulesByCourseId(db.GetModulesByID(db.GetLessonByID(id).ModuleId).CourseId);
-            ViewBag.Modules = db.GetModulesByCourseId(db.GetLessonByID(id).CourseId);
-            return View(db.GetLessonByID(id));
+           return View(db.GetLessonByID(id));
         }
 
         [HttpPost]
         public ActionResult EditLesson(Lesson obj)
         {
             Lesson old = db.GetLessonByID(obj.LessonId);
-            UpdateModel(old);
-
             if (ModelState.IsValid)
+            {
+                UpdateModel(old);
                 db.Save();
-            else return View(obj);
+            }
+            else return View(old.LessonId);
      
             if (obj.ModuleId!=null)
             return RedirectToAction("Lesson", new { id = obj.ModuleId });
             else return RedirectToAction("Course", new { id = obj.CourseId });
         }
 
+        [HttpGet]
+        public ActionResult ChangeModule(Guid id)
+        {
+            ViewBag.Modules = db.GetModulesByCourseId(db.GetLessonByID(id).CourseId);
+            return View(db.GetLessonByID(id));
+        }
+
+        [HttpPost]
+        public ActionResult ChangeModule(Lesson obj)
+        {
+            Lesson old = db.GetLessonByID(obj.LessonId);
+
+
+            if (ModelState.IsValid)
+            {
+                UpdateModel(old);
+                db.Save();
+            }
+            else return RedirectToAction("ChangeModule", new { id = old.LessonId });
+
+            return RedirectToAction("Lesson", new { id = obj.ModuleId });
+            
+        }
 
         [HttpGet]
         public ActionResult DeleteModule(Guid id)
@@ -187,8 +204,7 @@ namespace DistanceLessons.Controllers
                 db.Save();
             else return View(obj);
            
-            Guid course_id = db.GetModulesByID(obj.ModuleId).CourseId;
-            return RedirectToAction("Modules", new { courseId = course_id });
+            return RedirectToAction("Course", new { id = obj.CourseId });
         }
 
 
