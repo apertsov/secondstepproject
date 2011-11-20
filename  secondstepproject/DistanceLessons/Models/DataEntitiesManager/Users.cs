@@ -60,6 +60,14 @@ namespace DistanceLessons.Models
             return lst;
       }
 
+	   public List<User> GetGetUserByRole(string role)
+        {
+            Guid roleId= GetRole(role).RoleId;;
+            return (from users in _db.Users
+                    where users.RoleId == roleId
+                    select users).ToList();
+        }
+		
         public MembershipUser CreateUser(string username, string password, string email, bool IsApproved)
         {
             using (dbEntities db = new dbEntities())
