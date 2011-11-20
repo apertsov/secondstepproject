@@ -20,14 +20,10 @@
             @Html.DisplayNameFor(model => model.DateOfSender)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserId_From)
+            Кому
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserId_To)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
+        
+        
         <th></th>
     </tr>
 
@@ -49,7 +45,7 @@
 
     foreach (DistanceLessons.Models.User obj in userList)
     {
-        if (obj.UserId == item.UserId_From) { name = obj.Login; break; }
+        if (obj.UserId == item.UserId_To) { name = obj.Login; break; }
     }
 
          
@@ -57,26 +53,8 @@
             @Html.Label(name)
             
         </td>
-        <td>
-            @{
-             
-    List<DistanceLessons.Models.User> usersList = ViewBag.Users;
-
-    string names = " ";
-
-    foreach (DistanceLessons.Models.User obj in usersList)
-    {
-        if (obj.UserId == item.UserId_To) { names = obj.Login; break; }
-    }
-
-         
-            }
-            @Html.Label(names)
-            
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
+        
+        
         <td>
             @*Html.ActionLink("Edit", "Edit", new { id = item.MessageId }) |*@
             

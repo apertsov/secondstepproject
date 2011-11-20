@@ -179,6 +179,8 @@ namespace DistanceLessons.Models
             return userId;
         }
 
+        
+
         public Guid GetUserRoleId(string username)
         {
             return (from user in _db.Users

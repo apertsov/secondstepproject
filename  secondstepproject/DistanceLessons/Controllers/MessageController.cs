@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using DistanceLessons.Attributes;
 using DistanceLessons.Models;
+using System.Collections.Generic;
 
 namespace DistanceLessons.Controllers
 {
@@ -46,31 +47,48 @@ namespace DistanceLessons.Controllers
 
         
         [HttpGet]
-        public ActionResult Create(Guid to_Id)
+        public ActionResult Create()
         {
-            ViewBag.toId = to_Id;
             Message msg = new Message();
             msg.DateOfSender = System.DateTime.Now;
-            msg.UserId_To = to_Id;
+            
             return View(msg);
 
             
         } 
 
         
-
         [HttpPost]
-        public ActionResult Create(Message obj, Guid to_Id)
+        public ActionResult Create(Message obj)
         {
-            obj.MessageId = Guid.NewGuid();
-            obj.DateOfSender = System.DateTime.Now;
-            obj.UserId_From = _db.GetUser(User.Identity.Name).UserId;
-            obj.UserId_To = to_Id;
+            string logIn = Request.Form["Login"];
+
+            List<User> userList= _db.GetUserList();
+
+            foreach (User userObj in userList)
+            {
+                if (userObj.Login == logIn)
+                {
+                    obj.MessageId = Guid.NewGuid();
+                    obj.DateOfSender = System.DateTime.Now;
+                    obj.UserId_From = _db.GetUser(User.Identity.Name).UserId;
+
+                    obj.UserId_To = _db.GetUserId(logIn);
+                    _db.AddMessage(obj);
+                    _db.Save();
+
+                    return RedirectToAction("Index");
+
+                    break;
+                }
+                
+ 
+                
+            }
+
+            return RedirectToAction("Create"); 
             
-            _db.AddMessage(obj);
-            _db.Save();
             
-            return RedirectToAction("Index");
         }
         
         
