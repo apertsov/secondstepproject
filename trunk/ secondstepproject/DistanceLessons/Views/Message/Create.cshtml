@@ -13,26 +13,31 @@
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>Повідомлення</legend>
-
+        
         <div class="editor-label">
             Кому:
         </div>
         <div class="editor-field">
-            @Html.TextBox("Login")
+                        
+            @Html.TextArea("Login", new { @class = "editor" })
                 
         </div>
+
+        <span style="color:red">
+          
+          @Html.TextHtml((string)TempData["Message"])
+              
+        </span>
 
         <div class="editor-label">
             Введіть текст повідомлення:
         </div>
         <div class="editor-field">
             @Html.TextAreaFor(model => model.Message1, new { @class = "textboxarea" })
-            @Html.ValidationMessageFor(model => model.Message1)
+            
         </div>
 
-                
-        
-        
+    
         <p>
             <input type="submit" value="Відправити" />
         </p>
