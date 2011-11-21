@@ -58,6 +58,7 @@ namespace DistanceLessons.Models
         public void DeleteMessage(Guid id)
         {
             var cat = _db.Messages.SingleOrDefault(c => c.MessageId == id);
+            //cat.Status = 2;
             _db.DeleteObject(cat);
             Save();
         }

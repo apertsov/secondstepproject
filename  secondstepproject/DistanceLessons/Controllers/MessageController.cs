@@ -51,6 +51,21 @@ namespace DistanceLessons.Controllers
         {
             Message msg = new Message();
             msg.DateOfSender = System.DateTime.Now;
+
+            string logIn = Request.Form["Login"];
+
+            if (_db.GetUser(User.Identity.Name).Login == logIn)
+            {
+                ViewBag.ErrorUser = 1;
+            }
+            else 
+            { 
+                ViewBag.ErrorUser = 0;
+            }
+
+           // if(n == 0) ViewBag.ErrorUser = 0;
+           // if(n == 1) ViewBag.ErrorUser = 1;
+           // if(n == 2) ViewBag.ErrorUser = 2;
             
             return View(msg);
 
@@ -69,26 +84,34 @@ namespace DistanceLessons.Controllers
             {
                 if (userObj.Login == logIn)
                 {
-                    obj.MessageId = Guid.NewGuid();
-                    obj.DateOfSender = System.DateTime.Now;
                     obj.UserId_From = _db.GetUser(User.Identity.Name).UserId;
-
                     obj.UserId_To = _db.GetUserId(logIn);
-                    _db.AddMessage(obj);
-                    _db.Save();
 
-                    return RedirectToAction("Index");
+                    if (obj.UserId_From != obj.UserId_To)
+                    {
+                        obj.MessageId = Guid.NewGuid();
+                        obj.DateOfSender = System.DateTime.Now;
+                        obj.Status = 1;
+                        _db.AddMessage(obj);
+                        _db.Save();
 
-                    break;
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        //ViewBag.ErrorUser = 1;
+                        TempData["Message"] = "Ви знаходитесь під цим логіном";
+                        return RedirectToAction("Create");
+                    }
+                    // break;
                 }
-                
- 
-                
+                              
             }
 
+            //ViewBag.ErrorUser = 0;
+            TempData["Message"] = "Користувач з таким логіном відсутній";
             return RedirectToAction("Create"); 
-            
-            
+                        
         }
         
         
@@ -117,8 +140,9 @@ namespace DistanceLessons.Controllers
         }
 
     [HttpGet]
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(Guid id, byte status)
         {
+            
             _db.DeleteMessage(id);
             return RedirectToAction("Index");
         }
