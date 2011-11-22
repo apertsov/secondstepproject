@@ -34,7 +34,7 @@ namespace DistanceLessons.Models
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
             public DateTime DateOfBirth { get; set; }
 
-            [DisplayName("Додаткова інформація:")]
+            [DisplayName("Про себе:")]
             [StringLength(256, ErrorMessage = "Поле додаткової інформації обмежено 256 символами")]
             public string About { get; set; }
 
