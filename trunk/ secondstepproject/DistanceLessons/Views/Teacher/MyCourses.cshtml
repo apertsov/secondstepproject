@@ -8,30 +8,30 @@
 <h2>Мої предмети</h2>
 
 
-<table>
+     <table class="center" cellspacing="10">
+<tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
+    </tr>
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category.Category1)
-        </th>
+        <td>
+           <b> @Html.DisplayNameFor(model => model.Title)</b>
+        </td>
+        
+        <td>
+           <b> @Html.DisplayNameFor(model => model.Category.Category1)</b>
+        </td>
         
 
     </tr>
-
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
 @foreach (var item in Model)
 {
     <tr>
         <td>
           @Html.ActionLink(item.Title, "Course", new { id = item.CourseId })
           
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Category.Category1)
@@ -41,4 +41,7 @@
     </tr>
 }
 
+ <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
 </table>

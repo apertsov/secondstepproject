@@ -8,37 +8,31 @@
 <h2>Навчальні елементи модуля @Html.ActionLink((string)ViewBag.Module, "Course", new { id = (Guid)ViewBag.CourseId })
 </h2>
 
-<p>
-    @Html.ActionLink("Добавити лекцію", "UploadLesson", new { courseId = (Guid)ViewBag.CourseId, moduleId = (Guid)ViewBag.ModuleId })
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        
-        <th>
-            @Html.DisplayNameFor(model => model.Publication)
-        </th>
-
-        <th></th>
+<table class="center" cellspacing="10">
+    
+<tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
     </tr>
-
 @foreach (var item in Model)
 {
     <tr>
         <td>
             @Html.ActionLink(item.Title, "ShowFile", new { filename = item.Text })
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Publication)
-        </td>
-         <td>
-            @Html.ActionLink("Редагувати", "EditLesson", new { id = item.LessonId}) |
+       
+         <td align="right">
+            @Html.ActionLink("Редагувати", "EditLesson", new { id = item.LessonId }) |
             @Html.ActionLink("Деталі", "DetailsLesson", new { id = item.LessonId }) |
             @Html.ActionLink("Видалити", "DeleteLesson", new { id = item.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
         </td>
     </tr>
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
+    </tr>
 }
 
 </table>
+
+<p>
+    @Html.ActionLink("Добавити лекцію", "UploadLesson", new { courseId = (Guid)ViewBag.CourseId, moduleId = (Guid)ViewBag.ModuleId })
+</p>

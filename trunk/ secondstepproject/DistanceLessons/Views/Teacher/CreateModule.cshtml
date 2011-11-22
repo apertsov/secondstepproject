@@ -7,73 +7,101 @@
 
 <h2>Створення модулю</h2>
 
+
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@*Calendar*@
 <link href="@Url.Content("~/Content/Calendar/css/flick/jquery-ui-1.8.16.custom.css")" rel="stylesheet" type="text/css" />
 <script src="@Url.Content("~/Content/Calendar/js/jquery-1.6.2.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Content/Calendar/js/jquery-ui-1.8.16.custom.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Content/Calendar/js/i18n/jquery-ui-i18n.js")" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+      //http://jqueryui.com/demos/datepicker
+      $(document).ready(function () {
+          $('#datePickerBegin').datepicker({ firstDay: 1, dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true, yearRange: "1930:2003", showOtherMonths: true });
+      });
 
-<script type="text/javascript">
-    //http://jqueryui.com/demos/datepicker
-    $(document).ready(function () {
-        $('#datePicker').datepicker({ firstDay: 1, dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true, yearRange: "1930:2003", showOtherMonths: true });
-    });
-
-    $(function () {
-        $.datepicker.setDefaults(
+      $(function () {
+          $.datepicker.setDefaults(
         $.extend($.datepicker.regional["uk"]));
-        $("#datepicker").datepicker();
-    });
+          $("#datepickerBegin").datepicker();
+      });
+
+      $(document).ready(function () {
+          $('#datePickerEnd').datepicker({ firstDay: 1, dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true, yearRange: "1930:2003", showOtherMonths: true });
+      });
+
+      $(function () {
+          $.datepicker.setDefaults(
+        $.extend($.datepicker.regional["uk"]));
+          $("#datepickerEnd").datepicker();
+      });
 </script>
 
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <fieldset>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Title)
-        </div>
-        <div class="editor-field">
-      
-            @Html.EditorFor(model => model.Title)
-            @Html.ValidationMessageFor(model => model.Title)
-        </div>
+   <table class="center" cellspacing="10">
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+    <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.Title)</td>
+        <td class="editor-field"> @Html.TextBoxFor(model => model.Title, new { @class = "editor" }) <font color="red">*</font></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.Title)</td>
+    </tr>
+ 
+       
+        <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.TimeForPassTest)</td>
+        <td class="editor-field"> @Html.TextBoxFor(model => model.TimeForPassTest, new { @class = "editor" }) <font color="red">*</font></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.TimeForPassTest)</td>
+    </tr>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.TimeForPassTest)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.TimeForPassTest)
-            @Html.ValidationMessageFor(model => model.TimeForPassTest)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DateBeginTesting)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DateBeginTesting)
-            @Html.ValidationMessageFor(model => model.DateBeginTesting)
-        </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DateEndTesting)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DateEndTesting)
-           @Html.ValidationMessageFor(model => model.DateEndTesting) 
-        </div>
+    <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.DateBeginTesting)</td>
+        <td class="editor-field"> @Html.TextBoxFor(model => model.DateBeginTesting, new { @class = "editor", @id = "datePickerBegin", @readonly = true }) <font color="red">*</font></td>
+    </tr>
+     <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.DateBeginTesting)</td>
+    </tr>  
+       
+    <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.DateEndTesting)</td>
+        <td class="editor-field"> @Html.TextBoxFor(model => model.DateEndTesting, new { @class = "editor", @id = "datePickerEnd", @readonly = true }) <font color="red">*</font></td>
+    </tr>
+    
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.DateEndTesting)</td>
+    </tr>
+           
+    <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.CountQuestions)</td>
+        <td class="editor-field"> @Html.TextBoxFor(model => model.CountQuestions, new { @class = "editor" })</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.CountQuestions)</td>
+    </tr>
 
-                <div class="editor-label">
-            @Html.LabelFor(model => model.CountQuestions)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CountQuestions)
-            @Html.ValidationMessageFor(model => model.CountQuestions)
-        </div>
-       <p>
-            <input type="submit" value="Створити" />
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+</table>
+        <p>
+            <input type="submit" value="Зберегти зміни" />
         </p>
-    </fieldset>
 }
 
 <div>

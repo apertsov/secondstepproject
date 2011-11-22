@@ -1,52 +1,55 @@
 ﻿@model DistanceLessons.Models.Module
 
 @{
-    ViewBag.Title = "Летульна інформація про модуль";
+    ViewBag.Title = "Детальна інформація про модуль";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Детальна інформація про модуль</h2>
 
 <fieldset>
-    <legend>Модуль</legend>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.TimeForPassTest)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.TimeForPassTest)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DateBeginTesting)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.DateBeginTesting)
-    </div>
-
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.DateEndTesting)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.DateEndTesting)
-    </div>
-        <div class="display-label">
-         @Html.DisplayNameFor(model => model.CountQuestions)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CountQuestions)
-    </div>
 
 
-</fieldset>
+    <table class="center" cellspacing="10">
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+    <tr>
+        <td class="display-label"> @Html.DisplayNameFor(model => model.Title)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.Title) </td>
+    </tr>
+  
+  <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.Cours.Title)</td>
+        <td class="display-field">     @Html.ActionLink(Model.Cours.Title, "Course", new { id = Model.CourseId})</td>
+    </tr>
+
+    <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.TimeForPassTest)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.TimeForPassTest)</td>
+    </tr>
+   
+    <tr>
+        <td class="display-label"> @Html.DisplayNameFor(model => model.DateBeginTesting)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.DateBeginTesting)</td>
+    </tr>
+   
+    <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.DateEndTesting)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.DateEndTesting)</td>
+    </tr>
+   
+    <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.CountQuestions)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.CountQuestions)</td>
+    </tr>
+   
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+</table>
+ 
 <p>
-    @Html.ActionLink("Редагувати", "EditModule", new { id = Model.ModuleId }) |
-    @Html.ActionLink("Повернутись до списку модулів", "Modules", new { courseId = Model.CourseId, owner=true })
+    @Html.ActionLink("Редагувати", "EditModule", new { id = Model.ModuleId }) 
+
 </p>
