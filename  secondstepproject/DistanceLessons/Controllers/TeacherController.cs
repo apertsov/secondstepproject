@@ -66,17 +66,15 @@ namespace DistanceLessons.Controllers
         public ActionResult CreateModule(Guid courseId)
         {
             ViewBag.CourseId = courseId;
-            Module obj = new Module();
-            obj.DateBeginTesting = DateTime.Now;
-            obj.DateEndTesting = DateTime.Now.AddDays(31);
-            return View(obj);
+            return View();
         }
         [HttpPost]
         public ActionResult CreateModule(Module obj)
         {
             obj.ModuleId = Guid.NewGuid();
             Guid courseId = obj.CourseId;
-            db.AddModule(obj);
+            if (ModelState.IsValid) db.AddModule(obj);
+            else RedirectToAction("CreateModule", new { id = courseId });
             return RedirectToAction("Course", new { id = courseId });
         }
 
@@ -113,7 +111,11 @@ namespace DistanceLessons.Controllers
                   obj.Publication = DateTime.Now;
                   if (ModelState.IsValid)
                       db.AddLesson(obj);
-                  else return RedirectToAction("CreateLesson",new {courseId=obj.CourseId, mod_id = obj.ModuleId, path = obj.Text});
+                  else
+                  {
+                      var mod = (obj.ModuleId != null) ? obj.ModuleId : Guid.Empty;
+                      return RedirectToAction("CreateLesson", new { courseId = obj.CourseId, mod_id = mod, path = obj.Text });
+                  }
                   if (obj.ModuleId==null)
                   return RedirectToAction("Course", new { id = obj.CourseId });
                   else return RedirectToAction("Lesson", new { id = obj.ModuleId });
@@ -187,7 +189,7 @@ namespace DistanceLessons.Controllers
             UpdateModel(old);
             if (ModelState.IsValid)
                 db.Save();
-            else return View(obj);
+            else return View(obj.ModuleId);
            
             return RedirectToAction("Course", new { id = obj.CourseId });
         }

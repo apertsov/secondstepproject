@@ -319,7 +319,7 @@ namespace DistanceLessons.Models
             [DisplayName("Дата початку тестування")]
             [Required(ErrorMessage = "Дата початку тестування відсутня")]
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
-            public DateTime DateBeginTesting { get; set; }
+                 public DateTime DateBeginTesting { get; set; }
 
             [ScaffoldColumn(false)]
             [Required(ErrorMessage = "Дата закінчення тестування відсутня")]
@@ -364,5 +364,7 @@ namespace DistanceLessons.Models
             public DateTime PassedTime { get; set; }
         }
     }
+
+
 
 }

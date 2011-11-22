@@ -6,49 +6,43 @@
 
 <h2>Інформація по даній лекції</h2>
 
-<fieldset>
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
+     <table class="center" cellspacing="5">
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
+    </tr>
+    <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.Title)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.Title)</td>
+    </tr>
+   
+    <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.Description)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.Description)</td>
+    </tr>
+      
+       <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.UserId)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.User.Login)</td>
+    </tr>
 
-        <div class="display-label">
-         @Html.DisplayNameFor(model => model.Description)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-        <div class="display-label">
-         @Html.DisplayNameFor(model => model.UserId)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.User.Login)
-    </div>
-@if (Model.ModuleId != null)
+@if ((Model.ModuleId != null) && (Model.ModuleId != Guid.Empty))
 {
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Module.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Module.Title)
-    </div>
-}
+    <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.Module.Title)</td>
+        <td class="display-field">  @Html.ActionLink(Model.Module.Title, "Lesson", new { id = Model.ModuleId })</td>
+    </tr>
+}   
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Cours.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Cours.Title)
-    </div>
+    <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.Cours.Title)</td>
+        <td class="display-field"> @Html.ActionLink(Model.Cours.Title, "Course", new { id = Model.CourseId })</td>
+    </tr>
+    
+    
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
+    </tr>
+</table>
 
+@Html.ActionLink("Редагувати лекцію", "EditLesson", new { id = Model.LessonId })
 
-</fieldset>
-<p>
-@if (( Model.ModuleId != null) && (Model.ModuleId != Guid.Empty))
-{
-    Html.ActionLink("Повернутись до модулю", "Lesson", new { id = Model.ModuleId });
-}
-@Html.ActionLink("Повернутись до предмету", "Course", new { id = Model.CourseId })
-</p>
