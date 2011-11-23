@@ -21,15 +21,15 @@ namespace DistanceLessons.Controllers
             if (_db.ExistInformation(User.Identity.Name)) ViewData["exist"] = true;
 
             if (!Request.IsAjaxRequest())
-                {
-                    if (_db.ExistInformation(User.Identity.Name)) return View(_db.UserInformation(User.Identity.Name));
-                    else return View();
-                }
-                else
-                {
-                    if (_db.ExistInformation(User.Identity.Name)) return PartialView("_Info_PartialPage", _db.UserInformation(User.Identity.Name));
-                    else return PartialView("_CreateInfo_PartialPage");
-                }
+            {
+                if (_db.ExistInformation(User.Identity.Name)) return View(_db.GetUserProfile(_db.GetUserId(User.Identity.Name)));
+                else return View();
+            }
+            else
+            {
+                if (_db.ExistInformation(User.Identity.Name)) return PartialView("_Info_PartialPage", _db.GetUserProfile(_db.GetUserId(User.Identity.Name)));
+                else return PartialView("_CreateInfo_PartialPage");
+            }
         }
 
         [HttpPost]
@@ -78,6 +78,40 @@ namespace DistanceLessons.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [HttpGet]
+        public ActionResult ContactInformation()
+        {
+            if (_db.ExistContact(User.Identity.Name))
+            {
+                return PartialView("_EditContactInfo_PartialPage", _db.GetUserContact(_db.GetUserId(User.Identity.Name)));
+            }
+            else
+            {
+                return PartialView("_CreateContactInfo_PartialPage");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult ContactInformation(Contact obj)
+        {
+            if (_db.ExistContact(User.Identity.Name))
+            {
+                Contact old = _db.GetContact(obj.ContactId);
+                UpdateModel(old);
+                _db.Save();
+            }
+            else
+            {
+                obj.UserId = _db.GetUserId(User.Identity.Name);
+                obj.ContactId = Guid.NewGuid();
+                _db.AddContact(obj);
+                _db.Save();
+            }
+            return RedirectToAction("Index");
+        }
+
+
         [HttpGet]
         public ActionResult Info(string user)
         {
@@ -93,7 +127,7 @@ namespace DistanceLessons.Controllers
                 }
                 else
                 {
-                    return View("profile", _db.UserInformation(user));
+                    return View("profile", _db.GetUserProfile(_db.GetUserId(user)));
                 }
             }
         }

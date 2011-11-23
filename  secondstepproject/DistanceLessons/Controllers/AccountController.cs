@@ -43,11 +43,6 @@ namespace DistanceLessons.Controllers
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
 
-                    if (!_db.ExistInformation(User.Identity.Name))
-                    {
-                        return RedirectToAction("CreateProfile", "Account");
-                    }
-
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
@@ -208,6 +203,7 @@ namespace DistanceLessons.Controllers
         {
             return View();
         }
+
         [AllowAnonymous]
         public ActionResult Welcome()
         {
@@ -227,48 +223,6 @@ namespace DistanceLessons.Controllers
                 ViewBag.active = true;
             return View();
         }
-
-        [HttpGet]
-        public ActionResult CreateProfile()
-        {
-            if (_db.ExistInformation(User.Identity.Name))
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult CreateProfile(Information info, Contact contact)
-        {
-            User user = _db.GetUser(User.Identity.Name);
-            info.UserId = contact.UserId = user.UserId;
-            info.InformationId = Guid.NewGuid();
-            contact.ContactId = Guid.NewGuid();
-            _db.AddContact(contact);
-            _db.AddInformation(info);
-            return RedirectToAction("Index", "Home");
-        }
-
-        [HttpGet]
-        public ActionResult EditProfile()
-        {
-            if (!_db.ExistInformation(User.Identity.Name))
-            {
-                return RedirectToAction("CreateProfile", "Account");
-            }
-            AllUserInformationModel model = new AllUserInformationModel { Information = _db.UserInformation(User.Identity.Name), Contact = _db.UserContacts(User.Identity.Name) };
-            return View(model);
-        }
-
-        [HttpPost]
-        public ActionResult EditProfile(AllUserInformationModel model)
-        {
-            _db.UpdateInformation(model.Information);
-            ViewBag.success = "Дані успішно оновлені";
-            return View(model);
-        }
-
 
         private IEnumerable<string> GetErrorsFromModelState()
         {

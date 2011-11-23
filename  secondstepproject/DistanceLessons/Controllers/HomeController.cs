@@ -18,14 +18,6 @@ namespace DistanceLessons.Controllers
             return View();
         }
 
-        public ActionResult Teachers()
-        {
-            ViewBag.Teachers = _db.QTeachers();
-
-            return View();
-        }
-
-
         public ActionResult Categories()
         {
             ViewBag.Categories = _db.QCategorys();

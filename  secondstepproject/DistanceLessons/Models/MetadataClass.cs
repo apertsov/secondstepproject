@@ -54,19 +54,19 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid ContactId { get; set; }
 
-            [DisplayName("Скайп")]
+            [DisplayName("Скайп:")]
             [StringLength(50, ErrorMessage = "Скайп повинен мати менше 50 символів")]
             public string Skype { get; set; }
 
-            [DisplayName("ICQ")]
+            [DisplayName("ICQ:")]
             [StringLength(20, ErrorMessage = "Номер аськи повинен мати менше 20 символів")]
             public string ICQ_QIP { get; set; }
 
-            [DisplayName("Контактний телефон")]
+            [DisplayName("Контактний телефон:")]
             [StringLength(50, ErrorMessage = "Телефон повинен мати менше 50 символів")]
             public string Telephone { get; set; }
 
-            [DisplayName("Інші контактні дані")]
+            [DisplayName("Інші контактні дані:")]
             [StringLength(128, ErrorMessage = "Інші контактні дані обмежені 128 символами")]
             public string Other { get; set; }
 

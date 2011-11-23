@@ -136,6 +136,7 @@
     <Compile Include="Helpers\ElementToText.cs" />
     <Compile Include="Helpers\Localization.cs" />
     <Compile Include="Helpers\Paging.cs" />
+    <Compile Include="Helpers\Text.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\DistanceLessonsModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -165,6 +166,7 @@
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\FileRepository.cs" />
+    <Compile Include="Models\ProfileModels.cs" />
     <Compile Include="Models\TeacherModels.cs" />
     <Compile Include="Models\TestModels.cs" />
     <Compile Include="Models\UserRepository.cs" />
@@ -326,7 +328,6 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\nivo-slider.css" />
     <Content Include="Global.asax" />
-    <Content Include="Other Classes\Error\NotFoundMvc.csproj" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.6.2.js" />
     <Content Include="Scripts\jquery-1.6.2.min.js" />
@@ -377,9 +378,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Categories.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Teachers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\AdminSetup.cshtml" />
@@ -525,6 +523,8 @@
     <Content Include="Views\Profile\_Info_PartialPage.cshtml" />
     <Content Include="Views\Teacher\AllMyLesson.cshtml" />
     <Content Include="Views\Profile\profile.cshtml" />
+    <Content Include="Views\Profile\_CreateContactInfo_PartialPage.cshtml" />
+    <Content Include="Views\Profile\_EditContactInfo_PartialPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">
