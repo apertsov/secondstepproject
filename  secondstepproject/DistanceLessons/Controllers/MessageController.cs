@@ -113,8 +113,35 @@ namespace DistanceLessons.Controllers
             return RedirectToAction("Create"); 
                         
         }
-        
-        
+
+        [HttpGet]
+        public ActionResult CreateMessage(string user)
+        {
+            Message msg = new Message();
+            msg.DateOfSender = System.DateTime.Now;
+            msg.UserId_To = _db.GetUserId(user);
+            msg.User1 = _db.GetUser(user);
+            return View(msg);
+
+        }
+
+        [HttpPost]
+        public ActionResult CreateMessage(Message obj)
+        {
+
+            obj.UserId_From = _db.GetUser(User.Identity.Name).UserId;
+            //string logIn = Request.Form["Login"];
+
+            //obj.UserId_To = obj.User1.UserId; //_db.GetUserId(logIn);
+            obj.MessageId = Guid.NewGuid();
+            obj.DateOfSender = System.DateTime.Now;
+            //  obj.Status = 1;
+            _db.AddMessage(obj);
+            _db.Save();
+
+            return RedirectToAction("Index");
+
+        }
  
         public ActionResult Edit(int id)
         {
