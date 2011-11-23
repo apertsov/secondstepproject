@@ -178,3 +178,23 @@ C:\Users\Andrey\Desktop\prss\ secondstepproject\DistanceLessons\bin\HtmlSanitiza
 C:\Users\Andrey\Desktop\prss\ secondstepproject\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Andrey\Desktop\prss\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.dll
 C:\Users\Andrey\Desktop\prss\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.pdb
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\DistanceLessons.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\DistanceLessons.pdb
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\AntiXSSLibrary.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\EntityFramework.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\HtmlSanitizationLibrary.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\Microsoft.Web.Optimization.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\System.Web.Helpers.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\System.Web.Mvc.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\System.Web.Providers.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\System.Web.Razor.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\System.Web.WebPages.Deployment.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\System.Web.WebPages.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\System.Web.WebPages.Razor.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\AntiXSSLibrary.xml
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\EntityFramework.xml
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\HtmlSanitizationLibrary.xml
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\obj\Debug\DistanceLessons.dll
+C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\obj\Debug\DistanceLessons.pdb

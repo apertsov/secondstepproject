@@ -18,15 +18,10 @@
 
     <div id="profile">
         <ul class="topnav" class=box_shdw_right>
-            <li>@Ajax.ActionLink("Профіль", "Info", new { user = User.Identity.Name }, new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })
+            <li>@Ajax.ActionLink("Профіль", "Index", new AjaxOptions(){UpdateTargetId = "profile_ajax",InsertionMode = InsertionMode.Replace})
                 <ul style="display: block;">
                     <li>@Ajax.ActionLink("Особиста інформація", "Information", new AjaxOptions() {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
-                    <li><a href="#">submenu</a>
-                        <ul>
-                            <li><a href="#">під-під</a></li>
-                            <li><a href="#">пііід</a></li>
-                        </ul>
-                    </li>
+                    <li>@Ajax.ActionLink("Контактні дані", "ContactInformation", new AjaxOptions() {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
                 </ul>
             </li>
         </ul>
