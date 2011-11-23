@@ -39,7 +39,7 @@ namespace DistanceLessons.Models
             var userInfo = (from user in GetUserList()
                             from info in GetInfoList()
                             where user.Login.ToUpper() == username.ToUpper() && user.UserId == info.UserId
-                            select info).First();
+                            select info).FirstOrDefault();
             return userInfo;
         }
 

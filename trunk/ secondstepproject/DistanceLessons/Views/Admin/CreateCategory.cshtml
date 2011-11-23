@@ -13,23 +13,31 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>Категорія</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Category1)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Category1)
-            @Html.ValidationMessageFor(model => model.Category1)
-        </div>
-
+    <table class="center" cellspacing="10">
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+    <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.Category1)</td>
+        <td class="editor-field"> @Html.TextBoxFor(model => model.Category1, new { @class = "editor" }) <font color="red">*</font></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.Category1)</td>
+    </tr>
+ 
+     <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+</table>
         <p>
             <input type="submit" value="Створити" />
         </p>
-    </fieldset>
+      
+
+
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Categories")
+    @Html.ActionLink("Повернутись до списку категорій", "Categories")
 </div>
