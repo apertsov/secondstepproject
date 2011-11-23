@@ -13,51 +13,50 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <fieldset>
-
-        @Html.HiddenFor(model => model.UserId)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Login)
-        </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Login)
-    </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Role.Name)
-        </div>
-        <div class="editor-field">
-           @{
-    List<DistanceLessons.Models.Role> list = ViewBag.Roles;
-    var items = new SelectList(list, "RoleID", "Name");
+      @Html.HiddenFor(model => model.UserId)
+    
+    <table class="center" cellspacing="10">
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+    <tr>
+        <td class="editor-label">  @Html.DisplayNameFor(model => model.Login)</td>
+        <td class="editor-field"> @Html.DisplayFor(model => model.Login)</td>
+    </tr>
+    
+    <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.Role.Name)</td>
+          @{
+              List<DistanceLessons.Models.Role> list = ViewBag.Roles;
+              var items = new SelectList(list, "RoleID", "Name");
             }
-            @Html.DropDownListFor(model => model.RoleId, @items)
-            @Html.ValidationMessageFor(model => model.Role)
-        </div>
-                
-                <div class="editor-label">
-            @Html.LabelFor(model => model.IsActived)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IsActived)
-            @Html.ValidationMessageFor(model => model.IsActived)
-        </div>
+        <td class="editor-field"> @Html.DropDownListFor(model => model.RoleId, @items, new { @class = "editor" })</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.RoleId)</td>
+    </tr>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IsLockedOut)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IsLockedOut)
-            @Html.ValidationMessageFor(model => model.IsLockedOut)
-        </div>
+    <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.IsActived)</td>
+        <td class="editor-field" align="left"> @Html.CheckBoxFor(model => model.IsActived)</td>
+    </tr>
 
-        
+     <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.IsLockedOut)</td>
+        <td class="editor-field" align="left"> @Html.CheckBoxFor(model => model.IsLockedOut)</td>
+    </tr>
+    
+     <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+</table>
+
         <p>
         <input type="submit" value="Зберегти" />
         </p>
-    </fieldset>
 }
 
 <div>
-    @Html.ActionLink("ПОвернутись без зереження", "Users")
+    @Html.ActionLink("Повернутись без зереження", "Users")
 </div>

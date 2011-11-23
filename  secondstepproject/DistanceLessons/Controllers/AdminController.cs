@@ -131,6 +131,11 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult DetailsUser(Guid id)
         {
+            string login=_db.GetUser(id).Login;
+            ViewBag.IsInfo = _db.ExistInformation(login);
+            ViewBag.Info = _db.UserInformation(login);
+            ViewBag.IsContact = _db.ExistContacts(login);
+            ViewBag.Contacts = _db.UserContacts(login);
             return View(_db.GetUser(id));
         }
 
@@ -145,7 +150,9 @@ namespace DistanceLessons.Controllers
         public ActionResult CreateCategory(Category obj)
         {
             obj.CategoryId = Guid.NewGuid();
-            _db.AddCategory(obj);
+            if (ModelState.IsValid)
+                _db.AddCategory(obj);
+            else View();
             return RedirectToAction("Categories");
         }
 
@@ -160,7 +167,9 @@ namespace DistanceLessons.Controllers
         {
             Category old = _db.GetCategory(obj.CategoryId);
             UpdateModel(old);
+            if (ModelState.IsValid)
             _db.Save();
+            else View(old.CategoryId);
             return RedirectToAction("Categories");
         }
 
@@ -171,15 +180,5 @@ namespace DistanceLessons.Controllers
             return RedirectToAction("Categories");
         }
 
-        [HttpGet]
-        public ActionResult DetailsCategory(Guid id)
-        {
-            return View(_db.GetCategory(id));
-        }
-
-        public ActionResult Message()
-        {
-            return View();
-        }
     }
 }

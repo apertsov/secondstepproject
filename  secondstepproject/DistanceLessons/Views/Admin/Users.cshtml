@@ -8,17 +8,16 @@
 <p>
   @*  @Html.ActionLink("Додати користувача", "CreateUser")*@
 </p>
-<table>
+
+<table class="center" cellspacing="10" >
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Login)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Role.Name)
-        </th>
-        <th>
-      
-        <th></th>
+        <td class="error" colspan="3" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+    
+    <tr>
+       <td><b>  @Html.DisplayNameFor(model => model.Login)</b></td>
+       <td ><b>  @Html.DisplayNameFor(model => model.Role.Name)</b></td>
+       <td ></td>
     </tr>
 
 @foreach (var item in Model)
@@ -27,16 +26,18 @@
         <td>
             @Html.DisplayFor(modelItem => item.Login)
         </td>
-       <td>
+       <td  >
             @Html.DisplayFor(modelItem => item.Role.Name)
-        </td>
+        </td >
              
-        <td>
+        <td align="right">
             @Html.ActionLink("Редагувати", "EditUser", new { id = item.UserId }) |
             @Html.ActionLink("Переглянути", "DetailsUser", new { id = item.UserId }) |
             @Html.ActionLink("Видалити", "DeleteUser", new { id = item.UserId }, new { onclick = "return confirm('Дійсно бажаєте видалити користувача? Все, що повязане з цим користувачем (предмети, тести і т.п.) також буде видалено!!!')" })
         </td>
     </tr>
 }
-
+    <tr>
+        <td class="error" colspan="3" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
 </table>

@@ -7,57 +7,152 @@
 
 <h2>Інформація про користувача</h2>
 
-<fieldset>
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Login)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Login)
-    </div>
+<table class="center" cellspacing="10">
+   <tr>
+   <th colspan="2">Загальна інформація</th>
+   </tr>
+  <tr>
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+    <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.Login)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.Login)</td>
+    </tr>
+    
+      <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.Role.Name)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.Role.Name)</td>
+    </tr>
+    
+      <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.Email)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.Email)</td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Email)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Email)
-    </div>
+    <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.IsActived)</td>
+        <td class="display-field">  @Html.DisplayFor(model => model.IsActived)</td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Role.Name)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Role.Name)
-    </div>
+     <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.IsLockedOut)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.IsLockedOut)</td>
+    </tr>
+    
+      <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.CreatedDate)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.CreatedDate)</td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.CreatedDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CreatedDate)
-    </div>
+      <tr>
+        <td class="display-label">  @Html.DisplayNameFor(model => model.LastLoginDate)</td>
+        <td class="display-field"> @Html.DisplayFor(model => model.LastLoginDate)</td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.LastLoginDate)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.LastLoginDate)
-    </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsActived)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsActived)
-    </div>
+     <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+</table>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.IsLockedOut)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.IsLockedOut)
-    </div>
+@if ((bool)ViewBag.IsInfo)
+{
+    DistanceLessons.Models.Information Info = (DistanceLessons.Models.Information)ViewBag.Info;
 
-</fieldset>
+    <table class="center" cellspacing="10">
+   
+   <tr>
+   <th colspan="2">Особиста інформація</th>
+   </tr>
+  <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr> 
+    <tr>
+        <td class="display-label">  @Html.DisplayName("Прізвище")</td>
+        <td class="display-field"> @Info.LastName</td>
+    </tr>
+    
+      <tr>
+        <td class="display-label">  @Html.DisplayName("Ім'я")</td>
+        <td class="display-field"> @Info.FirstName</td>
+    </tr>
+    
+      <tr>
+        <td class="display-label">  @Html.DisplayName("По-батькові")</td>
+        <td class="display-field"> @Info.MidName</td>
+    </tr>
+@if (Info.DateOfBirth != null)
+{
+    <tr>
+        <td class="display-label"> @Html.DisplayName("Дата народження")</td>
+        <td class="display-field"> @Info.DateOfBirth.Value.Date.ToShortDateString()</td>
+    </tr>
+}
+
+@if (Info.About != null)
+{
+     <tr>
+        <td class="display-label"> @Html.DisplayName("Про себе")</td>
+        <td class="display-field"> @Info.About</td>
+    </tr>
+}
+     <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+</table>
+
+}
+
+@if ((bool)ViewBag.IsContact)
+{
+    DistanceLessons.Models.Contact Contact = (DistanceLessons.Models.Contact)ViewBag.Contacts;
+
+    <table class="center" cellspacing="10">
+    <tr>
+   <th colspan="2">Контактні дані</th>
+   </tr>
+<tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+@if (Contact.Telephone != null)
+{   
+    <tr>
+        <td class="display-label">  @Html.DisplayName("Номер телефону")</td>
+        <td class="display-field"> @Contact.Telephone</td>
+    </tr>
+}
+
+@if (Contact.Skype != null)
+{
+    <tr>
+        <td class="display-label">  @Html.DisplayName("Skype")</td>
+        <td class="display-field"> @Contact.Skype</td>
+    </tr>
+    
+}   
+
+@if (Contact.ICQ_QIP != null)
+{
+    <tr>
+        <td class="display-label">  @Html.DisplayName("ICQ_QIP")</td>
+        <td class="display-field"> @Contact.ICQ_QIP</td>
+    </tr>
+}
+   
+@if (Contact.Other != null)
+{
+     <tr>
+        <td class="display-label"> @Html.DisplayName("Інше")</td>
+        <td class="display-field"> @Contact.Other</td>
+     </tr>
+}
+     <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+</table>
+
+}
 <p>
     @Html.ActionLink("Редагувати", "EditUser", new { id = Model.UserId }) |
     @Html.ActionLink("Повернутись до списку користувачів", "Users")
