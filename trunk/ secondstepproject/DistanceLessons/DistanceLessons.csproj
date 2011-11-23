@@ -525,6 +525,7 @@
     <Content Include="Views\Profile\profile.cshtml" />
     <Content Include="Views\Profile\_CreateContactInfo_PartialPage.cshtml" />
     <Content Include="Views\Profile\_EditContactInfo_PartialPage.cshtml" />
+    <Content Include="Views\Message\CreateMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">

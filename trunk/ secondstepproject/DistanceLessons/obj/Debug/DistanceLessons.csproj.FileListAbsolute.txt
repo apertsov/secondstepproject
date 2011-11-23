@@ -198,3 +198,23 @@ C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\bin\HtmlSanitizatio
 C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\obj\Debug\DistanceLessons.dll
 C:\Users\gAmmi\Desktop\secondstepproject_upd\DistanceLessons\obj\Debug\DistanceLessons.pdb
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\DistanceLessons.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\DistanceLessons.pdb
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\AntiXSSLibrary.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\EntityFramework.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\Microsoft.Web.Infrastructure.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\Microsoft.Web.Optimization.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\System.Web.Helpers.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\System.Web.Mvc.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\System.Web.Providers.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\System.Web.Razor.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\System.Web.WebPages.Deployment.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\System.Web.WebPages.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\System.Web.WebPages.Razor.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\AntiXSSLibrary.xml
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\EntityFramework.xml
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.xml
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.dll
+D:\Programming\C#\FinalProjectSS_23_11_11\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.pdb
