@@ -1,0 +1,41 @@
+﻿@model List<DistanceLessons.Models.CourseResultModel>
+@if (Model != null)
+{
+    <h2> Результати тестування з курсу</h2>
+    <table style="width: 100%;">
+        <tbody align="center">
+            <tr>
+                <td> Логін користувача       </td>
+                <td> Модулі </td>
+                <td> Результати модулів</td>
+                <td> Оцінка за курс </td>
+            </tr>
+            @foreach (var userResult in Model)
+            { 
+                <tr>
+                    <td>
+                        @userResult.Login
+                    </td>
+                    <td>
+                        @foreach (var moduleName in userResult.PassedModules)
+                        {
+                            @Ajax.ActionLink(moduleName.Value, (string)ViewBag.controller, new { id = moduleName.Key, type = 3 }, new AjaxOptions() { UpdateTargetId = "educationelements", InsertionMode = InsertionMode.Replace })   
+                            <br />         
+                        }
+                    </td>
+                    <td>
+                        @foreach (var moduleResult in userResult.ResultModules)
+                        {
+                            @moduleResult.Value.ToString()
+                            <br />
+                        }
+                    </td>
+                    <td>
+                        @userResult.CourseResult
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

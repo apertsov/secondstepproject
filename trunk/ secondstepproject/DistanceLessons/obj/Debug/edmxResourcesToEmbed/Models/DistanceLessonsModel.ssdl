@@ -205,6 +205,7 @@
     <Property Name="DateEndTesting" Type="datetime" Nullable="false" />
     <Property Name="CourseId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="CountQuestions" Type="int" />
+    <Property Name="MaxPoints" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="News">
     <Key>
@@ -264,7 +265,7 @@
       <PropertyRef Name="UserModuleId" />
     </Key>
     <Property Name="UserModuleId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Passed" Type="float" />
+    <Property Name="Passed" Type="real" />
     <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="ModuleId" Type="uniqueidentifier" />
     <Property Name="StartTime" Type="datetime" Nullable="false" />

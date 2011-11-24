@@ -18,18 +18,19 @@ namespace DistanceLessons.Controllers
             return View();
         }
 
+        public ActionResult Courses()
+        {
+            return View(_db.GetValidCourses());
+        }
+
+/*
         public ActionResult Categories()
         {
             ViewBag.Categories = _db.QCategorys();
 
             return View();
         }
-
-        public ActionResult Courses()
-        {
-            return View(_db.GetValidCourses());
-        }
-
+*/
         private void ReplaceCookie(string cookie, string culture)
         {
             Response.Cookies[cookie].Value = null;
