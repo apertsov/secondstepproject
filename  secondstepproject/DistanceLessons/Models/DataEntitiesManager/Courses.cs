@@ -102,9 +102,40 @@ namespace DistanceLessons.Models
         public List<Cours> GetCoursesByTeacherId(Guid UserId)
         {
 
-            return (from courses in _db.Courses
+            return (from courses in GetCourseList()
                     where courses.UserId == UserId
                     select courses).ToList();
         }
+
+
+        public Dictionary<Guid, string> CoursesDictionaryFromCategory(Guid categoryId)
+        {            
+            var categoryCourses = (from courses in GetCourseList()
+                           where courses.CategoryId == categoryId
+                           select new { courseId = courses.CourseId, title = courses.Title });
+            Dictionary<Guid, string> coursesFromCategory = new Dictionary<Guid, string>();
+            foreach (var course in categoryCourses)
+                coursesFromCategory.Add(course.courseId,course.title);
+            return coursesFromCategory;
+        }
+
+        public Dictionary<Guid, string> CourseDictionary(Guid courseId)
+        {
+            var course = (from courses in GetCourseList()
+                                   where courses.CourseId == courseId
+                                   select new { courseId = courses.CourseId, title = courses.Title }).FirstOrDefault();
+            if (course == null) return null;
+            Dictionary<Guid,string> courseDictionary=new Dictionary<Guid,string>();
+            courseDictionary.Add(course.courseId,course.title);
+            return courseDictionary;
+        }
+
+        public Guid CategoryIdFromCourseId(Guid courseId)
+        {
+            return (from courses in GetCourseList()
+                    where courses.CourseId == courseId
+                    select courses.CategoryId).FirstOrDefault();
+        }
+
     }
 }

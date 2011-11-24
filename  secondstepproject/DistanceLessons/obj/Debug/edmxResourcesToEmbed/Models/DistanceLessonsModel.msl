@@ -94,6 +94,7 @@
           <ScalarProperty Name="DateEndTesting" ColumnName="DateEndTesting" />
           <ScalarProperty Name="CourseId" ColumnName="CourseId" />
           <ScalarProperty Name="CountQuestions" ColumnName="CountQuestions" />
+          <ScalarProperty Name="MaxPoints" ColumnName="MaxPoints" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

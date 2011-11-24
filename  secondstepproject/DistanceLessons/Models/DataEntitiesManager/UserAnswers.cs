@@ -87,7 +87,7 @@ namespace DistanceLessons.Models
                 indexAnswer = indexOneTest;
             }
 
-            return (float)Math.Round((double)(100 * countTrueAnswers / countQuestions),(int) 4);
+            return 100 * countTrueAnswers / countQuestions;
         }
 
         public bool IsTrueAnswer(List<UserAnswer> userAnswers, Guid testId)

@@ -221,6 +221,7 @@
     <Property Name="DateEndTesting" Type="DateTime" Nullable="false" />
     <Property Name="CourseId" Type="Guid" Nullable="false" />
     <Property Name="CountQuestions" Type="Int32" />
+    <Property Name="MaxPoints" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Cours" Relationship="DistanceLessons.Models.FK_Modules_Courses" FromRole="Modules" ToRole="Courses" />
     <NavigationProperty Name="Lessons" Relationship="DistanceLessons.Models.FK_Lessons_Modules" FromRole="Modules" ToRole="Lessons" />
     <NavigationProperty Name="ShowTests" Relationship="DistanceLessons.Models.FK_ShowTests_Modules" FromRole="Modules" ToRole="ShowTests" />
@@ -300,7 +301,7 @@
       <PropertyRef Name="UserModuleId" />
     </Key>
     <Property Name="UserModuleId" Type="Guid" Nullable="false" />
-    <Property Name="Passed" Type="Double" />
+    <Property Name="Passed" Type="Single" />
     <Property Name="UserId" Type="Guid" Nullable="false" />
     <Property Name="ModuleId" Type="Guid" />
     <Property Name="StartTime" Type="DateTime" Nullable="false" />

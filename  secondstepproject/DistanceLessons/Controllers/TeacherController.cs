@@ -11,7 +11,7 @@ namespace DistanceLessons.Controllers
     [Authorize(Roles = "Admin, Teacher")]
     public class TeacherController : Controller
     {
-        DataEntitiesManager db;
+        private DataEntitiesManager db;
 
         public TeacherController()
             : base()
@@ -21,7 +21,7 @@ namespace DistanceLessons.Controllers
 
         public ActionResult Index()
         {
-            return View(db.UserLessons(User.Identity.Name)); 
+            return View(); 
         }
 
 
@@ -235,6 +235,7 @@ namespace DistanceLessons.Controllers
             }
             return View();
         }
+       
     }
 }
 

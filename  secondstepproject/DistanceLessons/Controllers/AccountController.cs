@@ -43,6 +43,7 @@ namespace DistanceLessons.Controllers
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
 
+
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
@@ -203,7 +204,6 @@ namespace DistanceLessons.Controllers
         {
             return View();
         }
-
         [AllowAnonymous]
         public ActionResult Welcome()
         {
@@ -223,6 +223,7 @@ namespace DistanceLessons.Controllers
                 ViewBag.active = true;
             return View();
         }
+    
 
         private IEnumerable<string> GetErrorsFromModelState()
         {

@@ -1,0 +1,8 @@
+﻿@model DistanceLessons.Models.EducationElementsModel
+
+@{ Html.RenderAction("EducationElements", new { id = Model.pickedElement, redirectController=Model.ControllerName,type = Model.type });}
+
+@if (Model.pickedElement != null)
+{
+  Html.RenderAction("UserResultsTable", new { id = (Guid)Model.pickedElement, redirectController=Model.ControllerName,type = Model.type });
+}

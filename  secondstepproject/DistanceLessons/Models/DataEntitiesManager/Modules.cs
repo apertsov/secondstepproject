@@ -60,5 +60,56 @@ namespace DistanceLessons.Models
             return ModuleTests(moduleId).Count;
         }
 
-     }
+        public Dictionary<Guid, string> ModulesDictionaryFromCourse(Guid courseId)
+        {
+            var _modules = (from modules in GetModuleList()
+                                   where modules.CourseId == courseId
+                                   select new { moduleId = modules.ModuleId, title = modules.Title });
+            Dictionary<Guid, string> modulesFromCourse = new Dictionary<Guid, string>();
+            foreach (var module in _modules)
+                modulesFromCourse.Add(module.moduleId, module.title);
+            return modulesFromCourse;
+        }
+
+        public Guid CategoryIdFromModuleId(Guid moduleId)
+        {
+            return CategoryIdFromCourseId(CourseIdFromModuleId(moduleId));
+        }
+
+        public Guid CourseIdFromModuleId(Guid moduleId)
+        {
+            return (from modules in GetModuleList()
+                    where modules.ModuleId == moduleId
+                    select modules.CourseId).FirstOrDefault();
+        }
+
+        /*
+                public List<Lesson> GetModulesByTeacherId(Guid UserId)
+                {
+                    var Query =
+                        (
+                        from m in GetModuleList()
+                        from c in GetCourseList()
+                        where c.UserId == UserId && m.CourseId == c.CourseId
+                        orderby l.CourseId
+                        select new Lesson
+                        {
+                            LessonId = l.LessonId,
+                            Title = l.Title,
+                            Publication = l.Publication,
+                            CourseId = l.CourseId,
+                            Text = l.Text,
+                            UserId = l.UserId
+                        }
+
+                        ).ToList<Lesson>();
+
+                    List<Lesson> lst = new List<Lesson>();
+                    foreach (var i in Query)
+                        lst.Add(i);
+
+                    return lst;
+
+                }*/
+    }
 }

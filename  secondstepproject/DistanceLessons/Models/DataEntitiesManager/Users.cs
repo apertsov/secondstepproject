@@ -18,6 +18,13 @@ namespace DistanceLessons.Models
             return _db.Users.SingleOrDefault(c => c.UserId == id);
         }
 
+        public string GetUsername(Guid userId)
+        {
+
+            return (from user in GetUserList()
+                    where user.UserId == userId
+                    select user.Login).FirstOrDefault(); 
+        }
 
         public void DeleteUser(Guid id)
         {
