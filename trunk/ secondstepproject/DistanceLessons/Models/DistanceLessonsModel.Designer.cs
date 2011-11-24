@@ -2288,7 +2288,8 @@ namespace DistanceLessons.Models
         /// <param name="dateBeginTesting">Initial value of the DateBeginTesting property.</param>
         /// <param name="dateEndTesting">Initial value of the DateEndTesting property.</param>
         /// <param name="courseId">Initial value of the CourseId property.</param>
-        public static Module CreateModule(global::System.Guid moduleId, global::System.String title, global::System.Int32 timeForPassTest, global::System.DateTime dateBeginTesting, global::System.DateTime dateEndTesting, global::System.Guid courseId)
+        /// <param name="maxPoints">Initial value of the MaxPoints property.</param>
+        public static Module CreateModule(global::System.Guid moduleId, global::System.String title, global::System.Int32 timeForPassTest, global::System.DateTime dateBeginTesting, global::System.DateTime dateEndTesting, global::System.Guid courseId, global::System.Int32 maxPoints)
         {
             Module module = new Module();
             module.ModuleId = moduleId;
@@ -2297,6 +2298,7 @@ namespace DistanceLessons.Models
             module.DateBeginTesting = dateBeginTesting;
             module.DateEndTesting = dateEndTesting;
             module.CourseId = courseId;
+            module.MaxPoints = maxPoints;
             return module;
         }
 
@@ -2473,6 +2475,30 @@ namespace DistanceLessons.Models
         private Nullable<global::System.Int32> _CountQuestions;
         partial void OnCountQuestionsChanging(Nullable<global::System.Int32> value);
         partial void OnCountQuestionsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MaxPoints
+        {
+            get
+            {
+                return _MaxPoints;
+            }
+            set
+            {
+                OnMaxPointsChanging(value);
+                ReportPropertyChanging("MaxPoints");
+                _MaxPoints = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MaxPoints");
+                OnMaxPointsChanged();
+            }
+        }
+        private global::System.Int32 _MaxPoints;
+        partial void OnMaxPointsChanging(global::System.Int32 value);
+        partial void OnMaxPointsChanged();
 
         #endregion
     
@@ -4627,7 +4653,7 @@ namespace DistanceLessons.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Double> Passed
+        public Nullable<global::System.Single> Passed
         {
             get
             {
@@ -4642,8 +4668,8 @@ namespace DistanceLessons.Models
                 OnPassedChanged();
             }
         }
-        private Nullable<global::System.Double> _Passed;
-        partial void OnPassedChanging(Nullable<global::System.Double> value);
+        private Nullable<global::System.Single> _Passed;
+        partial void OnPassedChanging(Nullable<global::System.Single> value);
         partial void OnPassedChanged();
     
         /// <summary>
