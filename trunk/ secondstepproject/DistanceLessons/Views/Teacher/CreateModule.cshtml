@@ -85,6 +85,15 @@
         <td></td>
         <td class="error">@Html.ValidationMessageFor(model => model.DateEndTesting)</td>
     </tr>
+ 
+     <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.MaxPoints)</td>
+        <td class="editor-field"> @Html.TextBoxFor(model => model.MaxPoints, new { @class = "editor" }) <font color="red">*</font></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.MaxPoints)</td>
+    </tr>
            
     <tr>
         <td class="editor-label">  @Html.LabelFor(model => model.CountQuestions)</td>

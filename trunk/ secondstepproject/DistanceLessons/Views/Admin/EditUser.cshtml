@@ -26,11 +26,15 @@
     
     <tr>
         <td class="editor-label">  @Html.LabelFor(model => model.Role.Name)</td>
-          @{
-              List<DistanceLessons.Models.Role> list = ViewBag.Roles;
-              var items = new SelectList(list, "RoleID", "Name");
-            }
+    @if ((bool)ViewBag.IsMe)
+    {   <td class="editor-field"> @Html.DisplayFor(model => model.Role.Name)</td>}
+    else
+         {
+    List<DistanceLessons.Models.Role> list = ViewBag.Roles;
+    var items = new SelectList(list, "RoleID", "Name");
+            
         <td class="editor-field"> @Html.DropDownListFor(model => model.RoleId, @items, new { @class = "editor" })</td>
+        }
     </tr>
     <tr>
         <td></td>
@@ -58,5 +62,5 @@
 }
 
 <div>
-    @Html.ActionLink("Повернутись без зереження", "Users")
+    @Html.ActionLink("Повернутись без збереження", "Users")
 </div>

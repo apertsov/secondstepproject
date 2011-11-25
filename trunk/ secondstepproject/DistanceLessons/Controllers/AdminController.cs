@@ -107,6 +107,7 @@ namespace DistanceLessons.Controllers
         public ActionResult EditUser(Guid id)
         {
             ViewBag.Roles = _db.GetRoleList();
+            ViewBag.IsMe = (_db.GetUser(User.Identity.Name).UserId==id)?true:false;
             return View(_db.GetUser(id));
         }
 

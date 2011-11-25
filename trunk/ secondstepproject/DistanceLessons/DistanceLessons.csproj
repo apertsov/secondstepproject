@@ -536,6 +536,8 @@
     <Content Include="Views\Profile\_EditContactInfo_PartialPage.cshtml" />
     <Content Include="Views\Message\CreateMessage.cshtml" />
     <Content Include="Views\Result\DetailModuleResultsPartial.cshtml" />
+    <Content Include="Views\Teacher\AllLessonsInCourse.cshtml" />
+    <Content Include="Views\Teacher\Course.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">

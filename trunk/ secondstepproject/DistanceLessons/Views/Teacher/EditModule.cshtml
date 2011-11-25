@@ -81,6 +81,16 @@
         <td class="editor-label">  @Html.LabelFor(model => model.DateEndTesting)</td>
         <td class="editor-field"> @Html.TextBoxFor(model => model.DateEndTesting, new { @class = "editor", @id = "datePickerEnd", @readonly = true,  @Value = Model.DateEndTesting.ToString("yyyy-MM-dd") }) <font color="red">*</font></td>
     </tr>
+    
+    <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.MaxPoints)</td>
+        <td class="editor-field"> @Html.TextBoxFor(model => model.MaxPoints, new { @class = "editor" }) <font color="red">*</font></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.MaxPoints)</td>
+    </tr>
+
            
     <tr>
         <td class="editor-label">  @Html.LabelFor(model => model.CountQuestions)</td>
