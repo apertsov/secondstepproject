@@ -538,6 +538,10 @@
     <Content Include="Views\Result\DetailModuleResultsPartial.cshtml" />
     <Content Include="Views\Teacher\AllLessonsInCourse.cshtml" />
     <Content Include="Views\Teacher\Course.cshtml" />
+    <Content Include="Views\Message\Edit.cshtml" />
+    <Content Include="Views\Profile\profile.cshtml">
+      <SubType>Code</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">

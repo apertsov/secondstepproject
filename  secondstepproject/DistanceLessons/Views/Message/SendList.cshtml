@@ -56,7 +56,7 @@
         
         
         <td>
-            @*Html.ActionLink("Edit", "Edit", new { id = item.MessageId }) |*@
+            @Html.ActionLink("Прочитати", "Edit", "Message", new { id =item.MessageId},null)
             
             @Html.ActionLink("Delete", "Delete", new { id = item.MessageId, status=2 })
         </td>
