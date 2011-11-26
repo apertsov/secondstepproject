@@ -22,12 +22,11 @@
 
 @foreach (var item in Model)
 {
-    
-    if((item.Status==2)||(item.Status==3))
+
+    if (item.Status != 3)
     { 
-       continue;
-    } 
-    <tr align="center" valign="middle" style="@((item.Status == 1) ? "background-color:#f9e9e6" : "background-color:#f4f5fa"
+        
+    <tr align="center" valign="middle" style="@((item.Status == 0) ? "background-color:#f4f5fa" : "background-color:#f9e9e6"
                                                  )"> 
     
     
@@ -36,14 +35,14 @@
         <td>
         @{
              
-    List<DistanceLessons.Models.User> userList = ViewBag.Users;
+        List<DistanceLessons.Models.User> userList = ViewBag.Users;
 
-    string name = " ";
+        string name = " ";
 
-    foreach (DistanceLessons.Models.User obj in userList)
-    {
-        if (obj.UserId == item.UserId_From) { name = obj.Login; break; }
-    }
+        foreach (DistanceLessons.Models.User obj in userList)
+        {
+            if (obj.UserId == item.UserId_From) { name = obj.Login; break; }
+        }
 
          
             }
@@ -57,8 +56,9 @@
         </td>
         <td>
             @Html.ActionLink("Видалити", "Delete", new { id = item.MessageId, status = 3 })
-            @Html.ActionLink("Прочитати", "Edit", "Message", new { id =item.MessageId},null)
+            @Html.ActionLink("Прочитати", "Edit", "Message", new { id = item.MessageId }, null)
         </td>
     </tr>
+    }
 }
 </table>
