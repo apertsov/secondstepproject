@@ -62,5 +62,12 @@ namespace DistanceLessons.Models
             _db.DeleteObject(cat);
             Save();
         }
+
+        public void UpdateMessageStatus(Message message)
+        {
+            message.Status = 0;
+
+            Save();
+        }
     }
 }
