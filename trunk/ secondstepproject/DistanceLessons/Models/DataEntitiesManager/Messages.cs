@@ -55,6 +55,33 @@ namespace DistanceLessons.Models
             Save();
         }
 
+        public void DeleteMessageOwner(Message message)
+        {
+            if (message.Status != 3)
+            {
+                message.Status = 2;
+                Save();
+            }
+            else
+            {
+                DeleteMessage(message.MessageId);
+            }
+            
+        }
+
+        public void DeleteMessageRecipient(Message message)
+        {
+            if (message.Status != 2)
+            {
+                message.Status = 3;
+                Save();
+            }
+            else
+            {
+                DeleteMessage(message.MessageId);
+            }
+        }
+
         public void DeleteMessage(Guid id)
         {
             var cat = _db.Messages.SingleOrDefault(c => c.MessageId == id);

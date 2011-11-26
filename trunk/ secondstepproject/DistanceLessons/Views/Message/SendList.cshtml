@@ -29,6 +29,8 @@
 
 @foreach (var item in Model)
 {
+    if (item.Status != 2)
+    {
     <tr align=center valign=middle>
         <td>
             @Html.DisplayFor(modelItem => item.Message1)
@@ -39,14 +41,14 @@
         <td>
             @{
              
-    List<DistanceLessons.Models.User> userList = ViewBag.Users;
+        List<DistanceLessons.Models.User> userList = ViewBag.Users;
 
-    string name = " ";
+        string name = " ";
 
-    foreach (DistanceLessons.Models.User obj in userList)
-    {
-        if (obj.UserId == item.UserId_To) { name = obj.Login; break; }
-    }
+        foreach (DistanceLessons.Models.User obj in userList)
+        {
+            if (obj.UserId == item.UserId_To) { name = obj.Login; break; }
+        }
 
          
             }
@@ -56,11 +58,12 @@
         
         
         <td>
-            @Html.ActionLink("Прочитати", "Edit", "Message", new { id =item.MessageId},null)
+            @Html.ActionLink("Прочитати", "Edit", "Message", new { id = item.MessageId }, null)
             
-            @Html.ActionLink("Delete", "Delete", new { id = item.MessageId, status=2 })
+            @Html.ActionLink("Видалити", "Delete", new { id = item.MessageId })
         </td>
     </tr>
+    }
 }
 
 </table>

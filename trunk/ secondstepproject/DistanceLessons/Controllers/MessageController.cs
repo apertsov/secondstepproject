@@ -127,7 +127,7 @@ namespace DistanceLessons.Controllers
             //obj.UserId_To = obj.User1.UserId; //_db.GetUserId(logIn);
             obj.MessageId = Guid.NewGuid();
             obj.DateOfSender = System.DateTime.Now;
-            //  obj.Status = 1;
+            obj.Status = 1;
             _db.AddMessage(obj);
             _db.Save();
 
@@ -217,10 +217,27 @@ namespace DistanceLessons.Controllers
         }
 
     [HttpGet]
-        public ActionResult Delete(Guid id, byte status)
+        public ActionResult Delete(Guid id)
         {
+            List<Message> msgList = _db.GetMessageList();
+
+            foreach (Message msg in msgList)
+            {
+                if (msg.MessageId == id)
+                {
+                    msg.User = _db.GetUser(msg.UserId_From);
+
+                    if (msg.User.Login == User.Identity.Name)
+                    {
+                        _db.DeleteMessageOwner(msg);
+                    }
+                    else
+                    {
+                        _db.DeleteMessageRecipient(msg);
+                    }
+                }
+            }
             
-            _db.DeleteMessage(id);
             return RedirectToAction("Index");
         }
 
