@@ -49,7 +49,17 @@
             @Html.Label(name)
          </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Message1)
+            @{
+                  if(item.Message1.Length>25)
+                  {
+                      @Html.Display((item.Message1).Substring(0,25));
+                  }  
+                  else
+                  {
+                      @Html.DisplayFor(modelItem => item.Message1);
+                  }    
+             }
+            
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateOfSender)
