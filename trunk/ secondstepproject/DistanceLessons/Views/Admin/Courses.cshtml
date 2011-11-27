@@ -9,46 +9,24 @@
 <p>
     @Html.ActionLink("Створити предмет", "CreateCours")
 </p>
-<table >
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        
-        <th>
-            @Html.DisplayNameFor(model => model.Category.Category1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User.Login)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsSubscribing)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model)
-{
-    <tr>
-        <td>
-         @*Html.ActionLink("model => model.Title", "Lesson", new { id = item.CourseId });*@
-      @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category.Category1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.Login)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsSubscribing)
-        </td>
-        <td>
-            @Html.ActionLink("Редагувати", "EditCours", new { id = item.CourseId }) |
-           @Html.ActionLink("Деталі", "DetailsCours", new { id = item.CourseId }) |
-            @Html.ActionLink("Видалити", "DeleteCours", new { id = item.CourseId }, new { onclick = "return confirm('Дійсно бажаєте видалити?Всі модулі, лекції, тести і все, що пов`язане з цим предметом буде видалено')" })
-        </td>
-    </tr>
-}
+<br/>
 
-</table>
+@{
+    var grid = new WebGrid(Model, rowsPerPage: 10, defaultSort: "Title");
+   @grid.GetHtml(
+        tableStyle: "center",
+        alternatingRowStyle: "alt",
+        columns: grid.Columns(
+            grid.Column("Title", "Назва предмету", format: @<b>@item.Title</b>),
+            grid.Column("Category.Category1", "Категорія", format: @<i>@item.Category.Category1</i>),
+            grid.Column("User.Login", "Викладач", format:@<text><i>@item.User.Login</i> </text>),
+            grid.Column(format: (item) =>
+                new HtmlString(
+                    Html.ActionLink("Редагувати", "EditCours", new { id = item.CourseId }).ToString() + "|"
+                  + Html.ActionLink("Переглянути", "DetailsCours", new { id = item.CourseId}).ToString()+ "|"
+                   + Html.ActionLink("Видалити", "DeleteCours", new { id = item.CourseId}, new { onclick = "return confirm('Дійсно бажаєте видалити предмет? З видаленням предмету автоматично будуть видалені всі модулі, лекції, тести і результати тестів!!!')" }).ToString()           )
+                              )));
+                          }
+
+

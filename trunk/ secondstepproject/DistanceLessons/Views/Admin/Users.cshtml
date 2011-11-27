@@ -9,6 +9,25 @@
   @*  @Html.ActionLink("Додати користувача", "CreateUser")*@
 </p>
 
+
+
+@{
+    var grid = new WebGrid(Model, rowsPerPage: 10, defaultSort: "Login");
+   @grid.GetHtml(
+        tableStyle: "center",
+        columns: grid.Columns(
+            grid.Column("Login", "Логін", format: @<text>@item.Login</text>),
+            grid.Column("Role.Name", "Роль", format:@<i>@item.Role.Name</i>),
+            grid.Column(format: (item) =>
+                new HtmlString(
+                    Html.ActionLink("Редагувати", "EditUser", new { id = item.UserId }).ToString() + " | "
+                  + Html.ActionLink("Переглянути", "DetailsUser", new { id = item.UserId}).ToString()
+                              )
+                              )));
+            
+ }
+
+@*
 <table class="center" cellspacing="10" >
     <tr>
         <td class="error" colspan="3" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
@@ -34,10 +53,11 @@
             @Html.ActionLink("Редагувати", "EditUser", new { id = item.UserId }) |
             @Html.ActionLink("Переглянути", "DetailsUser", new { id = item.UserId }) |
          @*   @Html.ActionLink("Видалити", "DeleteUser", new { id = item.UserId }, new { onclick = "return confirm('Дійсно бажаєте видалити користувача? Все, що повязане з цим користувачем (предмети, тести і т.п.) також буде видалено!!!')" })*@
-        </td>
+@*        </td>
     </tr>
 }
     <tr>
         <td class="error" colspan="3" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
     </tr>
 </table>
+*@
