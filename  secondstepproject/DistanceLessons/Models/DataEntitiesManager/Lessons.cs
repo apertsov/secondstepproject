@@ -60,6 +60,13 @@ namespace DistanceLessons.Models
                     select lessons).ToList();
         }
 
+        public Lesson Lesson(Guid lessonId)
+        {
+            return (from lesson in GetLessonList()
+                    where lesson.LessonId == lessonId
+                    select lesson).FirstOrDefault();
+        }
+
         public bool IsLesson(Guid id)
         {
             return (from lesson in _db.Lessons

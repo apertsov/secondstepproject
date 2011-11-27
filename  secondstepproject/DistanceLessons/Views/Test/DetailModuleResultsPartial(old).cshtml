@@ -1,0 +1,51 @@
+﻿@model DistanceLessons.Models.DetailModuleTestResultsModel
+
+<h2>Результат тестування з модуля @Model.ModuleName</h2>
+
+
+@if (Model.TestResults.Count== 0)
+{
+  <h2> ніхто не проходив тестування з цього модуля </h2>
+}
+else
+{
+
+<table style="border: 2px solid black;
+              width:100%;" >
+    <tbody align="center">
+    <tr> 
+       <td style="width:25%;"> Логін користувача</td>
+       <td> Бали користувача</td> 
+       <td> Початок тестування</td> 
+   @*    <td> Деталі тестування</td> *@
+    </tr>
+        @foreach (DistanceLessons.Models.TestResultModel userModuleResult in Model.TestResults)
+        {
+           <tr>
+              <td align="justify" style="padding: 10px;"> 
+                 @userModuleResult.Login                        
+              </td>
+              <td>
+                 @if (userModuleResult.Result == null)
+                 {
+                     @Html.TextHtml("Здає тест")
+                 }
+                 else 
+                 { 
+                     @Html.TextHtml(userModuleResult.Result.ToString())
+                 }
+              </td>
+              <td>
+                  @userModuleResult.StartTesting
+              </td>
+              <td>
+                  @Html.ActionLink("Деталі тестування", "DetailsModuleUserAnswers", "Test", new {id=Model.ModuleId, username=userModuleResult.Login }, null)
+              </td>
+           </tr>
+        }
+    </tbody>
+</table>
+}
+ @{    
+     if (Session["LessonId"] != null) { Html.ActionLink("Повернутись у тестувальну", "Index", "Test", new { id = Session["LessonId"] }, null); }
+     }

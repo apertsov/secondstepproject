@@ -17,12 +17,6 @@ namespace DistanceLessons.Models
         public bool IsRightAnswer { get; set; }
     }
 
-    public class DetailModuleTestResultsModel
-    {
-        public string ModuleName { get; set; }
-        public Guid ModuleId { get; set; }
-        public List<TestResultModel> TestResults { get; set; }
-    }
 
     public class TestResultModel
     {
@@ -31,11 +25,21 @@ namespace DistanceLessons.Models
         public DateTime StartTesting { get; set; }
     }
 
-    public class CourseResultModel
+    public class TestAndAnswersModel
     {
-        public string Login { get; set; }
-        public Dictionary<Guid, string> PassedModules { get; set; }
-        public Dictionary<Guid, int> ResultModules { get; set; }
-        public int CourseResult { get; set; }
+        public Test Test { get; set; }
+        public List<Answer> AnswerList { get; set; }
+    }
+
+    public class LessonTestAndAnswersModel
+    {
+        public Lesson Lesson { get; set; }
+        public List<TestAndAnswersModel> TestAndAnswers { get; set;}
+    }
+
+    public class ModuleTestAndAnswersModel
+    {
+        public Module Module { get; set; }
+        public List<LessonTestAndAnswersModel> LessonsTestsAndAnswers { get; set; }
     }
 }

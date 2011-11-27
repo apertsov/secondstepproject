@@ -62,7 +62,6 @@ namespace DistanceLessons.Controllers
         }
       
         [HttpGet]
-
         public ActionResult CreateModule(Guid courseId)
         {
             ViewBag.CourseId = courseId;

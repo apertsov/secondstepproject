@@ -89,10 +89,6 @@ namespace DistanceLessons
         public override string[] GetUsersInRole(string roleName)
         {
             var role = userRepo.GetRole(roleName);
-            if (role == null) throw new ArgumentNullException("roleName", "Unknown role");
-          /*  var usernames = userRepo.GetAllUsers()
-                .Where(x => x.Role==role.IdRole)
-                .Select(x => x.Login);*/
             return (from u in userRepo.GetUserList()
                     where u.RoleId==role.RoleId
                     select u.Login
@@ -102,7 +98,6 @@ namespace DistanceLessons
         public override bool IsUserInRole(string username, string roleName)
         {
             var role = userRepo.GetRole(roleName);
-            if (role == null) throw new ArgumentNullException("roleName", "Unknown role");
             return ((from u in userRepo.GetUserList()
                      where u.Login == username && u.RoleId == role.RoleId
                      select u) == null ? false : true);

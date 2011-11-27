@@ -10,15 +10,49 @@ namespace DistanceLessons.Models
         public Dictionary<Guid, string> Modules { get; set; }
         public Dictionary<Guid, string> Courses { get; set; }
         public Dictionary<Guid, string> Categories { get; set; }
-        public Guid? pickedElement { get; set; }
-        public string ControllerName { get; set; }
-        public int type { get; set; }
+        public BetweenPartialModel Parameters { get; set; }
     }
 
-    public class UserResultsModel
+    public class BetweenPartialModel//UserResultsModel
     {
         public Guid? pickedElement { get; set; }
-        public int type { get; set; }
+        public ElementsType ElementType { get; set; }
+        public string ControllerName { get; set; }
+        public string DivIdToReplace { get; set; }
     }
+
+    public class ModuleUserAnswers
+    {
+        public string Username { get; set; }
+        public string ModuleTitle { get; set; }
+        public float? Result { get; set; }
+        public BetweenPartialModel Parameters { get; set; }
+        public List<DetailAnswersModel> Answers { get; set; }
+    }
+
+    public class DetailModuleTestResultsModel
+    {
+        public string ModuleName { get; set; }
+        public BetweenPartialModel Parameters { get; set; }
+        public List<TestResultModel> TestResults { get; set; }
+    }
+
+    public class CourseResultModel
+    {
+        public string Login { get; set; }
+        public Dictionary<Guid, string> PassedModules  { get; set; }
+        public Dictionary<int, int> ResultModules { get; set; }
+        public int CourseResult { get; set; }
+    }
+
+    public class UserResultModel
+    {
+        public string CourseTitle { get; set; }
+        public List<string> ModuleTitles { get; set; }
+        public Dictionary<int, int> ResultModules { get; set; }
+        public int CourseResult { get; set; }
+    }
+
+
     
 }

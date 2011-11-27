@@ -50,26 +50,5 @@ namespace DistanceLessons.Models
             categoryDictionary.Add(category.courseId, category.title);
             return categoryDictionary;
         }
-
-       /* 
-        public List<RQCategorys> QCategorys()
-        {
-            var Query =
-                (
-                from cat in GetCategoryList()
-                select new RQCategorys
-                {
-                    id = cat.CategoryId,
-                    title = cat.Category1
-                }
-                ).ToList<RQCategorys>();
-
-            List<RQCategorys> lst = new List<RQCategorys>();
-            foreach (var i in Query)
-                lst.Add(i);
-
-            return lst;
-        }
-        */
     }
 }
