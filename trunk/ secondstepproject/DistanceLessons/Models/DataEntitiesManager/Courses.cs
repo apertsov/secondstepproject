@@ -31,74 +31,18 @@ namespace DistanceLessons.Models
 
         public List<CategoryCourse> GetValidCourses()
         {
-            var coursesInLessons=(from lesson in _db.Lessons
-                       group lesson by lesson.CourseId into lessonGroups
-                        select lessonGroups.Key);
+            var coursesInLessons = (from lesson in _db.Lessons
+                                    group lesson by lesson.CourseId into lessonGroups
+                                    select lessonGroups.Key);
             var validCourses = (from courses in _db.Courses
-                     from couesesId in coursesInLessons 
-                     join category in _db.Categories on courses.CategoryId equals category.CategoryId
-                     orderby courses.Title
-                     where courses.CourseId==couesesId
+                                from couesesId in coursesInLessons
+                                join category in _db.Categories on courses.CategoryId equals category.CategoryId
+                                orderby courses.Title
+                                where courses.CourseId == couesesId
                                 select new CategoryCourse { CourseTitle = courses.Title, CourseDescription = courses.Description, CategoryTitle = category.Category1 });
             return validCourses.ToList();
         }
 
-        /*
-        public List<RQCourses> QCourses()
-        {
-            var Query =
-                (
-                from cou in GetCourseList()
-                from u in GetUserList()
-                from cat in GetCategoryList()
-                where cou.CategoryId == cat.CategoryId && cou.UserId == u.UserId
-                orderby cou.Title
-                select new RQCourses
-                {
-                    id = cou.CourseId,
-                    title = cou.Title,
-                    description = cou.Description,
-                    category = cat.Category1,
-                    teacher = u.Login,
-                    access = cou.Access
-                }
-                ).ToList<RQCourses>();
-
-            List<RQCourses> lst = new List<RQCourses>();
-            foreach (var i in Query)
-                lst.Add(i);
-
-            return lst;
-        }
-
-        public List<RQCourses> QCoursesSeak(string Course)
-        {
-            var Query =
-                (
-                from cou in GetCourseList()
-                from u in GetUserList()
-                from cat in GetCategoryList()
-                where cou.CategoryId == cat.CategoryId && cou.UserId == u.UserId && cou.Title.ToLower().IndexOf(Course.ToLower()) > -1
-                orderby cou.Title
-                select new RQCourses
-                {
-                    id = cou.CourseId,
-                    title = cou.Title,
-                    description = cou.Description,
-                    category = cat.Category1,
-                    teacher = u.Login,
-                    access = cou.Access
-                }
-                ).ToList<RQCourses>();
-
-            List<RQCourses> lst = new List<RQCourses>();
-            foreach (var i in Query)
-                lst.Add(i);
-
-            return lst;
-        }
-
-        }*/
         public List<Cours> GetCoursesByTeacherId(Guid UserId)
         {
 
@@ -109,24 +53,24 @@ namespace DistanceLessons.Models
 
 
         public Dictionary<Guid, string> CoursesDictionaryFromCategory(Guid categoryId)
-        {            
+        {
             var categoryCourses = (from courses in GetCourseList()
-                           where courses.CategoryId == categoryId
-                           select new { courseId = courses.CourseId, title = courses.Title });
+                                   where courses.CategoryId == categoryId
+                                   select new { courseId = courses.CourseId, title = courses.Title });
             Dictionary<Guid, string> coursesFromCategory = new Dictionary<Guid, string>();
             foreach (var course in categoryCourses)
-                coursesFromCategory.Add(course.courseId,course.title);
+                coursesFromCategory.Add(course.courseId, course.title);
             return coursesFromCategory;
         }
 
         public Dictionary<Guid, string> CourseDictionary(Guid courseId)
         {
             var course = (from courses in GetCourseList()
-                                   where courses.CourseId == courseId
-                                   select new { courseId = courses.CourseId, title = courses.Title }).FirstOrDefault();
+                          where courses.CourseId == courseId
+                          select new { courseId = courses.CourseId, title = courses.Title }).FirstOrDefault();
             if (course == null) return null;
-            Dictionary<Guid,string> courseDictionary=new Dictionary<Guid,string>();
-            courseDictionary.Add(course.courseId,course.title);
+            Dictionary<Guid, string> courseDictionary = new Dictionary<Guid, string>();
+            courseDictionary.Add(course.courseId, course.title);
             return courseDictionary;
         }
 
@@ -135,6 +79,14 @@ namespace DistanceLessons.Models
             return (from courses in GetCourseList()
                     where courses.CourseId == courseId
                     select courses.CategoryId).FirstOrDefault();
+        }
+
+        public bool IsTeacherCourse(Guid courseId, string username)
+        {
+            return (from courses in GetCourseList()
+                    from users in GetUserList()
+                    where courses.CourseId == courseId && users.Login == username && courses.UserId == users.UserId
+                    select courses).Count() > 0 ? true : false;
         }
 
     }

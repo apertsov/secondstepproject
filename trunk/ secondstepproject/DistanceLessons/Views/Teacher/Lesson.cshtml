@@ -21,6 +21,7 @@
         </td>
        
          <td align="right">
+            @Html.ActionLink("Тести", "ShowLessonTests", "Test", new { id = item.LessonId, courseId = (Guid)ViewBag.CourseId }, null) |  
             @Html.ActionLink("Редагувати", "EditLesson", new { id = item.LessonId }) |
             @Html.ActionLink("Деталі", "DetailsLesson", new { id = item.LessonId }) |
             @Html.ActionLink("Видалити", "DeleteLesson", new { id = item.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })

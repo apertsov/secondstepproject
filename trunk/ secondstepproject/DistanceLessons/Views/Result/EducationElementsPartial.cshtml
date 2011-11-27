@@ -16,24 +16,26 @@
             <td>
                 @foreach (var category in Model.Categories)
                 {
-                    if (Model.pickedElement == category.Key) { @Html.TextHtml(">"); } 
-                    @Ajax.ActionLink(category.Value, Model.ControllerName, new { id = category.Key, type = 1 }, new AjaxOptions() { UpdateTargetId = "educationelements", InsertionMode = InsertionMode.Replace  }) <br />
+                    if (Model.Parameters.pickedElement == category.Key) { @Html.TextHtml(">"); } 
+                    @Ajax.ActionLink(category.Value, Model.Parameters.ControllerName, new { id = category.Key, divIdToReplace=Model.Parameters.DivIdToReplace, type = DistanceLessons.Models.ElementsType.Category }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace }) <br />
                 }
             </td>
             <td>
                 @foreach (var course in Model.Courses)
                 {
-                    if (Model.pickedElement == course.Key) { @Html.TextHtml(">"); } 
-                    @Ajax.ActionLink(course.Value, Model.ControllerName, new { id = course.Key, type = 2 }, new AjaxOptions() { UpdateTargetId = "educationelements", InsertionMode = InsertionMode.Replace })   <br />
+                    if (Model.Parameters.pickedElement == course.Key)
+                    { @Html.TextHtml(">");
+                    } 
+                    @Ajax.ActionLink(course.Value, Model.Parameters.ControllerName, new { id = course.Key,  divIdToReplace=Model.Parameters.DivIdToReplace, type = DistanceLessons.Models.ElementsType.Course }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace })   <br />
                 }
             </td>
             <td>
                 @foreach (var module in Model.Modules)
                 {
-                    if (Model.pickedElement == module.Key)
+                    if (Model.Parameters.pickedElement == module.Key)
                     { @Html.TextHtml(">");
                     } 
-                    @Ajax.ActionLink(module.Value, Model.ControllerName, new { id = module.Key, type = 3 }, new AjaxOptions() { UpdateTargetId = "educationelements", InsertionMode = InsertionMode.Replace })   <br />
+                    @Ajax.ActionLink(module.Value, Model.Parameters.ControllerName, new { id = module.Key, divIdToReplace = Model.Parameters.DivIdToReplace, type = DistanceLessons.Models.ElementsType.Module }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace })   <br />
                 }
             </td>
         </tr>

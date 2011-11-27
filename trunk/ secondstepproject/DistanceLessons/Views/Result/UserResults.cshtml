@@ -1,8 +1,8 @@
-﻿@model DistanceLessons.Models.EducationElementsModel
+﻿@model DistanceLessons.Models.BetweenPartialModel
 
-@{ Html.RenderAction("EducationElements", new { id = Model.pickedElement, redirectController=Model.ControllerName,type = Model.type });}
+@{ Html.RenderAction("EducationElements", new { id = Model.pickedElement, redirectController = Model.ControllerName, type = Model.ElementType});}
 
 @if (Model.pickedElement != null)
 {
-  Html.RenderAction("UserResultsTable", new { id = (Guid)Model.pickedElement, redirectController=Model.ControllerName,type = Model.type });
+    Html.RenderAction("UserResultsTable", new { id = (Guid)Model.pickedElement, redirectController = Model.ControllerName, type = Model.ElementType });
 }

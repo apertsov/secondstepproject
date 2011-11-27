@@ -11,6 +11,7 @@ namespace DistanceLessons.Models
             return _db.Tests.ToList<Test>();
         }
 
+
         public List<Test> LessonTests(Guid lessonId)
         {
             return (from tests in _db.Tests
@@ -25,6 +26,17 @@ namespace DistanceLessons.Models
             foreach (var test in testList)
                 testAndAnswersList.Add(new TestAndAnswersModel { Test = test, AnswerList = TestAnswers(test.TestId) });
             return testAndAnswersList;
+        }
+
+        public List<LessonTestAndAnswersModel> ModuleTestsAndAnswers(Guid moduleId)
+        {
+            List<LessonTestAndAnswersModel> lessonTestsAndAnswersList = new List<LessonTestAndAnswersModel>();
+            List<Lesson> lessons = GetLessonsByModule(moduleId);
+            foreach (Lesson lesson in lessons)
+            {
+                lessonTestsAndAnswersList.Add(new LessonTestAndAnswersModel { Lesson = lesson, TestAndAnswers = LessonTestsAndAnswers(lesson.LessonId) });
+            }
+            return lessonTestsAndAnswersList;
         }
 
         public Test Test(Guid testId)

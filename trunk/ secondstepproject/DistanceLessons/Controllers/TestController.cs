@@ -17,14 +17,22 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(_db.UserLessons(User.Identity.Name));
+            return View(_db.GetLessonList());
+        }
+
+        [HttpGet]
+        public ActionResult ShowLessonTests(Guid id,Guid courseId)
+        {
+            ViewBag.CourseId = courseId;
+            LessonTestAndAnswersModel model = new LessonTestAndAnswersModel { Lesson = _db.Lesson(id), TestAndAnswers = _db.LessonTestsAndAnswers(id) };
+            return View("ShowLessonTests", model);
         }
 
         [HttpGet]
         public ActionResult ShowModuleTests(Guid id)
         {
-            if (_db.IsLesson(id)) Session["LessonId"] = id;
-            return View(_db.LessonTestsAndAnswers(id));
+            ModuleTestAndAnswersModel model = new ModuleTestAndAnswersModel { Module=_db.Module(id), LessonsTestsAndAnswers=_db.ModuleTestsAndAnswers(id)};
+            return View(model);
         }
 
 
@@ -63,14 +71,14 @@ namespace DistanceLessons.Controllers
             }
             _db.UpdateTest(obj.Test);
             _db.UpdateAnswers(obj.AnswerList);
-            _db.Save();
             if (!Request.IsAjaxRequest())
             {
                 return View("Index", _db.LessonTestsAndAnswers(obj.Test.LessonId));
             }
             else
             {
-                return PartialView("QuestionsAndAnswersPartialPage", _db.LessonTestsAndAnswers(obj.Test.LessonId));
+                LessonTestAndAnswersModel model = new LessonTestAndAnswersModel { Lesson = _db.Lesson(obj.Test.LessonId), TestAndAnswers = _db.LessonTestsAndAnswers(obj.Test.LessonId) };
+                return PartialView("QuestionsAndAnswersPartialPage", model);
             }
         }
 
@@ -85,7 +93,6 @@ namespace DistanceLessons.Controllers
             }
             else
             {
-
                 return PartialView("EditTestPartial", new TestAndAnswersModel { Test = _db.Test(id), AnswerList = _db.TestAnswers(id) });
             }
         }
@@ -127,15 +134,17 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult DeleteTest(Guid testId)
         {
+            Guid lessonId = _db.Test(testId).LessonId;
             if (_db.IsTest(testId))
                 _db.DeleteTestWithAnswers(testId);
             if (!Request.IsAjaxRequest())
             {
-                return View("Index", _db.LessonTestsAndAnswers((Guid)Session["LessonId"]));
+                return View("Index", _db.LessonTestsAndAnswers(lessonId));
             }
             else
             {
-                return PartialView("QuestionsAndAnswersPartialPage", _db.LessonTestsAndAnswers((Guid)Session["LessonId"]));
+                LessonTestAndAnswersModel model = new LessonTestAndAnswersModel { Lesson = _db.Lesson(lessonId), TestAndAnswers = _db.LessonTestsAndAnswers(lessonId) };
+                return PartialView("QuestionsAndAnswersPartialPage", model);
             }
         }
 
@@ -189,12 +198,6 @@ namespace DistanceLessons.Controllers
             return View("PassModule", NextNotShowedTest(moduleId, User.Identity.Name, previousResult.EndTime.Subtract(DateTime.Now)));
         }
 
-        [HttpGet]
-        public ActionResult DeletePassModule(Guid id)
-        {
-            _db.DeleteModuleTest(id, User.Identity.Name);
-            return RedirectToAction("Index", "Test");
-        }
 
         [HttpGet]
         public ActionResult CalcModuleResults(Guid id)
@@ -209,45 +212,7 @@ namespace DistanceLessons.Controllers
             return View(_db.UserModule(id, User.Identity.Name));
         }
 
-        [HttpGet]
-        public ActionResult DetailsModuleUserAnswers(Guid id, string username)
-        {
-            UserModule userResult = _db.UserModule(id, username);
-            ViewBag.Username = username;
-            if (userResult == null) return View((object)null);
-            ViewBag.ModuleName = userResult.Module.Title;
-            ViewBag.UserResult = userResult.Passed;
-            ViewBag.ModuleId = id;
 
-            List<DetailAnswersModel> model = new List<DetailAnswersModel>();
-            List<ShowTest> showedTests = _db.ShowTestsInModule(id, username);
-            List<Answer> answers = new List<Answer>();
-            foreach (ShowTest test in showedTests)
-            {
-                answers.Clear();
-                List<UserAnswer> userAnswers = _db.UserAnswersOnTest(test.TestId, id, username);
-                /*  foreach (UserAnswer tmp in userAnswers)
-                      if(tmp.AnswerId!=null) answers.Add(_db.Answer((Guid)tmp.AnswerId));*/
-                model.Add(new DetailAnswersModel
-                {
-                    UserAnswers = userAnswers,
-                    TestAndAnswers = new TestAndAnswersModel { Test = test.Test, AnswerList = _db.TestAnswers(test.TestId) },
-                    IsRightAnswer = _db.IsTrueAnswer(userAnswers, test.TestId)
-                });
-            }
-            return View(model);
-        }
-
-        [HttpGet]
-        public ActionResult DetailModuleResults(Guid id)
-        {
-            DetailModuleTestResultsModel model = new DetailModuleTestResultsModel { ModuleId = id, ModuleName = _db.ModuleName(id), TestResults = new List<TestResultModel>() };
-            List<UserModule> userResults = _db.UserModules(id);
-            foreach (UserModule userResult in userResults)
-                model.TestResults.Add(new TestResultModel { Login = userResult.User.Login, Result = userResult.Passed, StartTesting = userResult.StartTime });
-            
-            return PartialView("DetailModuleResultsPartial",model);
-        }
 
         private PassTestModel NextNotShowedTest(Guid moduleId, string username, TimeSpan timeToResolve)
         {

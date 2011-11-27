@@ -210,6 +210,11 @@ namespace DistanceLessons.Controllers
             return View();
         }
 
+        public ActionResult FewPermissions()
+        {
+            return View("NotFound");
+        }
+
         // **************************************
         // URL: /Account/Activate/username/key
         // **************************************

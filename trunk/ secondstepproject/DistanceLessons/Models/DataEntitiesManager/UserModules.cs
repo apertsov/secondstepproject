@@ -90,7 +90,7 @@ namespace DistanceLessons.Models
             }
         }
 
-        public List<CourseResultModel> ResultUserCourse(Guid courseID)
+        public List<CourseResultModel> ResultsUsersCourse(Guid courseID)
         {
             List<Module> moduleList = GetModulesByCourseId(courseID);
             var userResults = (from _userResults in GetUserModuleList()
@@ -102,22 +102,56 @@ namespace DistanceLessons.Models
             List<CourseResultModel> model = new List<CourseResultModel>();
             foreach (var userCourseResult in userResults)
             {
-                CourseResultModel userResult = new CourseResultModel { PassedModules = new Dictionary<Guid, string>(), ResultModules = new Dictionary<Guid, int>() };
+                CourseResultModel userResult = new CourseResultModel { PassedModules = new Dictionary<Guid, string>(), ResultModules = new Dictionary<int, int>() };
                 userResult.Login = GetUsername(userCourseResult.Key);
-                float courseResult = 0;
+                double courseResult = 0;
                 foreach (var userModuleResult in userCourseResult)
                 {
                     if ((userModuleResult.Passed != null) && (userModuleResult.ModuleId != null))
                     {
                         userResult.PassedModules.Add((Guid)userModuleResult.ModuleId, userModuleResult.Module.Title);
-                        userResult.ResultModules.Add((Guid)userModuleResult.ModuleId, (int)userModuleResult.Passed);
-                        courseResult += (float)userModuleResult.Passed;
+                        userResult.ResultModules.Add(userModuleResult.Module.MaxPoints, (int)CalcCourseResult((float)userModuleResult.Passed, userModuleResult.Module.MaxPoints));
+                        courseResult += CalcCourseResult((float)userModuleResult.Passed, userModuleResult.Module.MaxPoints);
                     }
                     userResult.CourseResult = (int)courseResult;
                 }
                 model.Add(userResult);
             }
             return model;
+        }
+
+        public List<UserResultModel> ResultUserCourse(string username)
+        {
+            //     Guid userId = GetUserId(username);
+            var userResults = (from _userResults in GetUserModuleList()
+                               join courses in GetCourseList() on _userResults.Module.CourseId equals courses.CourseId
+                               where _userResults.User.Login == username
+                               group new { courses.Title, _userResults } by courses into coursesGroups
+                               select coursesGroups);
+            List<UserResultModel> model = new List<UserResultModel>();
+            foreach (var userCourseResult in userResults)
+            {
+                UserResultModel userResult = new UserResultModel { ResultModules = new Dictionary<int, int>(), ModuleTitles = new List<string>() };
+                userResult.CourseTitle = userCourseResult.Key.Title;
+                double courseResult = 0;
+                foreach (var userModuleResult in userCourseResult)
+                {
+                    if ((userModuleResult._userResults.Passed != null) && (userModuleResult._userResults.ModuleId != null))
+                    {
+                        userResult.ModuleTitles.Add(userModuleResult._userResults.Module.Title);
+                        userResult.ResultModules.Add((int)userModuleResult._userResults.Module.MaxPoints, (int)CalcCourseResult((float)userModuleResult._userResults.Passed, userModuleResult._userResults.Module.MaxPoints));
+                        courseResult += CalcCourseResult((float)userModuleResult._userResults.Passed,userModuleResult._userResults.Module.MaxPoints);
+                    }
+                    userResult.CourseResult = (int)courseResult;
+                }
+                model.Add(userResult);
+            }
+            return model;
+        }
+
+        private double CalcCourseResult(float passedPercent, int maxPoints)
+        {
+            return Math.Round((double) passedPercent/100 * maxPoints,(int)0);
         }
 
         public List<RQUserModules> GetUserProgress()

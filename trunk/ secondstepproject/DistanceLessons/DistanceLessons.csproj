@@ -118,6 +118,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Layout.resx</DependentUpon>
     </Compile>
+    <Compile Include="Attributes\AutorizeFilter.cs" />
     <Compile Include="Attributes\LocalizationAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -130,7 +131,6 @@
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\TestController.cs" />
-    <Compile Include="Controllers\VirtualJournalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -441,29 +441,16 @@
     <Content Include="Views\Admin\Users.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Account\CreateContact.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Account\CreateProfile.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Account\EditProfile.cshtml">
-      <SubType>Code</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Shared\_Navigation_PartialPage.cshtml" />
     <Content Include="Views\Shared\_News_PartialPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Content\img\background\Thumbs.db" />
     <None Include="Content\img\flags\Thumbs.db" />
     <None Include="Content\img\header\Thumbs.db" />
     <None Include="Content\img\navigation\Thumbs.db" />
     <None Include="Content\img\passive_active\Thumbs.db" />
-    <Content Include="Views\VirtualJournal\Index.cshtml" />
     <Content Include="Views\Teacher\CreateLesson.cshtml" />
     <Content Include="Views\Teacher\CreateModule.cshtml" />
     <Content Include="Views\Teacher\DetailsLesson.cshtml" />
@@ -497,10 +484,10 @@
     <Content Include="Views\News\_New_PartialPage.cshtml" />
     <Content Include="Views\News\_Create_PartialPage.cshtml" />
     <Content Include="Views\News\_Edit_PartialPage.cshtml" />
-    <Content Include="Views\Test\ShowModuleTests.cshtml" />
+    <Content Include="Views\Test\ShowLessonTests.cshtml" />
     <Content Include="Views\Test\QuestionsAndAnswersPartialPage.cshtml" />
     <Content Include="Views\Test\ShowTestPartial.cshtml" />
-    <Content Include="Views\Test\ShowAnswersPartial.cshtml" />
+    <Content Include="Views\Result\ShowAnswersPartial.cshtml" />
     <Content Include="Views\Test\EditTestPartial.cshtml" />
     <Content Include="Views\Test\EditTest.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
@@ -520,7 +507,7 @@
     <Content Include="Views\Test\PassModule.cshtml" />
     <Content Include="Views\Teacher\EditLessonTests.cshtml" />
     <Content Include="Views\Test\TestingNotPrepared.cshtml" />
-    <Content Include="Views\Test\DetailsModuleUserAnswers.cshtml" />
+    <Content Include="Views\Result\DetailsModuleUserAnswers.cshtml" />
     <Content Include="Views\Home\Courses.cshtml" />
     <Content Include="Views\Profile\info.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
@@ -536,9 +523,13 @@
     <Content Include="Views\Profile\_EditContactInfo_PartialPage.cshtml" />
     <Content Include="Views\Message\CreateMessage.cshtml" />
     <Content Include="Views\Result\DetailModuleResultsPartial.cshtml" />
+    <Content Include="Views\Test\ShowAnswersPartial.cshtml" />
+    <Content Include="Views\Result\UserResult.cshtml" />
+    <Content Include="Views\Test\ShowModuleTests.cshtml" />
     <Content Include="Views\Teacher\AllLessonsInCourse.cshtml" />
-    <Content Include="Views\Teacher\Course.cshtml" />
-    <Content Include="Views\Message\Edit.cshtml" />
+    <Content Include="Views\Teacher\Course.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Views\Profile\profile.cshtml">
       <SubType>Code</SubType>
     </Content>
