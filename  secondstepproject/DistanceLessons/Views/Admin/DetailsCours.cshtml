@@ -1,50 +1,51 @@
 ﻿@model DistanceLessons.Models.Cours
 
 @{
-    ViewBag.Title = "DetailsCours";
+    ViewBag.Title = "Предмет";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>DetailsCours</h2>
+<h2>Детальніше про предмет</h2>
 
-<fieldset>
-    <legend>Cours</legend>
+   
+    <table class="center" cellspacing="10">
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+<tr>
+        <td class="editor-label"> @Html.DisplayNameFor(model => model.Title)</td>
+        <td class="editor-field"> @Html.DisplayFor(model => model.Title) </td>
+    </tr>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
+    
+    <tr>
+        <td class="editor-label" valign="top">  @Html.DisplayNameFor(model => model.Description)</td>
+        <td class="editor-field"> @Html.DisplayFor(model => model.Description)</td>
+    </tr>
+   
+    <tr>
+        <td class="editor-label">  @Html.DisplayNameFor(model => model.Category.Category1)</td>
+        <td class="editor-field"> @Html.DisplayFor(model => model.Category.Category1)</td>
+     </tr>
+    
+      <tr>
+        <td class="editor-label">  @Html.DisplayNameFor(model => model.User.Login)</td>
+        <td class="editor-field"> @Html.DisplayFor(model => model.User.Login)</td>
+     </tr>
+    <tr>
+            <td class="editor-label">  @Html.DisplayNameFor(model => model.IsSubscribing)</td>
+        <td class="editor-field" align="left"> @Html.DisplayFor(model => model.IsSubscribing)</td>
+    </tr>
+    
+     <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+</table>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Description)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
+   
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Category.Category1)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Category.Category1)
-    </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.User.Login)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.User.Login)
-    </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Access)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Access)
-    </div>
-</fieldset>
 <p>
     @Html.ActionLink("Редагувати", "EditCours", new { id = Model.CourseId }) |
     @Html.ActionLink("Back to List", "Index")

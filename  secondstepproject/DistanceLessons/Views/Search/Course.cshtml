@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DistanceLessons.Models.Cours>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Пошук предмету</h2>
+
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+
+        <div>
+              @Html.DisplayNameFor(model => model.Title)
+         </div>
+         
+          <div>
+             @Html.TextBox("title", new { @class = "editor" }) 
+         </div>
+   
+         <div>
+              @Html.DisplayNameFor(model => model.Description)
+          </div>
+        
+          <div>
+            <input type="text" id="description" name="description" class = "editor" />
+          </div>
+
+        <p>
+            <button type="submit">Шукати</button>
+        </p>
+    </fieldset>
+}
+
+<div id="myGrid">
+    @Html.Partial("_resultCourse", Model)
+</div>
