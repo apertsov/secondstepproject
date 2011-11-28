@@ -57,7 +57,7 @@ namespace DistanceLessons.Models
 
         public void DeleteMessageOwner(Message message)
         {
-            if (message.Status != 3)
+            /*if (message.Status != 3)
             {
                 message.Status = 2;
                 Save();
@@ -65,12 +65,13 @@ namespace DistanceLessons.Models
             else
             {
                 DeleteMessage(message.MessageId);
-            }
+            }*/
             
         }
 
         public void DeleteMessageRecipient(Message message)
         {
+            /*
             if (message.Status != 2)
             {
                 message.Status = 3;
@@ -80,6 +81,7 @@ namespace DistanceLessons.Models
             {
                 DeleteMessage(message.MessageId);
             }
+             * */
         }
 
         public void DeleteMessage(Guid id)
@@ -92,7 +94,7 @@ namespace DistanceLessons.Models
 
         public void UpdateMessageStatus(Message message)
         {
-            message.Status = 0;
+            //message.Status = 0;
 
             Save();
         }
