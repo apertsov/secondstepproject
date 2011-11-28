@@ -132,6 +132,9 @@
   <data name="_HorizontalNavigation_Courses" xml:space="preserve">
     <value>Предметы</value>
   </data>
+  <data name="_HorizontalNavigation_Education" xml:space="preserve">
+    <value>Обучение</value>
+  </data>
   <data name="_HorizontalNavigation_HomePage" xml:space="preserve">
     <value>Главная</value>
   </data>

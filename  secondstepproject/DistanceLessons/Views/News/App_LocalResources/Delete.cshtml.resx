@@ -117,43 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="App_Footer_TopPage" xml:space="preserve">
-    <value>Top page</value>
+  <data name="Question" xml:space="preserve">
+    <value>Ви справді хочете видалити новину</value>
   </data>
-  <data name="App_HomePage" xml:space="preserve">
-    <value>Home Page</value>
-  </data>
-  <data name="Slider_ToPage" xml:space="preserve">
-    <value>Go to</value>
-  </data>
-  <data name="Slider_ToRegister" xml:space="preserve">
-    <value>register page</value>
-  </data>
-  <data name="_HorizontalNavigation_Courses" xml:space="preserve">
-    <value>Courses</value>
-  </data>
-  <data name="_HorizontalNavigation_Education" xml:space="preserve">
-    <value>Education</value>
-  </data>
-  <data name="_HorizontalNavigation_HomePage" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="_HorizontalNavigation_News" xml:space="preserve">
-    <value>News</value>
-  </data>
-  <data name="_HorizontalNavigation_Profile" xml:space="preserve">
-    <value>Profile</value>
-  </data>
-  <data name="_LogOnPartial_Exit" xml:space="preserve">
-    <value>LogOut</value>
-  </data>
-  <data name="_LogOnPartial_Hello" xml:space="preserve">
-    <value>Hello,</value>
-  </data>
-  <data name="_LogOnPartial_Register" xml:space="preserve">
-    <value>Register</value>
-  </data>
-  <data name="_LogOnPartial_SignIn" xml:space="preserve">
-    <value>LogIn</value>
+  <data name="Title" xml:space="preserve">
+    <value>Видалення новини</value>
   </data>
 </root>

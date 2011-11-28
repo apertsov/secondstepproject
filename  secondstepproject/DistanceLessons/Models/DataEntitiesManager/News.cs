@@ -48,7 +48,7 @@ namespace DistanceLessons.Models
                 foreach (string current in temp)
                 {
                     if (Regex.IsMatch(current, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?"))
-                        str += current.Replace(current, "<a href=\"" + current + "\" target=\"_new\">url</a>") + " ";
+                        str += current.Replace(current, "[<a href=\"" + current + "\" target=\"_new\">hidden_url</a>]") + " ";
                     else if (Regex.IsMatch(current, @"\r\n"))
                         str += current.Replace(current, "<br />") + " ";
                     else str += current + " ";
@@ -73,7 +73,7 @@ namespace DistanceLessons.Models
             foreach (string current in temp)
             {
                 if (Regex.IsMatch(current, @"http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?"))
-                    str += current.Replace(current, "[<a href=\"" + current + "\" target=\"_new\">url</a>]") + " ";
+                    str += current.Replace(current, "[<a href=\"" + current + "\" target=\"_new\">hidden_url</a>]") + " ";
                 else if (Regex.IsMatch(current, @"\r\n"))
                     str += current.Replace(current, "<br />") + " ";
                 else str += current + " ";

@@ -5,7 +5,7 @@
     if ((_db_.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Admin.ToString()) || (_db_.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Teacher.ToString()) || (_db_.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Dean.ToString()))
     {
         <div class="item" align="right">
-            @Ajax.ActionLink("Створити новину", "Create", new AjaxOptions() {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
+            @Ajax.ActionLink(Html.Resource("Layout, create"), "Create", new AjaxOptions() {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
         </div>
     }
 }
@@ -27,10 +27,10 @@
             DistanceLessons.Models.DataEntitiesManager _db = new DistanceLessons.Models.DataEntitiesManager();
             if ((_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Admin.ToString()) || (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Teacher.ToString()) || (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Dean.ToString()))
             {
-                        @Ajax.ActionLink("Редагувати", "Edit", new { id = _new.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
-                        @Ajax.ActionLink("Видалити", "Delete", new { id = _new.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+                        @Ajax.ActionLink(Html.Resource("Layout, edit"), "Edit", new { id = _new.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+                        @Ajax.ActionLink(Html.Resource("Layout, delete"), "Delete", new { id = _new.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
             }
-                    @Ajax.ActionLink("Читати...", "Detail", new { id = _new.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+                    @Ajax.ActionLink(Html.Resource("Layout, read"), "Detail", new { id = _new.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
                  }
              </div>
         </li>

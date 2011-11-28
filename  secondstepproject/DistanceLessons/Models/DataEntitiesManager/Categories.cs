@@ -11,6 +11,13 @@ namespace DistanceLessons.Models
             return _db.Categories.ToList<Category>();
         }
 
+        public List<Category> GetCategoryListASC()
+        {
+            return (from c in GetCategoryList()
+                    orderby c.Category1 ascending
+                    select c).ToList();
+        }
+
         public Category GetCategory(Guid id)
         {
             return _db.Categories.SingleOrDefault(c => c.CategoryId == id);
