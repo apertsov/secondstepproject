@@ -70,6 +70,9 @@
                 <td class="text_left">@Html.DisplayFor(model => model.contactModel.Other)</td>
             </tr>
         }
+        <tr>
+            <td class="text_right">Особисті повідомлення:</td>
+            <td class="text_left">@Html.ActionLink("Написати повідомлення", "CreateMessage", "Message", new { user = Model.informationModel.User.Login }, null)</td>
+        </tr>
     }
 </table>
-@Html.ActionLink("Написати повідомлення", "CreateMessage", "Message", new { user = Model.informationModel.User.Login }, null);

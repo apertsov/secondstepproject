@@ -1,10 +1,10 @@
 ﻿@model DistanceLessons.Models.News
 
 @{
-    ViewBag.Title = "Видалення новини";
+    ViewBag.Title = Html.Resource("Title");
 }
 
-<h2>Ви справді впевнені, що варто видаляти новину "@Model.Title" ?</h2>
+<h2>@Html.Resource("Question") - "@Model.Title" ?</h2>
     <div>
         @Html.TextHtml(Model.Text)
     </div>
@@ -13,7 +13,7 @@
 @using (Html.BeginForm()) 
 {
 <div class="item" align="center">
-    <input type="submit" value="Видалити" />
-    @Ajax.ActionLink("Назад", "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+    <input type="submit" value=@Html.Resource("Layout, delete") />
+    @Ajax.ActionLink(Html.Resource("Layout, back"), "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
 </div>
 }

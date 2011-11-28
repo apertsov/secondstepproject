@@ -1,0 +1,8 @@
+﻿@model IEnumerable<DistanceLessons.Models.Category>
+
+<div style="width: 100%;">
+@foreach(var item in Model)
+{
+    <div align="center" class="no_button" style="margin-bottom: 5px;">@Ajax.ActionLink(item.Category1, "courses_list", new { id = item.CategoryId }, new AjaxOptions() { UpdateTargetId = "education_ajax", InsertionMode = InsertionMode.Replace })</div>
+}
+</div>

@@ -1,5 +1,4 @@
-﻿@using DistanceLessons.Models
-@{
+﻿@{
     ViewBag.Title = "Особистий кабінет";
         Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -18,16 +17,29 @@
 
     <div id="profile">
         <ul class="topnav" class=box_shdw_right>
-            <li>@Ajax.ActionLink("Профіль", "Index", new AjaxOptions(){UpdateTargetId = "profile_ajax",InsertionMode = InsertionMode.Replace})
+            <li><a>Загальна інформація</a>
                 <ul style="display: block;">
+                    <li>@Ajax.ActionLink("Профіль", "Index", new AjaxOptions(){UpdateTargetId = "profile_ajax",InsertionMode = InsertionMode.Replace})</li>
                     <li>@Ajax.ActionLink("Особиста інформація", "Information", new AjaxOptions() {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
                     <li>@Ajax.ActionLink("Контактні дані", "ContactInformation", new AjaxOptions() {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
+                </ul>
+            </li>
+            <li><a>Особисті повідомлення</a>
+                <ul>
+                    <li>@Html.ActionLink("Написати повідомлення", "Create", "message")</li>
+                    <li><a>Повідомлення</a>
+                        <ul>
+                            <li>@Html.ActionLink("Всі повідомлення", "Index", "message")</li>
+                            <li>@Html.ActionLink("Прийняті", "Index", "message")</li>
+                            <li>@Html.ActionLink("Надіслані", "SendList", "message")</li>    
+                        </ul>
+                    </li>
                 </ul>
             </li>
         </ul>
         <div id="profile_ajax" class="box_shdw_bottom">
         @if ((bool)Html.ViewData["exist"]) { Html.RenderPartial("_Info_PartialPage", Model); }
-         else { Html.RenderPartial("_CreateInfo_PartialPage");}
+        else { Html.RenderPartial("_CreateInfo_PartialPage"); }
         </div>
     </div>
 }

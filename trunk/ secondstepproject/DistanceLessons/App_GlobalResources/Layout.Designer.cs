@@ -79,6 +79,60 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Назад.
+        /// </summary>
+        internal static string back {
+            get {
+                return ResourceManager.GetString("back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створити.
+        /// </summary>
+        internal static string create {
+            get {
+                return ResourceManager.GetString("create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Видалити.
+        /// </summary>
+        internal static string delete {
+            get {
+                return ResourceManager.GetString("delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагувати.
+        /// </summary>
+        internal static string edit {
+            get {
+                return ResourceManager.GetString("edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Читати.
+        /// </summary>
+        internal static string read {
+            get {
+                return ResourceManager.GetString("read", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Зберегти.
+        /// </summary>
+        internal static string save {
+            get {
+                return ResourceManager.GetString("save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Перейти на сторінку.
         /// </summary>
         internal static string Slider_ToPage {
@@ -102,6 +156,15 @@ namespace Resources {
         internal static string _HorizontalNavigation_Courses {
             get {
                 return ResourceManager.GetString("_HorizontalNavigation_Courses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Навчання.
+        /// </summary>
+        internal static string _HorizontalNavigation_Education {
+            get {
+                return ResourceManager.GetString("_HorizontalNavigation_Education", resourceCulture);
             }
         }
         

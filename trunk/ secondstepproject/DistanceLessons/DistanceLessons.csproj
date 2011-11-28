@@ -122,12 +122,14 @@
     <Compile Include="Attributes\LocalizationAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\EducationController.cs" />
     <Compile Include="Controllers\ResultController.cs" />
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\TestController.cs" />
@@ -171,6 +173,7 @@
     <Compile Include="Models\ProfileModels.cs" />
     <Compile Include="Models\TeacherModels.cs" />
     <Compile Include="Models\TestModels.cs" />
+    <Compile Include="Models\UserCourseModel.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Other Classes\Error\ActionInvokerWrapper.cs" />
     <Compile Include="Other Classes\Error\ControllerFactoryWrapper.cs" />
@@ -533,6 +536,12 @@
     <Content Include="Views\Profile\profile.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Education\Index.cshtml" />
+    <Content Include="Views\Education\_Category.cshtml" />
+    <Content Include="Views\Education\_Courses.cshtml" />
+    <Content Include="Views\Education\_CoursesList.cshtml" />
+    <Content Include="Views\Search\Course.cshtml" />
+    <Content Include="Views\Search\_resultCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">
@@ -557,7 +566,14 @@
       <LastGenOutput>Layout.ru-ru.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\News\App_LocalResources\Delete.cshtml.resx" />
+    <Content Include="Views\News\App_LocalResources\Detail.cshtml.resx" />
+    <Content Include="Views\News\App_LocalResources\Edit.cshtml.resx" />
+    <Content Include="Views\News\App_LocalResources\_Create_PartialPage.cshtml.resx" />
+    <Content Include="Views\News\App_LocalResources\_Delete_PartialPage.cshtml.resx" />
+    <Content Include="Views\News\App_LocalResources\_Edit_PartialPage.cshtml.resx" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
