@@ -12,6 +12,14 @@
           <EntitySet Name="Courses" EntityType="DistanceLessons.Models.Store.Courses" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Informations" EntityType="DistanceLessons.Models.Store.Informations" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Lessons" EntityType="DistanceLessons.Models.Store.Lessons" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Message_status" EntityType="DistanceLessons.Models.Store.Message_status" store:Type="Tables" store:Schema="dbo" store:Name="Message_status">
+            <DefiningQuery>SELECT 
+      [Message_status].[MessageStatusId] AS [MessageStatusId], 
+      [Message_status].[UserId] AS [UserId], 
+      [Message_status].[MessageId] AS [MessageId], 
+      [Message_status].[Status] AS [Status]
+      FROM [dbo].[Message_status] AS [Message_status]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Messages" EntityType="DistanceLessons.Models.Store.Messages" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Store.Modules" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="News" EntityType="DistanceLessons.Models.Store.News" store:Type="Tables" Schema="dbo" />
@@ -53,6 +61,14 @@
           <AssociationSet Name="FK_Lessons_Users" Association="DistanceLessons.Models.Store.FK_Lessons_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Lessons" EntitySet="Lessons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_status_Messages" Association="DistanceLessons.Models.Store.FK_Message_status_Messages">
+            <End Role="Messages" EntitySet="Messages" />
+            <End Role="Message_status" EntitySet="Message_status" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_status_Users" Association="DistanceLessons.Models.Store.FK_Message_status_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Message_status" EntitySet="Message_status" />
           </AssociationSet>
           <AssociationSet Name="FK_Messages_Users" Association="DistanceLessons.Models.Store.FK_Messages_Users">
             <End Role="Users" EntitySet="Users" />
@@ -188,6 +204,21 @@
           <Property Name="IsAcceptMainTeacher" Type="bit" Nullable="false" />
           <Property Name="ModuleId" Type="uniqueidentifier" />
         </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'E:\PROJECT\SECONDSTEPPROJECT\TRUNK\ SECONDSTEPPROJECT\DISTANCELESSONS\APP_DATA\DISTANCE_LESSONS.MDF.dbo.Message_status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Message_status">
+          <Key>
+            <PropertyRef Name="MessageStatusId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="MessageId" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="MessageStatusId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MessageId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+        </EntityType>
         <EntityType Name="Messages">
           <Key>
             <PropertyRef Name="MessageId" />
@@ -197,7 +228,7 @@
           <Property Name="DateOfSender" Type="datetime" Nullable="false" />
           <Property Name="UserId_From" Type="uniqueidentifier" Nullable="false" />
           <Property Name="UserId_To" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Status" Type="tinyint" Nullable="false" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="64" />
         </EntityType>
         <EntityType Name="Modules">
           <Key>
@@ -387,6 +418,30 @@
               <PropertyRef Name="UserId" />
             </Principal>
             <Dependent Role="Lessons">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_status_Messages">
+          <End Role="Messages" Type="DistanceLessons.Models.Store.Messages" Multiplicity="1" />
+          <End Role="Message_status" Type="DistanceLessons.Models.Store.Message_status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Messages">
+              <PropertyRef Name="MessageId" />
+            </Principal>
+            <Dependent Role="Message_status">
+              <PropertyRef Name="MessageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_status_Users">
+          <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+          <End Role="Message_status" Type="DistanceLessons.Models.Store.Message_status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Message_status">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
@@ -607,6 +662,7 @@
           <EntitySet Name="Courses" EntityType="DistanceLessons.Models.Cours" />
           <EntitySet Name="Informations" EntityType="DistanceLessons.Models.Information" />
           <EntitySet Name="Lessons" EntityType="DistanceLessons.Models.Lesson" />
+          <EntitySet Name="Message_status" EntityType="DistanceLessons.Models.Message_status" />
           <EntitySet Name="Messages" EntityType="DistanceLessons.Models.Message" />
           <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Module" />
           <EntitySet Name="News" EntityType="DistanceLessons.Models.News" />
@@ -664,6 +720,14 @@
           <AssociationSet Name="FK_Tests_Lessons" Association="DistanceLessons.Models.FK_Tests_Lessons">
             <End Role="Lessons" EntitySet="Lessons" />
             <End Role="Tests" EntitySet="Tests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_status_Messages" Association="DistanceLessons.Models.FK_Message_status_Messages">
+            <End Role="Messages" EntitySet="Messages" />
+            <End Role="Message_status" EntitySet="Message_status" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_status_Users" Association="DistanceLessons.Models.FK_Message_status_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Message_status" EntitySet="Message_status" />
           </AssociationSet>
           <AssociationSet Name="FK_Messages_Users" Association="DistanceLessons.Models.FK_Messages_Users">
             <End Role="Users" EntitySet="Users" />
@@ -797,6 +861,20 @@
           <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Lessons_Users" FromRole="Lessons" ToRole="Users" />
           <NavigationProperty Name="Tests" Relationship="DistanceLessons.Models.FK_Tests_Lessons" FromRole="Lessons" ToRole="Tests" />
         </EntityType>
+        <EntityType Name="Message_status">
+          <Key>
+            <PropertyRef Name="MessageStatusId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="MessageId" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="MessageStatusId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="MessageId" Type="Guid" Nullable="false" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Message" Relationship="DistanceLessons.Models.FK_Message_status_Messages" FromRole="Message_status" ToRole="Messages" />
+          <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Message_status_Users" FromRole="Message_status" ToRole="Users" />
+        </EntityType>
         <EntityType Name="Message">
           <Key>
             <PropertyRef Name="MessageId" />
@@ -806,7 +884,8 @@
           <Property Name="DateOfSender" Type="DateTime" Nullable="false" />
           <Property Name="UserId_From" Type="Guid" Nullable="false" />
           <Property Name="UserId_To" Type="Guid" Nullable="false" />
-          <Property Name="Status" Type="Byte" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Message_status" Relationship="DistanceLessons.Models.FK_Message_status_Messages" FromRole="Messages" ToRole="Message_status" />
           <NavigationProperty Name="User" Relationship="DistanceLessons.Models.FK_Messages_Users" FromRole="Messages" ToRole="Users" />
           <NavigationProperty Name="User1" Relationship="DistanceLessons.Models.FK_Messages_Users1" FromRole="Messages" ToRole="Users" />
         </EntityType>
@@ -931,6 +1010,7 @@
           <NavigationProperty Name="Courses" Relationship="DistanceLessons.Models.FK_Courses_Users" FromRole="Users" ToRole="Courses" />
           <NavigationProperty Name="Informations" Relationship="DistanceLessons.Models.FK_Informations_Users" FromRole="Users" ToRole="Informations" />
           <NavigationProperty Name="Lessons" Relationship="DistanceLessons.Models.FK_Lessons_Users" FromRole="Users" ToRole="Lessons" />
+          <NavigationProperty Name="Message_status" Relationship="DistanceLessons.Models.FK_Message_status_Users" FromRole="Users" ToRole="Message_status" />
           <NavigationProperty Name="Messages" Relationship="DistanceLessons.Models.FK_Messages_Users" FromRole="Users" ToRole="Messages" />
           <NavigationProperty Name="Messages1" Relationship="DistanceLessons.Models.FK_Messages_Users1" FromRole="Users" ToRole="Messages" />
           <NavigationProperty Name="News" Relationship="DistanceLessons.Models.FK_News_Users" FromRole="Users" ToRole="News" />
@@ -1081,6 +1161,30 @@
             </Principal>
             <Dependent Role="Tests">
               <PropertyRef Name="LessonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_status_Messages">
+          <End Role="Messages" Type="DistanceLessons.Models.Message" Multiplicity="1" />
+          <End Role="Message_status" Type="DistanceLessons.Models.Message_status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Messages">
+              <PropertyRef Name="MessageId" />
+            </Principal>
+            <Dependent Role="Message_status">
+              <PropertyRef Name="MessageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_status_Users">
+          <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1" />
+          <End Role="Message_status" Type="DistanceLessons.Models.Message_status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Message_status">
+              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1293,13 +1397,19 @@
             <ScalarProperty Name="IsAcceptMainTeacher" ColumnName="IsAcceptMainTeacher" />
             <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Message_status"><EntityTypeMapping TypeName="DistanceLessons.Models.Message_status"><MappingFragment StoreEntitySet="Message_status">
+            <ScalarProperty Name="MessageStatusId" ColumnName="MessageStatusId" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+            <ScalarProperty Name="Status" ColumnName="Status" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Messages"><EntityTypeMapping TypeName="DistanceLessons.Models.Message"><MappingFragment StoreEntitySet="Messages">
             <ScalarProperty Name="MessageId" ColumnName="MessageId" />
             <ScalarProperty Name="Message1" ColumnName="Message" />
             <ScalarProperty Name="DateOfSender" ColumnName="DateOfSender" />
             <ScalarProperty Name="UserId_From" ColumnName="UserId_From" />
             <ScalarProperty Name="UserId_To" ColumnName="UserId_To" />
-            <ScalarProperty Name="Status" ColumnName="Status" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Modules"><EntityTypeMapping TypeName="DistanceLessons.Models.Module"><MappingFragment StoreEntitySet="Modules">
             <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
@@ -1391,204 +1501,203 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="DistanceLessonsModel">
-        <EntityTypeShape EntityType="DistanceLessons.Models.Answer" Width="1.5" PointX="14.25" PointY="19" Height="2.1725878906250031" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Category" Width="1.5" PointX="3" PointY="9.25" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Contact" Width="1.5" PointX="5.25" PointY="9" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Cours" Width="1.5" PointX="5.25" PointY="12.5" Height="3.1340950520833317" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Information" Width="1.5" PointX="5.25" PointY="16.375" Height="2.7494921875000031" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Lesson" Width="1.5" PointX="9.75" PointY="14.375" Height="3.5186979166666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Message" Width="1.5" PointX="5.25" PointY="19.875" Height="2.5571907552083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Module" Width="1.5" PointX="7.5" PointY="16.625" Height="3.5186979166666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.News" Width="1.5" PointX="5.25" PointY="23.25" Height="2.172587890624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Role" Width="1.5" PointX="0.75" PointY="14.25" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.ShowTest" Width="1.5" PointX="14.25" PointY="11.375" Height="2.5571907552083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.Test" Width="1.5" PointX="12" PointY="18.875" Height="2.3648893229166745" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.UserAnswer" Width="1.5" PointX="16.5" PointY="15.25" Height="2.7494921875000031" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.UserCours" Width="1.5" PointX="7.5" PointY="13.125" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.UserModule" Width="1.5" PointX="12.75" PointY="14.75" Height="2.5571907552083388" IsExpanded="true" />
-        <EntityTypeShape EntityType="DistanceLessons.Models.User" Width="1.5" PointX="3" PointY="12" Height="6.0186165364583388" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Answer" Width="1.5" PointX="17.25" PointY="21.125" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Category" Width="1.5" PointX="6" PointY="15" Height="1.5956835937500014" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Contact" Width="1.5" PointX="5.25" PointY="10.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Cours" Width="1.5" PointX="8.25" PointY="15.25" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Information" Width="1.5" PointX="5.25" PointY="18" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Lesson" Width="1.5" PointX="12.75" PointY="16.5" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Message_status" Width="1.5" PointX="7.5" PointY="19.375" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Message" Width="1.5" PointX="5.25" PointY="24.5" Height="2.749492187499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Module" Width="1.5" PointX="10.5" PointY="19.25" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.News" Width="1.5" PointX="5.25" PointY="28" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Role" Width="1.5" PointX="0.75" PointY="16" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.ShowTest" Width="1.5" PointX="17.25" PointY="13.25" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.Test" Width="1.5" PointX="15" PointY="21" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.UserAnswer" Width="1.5" PointX="19.5" PointY="17.125" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.UserCours" Width="1.5" PointX="10.5" PointY="15.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.UserModule" Width="1.5" PointX="15.75" PointY="17" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="DistanceLessons.Models.User" Width="1.5" PointX="3" PointY="13.625" Height="6.2109179687500031" IsExpanded="true" />
         <AssociationConnector Association="DistanceLessons.Models.FK_Answers_Tests" ManuallyRouted="false">
-          <ConnectorPoint PointX="13.5" PointY="20.0862939453125" />
-          <ConnectorPoint PointX="14.25" PointY="20.0862939453125" />
+          <ConnectorPoint PointX="16.5" PointY="22.2112939453125" />
+          <ConnectorPoint PointX="17.25" PointY="22.2112939453125" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserAnswers_Answers" ManuallyRouted="false">
-          <ConnectorPoint PointX="15.03125" PointY="19" />
-          <ConnectorPoint PointX="15.03125" PointY="16.62474609375" />
-          <ConnectorPoint PointX="16.5" PointY="16.62474609375" />
+          <ConnectorPoint PointX="18.03125" PointY="21.125" />
+          <ConnectorPoint PointX="18.03125" PointY="18.49974609375" />
+          <ConnectorPoint PointX="19.5" PointY="18.49974609375" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Courses_Categories" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="10.84568359375" />
-          <ConnectorPoint PointX="4.875" PointY="11.22068359375" />
-          <ConnectorPoint PointX="4.875" PointY="14.067047526041666" />
-          <ConnectorPoint PointX="5.25" PointY="14.067047526041666" />
+          <ConnectorPoint PointX="7.5" PointY="15.922841796875002" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="15.922841796875" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="15.922841796875002" />
+          <ConnectorPoint PointX="8.25" PointY="15.922841796875002" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Contacts_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="12.063460538461539" />
-          <ConnectorPoint PointX="4.8160744349011209" PointY="11.747386103560418" />
-          <ConnectorPoint PointX="4.9339255650988791" PointY="11.629534973362661" />
-          <ConnectorPoint PointX="5.1875" PointY="11.375960538461541" />
-          <ConnectorPoint PointX="5.1875" PointY="11.428542169070514" />
-          <ConnectorPoint PointX="5.2511528461538459" PointY="11.364889322916667" />
+          <ConnectorPoint PointX="3.75" PointY="13.625" />
+          <ConnectorPoint PointX="3.75" PointY="11.807444661458334" />
+          <ConnectorPoint PointX="5.25" PointY="11.807444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Courses_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="13.221023763020833" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="13.221023763020833" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="13.221023763020833" />
-          <ConnectorPoint PointX="5.25" PointY="13.221023763020833" />
+          <ConnectorPoint PointX="4.5" PointY="17.297841796875" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="17.297841796875" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="17.297841796875" />
+          <ConnectorPoint PointX="8.25" PointY="17.297841796875" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Lessons_Courses" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="15.400940755208335" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="15.400940755208335" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="15.400940755208335" />
-          <ConnectorPoint PointX="9.75" PointY="15.400940755208335" />
+          <ConnectorPoint PointX="9.75" PointY="18.088440755208335" />
+          <ConnectorPoint PointX="12.291666666666666" PointY="18.088440755208335" />
+          <ConnectorPoint PointX="12.458333333333334" PointY="18.088440755208335" />
+          <ConnectorPoint PointX="12.75" PointY="18.088440755208335" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Modules_Courses" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="15.634095052083332" />
-          <ConnectorPoint PointX="7.125" PointY="16.009095052083332" />
-          <ConnectorPoint PointX="7.125" PointY="18.384348958333334" />
-          <ConnectorPoint PointX="7.5" PointY="18.384348958333334" />
+          <ConnectorPoint PointX="9.40625" PointY="18.384095052083332" />
+          <ConnectorPoint PointX="9.40625" PointY="22.189392903645835" />
+          <ConnectorPoint PointX="10.5" PointY="22.189392903645835" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserCourses_Courses" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="14.115143229166669" />
-          <ConnectorPoint PointX="7.5" PointY="14.115143229166669" />
+          <ConnectorPoint PointX="9.75" PointY="16.740143229166669" />
+          <ConnectorPoint PointX="10.5" PointY="16.740143229166669" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Informations_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="17.196808268229169" />
-          <ConnectorPoint PointX="5.25" PointY="17.196808268229169" />
+          <ConnectorPoint PointX="4.5" PointY="18.917958984375" />
+          <ConnectorPoint PointX="5.25" PointY="18.917958984375" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Lessons_Modules" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="17.259348958333334" />
-          <ConnectorPoint PointX="9.4166666666666661" PointY="17.259348958333334" />
-          <ConnectorPoint PointX="9.5833333333333339" PointY="17.259348958333334" />
-          <ConnectorPoint PointX="9.75" PointY="17.259348958333334" />
+          <ConnectorPoint PointX="12" PointY="19.634348958333334" />
+          <ConnectorPoint PointX="12.75" PointY="19.634348958333334" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Lessons_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="16.004547526041666" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="16.004547526041666" />
-          <ConnectorPoint PointX="9.5833333333333339" PointY="16.004547526041666" />
-          <ConnectorPoint PointX="9.75" PointY="16.004547526041666" />
+          <ConnectorPoint PointX="4.5" PointY="14.28125" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="14.28125" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="14.28125" />
+          <ConnectorPoint PointX="13.5" PointY="14.28125" />
+          <ConnectorPoint PointX="13.5" PointY="16.5" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Tests_Lessons" ManuallyRouted="false">
-          <ConnectorPoint PointX="10.5" PointY="17.893697916666667" />
-          <ConnectorPoint PointX="10.5" PointY="20.057444661458337" />
-          <ConnectorPoint PointX="12" PointY="20.057444661458337" />
+          <ConnectorPoint PointX="13.5" PointY="20.018697916666667" />
+          <ConnectorPoint PointX="13.5" PointY="22.182444661458334" />
+          <ConnectorPoint PointX="15" PointY="22.182444661458334" />
+        </AssociationConnector>
+        <AssociationConnector Association="DistanceLessons.Models.FK_Message_status_Messages" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="25.874746093749998" />
+          <ConnectorPoint PointX="8.25" PointY="25.874746093749998" />
+          <ConnectorPoint PointX="8.25" PointY="21.547587890625003" />
+        </AssociationConnector>
+        <AssociationConnector Association="DistanceLessons.Models.FK_Message_status_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.640627499999994" />
+          <ConnectorPoint PointX="7.875" PointY="14.640627499999994" />
+          <ConnectorPoint PointX="7.875" PointY="19.375" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Messages_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.75" PointY="18.018616536458339" />
-          <ConnectorPoint PointX="3.75" PointY="21.153595377604166" />
-          <ConnectorPoint PointX="5.25" PointY="21.153595377604166" />
+          <ConnectorPoint PointX="3.75" PointY="19.835917968750003" />
+          <ConnectorPoint PointX="3.75" PointY="25.874746093749998" />
+          <ConnectorPoint PointX="5.25" PointY="25.874746093749998" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Messages_Users1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.1562525" PointY="18.018616536458339" />
-          <ConnectorPoint PointX="4.1562525" PointY="20.48304518880208" />
-          <ConnectorPoint PointX="5.25" PointY="20.48304518880208" />
+          <ConnectorPoint PointX="4.1562525" PointY="19.835917968750003" />
+          <ConnectorPoint PointX="4.1562525" PointY="25.156120546874998" />
+          <ConnectorPoint PointX="5.25" PointY="25.156120546874998" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_ShowTests_Modules" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="16.625" />
-          <ConnectorPoint PointX="9.375" PointY="16.25" />
-          <ConnectorPoint PointX="9.375" PointY="12.653595377604166" />
-          <ConnectorPoint PointX="13.385416666666666" PointY="12.653595377604166" />
-          <ConnectorPoint PointX="13.552083333333334" PointY="12.653595377604166" />
-          <ConnectorPoint PointX="14.25" PointY="12.653595377604166" />
+          <ConnectorPoint PointX="12" PointY="19.25" />
+          <ConnectorPoint PointX="12.375" PointY="18.875" />
+          <ConnectorPoint PointX="12.375" PointY="15.044219877604167" />
+          <ConnectorPoint PointX="13.416666666666666" PointY="15.044219877604167" />
+          <ConnectorPoint PointX="13.583333333333334" PointY="15.044219877604167" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="15.044219877604167" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="15.044219877604167" />
+          <ConnectorPoint PointX="16.291666666666668" PointY="15.044219877604167" />
+          <ConnectorPoint PointX="16.458333333333332" PointY="15.044219877604167" />
+          <ConnectorPoint PointX="16.916666666666668" PointY="15.044219877604167" />
+          <ConnectorPoint PointX="17.083333333333332" PointY="15.044219877604167" />
+          <ConnectorPoint PointX="17.25" PointY="15.044219877604167" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserAnswers_Modules" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="9.4166666666666661" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="9.5833333333333339" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="10.416666666666666" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="10.583333333333334" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="12.260416666666666" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="12.427083333333334" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="12.463544166666667" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="12.630210833333335" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="14.947916666666666" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="15.114583333333334" PointY="17.977845052083335" />
-          <ConnectorPoint PointX="16.5" PointY="17.977845052083335" />
+          <ConnectorPoint PointX="12" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="13.416666666666666" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="13.583333333333334" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="15.463544166666667" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="15.630210833333335" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="17.947916666666668" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="18.114583333333332" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="20.25" PointY="20.509348958333334" />
+          <ConnectorPoint PointX="20.25" PointY="19.874492187500003" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserModules_Modules" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="18.42642502604167" />
-          <ConnectorPoint PointX="10.416666666666666" PointY="18.42642502604167" />
-          <ConnectorPoint PointX="10.583333333333334" PointY="18.42642502604167" />
-          <ConnectorPoint PointX="12.260416666666666" PointY="18.42642502604167" />
-          <ConnectorPoint PointX="12.427083333333334" PointY="18.42642502604167" />
-          <ConnectorPoint PointX="12.463544166666667" PointY="18.42642502604167" />
-          <ConnectorPoint PointX="12.630210833333335" PointY="18.42642502604167" />
-          <ConnectorPoint PointX="13.875" PointY="18.42642502604167" />
-          <ConnectorPoint PointX="13.875" PointY="17.307190755208339" />
+          <ConnectorPoint PointX="12" PointY="20.2640209375" />
+          <ConnectorPoint PointX="13.416666666666666" PointY="20.2640209375" />
+          <ConnectorPoint PointX="13.583333333333334" PointY="20.2640209375" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="20.2640209375" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="20.2640209375" />
+          <ConnectorPoint PointX="15.463544166666667" PointY="20.2640209375" />
+          <ConnectorPoint PointX="15.630210833333335" PointY="20.2640209375" />
+          <ConnectorPoint PointX="16.875" PointY="20.2640209375" />
+          <ConnectorPoint PointX="16.875" PointY="19.557190755208339" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_News_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.3437475" PointY="18.018616536458339" />
-          <ConnectorPoint PointX="3.3437475" PointY="24.336293945312498" />
-          <ConnectorPoint PointX="5.25" PointY="24.336293945312498" />
+          <ConnectorPoint PointX="3.3437475" PointY="19.835917968750003" />
+          <ConnectorPoint PointX="3.3437475" PointY="29.086293945312498" />
+          <ConnectorPoint PointX="5.25" PointY="29.086293945312498" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_Users_Roles" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="15.047841796875" />
-          <ConnectorPoint PointX="3" PointY="15.047841796875" />
+          <ConnectorPoint PointX="2.25" PointY="16.797841796875" />
+          <ConnectorPoint PointX="3" PointY="16.797841796875" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_ShowTests_Tests" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.34375" PointY="18.875" />
-          <ConnectorPoint PointX="12.34375" PointY="13.32414556640625" />
-          <ConnectorPoint PointX="13.385416666666666" PointY="13.32414556640625" />
-          <ConnectorPoint PointX="13.552083333333334" PointY="13.32414556640625" />
-          <ConnectorPoint PointX="14.25" PointY="13.32414556640625" />
+          <ConnectorPoint PointX="15.34375" PointY="21" />
+          <ConnectorPoint PointX="15.34375" PointY="14.115857438802083" />
+          <ConnectorPoint PointX="17.25" PointY="14.115857438802083" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_ShowTests_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="12.281732769230764" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="12.281732769230764" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="12.281732769230764" />
-          <ConnectorPoint PointX="8.1666666666666661" PointY="12.281732769230764" />
-          <ConnectorPoint PointX="8.3333333333333339" PointY="12.281732769230764" />
-          <ConnectorPoint PointX="14.25" PointY="12.281732769230764" />
+          <ConnectorPoint PointX="4.5" PointY="13.807928719401041" />
+          <ConnectorPoint PointX="17.25" PointY="13.807928719401041" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserAnswers_Tests" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.5468775" PointY="18.875" />
-          <ConnectorPoint PointX="12.5468775" PointY="17.642515403645838" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="17.642515403645838" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="17.642515403645838" />
-          <ConnectorPoint PointX="14.947916666666666" PointY="17.642515403645838" />
-          <ConnectorPoint PointX="15.114583333333334" PointY="17.642515403645838" />
-          <ConnectorPoint PointX="16.5" PointY="17.642515403645838" />
+          <ConnectorPoint PointX="15.5468775" PointY="21" />
+          <ConnectorPoint PointX="15.5468775" PointY="19.747091471354171" />
+          <ConnectorPoint PointX="16.791666666666668" PointY="19.747091471354171" />
+          <ConnectorPoint PointX="16.958333333333332" PointY="19.747091471354171" />
+          <ConnectorPoint PointX="17.947916666666668" PointY="19.747091471354171" />
+          <ConnectorPoint PointX="18.114583333333332" PointY="19.747091471354171" />
+          <ConnectorPoint PointX="19.5" PointY="19.747091471354171" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_User_UserAnswers" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="15.004545026041672" />
-          <ConnectorPoint PointX="5" PointY="15.004545026041672" />
-          <ConnectorPoint PointX="5" PointY="15.884095052083332" />
-          <ConnectorPoint PointX="6.916666666666667" PointY="15.884095052083332" />
-          <ConnectorPoint PointX="7.083333333333333" PointY="15.884095052083332" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="15.884095052083332" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="15.884095052083332" />
-          <ConnectorPoint PointX="9.5" PointY="15.884095052083332" />
-          <ConnectorPoint PointX="9.5" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="10.416666666666666" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="10.583333333333334" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="12.260416666666666" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="12.427083333333334" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="12.463544166666667" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="12.630210833333335" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="14.947916666666666" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="15.114583333333334" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="17.25" PointY="18.249492187500003" />
-          <ConnectorPoint PointX="17.25" PointY="17.999492187500003" />
+          <ConnectorPoint PointX="4.5" PointY="17.648923398437496" />
+          <ConnectorPoint PointX="7.791666666666667" PointY="17.648923398437496" />
+          <ConnectorPoint PointX="7.958333333333333" PointY="17.648923398437496" />
+          <ConnectorPoint PointX="8" PointY="17.648923398437496" />
+          <ConnectorPoint PointX="8" PointY="14.875" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="14.875" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="14.875" />
+          <ConnectorPoint PointX="13.416666666666666" PointY="14.875" />
+          <ConnectorPoint PointX="13.583333333333334" PointY="14.875" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="14.875" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="14.875" />
+          <ConnectorPoint PointX="16.291666666666668" PointY="14.875" />
+          <ConnectorPoint PointX="16.458333333333332" PointY="14.875" />
+          <ConnectorPoint PointX="17" PointY="14.875" />
+          <ConnectorPoint PointX="17" PointY="16.057190755208332" />
+          <ConnectorPoint PointX="20.25" PointY="16.057190755208332" />
+          <ConnectorPoint PointX="20.25" PointY="17.125" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserCourses_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="12.063460538461539" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="12.063460538461539" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="12.063460538461539" />
-          <ConnectorPoint PointX="8.25" PointY="12.063460538461539" />
-          <ConnectorPoint PointX="8.25" PointY="13.125" />
+          <ConnectorPoint PointX="4.5" PointY="14.04458935970052" />
+          <ConnectorPoint PointX="11.25" PointY="14.04458935970052" />
+          <ConnectorPoint PointX="11.25" PointY="15.75" />
         </AssociationConnector>
         <AssociationConnector Association="DistanceLessons.Models.FK_UserModules_Users" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="12.390868884615383" />
-          <ConnectorPoint PointX="4.791666666666667" PointY="12.390868884615383" />
-          <ConnectorPoint PointX="4.958333333333333" PointY="12.390868884615383" />
-          <ConnectorPoint PointX="8.1666666666666661" PointY="12.390868884615383" />
-          <ConnectorPoint PointX="8.3333333333333339" PointY="12.390868884615383" />
-          <ConnectorPoint PointX="13.46875" PointY="12.390868884615383" />
-          <ConnectorPoint PointX="13.46875" PointY="14.75" />
+          <ConnectorPoint PointX="4.5" PointY="14.460938749999997" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="14.460938749999997" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="14.460938749999997" />
+          <ConnectorPoint PointX="13.416666666666666" PointY="14.460938749999997" />
+          <ConnectorPoint PointX="13.583333333333334" PointY="14.460938749999997" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="14.460938749999997" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="14.460938749999997" />
+          <ConnectorPoint PointX="16.375" PointY="14.460938749999997" />
+          <ConnectorPoint PointX="16.375" PointY="17" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

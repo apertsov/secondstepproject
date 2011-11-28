@@ -139,12 +139,12 @@
     <Compile Include="Helpers\Paging.cs" />
     <Compile Include="Helpers\Text.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\ResultModels.cs" />
     <Compile Include="Models\DistanceLessonsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DistanceLessonsModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ResultModels.cs" />
     <Compile Include="Models\HomeModels.cs" />
     <Compile Include="Models\MetadataClass.cs" />
     <Compile Include="Models\DataEntitiesManager.cs" />
