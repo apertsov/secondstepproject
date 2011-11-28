@@ -7,6 +7,14 @@
     <EntitySet Name="Courses" EntityType="DistanceLessons.Models.Store.Courses" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Informations" EntityType="DistanceLessons.Models.Store.Informations" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Lessons" EntityType="DistanceLessons.Models.Store.Lessons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Message_status" EntityType="DistanceLessons.Models.Store.Message_status" store:Type="Tables" store:Schema="dbo" store:Name="Message_status">
+      <DefiningQuery>SELECT 
+      [Message_status].[MessageStatusId] AS [MessageStatusId], 
+      [Message_status].[UserId] AS [UserId], 
+      [Message_status].[MessageId] AS [MessageId], 
+      [Message_status].[Status] AS [Status]
+      FROM [dbo].[Message_status] AS [Message_status]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="Messages" EntityType="DistanceLessons.Models.Store.Messages" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Store.Modules" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="News" EntityType="DistanceLessons.Models.Store.News" store:Type="Tables" Schema="dbo" />
@@ -48,6 +56,14 @@
     <AssociationSet Name="FK_Lessons_Users" Association="DistanceLessons.Models.Store.FK_Lessons_Users">
       <End Role="Users" EntitySet="Users" />
       <End Role="Lessons" EntitySet="Lessons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_status_Messages" Association="DistanceLessons.Models.Store.FK_Message_status_Messages">
+      <End Role="Messages" EntitySet="Messages" />
+      <End Role="Message_status" EntitySet="Message_status" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Message_status_Users" Association="DistanceLessons.Models.Store.FK_Message_status_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Message_status" EntitySet="Message_status" />
     </AssociationSet>
     <AssociationSet Name="FK_Messages_Users" Association="DistanceLessons.Models.Store.FK_Messages_Users">
       <End Role="Users" EntitySet="Users" />
@@ -183,6 +199,21 @@
     <Property Name="IsAcceptMainTeacher" Type="bit" Nullable="false" />
     <Property Name="ModuleId" Type="uniqueidentifier" />
   </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'E:\PROJECT\SECONDSTEPPROJECT\TRUNK\ SECONDSTEPPROJECT\DISTANCELESSONS\APP_DATA\DISTANCE_LESSONS.MDF.dbo.Message_status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Message_status">
+    <Key>
+      <PropertyRef Name="MessageStatusId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="MessageId" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="MessageStatusId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MessageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Status" Type="tinyint" Nullable="false" />
+  </EntityType>
   <EntityType Name="Messages">
     <Key>
       <PropertyRef Name="MessageId" />
@@ -192,7 +223,7 @@
     <Property Name="DateOfSender" Type="datetime" Nullable="false" />
     <Property Name="UserId_From" Type="uniqueidentifier" Nullable="false" />
     <Property Name="UserId_To" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Status" Type="tinyint" Nullable="false" />
+    <Property Name="Title" Type="varchar" Nullable="false" MaxLength="64" />
   </EntityType>
   <EntityType Name="Modules">
     <Key>
@@ -382,6 +413,30 @@
         <PropertyRef Name="UserId" />
       </Principal>
       <Dependent Role="Lessons">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_status_Messages">
+    <End Role="Messages" Type="DistanceLessons.Models.Store.Messages" Multiplicity="1" />
+    <End Role="Message_status" Type="DistanceLessons.Models.Store.Message_status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Messages">
+        <PropertyRef Name="MessageId" />
+      </Principal>
+      <Dependent Role="Message_status">
+        <PropertyRef Name="MessageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Message_status_Users">
+    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+    <End Role="Message_status" Type="DistanceLessons.Models.Store.Message_status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Message_status">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>

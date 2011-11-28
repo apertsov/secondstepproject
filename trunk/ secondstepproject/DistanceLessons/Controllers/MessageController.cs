@@ -83,7 +83,7 @@ namespace DistanceLessons.Controllers
                     {
                         obj.MessageId = Guid.NewGuid();
                         obj.DateOfSender = System.DateTime.Now;
-                        obj.Status = 1;
+                        //obj.Status = 1;
                         _db.AddMessage(obj);
                         _db.Save();
 
@@ -127,7 +127,7 @@ namespace DistanceLessons.Controllers
             //obj.UserId_To = obj.User1.UserId; //_db.GetUserId(logIn);
             obj.MessageId = Guid.NewGuid();
             obj.DateOfSender = System.DateTime.Now;
-            obj.Status = 1;
+           // obj.Status = 1;
             _db.AddMessage(obj);
             _db.Save();
 
@@ -193,7 +193,7 @@ namespace DistanceLessons.Controllers
                     {
                         obj.MessageId = Guid.NewGuid();
                         obj.DateOfSender = System.DateTime.Now;
-                        obj.Status = 1;
+                        //obj.Status = 1;
                         _db.AddMessage(obj);
                         _db.Save();
 

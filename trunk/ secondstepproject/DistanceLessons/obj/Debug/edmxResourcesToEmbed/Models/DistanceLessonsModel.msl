@@ -72,6 +72,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Message_status">
+      <EntityTypeMapping TypeName="DistanceLessons.Models.Message_status">
+        <MappingFragment StoreEntitySet="Message_status">
+          <ScalarProperty Name="MessageStatusId" ColumnName="MessageStatusId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Messages">
       <EntityTypeMapping TypeName="DistanceLessons.Models.Message">
         <MappingFragment StoreEntitySet="Messages">
@@ -80,7 +90,7 @@
           <ScalarProperty Name="DateOfSender" ColumnName="DateOfSender" />
           <ScalarProperty Name="UserId_From" ColumnName="UserId_From" />
           <ScalarProperty Name="UserId_To" ColumnName="UserId_To" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
