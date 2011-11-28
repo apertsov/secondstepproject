@@ -12,14 +12,7 @@
           <EntitySet Name="Courses" EntityType="DistanceLessons.Models.Store.Courses" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Informations" EntityType="DistanceLessons.Models.Store.Informations" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Lessons" EntityType="DistanceLessons.Models.Store.Lessons" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Message_status" EntityType="DistanceLessons.Models.Store.Message_status" store:Type="Tables" store:Schema="dbo" store:Name="Message_status">
-            <DefiningQuery>SELECT 
-      [Message_status].[MessageStatusId] AS [MessageStatusId], 
-      [Message_status].[UserId] AS [UserId], 
-      [Message_status].[MessageId] AS [MessageId], 
-      [Message_status].[Status] AS [Status]
-      FROM [dbo].[Message_status] AS [Message_status]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Message_status" EntityType="DistanceLessons.Models.Store.Message_status" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Messages" EntityType="DistanceLessons.Models.Store.Messages" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Modules" EntityType="DistanceLessons.Models.Store.Modules" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="News" EntityType="DistanceLessons.Models.Store.News" store:Type="Tables" Schema="dbo" />
@@ -204,15 +197,9 @@
           <Property Name="IsAcceptMainTeacher" Type="bit" Nullable="false" />
           <Property Name="ModuleId" Type="uniqueidentifier" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'E:\PROJECT\SECONDSTEPPROJECT\TRUNK\ SECONDSTEPPROJECT\DISTANCELESSONS\APP_DATA\DISTANCE_LESSONS.MDF.dbo.Message_status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
         <EntityType Name="Message_status">
           <Key>
             <PropertyRef Name="MessageStatusId" />
-            <PropertyRef Name="UserId" />
-            <PropertyRef Name="MessageId" />
-            <PropertyRef Name="Status" />
           </Key>
           <Property Name="MessageStatusId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
@@ -864,9 +851,6 @@
         <EntityType Name="Message_status">
           <Key>
             <PropertyRef Name="MessageStatusId" />
-            <PropertyRef Name="UserId" />
-            <PropertyRef Name="MessageId" />
-            <PropertyRef Name="Status" />
           </Key>
           <Property Name="MessageStatusId" Type="Guid" Nullable="false" />
           <Property Name="UserId" Type="Guid" Nullable="false" />

@@ -123,6 +123,24 @@
   <data name="App_HomePage" xml:space="preserve">
     <value>На главную страницу</value>
   </data>
+  <data name="back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="read" xml:space="preserve">
+    <value>Читать</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
   <data name="Slider_ToPage" xml:space="preserve">
     <value>Перейти на страницу</value>
   </data>
@@ -155,5 +173,8 @@
   </data>
   <data name="_LogOnPartial_SignIn" xml:space="preserve">
     <value>Ввойти</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Добро пожаловать !</value>
   </data>
 </root>

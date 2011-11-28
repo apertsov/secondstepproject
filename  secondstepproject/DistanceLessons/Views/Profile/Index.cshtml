@@ -36,6 +36,8 @@
                     </li>
                 </ul>
             </li>
+            <li>@Ajax.ActionLink("Sebd", "SendMessage", new AjaxOptions(){UpdateTargetId = "profile_ajax",InsertionMode = InsertionMode.Replace})</li>
+            <li>@Ajax.ActionLink("Sebd2", "Messages", new AjaxOptions(){UpdateTargetId = "profile_ajax",InsertionMode = InsertionMode.Replace})</li>
         </ul>
         <div id="profile_ajax" class="box_shdw_bottom">
         @if ((bool)Html.ViewData["exist"]) { Html.RenderPartial("_Info_PartialPage", Model); }

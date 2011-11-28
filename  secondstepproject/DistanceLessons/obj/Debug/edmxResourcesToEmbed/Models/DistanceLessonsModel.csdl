@@ -209,9 +209,6 @@
   <EntityType Name="Message_status">
     <Key>
       <PropertyRef Name="MessageStatusId" />
-      <PropertyRef Name="UserId" />
-      <PropertyRef Name="MessageId" />
-      <PropertyRef Name="Status" />
     </Key>
     <Property Name="MessageStatusId" Type="Guid" Nullable="false" />
     <Property Name="UserId" Type="Guid" Nullable="false" />

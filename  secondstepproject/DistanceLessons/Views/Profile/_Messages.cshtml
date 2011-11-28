@@ -1,0 +1,11 @@
+﻿@model IEnumerable<DistanceLessons.Models.Message>
+
+@{
+    <ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Title - @item.UserId_From - @item.UserId_To - @item.Message1</li>
+    }
+    </ul>
+}
+    

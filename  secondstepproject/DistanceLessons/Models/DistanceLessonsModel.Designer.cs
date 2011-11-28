@@ -2377,7 +2377,7 @@ namespace DistanceLessons.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Guid UserId
         {
@@ -2387,14 +2387,11 @@ namespace DistanceLessons.Models
             }
             set
             {
-                if (_UserId != value)
-                {
-                    OnUserIdChanging(value);
-                    ReportPropertyChanging("UserId");
-                    _UserId = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("UserId");
-                    OnUserIdChanged();
-                }
+                OnUserIdChanging(value);
+                ReportPropertyChanging("UserId");
+                _UserId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UserId");
+                OnUserIdChanged();
             }
         }
         private global::System.Guid _UserId;
@@ -2404,7 +2401,7 @@ namespace DistanceLessons.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Guid MessageId
         {
@@ -2414,14 +2411,11 @@ namespace DistanceLessons.Models
             }
             set
             {
-                if (_MessageId != value)
-                {
-                    OnMessageIdChanging(value);
-                    ReportPropertyChanging("MessageId");
-                    _MessageId = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("MessageId");
-                    OnMessageIdChanged();
-                }
+                OnMessageIdChanging(value);
+                ReportPropertyChanging("MessageId");
+                _MessageId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MessageId");
+                OnMessageIdChanged();
             }
         }
         private global::System.Guid _MessageId;
@@ -2431,7 +2425,7 @@ namespace DistanceLessons.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Byte Status
         {
@@ -2441,14 +2435,11 @@ namespace DistanceLessons.Models
             }
             set
             {
-                if (_Status != value)
-                {
-                    OnStatusChanging(value);
-                    ReportPropertyChanging("Status");
-                    _Status = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("Status");
-                    OnStatusChanged();
-                }
+                OnStatusChanging(value);
+                ReportPropertyChanging("Status");
+                _Status = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Status");
+                OnStatusChanged();
             }
         }
         private global::System.Byte _Status;
