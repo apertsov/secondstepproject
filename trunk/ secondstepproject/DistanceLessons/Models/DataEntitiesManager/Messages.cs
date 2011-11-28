@@ -28,7 +28,7 @@ namespace DistanceLessons.Models
                 List<Message> lst = new List<Message>();
                 foreach (var i in Query)
                     lst.Add(i);
-                
+
                 return lst;
             }
             else
@@ -44,7 +44,7 @@ namespace DistanceLessons.Models
                 List<Message> lst = new List<Message>();
                 foreach (var i in Query)
                     lst.Add(i);
-                
+
                 return lst;
             }
         }

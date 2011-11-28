@@ -1,68 +1,67 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:LogOn.cshtml" caret="469" fromTop="13" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:AccountController.cs" caret="9055" fromTop="31" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Helpers/f:Paging.cs" caret="191" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Helpers/f:Text.cs" caret="374" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:ProfileModels.cs" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Home/f:Index.cshtml" caret="648" fromTop="13" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="480" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Users.cs" caret="8067" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_CreateContactInfo_PartialPage.cshtml" caret="405" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_CreateInfo_PartialPage.cshtml" caret="559" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_EditContactInfo_PartialPage.cshtml" caret="101" fromTop="5" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_EditInfo_PartialPage.cshtml" caret="738" fromTop="19" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Info_PartialPage.cshtml" caret="229" fromTop="8" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:profile.cshtml" caret="3268" fromTop="31" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="2484" fromTop="23" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="4183" fromTop="8" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Contacts.cs" caret="1403" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="1703" fromTop="48" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Messages.cs" caret="314" fromTop="13" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:MessageController.cs" caret="968" fromTop="36" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Courses.cs" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="3656" fromTop="31" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserCourses.cs" caret="4815" fromTop="120" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Categories.cs" caret="503" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:Index.cshtml" caret="540" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="235" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:EducationController.cs" caret="224" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:Users.cshtml" caret="318" fromTop="9" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:AdminController.cs" caret="451" fromTop="13" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Navigation_PartialPage.cshtml" caret="763" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Home/f:Index.cshtml" caret="54" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="157" fromTop="5" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Messages.cshtml" caret="221" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:MessageController.cs" caret="1444" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_CreateInfo_PartialPage.cshtml" caret="3123" fromTop="64" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Message/f:CreateMessage.cshtml" caret="371" fromTop="2" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Home/f:Categories.cshtml" caret="83" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="903" fromTop="5" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MessageModels.cs" caret="35" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:Index.cshtml" caret="2137" fromTop="24" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_SendMessage.cshtml" caret="46" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Messages.cs" caret="1461" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/f:Web.config" caret="1379" fromTop="24" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="70" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:DataEntitiesManager.cs" caret="39" fromTop="2" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/f:Web.config" caret="4710" fromTop="82" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1201" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="4412" fromTop="10" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Contacts.cs" caret="683" fromTop="18" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Contacts.cs" caret="683" fromTop="8" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Contacts.cs" caret="1650" fromTop="29" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Contacts.cs" caret="2143" fromTop="28" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Contacts.cs" caret="1338" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_EditInfo_PartialPage.cshtml" caret="1661" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_EditInfo_PartialPage.cshtml" caret="310" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_EditContactInfo_PartialPage.cshtml" caret="39" fromTop="1" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_EditContactInfo_PartialPage.cshtml" caret="309" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_EditContactInfo_PartialPage.cshtml" caret="101" fromTop="5" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:profile.cshtml" caret="2062" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:profile.cshtml" caret="2382" fromTop="22" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:profile.cshtml" caret="2696" fromTop="29" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:profile.cshtml" caret="3012" fromTop="27" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:profile.cshtml" caret="3251" fromTop="30" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="2603" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Info_PartialPage.cshtml" caret="3225" fromTop="31" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="734" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="978" fromTop="25" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Info_PartialPage.cshtml" caret="210" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:Index.cshtml" caret="852" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="1926" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="2097" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="2291" fromTop="19" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="2484" fromTop="23" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Contacts.cs" caret="982" fromTop="8" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="3656" fromTop="31" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserCourses.cs" caret="4815" fromTop="31" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Categories.cs" caret="298" fromTop="13" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Categories.cs" caret="503" fromTop="18" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="4503" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_SendMessage.cshtml" caret="46" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="4253" fromTop="4" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1437" fromTop="30" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1437" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1437" fromTop="27" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1437" fromTop="20" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1437" fromTop="18" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1437" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1403" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1267" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1199" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:MessagesAndStatus.cs" caret="1437" fromTop="15" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="4973" fromTop="23" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="4412" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:DataEntitiesManager.cs" caret="61" fromTop="2" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:DataEntitiesManager.cs" caret="175" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="3467" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="3788" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="2969" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="2373" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="2006" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="1611" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="1413" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="887" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="444" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="104" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="187" fromTop="4" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/f:Web.config" caret="4710" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="4710" fromTop="3" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
@@ -73,47 +72,49 @@
       <Item value="if" priority="31" />
       <Item value="using" priority="9" />
       <Item value="helper" priority="7" />
+      <Item value="foreach" priority="7" />
+      <Item value="item" priority="31" />
     </ItemStatistics>
     <ItemStatistics item="CSharpCodeCompletionContext">
       <Item value="Ajax" priority="91" />
-      <Item value="new" priority="448" />
+      <Item value="new" priority="672" />
       <Item value="AjaxOptions" priority="57" />
       <Item value="Index" priority="329" />
       <Item value="News" priority="197" />
       <Item value="_new" priority="191" />
       <Item value="byte" priority="63" />
       <Item value="bool" priority="63" />
-      <Item value="if" priority="823" />
+      <Item value="if" priority="887" />
       <Item value="partial_news" priority="31" />
-      <Item value="foreach" priority="31" />
+      <Item value="foreach" priority="61" />
       <Item value="LdapStyleUriParser`0" priority="31" />
       <Item value="i" priority="31" />
       <Item value="News`0" priority="95" />
       <Item value="lst" priority="287" />
-      <Item value="var" priority="63" />
+      <Item value="var" priority="95" />
       <Item value="for" priority="31" />
       <Item value="true" priority="191" />
       <Item value="false" priority="191" />
       <Item value="id" priority="117" />
-      <Item value="Model" priority="891" />
-      <Item value="Html" priority="674" />
+      <Item value="Model" priority="923" />
+      <Item value="Html" priority="706" />
       <Item value="RouteValueDictionary" priority="28" />
       <Item value="null" priority="735" />
       <Item value="DetailsNew" priority="32" />
-      <Item value="type" priority="63" />
-      <Item value="else" priority="287" />
-      <Item value="Message`0" priority="31" />
-      <Item value="Guid`0" priority="31" />
+      <Item value="type" priority="160" />
+      <Item value="else" priority="319" />
+      <Item value="Message`0" priority="127" />
+      <Item value="Guid`0" priority="127" />
       <Item value="FormCollection`0" priority="31" />
       <Item value="collection" priority="32" />
-      <Item value="public" priority="255" />
+      <Item value="public" priority="511" />
       <Item value="static" priority="126" />
       <Item value="MvcApplication`0" priority="31" />
       <Item value="this" priority="63" />
       <Item value="HtmlHelper`0" priority="31" />
-      <Item value="string" priority="727" />
+      <Item value="string" priority="852" />
       <Item value="text" priority="31" />
-      <Item value="temp" priority="160" />
+      <Item value="temp" priority="256" />
       <Item value="current_obj" priority="127" />
       <Item value="char" priority="31" />
       <Item value="del" priority="31" />
@@ -124,18 +125,18 @@
       <Item value="object" priority="89" />
       <Item value="Home" priority="32" />
       <Item value="old" priority="31" />
-      <Item value="obj" priority="191" />
+      <Item value="obj" priority="767" />
       <Item value="itemsCount" priority="30" />
       <Item value="Nullable" priority="31" />
       <Item value="System" priority="94" />
-      <Item value="DateTime`0" priority="240" />
+      <Item value="DateTime`0" priority="272" />
       <Item value="NullReferenceException`0" priority="31" />
       <Item value="Information`0" priority="63" />
-      <Item value="return" priority="255" />
+      <Item value="return" priority="415" />
       <Item value="obj_date" priority="63" />
-      <Item value="_db" priority="382" />
-      <Item value="DistanceLessons" priority="63" />
-      <Item value="Models" priority="53" />
+      <Item value="_db" priority="734" />
+      <Item value="DistanceLessons" priority="95" />
+      <Item value="Models" priority="84" />
       <Item value="dbEntities`0" priority="26" />
       <Item value="DataEntitiesManager`0" priority="26" />
       <Item value="DataEntitiesManager" priority="28" />
@@ -158,14 +159,14 @@
       <Item value="using" priority="29" />
       <Item value="RazorView`0" priority="32" />
       <Item value="override" priority="31" />
-      <Item value="void" priority="95" />
+      <Item value="void" priority="159" />
       <Item value="filterContext" priority="128" />
       <Item value="CultureInfo" priority="28" />
       <Item value="culture" priority="287" />
       <Item value="ThreadStaticAttribute`0" priority="31" />
       <Item value="cultureInfo" priority="63" />
       <Item value="Thread`0" priority="31" />
-      <Item value="ActionResult`0" priority="31" />
+      <Item value="ActionResult`0" priority="127" />
       <Item value="Session" priority="544" />
       <Item value="RedirectToAction`0" priority="95" />
       <Item value="ChangeLocal" priority="32" />
@@ -182,7 +183,7 @@
       <Item value="cookie" priority="191" />
       <Item value="LangCookie`0" priority="31" />
       <Item value="ReplaceCookie`0" priority="63" />
-      <Item value="String`0" priority="191" />
+      <Item value="String`0" priority="223" />
       <Item value="defaultLang" priority="31" />
       <Item value="choseLang" priority="159" />
       <Item value="lang" priority="95" />
@@ -191,7 +192,7 @@
       <Item value="View`0" priority="127" />
       <Item value="user_login" priority="95" />
       <Item value="Info" priority="98" />
-      <Item value="User" priority="286" />
+      <Item value="User" priority="446" />
       <Item value="try" priority="31" />
       <Item value="GetUserList`0" priority="31" />
       <Item value="GetInfoList`0" priority="32" />
@@ -201,29 +202,48 @@
       <Item value="Guid" priority="57" />
       <Item value="Index.cshtml" priority="27" />
       <Item value="ViewData" priority="95" />
-      <Item value="PartialView`0" priority="31" />
+      <Item value="PartialView`0" priority="63" />
       <Item value="HttpGet" priority="31" />
       <Item value="GetLessonList`0" priority="95" />
       <Item value="from" priority="31" />
       <Item value="where" priority="31" />
       <Item value="l" priority="63" />
-      <Item value="userId" priority="31" />
+      <Item value="userId" priority="63" />
       <Item value="select" priority="31" />
       <Item value="result" priority="64" />
       <Item value="Lesson`0" priority="85" />
-      <Item value="item" priority="31" />
+      <Item value="item" priority="151" />
       <Item value="user" priority="126" />
       <Item value="Profile" priority="32" />
       <Item value="profile" priority="32" />
       <Item value="UpdateTargetId" priority="31" />
       <Item value="InsertionMode" priority="32" />
       <Item value="InsertionMode`0" priority="32" />
+      <Item value="Query" priority="31" />
+      <Item value="m" priority="31" />
+      <Item value="in" priority="31" />
+      <Item value="SendMessage" priority="32" />
+      <Item value="set" priority="32" />
+      <Item value="testikModel`0" priority="90" />
+      <Item value="Messages" priority="32" />
+      <Item value="Message_status`0" priority="191" />
+      <Item value="Message_status" priority="86" />
+      <Item value="FirstPerson" priority="63" />
+      <Item value="UserFrom" priority="127" />
+      <Item value="UserTo" priority="63" />
+      <Item value="ModelState" priority="31" />
+      <Item value="currentUser" priority="31" />
+      <Item value="SendMessageModel`0" priority="122" />
+      <Item value="Save`0" priority="127" />
+      <Item value="Test`0" priority="31" />
+      <Item value="UserAnswers`0" priority="383" />
+      <Item value="UserAnswers" priority="29" />
     </ItemStatistics>
     <ItemStatistics item="HtmlCodeCompletionContext">
       <Item value="div" priority="141" />
       <Item value="little" priority="13" />
       <Item value="id" priority="61" />
-      <Item value="class" priority="174" />
+      <Item value="class" priority="180" />
       <Item value="item" priority="29" />
       <Item value="br" priority="60" />
       <Item value="hr" priority="11" />
@@ -246,8 +266,8 @@
       <Item value="float" priority="13" />
       <Item value="header" priority="5" />
       <Item value="place" priority="5" />
-      <Item value="ul" priority="41" />
-      <Item value="li" priority="78" />
+      <Item value="ul" priority="48" />
+      <Item value="li" priority="90" />
       <Item value="begin" priority="6" />
       <Item value="margin-right" priority="6" />
       <Item value="font" priority="11" />
@@ -258,8 +278,8 @@
       <Item value="text/javascript" priority="5" />
       <Item value="size" priority="12" />
       <Item value="i" priority="5" />
-      <Item value="tr" priority="54" />
-      <Item value="td" priority="89" />
+      <Item value="tr" priority="68" />
+      <Item value="td" priority="101" />
       <Item value="colspan" priority="17" />
       <Item value="ui-datepicker" priority="5" />
       <Item value="toStartPage" priority="5" />
@@ -267,8 +287,8 @@
       <Item value="h6" priority="5" />
       <Item value="listing" priority="5" />
       <Item value="one" priority="5" />
-      <Item value="table" priority="23" />
-      <Item value="error" priority="24" />
+      <Item value="table" priority="29" />
+      <Item value="error" priority="30" />
       <Item value="center" priority="108" />
       <Item value="no_button" priority="17" />
       <Item value="text_right" priority="29" />
@@ -418,26 +438,34 @@
       <Item value="GetNew`0" priority="26" />
       <Item value="CheckDoB`0" priority="80" />
       <Item value="GetInformation`0" priority="26" />
-      <Item value="GetUserId`0" priority="26" />
+      <Item value="GetUserId`0" priority="53" />
       <Item value="UserInformation`0" priority="26" />
       <Item value="ExistInformation`0" priority="107" />
       <Item value="ExistContact`0" priority="27" />
       <Item value="GetUserContact`0" priority="26" />
+      <Item value="GetMessageList_UserID`0" priority="26" />
+      <Item value="AddMessage`0" priority="53" />
+      <Item value="GetUser`0" priority="26" />
+      <Item value="GetMessagesByUser`0" priority="26" />
+      <Item value="AddMessageAndStatus`0" priority="26" />
+      <Item value="AddMessage_status`0" priority="26" />
+      <Item value="GetMessageStatus`0" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.Mvc.HtmlHelper`1">
       <Item value="ActionLink`0" priority="134" />
       <Item value="Text`0" priority="134" />
       <Item value="TextHtml`0" priority="107" />
-      <Item value="Resource`0" priority="302" />
-      <Item value="TextAreaFor`2" priority="26" />
+      <Item value="Resource`0" priority="329" />
+      <Item value="TextAreaFor`2" priority="53" />
       <Item value="ViewData" priority="26" />
       <Item value="RenderPartial`0" priority="26" />
       <Item value="RenderAction`0" priority="53" />
       <Item value="DisplayNameFor`2" priority="26" />
       <Item value="DisplayFor`2" priority="81" />
+      <Item value="TextBoxFor`2" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DistanceLessons.Models.User">
-      <Item value="Login" priority="107" />
+      <Item value="Login" priority="242" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Text.RegularExpressions.Regex">
       <Item value="Split`0" priority="26" />
@@ -486,7 +514,7 @@
     <ItemStatistics item="Qualified:@System.String">
       <Item value="IsNullOrEmpty`0" priority="188" />
       <Item value="Format`0" priority="26" />
-      <Item value="Empty" priority="26" />
+      <Item value="Empty" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Web.Compilation.ResourceExpressionFields">
       <Item value="ClassKey" priority="53" />
@@ -526,17 +554,17 @@
       <Item value="Value" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.DateTime">
-      <Item value="Now" priority="26" />
+      <Item value="Now" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.DateTime">
       <Item value="AddMonths`0" priority="26" />
       <Item value="AddDays`0" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Security.Principal.IPrincipal">
-      <Item value="Identity" priority="242" />
+      <Item value="Identity" priority="350" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Security.Principal.IIdentity">
-      <Item value="Name" priority="242" />
+      <Item value="Name" priority="350" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Guid">
       <Item value="ToString`0" priority="53" />
@@ -568,6 +596,40 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Web.Mvc.Ajax.InsertionMode">
       <Item value="Replace" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DistanceLessons.Models.Message">
+      <Item value="UserId_From" priority="80" />
+      <Item value="User" priority="26" />
+      <Item value="Title" priority="162" />
+      <Item value="UserId_To" priority="80" />
+      <Item value="Message1" priority="26" />
+      <Item value="MessageId" priority="53" />
+      <Item value="DateOfSender" priority="26" />
+      <Item value="User1" priority="134" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Guid">
+      <Item value="NewGuid`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DistanceLessons.Models.testikModel">
+      <Item value="Message" priority="135" />
+      <Item value="Name" priority="107" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DistanceLessons.Models.Message_status">
+      <Item value="MessageStatusId" priority="26" />
+      <Item value="UserId" priority="26" />
+      <Item value="MessageId" priority="26" />
+      <Item value="Status" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DistanceLessons.Models.dbEntities">
+      <Item value="Messages" priority="26" />
+      <Item value="Message_status" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Objects.ObjectSet`1">
+      <Item value="AddObject`0" priority="110" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DistanceLessons.Models.SendMessageModel">
+      <Item value="Message" priority="80" />
+      <Item value="Name" priority="26" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <NAntValidationSettings>

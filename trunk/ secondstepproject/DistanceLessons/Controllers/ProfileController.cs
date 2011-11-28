@@ -131,5 +131,31 @@ namespace DistanceLessons.Controllers
                 }
             }
         }
+
+        public ActionResult Messages()
+        {
+            return PartialView("_Messages",_db.GetMessagesByUser(User.Identity.Name, 0));
+        }
+
+        [HttpGet]
+        public ActionResult SendMessage()
+        {
+            return PartialView("_SendMessage");
+        }
+
+        [HttpPost]
+        public ActionResult SendMessage(SendMessageModel obj)
+        {
+            obj.Message.MessageId = Guid.NewGuid();
+            obj.Message.UserId_From = _db.GetUserId(User.Identity.Name);
+            obj.Message.UserId_To = _db.GetUserId(obj.Name);
+            obj.Message.DateOfSender = DateTime.Now;
+
+            _db.AddMessage(obj.Message);
+            _db.AddMessage_status(_db.GetMessageStatus(obj.Message,obj.Name));
+            _db.AddMessage_status(_db.GetMessageStatus(obj.Message,User.Identity.Name));
+
+            return RedirectToAction("Index");
+        }
     }
 }

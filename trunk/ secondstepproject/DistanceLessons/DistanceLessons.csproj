@@ -141,11 +141,13 @@
     <Compile Include="Helpers\Paging.cs" />
     <Compile Include="Helpers\Text.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\DataEntitiesManager\MessagesAndStatus.cs" />
     <Compile Include="Models\DistanceLessonsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DistanceLessonsModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\MessageModels.cs" />
     <Compile Include="Models\ResultModels.cs" />
     <Compile Include="Models\HomeModels.cs" />
     <Compile Include="Models\MetadataClass.cs" />
@@ -542,6 +544,8 @@
     <Content Include="Views\Education\_CoursesList.cshtml" />
     <Content Include="Views\Search\Course.cshtml" />
     <Content Include="Views\Search\_resultCourse.cshtml" />
+    <Content Include="Views\Profile\_Messages.cshtml" />
+    <Content Include="Views\Profile\_SendMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">
