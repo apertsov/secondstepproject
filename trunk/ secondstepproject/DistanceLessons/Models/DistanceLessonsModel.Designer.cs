@@ -30,6 +30,8 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Lessons_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(DistanceLessons.Models.Module), "Lessons", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Lesson), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Lessons_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Lessons", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Lesson), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Tests_Lessons", "Lessons", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Lesson), "Tests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Test), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Message_status_Messages", "Messages", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Message), "Message_status", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Message_status), true)]
+[assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Message_status_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Message_status", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Message_status), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Messages_Users", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Messages", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Message), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_Messages_Users1", "Users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.User), "Messages", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.Message), true)]
 [assembly: EdmRelationshipAttribute("DistanceLessons.Models", "FK_ShowTests_Modules", "Modules", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(DistanceLessons.Models.Module), "ShowTests", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(DistanceLessons.Models.ShowTest), true)]
@@ -189,6 +191,22 @@ namespace DistanceLessons.Models
             }
         }
         private ObjectSet<Lesson> _Lessons;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Message_status> Message_status
+        {
+            get
+            {
+                if ((_Message_status == null))
+                {
+                    _Message_status = base.CreateObjectSet<Message_status>("Message_status");
+                }
+                return _Message_status;
+            }
+        }
+        private ObjectSet<Message_status> _Message_status;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -399,6 +417,14 @@ namespace DistanceLessons.Models
         public void AddToLessons(Lesson lesson)
         {
             base.AddObject("Lessons", lesson);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Message_status EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToMessage_status(Message_status message_status)
+        {
+            base.AddObject("Message_status", message_status);
         }
     
         /// <summary>
@@ -2023,8 +2049,8 @@ namespace DistanceLessons.Models
         /// <param name="dateOfSender">Initial value of the DateOfSender property.</param>
         /// <param name="userId_From">Initial value of the UserId_From property.</param>
         /// <param name="userId_To">Initial value of the UserId_To property.</param>
-        /// <param name="status">Initial value of the Status property.</param>
-        public static Message CreateMessage(global::System.Guid messageId, global::System.String message1, global::System.DateTime dateOfSender, global::System.Guid userId_From, global::System.Guid userId_To, global::System.Byte status)
+        /// <param name="title">Initial value of the Title property.</param>
+        public static Message CreateMessage(global::System.Guid messageId, global::System.String message1, global::System.DateTime dateOfSender, global::System.Guid userId_From, global::System.Guid userId_To, global::System.String title)
         {
             Message message = new Message();
             message.MessageId = messageId;
@@ -2032,7 +2058,7 @@ namespace DistanceLessons.Models
             message.DateOfSender = dateOfSender;
             message.UserId_From = userId_From;
             message.UserId_To = userId_To;
-            message.Status = status;
+            message.Title = title;
             return message;
         }
 
@@ -2167,28 +2193,50 @@ namespace DistanceLessons.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Byte Status
+        public global::System.String Title
         {
             get
             {
-                return _Status;
+                return _Title;
             }
             set
             {
-                OnStatusChanging(value);
-                ReportPropertyChanging("Status");
-                _Status = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("Status");
-                OnStatusChanged();
+                OnTitleChanging(value);
+                ReportPropertyChanging("Title");
+                _Title = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Title");
+                OnTitleChanged();
             }
         }
-        private global::System.Byte _Status;
-        partial void OnStatusChanging(global::System.Byte value);
-        partial void OnStatusChanged();
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
+        partial void OnTitleChanged();
 
         #endregion
     
         #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Message_status_Messages", "Message_status")]
+        public EntityCollection<Message_status> Message_status
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Message_status>("DistanceLessons.Models.FK_Message_status_Messages", "Message_status");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Message_status>("DistanceLessons.Models.FK_Message_status_Messages", "Message_status", value);
+                }
+            }
+        }
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -2262,6 +2310,227 @@ namespace DistanceLessons.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_Messages_Users1", "Users", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="DistanceLessons.Models", Name="Message_status")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Message_status : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Message_status object.
+        /// </summary>
+        /// <param name="messageStatusId">Initial value of the MessageStatusId property.</param>
+        /// <param name="userId">Initial value of the UserId property.</param>
+        /// <param name="messageId">Initial value of the MessageId property.</param>
+        /// <param name="status">Initial value of the Status property.</param>
+        public static Message_status CreateMessage_status(global::System.Guid messageStatusId, global::System.Guid userId, global::System.Guid messageId, global::System.Byte status)
+        {
+            Message_status message_status = new Message_status();
+            message_status.MessageStatusId = messageStatusId;
+            message_status.UserId = userId;
+            message_status.MessageId = messageId;
+            message_status.Status = status;
+            return message_status;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid MessageStatusId
+        {
+            get
+            {
+                return _MessageStatusId;
+            }
+            set
+            {
+                if (_MessageStatusId != value)
+                {
+                    OnMessageStatusIdChanging(value);
+                    ReportPropertyChanging("MessageStatusId");
+                    _MessageStatusId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MessageStatusId");
+                    OnMessageStatusIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _MessageStatusId;
+        partial void OnMessageStatusIdChanging(global::System.Guid value);
+        partial void OnMessageStatusIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid UserId
+        {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                if (_UserId != value)
+                {
+                    OnUserIdChanging(value);
+                    ReportPropertyChanging("UserId");
+                    _UserId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("UserId");
+                    OnUserIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _UserId;
+        partial void OnUserIdChanging(global::System.Guid value);
+        partial void OnUserIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Guid MessageId
+        {
+            get
+            {
+                return _MessageId;
+            }
+            set
+            {
+                if (_MessageId != value)
+                {
+                    OnMessageIdChanging(value);
+                    ReportPropertyChanging("MessageId");
+                    _MessageId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MessageId");
+                    OnMessageIdChanged();
+                }
+            }
+        }
+        private global::System.Guid _MessageId;
+        partial void OnMessageIdChanging(global::System.Guid value);
+        partial void OnMessageIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte Status
+        {
+            get
+            {
+                return _Status;
+            }
+            set
+            {
+                if (_Status != value)
+                {
+                    OnStatusChanging(value);
+                    ReportPropertyChanging("Status");
+                    _Status = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Status");
+                    OnStatusChanged();
+                }
+            }
+        }
+        private global::System.Byte _Status;
+        partial void OnStatusChanging(global::System.Byte value);
+        partial void OnStatusChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Message_status_Messages", "Messages")]
+        public Message Message
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Message>("DistanceLessons.Models.FK_Message_status_Messages", "Messages").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Message>("DistanceLessons.Models.FK_Message_status_Messages", "Messages").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Message> MessageReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Message>("DistanceLessons.Models.FK_Message_status_Messages", "Messages");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Message>("DistanceLessons.Models.FK_Message_status_Messages", "Messages", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Message_status_Users", "Users")]
+        public User User
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Message_status_Users", "Users").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Message_status_Users", "Users").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<User> UserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<User>("DistanceLessons.Models.FK_Message_status_Users", "Users");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<User>("DistanceLessons.Models.FK_Message_status_Users", "Users", value);
                 }
             }
         }
@@ -3896,6 +4165,28 @@ namespace DistanceLessons.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Lesson>("DistanceLessons.Models.FK_Lessons_Users", "Lessons", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("DistanceLessons.Models", "FK_Message_status_Users", "Message_status")]
+        public EntityCollection<Message_status> Message_status
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Message_status>("DistanceLessons.Models.FK_Message_status_Users", "Message_status");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Message_status>("DistanceLessons.Models.FK_Message_status_Users", "Message_status", value);
                 }
             }
         }
