@@ -274,6 +274,11 @@
     <Content Include="Content\Calendar\js\i18n\jquery.ui.datepicker-zh-TW.js" />
     <Content Include="Content\Calendar\js\jquery-1.6.2.min.js" />
     <Content Include="Content\Calendar\js\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Content\img\action\accept.png" />
+    <Content Include="Content\img\action\delete.gif" />
+    <Content Include="Content\img\action\details.png" />
+    <Content Include="Content\img\action\edit.png" />
+    <Content Include="Content\img\action\test.gif" />
     <Content Include="Content\img\background\background.png" />
     <Content Include="Content\img\background\background2.png" />
     <Content Include="Content\img\background\background_02.png" />
