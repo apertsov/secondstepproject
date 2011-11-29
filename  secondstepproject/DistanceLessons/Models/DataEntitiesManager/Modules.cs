@@ -56,8 +56,9 @@ namespace DistanceLessons.Models
         public int CountModuleQuestions(Guid moduleId)
         {
             Module module = Module(moduleId);
-            if ((module!=null) && (module.CountQuestions != null)) return (int)module.CountQuestions;
-            return ModuleTests(moduleId).Count;
+            if ((module == null) || (module.CountQuestions == null)) return ModuleTests(moduleId).Count;
+            return Math.Min((int)module.CountQuestions, ModuleTests(moduleId).Count);   
+      //      return ModuleTests(moduleId).Count;
         }
 
         public Dictionary<Guid, string> ModulesDictionaryFromCourse(Guid courseId)
