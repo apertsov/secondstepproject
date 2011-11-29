@@ -3,7 +3,7 @@
     ViewBag.Title = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h3>
+<h3> Всі тести з модуля @Model.Module.Title . Тестування складається з @Model.Module.CountQuestions запитань на які відведено @Model.Module.TimeForPassTest хвилин. <br />
     @Html.ActionLink("Повернутись до курсу", "Course", "Teacher", new { id = Model.Module.CourseId }, null)</h3>
 @foreach (DistanceLessons.Models.LessonTestAndAnswersModel lessonTests in Model.LessonsTestsAndAnswers)
 {

@@ -37,7 +37,7 @@ else
                         }
                         else
                         { 
-                            @Html.TextHtml(userModuleResult.Result.ToString())
+                            @(userModuleResult.Result.ToString()+(userModuleResult.MaxPoints==null?"":"/"+userModuleResult.MaxPoints) )
                         }
                     </td>
                     <td>

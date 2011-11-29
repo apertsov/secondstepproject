@@ -8,7 +8,7 @@
 else
 {
     <h3>
-        Результат здачі модуля @Model.ModuleTitle користувачем @Model.Username : @Model.Result
+        Результат здачі модуля @Model.ModuleTitle користувачем @Model.Username : @Model.ResultPercent % -  @Model.Result
         балів</h3>
     
     @Ajax.ActionLink("Повернутись до результатів модуля", Model.Parameters.ControllerName, new { id = Model.Parameters.pickedElement, divIdToReplace=Model.Parameters.DivIdToReplace, type = DistanceLessons.Models.ElementsType.Module }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace }) <br />

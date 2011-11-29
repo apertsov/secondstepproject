@@ -21,7 +21,8 @@ namespace DistanceLessons.Models
     public class TestResultModel
     {
         public string Login { get; set; }
-        public double? Result { get; set; }
+        public int? MaxPoints { get; set; }
+        public int? Result { get; set; }
         public DateTime StartTesting { get; set; }
     }
 

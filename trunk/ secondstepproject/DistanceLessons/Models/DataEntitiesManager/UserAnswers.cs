@@ -6,17 +6,22 @@ namespace DistanceLessons.Models
 {
     public partial class DataEntitiesManager
     {
+        public List<UserAnswer> GetUserAnswersList()
+        {
+            return _db.UserAnswers.ToList<UserAnswer>();
+        }
+
         public UserAnswer UserAnswer(Guid UserAnswerId)
         {
-            return (from userAnswer in _db.UserAnswers
+            return (from userAnswer in GetUserAnswersList()
                     where userAnswer.UserAnswerId == UserAnswerId
                     select userAnswer).FirstOrDefault();
         }
 
         public List<UserAnswer> UserAnswersOnTest(Guid testId, Guid moduleId, string username)
         {
-            return (from userAnswer in _db.UserAnswers
-                    from user in _db.Users
+            return (from userAnswer in GetUserAnswersList()
+                    from user in GetUserList()
                     where userAnswer.TestId == testId && userAnswer.ModuleId == moduleId &&
                     user.Login == username && user.UserId == userAnswer.UserId
                     select userAnswer).ToList();
@@ -24,8 +29,8 @@ namespace DistanceLessons.Models
 
         public List<UserAnswer> UserAnswers(Guid moduleId, string username)
         {
-            return (from userAnswer in _db.UserAnswers
-                    from user in _db.Users
+            return (from userAnswer in GetUserAnswersList()
+                    from user in GetUserList()
                     where userAnswer.ModuleId == moduleId &&
                     user.Login == username && user.UserId == userAnswer.UserId
                     select userAnswer).ToList();
@@ -60,8 +65,8 @@ namespace DistanceLessons.Models
 
         public float CalcUserModuleResults(Guid moduleId, string username)
         {
-            List<UserAnswer> userAnswers = (from answers in _db.UserAnswers
-                                            from user in _db.Users
+            List<UserAnswer> userAnswers = (from answers in GetUserAnswersList()
+                                            from user in GetUserList()
                                             where answers.ModuleId == moduleId && user.Login == username && user.UserId == answers.UserId && answers.TestId!=null && answers.AnswerId!=null
                                             orderby answers.TestId
                                             select answers).ToList();

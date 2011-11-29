@@ -72,8 +72,10 @@ namespace DistanceLessons.Controllers
                 DetailModuleTestResultsModel model = new DetailModuleTestResultsModel { Parameters = new BetweenPartialModel { pickedElement = id, ControllerName = redirectController, DivIdToReplace = divIdToReplace, ElementType = ElementsType.Module }, ModuleName = _db.ModuleName(id), TestResults = new List<TestResultModel>() };
                 List<UserModule> userResults = _db.UserModules(id);
                 foreach (UserModule userResult in userResults)
-                    model.TestResults.Add(new TestResultModel { Login = userResult.User.Login, Result = userResult.Passed, StartTesting = userResult.StartTime });
-
+                    model.TestResults.Add(new TestResultModel { Login = userResult.User.Login, 
+                                                                StartTesting = userResult.StartTime, 
+                                                                MaxPoints = userResult.ModuleId==null?(int?)null:userResult.Module.MaxPoints, 
+                                                                Result = userResult.Passed == null ? (int?)null : (int)_db.CalcCourseResult((float)userResult.Passed, userResult.Module.MaxPoints) });
                 if (_db.IsTeacherCourse(_db.CourseIdFromModuleId(id), User.Identity.Name))
                     ViewBag.IsTeacherCourse = true;
                 else ViewBag.IsTeacherCourse = false;
@@ -95,11 +97,11 @@ namespace DistanceLessons.Controllers
         public ActionResult DetailsModuleUserAnswers(Guid id, string username, string controllerName, string divIdToReplace)
         {
             UserModule userResult = _db.UserModule(id, username);
-            ModuleUserAnswers model = new ModuleUserAnswers { Parameters = new BetweenPartialModel { pickedElement = id, ControllerName = controllerName, DivIdToReplace = divIdToReplace, ElementType = ElementsType.Module }, Username = username };
+            ModuleUserAnswers model = new ModuleUserAnswers { Parameters = new BetweenPartialModel { pickedElement = id, ControllerName = controllerName, DivIdToReplace = divIdToReplace, ElementType = ElementsType.Module }, Username = username, Answers=new List<DetailAnswersModel>() };
             if (userResult == null) return PartialView(model);
             model.ModuleTitle = userResult.Module.Title;
-            model.Result = userResult.Passed;
-            model.Answers = new List<DetailAnswersModel>();
+            model.ResultPercent = userResult.Passed;
+            model.Result = _db.CalcCourseResult((float)userResult.Passed, userResult.Module.MaxPoints);
             List<ShowTest> showedTests = _db.ShowTestsInModule(id, username);
             List<Answer> answers = new List<Answer>();
             foreach (ShowTest test in showedTests)

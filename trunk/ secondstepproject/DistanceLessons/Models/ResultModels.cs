@@ -25,7 +25,8 @@ namespace DistanceLessons.Models
     {
         public string Username { get; set; }
         public string ModuleTitle { get; set; }
-        public float? Result { get; set; }
+        public double Result { get; set; }
+        public float? ResultPercent { get; set; }
         public BetweenPartialModel Parameters { get; set; }
         public List<DetailAnswersModel> Answers { get; set; }
     }
