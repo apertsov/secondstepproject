@@ -20,8 +20,8 @@
             grid.Column("Role.Name", "Роль", format:@<i>@item.Role.Name</i>),
             grid.Column(format: (item) =>
                 new HtmlString(
-                    Html.ActionLink("Редагувати", "EditUser", new { id = item.UserId }).ToString() + " | "
-                  + Html.ActionLink("Переглянути", "DetailsUser", new { id = item.UserId}).ToString()
+                    Html.ActionLink("___", "EditUser", new { id = item.UserId }, new { title = "Редагувати", @class = "edit" }).ToString()
+                  + Html.ActionLink("___", "DetailsUser", new { id = item.UserId }, new { title="Переглянути", @class="details"}).ToString()
                               )
                               )));
             

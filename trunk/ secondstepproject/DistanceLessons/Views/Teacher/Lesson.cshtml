@@ -4,10 +4,11 @@
     ViewBag.Title = ViewBag.Module;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Навчальні елементи модуля @Html.ActionLink((string)ViewBag.Module, "Course", new { id = (Guid)ViewBag.CourseId })
+<br/>
+<h2>Навчальні елементи модуля</h2>
+<h2> @Html.ActionLink((string)ViewBag.Module, "Course", new { id = (Guid)ViewBag.CourseId })
 </h2>
-
+<br/>
 <table class="center" cellspacing="10">
     
 <tr>
@@ -19,19 +20,32 @@
         <td>
             @Html.ActionLink(item.Title, "ShowFile", new { filename = item.Text })
         </td>
-       
+         
+
          <td align="right">
-            @Html.ActionLink("Тести", "ShowLessonTests", "Test", new { id = item.LessonId, courseId = (Guid)ViewBag.CourseId }, null) |  
-            @Html.ActionLink("Редагувати", "EditLesson", new { id = item.LessonId }) |
-            @Html.ActionLink("Деталі", "DetailsLesson", new { id = item.LessonId }) |
-            @Html.ActionLink("Видалити", "DeleteLesson", new { id = item.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
+
+          @if (item.IsAcceptMainTeacher)
+          {
+            <text>
+            @Html.ActionLink("___", "ShowLessonTests", "Test", new { id = item.LessonId, courseId = (Guid)ViewBag.CourseId }, new { @class = "tests", title = "Тести" })  
+           @Html.ActionLink("___", "EditLesson", new { id = item.LessonId }, new { @class = "edit", title = "Редагувати" }) 
+             </text>
+           }
+          else
+          {
+            <text>
+            @Html.ActionLink("___", "AcceptLesson", new { id = item.LessonId }, new { @class = "accept", title = "Затвердити" })  
+            </text>
+           } 
+            @Html.ActionLink("___", "DetailsLesson", new { id = item.LessonId }, new { @class = "details", title = "Переглянути" }) 
+            @Html.ActionLink("___", "DeleteLesson", new { id = item.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')", @class = "delete", title = "Видалити" })
         </td>
     </tr>
-    <tr>
+    
+}
+<tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
     </tr>
-}
-
 </table>
 
 <p>

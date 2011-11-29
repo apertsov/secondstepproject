@@ -10,19 +10,33 @@
     <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
     </tr>
+       
+    
 @foreach (DistanceLessons.Models.Lesson les in ViewBag.OrphanLessons)
 {
    <tr>
      <td>@Html.ActionLink(les.Title, "ShowFile", new { filename = les.Text })</td>
      <td align="right">
-            @Html.ActionLink("Тести", "ShowLessonTests", "Test", new { id = les.LessonId, courseId = (Guid)ViewBag.CourseId }, null) |  
-            @Html.ActionLink("Редагувати", "EditLesson", new { id = les.LessonId }) |
-            @Html.ActionLink("Деталі", "DetailsLesson", new { id = les.LessonId }) |
-            @Html.ActionLink("Видалити", "DeleteLesson", new { id = les.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })
+            @if (les.IsAcceptMainTeacher)
+            {
+                <text>
+                @Html.ActionLink("___", "ShowLessonTests", "Test", new { id = les.LessonId, courseId = (Guid)ViewBag.CourseId }, new { @class = "tests", title = "Тести" }) 
+                @Html.ActionLink("___", "EditLesson", new { id = les.LessonId }, new { @class = "edit", title = "Редагувати" }) 
+                </text>
+           }
+            else
+            {
+                <text>
+                @Html.ActionLink("___", "AcceptLesson", new { id = les.LessonId }, new { @class = "accept", title = "Затвердити" })  
+                </text>
+           } 
+            @Html.ActionLink("___", "DetailsLesson", new { id = les.LessonId }, new { @class = "details", title = "Переглянути" }) 
+            @Html.ActionLink("___", "DeleteLesson", new { id = les.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')", @class = "delete", title = "Видалити" })
      </td>
     </tr>
     
 }
+
  <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
     </tr>
@@ -36,19 +50,22 @@
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
     </tr>
 @foreach (DistanceLessons.Models.Module mod in ViewBag.Modules)
-{
+        {
   
 
        <tr>
      <td>@Html.ActionLink(mod.Title, "Lesson", new { id = mod.ModuleId })</td>
      <td align="right">  
-            @Html.ActionLink("Тести модуля", "ShowModuleTests", "Test", new { id = mod.ModuleId }, null) |  
-            @Html.ActionLink("Редагувати", "EditModule", new { id = mod.ModuleId }) |
-            @Html.ActionLink("Деталі", "DetailsModule", new { id = mod.ModuleId }) |
-            @Html.ActionLink("Видалити", "DeleteModule", new { id = mod.ModuleId }, new { onclick = "return confirm('Дійсно бажаєте видалити модуль? З видаленням модуля пропадуть також всі лекції, тести і все, що з ним зв`язане!')" })
+            @Html.ActionLink("___", "ShowModuleTests", "Test", new { id = mod.ModuleId }, new { @class = "tests", title = "Тести модуля" })  
+            @Html.ActionLink("___", "EditModule", new { id = mod.ModuleId }, new { @class = "edit", title = "Edit" }) 
+            @Html.ActionLink("___", "DetailsModule", new { id = mod.ModuleId }, new { @class = "details", title = "Details" }) 
+            @Html.ActionLink("___", "DeleteModule", new { id = mod.ModuleId }, new { onclick = "return confirm('Дійсно бажаєте видалити модуль? З видаленням модуля пропадуть також всі лекції, тести і все, що з ним зв`язане!')", @class = "delete", title = "Delete" })
+           
      </td>
     </tr>
-}
+        }
+        
+   
  <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
     </tr>

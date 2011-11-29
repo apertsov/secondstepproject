@@ -4,10 +4,21 @@
     ViewBag.Title = "Мої предмети";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@*<br/>
 
-<h2>Мої предмети</h2>
-
-
+@{
+    var grid = new WebGrid(Model, rowsPerPage: 10, defaultSort: "Title");
+   @grid.GetHtml(
+        tableStyle: "center",
+        headerStyle: "center",
+        alternatingRowStyle: "center",
+        htmlAttributes: "cellspacing=10",
+        columns: grid.Columns(
+            grid.Column("Title", "Назва предмету", format: (item) => new HtmlString(Html.ActionLink((string)item.Title, "Course", new { id = item.CourseId }, new {color="blue" }).ToString())),
+            grid.Column("Category.Category1", "Категорія", format: @<i>@item.Category.Category1</i>)
+            ));
+                          }
+                          *@
      <table class="center" cellspacing="10">
 <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 5px;"></td>
@@ -24,7 +35,7 @@
 
     </tr>
     <tr>
-        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 10px;"></td>
     </tr>
 @foreach (var item in Model)
 {

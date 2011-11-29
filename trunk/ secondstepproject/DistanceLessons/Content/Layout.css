@@ -25,15 +25,65 @@ h1,h2,h3,h4,h5,h6
 
 a
 {
-    color:silver;
+    color:  Purple;
     text-decoration: none;
 }
+
 
 a:hover
 {
     color: orange;
 }
 
+a.edit 
+{
+   background: url(../content/img/action/edit.png) no-repeat top left;
+        display: inline;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */ 
+     color:White; 
+    }
+ 
+ a.delete 
+{
+   background: url(../content/img/action/delete.gif) no-repeat top left;
+     display: inline;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */  
+          color:White; 
+    }
+    
+ a.details 
+{
+   background: url(../content/img/action/details.png) no-repeat top left;
+     display: inline;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */  
+          color:White; 
+    }
+    
+     a.tests 
+{
+   background: url(../content/img/action/test.gif) no-repeat top left;
+     display: inline;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */  
+          color:White; 
+    }
+    
+     a.accept 
+{
+   background: url(../content/img/action/accept.png) no-repeat top left;
+     display: inline;
+     width: 16px;
+     height: 16px;
+     text-indent: -9999px; /* hides the link text */  
+          color:White; 
+    }
 body
 {
     background: white;
