@@ -32,6 +32,9 @@ namespace DistanceLessons.Controllers
             ViewBag.ModuleId = id;
             ViewBag.Module = db.GetModulesByID(id).Title;
             ViewBag.CourseId = db.GetModulesByID(id).CourseId;
+            ViewBag.IsOwner = db.GetCourse(ViewBag.CourseId).UserId == db.GetUserId(User.Identity.Name) ? true : false;
+            ViewBag.IsTeacher = db.GetUserRoleId(User.Identity.Name) == db.GetRoleId("Teacher") ? true : false; ;
+         
             return View(db.GetLessonsByModule(id));
         }
 
@@ -55,6 +58,8 @@ namespace DistanceLessons.Controllers
             ViewBag.Course = db.GetCourse(id).Title;
             ViewBag.Modules = db.GetModulesByCourseId(id);
             ViewBag.OrphanLessons = db.GetOrphanLessonsByCourse(id);
+            ViewBag.IsOwner= db.GetCourse(id).UserId==db.GetUserId(User.Identity.Name)?true:false;
+            ViewBag.IsTeacher = db.GetUserRoleId(User.Identity.Name)==db.GetRoleId("Teacher") ? true : false; ;
             return View();
         }
          

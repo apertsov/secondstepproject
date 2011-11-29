@@ -23,8 +23,8 @@
             grid.Column("User.Login", "Викладач", format:@<text><i>@item.User.Login</i> </text>),
             grid.Column(format: (item) =>
                 new HtmlString(
-                    Html.ActionLink("___", "EditCours", new { id = item.CourseId }, new { @class = "edit", title = "Редагувати" }).ToString() + "|"
-                  + Html.ActionLink("___", "DetailsCours", new { id = item.CourseId }, new { @class="details",title="Переглянути"}).ToString() + "|"
+                    Html.ActionLink("___", "EditCours", new { id = item.CourseId }, new { @class = "edit", title = "Редагувати" }).ToString() 
+                  + Html.ActionLink("___", "DetailsCours", new { id = item.CourseId }, new { @class="details",title="Переглянути"}).ToString() 
                    + Html.ActionLink("___", "DeleteCours", new { id = item.CourseId }, new { title="Видалити",@class="delete",onclick = "return confirm('Дійсно бажаєте видалити предмет? З видаленням предмету автоматично будуть видалені всі модулі, лекції, тести і результати тестів!!!')" }).ToString())
                               )));
                           }
