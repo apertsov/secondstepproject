@@ -4,6 +4,8 @@ using System.Web.Mvc;
 using DistanceLessons.Attributes;
 using DistanceLessons.Models;
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DistanceLessons.Controllers
 {
@@ -60,7 +62,8 @@ namespace DistanceLessons.Controllers
         {
             return View(db.GetCoursesByTeacherId(db.GetUser(User.Identity.Name).UserId));
         }
-      
+
+
         [HttpGet]
         public ActionResult CreateModule(Guid courseId)
         {
@@ -165,7 +168,20 @@ namespace DistanceLessons.Controllers
             else return RedirectToAction("Course", new { id = old.CourseId });
         }
 
+        public ActionResult AcceptLesson(Guid id)
+        {
+            Lesson old = db.GetLessonByID(id);
+
+            old.IsAcceptMainTeacher = true;
+            db.Save();
+
+            if (old.ModuleId != null)
+                return RedirectToAction("Lesson", new { id = old.ModuleId });
+            else return RedirectToAction("Course", new { id = old.CourseId });
+        }
        
+
+
         [HttpGet]
         public ActionResult DeleteModule(Guid id)
         {
@@ -228,16 +244,38 @@ namespace DistanceLessons.Controllers
             foreach (string inputTagName in Request.Files)
             {
                 HttpPostedFileBase file = Request.Files[inputTagName];
-                if (file.ContentLength > 0)
+                ViewBag.Error = "Недопустимий розмір файлу (" + (file.ContentLength/1024/1024).ToString()+" Мб). Дозволений до " + (6000000/1024/1024).ToString()+" Мб";
+                if ((file.ContentLength > 0) && (file.ContentLength < 6000000))
                 {
                     string fileType = System.IO.Path.GetExtension(file.FileName);
-                    fileName = Guid.NewGuid().ToString() + fileType;
-                    string filePath = Path.Combine(HttpContext.Server.MapPath("../Uploads"), fileName);
-                    file.SaveAs(filePath);
+                    ViewBag.Error = "Недопустиме розширення файлу " + fileType;
 
-                    return RedirectToAction("CreateLesson", new { courseId = course_Id, mod_id = moduleId, path = fileName });
+                    switch (fileType)
+                    {
+                        case ".pdf":
+                        case ".doc":
+                        case ".docx":
+                        case ".txt":
+                        case ".htm":
+                        case ".html":
+                        case ".mhtml":
+                        case ".jpg":
+                        case ".jpeg":
+                        case ".bmp":
+                        case ".rtf":
+                        case ".xhtml":
+                            {
+                                fileName = Guid.NewGuid().ToString() + fileType;
+                                string filePath = Path.Combine(HttpContext.Server.MapPath("../Uploads"), fileName);
+                                file.SaveAs(filePath);
+                                ViewBag.Error = "";
+                                return RedirectToAction("CreateLesson", new { courseId = course_Id, mod_id = moduleId, path = fileName });
+
+                            }
+                    }
                 }
-            }
+             }
+           
             return View();
         }
        

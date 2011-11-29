@@ -6,13 +6,18 @@
 <h2>Завантаження навчального елементу</h2>
   
 
-
+<div style="font-style:italic; font-size:smaller">
+Максимальний розмір завантажувального файлу - 5 Мб.<br/>
+Допустимі розширення - .pdf, .doc, .docx, .rtf, .txt, .htm, .html, .mhtml, .xhtml., jpg, .jpeg, .bmp! 
+</div>
       @{ Guid mod=(Guid)ViewBag.ModuleId;
          Guid course=(Guid)ViewBag.CourseId;
          }
+       
+       <br />
         @using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            <p><input type="file" id="fileUpload" name="fileUpload" size="23"/> </p>
+            <p><input type="file" id="fileUpload" name="fileUpload" accept=""/> </p>
             <input type="hidden" id="mod_id" name="mod_id" value="@mod" runat="server"/>
             <input type="hidden" id="course_id" name="course_id" value="@course" runat="server"/>
             <p><input type="submit" value="Завантажити" /></p>

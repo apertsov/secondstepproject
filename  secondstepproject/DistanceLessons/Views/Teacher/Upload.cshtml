@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "Помилка завантаження";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Помилка завантаження</h2>
@@ -8,5 +9,15 @@
     string m_id = (ViewBag.ModuleId != null) ? ViewBag.ModuleId : Guid.Empty.ToString();
     
     }
+<h5 style="color:Red">@ViewBag.Error</h5>
+@Html.ActionLink("Повторити завантаження", "UploadLesson", new { courseId = c_id, moduleId = m_id })
 
-@Html.ActionLink("Повторити завантаження", "UploadLesson", new { courseId = c_id, moduleId =m_id })
+<br/>
+ @if (m_id == Guid.Empty.ToString())
+{
+    @Html.ActionLink("Повернутися до предмету", "Course", new { id = c_id });
+}
+ else
+ {
+    @Html.ActionLink("Повернутися до списку лекцій", "Lesson", new { id = m_id });
+ }
