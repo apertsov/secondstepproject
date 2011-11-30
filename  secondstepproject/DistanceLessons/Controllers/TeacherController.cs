@@ -59,7 +59,8 @@ namespace DistanceLessons.Controllers
             ViewBag.Modules = db.GetModulesByCourseId(id);
             ViewBag.OrphanLessons = db.GetOrphanLessonsByCourse(id);
             ViewBag.IsOwner= db.GetCourse(id).UserId==db.GetUserId(User.Identity.Name)?true:false;
-            ViewBag.IsTeacher = db.GetUserRoleId(User.Identity.Name)==db.GetRoleId("Teacher") ? true : false; ;
+            ViewBag.IsTeacher = db.GetUserRoleId(User.Identity.Name)==db.GetRoleId("Teacher") ? true : false;
+            ViewBag.IsAdmin = db.GetUserRoleId(User.Identity.Name) == db.GetRoleId("Admin") ? true : false; 
             return View();
         }
          
@@ -67,12 +68,17 @@ namespace DistanceLessons.Controllers
         {
             return View(db.GetCoursesByTeacherId(db.GetUser(User.Identity.Name).UserId));
         }
+       
+        public ActionResult Courses()
+        {
+            return View(db.GetCourseList());
+        }
 
 
         [HttpGet]
-        public ActionResult CreateModule(Guid courseId)
+        public ActionResult CreateModule(Guid id)
         {
-            ViewBag.CourseId = courseId;
+            ViewBag.CourseId = id;
             return View();
         }
         [HttpPost]
@@ -103,6 +109,10 @@ namespace DistanceLessons.Controllers
         {
             Lesson obj = new Lesson();
             obj.Text = path;
+            string[] filepart = path.Split('.');
+            Guid res = Guid.NewGuid();
+            Guid.TryParse(filepart[0], out res);
+            obj.LessonId = res;
             obj.CourseId = courseId;
             if ((mod_id != null) && (mod_id != Guid.Empty)) obj.ModuleId = mod_id;
             ViewBag.ModuleId = mod_id;
@@ -112,7 +122,6 @@ namespace DistanceLessons.Controllers
               public ActionResult CreateLesson(Lesson obj)
               {
 
-                  obj.LessonId = Guid.NewGuid();
                   obj.UserId = db.GetUser(User.Identity.Name).UserId;
                   if (obj.UserId == db.GetCourse(obj.CourseId).UserId) obj.IsAcceptMainTeacher = true;
                   obj.Publication = DateTime.Now;
@@ -222,10 +231,11 @@ namespace DistanceLessons.Controllers
 
 
 
-        public ActionResult UploadLesson(Guid courseId, Guid moduleId)
+        public ActionResult UploadLesson(Guid courseId, Guid moduleId,string act="create")
         {
             ViewBag.ModuleId = moduleId;
             ViewBag.CourseId = courseId;
+            ViewBag.Action = act;
             return View();
         }
 
@@ -244,8 +254,10 @@ namespace DistanceLessons.Controllers
             string fileName = "";
             string moduleId = Request.Form["mod_id"];
             string course_Id = Request.Form["course_id"];
+            string action = Request.Form["act"];
             ViewBag.ModuleId = moduleId;
             ViewBag.CourseId = course_Id;
+            ViewBag.Action = action;
             foreach (string inputTagName in Request.Files)
             {
                 HttpPostedFileBase file = Request.Files[inputTagName];
@@ -270,10 +282,21 @@ namespace DistanceLessons.Controllers
                         case ".rtf":
                         case ".xhtml":
                             {
+                                Guid lesId;
+                                string filePath;
+                                if (Guid.TryParse(action, out lesId))
+                                {
+                                   Lesson les = db.GetLessonByID(lesId);
+                                   fileName = lesId.ToString() + fileType;
+                                   les.Text=fileName;
+                                   db.Save();
+                                   filePath = Path.Combine(HttpContext.Server.MapPath("../Uploads"), fileName);
+                                   file.SaveAs(filePath);
+                                   return RedirectToAction("EditLesson", new {id=lesId});
+                                }
                                 fileName = Guid.NewGuid().ToString() + fileType;
-                                string filePath = Path.Combine(HttpContext.Server.MapPath("../Uploads"), fileName);
+                                filePath = Path.Combine(HttpContext.Server.MapPath("../Uploads"), fileName);
                                 file.SaveAs(filePath);
-                                ViewBag.Error = "";
                                 return RedirectToAction("CreateLesson", new { courseId = course_Id, mod_id = moduleId, path = fileName });
 
                             }

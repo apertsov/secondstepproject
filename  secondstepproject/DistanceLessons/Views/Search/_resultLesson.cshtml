@@ -1,0 +1,12 @@
+﻿@model IEnumerable<DistanceLessons.Models.Lesson>
+
+@{
+    var grid = new WebGrid(Model, rowsPerPage: 10, defaultSort: "Title", ajaxUpdateContainerId: "Grid");
+   @grid.GetHtml(
+        tableStyle: "center",
+       alternatingRowStyle: "alt",
+        columns: grid.Columns(
+            grid.Column("Title","Назва предмету",  format: @<text><i>@item.Title</i> </text>)
+            ));
+                          }
+

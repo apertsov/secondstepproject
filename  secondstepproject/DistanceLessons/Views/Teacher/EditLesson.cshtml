@@ -30,18 +30,28 @@
 
     <tr>
         <td class="editor-label">  @Html.LabelFor(model => model.Description)</td>
-        <td class="editor-field"> @Html.TextBoxFor(model => model.Description, new { @class = "editor" })</td>
+        <td class="editor-field"> @Html.TextAreaFor(model => model.Description, new { @class = "editor" })</td>
     </tr>
     <tr>
         <td></td>
         <td class="error">@Html.ValidationMessageFor(model => model.Description)</td>
     </tr>
     
+        <tr>
+        <td class="editor-label">  @Html.Label("Джерело лекції")</td>
+        <td class="editor-field">  @Html.ActionLink("Переглянути лекцію", "ShowFile", new { filename = Model.Text })</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ActionLink("Обновити джерело лекції", "UploadLesson", new { courseId = Model.CourseId, moduleId = Model.ModuleId, act = Model.LessonId.ToString() })
+</td>
+    </tr>
+
     <tr>
         <td class="editor-label">  @Html.LabelFor(model => model.Module.Title)</td>
           @{
-             List<DistanceLessons.Models.Module> list = ViewBag.Modules;
-             var items = new SelectList(list, "ModuleId", "Title");
+    List<DistanceLessons.Models.Module> list = ViewBag.Modules;
+    var items = new SelectList(list, "ModuleId", "Title");
           }
         <td class="editor-field">  @Html.DropDownListFor(model => model.ModuleId, @items, new { @class = "editor" })  </td> 
     </tr>
@@ -55,6 +65,7 @@
     <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
     </tr>
+      
 </table>
         <p>
             <input type="submit" value="Зберегти" />

@@ -1,8 +1,19 @@
 ﻿@{
     ViewBag.Title = ViewBag.Course;
 }
-
-<h2>@Html.ActionLink((string)ViewBag.Course, "MyCourses") </h2>
+  @if ((bool)ViewBag.IsOwner)
+  {
+      <h2>@Html.ActionLink((string)ViewBag.Course, "MyCourses") </h2>
+  }
+  else if ((bool)ViewBag.IsTeacher)
+  {
+      <h2>@Html.ActionLink((string)ViewBag.Course, "Courses") </h2>
+  }
+ 
+ else if ((bool)ViewBag.IsAdmin)
+  {
+      <h2>@Html.ActionLink((string)ViewBag.Course, "Courses","Admin") </h2>
+  } 
 
 <br/>
 <h4>Лекції, що не належать до модуля</h4>
@@ -78,5 +89,5 @@
     </tr>
  </table>
 @if ((bool)ViewBag.IsOwner)
-{@Html.ActionLink("Створити модуль", "CreateModule", new { courseId = ViewBag.CourseId }) }
+{@Html.ActionLink("Створити модуль", "CreateModule", new { id = ViewBag.CourseId }) }
                                                                                           

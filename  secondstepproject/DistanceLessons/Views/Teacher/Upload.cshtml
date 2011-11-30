@@ -10,7 +10,7 @@
     
     }
 <h5 style="color:Red">@ViewBag.Error</h5>
-@Html.ActionLink("Повторити завантаження", "UploadLesson", new { courseId = c_id, moduleId = m_id })
+@Html.ActionLink("Повторити завантаження", "UploadLesson", new { courseId = c_id, moduleId = m_id, act=ViewBag.Action })
 
 <br/>
  @if (m_id == Guid.Empty.ToString())

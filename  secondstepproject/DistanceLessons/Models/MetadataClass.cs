@@ -325,11 +325,17 @@ namespace DistanceLessons.Models
             [Required(ErrorMessage = "Дата закінчення тестування відсутня")]
             [DisplayName("Дата закінчення тестування")]
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
+            
             public DateTime DateEndTesting { get; set; }
 
             [ScaffoldColumn(false)]
             public Guid CourseId { get; set; }
 
+            [Required(ErrorMessage = "Максимальна кількість балів за модуль відсутній")]
+            [DisplayName("Кількість балів за модуль")]
+            [Range(0, 100, ErrorMessage = "Кількість балів за модуль не може бути меншою 0 і більшою 100")]
+
+            public int MaxPoints { get; set; }
 
             [DisplayName("Кількість запитань для здачі модуля")]
             public int? CountQuestions { get; set; }
