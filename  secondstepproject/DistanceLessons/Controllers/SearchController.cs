@@ -55,5 +55,27 @@ namespace DistanceLessons.Controllers
 
            return View(course);
        }
+
+       [HttpGet]
+       public ActionResult UsersSearch()
+       {
+           var usersList = _db.GetUserList();
+
+           return View(usersList);
+       }
+
+       [HttpPost]
+       public ActionResult UsersSearch(string login, string role)
+       {
+           var usersList = _db.GetUserList();
+
+           if (!string.IsNullOrEmpty(login))
+               usersList = usersList.Where(a => a.Login.ToUpper().Contains(login.ToUpper())).ToList();
+
+           if (!string.IsNullOrEmpty(role))
+               usersList = usersList.Where(a => a.Role.Name.ToUpper().Contains(role.ToUpper())).ToList();
+
+           return View(usersList);
+       }
     }
 }
