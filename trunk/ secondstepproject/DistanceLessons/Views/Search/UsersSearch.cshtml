@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DistanceLessons.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UsersSearch</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+
+        <div>
+              @Html.DisplayNameFor(model => model.Login)
+         </div>
+         
+          <div>
+             @Html.TextBox("login") 
+         </div>
+
+         <div>
+              @Html.DisplayNameFor(model => model.Role.Name)
+         </div>
+         
+          <div>
+             @Html.TextBox("role") 
+         </div>
+   
+         <p>
+            <button type="submit">Шукати</button>
+        </p>
+    </fieldset>
+}
+
+<div id="myGrid">
+    @Html.Partial("_gridUsers", Model)
+</div>
+
