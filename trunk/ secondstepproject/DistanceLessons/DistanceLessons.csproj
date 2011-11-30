@@ -551,6 +551,9 @@
     <Content Include="Views\Search\_resultCourse.cshtml" />
     <Content Include="Views\Profile\_Messages.cshtml" />
     <Content Include="Views\Profile\_SendMessage.cshtml" />
+    <Content Include="Views\Search\_resultLesson.cshtml" />
+    <Content Include="Views\Search\Lesson.cshtml" />
+    <Content Include="Views\Teacher\Courses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">

@@ -12,6 +12,7 @@
 </div>
       @{ Guid mod=(Guid)ViewBag.ModuleId;
          Guid course=(Guid)ViewBag.CourseId;
+         string act = ViewBag.Action;
          }
        
        <br />
@@ -19,15 +20,16 @@
         {
             <p><input type="file" id="fileUpload" name="fileUpload" accept=""/> </p>
             <input type="hidden" id="mod_id" name="mod_id" value="@mod" runat="server"/>
+            <input type="hidden" id="act" name="act" value="@act" runat="server"/>
             <input type="hidden" id="course_id" name="course_id" value="@course" runat="server"/>
             <p><input type="submit" value="Завантажити" /></p>
         } 
 
         @if (mod == Guid.Empty)
-{
+        {
     @Html.ActionLink("Повернутися до предмету", "Course", new { id = course });
-}
-else
-{
+        }
+        else
+        {
     @Html.ActionLink("Повернутися до списку лекцій", "Lesson", new { id = mod });
-}
+        }

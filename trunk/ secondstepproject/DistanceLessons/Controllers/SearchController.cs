@@ -35,5 +35,25 @@ namespace DistanceLessons.Controllers
             return View(course);
         }
 
+       public ActionResult Lesson()
+       {
+           var course = _db.GetLessonList();
+           return View(course);
+       }
+
+       [HttpPost]
+       public ActionResult Lesson(string title, string description)
+       {
+           var course = _db.GetLessonList();
+
+           if (!string.IsNullOrEmpty(title))
+               course = course.Where(a => a.Title.ToUpper().Contains(title.ToUpper())).ToList();
+
+           if (!string.IsNullOrEmpty(description))
+               course = course.Where(a => a.Description.ToUpper().Contains(description.ToUpper())).ToList();
+
+
+           return View(course);
+       }
     }
 }

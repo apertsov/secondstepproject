@@ -18,14 +18,14 @@
         tableStyle: "center",
         alternatingRowStyle: "alt",
         columns: grid.Columns(
-            grid.Column("Title", "Назва предмету", format: @<b>@item.Title</b>),
+            grid.Column("Title", "Назва предмету", format: (item) => new HtmlString(Html.ActionLink((string)item.Title, "Course","Teacher", new { id = item.CourseId },null).ToString())),
             grid.Column("Category.Category1", "Категорія", format: @<i>@item.Category.Category1</i>),
             grid.Column("User.Login", "Викладач", format:@<text><i>@item.User.Login</i> </text>),
             grid.Column(format: (item) =>
                 new HtmlString(
-                    Html.ActionLink("___", "EditCours", new { id = item.CourseId }, new { @class = "edit", title = "Редагувати" }).ToString() 
-                  + Html.ActionLink("___", "DetailsCours", new { id = item.CourseId }, new { @class="details",title="Переглянути"}).ToString() 
-                   + Html.ActionLink("___", "DeleteCours", new { id = item.CourseId }, new { title="Видалити",@class="delete",onclick = "return confirm('Дійсно бажаєте видалити предмет? З видаленням предмету автоматично будуть видалені всі модулі, лекції, тести і результати тестів!!!')" }).ToString())
+                    Html.ActionLink("___", "EditCours", new { id = item.CourseId }, new { @class = "edit", title = "Редагувати" }).ToString()
+                  + Html.ActionLink("___", "DetailsCours", new { id = item.CourseId }, new { @class = "details", title = "Переглянути" }).ToString()
+                   + Html.ActionLink("___", "DeleteCours", new { id = item.CourseId }, new { title = "Видалити", @class = "delete", onclick = "return confirm('Дійсно бажаєте видалити предмет? З видаленням предмету автоматично будуть видалені всі модулі, лекції, тести і результати тестів!!!')" }).ToString())
                               )));
                           }
 

@@ -20,7 +20,7 @@
   <script type="text/javascript">
       //http://jqueryui.com/demos/datepicker
       $(document).ready(function () {
-          $('#datePickerBegin').datepicker({ firstDay: 1, dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true, yearRange: "1930:2003", showOtherMonths: true });
+          $('#datePickerBegin').datepicker({ firstDay: 1, dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true, yearRange: "2011:2025", showOtherMonths: true });
       });
 
       $(function () {
@@ -30,7 +30,7 @@
       });
 
       $(document).ready(function () {
-          $('#datePickerEnd').datepicker({ firstDay: 1, dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true, yearRange: "1930:2003", showOtherMonths: true });
+          $('#datePickerEnd').datepicker({ firstDay: 1, dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true, yearRange: "2011:2025", showOtherMonths: true });
       });
 
       $(function () {
@@ -43,6 +43,7 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.CourseId, new { @Value=ViewBag.CourseId})
    <table class="center" cellspacing="10">
     <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
