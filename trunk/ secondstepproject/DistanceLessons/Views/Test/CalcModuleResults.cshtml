@@ -5,9 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-Ваш результат тестування з модуля @ViewBag.ModuleName <br />
-@Model.Passed %
+<h3>
+Ваш результат тестування з модуля "@Model.Module.Title" <br />
+@Model.Passed % - @Model.Module.MaxPoints балів!
  <br />
  @Html.ActionLink("Повернутись у тестувальну", "Index", "Test")
 
-
+ </h3>

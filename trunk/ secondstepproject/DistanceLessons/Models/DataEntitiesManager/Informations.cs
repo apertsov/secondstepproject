@@ -55,7 +55,7 @@ namespace DistanceLessons.Models
         {
             var userInfo = (from info in GetInfoList()
                             where userID == info.UserId
-                            select info).First();
+                            select info).FirstOrDefault();
             return userInfo;
         }
 

@@ -63,6 +63,19 @@ namespace DistanceLessons.Models
             }
         }
 
+        public void DeleteAnswers(Guid moduleId)
+        {
+            var answers = (from _answers in GetUserAnswersList()
+                           where _answers.ModuleId == moduleId
+                           select _answers);
+            if (answers.Count() > 0)
+            {
+                foreach (UserAnswer answer in answers)
+                    _db.DeleteObject(answer);
+                Save();
+            }
+        }
+
         public float CalcUserModuleResults(Guid moduleId, string username)
         {
             List<UserAnswer> userAnswers = (from answers in GetUserAnswersList()

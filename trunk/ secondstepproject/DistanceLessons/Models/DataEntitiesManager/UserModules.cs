@@ -59,6 +59,18 @@ namespace DistanceLessons.Models
             }
         }
 
+        public void DeleteUserModulesByModuleId(Guid moduleId)
+        {
+            var userModules = (from _userModules in GetUserModuleList()
+                               where _userModules.ModuleId == moduleId
+                               select _userModules);
+            foreach (var userModule in userModules)
+            {
+                _db.DeleteObject(userModule);
+            }
+            Save();
+        }
+
         public bool IsStartModuleTest(Guid ModuleId, string username)
         {
             return (from userResults in GetUserModuleList()
@@ -104,6 +116,17 @@ namespace DistanceLessons.Models
             {
                 CourseResultModel userResult = new CourseResultModel { PassedModules = new Dictionary<Guid, string>(), ResultModules = new Dictionary<int, int>() };
                 userResult.Login = GetUsername(userCourseResult.Key);
+                if (ExistInformation(userResult.Login))
+                {
+                    Information userInfo = UserInformation(userResult.Login);
+                    userResult.FirstName = userInfo.FirstName;
+                    userResult.MiddleName = userInfo.MidName;
+                    userResult.LastName = userInfo.LastName;
+                }
+                else
+                {
+                    userResult.FirstName = userResult.MiddleName = userResult.LastName = string.Empty;
+                }
                 double courseResult = 0;
                 foreach (var userModuleResult in userCourseResult)
                 {
@@ -140,19 +163,62 @@ namespace DistanceLessons.Models
                     {
                         userResult.ModuleTitles.Add(userModuleResult._userResults.Module.Title);
                         userResult.ResultModules.Add((int)userModuleResult._userResults.Module.MaxPoints, (int)CalcCourseResult((float)userModuleResult._userResults.Passed, userModuleResult._userResults.Module.MaxPoints));
-                        courseResult += CalcCourseResult((float)userModuleResult._userResults.Passed,userModuleResult._userResults.Module.MaxPoints);
+                        courseResult += CalcCourseResult((float)userModuleResult._userResults.Passed, userModuleResult._userResults.Module.MaxPoints);
                     }
-                    userResult.CourseResult = (int)courseResult;
                 }
+                userResult.CourseResult = (int)courseResult;
                 model.Add(userResult);
             }
             return model;
         }
 
+        public List<StudentResultModel> StudentResult(string username)
+        {
+            var results = (from userResults in GetUserModuleList()
+                           // join categories in GetCategoryList() on userResults.Module.Cours.CategoryId equals categories.CategoryId
+                            //    join courses in GetCourseList() on userResults.Module.CourseId equals courses.CourseId
+                           //  join module in GetModuleList() on userResults.Module.ModuleId equals module.ModuleId
+                           where userResults.User.Login == username
+                           group userResults  by userResults.Module.Cours into coursesGroups
+                            group coursesGroups by coursesGroups.Key.Category.Category1 into categoryGroups
+                           select categoryGroups);
+            /*     var results = (from catResults in Tresults
+                                group ca by catResults.Key.Category.Category1 into categoryGroups
+                                select categoryGroups);*/
+
+            List<StudentResultModel> studentResults = new List<StudentResultModel>();
+           foreach (var categoryResult in results)
+           {
+                StudentResultModel CourseResult = new StudentResultModel { CategoryTitle = categoryResult.Key, CourseResults = new List<UserResultModel>() };
+                foreach (var courseResult in categoryResult)
+                {
+                    UserResultModel courseResultModel = new UserResultModel { CourseTitle = courseResult.Key.Title, ModuleTitles = new List<string>(), ResultModules = new Dictionary<int, int>() };
+                    double coursePoints = 0;
+                    foreach (var moduleResult in courseResult)
+                    {
+                        if ((moduleResult.Passed != null) && (moduleResult.ModuleId != null))
+                        {
+                            courseResultModel.ModuleTitles.Add(moduleResult.Module.Title);
+                            courseResultModel.ResultModules.Add(moduleResult.Module.MaxPoints, (int)CalcCourseResult((float)moduleResult.Passed, moduleResult.Module.MaxPoints));
+                            coursePoints += CalcCourseResult((float)moduleResult.Passed, moduleResult.Module.MaxPoints);
+                        }
+                    }
+                    courseResultModel.CourseResult = (int)coursePoints;
+                    CourseResult.CourseResults.Add(courseResultModel);
+                }
+                studentResults.Add(CourseResult);
+           }
+          //  throw new Exception();
+            return studentResults;
+
+        }
+
         public double CalcCourseResult(float passedPercent, int maxPoints)
         {
-            return Math.Round((double) passedPercent/100 * maxPoints,(int)4);
+            return Math.Round((double)passedPercent / 100 * maxPoints, (int)4);
         }
+
+
     }
 
 }

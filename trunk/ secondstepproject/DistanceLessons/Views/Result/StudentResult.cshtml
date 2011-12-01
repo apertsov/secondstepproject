@@ -1,0 +1,51 @@
+﻿@model List<DistanceLessons.Models.StudentResultModel>
+<table style="width: 100%;">
+    <tbody>
+        <tr>
+            <th style="border: 1px solid black; width: 35%;">
+                Курс
+            </th>
+            <th style="border: 1px solid black; width: 35%;">
+                Модулі
+            </th>
+            <th style="border: 1px solid black; width: 15%;">
+                Результати модулів
+            </th>
+            <th style="border: 1px solid black; width: 15%;">
+                Результат курсу
+            </th>
+        </tr>
+        @foreach (var categoryResult in Model)
+        {
+            foreach (var courseResult in categoryResult.CourseResults)
+            {
+            <tr align='center'>
+                <td style="border: 1px solid black;">
+                    @courseResult.CourseTitle
+                    <br />
+                    Категорія : @categoryResult.CategoryTitle
+                </td>
+                <td style="border: 1px solid black;">
+                    @foreach (var modules in courseResult.ModuleTitles)
+                    {  
+                        @modules
+                        <br />                
+                    }
+                </td>
+                <td style="border: 1px solid black;">
+                    @foreach (var moduleResult in courseResult.ResultModules)
+                    {
+                        @moduleResult.Value.ToString()
+                        @Html.TextHtml("/")
+                        @moduleResult.Key.ToString()
+                        <br />
+                    }
+                </td>
+                <td style="border: 1px solid black;">
+                    @courseResult.CourseResult
+                </td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>

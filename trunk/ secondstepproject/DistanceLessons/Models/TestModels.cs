@@ -8,6 +8,7 @@ namespace DistanceLessons.Models
         public TestAndAnswersModel TestAndAnswers { get; set; }
         public Module PassedModule { get; set; }
         public TimeSpan TimeToResolve { get; set; }
+        public int CountQuestions { get; set; }
     }
 
     public class DetailAnswersModel
@@ -21,8 +22,11 @@ namespace DistanceLessons.Models
     public class TestResultModel
     {
         public string Login { get; set; }
-        public int? MaxPoints { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string MiddleName { get; set; }
         public int? Result { get; set; }
+        public int? MaxPoints { get; set; }
         public DateTime StartTesting { get; set; }
     }
 
