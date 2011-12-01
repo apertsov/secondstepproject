@@ -6,18 +6,23 @@ namespace DistanceLessons.Models
 {
     public partial class DataEntitiesManager
     {
+        public List<ShowTest> GetShowTestsList()
+        {
+            return _db.ShowTests.ToList<ShowTest>();
+        }
+
         public List<ShowTest> ShowTestsInModule(Guid ModuleId, string username)
         {
-            return (from user in _db.Users
-                    from showTests in _db.ShowTests
+            return (from user in GetUserList()
+                    from showTests in GetShowTestsList()
                     where user.Login == username && user.UserId == showTests.UserId && showTests.ModuleId == ModuleId
                     select showTests).ToList();
         }
 
         public bool IsAllShowedModuleUserTests(Guid ModuleId, string username)
         {
-            return (from user in _db.Users
-                    from showTests in _db.ShowTests
+            return (from user in GetUserList()
+                    from showTests in GetShowTestsList()
                     where user.Login == username && user.UserId == showTests.UserId
                     && showTests.ModuleId == ModuleId && showTests.IsShowed == false
                     select showTests).Count() == 0 ? true : false;
@@ -33,15 +38,15 @@ namespace DistanceLessons.Models
         public List<Guid> GetNotShowedTestsId(Guid moduleId, string username)
         {
             Guid UserId = GetUserId(username);
-            return (from showTests in _db.ShowTests
+            return (from showTests in GetShowTestsList()
                     where showTests.ModuleId == moduleId && showTests.UserId == UserId && showTests.IsShowed == false
                     select showTests.TestId).ToList();
         }
 
         public void MarkShowedTest(Guid testId, Guid ModuleId, string username)
         {
-            ShowTest showTest = (from user in _db.Users
-                                 from showTests in _db.ShowTests
+            ShowTest showTest = (from user in GetUserList()
+                                 from showTests in GetShowTestsList()
                                  where user.Login == username && user.UserId == showTests.UserId &&
                                  showTests.ModuleId == ModuleId && showTests.IsShowed == false && showTests.TestId == testId
                                  select showTests).FirstOrDefault();
@@ -54,8 +59,8 @@ namespace DistanceLessons.Models
 
         public void MarkModuleTestsShowed(Guid ModuleId, string username)
         {
-            List<ShowTest> notShowedTests = (from user in _db.Users
-                                 from showTests in _db.ShowTests
+            List<ShowTest> notShowedTests = (from user in GetUserList()
+                                             from showTests in GetShowTestsList()
                                  where user.Login == username && user.UserId == showTests.UserId &&
                                  showTests.ModuleId == ModuleId && showTests.IsShowed == false
                                  select showTests).ToList();
@@ -76,6 +81,16 @@ namespace DistanceLessons.Models
                     _db.DeleteObject(showTest);
                 Save();
             }
+        }
+
+        public void DeleteShowTestsByModuleId(Guid moduleId)
+        {
+            var showTests=(from _showTests in GetShowTestsList()
+                            where _showTests.ModuleId==moduleId
+                             select _showTests);
+            foreach (var showTest in showTests)
+                _db.DeleteObject(showTest);
+            Save();
         }
     }
 }

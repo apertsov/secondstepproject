@@ -18,6 +18,14 @@ namespace DistanceLessons.Models
 
         public void DeleteModule(Guid id)
         {
+            var lessons = GetLessonsByModule(id);
+            foreach (Lesson les in lessons)
+            {
+                les.ModuleId = null;
+            }
+            DeleteUserModulesByModuleId(id);
+            DeleteShowTestsByModuleId(id);
+            DeleteAnswers(id);
             var cat = _db.Modules.SingleOrDefault(c => c.ModuleId == id);
             _db.DeleteObject(cat);
             Save();

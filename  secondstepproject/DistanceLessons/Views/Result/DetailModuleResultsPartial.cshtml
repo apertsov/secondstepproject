@@ -11,39 +11,43 @@ else
         Результат тестування з модуля</h2>
 
     <table style="width: 100%;">
-        <tbody align="center">
+        <tbody>
             <tr>
-                <td style="width: 25%;">
-                    Логін користувача
-                </td>
-                <td>
+                <th style="width: 25%; border: 1px solid black;">
+                    Логін та ініціали користувача
+                </th>
+                <th style="border: 1px solid black;">
                     Бали користувача
-                </td>
-                <td>
+                </th>
+                <th style="border: 1px solid black;">
                     Початок тестування
-                </td>
-                @*    <td> Деталі тестування</td> *@
+                </th>
+                <th style="border: 1px solid black;">
+                    Додаткові дії
+                </th>
             </tr>
             @foreach (DistanceLessons.Models.TestResultModel userModuleResult in Model.TestResults)
             {
-                <tr>
-                    <td align="justify" style="padding: 10px;">
+                <tr align="center">
+                    <td style="padding: 10px; border: 1px solid black;">
                         @userModuleResult.Login
+                        <br />
+                        @userModuleResult.FirstName @userModuleResult.LastName @userModuleResult.MiddleName
                     </td>
-                    <td>
+                    <td style="border: 1px solid black;">
                         @if (userModuleResult.Result == null)
                         {
                             @Html.TextHtml("Здає тест")
                         }
                         else
                         { 
-                            @(userModuleResult.Result.ToString()+(userModuleResult.MaxPoints==null?"":"/"+userModuleResult.MaxPoints) )
+                            @(userModuleResult.Result.ToString() + (userModuleResult.MaxPoints == null ? "" : "/" + userModuleResult.MaxPoints))
                         }
                     </td>
-                    <td>
+                    <td style="border: 1px solid black;">
                         @userModuleResult.StartTesting
                     </td>
-                    <td>
+                    <td style="border: 1px solid black;">
                         @Ajax.ActionLink("Деталі тестування", "DetailsModuleUserAnswers", "Result", new { id = Model.Parameters.pickedElement, username = userModuleResult.Login, controllerName = Model.Parameters.ControllerName, divIdToReplace = Model.Parameters.DivIdToReplace }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace })
                         @if ((ViewBag.IsTeacherCourse) && (userModuleResult.Result != null))
                         {

@@ -200,12 +200,6 @@ namespace DistanceLessons.Controllers
         public ActionResult DeleteModule(Guid id)
         {
             Guid course_id = db.GetModulesByID(id).CourseId;
-            var lessons = db.GetLessonsByModule(id);
-            foreach (Lesson les in lessons)
-            {
-                les.ModuleId = null;
-                db.Save();
-            }
             db.DeleteModule(id);
             return RedirectToAction("Course", new { id = course_id });
         }

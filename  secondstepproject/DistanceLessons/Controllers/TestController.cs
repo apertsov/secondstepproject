@@ -21,7 +21,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult ShowLessonTests(Guid id,Guid courseId)
+        public ActionResult ShowLessonTests(Guid id, Guid courseId)
         {
             ViewBag.CourseId = courseId;
             LessonTestAndAnswersModel model = new LessonTestAndAnswersModel { Lesson = _db.Lesson(id), TestAndAnswers = _db.LessonTestsAndAnswers(id) };
@@ -31,7 +31,7 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult ShowModuleTests(Guid id)
         {
-            ModuleTestAndAnswersModel model = new ModuleTestAndAnswersModel { Module=_db.Module(id), LessonsTestsAndAnswers=_db.ModuleTestsAndAnswers(id)};
+            ModuleTestAndAnswersModel model = new ModuleTestAndAnswersModel { Module = _db.Module(id), LessonsTestsAndAnswers = _db.ModuleTestsAndAnswers(id) };
             return View(model);
         }
 
@@ -117,18 +117,25 @@ namespace DistanceLessons.Controllers
         public ActionResult AddTest(Guid id)
         {
             //if (!_db.IsLesson(id)) перехід до списку предметів викладача
-            Test test = new Test { TestId = Guid.NewGuid(), LessonId = id, Question = "" };
-            List<Answer> answers = new List<Answer>();
-            answers.Add(new Answer { AnswerId = Guid.NewGuid(), TestId = test.TestId, Valid = true });
-            answers.Add(new Answer { AnswerId = Guid.NewGuid(), TestId = test.TestId, Valid = false });
-            TestAndAnswersModel model = new TestAndAnswersModel { Test = test, AnswerList = answers };
-            _db.AddTest(test);
-            _db.AddAnswer(answers[0]);
-            _db.AddAnswer(answers[1]);
+
+
+
             if (!Request.IsAjaxRequest())
-                return View("EditTest", model);
+            {
+                return View("EditTestPartial");
+            }
             else
-                return PartialView("EditTestPartial", model);
+            {
+                Test test = new Test { TestId = Guid.NewGuid(), LessonId = id, Question = "" };
+                List<Answer> answers = new List<Answer>();
+                answers.Add(new Answer { AnswerId = Guid.NewGuid(), TestId = test.TestId, Valid = true });
+                answers.Add(new Answer { AnswerId = Guid.NewGuid(), TestId = test.TestId, Valid = false });
+                TestAndAnswersModel model = new TestAndAnswersModel { Test = test, AnswerList = answers };
+                _db.AddTest(test);
+                _db.AddAnswer(answers[0]);
+                _db.AddAnswer(answers[1]);
+                return PartialView("EditTestPartial",model);
+            }
         }
 
         [HttpGet]
@@ -208,8 +215,10 @@ namespace DistanceLessons.Controllers
                 _db.MarkModuleTestsShowed(id, User.Identity.Name);
                 _db.UpdateUserModule(id, User.Identity.Name, _db.CalcUserModuleResults(id, User.Identity.Name));
             }
+            UserModule model = _db.UserModule(id, User.Identity.Name);
             ViewBag.ModuleName = _db.ModuleName(id);
-            return View(_db.UserModule(id, User.Identity.Name));
+            ViewBag.ModulePoints = _db.CalcCourseResult((float)model.Passed,model.Module.MaxPoints);
+            return View(model);
         }
 
 
@@ -217,11 +226,14 @@ namespace DistanceLessons.Controllers
         private PassTestModel NextNotShowedTest(Guid moduleId, string username, TimeSpan timeToResolve)
         {
             List<Guid> testsId = _db.GetNotShowedTestsId(moduleId, username); // вибираємо всі тести з модуля що не показані користувачу
-            if (testsId.Count == 0) throw new Exception();
+            int countQuestions = testsId.Count;
             Random rand = new Random();
             Guid testIdForPass = testsId[rand.Next(testsId.Count)]; // вибираємо один з тестів
             _db.MarkShowedTest(testIdForPass, moduleId, User.Identity.Name); // позначаємо обраний тест як показаний
-            return new PassTestModel { PassedModule = _db.Module(moduleId), TestAndAnswers = new TestAndAnswersModel { Test = _db.Test(testIdForPass), AnswerList = _db.TestAnswers(testIdForPass) }, TimeToResolve = timeToResolve };
+            return new PassTestModel { PassedModule = _db.Module(moduleId), 
+                                       TestAndAnswers = new TestAndAnswersModel { Test = _db.Test(testIdForPass), AnswerList = _db.TestAnswers(testIdForPass) }, 
+                                       TimeToResolve = timeToResolve, 
+                                       CountQuestions=countQuestions };
         }
 
 

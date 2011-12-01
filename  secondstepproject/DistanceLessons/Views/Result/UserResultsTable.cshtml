@@ -10,44 +10,45 @@
     <h2>
         Результати тестування з курсу</h2>
     <table style="width: 100%;">
-        <tbody align="center">
+        <tbody>
             <tr>
-                <td>
-                    Логін користувача
-                </td>
-                <td>
+                <th style="border: 1px solid black;width: 35%;">
+                    Логін та ініціали користувача
+                </th>
+                <th style="border: 1px solid black;width: 35%;">
                     Здані модулі
-                </td>
-                <td>
+                </th>
+                <th style="border: 1px solid black;width: 15%;">
                     Результати модулів
-                </td>
-                <td>
+                </th>
+                <th style="border: 1px solid black;width: 15%;">
                     Оцінка за курс
-                </td>
+                </th>
             </tr>
             @foreach (var userResult in Model)
             { 
-                <tr>
-                    <td>
-                        @userResult.Login
+                <tr align='center'>
+                    <td style="border: 1px solid black;" >
+                        @userResult.Login <br />
+                        @userResult.FirstName @userResult.LastName @userResult.MiddleName
                     </td>
-                    <td>
+                    <td style="border: 1px solid black;" >
                         @foreach (var moduleName in userResult.PassedModules)
                         {
                             @Ajax.ActionLink(moduleName.Value, (string)ViewBag.controller, new { id = moduleName.Key, divIdToReplace = ViewBag.replaceDiv, type = DistanceLessons.Models.ElementsType.Module }, new AjaxOptions() { UpdateTargetId = ViewBag.replaceDiv, InsertionMode = InsertionMode.Replace })   
-                            <br />         
+                            <br />  
                         }
                     </td>
-                    <td>
+                    <td style="border: 1px solid black;">
                         @foreach (var moduleResult in userResult.ResultModules)
                         {
-                            @moduleResult.Value.ToString();
-                            @Html.TextHtml("/");
-                            @moduleResult.Key.ToString();
+                            @moduleResult.Value.ToString()
+                            @Html.TextHtml("/")
+                            @moduleResult.Key.ToString()
                             <br />
                         }
                     </td>
-                    <td>
+                    <td style="border: 1px solid black;">
                         @userResult.CourseResult
                     </td>
                 </tr>

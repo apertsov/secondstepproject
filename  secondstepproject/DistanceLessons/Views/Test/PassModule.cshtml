@@ -45,8 +45,7 @@
         );    
     }
 </script>
-<h2>Залишилось часу <span id="timer"></span> </h2> <br />
-<h2>@Model.PassedModule.Title</h2>
+<h2>@Model.PassedModule.Title <br /> Залишилось часу <span id="timer"></span> та @Model.CountQuestions запитання</h2>
 @using (Html.BeginForm("PassModule", "Test", new { moduleId=Model.PassedModule.ModuleId, testId=Model.TestAndAnswers.Test.TestId}, FormMethod.Post))
 {
     /*

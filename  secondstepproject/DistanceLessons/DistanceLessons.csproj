@@ -556,6 +556,7 @@
     <Content Include="Views\Teacher\Courses.cshtml" />
     <Content Include="Views\Search\UsersSearch.cshtml" />
     <Content Include="Views\Search\_gridUsers.cshtml" />
+    <Content Include="Views\Result\StudentResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">
