@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<DistanceLessons.Models.Cours>
 
 @{
-    ViewBag.Title = "Index";
+
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,30 +10,28 @@
 
 @using (Html.BeginForm())
 {
-    <fieldset>
+     <table class="center" cellspacing="10">
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+    <tr>
+        <td class="editor-field">  @Html.DisplayNameFor(model => model.Title)</td>
+        <td class="editor-field">  @Html.DisplayNameFor(model => model.Description) </td>
+    </tr>
+     <tr>          
+        <td class="editor-field"> @Html.TextBox("title", null, new { @class = "editor" })</td>
+        <td class="editor-field"> @Html.TextBox("description", null, new { @class = "editor" })</td>
+    </tr>
+     <tr>
+        <td class="error" colspan="2" align="center" style="padding-top: 5px;"> <button type="submit">Шукати</button></td>
+    </tr>
+    
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+    </table>
+ }
 
-        <div>
-              @Html.DisplayNameFor(model => model.Title)
-         </div>
-         
-          <div>
-             @Html.TextBox("title", new { @class = "editor" }) 
-         </div>
-   
-         <div>
-              @Html.DisplayNameFor(model => model.Description)
-          </div>
-        
-          <div>
-            <input type="text" id="description" name="description" class = "editor" />
-          </div>
-
-        <p>
-            <button type="submit">Шукати</button>
-        </p>
-    </fieldset>
-}
-
-<div id="myGrid">
+<div id="CourseGrid">
     @Html.Partial("_resultCourse", Model)
 </div>
