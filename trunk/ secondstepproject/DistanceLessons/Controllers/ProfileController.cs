@@ -130,9 +130,18 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult NewMessage()
+        public ActionResult NewMessage(String user)
         {
-            return View();
+            if (user != null)
+            {
+                SendMessageModel temp = new SendMessageModel();
+                temp.Name = user;
+                return View(temp);
+            }
+            else
+            {
+                return View();
+            }
         }
 
         [HttpPost]
