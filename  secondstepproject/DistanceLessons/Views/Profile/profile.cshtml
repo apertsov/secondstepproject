@@ -50,44 +50,39 @@
             <td colspan="2"  style="border-bottom: 1px solid silver;"><b class="center">&nbsp;&nbsp;Контактні дані:</b></td>
         </tr>
 @if (Model.contactModel != null)
-{
-    if (!String.IsNullOrEmpty(Model.contactModel.Telephone))
-    {
-            <tr>
-                <td class="text_right">@Html.LabelFor(model => model.contactModel.Telephone)</td>
-                <td class="text_left">@Html.DisplayFor(model => model.contactModel.Telephone)</td>
-            </tr>
-    }
-    if (!String.IsNullOrEmpty(Model.contactModel.Skype))
-    {
-            <tr>
-                <td class="text_right">@Html.LabelFor(model => model.contactModel.Skype)</td>
-                <td class="text_left">@Html.DisplayFor(model => model.contactModel.Skype)</td>
-            </tr>
-    }
-    if (!String.IsNullOrEmpty(Model.contactModel.ICQ_QIP))
-    {
-            <tr>
-                <td class="text_right">@Html.LabelFor(model => model.contactModel.ICQ_QIP)</td>
-                <td class="text_left">@Html.DisplayFor(model => model.contactModel.ICQ_QIP)</td>
-            </tr>
-    }
-    if (!String.IsNullOrEmpty(Model.contactModel.Other))
-    {
-            <tr>
-                <td class="text_right">@Html.LabelFor(model => model.contactModel.Other)</td>
-                <td class="text_left">@Html.DisplayFor(model => model.contactModel.Other)</td>
-            </tr>
-    }
+ {
+     if (!String.IsNullOrEmpty(Model.contactModel.Telephone))
+     {
+         <tr>
+             <td class="text_right">@Html.LabelFor(model => model.contactModel.Telephone)</td>
+             <td class="text_left">@Html.DisplayFor(model => model.contactModel.Telephone)</td>
+         </tr>
+     }
+     if (!String.IsNullOrEmpty(Model.contactModel.Skype))
+     {
+         <tr>
+             <td class="text_right">@Html.LabelFor(model => model.contactModel.Skype)</td>
+             <td class="text_left">@Html.DisplayFor(model => model.contactModel.Skype)</td>
+         </tr>
+     }
+     if (!String.IsNullOrEmpty(Model.contactModel.ICQ_QIP))
+     {
+         <tr>
+             <td class="text_right">@Html.LabelFor(model => model.contactModel.ICQ_QIP)</td>
+             <td class="text_left">@Html.DisplayFor(model => model.contactModel.ICQ_QIP)</td>
+         </tr>
+     }
+     if (!String.IsNullOrEmpty(Model.contactModel.Other))
+     {
+         <tr>
+             <td class="text_right">@Html.LabelFor(model => model.contactModel.Other)</td>
+             <td class="text_left">@Html.DisplayFor(model => model.contactModel.Other)</td>
+         </tr>
+     }
+ }
+    
     <tr>
         <td class="text_right">Особисті повідомлення:</td>
-        <td class="text_left">@Html.ActionLink("Написати повідомлення", "CreateMessage", "Message", new { user = Model.user }, null)</td>
+        <td class="text_left">@Html.ActionLink("Написати повідомлення", "NewMessage", "Profile", new { user = Model.user }, null)</td>
     </tr>
-}
-else
-{
-    <tr>
-        <td colspan="2" style="color: silver; font-size:0.8em; text-align:center;">Контактні дані не вказано</td>
-    </tr>
-}
 </table>
