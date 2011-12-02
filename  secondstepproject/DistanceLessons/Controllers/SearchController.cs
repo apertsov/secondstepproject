@@ -44,16 +44,16 @@ namespace DistanceLessons.Controllers
        [HttpPost]
        public ActionResult Lesson(string title, string description)
        {
-           var course = _db.GetLessonList();
+           var lesson = _db.GetLessonList();
 
            if (!string.IsNullOrEmpty(title))
-               course = course.Where(a => a.Title.ToUpper().Contains(title.ToUpper())).ToList();
+               lesson = lesson.Where(a => a.Title.ToUpper().Contains(title.ToUpper())).ToList();
 
            if (!string.IsNullOrEmpty(description))
-               course = course.Where(a => a.Description.ToUpper().Contains(description.ToUpper())).ToList();
+               lesson = lesson.Where(a => a.Description != null && a.Description.ToUpper().Contains(description.ToUpper())).ToList();
 
 
-           return View(course);
+           return View(lesson);
        }
 
        [HttpGet]
