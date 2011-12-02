@@ -24,10 +24,11 @@ namespace DistanceLessons.Models
         {
             List<UserCourseModel> userCourses = new List<UserCourseModel>();
             List<Cours> Courses = GetCourseByCategory_ListCount(CategoryId, type);
-            bool temp;
+            int temp;
             foreach (var item in Courses)
             {
-                temp = (UserSubscribe(item.UserId, item.CourseId)) ? true : false;
+                temp = (UserSubscribe(userId, item.CourseId)) ? 0 : 1;
+                if (temp == 1) { temp = (ExistConfirmCourseMessage(userId, item.UserId, item.CourseId)) ? 2 : 1; }
                 userCourses.Add(new UserCourseModel { Course = item, Subscribe = temp });
             }
             return userCourses;
@@ -56,10 +57,11 @@ namespace DistanceLessons.Models
         {
             List<UserCourseModel> userCourses = new List<UserCourseModel>();
             List<Cours> Courses = GetCourseByCategory(CategoryId, type, pageSize, numPage);
-            bool temp;
+            int temp;
             foreach (var item in Courses)
             {
-                temp = (UserSubscribe(userId, item.CourseId)) ? true : false;
+                temp = (UserSubscribe(userId, item.CourseId)) ? 0 : 1;
+                if (temp == 1) { temp = (ExistConfirmCourseMessage(userId, item.UserId, item.CourseId)) ? 2 : 1; }
                 userCourses.Add(new UserCourseModel { Course = item, Subscribe = temp });
             }
             return userCourses;

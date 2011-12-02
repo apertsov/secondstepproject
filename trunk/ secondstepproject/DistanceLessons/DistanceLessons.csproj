@@ -120,6 +120,7 @@
     </Compile>
     <Compile Include="Attributes\AutorizeFilter.cs" />
     <Compile Include="Attributes\LocalizationAttribute.cs" />
+    <Compile Include="Attributes\ValidationData.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EducationController.cs" />
@@ -519,7 +520,6 @@
     <Content Include="Views\Test\TestingNotPrepared.cshtml" />
     <Content Include="Views\Result\DetailsModuleUserAnswers.cshtml" />
     <Content Include="Views\Home\Courses.cshtml" />
-    <Content Include="Views\Profile\info.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Profile\_Info_PartialPage.cshtml" />
     <Content Include="Views\Teacher\AllMyLesson.cshtml" />
@@ -557,6 +557,10 @@
     <Content Include="Views\Search\UsersSearch.cshtml" />
     <Content Include="Views\Search\_gridUsers.cshtml" />
     <Content Include="Views\Result\StudentResult.cshtml" />
+    <Content Include="Views\Profile\NewMessage.cshtml" />
+    <Content Include="Views\Profile\_Message.cshtml" />
+    <Content Include="Views\Shared\_NewMessageBox.cshtml" />
+    <Content Include="Views\Profile\_NewMessages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">

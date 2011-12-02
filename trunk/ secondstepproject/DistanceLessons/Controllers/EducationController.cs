@@ -44,7 +44,7 @@ namespace DistanceLessons.Controllers
             Session["withStatus"] = withStatus;
 
             return PartialView("_Courses",
-                               _db.GetUserCourse((Guid)Session["CategoryId"], _db.GetUserId(User.Identity.Name), withStatus,itemOnPage, numPage));
+                               _db.GetUserCourse((Guid)Session["CategoryId"], _db.GetUserId(User.Identity.Name), withStatus, itemOnPage, numPage));
         }
 
         public ActionResult SubscribeOnCourse(Guid CourseId)
@@ -56,15 +56,13 @@ namespace DistanceLessons.Controllers
             _db.AddUserCourse(subscribe);
             _db.Save();
 
-
-
             return PartialView("_Courses",
                                _db.GetUserCourse((Guid)Session["CategoryId"], _db.GetUserId(User.Identity.Name), (int)Session["withStatus"], itemOnPage, (int)Session["page"]));
         }
 
         public ActionResult DeleteSubscribeOnCourse(Guid CourseId)
         {
-            _db.DeleteUserCourse(_db.GetUserCourseId(_db.GetUserId(User.Identity.Name),CourseId));
+            _db.DeleteUserCourse(_db.GetUserCourseId(_db.GetUserId(User.Identity.Name), CourseId));
             return PartialView("_Courses",
                                _db.GetUserCourse((Guid)Session["CategoryId"], _db.GetUserId(User.Identity.Name), (int)Session["withStatus"], itemOnPage, (int)Session["page"]));
         }
@@ -73,12 +71,15 @@ namespace DistanceLessons.Controllers
         {
             Message confirm = new Message();
             confirm.MessageId = Guid.NewGuid();
-            confirm.Message1 = "";
+            confirm.Message1 = "Користувач&nbsp;<a class=\"no_button\" href=profile/info?user=" + User.Identity.Name + ">" + _db.GetUser(User.Identity.Name).Login + "</a>&nbsp;подав&nbsp;заявку&nbsp;на&nbsp;підписання&nbsp;на&nbsp;Ваш&nbsp;курс&nbsp;-&nbsp;" + _db.GetCourse(CourseId).Title + ".&nbsp;<a href=\"/profile/confirmsubscribe?CourseId=" + CourseId + "&amp;UserId=" + _db.GetUser(User.Identity.Name).UserId + "&amp;MessageId=" + confirm.MessageId + "\">Затверджую</a>&nbsp;<a>Відмовляю</a>";
             confirm.DateOfSender = DateTime.Now;
             confirm.UserId_From = _db.GetUserId(User.Identity.Name);
             confirm.UserId_To = TeacherId;
+            confirm.Title = "Запит підписання на курс '" + _db.GetCourse(CourseId).Title + "'";
+
             _db.AddMessage(confirm);
-            _db.Save();
+            _db.AddMessage_status(_db.GetMessageStatus(confirm, _db.GetUser(confirm.UserId_To).Login), 10);
+            _db.AddMessage_status(_db.GetMessageStatus(confirm, _db.GetUser(confirm.UserId_From).Login), 2);
 
             return PartialView("_Courses",
                                _db.GetUserCourse((Guid)Session["CategoryId"], _db.GetUserId(User.Identity.Name), (int)Session["withStatus"], itemOnPage, (int)Session["page"]));

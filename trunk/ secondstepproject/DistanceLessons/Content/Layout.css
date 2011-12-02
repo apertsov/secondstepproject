@@ -450,6 +450,54 @@ body
 
 }
 
+#header_logo #messages
+{
+    position: absolute;
+    color: black;
+    float: left;
+    margin: 0 0 -12px 20px;
+    background-color: white;
+    padding: 10px 15px 6px 20px;
+    border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    border-left: 1px solid silver;
+    border-top: 1px solid silver;
+    border-right: 1px solid silver;
+    bottom: 0;
+}
+
+#header_logo #messages a.active 
+{
+    margin: 5px 5px;
+    font: bold 12px Arial, Verdana, Sans-Serif;
+    font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    background-image: url('img/passive_active/fill_passive.png');
+    color: white;
+    padding: 5px 7px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+}
+#header_logo #messages a.passive
+{
+    margin: 5px 5px;
+    font: bold 12px Arial, Verdana, Sans-Serif;
+    font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    background:silver;
+    color: white;
+    padding: 5px 7px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    
+}
+
 #header_lower #auth ul li
 {
     display: inline;
@@ -839,7 +887,7 @@ table.center,table.center2
     width: 100%;
 }
 
-table.left, table.right
+table.left, table.left2, table.right
 {
     width: 95%;
 }
@@ -864,8 +912,42 @@ table.left tr td.editor-field, table.right tr td.editor-field
     width: 85%;
 }
 
+table.left2 tr td.text_right
+{
+    font-size: 14px;
+    width: 5%;    
+}
+
+table.left2 tr td.text_left
+{
+    font-size: 14px;
+    width: 25%;    
+}
+
 table.center2 tr td
 {
      font-size: 14px;
      width: 50%;
+}
+
+.message
+{
+    padding: 5px;
+    background: white;
+    margin: 5px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    font-size: 75%;
+    color: black;
+    -webkit-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    -moz-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+}
+
+.message:hover
+{
+    padding: 5px;
+    background-color:#0073ea;
+    background-image: url('img/passive_active/fill_passive.png');
+    color:white;
 }

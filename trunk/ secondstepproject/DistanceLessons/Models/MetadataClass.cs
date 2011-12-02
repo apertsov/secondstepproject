@@ -3,6 +3,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using DistanceLessons.Attributes;
 
 namespace DistanceLessons.Models
 {
@@ -267,23 +268,14 @@ namespace DistanceLessons.Models
     }
 
 
-    [MetadataType(typeof(MessegeMetadata))]
-    public partial class Messege
+    [MetadataType(typeof(MessageMetadata))]
+    public partial class Message
     {
-        public class MessegeMetadata
+
+        public class MessageMetadata
         {
             [ScaffoldColumn(false)]
             public Guid MessageId { get; set; }
-
-            [Required(ErrorMessage = "Введіть текст листа")]
-            [DisplayName("Текст листа")]
-            [StringLength(512, ErrorMessage = "Текст листа обмежений 512 символами")]
-            public string Message { get; set; }
-
-            [ScaffoldColumn(false)]
-            [DisplayName("Час відправки")]
-            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
-            public DateTime DateOfSender { get; set; }
 
             [ScaffoldColumn(false)]
             public Guid UserId_From { get; set; }
@@ -291,8 +283,14 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid UserId_To { get; set; }
 
-            [ScaffoldColumn(false)]
-            public byte Status { get; set; }
+            [DisplayName("Тема:")]
+            [Required(ErrorMessage = "Ви забули про тему повідомлення")]
+            public string Title { get; set; }
+
+            [DisplayName("Повідомлення:")]
+            [Required(ErrorMessage = "Напишіть повідомлення")]
+            [StringLength(512, ErrorMessage = "Повідомлення обмежене 512 символами")]
+            public string Message1 { get; set; }
         }
     }
 
@@ -370,7 +368,14 @@ namespace DistanceLessons.Models
             public DateTime PassedTime { get; set; }
         }
     }
-
-
-
+    [MetadataType(typeof(SendMessageMetadata))]
+    public partial class SendMessageModel
+    {
+        public class SendMessageMetadata
+        {
+            [DisplayName("Кому:")]
+            [ExistUserInDB(ErrorMessage = "Введений користувач не існує")]
+            public String Name { get; set; }
+        }
+    }
 }

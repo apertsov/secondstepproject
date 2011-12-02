@@ -16,22 +16,26 @@
             <span class="no_button"><i>Викладач:</i> @Html.ActionLink(item.Course.User.Login, "Info", "Profile", new { user = item.Course.User.Login }, null)&nbsp;&nbsp;</span>
             @if (!item.Course.IsSubscribing)
             {
-                if (item.Subscribe == false)
+                if (item.Subscribe == 1)
                 {
                      <span onClick="alert('Ви підписались на курс!\n\rПро терміни здачі модуля Ви будете оповіщені по системі особистих повідомлень.\n\r\n\rЩоб відмінити підписку натисніть &laquo;Відмінити&raquo;')">@Ajax.ActionLink("Підписатись", "SubscribeOnCourse", new { CourseId = item.Course.CourseId }, new AjaxOptions() { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })</span>
                 }
-                else
+                else if (item.Subscribe == 0)
                 {
                      @Ajax.ActionLink("Відмінити", "DeleteSubscribeOnCourse", new { CourseId = item.Course.CourseId }, new AjaxOptions() { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })
                 }
             }
             else
             {
-                if (item.Subscribe == false)
+                if (item.Subscribe == 1)
                 {
                     <span onClick="alert('Цей курс є приватним. Очікуйте затвердження підписки від викладача та оповіщення в особистих повідомленнях.')">@Ajax.ActionLink("Підписатись", "ConfirmSubscribeOnCourse", new { CourseId = item.Course.CourseId,TeacherId=item.Course.UserId }, new AjaxOptions() { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })</span>
                 }
-                else
+                else if(item.Subscribe == 2)
+                {
+                    <span class="current_page">Очікуємо підтвердження</span>
+                }
+                else if (item.Subscribe == 0)
                 {
                     @Ajax.ActionLink("Відмінити", "DeleteSubscribeOnCourse", new { CourseId = item.Course.CourseId }, new AjaxOptions() { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })
                 }

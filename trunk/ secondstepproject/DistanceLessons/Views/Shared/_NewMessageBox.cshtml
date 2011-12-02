@@ -1,0 +1,7 @@
+﻿@{
+    <i><font size="2">Нових повідомлень:</font></i>
+    if ((int)Session["MessageCount"] == 0)
+    {@Html.ActionLink(Session["MessageCount"].ToString(), null, null, null, new { @class = "passive" })}
+    else
+    {@Html.ActionLink(Session["MessageCount"].ToString(), "Index", "profile", null, new { @class = "active" })}
+}
