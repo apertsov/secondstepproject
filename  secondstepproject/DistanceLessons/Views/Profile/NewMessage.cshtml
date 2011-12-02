@@ -1,0 +1,45 @@
+﻿@model DistanceLessons.Models.SendMessageModel
+
+@{
+    ViewBag.Title = "Написати нове повідомлення";
+}
+
+
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"> </script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+
+@{Html.EnableClientValidation();}
+@using (Html.BeginForm())
+{
+@Html.ValidationSummary(true)
+<table class="left" cellspacing="10">
+    <tr>
+        <td class="editor-label">@Html.LabelFor(model => model.Messages.Title)</td>
+        <td class="editor-field">@Html.TextBoxFor(model => model.Messages.Title, new { @class = "editor" })</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.Messages.Title)</td>
+    </tr>
+
+    <tr>
+        <td class="editor-label">@Html.LabelFor(model => model.Name)</td>
+        <td class="editor-field">@Html.TextBoxFor(model => model.Name, new { @class = "editor" })</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.Name)</td>
+    </tr>
+    <tr>
+        <td class="editor-label">@Html.LabelFor(model => model.Messages.Message1)</td>
+        <td class="editor-field">@Html.TextAreaFor(model => model.Messages.Message1, new { @class = "textboxarea" })</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.Messages.Message1)</td>
+    </tr>
+</table>
+<div class="item" align="center">
+    <input type="submit" value="Відправити" />
+</div>
+}

@@ -14,37 +14,17 @@ namespace DistanceLessons.Controllers
         //
         // GET: /Profile/
 
-        [HttpGet]
         public ActionResult Index()
         {
-            ViewData["exist"] = false;
-            if (_db.ExistInformation(User.Identity.Name)) ViewData["exist"] = true;
-
             if (!Request.IsAjaxRequest())
             {
-                if (_db.ExistInformation(User.Identity.Name)) return View(_db.GetUserProfile(_db.GetUserId(User.Identity.Name)));
-                else return View();
+                return View(_db.GetUserProfile(_db.GetUserId(User.Identity.Name)));
             }
             else
             {
-                if (_db.ExistInformation(User.Identity.Name)) return PartialView("_Info_PartialPage", _db.GetUserProfile(_db.GetUserId(User.Identity.Name)));
-                else return PartialView("_CreateInfo_PartialPage");
+                return PartialView("_Info_PartialPage", _db.GetUserProfile(_db.GetUserId(User.Identity.Name)));
             }
         }
-
-        [HttpPost]
-        public ActionResult Index(Information obj)
-        {
-            if (!_db.ExistInformation(User.Identity.Name))
-            {
-                obj.UserId = _db.GetUserId(User.Identity.Name);
-                obj.InformationId = Guid.NewGuid();
-                _db.AddInformation(obj);
-                _db.Save();
-            }
-            return RedirectToAction("Index");
-        }
-
 
         [HttpGet]
         public ActionResult Information()
@@ -115,7 +95,7 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult Info(string user)
         {
-            if ((String.IsNullOrEmpty(user)) || (!_db.ExistInformation(user)))
+            if ((String.IsNullOrEmpty(user)) || (!_db.ExistUser(user)))
             {
                 return new NotFoundViewResult();
             }
@@ -127,33 +107,86 @@ namespace DistanceLessons.Controllers
                 }
                 else
                 {
+                    ViewData["username"] = user;
                     return View("profile", _db.GetUserProfile(_db.GetUserId(user)));
                 }
             }
         }
 
-        public ActionResult Messages()
+        public ActionResult Messages(byte type)
         {
-            return PartialView("_Messages",_db.GetMessagesByUser(User.Identity.Name, 0));
+            Session["choose_type"] = type;
+            ViewBag.Exist = false;
+            foreach (var item in _db.GetMessagesByUser(User.Identity.Name, type))
+            {
+                if ((item.Messages.Status == 10) || (item.Messages.Status == 11) || (item.Messages.Status == 12) || (item.Messages.Status == 0) || (item.Messages.Status == 1)) ViewBag.Exist = true;
+            }
+            return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, type));
+        }
+
+        public ActionResult NewMessages()
+        {
+            return PartialView("_NewMessages", _db.GetNewMessageForUser(User.Identity.Name));
         }
 
         [HttpGet]
-        public ActionResult SendMessage()
+        public ActionResult NewMessage()
         {
-            return PartialView("_SendMessage");
+            return View();
         }
 
         [HttpPost]
-        public ActionResult SendMessage(SendMessageModel obj)
+        public ActionResult NewMessage(SendMessageModel obj)
         {
-            obj.Message.MessageId = Guid.NewGuid();
-            obj.Message.UserId_From = _db.GetUserId(User.Identity.Name);
-            obj.Message.UserId_To = _db.GetUserId(obj.Name);
-            obj.Message.DateOfSender = DateTime.Now;
+            if (ModelState.IsValid)
+            {
+                if (User.Identity.Name.ToLower() != obj.Name.ToLower())
+                {
+                    obj.Messages.MessageId = Guid.NewGuid();
+                    obj.Messages.UserId_From = _db.GetUserId(User.Identity.Name);
+                    obj.Messages.UserId_To = _db.GetUserId(obj.Name);
+                    obj.Messages.DateOfSender = DateTime.Now;
 
-            _db.AddMessage(obj.Message);
-            _db.AddMessage_status(_db.GetMessageStatus(obj.Message,obj.Name));
-            _db.AddMessage_status(_db.GetMessageStatus(obj.Message,User.Identity.Name));
+                    _db.AddMessage(obj.Messages);
+                    _db.AddMessage_status(_db.GetMessageStatus(obj.Messages, obj.Name));
+                    _db.AddMessage_status(_db.GetMessageStatus(obj.Messages, User.Identity.Name),1);
+                }
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+        }
+
+        public ActionResult DeleteMessage(Guid MessageId)
+        {
+            Message_status upd_ = _db.GetMessageStatById(MessageId, _db.GetUserId(User.Identity.Name));
+            upd_.Status = 2;
+            UpdateModel(upd_);
+            _db.Save();
+            return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, (byte)Session["choose_type"]));
+        }
+
+        public ActionResult ReadMessage(Guid MessageId)
+        {
+            Message_status upd_ = _db.GetMessageStatById(MessageId, _db.GetUserId(User.Identity.Name));
+            if (upd_.Status != 10) upd_.Status = 1;
+            UpdateModel(upd_);
+            _db.Save();
+            return PartialView("_Message", _db.GetMessageStatById(MessageId, _db.GetUserId(User.Identity.Name)));
+        }
+
+        public ActionResult ConfirmSubscribe(Guid CourseId, Guid UserId, Guid MessageId)
+        {
+            UserCours subscribe = new UserCours();
+            subscribe.UserCourseId = Guid.NewGuid();
+            subscribe.CourseId = CourseId;
+            subscribe.UserId = UserId;
+            _db.AddUserCourse(subscribe);
+            _db.Save();
+
+            Message_status upd_ = _db.GetMessageStatById(MessageId, _db.GetUserId(User.Identity.Name));
+            upd_.Status = 11;
+            UpdateModel(upd_);
+            _db.Save();
 
             return RedirectToAction("Index");
         }

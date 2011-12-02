@@ -1,74 +1,89 @@
 ﻿@model DistanceLessons.Models.ProfileModel
 
 @{
-    ViewBag.Title = "Профіль користувача - "+ Model.informationModel.User.Login;
+    ViewBag.Title = "Профіль користувача";
 }
 
 <table class="center2" cellspacing="10">
     <th colspan="2">Ваш профіль</th>
-        <tr>
-            <td colspan="2"  style="border-bottom: 1px solid silver;"><b class="center">&nbsp;&nbsp;Особисті дані:</b></td>
-        </tr>
-        <tr>
-            <td class="text_right">@Html.LabelFor(model => model.informationModel.LastName)</td>
-            <td class="text_left">@Html.DisplayFor(model => model.informationModel.LastName)</td>
-        </tr>
-        <tr>
-            <td class="text_right">@Html.LabelFor(model => model.informationModel.FirstName)</td>
-            <td class="text_left">@Html.DisplayFor(model => model.informationModel.FirstName)</td>
-        </tr>
+            <tr>
+                <td colspan="2"  style="border-bottom: 1px solid silver;"><b class="center">&nbsp;&nbsp;Особисті дані:</b></td>
+            </tr>
+        @if (Model.informationModel != null)
+        {
+            <tr>
+                <td class="text_right">@Html.LabelFor(model => model.informationModel.LastName)</td>
+                <td class="text_left">@Html.DisplayFor(model => model.informationModel.LastName)</td>
+            </tr>
+            <tr>
+                <td class="text_right">@Html.LabelFor(model => model.informationModel.FirstName)</td>
+                <td class="text_left">@Html.DisplayFor(model => model.informationModel.FirstName)</td>
+            </tr>
 
-        <tr>
-            <td class="text_right">@Html.LabelFor(model => model.informationModel.MidName)</td>
-            <td class="text_left">@Html.DisplayFor(model => model.informationModel.MidName)</td>
-        </tr>
+            <tr>
+                <td class="text_right">@Html.LabelFor(model => model.informationModel.MidName)</td>
+                <td class="text_left">@Html.DisplayFor(model => model.informationModel.MidName)</td>
+            </tr>
 
-        @if (!String.IsNullOrEmpty(Model.informationModel.DateOfBirth.ToString()))
-         {
-             <tr>
-                 <td class="text_right">@Html.LabelFor(model => model.informationModel.DateOfBirth)</td>
-                 <td class="text_left">@Html.DisplayFor(model => model.informationModel.DateOfBirth)</td>
-             </tr>
-         }
-        @if (!String.IsNullOrEmpty(Model.informationModel.About))
-         {
-             <tr>
-                 <td class="text_right">@Html.LabelFor(model => model.informationModel.About)</td>
-                 <td class="text_left">@Html.DisplayFor(model => model.informationModel.About)</td>
-             </tr>
-         }
-    @if (Model.contactModel != null)
-    {
+            if (!String.IsNullOrEmpty(Model.informationModel.DateOfBirth.ToString()))
+            {
+                <tr>
+                    <td class="text_right">@Html.LabelFor(model => model.informationModel.DateOfBirth)</td>
+                    <td class="text_left">@Html.DisplayFor(model => model.informationModel.DateOfBirth)</td>
+                </tr>
+            }
+            if (!String.IsNullOrEmpty(Model.informationModel.About))
+            {
+                <tr>
+                    <td class="text_right">@Html.LabelFor(model => model.informationModel.About)</td>
+                    <td class="text_left">@Html.DisplayFor(model => model.informationModel.About)</td>
+                </tr>
+            }
+        }
+        else
+        {
+        <tr>
+            <td colspan="2" style="color: silver; font-size:0.8em; text-align:center;">Особисті дані не вказано</td>
+        </tr>
+        }
         <tr>
             <td colspan="2"  style="border-bottom: 1px solid silver;"><b class="center">&nbsp;&nbsp;Контактні дані:</b></td>
         </tr>
-        if (!String.IsNullOrEmpty(Model.contactModel.Telephone))
-        {
+@if (Model.contactModel != null)
+{
+    if (!String.IsNullOrEmpty(Model.contactModel.Telephone))
+    {
             <tr>
                 <td class="text_right">@Html.LabelFor(model => model.contactModel.Telephone)</td>
                 <td class="text_left">@Html.DisplayFor(model => model.contactModel.Telephone)</td>
             </tr>
-        }
-        if (!String.IsNullOrEmpty(Model.contactModel.Skype))
-        {
+    }
+    if (!String.IsNullOrEmpty(Model.contactModel.Skype))
+    {
             <tr>
                 <td class="text_right">@Html.LabelFor(model => model.contactModel.Skype)</td>
                 <td class="text_left">@Html.DisplayFor(model => model.contactModel.Skype)</td>
             </tr>
-        }
-        if (!String.IsNullOrEmpty(Model.contactModel.ICQ_QIP))
-        {
+    }
+    if (!String.IsNullOrEmpty(Model.contactModel.ICQ_QIP))
+    {
             <tr>
                 <td class="text_right">@Html.LabelFor(model => model.contactModel.ICQ_QIP)</td>
                 <td class="text_left">@Html.DisplayFor(model => model.contactModel.ICQ_QIP)</td>
             </tr>
-        }
-        if (!String.IsNullOrEmpty(Model.contactModel.Other))
-        {
+    }
+    if (!String.IsNullOrEmpty(Model.contactModel.Other))
+    {
             <tr>
                 <td class="text_right">@Html.LabelFor(model => model.contactModel.Other)</td>
                 <td class="text_left">@Html.DisplayFor(model => model.contactModel.Other)</td>
             </tr>
-        }
     }
+}
+else
+{
+    <tr>
+        <td colspan="2" style="color: silver; font-size:0.8em; text-align:center;">Контактні дані не вказано</td>
+    </tr>
+}
 </table>

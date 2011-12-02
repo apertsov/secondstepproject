@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
 using DistanceLessons.Attributes;
@@ -67,6 +68,12 @@ namespace DistanceLessons.Controllers
             ReplaceCookie("language", chooseLang);
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult MessageBox()
+        {
+            Session["MessageCount"] = (_db.GetNewMessageForUser(User.Identity.Name).Count != 0) ? _db.GetNewMessageForUser(User.Identity.Name).Count:0;
+            return PartialView("_NewMessageBox");
         }
     }
 }

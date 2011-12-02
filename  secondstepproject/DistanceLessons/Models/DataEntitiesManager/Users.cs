@@ -246,6 +246,7 @@ namespace DistanceLessons.Models
         public ProfileModel GetUserProfile(Guid userId)
         {
             ProfileModel profile = new ProfileModel();
+            profile.user = (ExistUser(GetUser(userId).Login)) ? GetUser(userId).Login : null;
             profile.informationModel = (ExistInformation(GetUser(userId).Login)) ? UserInformation(userId) : null;
             profile.contactModel = (ExistContact(GetUser(userId).Login)) ? GetUserContact(userId) : null;
 

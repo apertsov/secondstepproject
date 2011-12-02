@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace DistanceLessons.Models
 {
@@ -53,6 +54,36 @@ namespace DistanceLessons.Models
         {
             _db.Messages.AddObject(obj);
             Save();
+        }
+
+        public bool ExistMessage(Guid MessageId)
+        {
+            var result = from m in GetMessageList()
+                         where m.MessageId == MessageId
+                         select m;
+            if (result.Count() > 0) return true;
+            return false;
+        }
+
+        public bool ExistConfirmCourseMessage(Guid UserId_From, Guid UserId_To, Guid CourseId)
+        {
+            var result = from m in GetMessageList()
+                         where m.UserId_From == UserId_From && m.UserId_To == UserId_To
+                         select m;
+            if (result.Count() == 0) return false;
+            else
+            {
+                foreach (var item in result)
+                {
+                    string[] temp = Regex.Split(item.Message1, "(&nbsp;)");
+                    foreach (var str in temp)
+                    {
+                        if ((str == "<a href=\"/profile/confirmsubscribe?CourseId=" + CourseId + "&amp;UserId=" + UserId_From + "&amp;MessageId=" + item.MessageId + "\">Затверджую</a>") && (GetMessageStatById(item.MessageId, UserId_To).Status == 10))
+                            return true;
+                    }
+                }
+            }
+            return false;
         }
 
         public void DeleteMessageOwner(Message message)

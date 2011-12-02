@@ -26,22 +26,20 @@
             </li>
             <li><a>Особисті повідомлення</a>
                 <ul>
-                    <li>@Html.ActionLink("Написати повідомлення", "Create", "message")</li>
+                    <li>@Html.ActionLink("Написати повідомлення","NewMessage")</li>
                     <li><a>Повідомлення</a>
                         <ul>
-                            <li>@Html.ActionLink("Всі повідомлення", "Index", "message")</li>
-                            <li>@Html.ActionLink("Прийняті", "Index", "message")</li>
-                            <li>@Html.ActionLink("Надіслані", "SendList", "message")</li>    
+                            <li>@Ajax.ActionLink("Нові повідомлення", "NewMessages", new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</li>
+                            <li>@Ajax.ActionLink("Всі повідомлення", "Messages", new { type = 0 }, new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</li>
+                            <li>@Ajax.ActionLink("Вхідні", "Messages", new { type = 1 }, new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</li>
+                            <li>@Ajax.ActionLink("Вихідні", "Messages", new { type = 2 }, new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</li>
                         </ul>
                     </li>
                 </ul>
             </li>
-            <li>@Ajax.ActionLink("Sebd", "SendMessage", new AjaxOptions(){UpdateTargetId = "profile_ajax",InsertionMode = InsertionMode.Replace})</li>
-            <li>@Ajax.ActionLink("Sebd2", "Messages", new AjaxOptions(){UpdateTargetId = "profile_ajax",InsertionMode = InsertionMode.Replace})</li>
         </ul>
         <div id="profile_ajax" class="box_shdw_bottom">
-        @if ((bool)Html.ViewData["exist"]) { Html.RenderPartial("_Info_PartialPage", Model); }
-        else { Html.RenderPartial("_CreateInfo_PartialPage"); }
+            @{ Html.RenderPartial("_Info_PartialPage", Model); }
         </div>
     </div>
 }
