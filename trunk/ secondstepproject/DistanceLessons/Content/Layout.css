@@ -746,6 +746,7 @@ body
     color: black;
     position: fixed;
     top:0;
+    margin-left: 20px;
     width: auto;
     padding: 10px 10px;
 

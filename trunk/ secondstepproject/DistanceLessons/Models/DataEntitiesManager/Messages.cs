@@ -78,7 +78,7 @@ namespace DistanceLessons.Models
                     string[] temp = Regex.Split(item.Message1, "(&nbsp;)");
                     foreach (var str in temp)
                     {
-                        if ((str == "<a href=\"/profile/confirmsubscribe?CourseId=" + CourseId + "&amp;UserId=" + UserId_From + "&amp;MessageId=" + item.MessageId + "\">Затверджую</a>") && (GetMessageStatById(item.MessageId, UserId_To).Status == 10))
+                        if ((str == "<a href=\"/profile/confirmsubscribe?CourId=" + CourseId + "&amp;SubscribeUser=" + UserId_From + "&amp;MessId=" + item.MessageId + "\">Затверджую</a>") && (GetMessageStatById(item.MessageId, UserId_To).Status == 10))
                             return true;
                     }
                 }

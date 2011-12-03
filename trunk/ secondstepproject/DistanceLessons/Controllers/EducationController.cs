@@ -71,7 +71,7 @@ namespace DistanceLessons.Controllers
         {
             Message confirm = new Message();
             confirm.MessageId = Guid.NewGuid();
-            confirm.Message1 = "Користувач&nbsp;<a class=\"no_button\" href=profile/info?user=" + User.Identity.Name + ">" + _db.GetUser(User.Identity.Name).Login + "</a>&nbsp;подав&nbsp;заявку&nbsp;на&nbsp;підписання&nbsp;на&nbsp;Ваш&nbsp;курс&nbsp;-&nbsp;" + _db.GetCourse(CourseId).Title + ".&nbsp;<a href=\"/profile/confirmsubscribe?CourseId=" + CourseId + "&amp;UserId=" + _db.GetUser(User.Identity.Name).UserId + "&amp;MessageId=" + confirm.MessageId + "\">Затверджую</a>&nbsp;<a>Відмовляю</a>";
+            confirm.Message1 = "Користувач <a href=profile/info?user=" + User.Identity.Name + ">" + _db.GetUser(User.Identity.Name).Login + "</a> подав заявку на підписання на Ваш курс - " + _db.GetCourse(CourseId).Title + ".&nbsp;<a href=\"/profile/confirmsubscribe?CourId=" + CourseId + "&amp;SubscribeUser=" + _db.GetUser(User.Identity.Name).UserId + "&amp;MessId=" + confirm.MessageId + "\">Затверджую</a>&nbsp;<a href=\"/profile/cancelsubscribe?CourId=" + CourseId + "&amp;SubscribeUser=" + _db.GetUser(User.Identity.Name).UserId + "&amp;MessId=" + confirm.MessageId + "\">Відмовляю</a>";
             confirm.DateOfSender = DateTime.Now;
             confirm.UserId_From = _db.GetUserId(User.Identity.Name);
             confirm.UserId_To = TeacherId;
