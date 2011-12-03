@@ -309,7 +309,9 @@
     <Property Name="LastLoginIp" Type="varchar" MaxLength="40" />
   </EntityType>
   <Association Name="FK_Answers_Tests">
-    <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="1" />
+    <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Answers" Type="DistanceLessons.Models.Store.Answers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Tests">
@@ -321,7 +323,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Contacts_Users">
-    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Contacts" Type="DistanceLessons.Models.Store.Contacts" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -333,7 +337,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Courses_Categories">
-    <End Role="Categories" Type="DistanceLessons.Models.Store.Categories" Multiplicity="1" />
+    <End Role="Categories" Type="DistanceLessons.Models.Store.Categories" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Categories">
@@ -345,7 +351,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Courses_Users">
-    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -357,7 +365,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Informations_Users">
-    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Informations" Type="DistanceLessons.Models.Store.Informations" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -369,7 +379,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Lessons_Courses">
-    <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="1" />
+    <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Lessons" Type="DistanceLessons.Models.Store.Lessons" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Courses">
@@ -417,7 +429,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Message_status_Users">
-    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Message_status" Type="DistanceLessons.Models.Store.Message_status" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -453,7 +467,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Modules_Courses">
-    <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="1" />
+    <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Courses">
@@ -465,7 +481,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_News_Users">
-    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1" />
+    <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="News" Type="DistanceLessons.Models.Store.News" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Users">
@@ -477,7 +495,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ShowTests_Modules">
-    <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="1" />
+    <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="ShowTests" Type="DistanceLessons.Models.Store.ShowTests" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Modules">
@@ -513,7 +533,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Tests_Lessons">
-    <End Role="Lessons" Type="DistanceLessons.Models.Store.Lessons" Multiplicity="1" />
+    <End Role="Lessons" Type="DistanceLessons.Models.Store.Lessons" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="Tests" Type="DistanceLessons.Models.Store.Tests" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Lessons">
@@ -537,7 +559,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserAnswers_Answers">
-    <End Role="Answers" Type="DistanceLessons.Models.Store.Answers" Multiplicity="0..1" />
+    <End Role="Answers" Type="DistanceLessons.Models.Store.Answers" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="UserAnswers" Type="DistanceLessons.Models.Store.UserAnswers" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Answers">
@@ -573,7 +597,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserCourses_Courses">
-    <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="1" />
+    <End Role="Courses" Type="DistanceLessons.Models.Store.Courses" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="UserCourses" Type="DistanceLessons.Models.Store.UserCourses" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Courses">
@@ -597,7 +623,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserModules_Modules">
-    <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="0..1" />
+    <End Role="Modules" Type="DistanceLessons.Models.Store.Modules" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="UserModules" Type="DistanceLessons.Models.Store.UserModules" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Modules">
