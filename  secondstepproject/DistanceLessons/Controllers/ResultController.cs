@@ -149,7 +149,7 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult StudentResult()
         {
-            return View(_db.StudentResult(User.Identity.Name));
+            return PartialView(_db.StudentResult(User.Identity.Name));
         }
  
 
