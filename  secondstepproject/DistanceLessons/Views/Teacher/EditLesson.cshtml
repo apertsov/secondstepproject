@@ -43,7 +43,10 @@
     </tr>
     <tr>
         <td></td>
-        <td class="error">@Html.ActionLink("Обновити джерело лекції", "UploadLesson", new { courseId = Model.CourseId, moduleId = Model.ModuleId, act = Model.LessonId.ToString() })
+        @{
+            Guid mod=(Model.ModuleId.HasValue)?Model.ModuleId.Value:Guid.Empty;
+            }
+        <td class="error">@Html.ActionLink("Обновити джерело лекції", "UploadLesson", new { courseId = Model.CourseId, moduleId = mod, act = Model.LessonId.ToString() })
 </td>
     </tr>
 
