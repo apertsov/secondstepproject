@@ -177,4 +177,7 @@
   <data name="welcome" xml:space="preserve">
     <value>Добро пожаловать !</value>
   </data>
+  <data name="_NewMessageBox_NewMesseges" xml:space="preserve">
+    <value>Новых сообщений: </value>
+  </data>
 </root>

@@ -222,7 +222,7 @@
       <PropertyRef Name="MessageId" />
     </Key>
     <Property Name="MessageId" Type="Guid" Nullable="false" />
-    <Property Name="Message1" Type="String" Nullable="false" MaxLength="512" Unicode="false" FixedLength="false" />
+    <Property Name="Message1" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="DateOfSender" Type="DateTime" Nullable="false" />
     <Property Name="UserId_From" Type="Guid" Nullable="false" />
     <Property Name="UserId_To" Type="Guid" Nullable="false" />

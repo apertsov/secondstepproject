@@ -206,7 +206,7 @@
       <PropertyRef Name="MessageId" />
     </Key>
     <Property Name="MessageId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Message" Type="varchar" Nullable="false" MaxLength="512" />
+    <Property Name="Message" Type="varchar(max)" Nullable="false" />
     <Property Name="DateOfSender" Type="datetime" Nullable="false" />
     <Property Name="UserId_From" Type="uniqueidentifier" Nullable="false" />
     <Property Name="UserId_To" Type="uniqueidentifier" Nullable="false" />

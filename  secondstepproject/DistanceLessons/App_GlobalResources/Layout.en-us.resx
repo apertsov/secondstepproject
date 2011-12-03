@@ -177,4 +177,7 @@
   <data name="welcome" xml:space="preserve">
     <value>Welcome !</value>
   </data>
+  <data name="_NewMessageBox_NewMesseges" xml:space="preserve">
+    <value>News messages: </value>
+  </data>
 </root>

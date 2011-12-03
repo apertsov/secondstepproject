@@ -239,5 +239,14 @@ namespace Resources {
                 return ResourceManager.GetString("_LogOnPartial_SignIn", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Нових повідомлень: .
+        /// </summary>
+        internal static string _NewMessageBox_NewMesseges {
+            get {
+                return ResourceManager.GetString("_NewMessageBox_NewMesseges", resourceCulture);
+            }
+        }
     }
 }

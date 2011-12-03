@@ -289,7 +289,6 @@ namespace DistanceLessons.Models
 
             [DisplayName("Повідомлення:")]
             [Required(ErrorMessage = "Напишіть повідомлення")]
-            [StringLength(512, ErrorMessage = "Повідомлення обмежене 512 символами")]
             public string Message1 { get; set; }
         }
     }

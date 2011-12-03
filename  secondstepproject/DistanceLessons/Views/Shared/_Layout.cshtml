@@ -38,7 +38,7 @@
             url: '/Home/MessageBox',
             type: "GET",
             success: function(result) {
-                $("#messages").html(result);
+                $("#header_logo").html(result);
             }
         });
     </script>
@@ -56,11 +56,6 @@
         <!--Header-->
         <div id="full_header">
             <div id="header_logo">
-            @if (Request.IsAuthenticated)
-            {
-                <div id="messages">
-                </div>
-            }
             </div>
             <div id="header_upper">
                 <div class="lang">

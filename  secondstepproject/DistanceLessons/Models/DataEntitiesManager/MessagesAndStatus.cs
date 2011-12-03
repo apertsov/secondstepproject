@@ -42,7 +42,6 @@ namespace DistanceLessons.Models
             {
                 MessageStatusWithAuthorModel temp = new MessageStatusWithAuthorModel();
                 temp.Messages = GetMessageStatById(item.MessageId, userId);
-                //temp.Messages.Message.Message1= Sanitizer.GetSafeHtmlFragment(item.Message1);
                 temp.Author = (temp.Messages.Message.UserId_From == userId) ? true : false;
                 temp.username = (temp.Author) ? (GetUser(temp.Messages.Message.UserId_To).Login) : (GetUser(temp.Messages.Message.UserId_From).Login);
 
