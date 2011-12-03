@@ -1,0 +1,43 @@
+﻿@model DistanceLessons.Models.UserCourseAndCategoriesModel
+
+@if (Model.UserCourses.Count()!=0)
+{
+    <script type="text/javascript">
+// <![CDATA[
+    jQuery(document).ready(function() {
+        jQuery('.text').show();
+        jQuery('.spoiler').click(function() {
+            jQuery(this).toggleClass("folded").toggleClass("unfolded").next().slideToggle("slow");
+        });
+    })
+// ]]></script>
+
+    <div style="padding: 10px;">
+        @foreach (var item in Model.Categories)
+        {
+            <div colspan="2"  style="border-bottom: 1px solid silver;"><b class="center">&nbsp;&nbsp;@item.Category1</b></div>
+            foreach (var subitem in Model.UserCourses)
+            {
+                <div style="margin: 10px;">
+                    @if (subitem.Cours.Category.Category1 == item.Category1)
+                    {
+                        <div style="margin-left: 15px; font-size: 0.8em;" class="spoiler">@subitem.Cours.Title</div>
+                        <div class="text" style="margin: 10px;">
+                            @foreach (var subitem2 in Model.CoursesLessons)
+                            {
+                                if (subitem2.CourseId == subitem.CourseId)
+                                {
+                                    <div style="margin-left: 25px; font-size: 0.8em;">@Html.ActionLink(subitem2.Title, "ShowFile", "Teacher", new {filename = subitem2.Text}, new {target = "_blank"})</div>
+                                }
+                            }
+                        </div>
+                    }
+                </div>
+            }
+        }
+    </div>
+}
+else
+{
+    <div align="center" style="color: silver; font-size: 0.8em;">Немає підписок на курси.</div>
+}

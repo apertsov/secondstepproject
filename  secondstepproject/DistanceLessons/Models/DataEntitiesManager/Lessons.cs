@@ -73,5 +73,17 @@ namespace DistanceLessons.Models
                     where lesson.LessonId==id
                     select lesson).FirstOrDefault()==null?false:true;
         }
+
+        public List<Lesson> GetLessonsListByCoursesList(List<UserCours> lst)
+        {
+            List<Lesson> temp = new List<Lesson>();
+            List<Lesson> lessonsLst = GetLessonList();
+            foreach (var item in lessonsLst)
+            {
+                if ((lst.Find(m => m.CourseId == item.CourseId) != null))
+                    temp.Add(item);
+            }
+            return temp;
+        }
     }
 }

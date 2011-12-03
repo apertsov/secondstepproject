@@ -1,9 +1,9 @@
 ﻿@{
-<div id="messages">
-    <i><font size="2">@Html.Resource("Layout, _NewMessageBox_NewMesseges")</font></i>
-    @if ((int)Session["MessageCount"] == 0)
-    {<a class="passive">0</a>}
-    else
-    {@Html.ActionLink(Session["MessageCount"].ToString(), "Index", "profile", null, new { @class = "active" })}
-</div>
+if ((int)Session["MessageCount"] != 0)
+{
+    <div id="messages">
+        <i><font size="2">@Html.Resource("Layout, _NewMessageBox_NewMesseges")</font></i>
+        @Html.ActionLink(Session["MessageCount"].ToString(), "Index", "profile", null, new {@class = "active"})
+    </div>
+}
 }

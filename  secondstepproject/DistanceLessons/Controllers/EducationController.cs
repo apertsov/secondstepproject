@@ -84,5 +84,15 @@ namespace DistanceLessons.Controllers
             return PartialView("_Courses",
                                _db.GetUserCourse((Guid)Session["CategoryId"], _db.GetUserId(User.Identity.Name), (int)Session["withStatus"], itemOnPage, (int)Session["page"]));
         }
+
+        public ActionResult UserSubscribs()
+        {
+            UserCourseAndCategoriesModel temp = new UserCourseAndCategoriesModel();
+            temp.UserCourses = _db.GetUserCourseListByUser(_db.GetUserId(User.Identity.Name));
+            temp.Categories = _db.GetCategoriesList(temp.UserCourses);
+            temp.CoursesLessons = _db.GetLessonsListByCoursesList(temp.UserCourses);
+
+            return PartialView("_UserSubscribs", temp);
+        }
     }
 }

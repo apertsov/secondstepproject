@@ -57,5 +57,16 @@ namespace DistanceLessons.Models
             categoryDictionary.Add(category.courseId, category.title);
             return categoryDictionary;
         }
+
+        public List<Category> GetCategoriesList(List<UserCours> lst)
+        {
+            List<Category> temp = new List<Category>();
+            foreach (var item in lst)
+            {
+                if ((temp.Find(m => m == item.Cours.Category) == null))
+                    temp.Add(item.Cours.Category);
+            }
+            return temp;
+        }
     }
 }
