@@ -358,3 +358,23 @@ C:\Users\gAmmi\Desktop\trunk_secondstepproject - копия\DistanceLessons\bin\
 C:\Users\gAmmi\Desktop\trunk_secondstepproject - копия\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\gAmmi\Desktop\trunk_secondstepproject - копия\DistanceLessons\obj\Debug\DistanceLessons.dll
 C:\Users\gAmmi\Desktop\trunk_secondstepproject - копия\DistanceLessons\obj\Debug\DistanceLessons.pdb
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\DistanceLessons.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\DistanceLessons.pdb
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\AntiXSSLibrary.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\EntityFramework.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\HtmlSanitizationLibrary.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\Microsoft.Web.Infrastructure.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\Microsoft.Web.Optimization.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\System.Web.Helpers.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\System.Web.Mvc.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\System.Web.Providers.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\System.Web.Razor.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\System.Web.WebPages.Deployment.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\System.Web.WebPages.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\System.Web.WebPages.Razor.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\AntiXSSLibrary.xml
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\EntityFramework.xml
+C:\proj_dist_lear\0312_1456\DistanceLessons\bin\HtmlSanitizationLibrary.xml
+C:\proj_dist_lear\0312_1456\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
+C:\proj_dist_lear\0312_1456\DistanceLessons\obj\Debug\DistanceLessons.dll
+C:\proj_dist_lear\0312_1456\DistanceLessons\obj\Debug\DistanceLessons.pdb
