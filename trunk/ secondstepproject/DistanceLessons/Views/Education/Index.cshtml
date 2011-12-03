@@ -14,6 +14,7 @@
             });
         </script>
         <ul class="topnav" class="box_shdw_right">
+            <li>@Ajax.ActionLink("Мої підписки", "UserSubscribs", new AjaxOptions() { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace })</li>
             <li>@Ajax.ActionLink("Залікова книжка", "StudentResult", "Result", new AjaxOptions() { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace })</li>
             <li>@Ajax.ActionLink("Категорії", "category", new AjaxOptions() { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace })</li>
         </ul>

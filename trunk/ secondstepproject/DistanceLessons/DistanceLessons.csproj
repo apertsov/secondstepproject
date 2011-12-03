@@ -560,6 +560,7 @@
     <Content Include="Views\Profile\_Message.cshtml" />
     <Content Include="Views\Shared\_NewMessageBox.cshtml" />
     <Content Include="Views\Profile\_NewMessages.cshtml" />
+    <Content Include="Views\Education\_UserSubscribs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">

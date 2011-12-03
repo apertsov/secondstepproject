@@ -119,5 +119,12 @@ namespace DistanceLessons.Models
             _db.DeleteObject(_db.UserCourses.SingleOrDefault(c => c.UserCourseId == id));
             _db.SaveChanges();
         }
+
+        public List<UserCours> GetUserCourseListByUser(Guid UserId)
+        {
+            return (from uc in GetUserCourseList()
+                    where uc.UserId == UserId
+                    select uc).ToList();
+        }
     }
 }
