@@ -12,63 +12,68 @@
 
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary(true)
-    <fieldset>
+  <table class="center" cellspacing="10">
+    <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+<tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.Title)</td>
+        <td class="editor-field"> @Html.TextBoxFor(model => model.Title, new { @class = "editor" }) <font color="red">*</font></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.Title)</td>
+    </tr>
+    
+    <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.Description)</td>
+        <td class="editor-field"> @Html.TextAreaFor(model => model.Description, new { @class = "editor" })</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.Description)</td>
+    </tr>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Title)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Title)
-            @Html.ValidationMessageFor(model => model.Title)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Category.CategoryId)
-        </div>
-        <div class="editor-field">
-        @{
-    List<DistanceLessons.Models.Category> Category_list = ViewBag.Categories;
-    var cat_items = new SelectList(Category_list, "CategoryID", "Category1");
+    <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.Category.Category1)</td>
+    @{
+       List<DistanceLessons.Models.Category> Category_list = ViewBag.Categories;
+            var cat_items = new SelectList(Category_list, "CategoryID", "Category1");
             }
-        @Html.DropDownListFor(model => model.CategoryId, @cat_items)
+        <td class="editor-field"> @Html.DropDownListFor(model => model.CategoryId, @cat_items, new { @class = "editor" })</td>
+   
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.CategoryId)</td>
+    </tr>
 
-           @Html.ValidationMessageFor(model => model.CategoryId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.User.Login)
-        </div>
-        <div class="editor-field">
-        @{
-    List<DistanceLessons.Models.User> User_list = ViewBag.Users;
-    var user_items = new SelectList(User_list, "UserID", "Login");
-            }
-
-      @Html.DropDownListFor(model => model.UserId, @user_items)
-            @Html.ValidationMessageFor(model => model.UserId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.IsSubscribing)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.IsSubscribing)
-            @Html.ValidationMessageFor(model => model.IsSubscribing)
-        </div>
+      <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.User.Login)</td>
+        @{ 
+            List<DistanceLessons.Models.User> User_list = ViewBag.Users;
+            var user_items = new SelectList(User_list, "UserID", "Login");
+          }
+        <td class="editor-field"> @Html.DropDownListFor(model => model.UserId, @user_items, new { @class = "editor" })</td>
+   
+    </tr>
+    <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.UserId)</td>
+    </tr>
+     <tr>
+        <td class="editor-label">  @Html.LabelFor(model => model.IsSubscribing)</td>
+        <td class="editor-field" align="left"> @Html.CheckBoxFor(model => model.IsSubscribing)</td>
+    </tr>
+    
+     <tr>
+        <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
+    </tr>
+</table>
 
         <p>
-            <input type="submit" value="Створити" />
+        <input type="submit" value="Зберегти" />
         </p>
-    </fieldset>
 }
 
 <div>
