@@ -13,7 +13,7 @@
 {
         <ul>
             @{
-                foreach (DistanceLessons.Models.News _new in Model)
+                foreach (var _new in Model)
                 {
                     <div class="item">
                         <li>
@@ -44,5 +44,5 @@
 }
 else
 {
-    <div align="center" style="color: silver; font-size: 0.8em;">Поки що немає ніяких новин.</div>
+    <div class="data_null">Поки що немає ніяких новин.</div>
 }

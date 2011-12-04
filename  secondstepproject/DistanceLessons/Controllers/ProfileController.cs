@@ -171,6 +171,7 @@ namespace DistanceLessons.Controllers
             upd_.Status = 2;
             UpdateModel(upd_);
             _db.Save();
+            ViewBag.Exist = true;
             return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, (byte)Session["choose_type"]));
         }
 
