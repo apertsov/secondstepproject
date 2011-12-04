@@ -28,12 +28,12 @@ else
             { 
                 <tr>
                     <td>
-                        @userResult.CourseTitle
+                        @userResult.CourseTitle.Value
                     </td>
                     <td>
                         @foreach (var moduleTitle in userResult.ModuleTitles)
                         {
-                            @moduleTitle
+                            @moduleTitle.Value
                             <br />
                         }
                     </td>

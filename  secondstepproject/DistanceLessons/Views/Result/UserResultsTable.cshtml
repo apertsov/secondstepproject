@@ -29,7 +29,8 @@
             { 
                 <tr align='center'>
                     <td style="border: 1px solid black;" >
-                        @userResult.Login <br />
+                           @Ajax.ActionLink(userResult.Login, (string)ViewBag.controller, new { id=userResult.UserId, divIdToReplace = ViewBag.replaceDiv, type = DistanceLessons.Models.ElementsType.User }, new AjaxOptions() { UpdateTargetId = ViewBag.replaceDiv, InsertionMode = InsertionMode.Replace })   
+                            <br />
                         @userResult.FirstName @userResult.LastName @userResult.MiddleName
                     </td>
                     <td style="border: 1px solid black;" >

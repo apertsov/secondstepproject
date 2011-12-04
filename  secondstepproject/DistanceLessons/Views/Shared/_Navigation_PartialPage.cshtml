@@ -19,7 +19,7 @@
            }
            else if (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Dean.ToString())
            {
-            <li><a href="#">Декан</a></li>
+            <li>@Html.ActionLink("Журнал успішності", "Index", "Result")</li>
            }
            else if (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Teacher.ToString())
            {

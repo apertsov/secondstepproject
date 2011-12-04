@@ -30,7 +30,7 @@ else
             {
                 <tr align="center">
                     <td style="padding: 10px; border: 1px solid black;">
-                        @userModuleResult.Login
+                            @Ajax.ActionLink(userModuleResult.Login, Model.Parameters.ControllerName, new { id = userModuleResult.UserId, divIdToReplace = Model.Parameters.DivIdToReplace, type = DistanceLessons.Models.ElementsType.User}, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace })                           
                         <br />
                         @userModuleResult.FirstName @userModuleResult.LastName @userModuleResult.MiddleName
                     </td>

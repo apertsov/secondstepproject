@@ -10,4 +10,11 @@
 <div id="testsdiv">
     @{ Html.RenderPartial("QuestionsAndAnswersPartialPage", Model, Html.ViewData); }
 </div>
-@Html.ActionLink("Повернутись до курсу", "Course", "Teacher", new { id = (Guid)ViewBag.CourseId }, null)
+@if (Model.Lesson.ModuleId != null)
+{
+@Html.ActionLink("Повернутись до запитань курсу", "ShowModuleTests", "Test", new { id = Model.Lesson.ModuleId }, null)
+}
+else
+{
+    @Html.ActionLink("Повернутись до курсу", "Course", "Teacher", new { id = Model.Lesson.CourseId }, null)
+}

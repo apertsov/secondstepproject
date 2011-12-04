@@ -18,12 +18,12 @@ namespace DistanceLessons.Controllers
         public TeacherController()
             : base()
         {
-             db= new DataEntitiesManager();
+            db = new DataEntitiesManager();
         }
 
         public ActionResult Index()
         {
-            return View(); 
+            return View();
         }
 
 
@@ -34,7 +34,7 @@ namespace DistanceLessons.Controllers
             ViewBag.CourseId = db.GetModulesByID(id).CourseId;
             ViewBag.IsOwner = db.GetCourse(ViewBag.CourseId).UserId == db.GetUserId(User.Identity.Name) ? true : false;
             ViewBag.IsTeacher = db.GetUserRoleId(User.Identity.Name) == db.GetRoleId("Teacher") ? true : false; ;
-         
+
             return View(db.GetLessonsByModule(id));
         }
 
@@ -42,8 +42,8 @@ namespace DistanceLessons.Controllers
         {
             return View(db.UserLessons(User.Identity.Name));
         }
-      
-       
+
+
         public ActionResult AllLessonsInCourse(Guid courseId)
         {
             ViewBag.CourseId = courseId;
@@ -58,17 +58,17 @@ namespace DistanceLessons.Controllers
             ViewBag.Course = db.GetCourse(id).Title;
             ViewBag.Modules = db.GetModulesByCourseId(id);
             ViewBag.OrphanLessons = db.GetOrphanLessonsByCourse(id);
-            ViewBag.IsOwner= db.GetCourse(id).UserId==db.GetUserId(User.Identity.Name)?true:false;
-            ViewBag.IsTeacher = db.GetUserRoleId(User.Identity.Name)==db.GetRoleId("Teacher") ? true : false;
-            ViewBag.IsAdmin = db.GetUserRoleId(User.Identity.Name) == db.GetRoleId("Admin") ? true : false; 
+            ViewBag.IsOwner = db.GetCourse(id).UserId == db.GetUserId(User.Identity.Name) ? true : false;
+            ViewBag.IsTeacher = db.GetUserRoleId(User.Identity.Name) == db.GetRoleId("Teacher") ? true : false;
+            ViewBag.IsAdmin = db.GetUserRoleId(User.Identity.Name) == db.GetRoleId("Admin") ? true : false;
             return View();
         }
-         
+
         public ActionResult MyCourses()
         {
             return View(db.GetCoursesByTeacherId(db.GetUser(User.Identity.Name).UserId));
         }
-       
+
         public ActionResult Courses()
         {
             return View(db.GetCourseList());
@@ -100,7 +100,7 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult DetailsModule(Guid id)
         {
-           return View(db.GetModulesByID(id));
+            return View(db.GetModulesByID(id));
         }
 
         [HttpGet]
@@ -109,7 +109,7 @@ namespace DistanceLessons.Controllers
             return View(db.GetLessonByID(id));
         }
 
-        
+
         [HttpGet]
         public ActionResult CreateLesson(Guid courseId, Guid mod_id, string path)
         {
@@ -124,35 +124,35 @@ namespace DistanceLessons.Controllers
             ViewBag.ModuleId = mod_id;
             return View(obj);
         }
-              [HttpPost]
-              public ActionResult CreateLesson(Lesson obj)
-              {
+        [HttpPost]
+        public ActionResult CreateLesson(Lesson obj)
+        {
 
-                  obj.UserId = db.GetUser(User.Identity.Name).UserId;
-                  if (obj.UserId == db.GetCourse(obj.CourseId).UserId) obj.IsAcceptMainTeacher = true;
-                  obj.Publication = DateTime.Now;
-                  if (ModelState.IsValid)
-                      db.AddLesson(obj);
-                  else
-                  {
-                      var mod = (obj.ModuleId != null) ? obj.ModuleId : Guid.Empty;
-                      return RedirectToAction("CreateLesson", new { courseId = obj.CourseId, mod_id = mod, path = obj.Text });
-                  }
-                  if (obj.ModuleId==null)
-                  return RedirectToAction("Course", new { id = obj.CourseId });
-                  else return RedirectToAction("Lesson", new { id = obj.ModuleId });
-              }
+            obj.UserId = db.GetUser(User.Identity.Name).UserId;
+            if (obj.UserId == db.GetCourse(obj.CourseId).UserId) obj.IsAcceptMainTeacher = true;
+            obj.Publication = DateTime.Now;
+            if (ModelState.IsValid)
+                db.AddLesson(obj);
+            else
+            {
+                var mod = (obj.ModuleId != null) ? obj.ModuleId : Guid.Empty;
+                return RedirectToAction("CreateLesson", new { courseId = obj.CourseId, mod_id = mod, path = obj.Text });
+            }
+            if (obj.ModuleId == null)
+                return RedirectToAction("Course", new { id = obj.CourseId });
+            else return RedirectToAction("Lesson", new { id = obj.ModuleId });
+        }
 
         [HttpGet]
 
         public ActionResult DeleteLesson(Guid id)
         {
-            Lesson les=db.GetLessonByID(id);
+            Lesson les = db.GetLessonByID(id);
             db.DeleteLesson(id);
-            
-            if( les.ModuleId!=null)
+
+            if (les.ModuleId != null)
                 return RedirectToAction("Lesson", new { id = les.ModuleId });
-            else 
+            else
                 return RedirectToAction("Course", new { id = les.CourseId });
 
         }
@@ -161,8 +161,8 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult EditLesson(Guid id)
         {
-           ViewBag.Modules = db.GetModulesByCourseId(db.GetLessonByID(id).CourseId);
-           return View(db.GetLessonByID(id));
+            ViewBag.Modules = db.GetModulesByCourseId(db.GetLessonByID(id).CourseId);
+            return View(db.GetLessonByID(id));
         }
 
         [HttpPost]
@@ -175,16 +175,16 @@ namespace DistanceLessons.Controllers
                 old.ModuleId = null;
             else
                 old.ModuleId = obj.ModuleId;
-            
+
 
             if (ModelState.IsValid)
             {
                 db.Save();
             }
             else return RedirectToAction("EditLesson", new { id = old.LessonId });
-     
-            if (old.ModuleId!=null)
-            return RedirectToAction("Lesson", new { id = old.ModuleId });
+
+            if (old.ModuleId != null)
+                return RedirectToAction("Lesson", new { id = old.ModuleId });
             else return RedirectToAction("Course", new { id = old.CourseId });
         }
 
@@ -199,7 +199,7 @@ namespace DistanceLessons.Controllers
                 return RedirectToAction("Lesson", new { id = old.ModuleId });
             else return RedirectToAction("Course", new { id = old.CourseId });
         }
-       
+
 
 
         [HttpGet]
@@ -230,13 +230,13 @@ namespace DistanceLessons.Controllers
             if (ModelState.IsValid && dateOk)
                 db.Save();
             else return View(obj);
-           
+
             return RedirectToAction("Course", new { id = obj.CourseId });
         }
 
 
 
-        public ActionResult UploadLesson(Guid courseId, Guid moduleId,string act="create")
+        public ActionResult UploadLesson(Guid courseId, Guid moduleId, string act = "create")
         {
             ViewBag.ModuleId = moduleId;
             ViewBag.CourseId = courseId;
@@ -266,7 +266,7 @@ namespace DistanceLessons.Controllers
             foreach (string inputTagName in Request.Files)
             {
                 HttpPostedFileBase file = Request.Files[inputTagName];
-                ViewBag.Error = "Недопустимий розмір файлу (" + (file.ContentLength/1024/1024).ToString()+" Мб). Дозволений до " + (6000000/1024/1024).ToString()+" Мб";
+                ViewBag.Error = "Недопустимий розмір файлу (" + (file.ContentLength / 1024 / 1024).ToString() + " Мб). Дозволений до " + (6000000 / 1024 / 1024).ToString() + " Мб";
                 if ((file.ContentLength > 0) && (file.ContentLength < 6000000))
                 {
                     string fileType = System.IO.Path.GetExtension(file.FileName);
@@ -291,13 +291,13 @@ namespace DistanceLessons.Controllers
                                 string filePath;
                                 if (Guid.TryParse(action, out lesId))
                                 {
-                                   Lesson les = db.GetLessonByID(lesId);
-                                   fileName = lesId.ToString() + fileType;
-                                   les.Text=fileName;
-                                   db.Save();
-                                   filePath = Path.Combine(HttpContext.Server.MapPath("../Uploads"), fileName);
-                                   file.SaveAs(filePath);
-                                   return RedirectToAction("EditLesson", new {id=lesId});
+                                    Lesson les = db.GetLessonByID(lesId);
+                                    fileName = lesId.ToString() + fileType;
+                                    les.Text = fileName;
+                                    db.Save();
+                                    filePath = Path.Combine(HttpContext.Server.MapPath("../Uploads"), fileName);
+                                    file.SaveAs(filePath);
+                                    return RedirectToAction("EditLesson", new { id = lesId });
                                 }
                                 fileName = Guid.NewGuid().ToString() + fileType;
                                 filePath = Path.Combine(HttpContext.Server.MapPath("../Uploads"), fileName);
@@ -307,11 +307,11 @@ namespace DistanceLessons.Controllers
                             }
                     }
                 }
-             }
-           
+            }
+
             return View();
         }
-       
+
     }
 }
 

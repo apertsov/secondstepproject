@@ -16,5 +16,6 @@
         Course,
         Module,
         Lesson,
+        User,
     }
 }

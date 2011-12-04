@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using DistanceLessons.Models;
+using System.Timers;
 
 namespace DistanceLessons
 {
@@ -13,6 +14,8 @@ namespace DistanceLessons
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        private Timer testingTimer = new Timer();
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -55,6 +58,21 @@ namespace DistanceLessons
                 roleProv.CreateRole(UserRoles.Dean.ToString());
             if (!roleProv.RoleExists(UserRoles.Admin.ToString()))
                 roleProv.CreateRole(UserRoles.Admin.ToString());
+
+            testingTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
+        //    testingTimer.Interval = 1000 * 60;
+            testingTimer.Interval = DateTime.Now.AddDays(1).Date.Subtract(DateTime.Now).TotalMilliseconds+1; //інтервал до завтрішнього дня .
+            testingTimer.Enabled = true; //Вкючаем таймер.
+        }
+
+        private void OnTimedEvent(object source, ElapsedEventArgs e)
+        {
+            if (testingTimer.Interval < (1000 * 60 * 60 * 24))
+            {
+                testingTimer.Interval = 1000 * 60* 60 * 24;
+            }
+            DataEntitiesManager db = new DataEntitiesManager();
+            db.SendMessagesToUsersWhichCanPassModuleInFiveDays();
         }
     }
 }

@@ -97,7 +97,7 @@ namespace DistanceLessons.Models
             {
                 DeleteMessage(message.MessageId);
             }*/
-            
+
         }
 
         public void DeleteMessageRecipient(Message message)
@@ -128,6 +128,66 @@ namespace DistanceLessons.Models
             //message.Status = 0;
 
             Save();
+        }
+
+        public void SendMessage(Guid From, Guid To, String Tit, String Mes)
+        {
+            Message sender = new Message();
+            sender.MessageId = Guid.NewGuid();
+            sender.Title = Tit;
+            sender.Message1 = Mes;
+            sender.DateOfSender = DateTime.Now;
+            sender.UserId_From = From;
+            sender.UserId_To = To;
+
+            AddMessage(sender);
+
+            AddMessage_status(GetMessageStatus(sender, GetUser(sender.UserId_To).Login), 0);
+            AddMessage_status(GetMessageStatus(sender, GetUser(sender.UserId_From).Login), 1);
+            
+        }
+
+
+        public void SendMessageToUsers(List<Guid> usersId, Guid from, string title, string message)
+        {
+            if (usersId.Count == 0) return;
+            foreach (Guid userId in usersId)
+            {
+                SendMessage(from, userId, title, message);
+            }
+        }
+
+        public void SendMessagesToUsersWhichCanPassModuleInFiveDays()
+        {
+            string message = "Шановний студент до кінця здачі модуля {0}, з курсу {2}, залишилось {1} днів. Цей лист генерується автоматично від імені викладача курсу на який ви підписались.",
+                   title = "Термін здачі модуля";
+     
+            List<Module> modulesInFiveDays = ModulesEndTestingInFiveDays();
+            foreach (Module module in modulesInFiveDays)
+            {
+                List<Guid> users = SubscribedUsersForCourse(module.CourseId);
+                foreach (Guid user in users)
+                {
+                    if (!IsStartModuleTest(module.ModuleId, user))
+                    {
+
+                      //  SendMessage(module.Cours.UserId, user, String.Format(title, module.Title, module.Cours.Title), String.Format(message, module.Title, module.DateEndTesting.Subtract(DateTime.Now).TotalDays));
+                        Message sender = new Message();
+                        sender.MessageId = Guid.NewGuid();
+                        sender.Title = title;
+                        sender.Message1 =  String.Format(message, module.Title, (int)module.DateEndTesting.Subtract(DateTime.Now).TotalDays,module.Cours.Title);
+                        sender.DateOfSender = DateTime.Now;
+                        sender.UserId_From = module.Cours.UserId;
+                        sender.UserId_To = user;
+
+                        _db.Messages.AddObject(sender);
+                        _db.SaveChanges(); 
+
+                        AddMessage_status(GetMessageStatus(sender, GetUser(sender.UserId_To).Login), 0);
+                        AddMessage_status(GetMessageStatus(sender, GetUser(sender.UserId_From).Login), 1);
+                    }
+                }
+            }
         }
     }
 }

@@ -41,7 +41,7 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult EducationElements(Guid? id, string redirectController, string divIdToReplace, ElementsType type = ElementsType.None)
         {
-            if (id != null)
+            if ((id != null) && (type!=ElementsType.User)) 
             {
 
                 if (type == ElementsType.Category) // picked category
@@ -81,6 +81,7 @@ namespace DistanceLessons.Controllers
                 {
                     Information userInfo= _db.UserInformation(userResult.UserId);             
                     model.TestResults.Add(new TestResultModel { Login = userResult.User.Login,
+                                                                UserId=userResult.UserId,
                                                                 StartTesting = userResult.StartTime, 
                                                                 FirstName = userInfo!=null?userInfo.FirstName:String.Empty,
                                                                 LastName = userInfo != null ? userInfo.LastName : String.Empty,
@@ -100,6 +101,13 @@ namespace DistanceLessons.Controllers
                 ViewBag.controller = redirectController;
                 ViewBag.replaceDiv = divIdToReplace;
                 return PartialView(_db.ResultsUsersCourse(id));
+            }
+
+            if (type == ElementsType.User)
+            {
+                ViewBag.controller = redirectController;
+                ViewBag.replaceDiv = divIdToReplace;
+                return PartialView("StudentResult", _db.StudentResult(_db.GetUsername(id)));
             }
 
             return PartialView("UserResultsTable", null);
@@ -147,9 +155,11 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult StudentResult()
+        public ActionResult StudentResult(string username, string divIdToReplace = "", string redirectController = "")
         {
-            return PartialView(_db.StudentResult(User.Identity.Name));
+            ViewBag.controller = redirectController;
+            ViewBag.replaceDiv = divIdToReplace;
+            return PartialView(_db.StudentResult(username));
         }
  
 
