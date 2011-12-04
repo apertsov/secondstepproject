@@ -1,7 +1,7 @@
 ﻿@using DistanceLessons.Models
 <div class="title">@Html.Resource("Layout, _HorizontalNavigation_News")</div>
 
-@if (((List<News>)Session["three_news"]).Count == 0)
+@if ((((List<News>)Session["three_news"]).Count == 0)||((Session["three_news"]) == null))
 {
     <div class="data_null">Поки що немає ніяких новин.</div>
 }
