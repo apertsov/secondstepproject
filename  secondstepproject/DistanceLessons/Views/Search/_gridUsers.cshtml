@@ -2,14 +2,14 @@
 
 @{
                                                                                                        
-   var grid = new WebGrid(Model, rowsPerPage: 5, ajaxUpdateContainerId: "myGrid");
+   var grid = new WebGrid(Model, rowsPerPage: 5, ajaxUpdateContainerId: "UsersGrid");
     //var grid = new WebGrid(Model);
     @grid.GetHtml(tableStyle: "center",
                   alternatingRowStyle: "alt",
                   headerStyle: "head",
                   columns: grid.Columns(
-                  grid.Column("Login", "login", format: @<text><i>@item.Login</i></text>),
-                  grid.Column("Email", "email", format: @<text><i>@item.Email</i></text>),
-                  grid.Column("Role.Name", "role", format: @<text><i>@item.Role.Name</i></text>)
+                  grid.Column("Login", "Логін", format: @<text><i>@item.Login</i></text>),
+                  grid.Column("Email", "Електронна пошта", format: @<text><i>@item.Email</i></text>),
+                  grid.Column("Role.Name", "Статус", format: @<text><i>@item.Role.Name</i></text>)
                   ));
                           }
