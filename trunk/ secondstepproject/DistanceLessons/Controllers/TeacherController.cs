@@ -79,15 +79,21 @@ namespace DistanceLessons.Controllers
         public ActionResult CreateModule(Guid id)
         {
             ViewBag.CourseId = id;
+            ViewBag.DateIsGood = true;
             return View();
         }
         [HttpPost]
         public ActionResult CreateModule(Module obj)
         {
+            ViewBag.CourseId = obj.CourseId;
             obj.ModuleId = Guid.NewGuid();
             Guid courseId = obj.CourseId;
-            if (ModelState.IsValid) db.AddModule(obj);
-            else RedirectToAction("CreateModule", new { id = courseId });
+            bool dateOk=true;
+            if (obj.DateBeginTesting > obj.DateEndTesting) dateOk = false;
+            ViewBag.DateIsGood = dateOk;
+            if (ModelState.IsValid && dateOk) db.AddModule(obj);
+
+            else return View(obj);
             return RedirectToAction("Course", new { id = courseId });
         }
 
@@ -175,7 +181,7 @@ namespace DistanceLessons.Controllers
             {
                 db.Save();
             }
-            else return RedirectToAction("EditModule", new { id = old.LessonId });
+            else return RedirectToAction("EditLesson", new { id = old.LessonId });
      
             if (old.ModuleId!=null)
             return RedirectToAction("Lesson", new { id = old.ModuleId });
@@ -208,6 +214,7 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult EditModule(Guid id)
         {
+            ViewBag.DateIsGood = true;
             return View(db.GetModulesByID(id));
         }
 
@@ -216,9 +223,13 @@ namespace DistanceLessons.Controllers
         {
             Module old = db.GetModulesByID(obj.ModuleId);
             UpdateModel(old);
-            if (ModelState.IsValid)
+            bool dateOk = true;
+            if (obj.DateBeginTesting > obj.DateEndTesting) dateOk = false;
+            ViewBag.DateIsGood = dateOk;
+ 
+            if (ModelState.IsValid && dateOk)
                 db.Save();
-            else return View(obj.ModuleId);
+            else return View(obj);
            
             return RedirectToAction("Course", new { id = obj.CourseId });
         }

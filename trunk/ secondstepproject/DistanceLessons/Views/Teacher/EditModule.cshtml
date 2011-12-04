@@ -75,13 +75,22 @@
         <td class="editor-label">  @Html.LabelFor(model => model.DateBeginTesting)</td>
         <td class="editor-field"> @Html.TextBoxFor(model => model.DateBeginTesting, new { @class = "editor", @id = "datePickerBegin", @readonly = true, @Value = Model.DateBeginTesting.ToString("yyyy-MM-dd") }) <font color="red">*</font></td>
     </tr>
-       
+   <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.DateBeginTesting)</td>
+    </tr>      
        
     <tr>
         <td class="editor-label">  @Html.LabelFor(model => model.DateEndTesting)</td>
-        <td class="editor-field"> @Html.TextBoxFor(model => model.DateEndTesting, new { @class = "editor", @id = "datePickerEnd", @readonly = true,  @Value = Model.DateEndTesting.ToString("yyyy-MM-dd") }) <font color="red">*</font></td>
+        <td class="editor-field">@Html.TextBoxFor(model => model.DateEndTesting, new { @class = "editor", @id = "datePickerEnd", @readonly = true,  @Value = Model.DateEndTesting.ToString("yyyy-MM-dd") }) <font color="red">*</font></td>
     </tr>
-    
+     <tr>
+        <td></td>
+        <td class="error">@Html.ValidationMessageFor(model => model.DateEndTesting)
+        
+        @if (!ViewBag.DateIsGood)
+        {@Html.Label("Дата завершення здачі модуля має бути меншою дати початку!",new {style="color:red"})}</td>
+    </tr> 
     <tr>
         <td class="editor-label">  @Html.LabelFor(model => model.MaxPoints)</td>
         <td class="editor-field"> @Html.TextBoxFor(model => model.MaxPoints, new { @class = "editor" }) <font color="red">*</font></td>
