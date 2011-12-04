@@ -19,6 +19,12 @@ namespace DistanceLessons.Controllers
             return View(_db.GetCategoryListASC());
         }
 
+
+        public ActionResult Courses()
+        {
+            return View(_db.GetValidCourses());
+        }
+
         public ActionResult category()
         {
             return PartialView("_Category", _db.GetCategoryListASC());

@@ -92,6 +92,17 @@ namespace DistanceLessons.Models
                     select modules.CourseId).FirstOrDefault();
         }
 
+        public List<Module> ModulesEndTestingInFiveDays()
+        {
+            TimeSpan FiveDays = new TimeSpan(5,0,0,1);
+            List<Module> modul = (from modules in GetModuleList()
+                                  where modules.DateEndTesting.CompareTo(DateTime.Now)>0 &&  modules.DateBeginTesting.CompareTo(DateTime.Now)<0 && modules.DateEndTesting.Subtract(DateTime.Now).TotalSeconds < FiveDays.TotalSeconds 
+                                  select modules).ToList<Module>();
+            return modul;
+        }
+
+
+
         /*
                 public List<Lesson> GetModulesByTeacherId(Guid UserId)
                 {

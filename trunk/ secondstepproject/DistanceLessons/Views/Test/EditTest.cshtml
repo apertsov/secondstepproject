@@ -27,7 +27,7 @@
              <div class="editor-field">
              @Html.CheckBoxFor(model => model.AnswerList[j].Valid)
              @Html.EditorFor(model => model.AnswerList[j].Answer1)             
-             @Html.ActionLink("Видалити відповідь", "DeleteAnswer", "Test", new { id = Model.AnswerList[j].AnswerId, testId=Model.Test.TestId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')" })      
+             @Html.ActionLink("Видалити відповідь", "DeleteAnswer", "Test", new { id = Model.AnswerList[j].AnswerId, testId=Model.Test.TestId }, new { onclick = "return confirm('"+@Html.Resource("Layout, delete")+"');" })      
              @Html.ValidationMessageFor(model => model.AnswerList[j].Answer1) 
              </div>   
         }

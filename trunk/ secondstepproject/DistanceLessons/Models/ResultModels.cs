@@ -41,19 +41,20 @@ namespace DistanceLessons.Models
     public class CourseResultModel
     {
         public string Login { get; set; }
+        public Guid UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
-        public Dictionary<Guid, string> PassedModules  { get; set; }
-        public Dictionary<int, int> ResultModules { get; set; }
+        public Dictionary<Guid, string> PassedModules { get; set; }
+        public List<KeyValuePair<int, int>> ResultModules { get; set; }
         public int CourseResult { get; set; }
     }
 
     public class UserResultModel
     {
-        public string CourseTitle { get; set; }
-        public List<string> ModuleTitles { get; set; }
-        public Dictionary<int, int> ResultModules { get; set; }
+        public KeyValuePair<Guid, string> CourseTitle { get; set; }
+        public Dictionary<Guid, string> ModuleTitles { get; set; }
+        public List<KeyValuePair<int,int>>  ResultModules { get; set; }
         public int CourseResult { get; set; }
     }
 
@@ -64,5 +65,5 @@ namespace DistanceLessons.Models
     }
 
 
-    
+
 }

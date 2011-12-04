@@ -46,7 +46,7 @@ namespace DistanceLessons.Models
             old.EndTime = userResult.EndTime;
             old.StartTime = userResult.StartTime;
             old.UserId = userResult.UserId;
-            Save();
+            Save(); 
         }
 
         public void UpdateUserModule(Guid moduleId, string username, float result)
@@ -55,7 +55,7 @@ namespace DistanceLessons.Models
             if (userResult != null)
             {
                 userResult.Passed = result;
-                Save();
+                Save(); 
             }
         }
 
@@ -76,6 +76,13 @@ namespace DistanceLessons.Models
             return (from userResults in GetUserModuleList()
                     from user in GetUserList()
                     where userResults.ModuleId == ModuleId && user.Login == username && user.UserId == userResults.UserId
+                    select userResults).Count() == 0 ? false : true;
+        }
+
+        public bool IsStartModuleTest(Guid ModuleId, Guid userId)
+        {
+            return (from userResults in GetUserModuleList()
+                    where userResults.ModuleId == ModuleId && userResults.UserId == userId
                     select userResults).Count() == 0 ? false : true;
         }
 
@@ -114,8 +121,9 @@ namespace DistanceLessons.Models
             List<CourseResultModel> model = new List<CourseResultModel>();
             foreach (var userCourseResult in userResults)
             {
-                CourseResultModel userResult = new CourseResultModel { PassedModules = new Dictionary<Guid, string>(), ResultModules = new Dictionary<int, int>() };
+                CourseResultModel userResult = new CourseResultModel { PassedModules = new Dictionary<Guid, string>(), ResultModules = new List<KeyValuePair<int,int>>()};
                 userResult.Login = GetUsername(userCourseResult.Key);
+                userResult.UserId = userCourseResult.Key;
                 if (ExistInformation(userResult.Login))
                 {
                     Information userInfo = UserInformation(userResult.Login);
@@ -133,7 +141,7 @@ namespace DistanceLessons.Models
                     if ((userModuleResult.Passed != null) && (userModuleResult.ModuleId != null))
                     {
                         userResult.PassedModules.Add((Guid)userModuleResult.ModuleId, userModuleResult.Module.Title);
-                        userResult.ResultModules.Add(userModuleResult.Module.MaxPoints, (int)CalcCourseResult((float)userModuleResult.Passed, userModuleResult.Module.MaxPoints));
+                        userResult.ResultModules.Add(new KeyValuePair<int,int>(userModuleResult.Module.MaxPoints, (int)CalcCourseResult((float)userModuleResult.Passed, userModuleResult.Module.MaxPoints)));
                         courseResult += CalcCourseResult((float)userModuleResult.Passed, userModuleResult.Module.MaxPoints);
                     }
                     userResult.CourseResult = (int)courseResult;
@@ -154,15 +162,15 @@ namespace DistanceLessons.Models
             List<UserResultModel> model = new List<UserResultModel>();
             foreach (var userCourseResult in userResults)
             {
-                UserResultModel userResult = new UserResultModel { ResultModules = new Dictionary<int, int>(), ModuleTitles = new List<string>() };
-                userResult.CourseTitle = userCourseResult.Key.Title;
+                UserResultModel userResult = new UserResultModel { ResultModules = new List<KeyValuePair<int, int>>(), ModuleTitles = new Dictionary<Guid, string>() };
+                userResult.CourseTitle = new KeyValuePair<Guid, string>(userCourseResult.Key.CourseId, userCourseResult.Key.Title);
                 double courseResult = 0;
                 foreach (var userModuleResult in userCourseResult)
                 {
                     if ((userModuleResult._userResults.Passed != null) && (userModuleResult._userResults.ModuleId != null))
                     {
-                        userResult.ModuleTitles.Add(userModuleResult._userResults.Module.Title);
-                        userResult.ResultModules.Add((int)userModuleResult._userResults.Module.MaxPoints, (int)CalcCourseResult((float)userModuleResult._userResults.Passed, userModuleResult._userResults.Module.MaxPoints));
+                        userResult.ModuleTitles.Add(userModuleResult._userResults.Module.ModuleId, userModuleResult._userResults.Module.Title);
+                        userResult.ResultModules.Add(new KeyValuePair<int, int>((int)userModuleResult._userResults.Module.MaxPoints, (int)CalcCourseResult((float)userModuleResult._userResults.Passed, userModuleResult._userResults.Module.MaxPoints)));
                         courseResult += CalcCourseResult((float)userModuleResult._userResults.Passed, userModuleResult._userResults.Module.MaxPoints);
                     }
                 }
@@ -175,31 +183,24 @@ namespace DistanceLessons.Models
         public List<StudentResultModel> StudentResult(string username)
         {
             var results = (from userResults in GetUserModuleList()
-                           // join categories in GetCategoryList() on userResults.Module.Cours.CategoryId equals categories.CategoryId
-                            //    join courses in GetCourseList() on userResults.Module.CourseId equals courses.CourseId
-                           //  join module in GetModuleList() on userResults.Module.ModuleId equals module.ModuleId
                            where userResults.User.Login == username
-                           group userResults  by userResults.Module.Cours into coursesGroups
-                            group coursesGroups by coursesGroups.Key.Category.Category1 into categoryGroups
+                           group userResults by userResults.Module.Cours into coursesGroups
+                           group coursesGroups by coursesGroups.Key.Category.Category1 into categoryGroups
                            select categoryGroups);
-            /*     var results = (from catResults in Tresults
-                                group ca by catResults.Key.Category.Category1 into categoryGroups
-                                select categoryGroups);*/
-
             List<StudentResultModel> studentResults = new List<StudentResultModel>();
-           foreach (var categoryResult in results)
-           {
+            foreach (var categoryResult in results)
+            {
                 StudentResultModel CourseResult = new StudentResultModel { CategoryTitle = categoryResult.Key, CourseResults = new List<UserResultModel>() };
                 foreach (var courseResult in categoryResult)
                 {
-                    UserResultModel courseResultModel = new UserResultModel { CourseTitle = courseResult.Key.Title, ModuleTitles = new List<string>(), ResultModules = new Dictionary<int, int>() };
+                    UserResultModel courseResultModel = new UserResultModel { CourseTitle = new KeyValuePair<Guid, string>(courseResult.Key.CourseId, courseResult.Key.Title), ModuleTitles = new Dictionary<Guid, string>(), ResultModules = new List<KeyValuePair<int, int>>() };
                     double coursePoints = 0;
                     foreach (var moduleResult in courseResult)
                     {
                         if ((moduleResult.Passed != null) && (moduleResult.ModuleId != null))
                         {
-                            courseResultModel.ModuleTitles.Add(moduleResult.Module.Title);
-                            courseResultModel.ResultModules.Add(moduleResult.Module.MaxPoints, (int)CalcCourseResult((float)moduleResult.Passed, moduleResult.Module.MaxPoints));
+                            courseResultModel.ModuleTitles.Add((Guid)moduleResult.ModuleId, moduleResult.Module.Title);
+                            courseResultModel.ResultModules.Add(new KeyValuePair<int, int>(moduleResult.Module.MaxPoints, (int)CalcCourseResult((float)moduleResult.Passed, moduleResult.Module.MaxPoints)));
                             coursePoints += CalcCourseResult((float)moduleResult.Passed, moduleResult.Module.MaxPoints);
                         }
                     }
@@ -207,8 +208,8 @@ namespace DistanceLessons.Models
                     CourseResult.CourseResults.Add(courseResultModel);
                 }
                 studentResults.Add(CourseResult);
-           }
-          //  throw new Exception();
+            }
+            //  throw new Exception();
             return studentResults;
 
         }

@@ -1,58 +1,73 @@
 ﻿@model List<DistanceLessons.Models.StudentResultModel>
-@if (Model.Count() != 0)
+@if (Model.Count == 0)
 {
-<table style="width: 100%;">
-    <tbody>
-        <tr>
-            <th style="border: 1px solid black; width: 35%;">
-                Курс
-            </th>
-            <th style="border: 1px solid black; width: 35%;">
-                Модулі
-            </th>
-            <th style="border: 1px solid black; width: 15%;">
-                Результати модулів
-            </th>
-            <th style="border: 1px solid black; width: 15%;">
-                Результат курсу
-            </th>
-        </tr>
-        @foreach (var categoryResult in Model)
-        {
-            foreach (var courseResult in categoryResult.CourseResults)
-            {
-            <tr align='center'>
-                <td style="border: 1px solid black;">
-                    @courseResult.CourseTitle
-                    <br />
-                    Категорія : @categoryResult.CategoryTitle
-                </td>
-                <td style="border: 1px solid black;">
-                    @foreach (var modules in courseResult.ModuleTitles)
-                    {  
-                        @modules
-                        <br />                
-                    }
-                </td>
-                <td style="border: 1px solid black;">
-                    @foreach (var moduleResult in courseResult.ResultModules)
-                    {
-                        @moduleResult.Value.ToString()
-                        @Html.TextHtml("/")
-                        @moduleResult.Key.ToString()
-                        <br />
-                    }
-                </td>
-                <td style="border: 1px solid black;">
-                    @courseResult.CourseResult
-                </td>
-            </tr>
-            }
-        }
-    </tbody>
-</table>
+    @Html.TextHtml("Не пройдено ні одного тестування")
 }
 else
 {
-    <div class="data_null">Ваша залікова книжка поки що пуста.</div>
+    <table style="width: 100%;">
+        <tbody>
+            <tr>
+                <th style="border: 1px solid black; width: 35%;">
+                    Курс
+                </th>
+                <th style="border: 1px solid black; width: 35%;">
+                    Модулі
+                </th>
+                <th style="border: 1px solid black; width: 15%;">
+                    Результати модулів
+                </th>
+                <th style="border: 1px solid black; width: 15%;">
+                    Результат курсу
+                </th>
+            </tr>
+            @foreach (var categoryResult in Model)
+            {
+                foreach (var courseResult in categoryResult.CourseResults)
+                {
+                <tr align='center'>
+                    <td style="border: 1px solid black;">
+                        @if (String.IsNullOrEmpty(ViewBag.controller))
+                        {
+                            @courseResult.CourseTitle.Value
+                        }
+                        else
+                        {
+                            @Ajax.ActionLink(courseResult.CourseTitle.Value, (string)ViewBag.controller, new { id = courseResult.CourseTitle.Key, divIdToReplace = ViewBag.replaceDiv, type = DistanceLessons.Models.ElementsType.Course }, new AjaxOptions() { UpdateTargetId = ViewBag.replaceDiv, InsertionMode = InsertionMode.Replace })                           
+                        }
+                        <br />
+                        @Html.TextHtml("Категорія:")
+                        @categoryResult.CategoryTitle
+                    </td>
+                    <td style="border: 1px solid black;">
+                        @foreach (var modules in courseResult.ModuleTitles)
+                        {
+                            if (String.IsNullOrEmpty(ViewBag.controller))
+                            {
+                            @modules.Value
+                            }
+                            else
+                            {
+                            @Ajax.ActionLink(modules.Value, (string)ViewBag.controller, new { id = modules.Key, divIdToReplace = ViewBag.replaceDiv, type = DistanceLessons.Models.ElementsType.Module }, new AjaxOptions() { UpdateTargetId = ViewBag.replaceDiv, InsertionMode = InsertionMode.Replace })                           
+                            }                     
+                            <br />                
+                        }
+                    </td>
+                    <td style="border: 1px solid black;">
+                        @foreach (var moduleResult in courseResult.ResultModules)
+                        {
+                            @moduleResult.Value.ToString()
+                            @Html.TextHtml("/")
+                            @moduleResult.Key.ToString()
+                            <br />
+                        }
+                    </td>
+                    <td style="border: 1px solid black;">
+                        @courseResult.CourseResult
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
 }

@@ -126,5 +126,12 @@ namespace DistanceLessons.Models
                     where uc.UserId == UserId
                     select uc).ToList();
         }
+
+        public List<Guid> SubscribedUsersForCourse(Guid courseId)
+        {
+            return (from userCourse in GetUserCourseList()
+                    where userCourse.CourseId == courseId
+                    select userCourse.UserId).ToList<Guid>();
+        }
     }
 }

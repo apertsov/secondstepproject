@@ -160,7 +160,7 @@ namespace DistanceLessons.Models
 
         public Guid GetUserId(string username)
         {
-            var userId = (from x in _db.Users
+            var userId = (from x in GetUserList()
                        where x.Login.ToUpper() == username.ToUpper()
                        select x.UserId).FirstOrDefault();
             return userId;
@@ -170,18 +170,27 @@ namespace DistanceLessons.Models
 
         public Guid GetUserRoleId(string username)
         {
-            return (from user in _db.Users
+            return (from user in GetUserList()
                     where user.Login == username
                     select user.RoleId).FirstOrDefault();
         }
 
         public bool ExistUser(string username)
         {
-            if ((from user in _db.Users
+            if ((from user in GetUserList()
                     where user.Login==username
                     select user).Count()==0)
                         return false;
             else return true;
+        }
+
+        public bool ExistUser(Guid userId)
+        {
+            if ((from user in GetUserList()
+                 where user.UserId == userId
+                 select user).Count() == 0)
+                return false;
+            return true;
         }
 
         public void ChangeUserRole(string roleName, string userName)
@@ -193,7 +202,7 @@ namespace DistanceLessons.Models
 
         public bool ActivateUser(string username, string key)
         {
-                var result = from u in _db.Users where (u.Login == username) select u;
+            var result = from u in GetUserList() where (u.Login == username) select u;
 
                 if (result.Count() != 0)
                 {

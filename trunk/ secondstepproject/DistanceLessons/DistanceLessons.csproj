@@ -387,9 +387,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Courses%28old%29.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Home\Categories.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -516,7 +513,7 @@
     <Content Include="Views\Teacher\EditLessonTests.cshtml" />
     <Content Include="Views\Test\TestingNotPrepared.cshtml" />
     <Content Include="Views\Result\DetailsModuleUserAnswers.cshtml" />
-    <Content Include="Views\Home\Courses.cshtml" />
+    <Content Include="Views\Education\Courses.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Profile\_Info_PartialPage.cshtml" />
     <Content Include="Views\Teacher\AllMyLesson.cshtml" />
