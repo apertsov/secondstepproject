@@ -4,6 +4,14 @@
     ViewBag.Title = Html.Resource("Title");
 }
 
+<script>
+    $(function () {
+        $('.delete').click(function () {
+            return confirm('@Html.Resource("Question") - "@Model.Title" ?');
+        });
+    });
+</script>
+
 <h2>@Html.Resource("Question") - "@Model.Title" ?</h2>
     <div>
         @Html.TextHtml(Model.Text)
@@ -13,7 +21,8 @@
 @using (Html.BeginForm()) 
 {
 <div class="item" align="center">
-    <input type="submit" value=@Html.Resource("Layout, delete") />
-    @Ajax.ActionLink(Html.Resource("Layout, back"), "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+    <input type="submit" value=@Html.Resource("Layout, delete") class="delete" />
+    @Html.ActionLink(Html.Resource("Layout, back"), "Index")
 </div>
 }
+

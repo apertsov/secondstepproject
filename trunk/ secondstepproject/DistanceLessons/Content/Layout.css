@@ -106,8 +106,27 @@ body
     height: 255px;
 }
 
+.box_shdw_bottom_full
+{
+    min-height: 355px;
+    margin: 0;
+    margin-left: 5px;
+    margin-bottom: 25px;
+    background: white;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-bottom: 1px solid silver;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    -webkit-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    -moz-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+}
+
 .box_shdw_bottom
 {
+    min-height: 355px;
     width: 75%;
     float: right;
     margin-left: 5px;
@@ -570,15 +589,14 @@ body
     color: black;
     display: block;
     background: white;
-    border: 1px solid #CCCCCC;
     padding: 5px 7px;
     margin: 5px 7px; /*Відстань між кнопками*/ /*ПРИМІТКА: не забувати змінювати відстані картинок*/
+    border: 1px solid #CCCCCC;
 }
 
 .nav ul li a:hover
 {
     background: #eee;
-    border: 1px solid #CCCCCC;
 }
 
 .nav ul li ul
@@ -587,9 +605,15 @@ body
     visibility: hidden;
     position: absolute;
     display: block;
-    border: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
     padding: 3px;
     margin: 0;
+    margin: 0 7px; /*Відстань між кнопками*/ /*ПРИМІТКА: не забувати змінювати відстані картинок*/
     left: 0;
 }
 
@@ -951,4 +975,12 @@ table.center2 tr td
     background-color:#0073ea;
     background-image: url('img/passive_active/fill_passive.png');
     color:white;
+}
+
+.data_null
+{
+    margin: 10px;
+    color: silver; 
+    font-size: 0.8em; 
+    text-align:center;
 }

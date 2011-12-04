@@ -8,8 +8,8 @@
 @{
     if (User.IsInRole("Admin") || (User.IsInRole("Techer")) || (User.IsInRole("Dean")))
     {
-        @Ajax.ActionLink(Html.Resource("Layout, edit"), "Edit", new {id = Model.NewId}, new AjaxOptions() {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
-        @Ajax.ActionLink(Html.Resource("Layout, delete"), "Delete", new {id = Model.NewId}, new AjaxOptions() {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
+        @Html.ActionLink(Html.Resource("Layout, edit"), "Edit", new {id = Model.NewId})
+        @Html.ActionLink(Html.Resource("Layout, delete"), "Delete", new {id = Model.NewId})
     }
 }
 </div>
@@ -22,5 +22,5 @@
 <div class="time-author">-@Model.User.Login, @Model.Publication</div>
 
 <div class="item" align="center">
-    @Ajax.ActionLink(Html.Resource("Layout, back"), "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+    @Html.ActionLink(Html.Resource("Layout, back"), "Index")
 </div>
