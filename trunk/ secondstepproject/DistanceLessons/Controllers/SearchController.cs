@@ -61,19 +61,23 @@ namespace DistanceLessons.Controllers
        {
            var usersList = _db.GetUserList();
 
+           ViewBag.RoleList = _db.GetRoleList();
+
            return View(usersList);
        }
 
        [HttpPost]
-       public ActionResult UsersSearch(string login, string role)
+       public ActionResult UsersSearch(string login, Guid role, bool isKnown)
        {
            var usersList = _db.GetUserList();
+           ViewBag.RoleList = _db.GetRoleList();
 
            if (!string.IsNullOrEmpty(login))
                usersList = usersList.Where(a => a.Login.ToUpper().Contains(login.ToUpper())).ToList();
 
-           if (!string.IsNullOrEmpty(role))
-               usersList = usersList.Where(a => a.Role.Name.ToUpper().Contains(role.ToUpper())).ToList();
+           //if (!string.IsNullOrEmpty(role))
+           if (!isKnown)
+               usersList = usersList.Where(a => a.Role.RoleId.Equals(role)).ToList();
 
            return View(usersList);
        }
