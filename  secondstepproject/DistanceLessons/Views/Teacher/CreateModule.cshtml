@@ -6,6 +6,8 @@
 }
 
 <h2>Створення модулю</h2>
+@{Guid c_id = ViewBag.CourseId;}
+
 
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
@@ -43,7 +45,7 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    @Html.HiddenFor(model => model.CourseId, new { @Value=ViewBag.CourseId})
+    @Html.HiddenFor(model => model.CourseId, new { @Value=c_id})
    <table class="center" cellspacing="10">
     <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
@@ -84,7 +86,10 @@
     
     <tr>
         <td></td>
-        <td class="error">@Html.ValidationMessageFor(model => model.DateEndTesting)</td>
+        <td class="error">@Html.ValidationMessageFor(model => model.DateEndTesting)
+        
+        @if (!ViewBag.DateIsGood)
+        {@Html.Label("Дата завершення здачі модуля має бути меншою дати початку!",new {style="color:red"})}</td>
     </tr>
  
      <tr>
@@ -115,5 +120,5 @@
 }
 
 <div>
-    @Html.ActionLink("Повернутись до предмету", "Course", new { id = ViewBag.CourseId })
+    @Html.ActionLink("Повернутись до предмету", "Course", new { id = c_id })
 </div>
