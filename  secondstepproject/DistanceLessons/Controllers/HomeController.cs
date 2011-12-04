@@ -16,6 +16,7 @@ namespace DistanceLessons.Controllers
 
         public ActionResult Index()
         {
+            Session["three_news"] = _db.GetNewsList_time(3, 0, 2);
             return View();
         }
 

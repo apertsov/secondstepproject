@@ -131,7 +131,6 @@
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
-    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -311,6 +310,7 @@
     <Content Include="Content\script\jquery.nivo.slider.js" />
     <Content Include="Content\script\jquery.nivo.slider.pack.js" />
     <Content Include="Content\script\jquerycssmenu.js" />
+    <Content Include="Content\script\scriptbreaker-multiple-accordion.js" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -400,9 +400,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Teacher\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Student\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\Welcome.cshtml" />

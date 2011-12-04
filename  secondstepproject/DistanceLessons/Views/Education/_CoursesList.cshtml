@@ -17,6 +17,7 @@
                     <li>@Ajax.ActionLink("Приватні", "courses", new { withStatus = 1, numPage = 0 }, new AjaxOptions() { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })</li>
                 </ul>
             </li>
+            <li>@Html.ActionLink("Меню навчання", "Index")</li>
         </ul>
         <div id="course_ajax" class="box_shdw_bottom">
             @{Html.RenderPartial("_courses", Model);}
