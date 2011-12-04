@@ -1,15 +1,22 @@
-﻿<div class="title">@Html.Resource("Layout, _HorizontalNavigation_News")</div>
+﻿@using DistanceLessons.Models
+<div class="title">@Html.Resource("Layout, _HorizontalNavigation_News")</div>
 
-<ul>
-    @{
-        DistanceLessons.Models.DataEntitiesManager _db = new DistanceLessons.Models.DataEntitiesManager();
-        foreach (DistanceLessons.Models.News _new in _db.GetNewsList_time(3, 0, 2))
-        {
-        <li>@Html.ActionLink(_new.Title.ToString(), "Detail", "News", new { id = _new.NewId }, null)
-        <div class="prologue">@Html.TextHtml(_new.Text)</div>
-            <div class="time-author">
-                <span class="no_button">-@Html.ActionLink(_new.User.Login, "Info", "Profile", new { user = _new.User.Login }, null), @_new.Publication</span></div>
-        </li>
+@if (((List<News>)Session["three_news"]).Count == 0)
+{
+    <div align="center" style="color: silver; font-size: 0.8em; margin-top:10px;">Поки що немає ніяких новин.</div>
+}
+else
+{
+    <ul>
+        @{
+            foreach (var _new in (List<News>)Session["three_news"])
+            {
+                <li>@Html.ActionLink(_new.Title.ToString(), "Detail", "News", new {id = _new.NewId}, null)
+                    <div class="prologue">@Html.TextHtml(_new.Text)</div>
+                    <div class="time-author">
+                        <span class="no_button">-@Html.ActionLink(_new.User.Login, "Info", "Profile", new {user = _new.User.Login}, null), @_new.Publication</span></div>
+                </li>
+            }
         }
-    }
-</ul>
+    </ul>
+}

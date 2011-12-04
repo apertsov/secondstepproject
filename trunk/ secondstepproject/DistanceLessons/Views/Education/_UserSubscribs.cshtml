@@ -21,15 +21,22 @@
                 <div style="margin: 10px;">
                     @if (subitem.Cours.Category.Category1 == item.Category1)
                     {
-                        <div style="margin-left: 15px; font-size: 0.8em;" class="spoiler">@subitem.Cours.Title</div>
+                        <div style="margin-left: 15px; font-size: 0.8em; text-decoration:underline;" class="spoiler">@subitem.Cours.Title</div>
                         <div class="text" style="margin: 10px;">
-                            @foreach (var subitem2 in Model.CoursesLessons)
+                        @foreach(var subitem1 in Model.CoursesLessons)
+                        {
+                            if(subitem1.CourseId==subitem.CourseId)
                             {
-                                if (subitem2.CourseId == subitem.CourseId)
+                            <div style="margin-left: 25px; font-size: 0.8em;">Модуль: @subitem1.Module.Title @Html.ActionLink("[Розпочати тестування]", "PassModule", "Test", new { id = subitem1.ModuleId }, null)</div>
+                                foreach (var subitem2 in Model.CoursesLessons)
                                 {
-                                    <div style="margin-left: 25px; font-size: 0.8em;">@Html.ActionLink(subitem2.Title, "ShowFile", "Teacher", new {filename = subitem2.Text}, new {target = "_blank"})</div>
+                                    if ((subitem2.CourseId == subitem.CourseId) && (subitem1.ModuleId == subitem2.ModuleId))
+                                    {
+                                    <div style="font-size: 0.8em;">@Html.ActionLink("[Читати]", "ShowFile", "Teacher", new { filename = subitem2.Text }, new { target = "_blank" }) @subitem2.Title</div>
+                                    }
                                 }
                             }
+                        }
                         </div>
                     }
                 </div>
