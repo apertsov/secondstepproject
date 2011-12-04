@@ -9,6 +9,6 @@
             grid.Column("Title", "Назва предмету", format: @<text><i>@item.Title</i> </text>),
             grid.Column("Category.Category1", "Категорія", format:@<i>@item.Category.Category1</i>),
             grid.Column("User.Login", "Викладач", format:@<text><i>@item.User.Login</i> </text>),
-            grid.Column("IsSubscribing", "Чи необхідна підписка", format: (item) => new HtmlString(Html.CheckBox("h", new {isCkecked=(bool)item.IsSubscribing, @readonly=true}).ToString()))));
+            grid.Column("IsSubscribing", "Чи необхідна підписка", format: (item) => new HtmlString(Html.CheckBox("ki",(bool)item.IsSubscribing, new { @readonly=true}).ToString()))));
                           }
 
