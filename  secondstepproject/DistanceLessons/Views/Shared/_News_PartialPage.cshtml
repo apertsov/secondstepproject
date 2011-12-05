@@ -1,7 +1,7 @@
 ﻿@using DistanceLessons.Models
 <div class="title">@Html.Resource("Layout, _HorizontalNavigation_News")</div>
 
-@if ((((List<News>)Session["three_news"]).Count == 0)||((Session["three_news"]) == null))
+@if ((((Session["three_news"]) == null) || ((List<News>) Session["three_news"]).Count == 0))
 {
     <div class="data_null">Поки що немає ніяких новин.</div>
 }
@@ -9,7 +9,7 @@ else
 {
     <ul>
         @{
-            foreach (var _new in (List<News>)Session["three_news"])
+            foreach (var _new in (List<News>) Session["three_news"])
             {
                 <li>@Html.ActionLink(_new.Title.ToString(), "Detail", "News", new {id = _new.NewId}, null)
                     <div class="prologue">@Html.TextHtml(_new.Text)</div>

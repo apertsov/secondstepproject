@@ -122,6 +122,7 @@ body
     -webkit-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
     -moz-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
     box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    padding: 0 10px;
 }
 
 .box_shdw_bottom
@@ -141,6 +142,7 @@ body
     -webkit-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
     -moz-box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
     box-shadow: 0 5px 15px -5px rgba(100,100,100,0.5);
+    padding: 0 10px;
 }
 
 .position_bottom_left
