@@ -1,8 +1,5 @@
-﻿@model IEnumerable<DistanceLessons.Models.User>
-
-
-<style type="text/css" > 
-     .webgrid
+﻿
+    .webgrid
     {
         width: 100%;
         border: 0px;
@@ -63,23 +60,5 @@
    {
        font-weight: bold;
    }
-</style>
- 
 
 
-@{
-                                                                                                       
-   var grid = new WebGrid(Model, rowsPerPage: 5, ajaxUpdateContainerId: "UsersGrid");
-    //var grid = new WebGrid(Model);
-    @grid.GetHtml(tableStyle: "webgrid",
-                  alternatingRowStyle: "webgrid-alternating-row",
-                  headerStyle: "webgrid-header",
-                  footerStyle: "webgrid-footer",
-                  selectedRowStyle: "webgrid-selected-row",
-                  rowStyle: "webgrid-row-style",
-                  columns: grid.Columns(
-                  grid.Column("Login", "Логін", format: @<text><i>@item.Login</i></text>),
-                  grid.Column("Email", "Електронна пошта", format: @<text><i>@item.Email</i></text>),
-                  grid.Column("Role.Name", "Статус", format: @<text><i>@item.Role.Name</i></text>)
-                  ));
-                          }
