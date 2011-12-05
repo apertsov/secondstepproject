@@ -78,7 +78,8 @@
                   selectedRowStyle: "webgrid-selected-row",
                   rowStyle: "webgrid-row-style",
                   columns: grid.Columns(
-                  grid.Column("Login", "Логін", format: @<text><i>@item.Login</i></text>),
+                  grid.Column("Login", "Логін", format: (item) => new HtmlString(Html.ActionLink((string)item.Login,"Info","Profile",new{user=item.Login},null).ToString())),
+                  //grid.Column("Login", "Логін", format: @<text><i>@item.Login</i></text>),
                   grid.Column("Email", "Електронна пошта", format: @<text><i>@item.Email</i></text>),
                   grid.Column("Role.Name", "Статус", format: @<text><i>@item.Role.Name</i></text>)
                   ));
