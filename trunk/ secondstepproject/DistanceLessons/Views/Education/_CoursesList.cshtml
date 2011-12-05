@@ -1,10 +1,10 @@
 ﻿@{
     <script language="JavaScript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             $(".topnav").accordion({
-                accordion: true,
-                speed: 600
-            });
+                    accordion: true,
+                    speed: 600
+                });
         });
     </script>
 
@@ -12,9 +12,9 @@
         <ul class="topnav" class=box_shdw_right>
             <li><a>Курси</a>
                 <ul style="display: block;">
-                    <li>@Ajax.ActionLink("Всі курси", "courses", new { withStatus = 0, numPage = 0 }, new AjaxOptions() { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })</li>
-                    <li>@Ajax.ActionLink("Загальнодоступні", "courses", new { withStatus = -1, numPage = 0 }, new AjaxOptions() { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })</li>
-                    <li>@Ajax.ActionLink("Приватні", "courses", new { withStatus = 1, numPage = 0 }, new AjaxOptions() { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })</li>
+                    <li>@Ajax.ActionLink("Всі курси", "courses", new {withStatus = 0, numPage = 0}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</li>
+                    <li>@Ajax.ActionLink("Загальнодоступні", "courses", new {withStatus = -1, numPage = 0}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</li>
+                    <li>@Ajax.ActionLink("Приватні", "courses", new {withStatus = 1, numPage = 0}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</li>
                 </ul>
             </li>
             <li>@Html.ActionLink("Меню навчання", "Index")</li>
@@ -22,6 +22,5 @@
         <div id="course_ajax" class="box_shdw_bottom">
             @{Html.RenderPartial("_courses", Model);}
         </div>
-    </div>
-}
+    </div> }
 
