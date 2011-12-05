@@ -63,13 +63,17 @@ namespace DistanceLessons.Controllers
 
            ViewBag.RoleList = _db.GetRoleList();
 
+           //Information i = new Information();
+           
            return View(usersList);
        }
 
        [HttpPost]
-       public ActionResult UsersSearch(string login, Guid role, bool isKnown)
+       public ActionResult UsersSearch(string login, Guid role, bool isKnown, string name, string sureName)
        {
            var usersList = _db.GetUserList();
+           var infoList = _db.GetInfoList();
+
            ViewBag.RoleList = _db.GetRoleList();
 
            if (!string.IsNullOrEmpty(login))
@@ -79,7 +83,31 @@ namespace DistanceLessons.Controllers
            if (!isKnown)
                usersList = usersList.Where(a => a.Role.RoleId.Equals(role)).ToList();
 
-           return View(usersList);
+           if (!string.IsNullOrEmpty(name))
+           {
+               var usList = new List<User>();
+
+               //usersList = usersList.Where(a => a.Informations.Where(b => b.FirstName.ToUpper().Contains(name.ToUpper()))).ToList();
+               foreach (Information info in infoList)
+               {
+                   if (info.FirstName.ToUpper().Contains(name.ToUpper())) usList.Add(_db.GetUser(info.UserId));
+               }
+               return View(usList);
+           }
+
+           if (!string.IsNullOrEmpty(sureName))
+           {
+               var usList = new List<User>();
+
+               //usersList = usersList.Where(a => a.Informations.Where(b => b.FirstName.ToUpper().Contains(name.ToUpper()))).ToList();
+               foreach (Information info in infoList)
+               {
+                   if (info.FirstName.ToUpper().Contains(sureName.ToUpper())) usList.Add(_db.GetUser(info.UserId));
+               }
+               return View(usList);
+           }
+
+               return View(usersList);
        }
     }
 }
