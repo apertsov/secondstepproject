@@ -1,16 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="88" fromTop="4" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Delete_PartialPage.cshtml" caret="699" fromTop="22" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_Messages.cshtml" caret="117" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="5691" fromTop="14" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_NewMessageBox.cshtml" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="324" fromTop="8" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:ValidationData.cs" caret="191" fromTop="4" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:AutorizeFilter.cs" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_News_PartialPage.cshtml" caret="849" fromTop="20" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:WebGridStyle.css" caret="327" fromTop="18" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="3353" fromTop="30" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:NotFound.cshtml" caret="335" fromTop="13" />
@@ -31,16 +21,18 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:CreateModule.cshtml" caret="964" fromTop="22" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.ui.datepicker.js" caret="4517" fromTop="1" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_CreateInfo_PartialPage.cshtml" caret="3540" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Index.cshtml" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="615" fromTop="19" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Edit_PartialPage.cshtml" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="598" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Delete_PartialPage.cshtml" caret="210" fromTop="9" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Detail.cshtml" caret="460" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Edit.cshtml" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="586" fromTop="20" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="299" fromTop="14" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="502" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="2341" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Delete_PartialPage.cshtml" caret="161" fromTop="4" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="92" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="90" fromTop="5" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="683" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="5691" fromTop="14" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_News_PartialPage.cshtml" caret="154" fromTop="3" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_News_PartialPage.cshtml" caret="852" fromTop="21" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="2792" fromTop="25" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="3353" fromTop="30" />
@@ -63,6 +55,14 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.ui.datepicker.js" caret="5155" fromTop="20" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.ui.datepicker.js" caret="4517" fromTop="1" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_CreateInfo_PartialPage.cshtml" caret="3540" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="586" fromTop="14" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="615" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="154" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="1297" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Detail.cshtml" caret="267" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="201" fromTop="4" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Delete_PartialPage.cshtml" caret="210" fromTop="9" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="299" fromTop="14" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
@@ -89,7 +89,7 @@
       <Item value="_new" priority="191" />
       <Item value="byte" priority="96" />
       <Item value="bool" priority="63" />
-      <Item value="if" priority="1353" />
+      <Item value="if" priority="1385" />
       <Item value="partial_news" priority="31" />
       <Item value="foreach" priority="125" />
       <Item value="LdapStyleUriParser`0" priority="31" />
@@ -104,7 +104,7 @@
       <Item value="Model" priority="1179" />
       <Item value="Html" priority="1766" />
       <Item value="RouteValueDictionary" priority="28" />
-      <Item value="null" priority="1247" />
+      <Item value="null" priority="1279" />
       <Item value="DetailsNew" priority="32" />
       <Item value="type" priority="160" />
       <Item value="else" priority="415" />
@@ -172,7 +172,7 @@
       <Item value="cultureInfo" priority="63" />
       <Item value="Thread`0" priority="31" />
       <Item value="ActionResult`0" priority="287" />
-      <Item value="Session" priority="768" />
+      <Item value="Session" priority="932" />
       <Item value="RedirectToAction`0" priority="191" />
       <Item value="ChangeLocal" priority="32" />
       <Item value="RazorViewEngine`0" priority="32" />

@@ -2,10 +2,10 @@
 
 <div class="item" align="right">
 @{
-    if (User.IsInRole("Admin") || (User.IsInRole("Techer")) || (User.IsInRole("Dean")))
+    if ((Session["role"].ToString()=="admin")||(Session["role"].ToString()=="teacher")||(Session["role"].ToString()=="dean"))
     {
-        @Ajax.ActionLink(Html.Resource("Layout, edit"), "Edit", new {id = Model.NewId}, new AjaxOptions() {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
-        @Ajax.ActionLink(Html.Resource("Layout, delete"), "Delete", new {id = Model.NewId}, new AjaxOptions() {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
+        @Ajax.ActionLink(Html.Resource("Layout, edit"), "Edit", new { id = Model.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+        @Ajax.ActionLink(Html.Resource("Layout, delete"), "Delete", new { id = Model.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
     }
 }
 </div>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
 using DistanceLessons.Attributes;
@@ -10,13 +9,14 @@ namespace DistanceLessons.Controllers
     [Localization]
     public class HomeController : Controller
     {
-        private DataEntitiesManager _db = new DataEntitiesManager();
-        private HttpCookie university_cookies;
+        private readonly DataEntitiesManager _db = new DataEntitiesManager();
         private string chooseLang = "uk-ua";
+        private HttpCookie university_cookies;
 
         public ActionResult Index()
         {
             Session["three_news"] = _db.GetNewsList_time(3, 0, 2);
+            Session["role"] = _db.GetUser(User.Identity.Name).Role.Name.ToLower();
             return View();
         }
 
@@ -60,7 +60,9 @@ namespace DistanceLessons.Controllers
 
         public ActionResult MessageBox()
         {
-            Session["MessageCount"] = (_db.GetNewMessageForUser(User.Identity.Name).Count != 0) ? _db.GetNewMessageForUser(User.Identity.Name).Count:0;
+            Session["MessageCount"] = (_db.GetNewMessageForUser(User.Identity.Name).Count != 0)
+                                          ? _db.GetNewMessageForUser(User.Identity.Name).Count
+                                          : 0;
             return PartialView("_NewMessageBox");
         }
     }

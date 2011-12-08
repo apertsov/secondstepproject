@@ -19,7 +19,6 @@ namespace DistanceLessons.Controllers
             ViewData["numPage"] = numPage;
             ViewData["itemsCount"] = _db.GetNewsList().Count;
             ViewData["itemOnPage"] = itemOnPage;
-			ViewData["usernameRole"] = _db.GetUser(User.Identity.Name).Role.Name.ToLower();
 
             if (!Request.IsAjaxRequest())
             {
