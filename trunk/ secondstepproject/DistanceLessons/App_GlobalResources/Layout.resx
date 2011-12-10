@@ -180,4 +180,92 @@
   <data name="_NewMessageBox_NewMesseges" xml:space="preserve">
     <value>Нових повідомлень: </value>
   </data>
+  <data name="data_null_courses" xml:space="preserve">
+    <value>Курсів поки що не створено. Очікуйте.</value>
+    <comment>1</comment>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Статус:</value>
+    <comment>1</comment>
+  </data>
+  <data name="stat_private" xml:space="preserve">
+    <value>Приватний</value>
+    <comment>1</comment>
+  </data>
+  <data name="stat_public_alert_subscrb" xml:space="preserve">
+    <value>Ви підписались на курс!\n\rПро терміни здачі модуля Ви будете оповіщені по системі особистих повідомлень.\n\r\n\rЩоб відмінити підписку натисніть "Відмінити"</value>
+    <comment>1</comment>
+  </data>
+  <data name="stat_public" xml:space="preserve">
+    <value>Загальнодоступний</value>
+    <comment>1</comment>
+  </data>
+  <data name="teacher" xml:space="preserve">
+    <value>Викладач:</value>
+    <comment>1</comment>
+  </data>
+  <data name="all_courses" xml:space="preserve">
+    <value>Всі курси</value>
+    <comment>1</comment>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Відмінити</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_category" xml:space="preserve">
+    <value>Поки що немає категорій.</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_subscribs" xml:space="preserve">
+    <value>Немає підписок на курси.</value>
+    <comment>1</comment>
+  </data>
+  <data name="menu_education" xml:space="preserve">
+    <value>Меню навчання</value>
+    <comment>1</comment>
+  </data>
+  <data name="module" xml:space="preserve">
+    <value>Модуль:</value>
+    <comment>1</comment>
+  </data>
+  <data name="private_courses" xml:space="preserve">
+    <value>Приватні</value>
+    <comment>1</comment>
+  </data>
+  <data name="public_courses" xml:space="preserve">
+    <value>Загальнодоступні</value>
+    <comment>1</comment>
+  </data>
+  <data name="start_test" xml:space="preserve">
+    <value>Розпочати тестування</value>
+    <comment>1</comment>
+  </data>
+  <data name="stat_private_alert_subscrb" xml:space="preserve">
+    <value>Цей курс є приватним. Очікуйте затвердження підписки від викладача та оповіщення в особистих повідомленнях.</value>
+    <comment>1</comment>
+  </data>
+  <data name="subscribe" xml:space="preserve">
+    <value>Підписатись</value>
+    <comment>1</comment>
+  </data>
+  <data name="wait" xml:space="preserve">
+    <value>Очікуємо підтвердження</value>
+    <comment>1</comment>
+  </data>
+  <data name="categories" xml:space="preserve">
+    <value>Категорії</value>
+    <comment>1</comment>
+  </data>
+  <data name="courses" xml:space="preserve">
+    <value>Курси</value>
+    <comment>1</comment>
+  </data>
+  <data name="my_record_book" xml:space="preserve">
+    <value>Моя залікова книжка</value>
+    <comment>1</comment>
+  </data>
+  <data name="my_subscriptions" xml:space="preserve">
+    <value>Мої підписки</value>
+    <comment>1</comment>
+  </data>
 </root>

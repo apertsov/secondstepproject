@@ -1,4 +1,16 @@
-﻿@using DistanceLessons.Models
+﻿<script type="text/javascript">
+    function alert_public() {
+        var message = '@Html.TextHtml(Html.Resource("Layout, stat_public_alert_subscrb"))';
+        alert(message);
+    }
+
+    function alert_private() {
+        var message = '@Html.TextHtml(Html.Resource("Layout, stat_private_alert_subscrb"))';
+        alert(message);
+    }
+</script>
+
+@using DistanceLessons.Models
 @model IEnumerable<UserCourseModel>
 @if (Model.Count() != 0)
 {
@@ -14,39 +26,39 @@
                                 <div class="prologue">@Html.TextHtml(item.Course.Description)</div>
                             </div>
                             <div class="time-author">
-                                <span style="float: left;">&nbsp;&nbsp;<i>Статус:</i> @if (item.Course.IsSubscribing)
-                                                                                      {
-                                                                                          <font color="red">Приватний&nbsp;&nbsp;</font>
-                                                                                      }
-                                                                                      else
-                                                                                      {
-                                                                                          <font color="green">Загальнодоступний&nbsp;&nbsp;</font>
-                                                                                      }</span>
-                                <span class="no_button"><i>Викладач:</i> @Html.ActionLink(item.Course.User.Login, "Info", "Profile", new {user = item.Course.User.Login}, null)&nbsp;&nbsp;</span>
+                                <span style="float: left;">&nbsp;&nbsp;<i>@Html.Resource("Layout, status")</i> @if (item.Course.IsSubscribing)
+                                                                                                               {
+                                                                                                                   <font color="red">@Html.Resource("Layout, stat_private")&nbsp;&nbsp;</font>
+                                                                                                               }
+                                                                                                               else
+                                                                                                               {
+                                                                                                                   <font color="green">@Html.Resource("Layout, stat_public")&nbsp;&nbsp;</font>
+                                                                                                               }</span>
+                                <span class="no_button"><i>@Html.Resource("Layout, teacher")</i> @Html.ActionLink(item.Course.User.Login, "Info", "Profile", new {user = item.Course.User.Login}, null)&nbsp;&nbsp;</span>
                                 @if (!item.Course.IsSubscribing)
                                 {
                                     if (item.Subscribe == 1)
                                     {
-                                        <span onClick="alert('Ви підписались на курс!\n\rПро терміни здачі модуля Ви будете оповіщені по системі особистих повідомлень.\n\r\n\rЩоб відмінити підписку натисніть &laquo;Відмінити&raquo;'); ">@Ajax.ActionLink("Підписатись", "SubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</span>
+                                        <span onClick=alert_public(); >@Ajax.ActionLink(Html.Resource("Layout, subscribe"), "SubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</span>
                                     }
                                     else if (item.Subscribe == 0)
                                          {
-                                             @Ajax.ActionLink("Відмінити", "DeleteSubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})
+                                             @Ajax.ActionLink(Html.Resource("Layout, cancel"), "DeleteSubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})
                                          }
                                 }
                                 else
                                 {
                                     if (item.Subscribe == 1)
                                     {
-                                        <span onClick="alert('Цей курс є приватним. Очікуйте затвердження підписки від викладача та оповіщення в особистих повідомленнях.'); ">@Ajax.ActionLink("Підписатись", "ConfirmSubscribeOnCourse", new {item.Course.CourseId, TeacherId = item.Course.UserId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</span>
+                                        <span onClick=alert_private(); >@Ajax.ActionLink(Html.Resource("Layout, subscribe"), "ConfirmSubscribeOnCourse", new {item.Course.CourseId, TeacherId = item.Course.UserId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</span>
                                     }
                                     else if (item.Subscribe == 2)
                                          {
-                                             <span class="current_page">Очікуємо підтвердження</span>
+                                             <span class="current_page">@Html.Resource("Layout, wait")</span>
                                          }
                                          else if (item.Subscribe == 0)
                                               {
-                                                  @Ajax.ActionLink("Відмінити", "DeleteSubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})
+                                                  @Ajax.ActionLink(Html.Resource("Layout, cancel"), "DeleteSubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})
                                               }
                                 }
                             </div>
@@ -62,5 +74,5 @@
 }
 else
 {
-    <div class="data_null">Курсів поки що не створено. Очікуйте.</div>
+    <div class="data_null">@Html.Resource("Layout, data_null_courses")</div>
 }

@@ -210,12 +210,12 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid CourseId { get; set; }
 
-            [Display(Name = "Сo_Title", ResourceType = typeof(Resources.Metadata))]
+            [Display(Name = "Co_Title", ResourceType = typeof(Resources.Metadata))]
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_Required")]
             [StringLength(64, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_StringLength")]
             public string Title { get; set; }
 
-            [Display(Name = "Сo_Desc", ResourceType = typeof(Resources.Metadata))]
+            [Display(Name = "Co_Desc", ResourceType = typeof(Resources.Metadata))]
             [StringLength(512, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Co_Desc_StringLength")]
             public string Description { get; set; }
 

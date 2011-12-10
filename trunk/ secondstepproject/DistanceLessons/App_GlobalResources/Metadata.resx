@@ -280,7 +280,7 @@
     <value>Логін:</value>
   </data>
   <data name="Сo_Subscrb" xml:space="preserve">
-    <value>Загальнодоступний:</value>
+    <value>Приватний:</value>
   </data>
   <data name="Mod_End" xml:space="preserve">
     <value>Дата завершення тестування:</value>
