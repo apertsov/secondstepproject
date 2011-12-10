@@ -1,14 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_CoursesList.cshtml" caret="186" fromTop="5" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_Courses.cshtml" caret="4431" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:EducationController.cs" caret="386" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Result/f:StudentResult.cshtml" caret="165" fromTop="4" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ResultController.cs" caret="9452" fromTop="20" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:Index.cshtml" caret="781" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:script/f:browser_selector.js" caret="1307" fromTop="8" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:CreateModule.cshtml" caret="964" fromTop="22" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.ui.datepicker.js" caret="4517" fromTop="1" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Index.cshtml" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Edit_PartialPage.cshtml" caret="0" fromTop="0" />
@@ -25,16 +17,22 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/f:Global.asax.cs" caret="1746" fromTop="11" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Extensions/f:ConventionalModelMetadataProvider.cs" caret="1638" fromTop="13" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Profile/f:_CreateInfo_PartialPage.cshtml" caret="976" fromTop="12" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="1111" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="1142" fromTop="20" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_GlobalResources/f:Metadata.en-us.designer.cs" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="16159" fromTop="21" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_GlobalResources/f:Metadata.Designer.cs" caret="457" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_GlobalResources/f:Metadata.ru-ru.designer.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:DistanceLessonsModel.Designer.cs" caret="31550" fromTop="4" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_GlobalResources/f:Metadata.Designer.cs" caret="319" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/f:_ViewStart.cshtml" caret="8" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:ControllerFactoryWrapper.cs" caret="1688" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:ActionInvokerWrapper.cs" caret="910" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="4427" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="1111" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:CreateCategory.cshtml" caret="1252" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:AdminController.cs" caret="3616" fromTop="23" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="8264" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:Activate.cshtml" caret="276" fromTop="9" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="2999" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="3888" fromTop="29" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_GlobalResources/f:Metadata.Designer.cs" caret="359" fromTop="8" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="4861" fromTop="20" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="5304" fromTop="24" />
@@ -44,7 +42,6 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="7833" fromTop="23" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="10478" fromTop="20" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="7692" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="8598" fromTop="20" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="9506" fromTop="18" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="9792" fromTop="27" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="9228" fromTop="8" />
@@ -63,12 +60,15 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="15582" fromTop="15" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="16419" fromTop="27" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_GlobalResources/f:Metadata.Designer.cs" caret="451" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:Activate.cshtml" caret="44" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="8304" fromTop="21" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:Activate.cshtml" caret="262" fromTop="8" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
     <ItemStatistics item="RazorTransitionCompletionContext">
       <Item value="Ajax" priority="47" />
-      <Item value="Html" priority="405" />
+      <Item value="Html" priority="421" />
       <Item value="Model" priority="19" />
       <Item value="if" priority="93" />
       <Item value="using" priority="9" />
@@ -102,7 +102,7 @@
       <Item value="false" priority="191" />
       <Item value="id" priority="117" />
       <Item value="Model" priority="1179" />
-      <Item value="Html" priority="1766" />
+      <Item value="Html" priority="1858" />
       <Item value="RouteValueDictionary" priority="28" />
       <Item value="null" priority="1279" />
       <Item value="DetailsNew" priority="32" />
@@ -510,7 +510,7 @@
       <Item value="ActionLink`0" priority="242" />
       <Item value="Text`0" priority="134" />
       <Item value="TextHtml`0" priority="134" />
-      <Item value="Resource`0" priority="958" />
+      <Item value="Resource`0" priority="1039" />
       <Item value="TextAreaFor`2" priority="53" />
       <Item value="ViewData" priority="26" />
       <Item value="RenderPartial`0" priority="26" />
