@@ -117,7 +117,214 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Information_About" xml:space="preserve">
-    <value>About myself:</value>
+  <data name="A_Answer" xml:space="preserve">
+    <value>Answer:</value>
+  </data>
+  <data name="A_Answer_Required" xml:space="preserve">
+    <value>Choose answer</value>
+  </data>
+  <data name="A_Answer_StringLength" xml:space="preserve">
+    <value>The answer must contain less than 128 characters</value>
+  </data>
+  <data name="A_Valid" xml:space="preserve">
+    <value>Correctly:</value>
+  </data>
+  <data name="Contact_ICQ" xml:space="preserve">
+    <value>ICQ:</value>
+  </data>
+  <data name="Contact_ICQ_StringLength" xml:space="preserve">
+    <value>ICQ number should comprise less than 15 characters</value>
+  </data>
+  <data name="Contact_Other" xml:space="preserve">
+    <value>Other contact information:</value>
+  </data>
+  <data name="Contact_Other_StringLength" xml:space="preserve">
+    <value>Other contact details are limited to 120 characters</value>
+  </data>
+  <data name="Contact_Skype" xml:space="preserve">
+    <value>Skype:</value>
+  </data>
+  <data name="Contact_Skype_StringLength" xml:space="preserve">
+    <value>Skype must comprise less than 15 characters</value>
+  </data>
+  <data name="Contact_Tel" xml:space="preserve">
+    <value>Telephone:</value>
+  </data>
+  <data name="Contact_Tel_StringLength" xml:space="preserve">
+    <value>Telephone must comprise less than 15 characters</value>
+  </data>
+  <data name="Co_Desc" xml:space="preserve">
+    <value>Briefly about the course:</value>
+  </data>
+  <data name="Co_Desc_StringLength" xml:space="preserve">
+    <value>A summary of the course is limited to 512 characters</value>
+  </data>
+  <data name="Co_Title" xml:space="preserve">
+    <value>The Course:</value>
+  </data>
+  <data name="C_Title" xml:space="preserve">
+    <value>The Category:</value>
+  </data>
+  <data name="C_Title_Required" xml:space="preserve">
+    <value>Enter the name</value>
+  </data>
+  <data name="C_Title_StringLength" xml:space="preserve">
+    <value>The name is limited to 64 characters</value>
+  </data>
+  <data name="Information_About1" xml:space="preserve">
+    <value>About Me:</value>
+  </data>
+  <data name="Information_About_StringLength" xml:space="preserve">
+    <value>Additional information field is limited to 256 characters</value>
+  </data>
+  <data name="Information_DateOfBirth" xml:space="preserve">
+    <value>Date of Birth:</value>
+  </data>
+  <data name="Information_FirstName" xml:space="preserve">
+    <value>First name:</value>
+  </data>
+  <data name="Information_FirstName_Required" xml:space="preserve">
+    <value>Enter your name</value>
+  </data>
+  <data name="Information_FirstName_StringLength" xml:space="preserve">
+    <value>The name must consist of at least 50 characters</value>
+  </data>
+  <data name="Information_LastName" xml:space="preserve">
+    <value>Last name:</value>
+  </data>
+  <data name="Information_LastName_Required" xml:space="preserve">
+    <value>Enter your surname</value>
+  </data>
+  <data name="Information_LastName_StringLength" xml:space="preserve">
+    <value>Surname should be less than 50 characters</value>
+  </data>
+  <data name="Information_MidName" xml:space="preserve">
+    <value>Middle name:</value>
+  </data>
+  <data name="Information_MidName_Required" xml:space="preserve">
+    <value>Enter your mid-name:</value>
+  </data>
+  <data name="Information_MidName_StringLength" xml:space="preserve">
+    <value>Middle name should consist of less than 50 characters</value>
+  </data>
+  <data name="L_Accepted" xml:space="preserve">
+    <value>Approved by:</value>
+  </data>
+  <data name="L_Author" xml:space="preserve">
+    <value>Author:</value>
+  </data>
+  <data name="L_Desc" xml:space="preserve">
+    <value>Description of the lesson:</value>
+  </data>
+  <data name="L_Desc_StringLength" xml:space="preserve">
+    <value>Description of the lecture is limited to 50 characters</value>
+  </data>
+  <data name="L_Title" xml:space="preserve">
+    <value>The Lesson:</value>
+  </data>
+  <data name="Mod_End" xml:space="preserve">
+    <value>Date of completion of testing</value>
+  </data>
+  <data name="Mod_End_Required" xml:space="preserve">
+    <value>Enter the date of completion</value>
+  </data>
+  <data name="Mod_MaxPoints" xml:space="preserve">
+    <value>The number of points per module:</value>
+  </data>
+  <data name="Mod_MaxPoints_Required" xml:space="preserve">
+    <value>Enter the number of points</value>
+  </data>
+  <data name="Mod_QCount" xml:space="preserve">
+    <value>Number of questions:</value>
+  </data>
+  <data name="Mod_Start" xml:space="preserve">
+    <value>Date of start of testing:</value>
+  </data>
+  <data name="Mod_Start_Required" xml:space="preserve">
+    <value>Enter the start date of testing</value>
+  </data>
+  <data name="Mod_Time" xml:space="preserve">
+    <value>Time for delivery of the module (min.):</value>
+  </data>
+  <data name="Mod_Time_Required" xml:space="preserve">
+    <value>You must specify a time for delivery of the module</value>
+  </data>
+  <data name="Mod_Title" xml:space="preserve">
+    <value>Module:</value>
+  </data>
+  <data name="Mod_Title_StringLength" xml:space="preserve">
+    <value>The name of the module is limited to 256 characters</value>
+  </data>
+  <data name="M_Mes" xml:space="preserve">
+    <value>Message:</value>
+  </data>
+  <data name="M_Mes_Required" xml:space="preserve">
+    <value>Write your message</value>
+  </data>
+  <data name="M_Title" xml:space="preserve">
+    <value>Subject:</value>
+  </data>
+  <data name="M_Title_Required" xml:space="preserve">
+    <value>You forgot to enter a subject for</value>
+  </data>
+  <data name="M_ToUser" xml:space="preserve">
+    <value>To:</value>
+  </data>
+  <data name="N_Publication" xml:space="preserve">
+    <value>Date of publication:</value>
+  </data>
+  <data name="N_Text" xml:space="preserve">
+    <value>Text:</value>
+  </data>
+  <data name="N_Text_Required" xml:space="preserve">
+    <value>Enter the news</value>
+  </data>
+  <data name="N_Title" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="N_Title_Required" xml:space="preserve">
+    <value>Enter a title for news</value>
+  </data>
+  <data name="R_Role" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="T_Question" xml:space="preserve">
+    <value>Question:</value>
+  </data>
+  <data name="T_Question_Required" xml:space="preserve">
+    <value>Enter your question</value>
+  </data>
+  <data name="T_Question_StringLength" xml:space="preserve">
+    <value>The issue is limited to 256 characters</value>
+  </data>
+  <data name="UMod_End" xml:space="preserve">
+    <value>End Time of testing</value>
+  </data>
+  <data name="UMod_Passed" xml:space="preserve">
+    <value>Results of the date of the module:</value>
+  </data>
+  <data name="UMod_Start" xml:space="preserve">
+    <value>Start time of testing</value>
+  </data>
+  <data name="U_Actived" xml:space="preserve">
+    <value>Actived:</value>
+  </data>
+  <data name="U_Banned" xml:space="preserve">
+    <value>Locked:</value>
+  </data>
+  <data name="U_CreatedData" xml:space="preserve">
+    <value>Date of registration:</value>
+  </data>
+  <data name="U_Email" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="U_LastLogin" xml:space="preserve">
+    <value>Last login:</value>
+  </data>
+  <data name="U_Login" xml:space="preserve">
+    <value>Username:</value>
+  </data>
+  <data name="Сo_Subscrb" xml:space="preserve">
+    <value>Public</value>
   </data>
 </root>
