@@ -1,101 +1,330 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
-
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
-
-		Example:
-
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
-
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
-
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
-
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
-
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
-
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
-
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A_Answer" xml:space="preserve">
+    <value>Ответ:</value>
+  </data>
+  <data name="A_Answer_Required" xml:space="preserve">
+    <value>Выберите ответ</value>
+  </data>
+  <data name="A_Answer_StringLength" xml:space="preserve">
+    <value>Ответ должен состоять менее чем с 128 символов</value>
+  </data>
+  <data name="A_Valid" xml:space="preserve">
+    <value>Правильно:</value>
+  </data>
+  <data name="Contact_ICQ" xml:space="preserve">
+    <value>ICQ:</value>
+  </data>
+  <data name="Contact_ICQ_StringLength" xml:space="preserve">
+    <value>Номер ICQ должен состоять менее чем с 15 символов</value>
+  </data>
+  <data name="Contact_Other" xml:space="preserve">
+    <value>Другие контактные данные:</value>
+  </data>
+  <data name="Contact_Other_StringLength" xml:space="preserve">
+    <value>Другие контактные данные ограничены 120 символами</value>
+  </data>
+  <data name="Contact_Skype" xml:space="preserve">
+    <value>Skype:</value>
+  </data>
+  <data name="Contact_Skype_StringLength" xml:space="preserve">
+    <value>Skype должен состоять менее чем из 15 символов</value>
+  </data>
+  <data name="Contact_Tel" xml:space="preserve">
+    <value>Телефон:</value>
+  </data>
+  <data name="Contact_Tel_StringLength" xml:space="preserve">
+    <value>Телефон должен состоять менее чем из 15 символов</value>
+  </data>
+  <data name="Co_Desc" xml:space="preserve">
+    <value>В кратце о курсе:</value>
+  </data>
+  <data name="Co_Desc_StringLength" xml:space="preserve">
+    <value>Краткая информация о курсе ограничена 512 символами</value>
+  </data>
+  <data name="Co_Title" xml:space="preserve">
+    <value>Название курса:</value>
+  </data>
+  <data name="C_Title" xml:space="preserve">
+    <value>Название категории:</value>
+  </data>
+  <data name="C_Title_Required" xml:space="preserve">
+    <value>Введите название</value>
+  </data>
+  <data name="C_Title_StringLength" xml:space="preserve">
+    <value>Название ограничено 64 символами</value>
+  </data>
+  <data name="Information_About" xml:space="preserve">
+    <value>О себе:</value>
+  </data>
+  <data name="Information_About_StringLength" xml:space="preserve">
+    <value>Поле дополнительной информации ограничено 256 символами</value>
+  </data>
+  <data name="Information_DateOfBirth" xml:space="preserve">
+    <value>Дата рождения:</value>
+  </data>
+  <data name="Information_FirstName" xml:space="preserve">
+    <value>Имя:</value>
+  </data>
+  <data name="Information_FirstName_Required" xml:space="preserve">
+    <value>Введите имя</value>
+  </data>
+  <data name="Information_FirstName_StringLength" xml:space="preserve">
+    <value>Имя должно состоять менее чем с 50 символов</value>
+  </data>
+  <data name="Information_LastName" xml:space="preserve">
+    <value>Фамилия:</value>
+  </data>
+  <data name="Information_LastName_Required" xml:space="preserve">
+    <value>Введите фамилию:</value>
+  </data>
+  <data name="Information_LastName_StringLength" xml:space="preserve">
+    <value>Фамилия должна состоять менее чем с 50 символов</value>
+  </data>
+  <data name="Information_MidName" xml:space="preserve">
+    <value>Отчество:</value>
+  </data>
+  <data name="Information_MidName_Required" xml:space="preserve">
+    <value>Введите отчество:</value>
+  </data>
+  <data name="Information_MidName_StringLength" xml:space="preserve">
+    <value>Отчество должно состоять менее чем с 50 символов</value>
+  </data>
+  <data name="L_Accepted" xml:space="preserve">
+    <value>Утвержденно:</value>
+  </data>
+  <data name="L_Author" xml:space="preserve">
+    <value>Автор:</value>
+  </data>
+  <data name="L_Desc" xml:space="preserve">
+    <value>Описание лекции:</value>
+  </data>
+  <data name="L_Desc_StringLength" xml:space="preserve">
+    <value>Описание лекции ограничено 50 символами</value>
+  </data>
+  <data name="L_Title" xml:space="preserve">
+    <value>Название лекции</value>
+  </data>
+  <data name="Mod_End" xml:space="preserve">
+    <value>Дата завершения тестирования</value>
+  </data>
+  <data name="Mod_End_Required" xml:space="preserve">
+    <value>Введите дату завершения</value>
+  </data>
+  <data name="Mod_MaxPoints" xml:space="preserve">
+    <value>Количество баллов за модуль:</value>
+  </data>
+  <data name="Mod_MaxPoints_Required" xml:space="preserve">
+    <value>Введите количество баллов</value>
+  </data>
+  <data name="Mod_QCount" xml:space="preserve">
+    <value>Количество вопросов:</value>
+  </data>
+  <data name="Mod_Start" xml:space="preserve">
+    <value>Дата начала тестирования:</value>
+  </data>
+  <data name="Mod_Start_Required" xml:space="preserve">
+    <value>Введите дату начала тестирования</value>
+  </data>
+  <data name="Mod_Time" xml:space="preserve">
+    <value>Время на сдачу модуля (мин.):</value>
+  </data>
+  <data name="Mod_Time_Required" xml:space="preserve">
+    <value>Нужно указать время на сдачу модуля</value>
+  </data>
+  <data name="Mod_Title" xml:space="preserve">
+    <value>Модуль:</value>
+  </data>
+  <data name="Mod_Title_StringLength" xml:space="preserve">
+    <value>Название модуля ограничено 256 символами</value>
+  </data>
+  <data name="M_Mes" xml:space="preserve">
+    <value>Сообщение:</value>
+  </data>
+  <data name="M_Mes_Required" xml:space="preserve">
+    <value>Введите сообщение</value>
+  </data>
+  <data name="M_Title" xml:space="preserve">
+    <value>Тема:</value>
+  </data>
+  <data name="M_Title_Required" xml:space="preserve">
+    <value>Вы забыли ввести тему сообщения</value>
+  </data>
+  <data name="M_ToUser" xml:space="preserve">
+    <value>Кому:</value>
+  </data>
+  <data name="N_Publication" xml:space="preserve">
+    <value>Дата публикации:</value>
+  </data>
+  <data name="N_Text" xml:space="preserve">
+    <value>Текст новости:</value>
+  </data>
+  <data name="N_Text_Required" xml:space="preserve">
+    <value>Введите текст</value>
+  </data>
+  <data name="N_Title" xml:space="preserve">
+    <value>Заголовок:</value>
+  </data>
+  <data name="N_Title_Required" xml:space="preserve">
+    <value>Введите заголовок новости</value>
+  </data>
+  <data name="R_Role" xml:space="preserve">
+    <value>Статус:</value>
+  </data>
+  <data name="T_Question" xml:space="preserve">
+    <value>Вопрос:</value>
+  </data>
+  <data name="T_Question_Required" xml:space="preserve">
+    <value>Введите вопрос</value>
+  </data>
+  <data name="T_Question_StringLength" xml:space="preserve">
+    <value>Вопрос ограничен 256 символами</value>
+  </data>
+  <data name="UMod_End" xml:space="preserve">
+    <value>Время окончания тестирования</value>
+  </data>
+  <data name="UMod_Passed" xml:space="preserve">
+    <value>Результаты сдачи модуля:</value>
+  </data>
+  <data name="UMod_Start" xml:space="preserve">
+    <value>Время начала тестирования</value>
+  </data>
+  <data name="U_Actived" xml:space="preserve">
+    <value>Активирован:</value>
+  </data>
+  <data name="U_Banned" xml:space="preserve">
+    <value>Заблокирован:</value>
+  </data>
+  <data name="U_CreatedData" xml:space="preserve">
+    <value>Дата регистрации:</value>
+  </data>
+  <data name="U_Email" xml:space="preserve">
+    <value>Электронная почта:</value>
+  </data>
+  <data name="U_LastLogin" xml:space="preserve">
+    <value>Последний вход:</value>
+  </data>
+  <data name="U_Login" xml:space="preserve">
+    <value>Логин:</value>
+  </data>
+  <data name="Сo_Subscrb" xml:space="preserve">
+    <value>Общедоступный</value>
+  </data>
 </root>
