@@ -682,7 +682,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Загальнодоступний:.
+        ///   Looks up a localized string similar to Приватний:.
         /// </summary>
         public static string Сo_Subscrb {
             get {

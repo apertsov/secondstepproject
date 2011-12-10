@@ -180,4 +180,92 @@
   <data name="_NewMessageBox_NewMesseges" xml:space="preserve">
     <value>Новых сообщений: </value>
   </data>
+  <data name="all_courses" xml:space="preserve">
+    <value>Все курсы</value>
+    <comment>1</comment>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Отменить</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_category" xml:space="preserve">
+    <value>Категорий пока что не существует.</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_courses" xml:space="preserve">
+    <value>Предметов пока еще не создано. Ожидайте.</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_subscribs" xml:space="preserve">
+    <value>Нет подписок на предметы.</value>
+    <comment>1</comment>
+  </data>
+  <data name="menu_education" xml:space="preserve">
+    <value>Меню обучения</value>
+    <comment>1</comment>
+  </data>
+  <data name="module" xml:space="preserve">
+    <value>Модуль:</value>
+    <comment>1</comment>
+  </data>
+  <data name="private_courses" xml:space="preserve">
+    <value>Приватные</value>
+    <comment>1</comment>
+  </data>
+  <data name="public_courses" xml:space="preserve">
+    <value>Общедоступные</value>
+    <comment>1</comment>
+  </data>
+  <data name="start_test" xml:space="preserve">
+    <value>Начать тестирование</value>
+    <comment>1</comment>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Статус:</value>
+    <comment>1</comment>
+  </data>
+  <data name="stat_private" xml:space="preserve">
+    <value>Приватный</value>
+    <comment>1</comment>
+  </data>
+  <data name="stat_private_alert_subscrb" xml:space="preserve">
+    <value>Данный курс является приватным. Ожидайте подтверждения на вашу подписку от преподавателя и оповещения в личных сообщениях.</value>
+    <comment>1</comment>
+  </data>
+  <data name="stat_public" xml:space="preserve">
+    <value>Общедоступный</value>
+    <comment>1</comment>
+  </data>
+  <data name="stat_public_alert_subscrb" xml:space="preserve">
+    <value>Вы подписались на курс!\n\rО сроках сдачи модулей Вы будете оповещены по системе личных сообщений.\n\r\n\rЧто бы отменить подписку нажмите "Отменить"</value>
+    <comment>1</comment>
+  </data>
+  <data name="subscribe" xml:space="preserve">
+    <value>Подписаться</value>
+    <comment>1</comment>
+  </data>
+  <data name="teacher" xml:space="preserve">
+    <value>Преподаватель:</value>
+    <comment>1</comment>
+  </data>
+  <data name="wait" xml:space="preserve">
+    <value>Ожидаем подтверждения</value>
+    <comment>1</comment>
+  </data>
+  <data name="categories" xml:space="preserve">
+    <value>Категории</value>
+    <comment>1</comment>
+  </data>
+  <data name="courses" xml:space="preserve">
+    <value>Предметы</value>
+    <comment>1</comment>
+  </data>
+  <data name="my_record_book" xml:space="preserve">
+    <value>Моя зачетная книжка</value>
+    <comment>1</comment>
+  </data>
+  <data name="my_subscriptions" xml:space="preserve">
+    <value>Мои подписки</value>
+    <comment>1</comment>
+  </data>
 </root>

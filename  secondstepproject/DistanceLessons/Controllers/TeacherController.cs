@@ -252,7 +252,6 @@ namespace DistanceLessons.Controllers
             string completeURL = "../Uploads/" + lect.WebPath;
 
             return Redirect(completeURL);
-
         }
         public ActionResult Upload()
         {

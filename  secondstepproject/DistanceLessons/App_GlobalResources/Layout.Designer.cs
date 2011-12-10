@@ -61,6 +61,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Всі курси.
+        /// </summary>
+        internal static string all_courses {
+            get {
+                return ResourceManager.GetString("all_courses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to В початок сторінки.
         /// </summary>
         internal static string App_Footer_TopPage {
@@ -88,11 +97,65 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Відмінити.
+        /// </summary>
+        internal static string cancel {
+            get {
+                return ResourceManager.GetString("cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Категорії.
+        /// </summary>
+        internal static string categories {
+            get {
+                return ResourceManager.GetString("categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Курси.
+        /// </summary>
+        internal static string courses {
+            get {
+                return ResourceManager.GetString("courses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Створити.
         /// </summary>
         internal static string create {
             get {
                 return ResourceManager.GetString("create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Поки що немає категорій..
+        /// </summary>
+        internal static string data_null_category {
+            get {
+                return ResourceManager.GetString("data_null_category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Курсів поки що не створено. Очікуйте..
+        /// </summary>
+        internal static string data_null_courses {
+            get {
+                return ResourceManager.GetString("data_null_courses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Немає підписок на курси..
+        /// </summary>
+        internal static string data_null_subscribs {
+            get {
+                return ResourceManager.GetString("data_null_subscribs", resourceCulture);
             }
         }
         
@@ -111,6 +174,60 @@ namespace Resources {
         internal static string edit {
             get {
                 return ResourceManager.GetString("edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Меню навчання.
+        /// </summary>
+        internal static string menu_education {
+            get {
+                return ResourceManager.GetString("menu_education", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Модуль:.
+        /// </summary>
+        internal static string module {
+            get {
+                return ResourceManager.GetString("module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Моя залікова книжка.
+        /// </summary>
+        internal static string my_record_book {
+            get {
+                return ResourceManager.GetString("my_record_book", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мої підписки.
+        /// </summary>
+        internal static string my_subscriptions {
+            get {
+                return ResourceManager.GetString("my_subscriptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Приватні.
+        /// </summary>
+        internal static string private_courses {
+            get {
+                return ResourceManager.GetString("private_courses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Загальнодоступні.
+        /// </summary>
+        internal static string public_courses {
+            get {
+                return ResourceManager.GetString("public_courses", resourceCulture);
             }
         }
         
@@ -147,6 +264,87 @@ namespace Resources {
         internal static string Slider_ToRegister {
             get {
                 return ResourceManager.GetString("Slider_ToRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Розпочати тестування.
+        /// </summary>
+        internal static string start_test {
+            get {
+                return ResourceManager.GetString("start_test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Статус:.
+        /// </summary>
+        internal static string status {
+            get {
+                return ResourceManager.GetString("status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Приватний.
+        /// </summary>
+        internal static string stat_private {
+            get {
+                return ResourceManager.GetString("stat_private", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Цей курс є приватним. Очікуйте затвердження підписки від викладача та оповіщення в особистих повідомленнях..
+        /// </summary>
+        internal static string stat_private_alert_subscrb {
+            get {
+                return ResourceManager.GetString("stat_private_alert_subscrb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Загальнодоступний.
+        /// </summary>
+        internal static string stat_public {
+            get {
+                return ResourceManager.GetString("stat_public", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ви підписались на курс!\n\rПро терміни здачі модуля Ви будете оповіщені по системі особистих повідомлень.\n\r\n\rЩоб відмінити підписку натисніть &quot;Відмінити&quot;.
+        /// </summary>
+        internal static string stat_public_alert_subscrb {
+            get {
+                return ResourceManager.GetString("stat_public_alert_subscrb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Підписатись.
+        /// </summary>
+        internal static string subscribe {
+            get {
+                return ResourceManager.GetString("subscribe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Викладач:.
+        /// </summary>
+        internal static string teacher {
+            get {
+                return ResourceManager.GetString("teacher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Очікуємо підтвердження.
+        /// </summary>
+        internal static string wait {
+            get {
+                return ResourceManager.GetString("wait", resourceCulture);
             }
         }
         

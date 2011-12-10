@@ -14,9 +14,9 @@
             });
         </script>
         <ul class="topnav" class="box_shdw_right">
-            <li>@Ajax.ActionLink("Мої підписки", "UserSubscribs", new AjaxOptions() { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace })</li>
-            <li>@Ajax.ActionLink("Залікова книжка", "StudentResult", "Result", new AjaxOptions() { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace })</li>
-            <li>@Ajax.ActionLink("Категорії", "category", new AjaxOptions() { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace })</li>
+            <li>@Ajax.ActionLink(Html.Resource("Layout, my_subscriptions"), "UserSubscribs", new AjaxOptions() { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace })</li>
+            <li>@Ajax.ActionLink(Html.Resource("Layout, my_record_book"), "StudentResult", "Result", new AjaxOptions() { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace })</li>
+            <li>@Ajax.ActionLink(Html.Resource("Layout, categories"), "category", new AjaxOptions() { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace })</li>
         </ul>
         <div id="choose_ajax" class="box_shdw_bottom">
             @{ Html.RenderPartial("_Category", Model, Html.ViewData); }
