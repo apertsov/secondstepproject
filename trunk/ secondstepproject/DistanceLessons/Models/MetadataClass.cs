@@ -15,28 +15,28 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid InformationId { get; set; }
 
-            [DisplayName("Прізвище:")]
-            [Required(ErrorMessage = "Введіть прізвище")]
-            [StringLength(50, ErrorMessage = "Прізвище повинно мати менше 50 символів")]
+            [Display(Name = "Information_LastName", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Information_LastName_Required")]
+            [StringLength(50, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Information_LastName_StringLength")]
             public string LastName { get; set; }
 
-            [DisplayName("Ім'я:")]
-            [Required(ErrorMessage = "Введіть ім'я")]
-            [StringLength(50, ErrorMessage = "Ім'я повинно мати менше 50 символів")]
+            [Display(Name = "Information_FirstName", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Information_FirstName_Required")]
+            [StringLength(50, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Information_FirstName_StringLength")]
             public string FirstName { get; set; }
 
-            [DisplayName("По-батькові:")]
-            [Required(ErrorMessage = "Введіть по-батькові")]
-            [StringLength(50, ErrorMessage = "Поле по-батькові повинно мати менше 50 символів")]
+            [Display(Name = "Information_MidName", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Information_MidName_Required")]
+            [StringLength(50, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Information_MidName_StringLength")]
             public string MidName { get; set; }
 
             [ScaffoldColumn(false)]
-            [DisplayName("Дата народження:")]
+            [Display(Name = "Information_DateOfBirth", ResourceType = typeof(Resources.Metadata))]
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
             public DateTime DateOfBirth { get; set; }
 
-            [DisplayName("Про себе:")]
-            [StringLength(256, ErrorMessage = "Поле додаткової інформації обмежено 256 символами")]
+            [Display(Name = "Information_About", ResourceType = typeof(Resources.Metadata))]
+            [StringLength(256, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Information_About_StringLength")]
             public string About { get; set; }
 
             [ScaffoldColumn(false)]
@@ -55,25 +55,24 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid ContactId { get; set; }
 
-            [DisplayName("Скайп:")]
-            [StringLength(50, ErrorMessage = "Скайп повинен мати менше 50 символів")]
+            [Display(Name = "Contact_Skype", ResourceType = typeof(Resources.Metadata))]
+            [StringLength(50, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Contact_Skype_StringLength")]
             public string Skype { get; set; }
 
-            [DisplayName("ICQ:")]
-            [StringLength(20, ErrorMessage = "Номер аськи повинен мати менше 20 символів")]
+            [Display(Name = "Contact_ICQ", ResourceType = typeof(Resources.Metadata))]
+            [StringLength(15, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Contact_ICQ_StringLength")]
             public string ICQ_QIP { get; set; }
 
-            [DisplayName("Контактний телефон:")]
-            [StringLength(50, ErrorMessage = "Телефон повинен мати менше 50 символів")]
+            [Display(Name = "Contact_Tel", ResourceType = typeof(Resources.Metadata))]
+            [StringLength(15, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Contact_Tel_StringLength")]
             public string Telephone { get; set; }
 
-            [DisplayName("Інші контактні дані:")]
-            [StringLength(128, ErrorMessage = "Інші контактні дані обмежені 128 символами")]
+            [Display(Name = "Contact_Other", ResourceType = typeof(Resources.Metadata))]
+            [StringLength(120, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Contact_Other_StringLength")]
             public string Other { get; set; }
 
             [ScaffoldColumn(false)]
             public Guid UserId { get; set; }
-
         }
     }
 
@@ -86,24 +85,23 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid UserId { get; set; }
 
-  
-            [Display(Name = "Логін")]
+            [Display(Name = "U_Login", ResourceType = typeof(Resources.Metadata))]
             public string Login { get; set; }
 
-            [DisplayName("Електронна скринька")]
-            [DataType("Email",ErrorMessage="Текст не є електронною скринькою")]
+            [Display(Name = "U_Email", ResourceType = typeof(Resources.Metadata))]
+            [DataType("Email", ErrorMessage="Текст не є електронною скринькою")]
             public string Email { get; set; }
 
-            [DisplayName("Дата реєстрації")]
+            [Display(Name = "U_CreatedDate", ResourceType = typeof(Resources.Metadata))]
             public DateTime CreatedDate { get; set; }
 
-            [DisplayName("Час останнього входження на сторінку")]
+            [Display(Name = "U_LastLogin", ResourceType = typeof(Resources.Metadata))]
             public string LastLoginDate { get; set; }
 
-            [DisplayName("Чи активувався")]
-             public bool IsActived { get; set; }
+            [Display(Name = "U_Actived", ResourceType = typeof(Resources.Metadata))]
+            public bool IsActived { get; set; }
 
-            [DisplayName("Чи заблокований")]
+            [Display(Name = "U_Banned", ResourceType = typeof(Resources.Metadata))]
             public bool IsLockedOut { get; set; }
 
         }
@@ -117,7 +115,7 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid RoleId { get; set; }
 
-            [DisplayName("Роль")]
+            [Display(Name = "R_Role", ResourceType = typeof(Resources.Metadata))]
             public string Name { get; set; }
         }
     }
@@ -130,9 +128,9 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid TestId { get; set; }
 
-            [DisplayName("Запитання")]
-            [Required(ErrorMessage = "Заповніть поле запитання.")]
-            [StringLength(256, ErrorMessage = "Запитання обмежене 256 символами")]
+            [Display(Name = "T_Question", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "T_Question_Required")]
+            [StringLength(256, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "T_Question_StringLength")]
             public string Question { get; set; }
 
             [ScaffoldColumn(false)]
@@ -149,12 +147,12 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid AnswerId { get; set; }
 
-            [Required(ErrorMessage = "Заповніть поле відповіді.")]
-            [DisplayName("Текст відповіді")]
-            [StringLength(128, ErrorMessage = "Відповідь обмежена 128 символами")]
+            [Display(Name = "A_Answer", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "A_Answer_Required")]
+            [StringLength(128, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "A_Answer_StringLength")]
             public string Answer1 { get; set; }
 
-            [DisplayName("Чи правильна відповідь?")]
+            [Display(Name = "A_Valid", ResourceType = typeof(Resources.Metadata))]
             public bool Valid { get; set; }
 
             [ScaffoldColumn(false)]
@@ -171,15 +169,17 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid NewId { get; set; }
 
-            [DisplayName("Заголовок")]
+            [Display(Name = "N_Title", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "N_Title_Required")]
             public string Title { get; set; }
 
             [AllowHtml]
-            [DisplayName("Введіть текст:")]
+            [Display(Name = "N_Text", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "N_Text_Required")]
             public string Text { get; set; }
 
             [ScaffoldColumn(false)]
-            [DisplayName("Дата:")]
+            [Display(Name = "N_Publication", ResourceType = typeof(Resources.Metadata))]
             public DateTime Publication { get; set; }
 
             [ScaffoldColumn(false)]
@@ -195,9 +195,9 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid CategoryId { get; set; }
 
-            [Required(ErrorMessage = "Заповніть поле категорії.")]
-            [DisplayName("Категорія")]
-            [StringLength(64, ErrorMessage = "Назва категорії обмежена 64 символами")]
+            [Display(Name = "С_Title", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_Required")]
+            [StringLength(64, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_StringLength")]
             public string Category1 { get; set; }
         }
     }
@@ -210,13 +210,13 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid CourseId { get; set; }
 
-            [Required(ErrorMessage = "Заповніть поле назви курсу.")]
-            [DisplayName("Назва курсу")]
-            [StringLength(64, ErrorMessage = "Назва курсу обмежена 64 символами")]
+            [Display(Name = "Сo_Title", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_Required")]
+            [StringLength(64, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_StringLength")]
             public string Title { get; set; }
 
-            [DisplayName("Опис курсу")]
-            [StringLength(512, ErrorMessage = "Опис курсу обмежений 512 символами")]
+            [Display(Name = "Сo_Desc", ResourceType = typeof(Resources.Metadata))]
+            [StringLength(512, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Co_Desc_StringLength")]
             public string Description { get; set; }
 
             [ScaffoldColumn(false)]
@@ -225,7 +225,7 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid UserId { get; set; }
 
-            [DisplayName("Потрібна підписка")]
+            [Display(Name = "Сo_Subscrb", ResourceType = typeof(Resources.Metadata))]
             public bool IsSubscribing { get; set; }
         }
     }
@@ -238,28 +238,28 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid LessonId { get; set; }
 
-            [Required(ErrorMessage = "Заповніть поле назва лекції.")]
-            [DisplayName("Назва лекції")]
-            [StringLength(64, ErrorMessage = "Назва лекції обмежена 64 символами")]
+            [Display(Name = "L_Title", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_Required")]
+            [StringLength(64, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_StringLength")]
             public string Title { get; set; }
 
             [ScaffoldColumn(false)]
-            [DisplayName("Час публікації")]
+            [Display(Name = "N_Publication", ResourceType = typeof(Resources.Metadata))]
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy HH:mm}")]
             public DateTime Publication { get; set; }
 
             [ScaffoldColumn(false)]
             public Guid CourseId { get; set; }
 
-            [DisplayName("Опис лекції")]
-            [StringLength(64, ErrorMessage = "Опис лекції обмежений 64 символами")]
+            [Display(Name = "L_Desc", ResourceType = typeof(Resources.Metadata))]
+            [StringLength(50, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "L_Desc_StringLength")]
             public string Description { get; set; }
 
             [ScaffoldColumn(false)]
-            [DisplayName("Автор лекції")]
+            [Display(Name = "L_Author", ResourceType = typeof(Resources.Metadata))]
             public Guid UserId { get; set; }
 
-            [DisplayName("Затверджена викладачем курсу")]
+            [Display(Name = "L_Accepted", ResourceType = typeof(Resources.Metadata))]
             public bool IsAcceptMainTeacher { get; set; }
 
             [ScaffoldColumn(false)]
@@ -283,12 +283,12 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid UserId_To { get; set; }
 
-            [DisplayName("Тема:")]
-            [Required(ErrorMessage = "Ви забули про тему повідомлення")]
+            [Display(Name = "M_Title", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "M_Title_Required")]
             public string Title { get; set; }
 
-            [DisplayName("Повідомлення:")]
-            [Required(ErrorMessage = "Напишіть повідомлення")]
+            [Display(Name = "M_Mes", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "M_Mes_Required")]
             public string Message1 { get; set; }
         }
     }
@@ -301,40 +301,37 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid ModuleId { get; set; }
 
-            [Required(ErrorMessage = "Назва модуля відсутня")]
-            [DisplayName("Назва модуля")]
-            [StringLength(256, ErrorMessage = "Опис модуля обмежений 256 символами")]
+            [Display(Name = "Mod_Title", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_Required")]
+            [StringLength(256, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_Title_StringLength")]
             public string Title { get; set; }
 
-            [Required(ErrorMessage = "Час здачі тестів модуля відсутній")]
-            [DisplayName("Час здачі тестів модуля, хв")]
-            [Range(1, 300, ErrorMessage = "Час на проходження модульного контролю повинен бути в межах від 1 до 300 хвилин")]
-
+            [Display(Name = "Mod_Time", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_Time_Required")]
+            [Range(1, 300, ErrorMessage = "Час на проходження модульного контролю може коливатись в межах від 1 до 300 хвилин")]
             public int TimeForPassTest { get; set; }
 
             [ScaffoldColumn(false)]
-            [DisplayName("Дата початку тестування")]
-            [Required(ErrorMessage = "Дата початку тестування відсутня")]
+            [Display(Name = "Mod_Start", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_Start_Required")]
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
-                 public DateTime DateBeginTesting { get; set; }
+            public DateTime DateBeginTesting { get; set; }
 
             [ScaffoldColumn(false)]
-            [Required(ErrorMessage = "Дата закінчення тестування відсутня")]
-            [DisplayName("Дата закінчення тестування")]
+            [Display(Name = "Mod_End", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_End_Required")]
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
-            
             public DateTime DateEndTesting { get; set; }
 
             [ScaffoldColumn(false)]
             public Guid CourseId { get; set; }
 
-            [Required(ErrorMessage = "Максимальна кількість балів за модуль відсутній")]
-            [DisplayName("Кількість балів за модуль")]
+            [Display(Name = "Mod_MaxPoints", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_MaxPoints_Required")]
             [Range(0, 100, ErrorMessage = "Кількість балів за модуль не може бути меншою 0 і більшою 100")]
-
             public int MaxPoints { get; set; }
 
-            [DisplayName("Кількість запитань для здачі модуля")]
+            [Display(Name = "Mod_QCount", ResourceType = typeof(Resources.Metadata))]
             public int? CountQuestions { get; set; }
         }
     }
@@ -346,8 +343,8 @@ namespace DistanceLessons.Models
         {
             [ScaffoldColumn(false)]
             public Guid UserModuleId { get; set; }
-            
-            [DisplayName("Результат здачі модуля")]
+
+            [Display(Name = "UMod_Passed", ResourceType = typeof(Resources.Metadata))]
             public float? Passed { get; set; }
 
             [ScaffoldColumn(false)]
@@ -357,12 +354,12 @@ namespace DistanceLessons.Models
             public Guid UserId { get; set; }
 
             [ScaffoldColumn(false)]
-            [DisplayName("Час початку тестування")]
+            [Display(Name = "UMod_Start", ResourceType = typeof(Resources.Metadata))]
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
             public DateTime SpendTime { get; set; }
 
             [ScaffoldColumn(false)]
-            [DisplayName("Час закінчення тестування")]
+            [Display(Name = "UMod_End", ResourceType = typeof(Resources.Metadata))]
             [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd.MM.yyyy}")]
             public DateTime PassedTime { get; set; }
         }
@@ -372,8 +369,8 @@ namespace DistanceLessons.Models
     {
         public class SendMessageMetadata
         {
-            [DisplayName("Кому:")]
-            [ExistUserInDB(ErrorMessage = "Введений користувач не існує")]
+            [Display(Name = "M_ToUser", ResourceType = typeof(Resources.Metadata))]
+            [ExistUserInDB(ErrorMessage = "Такого користувача не існує")]
             public String Name { get; set; }
         }
     }
