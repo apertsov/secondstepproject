@@ -195,7 +195,7 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid CategoryId { get; set; }
 
-            [Display(Name = "С_Title", ResourceType = typeof(Resources.Metadata))]
+            [Display(Name = "C_Title", ResourceType = typeof(Resources.Metadata))]
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_Required")]
             [StringLength(64, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "C_Title_StringLength")]
             public string Category1 { get; set; }
