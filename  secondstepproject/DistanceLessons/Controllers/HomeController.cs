@@ -16,7 +16,7 @@ namespace DistanceLessons.Controllers
         public ActionResult Index()
         {
             Session["three_news"] = _db.GetNewsList_time(3, 0, 2);
-            Session["role"] = _db.GetUser(User.Identity.Name).Role.Name.ToLower();
+            if (User.Identity.IsAuthenticated) Session["role"] = _db.GetUser(User.Identity.Name).Role.Name.ToLower();
             return View();
         }
 

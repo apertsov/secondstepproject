@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using DistanceLessons.Models;
 using System.Timers;
+using ModelMetadataExtensions;
 
 namespace DistanceLessons
 {
@@ -45,6 +46,9 @@ namespace DistanceLessons
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            ModelMetadataProviders.Current = new ConventionalModelMetadataProvider(
+            requireConventionAttribute: false,
+            defaultResourceType: typeof(Resources.Metadata));
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
