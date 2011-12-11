@@ -28,11 +28,14 @@
                         <div style="margin: 10px;">
                             @foreach (var subitem1 in Model.Modules)
                             {
+                                if (subitem1.CourseId==subitem.CourseId)
+                                {
                                 <div style="margin-left: 25px; font-size: 0.8em;">@Html.Resource("Layout, module") @subitem1.Title @Ajax.ActionLink("[" + Html.Resource("Layout, start_test") + "]", "ModuleInfo", "Education", new { id = subitem1.ModuleId }, new AjaxOptions { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace }, null)</div>
+                                }
                                 <div style="margin: 10px;">
                                     @foreach (var subitem2 in Model.CoursesLessonsInModule)
                                     {
-                                        if((subitem2.ModuleId==subitem1.ModuleId)&&(subitem2.CourseId==subitem.CourseId))
+                                        if ((subitem2.ModuleId == subitem1.ModuleId) && (subitem2.CourseId == subitem.CourseId))
                                         {
                                             <div style="font-size: 0.8em;">@Html.ActionLink("[" + Html.Resource("Layout, read") + "]", "ShowFile", "Education", new { filename = subitem2.Text }, new { target = "_blank" }) @subitem2.Title</div>
                                         }

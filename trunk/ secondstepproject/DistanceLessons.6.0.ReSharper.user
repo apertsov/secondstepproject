@@ -29,8 +29,8 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="283" fromTop="9" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Lessons.cs" caret="2394" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:UserCourseModel.cs" caret="459" fromTop="12" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="1628" fromTop="31" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:EducationController.cs" caret="6469" fromTop="13" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="1711" fromTop="15" />
     </RecentFiles>
     <RecentEdits>
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Users.cs" caret="6502" fromTop="10" />
@@ -43,10 +43,10 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="13560" fromTop="15" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="14878" fromTop="27" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="2931" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3053" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3053" fromTop="31" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3053" fromTop="25" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3053" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3204" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3204" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3204" fromTop="25" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3204" fromTop="31" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="1207" fromTop="12" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="1207" fromTop="22" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:UserCourseModel.cs" caret="426" fromTop="14" />
@@ -58,11 +58,11 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Modules.cs" caret="4195" fromTop="20" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:EducationController.cs" caret="6233" fromTop="7" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="672" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="2170" fromTop="8" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3053" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="2572" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="1053" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3051" fromTop="28" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="2321" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3204" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="2723" fromTop="24" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="3202" fromTop="28" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:_UserSubscribs.cshtml" caret="1711" fromTop="15" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
@@ -263,7 +263,7 @@
       <Item value="UserId" priority="31" />
       <Item value="SubscribeUser" priority="63" />
       <Item value="NewMessages" priority="32" />
-      <Item value="subitem" priority="405" />
+      <Item value="subitem" priority="437" />
       <Item value="Cours" priority="3" />
       <Item value="Lessons" priority="3" />
       <Item value="sub" priority="123" />
@@ -747,7 +747,7 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:DistanceLessons.Models.UserCours">
       <Item value="Cours" priority="134" />
-      <Item value="CourseId" priority="161" />
+      <Item value="CourseId" priority="188" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DistanceLessons.Models.Cours">
       <Item value="Category" priority="26" />
@@ -771,6 +771,7 @@
     <ItemStatistics item="Qualified:DistanceLessons.Models.Module">
       <Item value="Title" priority="53" />
       <Item value="ModuleId" priority="53" />
+      <Item value="CourseId" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DistanceLessons.Models.UserRoles">
       <Item value="ToString`0" priority="26" />
