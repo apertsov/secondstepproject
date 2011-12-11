@@ -2,7 +2,7 @@
 @model IEnumerable<Cours>
 
 @{
-    ViewBag.Title = "";
+    ViewBag.Title = Html.Resource("search_the_subject");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -20,7 +20,7 @@
             <td class="editor-field">  @Html.DisplayNameFor(model => model.Description) </td>
         </tr>
         <tr>          
-            <td class="editor-field"> @Html.TextBox("title", null, new { @class = "editor" })</td>
+            <td class="editor-field"> @Html.TextBox("с_title", null, new { @class = "editor" })</td>
             <td class="editor-field"> @Html.TextBox("description", null, new { @class = "editor" })</td>
         </tr>
         <tr>

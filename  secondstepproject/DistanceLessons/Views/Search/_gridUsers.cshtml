@@ -1,76 +1,9 @@
 ﻿@using DistanceLessons.Models
 @model IEnumerable<User>
 
-
-<style type="text/css" >
-    .webgrid
-    {
-        width: 100%;
-        border: 0px;
-        border-collapse: collapse;
-    }
-
-    .webgrid a
-    {
-        color: #000;
-    }
-
-    .webgrid-header
-    {
-        padding: 6px 5px;
-        text-align: center;
-        background-color: #e8eef4;
-        border-bottom: 2px solid #3966A2;
-        height: 40px;
-    
-        border-top: 2px solid #D6E8FF;
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-footer
-    {
-        padding: 6px 5px;
-        text-align: center;
-        background-color: #e8eef4;
-        border-top: 2px solid #3966A2;
-        height: 30px;
-    
-        border-bottom: 2px solid #D6E8FF;
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-alternating-row
-    {
-        height: 30px;
-        background-color: #f2f2f2;
-        border-bottom: 1px solid #d2d2d2;
-    
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-row-style
-    {
-        height: 30px;
-        border-bottom: 1px solid #d2d2d2;
-    
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-selected-row
-    {
-        font-weight: bold;
-    }
-</style>
- 
-
-
 @{
 
-    var grid = new WebGrid(Model, rowsPerPage: 5, ajaxUpdateContainerId: "UsersGrid");
+    var grid = new WebGrid(Model, rowsPerPage: 10, ajaxUpdateContainerId: "UsersGrid",defaultSort: "Login");
     @grid.GetHtml(tableStyle: "webgrid",
                         alternatingRowStyle: "webgrid-alternating-row",
                         headerStyle: "webgrid-header",
@@ -78,8 +11,8 @@
                         selectedRowStyle: "webgrid-selected-row",
                         rowStyle: "webgrid-row-style",
                         columns: grid.Columns(
-                            grid.Column("Login", Html.Resource("Metadata, U_Login"), format: (item) => new HtmlString(Html.ActionLink((string) item.Login, "Info", "Profile", new {user = item.Login}, null).ToString())),
-                            grid.Column("Email", Html.Resource("Metadata, U_Email"), format: @<i>@item.Email</i>),
-                            grid.Column("Role.Name", Html.Resource("Metadata, R_Role"), format: @<i>@item.Role.Name</i>)
-                                                            ))
+                        grid.Column("Login", Html.Resource("Metadata, U_Login"), canSort: false, format: (item) => new HtmlString(Html.ActionLink((string)item.Login, "Info", "Profile", new { user = item.Login }, null).ToString())),
+                            grid.Column("Email", Html.Resource("Metadata, U_Email"), canSort: false, format: @<i>@item.Email</i>),
+                            grid.Column("Role.Name", Html.Resource("Metadata, R_Role"), canSort:false, format: @<i>@item.Role.Name</i>)
+                                                                                            ))
 }

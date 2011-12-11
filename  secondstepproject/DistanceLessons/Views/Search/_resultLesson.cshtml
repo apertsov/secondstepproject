@@ -1,72 +1,8 @@
 ﻿@using DistanceLessons.Models
 @model IEnumerable<Lesson>
 
-<style type="text/css" >
-    .webgrid
-    {
-        width: 100%;
-        border: 0px;
-        border-collapse: collapse;
-    }
-
-    .webgrid a
-    {
-        color: #000;
-    }
-
-    .webgrid-header
-    {
-        padding: 6px 5px;
-        text-align: center;
-        background-color: #e8eef4;
-        border-bottom: 2px solid #3966A2;
-        height: 40px;
-    
-        border-top: 2px solid #D6E8FF;
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-footer
-    {
-        padding: 6px 5px;
-        text-align: center;
-        background-color: #e8eef4;
-        border-top: 2px solid #3966A2;
-        height: 30px;
-    
-        border-bottom: 2px solid #D6E8FF;
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-alternating-row
-    {
-        height: 30px;
-        background-color: #f2f2f2;
-        border-bottom: 1px solid #d2d2d2;
-    
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-row-style
-    {
-        height: 30px;
-        border-bottom: 1px solid #d2d2d2;
-    
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-selected-row
-    {
-        font-weight: bold;
-    }
-</style>
-
 @{
-    var grid = new WebGrid(Model, rowsPerPage: 10, defaultSort: "Title", ajaxUpdateContainerId: "LesGrid");
+    var grid = new WebGrid(Model, rowsPerPage: 10, defaultSort: "Cours.Title", ajaxUpdateContainerId: "LesGrid");
     @grid.GetHtml(
         tableStyle: "webgrid",
         alternatingRowStyle: "webgrid-alternating-row",
@@ -75,7 +11,7 @@
         selectedRowStyle: "webgrid-selected-row",
         rowStyle: "webgrid-row-style",
         columns: grid.Columns(
-            grid.Column("Title", Html.Resource("the_lesson"), format: @<text><i>@item.Title</i> </text>),
-            grid.Column("Cours.Title", Html.Resource("the_course"), format: @<text><i>@item.Cours.Title</i> </text>)
+            grid.Column("Title", Html.Resource("the_lesson"), format: @<text><i>@item.Title</i> </text>, canSort: false),
+            grid.Column("Cours.Title", Html.Resource("the_course"), format: @<text><i>@item.Cours.Title</i> </text>, canSort: false)
             ))
 }
