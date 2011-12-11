@@ -4,10 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Collections.Specialized;
+using DistanceLessons.Attributes;
 using DistanceLessons.Models;
 
 namespace DistanceLessons
 {
+    [Localization]
     public class MyRoleProvider : RoleProvider
     {
         private DataEntitiesManager userRepo = new DataEntitiesManager();

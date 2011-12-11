@@ -11,6 +11,7 @@ namespace DistanceLessons.Controllers
   //  [AutorizeFilterAttribute]
     
     [Authorize]
+    [Localization]
     public class ResultController : Controller
     {
         //

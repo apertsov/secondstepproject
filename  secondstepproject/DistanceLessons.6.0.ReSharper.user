@@ -1,25 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:UserCourseModel.cs" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MessageModels.cs" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:AccountModels.cs" caret="936" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:ChangePassword.cshtml" caret="1426" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Index.cshtml" caret="402" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Edit.cshtml" caret="1444" fromTop="31" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Detail.cshtml" caret="112" fromTop="6" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Detail_PartialPage.cshtml" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_GlobalResources/f:Metadata.Designer.cs" caret="27489" fromTop="18" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="4252" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="733" fromTop="29" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserModules.cs" caret="1287" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserCourses.cs" caret="5500" fromTop="23" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:UserAnswers.cs" caret="3435" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Tests.cs" caret="70" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:TeacherController.cs" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:TableResultQuery.cs" caret="89" fromTop="4" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:ShowTests.cs" caret="3026" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Roles.cs" caret="383" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:News.cs" caret="323" fromTop="12" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Modules.cs" caret="4553" fromTop="16" />
@@ -30,22 +11,30 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Courses.cs" caret="1857" fromTop="24" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Contacts.cs" caret="401" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Categories.cs" caret="486" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Users.cs" caret="225" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:DistanceLessonsModel.Designer.cs" caret="145806" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Users.cs" caret="6502" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="16509" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:AutorizeFilter.cs" caret="170" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:ValidationData.cs" caret="191" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_Data/f:myMembershipProvider.cs" caret="285" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_Data/f:MyRoleProvider.cs" caret="258" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ResultController.cs" caret="296" fromTop="13" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:TeacherController.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:TestController.cs" caret="178" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:SearchController.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ProfileController.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:NewsController.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:MessageController.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:HomeController.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:FileController.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:EducationController.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:AdminController.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:AccountController.cs" caret="0" fromTop="0" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="20163" fromTop="31" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:AccountModels.cs" caret="557" fromTop="2" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="18380" fromTop="13" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="18575" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_GlobalResources/f:Metadata.Designer.cs" caret="457" fromTop="13" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="18736" fromTop="22" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="16955" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="17415" fromTop="21" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="17233" fromTop="13" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="17686" fromTop="20" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Account/f:ChangePassword.cshtml" caret="1426" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="19316" fromTop="18" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="19991" fromTop="42" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="19445" fromTop="18" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="20120" fromTop="42" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="13583" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="14924" fromTop="23" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="16611" fromTop="9" />
@@ -63,6 +52,17 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Informations.cs" caret="1420" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Contacts.cs" caret="902" fromTop="22" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Contacts.cs" caret="1940" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:AccountController.cs" caret="1176" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/f:MetadataClass.cs" caret="18251" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Users.cs" caret="6916" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Users.cs" caret="6670" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Models/d:DataEntitiesManager/f:Users.cs" caret="6502" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:ValidationData.cs" caret="510" fromTop="15" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:AutorizeFilter.cs" caret="170" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:ValidationData.cs" caret="191" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_Data/f:myMembershipProvider.cs" caret="301" fromTop="14" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:App_Data/f:MyRoleProvider.cs" caret="258" fromTop="11" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:ResultController.cs" caret="296" fromTop="13" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
@@ -278,7 +278,7 @@
       <Item value="Metadata`0" priority="107" />
       <Item value="Href`0" priority="29" />
       <Item value="TextHtml`0" priority="3" />
-      <Item value="Localization" priority="31" />
+      <Item value="Localization" priority="95" />
       <Item value="TimeSpan`0" priority="30" />
       <Item value="ITempDataProvider`0" priority="29" />
       <Item value="partial" priority="92" />
@@ -494,7 +494,7 @@
       <Item value="Split`0" priority="26" />
       <Item value="Replace`0" priority="26" />
       <Item value="ToUpper`0" priority="26" />
-      <Item value="ToLower`0" priority="26" />
+      <Item value="ToLower`0" priority="134" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
       <Item value="Count" priority="215" />

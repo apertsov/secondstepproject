@@ -43,7 +43,6 @@ namespace DistanceLessons.Controllers
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
 
-
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);

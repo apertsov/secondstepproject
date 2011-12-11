@@ -13,7 +13,7 @@ namespace DistanceLessons.Attributes
         public override bool IsValid(object value)
         {
             String text = value as String;
-            return (_db.ExistUser(text));
+            return (_db.ExistUserWithOutRegister(text));
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
