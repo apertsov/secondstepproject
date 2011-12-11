@@ -13,7 +13,6 @@
             <li>@Html.ActionLink("Користувачі", "Users", "Admin")</li>
             <li>@Html.ActionLink("Категорії предметів", "Categories", "Admin")</li>
             <li>@Html.ActionLink("Предмети", "Courses", "Admin")</li>
-            <!--<li>@Html.ActionLink("Оповіщення", "Message", "Admin")</li>-->
                 </ul>
             </li>
            }
@@ -32,13 +31,11 @@
             </li>
            }
         }
-
-        <li><a href="#">Корисні посилання</a></li>
-        <li><a>Пошук</a>
+        <li><a>@Html.Resource("Layout, search")</a>
                 <ul>
-                    <li>@Html.ActionLink("Знайти предмет", "Course", "Search")</li>
-                    <li>@Html.ActionLink("Знайти лекцію", "Lesson", "Search")</li>
-                   <li>@Html.ActionLink("Знайти користувача", "UsersSearch", "Search")</li>
+                   <li>@Html.ActionLink(Html.Resource("Layout, search_the_subject"), "Course", "Search")</li>
+                   <li>@Html.ActionLink(Html.Resource("Layout, search_the_lesson"), "Lesson", "Search")</li>
+                   <li>@Html.ActionLink(Html.Resource("Layout, search_for_users"), "UsersSearch", "Search")</li>
                 </ul>
             </li>
     </ul>

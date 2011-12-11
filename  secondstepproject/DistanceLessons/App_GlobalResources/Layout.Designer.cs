@@ -115,6 +115,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Категорія:.
+        /// </summary>
+        internal static string category {
+            get {
+                return ResourceManager.GetString("category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Курси.
         /// </summary>
         internal static string courses {
@@ -174,6 +183,15 @@ namespace Resources {
         internal static string edit {
             get {
                 return ResourceManager.GetString("edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Шукати.
+        /// </summary>
+        internal static string go_search {
+            get {
+                return ResourceManager.GetString("go_search", resourceCulture);
             }
         }
         
@@ -246,6 +264,42 @@ namespace Resources {
         internal static string save {
             get {
                 return ResourceManager.GetString("save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пошук.
+        /// </summary>
+        internal static string search {
+            get {
+                return ResourceManager.GetString("search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пошук користувача.
+        /// </summary>
+        internal static string search_for_users {
+            get {
+                return ResourceManager.GetString("search_for_users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пошук лекції.
+        /// </summary>
+        internal static string search_the_lesson {
+            get {
+                return ResourceManager.GetString("search_the_lesson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пошук предмету.
+        /// </summary>
+        internal static string search_the_subject {
+            get {
+                return ResourceManager.GetString("search_the_subject", resourceCulture);
             }
         }
         

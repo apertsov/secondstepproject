@@ -268,4 +268,28 @@
     <value>Мої підписки</value>
     <comment>1</comment>
   </data>
+  <data name="category" xml:space="preserve">
+    <value>Категорія:</value>
+    <comment>1</comment>
+  </data>
+  <data name="go_search" xml:space="preserve">
+    <value>Шукати</value>
+    <comment>1</comment>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Пошук</value>
+    <comment>1</comment>
+  </data>
+  <data name="search_for_users" xml:space="preserve">
+    <value>Пошук користувача</value>
+    <comment>1</comment>
+  </data>
+  <data name="search_the_lesson" xml:space="preserve">
+    <value>Пошук лекції</value>
+    <comment>1</comment>
+  </data>
+  <data name="search_the_subject" xml:space="preserve">
+    <value>Пошук предмету</value>
+    <comment>1</comment>
+  </data>
 </root>

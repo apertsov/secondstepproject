@@ -268,4 +268,28 @@
     <value>Мои подписки</value>
     <comment>1</comment>
   </data>
+  <data name="category" xml:space="preserve">
+    <value>Категория:</value>
+    <comment>1</comment>
+  </data>
+  <data name="go_search" xml:space="preserve">
+    <value>Искать</value>
+    <comment>1</comment>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Поиск</value>
+    <comment>1</comment>
+  </data>
+  <data name="search_for_users" xml:space="preserve">
+    <value>Поиск пользователя</value>
+    <comment>1</comment>
+  </data>
+  <data name="search_the_lesson" xml:space="preserve">
+    <value>Поиск лекции</value>
+    <comment>1</comment>
+  </data>
+  <data name="search_the_subject" xml:space="preserve">
+    <value>Поиск предмета</value>
+    <comment>1</comment>
+  </data>
 </root>

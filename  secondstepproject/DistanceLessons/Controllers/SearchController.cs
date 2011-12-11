@@ -8,6 +8,7 @@ using DistanceLessons.Models;
 
 namespace DistanceLessons.Controllers
 {
+    [Localization]
     public class SearchController : Controller
     {
         //
