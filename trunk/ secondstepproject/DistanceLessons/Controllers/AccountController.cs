@@ -139,7 +139,7 @@ namespace DistanceLessons.Controllers
                 {
                     MyRoles.ChangeUserRole(model.UserName, UserRoles.Admin.ToString());
                     FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Index", "Home");
                 }
 
                 else
@@ -221,10 +221,16 @@ namespace DistanceLessons.Controllers
         [AllowAnonymous]
         public ActionResult Activate(string username, string key)
         {
+            if ((String.IsNullOrEmpty(username)) || (!_db.ExistUser(username)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
             if (_db.ActivateUser(username, key) == false)
-                ViewBag.active = false;
-            else
-                ViewBag.active = true;
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+
+            ViewBag.active = true;
             return View();
         }
     

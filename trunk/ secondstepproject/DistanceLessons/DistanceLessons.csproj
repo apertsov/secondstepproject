@@ -169,6 +169,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DistanceLessonsModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\FileModels.cs" />
     <Compile Include="Models\MessageModels.cs" />
     <Compile Include="Models\ResultModels.cs" />
     <Compile Include="Models\HomeModels.cs" />
@@ -185,7 +186,6 @@
     <Compile Include="Models\DataEntitiesManager\News.cs" />
     <Compile Include="Models\DataEntitiesManager\Roles.cs" />
     <Compile Include="Models\DataEntitiesManager\ShowTests.cs" />
-    <Compile Include="Models\DataEntitiesManager\TableResultQuery.cs" />
     <Compile Include="Models\DataEntitiesManager\Tests.cs" />
     <Compile Include="Models\DataEntitiesManager\UserAnswers.cs" />
     <Compile Include="Models\DataEntitiesManager\UserCourses.cs" />
@@ -404,9 +404,6 @@
     <Content Include="Views\Account\AdminSetup.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Admin\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Teacher\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -443,7 +440,7 @@
     <Content Include="Views\Admin\EditCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Admin\EditCours.cshtml">
+    <Content Include="Views\Teacher\EditCours.cshtml">
       <SubType>Code</SubType>
     </Content>
   </ItemGroup>
@@ -490,6 +487,7 @@
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\_New_PartialPage.cshtml" />
@@ -561,6 +559,7 @@
     <Content Include="Views\Shared\_NewMessageBox.cshtml" />
     <Content Include="Views\Profile\_NewMessages.cshtml" />
     <Content Include="Views\Education\_UserSubscribs.cshtml" />
+    <Content Include="Views\Education\ModuleInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">

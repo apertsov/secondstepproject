@@ -6,29 +6,34 @@ using DistanceLessons.Models;
 namespace DistanceLessons.Controllers
 {
     [Localization]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         //
         // GET: /Admin/
 
         private DataEntitiesManager _db = new DataEntitiesManager();
-
+/*
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
-
+*/
+        [HttpGet]
         public ActionResult Users()
         {
             return View(_db.GetUserList());
 
         }
 
+        [HttpGet]
         public ActionResult Categories()
         {
             return View(_db.GetCategoryList());
         }
 
+        [HttpGet]
         public ActionResult Courses()
         {
             return View(_db.GetCourseList());
@@ -52,35 +57,27 @@ namespace DistanceLessons.Controllers
         }
 
 
+      
         [HttpGet]
-        public ActionResult EditCours(Guid id)
+        public ActionResult DeleteCours(Guid? id)
         {
-            ViewBag.Categories = _db.GetCategoryList();
-            ViewBag.Users = _db.GetGetUserByRole("Teacher");
-            return View(_db.GetCourse(id));
-        }
-
-        [HttpPost]
-        public ActionResult EditCours(Cours obj)
-        {
-            Cours old = _db.GetCourse(obj.CourseId);
-            UpdateModel(old);
-            _db.Save();
-            return RedirectToAction("Courses");
-        }
-
-        [HttpGet]
-        public ActionResult DeleteCours(Guid id)
-        {
-            _db.DeleteCourse(id);
+            if ((id == null) || (!_db.ExistCourse((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            _db.DeleteCourse((Guid)id);
             return RedirectToAction("Courses");
         }
 
 
         [HttpGet]
-        public ActionResult DetailsCours(Guid id)
+        public ActionResult DetailsCours(Guid? id)
         {
-            return View(_db.GetCourse(id));
+            if ((id == null) || (!_db.ExistCourse((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            return View(_db.GetCourse((Guid)id));
         }
 
 
@@ -94,21 +91,23 @@ namespace DistanceLessons.Controllers
         [HttpPost]
         public ActionResult CreateUser(User obj)
         {
-
             obj.UserId = Guid.NewGuid();
             obj.CreatedDate = DateTime.Now;
             obj.LastLoginDate = DateTime.Now;
             _db.AddUser(obj);
             return RedirectToAction("Users");
-
         }
 
         [HttpGet]
-        public ActionResult EditUser(Guid id)
+        public ActionResult EditUser(Guid? id)
         {
+            if ((id==null)||(!_db.ExistUser((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
             ViewBag.Roles = _db.GetRoleList();
             ViewBag.IsMe = (_db.GetUser(User.Identity.Name).UserId==id)?true:false;
-            return View(_db.GetUser(id));
+            return View(_db.GetUser((Guid)id));
         }
 
 
@@ -123,21 +122,29 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
-        public ActionResult DeleteUser(Guid id)
+        public ActionResult DeleteUser(Guid? id)
         {
-            _db.DeleteUser(id);
+            if ((id == null) || (!_db.ExistUser((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            _db.DeleteUser((Guid)id);
             return RedirectToAction("Users");
         }
 
         [HttpGet]
-        public ActionResult DetailsUser(Guid id)
+        public ActionResult DetailsUser(Guid? id)
         {
-            string login=_db.GetUser(id).Login;
+            if ((id == null) || (!_db.ExistUser((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            string login=_db.GetUser((Guid)id).Login;
             ViewBag.IsInfo = _db.ExistInformation(login);
             ViewBag.Info = _db.UserInformation(login);
             ViewBag.IsContact = _db.ExistContacts(login);
             ViewBag.Contacts = _db.UserContacts(login);
-            return View(_db.GetUser(id));
+            return View(_db.GetUser((Guid)id));
         }
 
 
@@ -158,9 +165,13 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult EditCategory(Guid id)
+        public ActionResult EditCategory(Guid? id)
         {
-            return View(_db.GetCategory(id));
+            if ((id==null)||(!_db.ExistCategory((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            return View(_db.GetCategory((Guid)id));
         }
 
         [HttpPost]
@@ -175,9 +186,13 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult DeleteCategory(Guid id)
+        public ActionResult DeleteCategory(Guid? id)
         {
-            _db.DeleteCategory(id);
+            if  ((id==null)||(!_db.ExistCategory((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            _db.DeleteCategory((Guid)id);
             return RedirectToAction("Categories");
         }
 

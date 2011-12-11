@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<DistanceLessons.Models.Cours>
-
 @{
     ViewBag.Title = "Предмети";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<br/>
-
+<br />
 @{
     var grid = new WebGrid(Model, rowsPerPage: 10, defaultSort: "Title");
-   @grid.GetHtml(
+    @grid.GetHtml(
         tableStyle: "center",
         headerStyle: "center",
         alternatingRowStyle: "center",
@@ -16,7 +14,10 @@
         columns: grid.Columns(
             grid.Column("Title", "Назва предмету", format: (item) => new HtmlString(Html.ActionLink((string)item.Title, "Course", new { id = item.CourseId }, null).ToString())),
             grid.Column("Category.Category1", "Категорія", format: @<i>@item.Category.Category1</i>),
-            grid.Column("User.Login", "Викладач", format: @<i>@item.User.Login</i>)
-            ));
-                          }
-                         
+            grid.Column("User.Login", "Викладач", format: (item) =>
+                new HtmlString(item.User.Login+" "+ (User.Identity.Name==item.User.Login?
+                                Html.ActionLink("___", "EditCours", "Teacher", new { id = item.CourseId }, new { @class = "edit", title = "Редагувати" }).ToString()
+                                :String.Empty)
+                                )
+            )));
+}

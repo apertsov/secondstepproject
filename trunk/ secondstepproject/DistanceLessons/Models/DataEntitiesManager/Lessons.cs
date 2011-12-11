@@ -67,7 +67,7 @@ namespace DistanceLessons.Models
                     select lesson).FirstOrDefault();
         }
 
-        public bool IsLesson(Guid id)
+        public bool ExistLesson(Guid id)
         {
             return (from lesson in _db.Lessons
                     where lesson.LessonId==id

@@ -6,6 +6,7 @@ using DistanceLessons.Models;
 namespace DistanceLessons.Controllers
 {
     [Localization]
+    [Authorize(Roles = "Admin, Teacher, Student")]
     public class EducationController : Controller
     {
         private readonly DataEntitiesManager _db = new DataEntitiesManager();
@@ -29,9 +30,13 @@ namespace DistanceLessons.Controllers
             return PartialView("_Category", _db.GetCategoryListASC());
         }
 
-        public ActionResult courses_list(Guid id)
+        public ActionResult courses_list(Guid? id)
         {
-            Session["CategoryId"] = id;
+            if ((id == null) || (!_db.ExistCategory((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            Session["CategoryId"] = (Guid)id;
 
             Session["page"] = 0;
             Session["itemsCount"] = _db.GetCourseByCategory_ListCount((Guid) Session["CategoryId"], 0).Count;
@@ -55,11 +60,15 @@ namespace DistanceLessons.Controllers
                                                  withStatus, itemOnPage, numPage));
         }
 
-        public ActionResult SubscribeOnCourse(Guid CourseId)
+        public ActionResult SubscribeOnCourse(Guid? CourseId)
         {
+            if ((CourseId == null) || (!_db.ExistCourse((Guid)CourseId)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
             var subscribe = new UserCours();
             subscribe.UserCourseId = Guid.NewGuid();
-            subscribe.CourseId = CourseId;
+            subscribe.CourseId = (Guid)CourseId;
             subscribe.UserId = _db.GetUserId(User.Identity.Name);
             _db.AddUserCourse(subscribe);
             _db.Save();
@@ -69,21 +78,29 @@ namespace DistanceLessons.Controllers
                                                  (int) Session["withStatus"], itemOnPage, (int) Session["page"]));
         }
 
-        public ActionResult DeleteSubscribeOnCourse(Guid CourseId)
+        public ActionResult DeleteSubscribeOnCourse(Guid? CourseId)
         {
-            _db.DeleteUserCourse(_db.GetUserCourseId(_db.GetUserId(User.Identity.Name), CourseId));
+            if ((CourseId == null) || (!_db.ExistCourse((Guid)CourseId)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            _db.DeleteUserCourse(_db.GetUserCourseId(_db.GetUserId(User.Identity.Name), (Guid)CourseId));
             return PartialView("_Courses",
                                _db.GetUserCourse((Guid) Session["CategoryId"], _db.GetUserId(User.Identity.Name),
                                                  (int) Session["withStatus"], itemOnPage, (int) Session["page"]));
         }
 
-        public ActionResult ConfirmSubscribeOnCourse(Guid CourseId, Guid TeacherId)
+        public ActionResult ConfirmSubscribeOnCourse(Guid? CourseId, Guid? TeacherId)
         {
+            if ((TeacherId==null) || (CourseId == null) || (!_db.ExistCourse((Guid)CourseId)) || (!_db.IsTeacherCourse((Guid)CourseId,(Guid)TeacherId)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
             var confirm = new Message();
             confirm.MessageId = Guid.NewGuid();
             confirm.Message1 = "Користувач <a href=profile/info?user=" + User.Identity.Name + ">" +
                                _db.GetUser(User.Identity.Name).Login + "</a> подав заявку на підписання на Ваш курс - " +
-                               _db.GetCourse(CourseId).Title + ".&nbsp;<a href=\"/profile/confirmsubscribe?CourId=" +
+                               _db.GetCourse((Guid)CourseId).Title + ".&nbsp;<a href=\"/profile/confirmsubscribe?CourId=" +
                                CourseId + "&amp;SubscribeUser=" + _db.GetUser(User.Identity.Name).UserId +
                                "&amp;MessId=" + confirm.MessageId +
                                "\">Затверджую</a>&nbsp;<a href=\"/profile/cancelsubscribe?CourId=" + CourseId +
@@ -91,8 +108,8 @@ namespace DistanceLessons.Controllers
                                confirm.MessageId + "\">Відмовляю</a>";
             confirm.DateOfSender = DateTime.Now;
             confirm.UserId_From = _db.GetUserId(User.Identity.Name);
-            confirm.UserId_To = TeacherId;
-            confirm.Title = "Запит підписання на курс '" + _db.GetCourse(CourseId).Title + "'";
+            confirm.UserId_To = (Guid)TeacherId;
+            confirm.Title = "Запит підписання на курс '" + _db.GetCourse((Guid)CourseId).Title + "'";
 
             _db.AddMessage(confirm);
             _db.AddMessage_status(_db.GetMessageStatus(confirm, _db.GetUser(confirm.UserId_To).Login), 10);
@@ -111,6 +128,35 @@ namespace DistanceLessons.Controllers
             temp.CoursesLessons = _db.GetLessonsListByCoursesList(temp.UserCourses);
 
             return PartialView("_UserSubscribs", temp);
+        }
+
+        public ActionResult ModuleInfo(Guid? id)
+        {
+            if ((id == null) || (!_db.ExistModule((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            Module module = _db.Module((Guid)id);
+            ViewBag.dbModuleQuestions = _db.ModuleTests((Guid)id).Count;
+            if ((DateTime.Now < module.DateBeginTesting) || (DateTime.Now >= module.DateEndTesting))
+                ViewBag.CanPass = false;
+            else
+                ViewBag.CanPass = true;
+            return PartialView(_db.Module((Guid)id));
+        }
+
+        [HttpGet]
+        public ActionResult ShowFile(string filename)
+        {
+            if (String.IsNullOrEmpty(filename))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            FileRepository file = new FileRepository();
+            FileDescription lect = new FileDescription();
+            lect = file.GetFileByName(filename);
+            string completeURL = "../Uploads/" + lect.WebPath;
+            return Redirect(completeURL);
         }
     }
 }

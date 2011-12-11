@@ -29,12 +29,12 @@
                             {
                                 if (subitem1.CourseId == subitem.CourseId)
                                 {
-                                    <div style="margin-left: 25px; font-size: 0.8em;">@Html.Resource("Layout, module") @subitem1.Module.Title @Html.ActionLink("[" + Html.Resource("Layout, start_test") + "]", "PassModule", "Test", new {id = subitem1.ModuleId}, null)</div>
+                                    <div style="margin-left: 25px; font-size: 0.8em;">@Html.Resource("Layout, module") @subitem1.Module.Title @Ajax.ActionLink("[" + Html.Resource("Layout, start_test") + "]", "ModuleInfo", "Education", new { id = subitem1.ModuleId }, new AjaxOptions { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace }, null)</div>
                                     foreach (Lesson subitem2 in Model.CoursesLessons)
                                     {
                                         if ((subitem2.CourseId == subitem.CourseId) && (subitem1.ModuleId == subitem2.ModuleId))
                                         {
-                                            <div style="font-size: 0.8em;">@Html.ActionLink("[" + Html.Resource("Layout, read") + "]", "ShowFile", "Teacher", new {filename = subitem2.Text}, new {target = "_blank"}) @subitem2.Title</div>
+                                            <div style="font-size: 0.8em;">@Html.ActionLink("[" + Html.Resource("Layout, read") + "]", "ShowFile", "Education", new { filename = subitem2.Text }, new { target = "_blank" }) @subitem2.Title</div>
                                         }
                                     }
                                 }

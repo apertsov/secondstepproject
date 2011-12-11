@@ -423,3 +423,8 @@ C:\Users\gAmmi\Desktop\trunk_secondstepproject\DistanceLessons\obj\Debug\Distanc
 C:\Users\gAmmi\Desktop\trunk_secondstepproject\DistanceLessons\obj\Debug\GenerateResource.read.1.tlog
 C:\Users\gAmmi\Desktop\trunk_secondstepproject\DistanceLessons\obj\Debug\GenerateResource.write.1.tlog
 C:\Users\gAmmi\Desktop\trunk_secondstepproject\DistanceLessons\obj\Debug\en-us\DistanceLessons.resources.dll
+E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\bin\en-us\DistanceLessons.resources.dll
+E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.Views.Account.App_LocalResources.ChangePassword.cshtml.en-us.resources
+E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\obj\Debug\GenerateResource.read.1.tlog
+E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\obj\Debug\GenerateResource.write.1.tlog
+E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\obj\Debug\en-us\DistanceLessons.resources.dll

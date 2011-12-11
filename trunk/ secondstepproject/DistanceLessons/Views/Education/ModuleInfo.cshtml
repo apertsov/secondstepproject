@@ -1,0 +1,27 @@
+﻿@model DistanceLessons.Models.Module
+
+<h2> Модуль @Model.Title </h2>
+<p> Тестування проходить з @Model.DateBeginTesting до @Model.DateEndTesting .</p>
+<p> Тест складається з 
+    @if((Model.CountQuestions!=null) && (ViewBag.dbModuleQuestions>=Model.CountQuestions))
+    {
+        @Model.CountQuestions
+    }
+    else
+    {
+      @ViewBag.dbModuleQuestions
+    }
+    запитань на які відведено @Model.TimeForPassTest хвилин . Максимальна кількість балів за тест - @Model.MaxPoints .</p>
+ <p> Не використовуйте кнопку браузера "назад", а також інші способи повернення до попередньої сторінки - змінити відповіді на попередні запитання неможливо.
+Тестування почнеться після нажаття кнопки: 
+</p>
+<h3>
+@if (ViewBag.CanPass)
+{
+@Html.ActionLink("Розпочати тестування", "PassModule", "Test", new { id = Model.ModuleId }, null)
+}
+else
+{
+    @Html.TextHtml("Тестування з цього модуля не проводиться");
+}
+</h3>

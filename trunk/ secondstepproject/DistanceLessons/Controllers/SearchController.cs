@@ -6,8 +6,10 @@ using System.Web.Mvc;
 using DistanceLessons.Attributes;
 using DistanceLessons.Models;
 
+
 namespace DistanceLessons.Controllers
 {
+    [Authorize]
     [Localization]
     public class SearchController : Controller
     {
@@ -15,6 +17,7 @@ namespace DistanceLessons.Controllers
         // GET: /Search/
         private DataEntitiesManager _db = new DataEntitiesManager();
 
+        [HttpGet]
         public ActionResult Course()
         {
             var course = _db.GetCourseList();
@@ -36,6 +39,7 @@ namespace DistanceLessons.Controllers
             return View(course);
         }
 
+        [HttpGet]
        public ActionResult Lesson()
        {
            var course = _db.GetLessonList();

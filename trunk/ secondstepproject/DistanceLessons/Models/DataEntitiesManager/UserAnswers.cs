@@ -129,6 +129,13 @@ namespace DistanceLessons.Models
             return true;
         }
 
+        public bool ExistUserAnswers(Guid userAnswerId)
+        {
+            return (from userAnswers in GetUserAnswersList()
+                    where userAnswers.UserAnswerId == userAnswerId
+                    select userAnswers).Count() > 0 ? true : false;
+        }
+
 
     }
 }

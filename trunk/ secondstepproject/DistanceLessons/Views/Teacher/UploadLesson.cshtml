@@ -2,34 +2,35 @@
     ViewBag.Title = "Завантаження";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Завантаження навчального елементу</h2>
-  
-
-<div style="font-style:italic; font-size:smaller">
-Максимальний розмір завантажувального файлу - 5 Мб.<br/>
-Допустимі розширення - .pdf, .doc, .docx, .rtf, .txt, .htm, .html, .mhtml, .xhtml, .jpg, .jpeg, .bmp! 
+<h2>
+    Завантаження навчального елементу</h2>
+<div style="font-style: italic; font-size: smaller">
+    Максимальний розмір завантажувального файлу - 5 Мб.<br />
+    Допустимі розширення - .pdf, .doc, .docx, .rtf, .txt, .htm, .html, .mhtml, .xhtml,
+    .jpg, .jpeg, .bmp!
 </div>
-      @{ Guid mod=(Guid)ViewBag.ModuleId;
-         Guid course=(Guid)ViewBag.CourseId;
-         string act = ViewBag.Action;
-         }
-       
-       <br />
-        @using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
-        {
-            <p><input type="file" id="fileUpload" name="fileUpload" accept=""/> </p>
-            <input type="hidden" id="mod_id" name="mod_id" value="@mod" runat="server"/>
-            <input type="hidden" id="act" name="act" value="@act" runat="server"/>
-            <input type="hidden" id="course_id" name="course_id" value="@course" runat="server"/>
-            <p><input type="submit" value="Завантажити" /></p>
-        } 
+@{  Guid mod = (ViewBag.ModuleId != null?  (Guid)ViewBag.ModuleId: Guid.Empty);
 
-        @if (mod == Guid.Empty)
-        {
+   Guid course = (Guid)ViewBag.CourseId;
+   string act = ViewBag.Action;
+}
+<br />
+@using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>
+        <input type="file" id="fileUpload" name="fileUpload" accept="" />
+    </p>
+    <input type="hidden" id="mod_id" name="mod_id" value="@mod" runat="server"/>
+    <input type="hidden" id="act" name="act" value="@act" runat="server"/>
+    <input type="hidden" id="course_id" name="course_id" value="@course" runat="server"/>
+    <p>
+        <input type="submit" value="Завантажити" /></p>
+}
+@if (mod == Guid.Empty)
+{
     @Html.ActionLink("Повернутися до предмету", "Course", new { id = course });
-        }
-        else
-        {
+}
+else
+{
     @Html.ActionLink("Повернутися до списку лекцій", "Lesson", new { id = mod });
-        }
+}

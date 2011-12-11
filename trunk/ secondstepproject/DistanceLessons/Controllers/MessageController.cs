@@ -7,6 +7,7 @@ using System.Collections.Generic;
 namespace DistanceLessons.Controllers
 {
     [Localization]
+    [Authorize]
     public class MessageController : Controller
     {
         //
@@ -109,6 +110,10 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult CreateMessage(string user)
         {
+            if ((String.IsNullOrEmpty(user)) || (!_db.ExistUser(user)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
             Message msg = new Message();
             msg.DateOfSender = System.DateTime.Now;
             msg.UserId_To = _db.GetUserId(user);
@@ -136,14 +141,18 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(Guid? id)
         {
+            if ((id == null) || (!_db.ExistMessage((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
             List<Message> msgList = _db.GetMessageList();
             
 
             foreach (Message msg in msgList)
             {
-                if (msg.MessageId == id)
+                if (msg.MessageId == (Guid)id)
                 {
                     msg.User = _db.GetUser(msg.UserId_From);
                     msg.User1 = _db.GetUser(msg.UserId_To);
@@ -157,7 +166,7 @@ namespace DistanceLessons.Controllers
 
             Message msgEr = new Message();
 
-            msgEr.MessageId = id;
+            msgEr.MessageId = (Guid)id;
             msgEr.Message1 = "You have no such message";
 
             return View(msgEr);
@@ -216,9 +225,13 @@ namespace DistanceLessons.Controllers
 
         }
 
-    [HttpGet]
-        public ActionResult Delete(Guid id)
+       [HttpGet]
+        public ActionResult Delete(Guid? id)
         {
+            if ((id == null) || (!_db.ExistMessage((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
             List<Message> msgList = _db.GetMessageList();
 
             foreach (Message msg in msgList)
