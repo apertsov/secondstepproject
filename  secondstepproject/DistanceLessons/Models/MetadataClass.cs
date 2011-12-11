@@ -308,7 +308,7 @@ namespace DistanceLessons.Models
 
             [Display(Name = "Mod_Time", ResourceType = typeof(Resources.Metadata))]
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_Time_Required")]
-            [StringLength(300, ErrorMessageResourceType = typeof(Resources.Metadata), MinimumLength = 1, ErrorMessageResourceName = "Mod_Time_StringLength")]
+            [Range(1, 300, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_Time_StringLength")]
             public int TimeForPassTest { get; set; }
 
             [ScaffoldColumn(false)]
@@ -328,7 +328,7 @@ namespace DistanceLessons.Models
 
             [Display(Name = "Mod_MaxPoints", ResourceType = typeof(Resources.Metadata))]
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_MaxPoints_Required")]
-            [StringLength(100, ErrorMessageResourceType = typeof(Resources.Metadata), MinimumLength = 0, ErrorMessageResourceName = "Mod_MaxPoints_StringLength")]
+            [Range(0, 100, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_MaxPoints_StringLength")]
             public int MaxPoints { get; set; }
 
             [Display(Name = "Mod_QCount", ResourceType = typeof(Resources.Metadata))]
