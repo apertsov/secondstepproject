@@ -327,4 +327,64 @@
   <data name="Сo_Subscrb" xml:space="preserve">
     <value>Общедоступный</value>
   </data>
+  <data name="Cp_Confirm" xml:space="preserve">
+    <value>Повторите новый пароль:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_Confirm_Compare" xml:space="preserve">
+    <value>Новый пароль и повторный новый пароль не совпадают</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_New" xml:space="preserve">
+    <value>Новый пароль:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_New_StringLength" xml:space="preserve">
+    <value>Пароль должен быть менее чем 30 и более чем 6 символов</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_Old" xml:space="preserve">
+    <value>Старый пароль:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Login" xml:space="preserve">
+    <value>Логин:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Login_Required" xml:space="preserve">
+    <value>Введите логин</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Password" xml:space="preserve">
+    <value>Пароль:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Password_Required" xml:space="preserve">
+    <value>Вы забыли о пароле</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_RememberMe" xml:space="preserve">
+    <value>Запомнить?</value>
+    <comment>1</comment>
+  </data>
+  <data name="Mod_MaxPoints_StringLength" xml:space="preserve">
+    <value>Количество баллов за модуль не может быть меньше 0 и больше чем 100</value>
+    <comment>1</comment>
+  </data>
+  <data name="Mod_Time_StringLength" xml:space="preserve">
+    <value>Время на прохождение модуля может колебатся в пределах от 1 до 300 минут</value>
+    <comment>1</comment>
+  </data>
+  <data name="U_Email_Invalid" xml:space="preserve">
+    <value>Введите правильный эмейл</value>
+    <comment>1</comment>
+  </data>
+  <data name="U_Email_Required" xml:space="preserve">
+    <value>Введите электронную почту</value>
+    <comment>1</comment>
+  </data>
+  <data name="U_User_Invalid" xml:space="preserve">
+    <value>Пользователь не существует. Проверьте введеное имя</value>
+    <comment>1</comment>
+  </data>
 </root>

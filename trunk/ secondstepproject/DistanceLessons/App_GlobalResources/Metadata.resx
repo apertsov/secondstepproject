@@ -327,4 +327,64 @@
   <data name="UMod_Start" xml:space="preserve">
     <value>Час початку тестування</value>
   </data>
+  <data name="Lo_Login" xml:space="preserve">
+    <value>Логін:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Login_Required" xml:space="preserve">
+    <value>Введіть логін</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Password" xml:space="preserve">
+    <value>Пароль:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Password_Required" xml:space="preserve">
+    <value>Ви забули про пароль :)</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_RememberMe" xml:space="preserve">
+    <value>Запам'ятати?</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_Confirm" xml:space="preserve">
+    <value>Повторіть новий пароль:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_Confirm_Compare" xml:space="preserve">
+    <value>Новий пароль та повторний новий пароль не співпадають</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_New" xml:space="preserve">
+    <value>Новий пароль:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_New_StringLength" xml:space="preserve">
+    <value>Пароль повинен бути менше 30 і більше ніж 6 символів</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_Old" xml:space="preserve">
+    <value>Старий пароль:</value>
+    <comment>1</comment>
+  </data>
+  <data name="U_Email_Required" xml:space="preserve">
+    <value>Введіть електронну скриньку</value>
+    <comment>1</comment>
+  </data>
+  <data name="Mod_MaxPoints_StringLength" xml:space="preserve">
+    <value>Кількість балів за модуль не може бути меншою 0 і більшою 100</value>
+    <comment>1</comment>
+  </data>
+  <data name="Mod_Time_StringLength" xml:space="preserve">
+    <value>Час на проходження модульного контролю може коливатись в межах від 1 до 300 хвилин</value>
+    <comment>1</comment>
+  </data>
+  <data name="U_Email_Invalid" xml:space="preserve">
+    <value>Введіть коректний емейл</value>
+    <comment>1</comment>
+  </data>
+  <data name="U_User_Invalid" xml:space="preserve">
+    <value>Користувач не існує. Перевірте введене ім'я</value>
+    <comment>1</comment>
+  </data>
 </root>

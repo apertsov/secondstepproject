@@ -327,4 +327,64 @@
   <data name="Сo_Subscrb" xml:space="preserve">
     <value>Public</value>
   </data>
+  <data name="Cp_Confirm" xml:space="preserve">
+    <value>Repeat new password:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_Confirm_Compare" xml:space="preserve">
+    <value>The new password and repeat the new password do not match</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_New" xml:space="preserve">
+    <value>New Password:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_New_StringLength" xml:space="preserve">
+    <value>Passwords must be at least 30 and more than 6 characters</value>
+    <comment>1</comment>
+  </data>
+  <data name="Cp_Old" xml:space="preserve">
+    <value>Old Password:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Login" xml:space="preserve">
+    <value>Username:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Login_Required" xml:space="preserve">
+    <value>Enter your login</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Password" xml:space="preserve">
+    <value>Password:</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_Password_Required" xml:space="preserve">
+    <value>You forgot the password:)</value>
+    <comment>1</comment>
+  </data>
+  <data name="Lo_RememberMe" xml:space="preserve">
+    <value>Remember?</value>
+    <comment>1</comment>
+  </data>
+  <data name="Mod_MaxPoints_StringLength" xml:space="preserve">
+    <value>Number of points for the module can not be less than 0 and more than 100</value>
+    <comment>1</comment>
+  </data>
+  <data name="Mod_Time_StringLength" xml:space="preserve">
+    <value>Time for passing modular control can range from 1 to 300 minutes</value>
+    <comment>1</comment>
+  </data>
+  <data name="U_Email_Invalid" xml:space="preserve">
+    <value>Please enter a valid email</value>
+    <comment>1</comment>
+  </data>
+  <data name="U_Email_Required" xml:space="preserve">
+    <value>Enter the e-mail</value>
+    <comment>1</comment>
+  </data>
+  <data name="U_User_Invalid" xml:space="preserve">
+    <value>The user does not exist. Check the name you entered</value>
+    <comment>1</comment>
+  </data>
 </root>

@@ -4,7 +4,7 @@
 @{
     ViewBag.Title = Html.Resource("Title") + Model.Title;
 }
-
+<div class="box_shdw_bottom_full" style="margin-top: -10px;">
 <div class="item" align="right">
     @using (var _db = new DataEntitiesManager())
     {
@@ -25,4 +25,5 @@
 
 <div class="item" align="center">
     @Html.ActionLink(Html.Resource("Layout, back"), "Index")
+</div>
 </div>

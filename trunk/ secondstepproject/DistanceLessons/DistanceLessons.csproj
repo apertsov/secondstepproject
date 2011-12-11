@@ -195,7 +195,6 @@
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\FileRepository.cs" />
     <Compile Include="Models\ProfileModels.cs" />
-    <Compile Include="Models\TeacherModels.cs" />
     <Compile Include="Models\TestModels.cs" />
     <Compile Include="Models\UserCourseModel.cs" />
     <Compile Include="Models\UserRepository.cs" />

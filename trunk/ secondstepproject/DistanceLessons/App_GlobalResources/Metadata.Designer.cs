@@ -196,6 +196,51 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Повторіть новий пароль:.
+        /// </summary>
+        public static string Cp_Confirm {
+            get {
+                return ResourceManager.GetString("Cp_Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Новий пароль та повторний новий пароль не співпадають.
+        /// </summary>
+        public static string Cp_Confirm_Compare {
+            get {
+                return ResourceManager.GetString("Cp_Confirm_Compare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Новий пароль:.
+        /// </summary>
+        public static string Cp_New {
+            get {
+                return ResourceManager.GetString("Cp_New", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пароль повинен бути менше 30 і більше ніж 6 символів.
+        /// </summary>
+        public static string Cp_New_StringLength {
+            get {
+                return ResourceManager.GetString("Cp_New_StringLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Старий пароль:.
+        /// </summary>
+        public static string Cp_Old {
+            get {
+                return ResourceManager.GetString("Cp_Old", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Назва категорії:.
         /// </summary>
         public static string C_Title {
@@ -331,6 +376,51 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Логін:.
+        /// </summary>
+        public static string Lo_Login {
+            get {
+                return ResourceManager.GetString("Lo_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Введіть логін.
+        /// </summary>
+        public static string Lo_Login_Required {
+            get {
+                return ResourceManager.GetString("Lo_Login_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Пароль:.
+        /// </summary>
+        public static string Lo_Password {
+            get {
+                return ResourceManager.GetString("Lo_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ви забули про пароль :).
+        /// </summary>
+        public static string Lo_Password_Required {
+            get {
+                return ResourceManager.GetString("Lo_Password_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Запам&apos;ятати?.
+        /// </summary>
+        public static string Lo_RememberMe {
+            get {
+                return ResourceManager.GetString("Lo_RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Затверджено:.
         /// </summary>
         public static string L_Accepted {
@@ -412,6 +502,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Кількість балів за модуль не може бути меншою 0 і більшою 100.
+        /// </summary>
+        public static string Mod_MaxPoints_StringLength {
+            get {
+                return ResourceManager.GetString("Mod_MaxPoints_StringLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Кількість запитань:.
         /// </summary>
         public static string Mod_QCount {
@@ -453,6 +552,15 @@ namespace Resources {
         public static string Mod_Time_Required {
             get {
                 return ResourceManager.GetString("Mod_Time_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Час на проходження модульного контролю може коливатись в межах від 1 до 300 хвилин.
+        /// </summary>
+        public static string Mod_Time_StringLength {
+            get {
+                return ResourceManager.GetString("Mod_Time_StringLength", resourceCulture);
             }
         }
         
@@ -664,6 +772,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Введіть коректний емейл.
+        /// </summary>
+        public static string U_Email_Invalid {
+            get {
+                return ResourceManager.GetString("U_Email_Invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Введіть електронну скриньку.
+        /// </summary>
+        public static string U_Email_Required {
+            get {
+                return ResourceManager.GetString("U_Email_Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Останній вхід:.
         /// </summary>
         public static string U_LastLogin {
@@ -678,6 +804,15 @@ namespace Resources {
         public static string U_Login {
             get {
                 return ResourceManager.GetString("U_Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Користувач не існує. Перевірте введене ім&apos;я.
+        /// </summary>
+        public static string U_User_Invalid {
+            get {
+                return ResourceManager.GetString("U_User_Invalid", resourceCulture);
             }
         }
         

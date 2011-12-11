@@ -89,10 +89,10 @@ namespace DistanceLessons.Models
             public string Login { get; set; }
 
             [Display(Name = "U_Email", ResourceType = typeof(Resources.Metadata))]
-            [DataType("Email", ErrorMessage="Текст не є електронною скринькою")]
+            [DataType("Email", ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "U_Email_Invalid")]
             public string Email { get; set; }
 
-            [Display(Name = "U_CreatedDate", ResourceType = typeof(Resources.Metadata))]
+            [Display(Name = "U_CreatedData", ResourceType = typeof(Resources.Metadata))]
             public DateTime CreatedDate { get; set; }
 
             [Display(Name = "U_LastLogin", ResourceType = typeof(Resources.Metadata))]
@@ -308,7 +308,7 @@ namespace DistanceLessons.Models
 
             [Display(Name = "Mod_Time", ResourceType = typeof(Resources.Metadata))]
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_Time_Required")]
-            [Range(1, 300, ErrorMessage = "Час на проходження модульного контролю може коливатись в межах від 1 до 300 хвилин")]
+            [StringLength(300, ErrorMessageResourceType = typeof(Resources.Metadata), MinimumLength = 1, ErrorMessageResourceName = "Mod_Time_StringLength")]
             public int TimeForPassTest { get; set; }
 
             [ScaffoldColumn(false)]
@@ -328,7 +328,7 @@ namespace DistanceLessons.Models
 
             [Display(Name = "Mod_MaxPoints", ResourceType = typeof(Resources.Metadata))]
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Mod_MaxPoints_Required")]
-            [Range(0, 100, ErrorMessage = "Кількість балів за модуль не може бути меншою 0 і більшою 100")]
+            [StringLength(100, ErrorMessageResourceType = typeof(Resources.Metadata), MinimumLength = 0, ErrorMessageResourceName = "Mod_MaxPoints_StringLength")]
             public int MaxPoints { get; set; }
 
             [Display(Name = "Mod_QCount", ResourceType = typeof(Resources.Metadata))]
@@ -364,14 +364,83 @@ namespace DistanceLessons.Models
             public DateTime PassedTime { get; set; }
         }
     }
+
     [MetadataType(typeof(SendMessageMetadata))]
     public partial class SendMessageModel
     {
         public class SendMessageMetadata
         {
             [Display(Name = "M_ToUser", ResourceType = typeof(Resources.Metadata))]
-            [ExistUserInDB(ErrorMessage = "Такого користувача не існує")]
+            [ExistUserInDB(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "U_User_Invalid")]
             public String Name { get; set; }
+        }
+    }
+
+    [MetadataType(typeof(ChangePasswordModelMetadata))]
+    public partial class ChangePasswordModel
+    {
+        public class ChangePasswordModelMetadata
+        {
+            [Required]
+            [DataType(DataType.Password)]
+            [Display(Name = "Cp_Old", ResourceType = typeof(Resources.Metadata))]
+            public string OldPassword { get; set; }
+
+            [Required]
+            [StringLength(30, ErrorMessageResourceType = typeof(Resources.Metadata), MinimumLength = 6, ErrorMessageResourceName = "Cp_New_StringLength")]
+            [DataType(DataType.Password)]
+            [Display(Name = "Cp_New", ResourceType = typeof(Resources.Metadata))]
+            public string NewPassword { get; set; }
+
+            [DataType(DataType.Password)]
+            [Display(Name = "Cp_Confirm", ResourceType = typeof(Resources.Metadata))]
+            [Compare("NewPassword", ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Cp_Confirm_Compare")]
+            public string ConfirmPassword { get; set; }
+        }
+    }
+
+    [MetadataType(typeof(LogOnModelMetadata))]
+    public partial class LogOnModel
+    {
+        public class LogOnModelMetadata
+        {
+            [Display(Name = "Lo_Login", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Lo_Login_Required")]
+            public string UserName { get; set; }
+
+            [Display(Name = "Lo_Password", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Lo_Password_Required")]
+            [DataType(DataType.Password)]
+            public string Password { get; set; }
+            [Display(Name = "Lo_RememberMe", ResourceType = typeof(Resources.Metadata))]
+            public bool RememberMe { get; set; }
+        }
+    }
+
+    [MetadataType(typeof(RegisterModelMetadata))]
+    public partial class RegisterModel
+    {
+        public class RegisterModelMetadata
+        {
+            [Display(Name = "Lo_Login", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Lo_Login_Required")]
+            public string UserName { get; set; }
+
+            [DataType(DataType.EmailAddress)]
+            [Display(Name = "U_Email", ResourceType = typeof(Resources.Metadata))]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "U_Email_Required")]
+            public string Email { get; set; }
+
+            [DataType(DataType.Password)]
+            [Display(Name = "Lo_Password", ResourceType = typeof(Resources.Metadata))]
+            [StringLength(30, ErrorMessageResourceType = typeof(Resources.Metadata), MinimumLength = 6, ErrorMessageResourceName = "Cp_New_StringLength")]
+            [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Lo_Password_Required")]
+            public string Password { get; set; }
+
+            [DataType(DataType.Password)]
+            [Display(Name = "Cp_Confirm", ResourceType = typeof(Resources.Metadata))]
+            [Compare("Password", ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Cp_Confirm_Compare")]
+            public string ConfirmPassword { get; set; }
         }
     }
 }
