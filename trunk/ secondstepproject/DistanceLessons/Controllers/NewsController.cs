@@ -102,7 +102,7 @@ namespace DistanceLessons.Controllers
         [HttpPost]
         public ActionResult Delete(Guid? id, FormCollection collection)
         {
-            if ((id == null) || (!_db.ExistNew((Guid)id))||(!User.IsInRole("Student")))
+            if ((id == null) || (!_db.ExistNew((Guid)id))||(User.IsInRole("Student")))
             {
                 return new NotFoundMvc.NotFoundViewResult();
             }
