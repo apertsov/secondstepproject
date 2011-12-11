@@ -178,9 +178,18 @@ namespace DistanceLessons.Models
         public bool ExistUser(string username)
         {
             if ((from user in GetUserList()
-                    where user.Login==username
+                    where user.Login.ToLower()==username.ToLower()
                     select user).Count()==0)
                         return false;
+            else return true;
+        }
+
+        public bool ExistUserWithOutRegister(string username)
+        {
+            if ((from user in GetUserList()
+                 where user.Login == username
+                 select user).Count() == 0)
+                return false;
             else return true;
         }
 

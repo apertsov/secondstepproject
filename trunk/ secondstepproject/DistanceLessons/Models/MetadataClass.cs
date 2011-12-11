@@ -406,6 +406,7 @@ namespace DistanceLessons.Models
         {
             [Display(Name = "Lo_Login", ResourceType = typeof(Resources.Metadata))]
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "Lo_Login_Required")]
+            [ExistUserInDB(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "U_User_Invalid")]
             public string UserName { get; set; }
 
             [Display(Name = "Lo_Password", ResourceType = typeof(Resources.Metadata))]

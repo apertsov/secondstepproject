@@ -5,12 +5,14 @@ using System.Web;
 using System.Web.Security;
 using System.Collections.Specialized;
 using System.Text.RegularExpressions;
+using DistanceLessons.Attributes;
 using DistanceLessons.Models;
 
 
 
 namespace DistanceLessons
 {
+    [Localization]
     public class myMembershipProvider : MembershipProvider
     {
 
