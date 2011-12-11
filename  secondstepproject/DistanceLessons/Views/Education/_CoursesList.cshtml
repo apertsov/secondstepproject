@@ -13,14 +13,13 @@
             <li><a>@Html.Resource("Layout, courses")</a>
                 <ul style="display: block;">
                     <li>@Ajax.ActionLink(Html.Resource("Layout, all_courses"), "courses", new {withStatus = 0, numPage = 0}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</li>
-                    <li>@Ajax.ActionLink(Html.Resource("Layout, public_courses"), "courses", new { withStatus = -1, numPage = 0 }, new AjaxOptions { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })</li>
-                    <li>@Ajax.ActionLink(Html.Resource("Layout, private_courses"), "courses", new { withStatus = 1, numPage = 0 }, new AjaxOptions { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })</li>
+                    <li>@Ajax.ActionLink(Html.Resource("Layout, public_courses"), "courses", new {withStatus = -1, numPage = 0}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</li>
+                    <li>@Ajax.ActionLink(Html.Resource("Layout, private_courses"), "courses", new {withStatus = 1, numPage = 0}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</li>
                 </ul>
             </li>
             <li>@Html.ActionLink(Html.Resource("Layout, menu_education"), "Index")</li>
         </ul>
         <div id="course_ajax" class="box_shdw_bottom">
-            @{Html.RenderPartial("_courses", Model);}
+            @{ Html.RenderPartial("_courses", Model); }
         </div>
     </div> }
-

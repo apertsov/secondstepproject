@@ -172,7 +172,7 @@
     <value>Регистрация</value>
   </data>
   <data name="_LogOnPartial_SignIn" xml:space="preserve">
-    <value>Ввойти</value>
+    <value>Войти</value>
   </data>
   <data name="welcome" xml:space="preserve">
     <value>Добро пожаловать !</value>

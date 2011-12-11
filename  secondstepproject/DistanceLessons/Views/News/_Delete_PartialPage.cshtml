@@ -1,22 +1,23 @@
-﻿@model DistanceLessons.Models.News
+﻿@using DistanceLessons.Models
+@model News
 <script>
-$( function() {
-$('.delete').click(function() {
-    return confirm('@Html.Resource("Question") - "@Model.Title" ?');
-});
+$(function() {
+    $('.delete').click(function() {
+        return confirm('@Html.Resource("Question") - "@Model.Title" ?');
+    });
 });
 </script>
 
 <h2>@Model.Title</h2>
-    <div>
-        @Html.TextHtml(Model.Text)
-    </div>
-    <br/>
-<div class="time-author">-@Model.User.Login, @Model.Publication</div>
-@using (Html.BeginForm()) 
-{
-<div class="item" align="center">
-    <input type="submit" value=@Html.Resource("Layout, delete") class="delete" />
-    @Ajax.ActionLink(Html.Resource("Layout, back"), "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+<div>
+    @Html.TextHtml(Model.Text)
 </div>
+<br/>
+<div class="time-author">-@Model.User.Login, @Model.Publication</div>
+@using (Html.BeginForm())
+{
+    <div class="item" align="center">
+        <input type="submit" value=@Html.Resource("Layout, delete") class="delete" />
+        @Ajax.ActionLink(Html.Resource("Layout, back"), "Index", new AjaxOptions {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
+    </div>
 }

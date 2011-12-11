@@ -8,8 +8,8 @@ namespace DistanceLessons.Controllers
     [Localization]
     public class NewsController : Controller
     {
+        private readonly DataEntitiesManager _db = new DataEntitiesManager();
         private int itemOnPage = 5;
-        private DataEntitiesManager _db = new DataEntitiesManager();
 
         //
         // GET: /News/
@@ -42,13 +42,15 @@ namespace DistanceLessons.Controllers
             try
             {
                 obj.NewId = Guid.NewGuid();
-                obj.Publication = System.DateTime.Now;
+                obj.Publication = DateTime.Now;
                 obj.UserId = _db.GetUserId(User.Identity.Name);
 
                 _db.AddNew(obj);
                 _db.Save();
             }
-            catch { }
+            catch
+            {
+            }
 
             return RedirectToAction("Index");
         }
