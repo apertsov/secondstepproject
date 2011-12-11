@@ -632,7 +632,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Uploads\" />
-    <Folder Include="Views\Profile\App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Metadata.resx">
@@ -708,6 +707,9 @@
     <Content Include="Views\Search\App_LocalResources\UsersSearch.cshtml.resx" />
     <Content Include="Views\Search\App_LocalResources\UsersSearch.cshtml.ru-ru.resx" />
     <Content Include="Views\Search\App_LocalResources\UsersSearch.cshtml.en-us.resx" />
+    <Content Include="Views\Profile\App_LocalResources\Index.cshtml.resx" />
+    <Content Include="Views\Profile\App_LocalResources\Index.cshtml.ru-ru.resx" />
+    <Content Include="Views\Profile\App_LocalResources\Index.cshtml.en-us.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
