@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using DistanceLessons.Attributes;
 using DistanceLessons.Models;
@@ -125,7 +126,15 @@ namespace DistanceLessons.Controllers
             var temp = new UserCourseAndCategoriesModel();
             temp.UserCourses = _db.GetUserCourseListByUser(_db.GetUserId(User.Identity.Name));
             temp.Categories = _db.GetCategoriesList(temp.UserCourses);
-            temp.CoursesLessons = _db.GetLessonsListByCoursesList(temp.UserCourses);
+            temp.CoursesLessonsInModule = new List<Lesson>();
+            temp.CoursesLessonsInNullModule = new List<Lesson>();
+            List<Lesson> temp_lst = _db.GetLessonsListByCoursesList(temp.UserCourses);
+            foreach (Lesson item in temp_lst)
+            {
+                if(item.ModuleId==null) temp.CoursesLessonsInNullModule.Add(item);
+                else temp.CoursesLessonsInModule.Add(item);
+            }
+            temp.Modules = _db.GetModulesListByCoursesList(temp.CoursesLessonsInModule);
 
             return PartialView("_UserSubscribs", temp);
         }
