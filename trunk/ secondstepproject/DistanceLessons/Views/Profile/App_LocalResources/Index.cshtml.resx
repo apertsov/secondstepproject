@@ -117,151 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="App_Footer_TopPage" xml:space="preserve">
-    <value>Top page</value>
+  <data name="contact_data" xml:space="preserve">
+    <value>Контактні дані</value>
   </data>
-  <data name="App_HomePage" xml:space="preserve">
-    <value>Home Page</value>
+  <data name="general_information" xml:space="preserve">
+    <value>Загальна інформація</value>
   </data>
-  <data name="back" xml:space="preserve">
-    <value>Back</value>
+  <data name="messages" xml:space="preserve">
+    <value>Особисті повідомлення</value>
   </data>
-  <data name="create" xml:space="preserve">
-    <value>Create</value>
+  <data name="m_all" xml:space="preserve">
+    <value>Всі</value>
   </data>
-  <data name="delete" xml:space="preserve">
-    <value>Delete</value>
+  <data name="m_from" xml:space="preserve">
+    <value>Надіслані</value>
   </data>
-  <data name="edit" xml:space="preserve">
-    <value>Edit</value>
+  <data name="m_new" xml:space="preserve">
+    <value>Не прочитані</value>
   </data>
-  <data name="read" xml:space="preserve">
-    <value>Read</value>
+  <data name="m_title" xml:space="preserve">
+    <value>Повідомлення</value>
   </data>
-  <data name="save" xml:space="preserve">
-    <value>Save</value>
+  <data name="m_to" xml:space="preserve">
+    <value>Прийняті</value>
   </data>
-  <data name="Slider_ToPage" xml:space="preserve">
-    <value>Go to</value>
+  <data name="m_write" xml:space="preserve">
+    <value>Написати повідомлення</value>
   </data>
-  <data name="Slider_ToRegister" xml:space="preserve">
-    <value>register page</value>
+  <data name="personal_data" xml:space="preserve">
+    <value>Особиста інформація</value>
   </data>
-  <data name="_HorizontalNavigation_Courses" xml:space="preserve">
-    <value>Courses</value>
+  <data name="personal_room" xml:space="preserve">
+    <value>Особистий кабінет</value>
   </data>
-  <data name="_HorizontalNavigation_Education" xml:space="preserve">
-    <value>Education</value>
-  </data>
-  <data name="_HorizontalNavigation_HomePage" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="_HorizontalNavigation_News" xml:space="preserve">
-    <value>News</value>
-  </data>
-  <data name="_HorizontalNavigation_Profile" xml:space="preserve">
-    <value>Profile</value>
-  </data>
-  <data name="_LogOnPartial_Exit" xml:space="preserve">
-    <value>LogOut</value>
-  </data>
-  <data name="_LogOnPartial_Hello" xml:space="preserve">
-    <value>Hello,</value>
-  </data>
-  <data name="_LogOnPartial_Register" xml:space="preserve">
-    <value>Register</value>
-  </data>
-  <data name="_LogOnPartial_SignIn" xml:space="preserve">
-    <value>LogIn</value>
-  </data>
-  <data name="welcome" xml:space="preserve">
-    <value>Welcome !</value>
-  </data>
-  <data name="_NewMessageBox_NewMesseges" xml:space="preserve">
-    <value>News messages: </value>
-  </data>
-  <data name="all_courses" xml:space="preserve">
-    <value>All Courses</value>
-  </data>
-  <data name="cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="data_null_category" xml:space="preserve">
-    <value>So far, no categories.</value>
-  </data>
-  <data name="data_null_courses" xml:space="preserve">
-    <value>Courses not yet created. Expect.</value>
-  </data>
-  <data name="data_null_subscribs" xml:space="preserve">
-    <value>No subscriptions courses.</value>
-  </data>
-  <data name="menu_education" xml:space="preserve">
-    <value>Menu education</value>
-  </data>
-  <data name="module" xml:space="preserve">
-    <value>Module:</value>
-  </data>
-  <data name="private_courses" xml:space="preserve">
-    <value>Private</value>
-  </data>
-  <data name="public_courses" xml:space="preserve">
-    <value>Public</value>
-  </data>
-  <data name="start_test" xml:space="preserve">
-    <value>Start testing</value>
-  </data>
-  <data name="status" xml:space="preserve">
-    <value>Status:</value>
-  </data>
-  <data name="stat_private" xml:space="preserve">
-    <value>Private</value>
-  </data>
-  <data name="stat_private_alert_subscrb" xml:space="preserve">
-    <value>This course is private. Expect approval from the teacher and subscription notifications for personal messages.</value>
-  </data>
-  <data name="stat_public" xml:space="preserve">
-    <value>Public</value>
-  </data>
-  <data name="stat_public_alert_subscrb" xml:space="preserve">
-    <value>You signed up for the course!\n\rOn time delivery of the module you will alert the system of personal messages.\n\r\n\rTo unsubscribe, click "Cancel"</value>
-  </data>
-  <data name="subscribe" xml:space="preserve">
-    <value>Subscribe</value>
-  </data>
-  <data name="teacher" xml:space="preserve">
-    <value>Teacher:</value>
-  </data>
-  <data name="wait" xml:space="preserve">
-    <value>We expect confirmation</value>
-  </data>
-  <data name="categories" xml:space="preserve">
-    <value>Categories</value>
-  </data>
-  <data name="courses" xml:space="preserve">
-    <value>Courses</value>
-  </data>
-  <data name="my_record_book" xml:space="preserve">
-    <value>My record-book</value>
-  </data>
-  <data name="my_subscriptions" xml:space="preserve">
-    <value>My subscriptions</value>
-  </data>
-  <data name="category" xml:space="preserve">
-    <value>Category:</value>
-  </data>
-  <data name="go_search" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="search" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="search_for_users" xml:space="preserve">
-    <value>Search for users</value>
-  </data>
-  <data name="search_the_lesson" xml:space="preserve">
-    <value>Search the lesson</value>
-  </data>
-  <data name="search_the_subject" xml:space="preserve">
-    <value>Search the course</value>
+  <data name="profile" xml:space="preserve">
+    <value>Профіль</value>
   </data>
 </root>

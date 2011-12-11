@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Особистий кабінет";
+    ViewBag.Title = Html.Resource("personal_room");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -17,22 +17,22 @@
 
     <div id="profile">
         <ul class="topnav" class=box_shdw_right>
-            <li><a>Загальна інформація</a>
+            <li><a>@Html.Resource("general_information")</a>
                 <ul style="display: block;">
-                    <li>@Ajax.ActionLink("Профіль", "Index", new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
-                    <li>@Ajax.ActionLink("Особиста інформація", "Information", new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
-                    <li>@Ajax.ActionLink("Контактні дані", "ContactInformation", new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
+                    <li>@Ajax.ActionLink(Html.Resource("profile"), "Index", new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
+                    <li>@Ajax.ActionLink(Html.Resource("personal_data"), "Information", new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
+                    <li>@Ajax.ActionLink(Html.Resource("contact_data"), "ContactInformation", new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
                 </ul>
             </li>
-            <li><a>Особисті повідомлення</a>
+            <li><a>@Html.Resource("messages")</a>
                 <ul>
-                    <li>@Html.ActionLink("Написати повідомлення", "NewMessage")</li>
-                    <li><a>Повідомлення</a>
+                    <li>@Html.ActionLink(Html.Resource("m_write"), "NewMessage")</li>
+                    <li><a>@Html.Resource("m_title")</a>
                         <ul>
-                            <li>@Ajax.ActionLink("Нові повідомлення", "NewMessages", new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
-                            <li>@Ajax.ActionLink("Всі повідомлення", "Messages", new {type = 0}, new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
-                            <li>@Ajax.ActionLink("Вхідні", "Messages", new {type = 1}, new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
-                            <li>@Ajax.ActionLink("Вихідні", "Messages", new {type = 2}, new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
+                            <li>@Ajax.ActionLink(Html.Resource("m_all"), "Messages", new {type = 0}, new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
+                            <li>@Ajax.ActionLink(Html.Resource("m_new"), "NewMessages", new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})</li>
+                            <li>@Ajax.ActionLink(Html.Resource("m_to"), "Messages", new { type = 1 }, new AjaxOptions { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</li>
+                            <li>@Ajax.ActionLink(Html.Resource("m_from"), "Messages", new { type = 2 }, new AjaxOptions { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })</li>
                         </ul>
                     </li>
                 </ul>
