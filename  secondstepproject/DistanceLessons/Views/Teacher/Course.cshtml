@@ -37,8 +37,7 @@ else if ((bool)ViewBag.IsAdmin)
                     if (les.IsAcceptMainTeacher)
                     {
                     <text>
-                    @Html.ActionLink("___", "ShowLessonTests", "Test", new { id = les.LessonId, courseId = (Guid)ViewBag.CourseId }, new { @class = "tests", title = "Тести" })
-                    @Html.ActionLink("___", "EditLesson", new { id = les.LessonId }, new { @class = "edit", title = "Редагувати" })
+                   @Html.ActionLink("___", "EditLesson", new { id = les.LessonId }, new { @class = "edit", title = "Редагувати" })
                     </text>            }
                     else
                     {

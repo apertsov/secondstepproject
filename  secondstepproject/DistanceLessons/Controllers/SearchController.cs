@@ -25,12 +25,12 @@ namespace DistanceLessons.Controllers
         }
 
        [HttpPost]
-        public ActionResult Course(string title, string description)
+        public ActionResult Course(string c_title, string description)
         {
             var course = _db.GetCourseList();
 
-            if (!string.IsNullOrEmpty(title))
-                course = course.Where(a => a.Title.ToUpper().Contains(title.ToUpper())).ToList();
+            if (!string.IsNullOrEmpty(c_title))
+                course = course.Where(a => a.Title.ToUpper().Contains(c_title.ToUpper())).ToList();
 
             if (!string.IsNullOrEmpty(description))
                 course = course.Where(a => a.Description.ToUpper().Contains(description.ToUpper())).ToList();
@@ -47,12 +47,12 @@ namespace DistanceLessons.Controllers
        }
 
        [HttpPost]
-       public ActionResult Lesson(string title, string description)
+       public ActionResult Lesson(string l_title, string description)
        {
            var lesson = _db.GetLessonList();
 
-           if (!string.IsNullOrEmpty(title))
-               lesson = lesson.Where(a => a.Title.ToUpper().Contains(title.ToUpper())).ToList();
+           if (!string.IsNullOrEmpty(l_title))
+               lesson = lesson.Where(a => a.Title.ToUpper().Contains(l_title.ToUpper())).ToList();
 
            if (!string.IsNullOrEmpty(description))
                lesson = lesson.Where(a => a.Description != null && a.Description.ToUpper().Contains(description.ToUpper())).ToList();
