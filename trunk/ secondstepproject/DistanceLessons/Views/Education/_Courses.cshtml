@@ -9,7 +9,6 @@
         alert(message);
     }
 </script>
-
 @using DistanceLessons.Models
 @model IEnumerable<UserCourseModel>
 @if (Model.Count() != 0)
@@ -39,7 +38,7 @@
                                 {
                                     if (item.Subscribe == 1)
                                     {
-                                        <span onClick=alert_public(); >@Ajax.ActionLink(Html.Resource("Layout, subscribe"), "SubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</span>
+                                        <span onClick= alert_public();  >@Ajax.ActionLink(Html.Resource("Layout, subscribe"), "SubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</span>
                                     }
                                     else if (item.Subscribe == 0)
                                          {
@@ -50,7 +49,7 @@
                                 {
                                     if (item.Subscribe == 1)
                                     {
-                                        <span onClick=alert_private(); >@Ajax.ActionLink(Html.Resource("Layout, subscribe"), "ConfirmSubscribeOnCourse", new {item.Course.CourseId, TeacherId = item.Course.UserId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</span>
+                                        <span onClick= alert_private();  >@Ajax.ActionLink(Html.Resource("Layout, subscribe"), "ConfirmSubscribeOnCourse", new {item.Course.CourseId, TeacherId = item.Course.UserId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</span>
                                     }
                                     else if (item.Subscribe == 2)
                                          {

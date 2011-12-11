@@ -8,8 +8,8 @@ namespace DistanceLessons.Controllers
     [Localization]
     public class EducationController : Controller
     {
-        private int itemOnPage = 10;
         private readonly DataEntitiesManager _db = new DataEntitiesManager();
+        private int itemOnPage = 10;
 
         //
         // GET: /Education/
@@ -21,7 +21,7 @@ namespace DistanceLessons.Controllers
 
         public ActionResult Courses_()
         {
-            return View("Courses",_db.GetValidCourses());
+            return View("Courses", _db.GetValidCourses());
         }
 
         public ActionResult category()

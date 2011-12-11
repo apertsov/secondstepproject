@@ -1,24 +1,26 @@
-﻿@model DistanceLessons.Models.News
+﻿@using DistanceLessons.Models
+@model News
 
 @{
-    ViewBag.Title = Html.Resource("Title")+Model.Title;
+    ViewBag.Title = Html.Resource("Title") + Model.Title;
 }
 
 <div class="item" align="right">
-@{
-    if ((Session["role"].ToString()=="admin")||(Session["role"].ToString()=="teacher")||(Session["role"].ToString()=="dean"))
+    @using (var _db = new DataEntitiesManager())
     {
-        @Html.ActionLink(Html.Resource("Layout, edit"), "Edit", new { id = Model.NewId })
-        @Html.ActionLink(Html.Resource("Layout, delete"), "Delete", new { id = Model.NewId })
+        if ((_db.UserRole(User.Identity.Name) == UserRoles.Admin.ToString()) || (_db.UserRole(User.Identity.Name) == UserRoles.Teacher.ToString()) || (_db.UserRole(User.Identity.Name) == UserRoles.Dean.ToString()))
+        {
+            @Html.ActionLink(Html.Resource("Layout, edit"), "Edit", new {id = Model.NewId})
+            @Html.ActionLink(Html.Resource("Layout, delete"), "Delete", new {id = Model.NewId})
+        }
     }
-}
 </div>
 
 <h2>@Model.Title</h2>
-    <div>
-        @Html.TextHtml(Model.Text)
-    </div>
-    <br/>
+<div>
+    @Html.TextHtml(Model.Text)
+</div>
+<br/>
 <div class="time-author">-@Model.User.Login, @Model.Publication</div>
 
 <div class="item" align="center">

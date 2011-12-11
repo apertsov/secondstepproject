@@ -1,4 +1,5 @@
-﻿@model DistanceLessons.Models.Message_status
+﻿@using DistanceLessons.Models
+@model Message_status
 
 <table class="left2" cellspacing="10">
     <tr>
@@ -7,11 +8,11 @@
     </tr>
     <tr>
         <td class="text_right"><b>Від кого:</b></td>
-        <td class="text_left">@Html.ActionLink(Model.Message.User.Login, "Info", "Profile", new { user = Model.Message.User.Login }, null)</td>
+        <td class="text_left">@Html.ActionLink(Model.Message.User.Login, "Info", "Profile", new {user = Model.Message.User.Login}, null)</td>
     </tr>
     <tr>
         <td class="text_right"><b>Кому:</b></td>
-        <td class="text_left">@Html.ActionLink(Model.Message.User1.Login, "Info", "Profile", new { user = Model.Message.User1.Login }, null)</td>
+        <td class="text_left">@Html.ActionLink(Model.Message.User1.Login, "Info", "Profile", new {user = Model.Message.User1.Login}, null)</td>
     </tr>
     <tr>
         <td class="text_right"><b>Коли:</b></td>

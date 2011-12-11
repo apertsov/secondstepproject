@@ -9,7 +9,7 @@ namespace DistanceLessons.Controllers
     [Localization]
     public class ProfileController : Controller
     {
-        private DataEntitiesManager _db = new DataEntitiesManager();
+        private readonly DataEntitiesManager _db = new DataEntitiesManager();
 
         //
         // GET: /Profile/
@@ -117,9 +117,10 @@ namespace DistanceLessons.Controllers
         {
             Session["choose_type"] = type;
             ViewBag.Exist = false;
-            foreach (var item in _db.GetMessagesByUser(User.Identity.Name, type))
+            foreach (MessageStatusWithAuthorModel item in _db.GetMessagesByUser(User.Identity.Name, type))
             {
-                if ((item.Messages.Status == 10) || (item.Messages.Status == 11) || (item.Messages.Status == 12) || (item.Messages.Status == 0) || (item.Messages.Status == 1)) ViewBag.Exist = true;
+                if ((item.Messages.Status == 10) || (item.Messages.Status == 11) || (item.Messages.Status == 12) ||
+                    (item.Messages.Status == 0) || (item.Messages.Status == 1)) ViewBag.Exist = true;
             }
             return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, type));
         }
@@ -134,7 +135,7 @@ namespace DistanceLessons.Controllers
         {
             if (user != null)
             {
-                SendMessageModel temp = new SendMessageModel();
+                var temp = new SendMessageModel();
                 temp.Name = user;
                 return View(temp);
             }
@@ -158,7 +159,7 @@ namespace DistanceLessons.Controllers
 
                     _db.AddMessage(obj.Messages);
                     _db.AddMessage_status(_db.GetMessageStatus(obj.Messages, obj.Name));
-                    _db.AddMessage_status(_db.GetMessageStatus(obj.Messages, User.Identity.Name),1);
+                    _db.AddMessage_status(_db.GetMessageStatus(obj.Messages, User.Identity.Name), 1);
                 }
                 return RedirectToAction("Index");
             }
@@ -172,7 +173,7 @@ namespace DistanceLessons.Controllers
             UpdateModel(upd_);
             _db.Save();
             ViewBag.Exist = true;
-            return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, (byte)Session["choose_type"]));
+            return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, (byte) Session["choose_type"]));
         }
 
         public ActionResult ReadMessage(Guid MessageId)
@@ -186,7 +187,7 @@ namespace DistanceLessons.Controllers
 
         public ActionResult ConfirmSubscribe(Guid CourId, Guid SubscribeUser, Guid MessId)
         {
-            UserCours subscribe = new UserCours();
+            var subscribe = new UserCours();
             subscribe.UserCourseId = Guid.NewGuid();
             subscribe.CourseId = CourId;
             subscribe.UserId = SubscribeUser;
@@ -199,9 +200,12 @@ namespace DistanceLessons.Controllers
             UpdateModel(upd_);
             _db.Save();
 
-            Message confirm = new Message();
+            var confirm = new Message();
             confirm.MessageId = Guid.NewGuid();
-            confirm.Message1 = "Викладач <a href=profile/info?user=" + User.Identity.Name + ">" + _db.GetUser(User.Identity.Name).Login + "</a> затвердив Вашу підписку на курс - '" + _db.GetCourse(CourId).Title + "'.Про терміни здачі модуля, та інші новини по предмету, Ви будете оповіщенні особистим повідомленням.<br />&nbsp;---&nbsp;</br>Дякуємо за підписку. Вдалого навчання! ;)";
+            confirm.Message1 = "Викладач <a href=profile/info?user=" + User.Identity.Name + ">" +
+                               _db.GetUser(User.Identity.Name).Login + "</a> затвердив Вашу підписку на курс - '" +
+                               _db.GetCourse(CourId).Title +
+                               "'.Про терміни здачі модуля, та інші новини по предмету, Ви будете оповіщенні особистим повідомленням.<br />&nbsp;---&nbsp;</br>Дякуємо за підписку. Вдалого навчання! ;)";
             confirm.DateOfSender = DateTime.Now;
             confirm.UserId_From = _db.GetUserId(User.Identity.Name);
             confirm.UserId_To = SubscribeUser;
@@ -222,9 +226,12 @@ namespace DistanceLessons.Controllers
             UpdateModel(upd_);
             _db.Save();
 
-            Message confirm = new Message();
+            var confirm = new Message();
             confirm.MessageId = Guid.NewGuid();
-            confirm.Message1 = "Викладач <a href=profile/info?user=" + User.Identity.Name + ">" + _db.GetUser(User.Identity.Name).Login + "</a> відмовив Вам в підписці на курс - '" + _db.GetCourse(CourId).Title + "'.<br />&nbsp;---&nbsp;</br><i><b>Адміністрація:</b> Вибачте за незручнсті! Спробуйте загальнодоступні курси.</i>";
+            confirm.Message1 = "Викладач <a href=profile/info?user=" + User.Identity.Name + ">" +
+                               _db.GetUser(User.Identity.Name).Login + "</a> відмовив Вам в підписці на курс - '" +
+                               _db.GetCourse(CourId).Title +
+                               "'.<br />&nbsp;---&nbsp;</br><i><b>Адміністрація:</b> Вибачте за незручнсті! Спробуйте загальнодоступні курси.</i>";
             confirm.DateOfSender = DateTime.Now;
             confirm.UserId_From = _db.GetUserId(User.Identity.Name);
             confirm.UserId_To = SubscribeUser;

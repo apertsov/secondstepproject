@@ -1,23 +1,24 @@
-﻿@model DistanceLessons.Models.News
+﻿@using DistanceLessons.Models
+@model News
 
 <div class="item" align="right">
-@{
-    if ((Session["role"].ToString()=="admin")||(Session["role"].ToString()=="teacher")||(Session["role"].ToString()=="dean"))
+    @using (var _db = new DataEntitiesManager())
     {
-        @Ajax.ActionLink(Html.Resource("Layout, edit"), "Edit", new { id = Model.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
-        @Ajax.ActionLink(Html.Resource("Layout, delete"), "Delete", new { id = Model.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+        if ((_db.UserRole(User.Identity.Name) == UserRoles.Admin.ToString()) || (_db.UserRole(User.Identity.Name) == UserRoles.Teacher.ToString()) || (_db.UserRole(User.Identity.Name) == UserRoles.Dean.ToString()))
+        {
+            @Ajax.ActionLink(Html.Resource("Layout, edit"), "Edit", new {id = Model.NewId}, new AjaxOptions {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
+            @Ajax.ActionLink(Html.Resource("Layout, delete"), "Delete", new {id = Model.NewId}, new AjaxOptions {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
+        }
     }
-}
 </div>
 
 <h2>@Model.Title</h2>
-    <div>
-        @Html.TextHtml(Model.Text)
-    </div>
-    <br/>
+<div>
+    @Html.TextHtml(Model.Text)
+</div>
+<br/>
 <div class="time-author">-@Model.User.Login, @Model.Publication</div>
 
 <div class="item" align="center">
-    @Ajax.ActionLink(Html.Resource("Layout, back"), "Index", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+    @Ajax.ActionLink(Html.Resource("Layout, back"), "Index", new AjaxOptions {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
 </div>
-

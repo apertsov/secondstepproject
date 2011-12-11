@@ -1,28 +1,28 @@
-﻿@model DistanceLessons.Models.News
+﻿@using DistanceLessons.Models
+@model News
 
 @{
     ViewBag.Title = Html.Resource("Title");
 }
 
 <script>
-    $(function () {
-        $('.delete').click(function () {
+    $(function() {
+        $('.delete').click(function() {
             return confirm('@Html.Resource("Question") - "@Model.Title" ?');
         });
     });
 </script>
 
 <h2>@Model.Title</h2>
-    <div>
-        @Html.TextHtml(Model.Text)
-    </div>
-    <br/>
-<div class="time-author">-@Model.User.Login, @Model.Publication</div>
-@using (Html.BeginForm()) 
-{
-<div class="item" align="center">
-    <input type="submit" value=@Html.Resource("Layout, delete") class="delete" />
-    @Html.ActionLink(Html.Resource("Layout, back"), "Index")
+<div>
+    @Html.TextHtml(Model.Text)
 </div>
+<br/>
+<div class="time-author">-@Model.User.Login, @Model.Publication</div>
+@using (Html.BeginForm())
+{
+    <div class="item" align="center">
+        <input type="submit" value=@Html.Resource("Layout, delete") class="delete" />
+        @Html.ActionLink(Html.Resource("Layout, back"), "Index")
+    </div>
 }
-

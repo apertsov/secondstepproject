@@ -1,7 +1,12 @@
 ﻿@using DistanceLessons.Models
 <div class="title">@Html.Resource("Layout, _HorizontalNavigation_News")</div>
 
-@if ((((Session["three_news"]) == null) || ((List<News>) Session["three_news"]).Count == 0))
+@{
+    var _db = new DataEntitiesManager();
+    List<News> temp = _db.GetNewsList_time(3, 0, 2);
+}
+
+@if (((temp == null) || (temp.Count == 0)))
 {
     <div class="data_null">Поки що немає ніяких новин.</div>
 }
@@ -9,9 +14,9 @@ else
 {
     <ul>
         @{
-            foreach (var _new in (List<News>) Session["three_news"])
+            foreach (News _new in temp)
             {
-                <li>@Html.ActionLink(_new.Title.ToString(), "Detail", "News", new {id = _new.NewId}, null)
+                <li>@Html.ActionLink(_new.Title, "Detail", "News", new {id = _new.NewId}, null)
                     <div class="prologue">@Html.TextHtml(_new.Text)</div>
                     <div class="time-author">
                         <span class="no_button">-@Html.ActionLink(_new.User.Login, "Info", "Profile", new {user = _new.User.Login}, null), @_new.Publication</span></div>

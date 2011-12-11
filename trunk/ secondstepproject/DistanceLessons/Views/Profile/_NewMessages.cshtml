@@ -1,13 +1,16 @@
-﻿@model IEnumerable<DistanceLessons.Models.MessageStatusWithAuthorModel>
+﻿@using DistanceLessons.Models
+@model IEnumerable<MessageStatusWithAuthorModel>
 
 @{
     if (Model.Count() == 0)
-    {<div class="data_null">Нових повідомлень немає</div>}
+    {
+        <div class="data_null">Нових повідомлень немає</div>
+    }
     else
     {
         <ul>
             <div class="item">
-                @foreach (var item in Model)
+                @foreach (MessageStatusWithAuthorModel item in Model)
                 {
                     <div class="message">
 
@@ -25,8 +28,8 @@
                         <p>
                             Дата: @item.Messages.Message.DateOfSender
                             <span class="right">
-                                @Ajax.ActionLink("Видалити", "DeleteMessage", new { MessageId = item.Messages.MessageId }, new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })
-                                @Ajax.ActionLink("Читати...", "ReadMessage", new { MessageId = item.Messages.MessageId }, new AjaxOptions() { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })
+                                @Ajax.ActionLink("Видалити", "DeleteMessage", new {item.Messages.MessageId}, new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})
+                                @Ajax.ActionLink("Читати...", "ReadMessage", new {item.Messages.MessageId}, new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})
                             </span>
                         </p>
                     </div>

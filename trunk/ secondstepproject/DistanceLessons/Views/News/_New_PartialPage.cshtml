@@ -1,46 +1,48 @@
-﻿@model IEnumerable<DistanceLessons.Models.News>
-
-@{
-    if ((Session["role"].ToString()=="admin")||(Session["role"].ToString()=="teacher")||(Session["role"].ToString()=="dean"))
+﻿@using DistanceLessons.Models
+@model IEnumerable<News>
+@using (var _db = new DataEntitiesManager())
+{
+    if ((_db.UserRole(User.Identity.Name) == UserRoles.Admin.ToString()) || (_db.UserRole(User.Identity.Name) == UserRoles.Teacher.ToString()) || (_db.UserRole(User.Identity.Name) == UserRoles.Dean.ToString()))
     {
         <div class="item" align="right">
-            @Ajax.ActionLink(Html.Resource("Layout, create"), "Create", new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+            @Ajax.ActionLink(Html.Resource("Layout, create"), "Create", new AjaxOptions {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
         </div>
     }
 }
-@using DistanceLessons.Helpers
+    
 @if (Model.Count() != 0)
 {
-        <ul>
-            @{
-                foreach (var _new in Model)
-                {
-                    <div class="item">
-                        <li>
-                            <div class="no_button">
-                                <h4>@_new.Title</h4>
-                                <div class="prologue">@Html.TextHtml(_new.Text)</div>
-                            </div>
-                            <div class="time-author">
-                                <span class="no_button">-@Html.ActionLink(_new.User.Login, "Info", "Profile", new {user = _new.User.Login}, null), @_new.Publication</span>
-                                @{
-                                    if ((Session["role"].ToString()=="admin")||(Session["role"].ToString()=="teacher")||(Session["role"].ToString()=="dean"))
-                                    {
-                                        @Ajax.ActionLink(Html.Resource("Layout, edit"), "Edit", new { id = _new.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
-                                        @Ajax.ActionLink(Html.Resource("Layout, delete"), "Delete", new { id = _new.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
-                                    }
-                                    @Ajax.ActionLink(Html.Resource("Layout, read"), "Detail", new { id = _new.NewId }, new AjaxOptions() { UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace })
+    <ul>
+        @{
+            foreach (News _new in Model)
+            {
+                <div class="item">
+                    <li>
+                        <div class="no_button">
+                            <h4>@_new.Title</h4>
+                            <div class="prologue">@Html.TextHtml(_new.Text)</div>
+                        </div>
+                        <div class="time-author">
+                            <span class="no_button">-@Html.ActionLink(_new.User.Login, "Info", "Profile", new {user = _new.User.Login}, null), @_new.Publication</span>
+                            @using (var _db = new DataEntitiesManager())
+                            {
+                                if ((_db.UserRole(User.Identity.Name) == UserRoles.Admin.ToString()) || (_db.UserRole(User.Identity.Name) == UserRoles.Teacher.ToString()) || (_db.UserRole(User.Identity.Name) == UserRoles.Dean.ToString()))
+                                {
+                                    @Ajax.ActionLink(Html.Resource("Layout, edit"), "Edit", new {id = _new.NewId}, new AjaxOptions {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
+                                    @Ajax.ActionLink(Html.Resource("Layout, delete"), "Delete", new {id = _new.NewId}, new AjaxOptions {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
                                 }
-                            </div>
-                        </li>
-                    </div>
-                }
+                                @Ajax.ActionLink(Html.Resource("Layout, read"), "Detail", new {id = _new.NewId}, new AjaxOptions {UpdateTargetId = "news_ajax", InsertionMode = InsertionMode.Replace})
+                            }
+                        </div>
+                    </li>
+                </div>
             }
-        </ul>
+        }
+    </ul>
 
-<div class="item">
-        @Ajax.Pages((int)ViewData["numPage"], (int)ViewData["itemsCount"], (int)ViewData["itemOnPage"], "news_ajax", "Index")
-</div>
+    <div class="item">
+        @Ajax.Pages((int) ViewData["numPage"], (int) ViewData["itemsCount"], (int) ViewData["itemOnPage"], "news_ajax", "Index")
+    </div>
 }
 else
 {
