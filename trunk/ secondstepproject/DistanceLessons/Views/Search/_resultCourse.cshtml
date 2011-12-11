@@ -1,69 +1,6 @@
 ﻿@using DistanceLessons.Models
 @model IEnumerable<Cours>
 
-<style type="text/css" >
-    .webgrid
-    {
-        width: 100%;
-        border: 0px;
-        border-collapse: collapse;
-    }
-
-    .webgrid a
-    {
-        color: #000;
-    }
-
-    .webgrid-header
-    {
-        padding: 6px 5px;
-        text-align: center;
-        background-color: #e8eef4;
-        border-bottom: 2px solid #3966A2;
-        height: 40px;
-    
-        border-top: 2px solid #D6E8FF;
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-footer
-    {
-        padding: 6px 5px;
-        text-align: center;
-        background-color: #e8eef4;
-        border-top: 2px solid #3966A2;
-        height: 30px;
-    
-        border-bottom: 2px solid #D6E8FF;
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-alternating-row
-    {
-        height: 30px;
-        background-color: #f2f2f2;
-        border-bottom: 1px solid #d2d2d2;
-    
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-row-style
-    {
-        height: 30px;
-        border-bottom: 1px solid #d2d2d2;
-    
-        border-left: 2px solid #D6E8FF;
-        border-right: 2px solid #D6E8FF;
-    }
-
-    .webgrid-selected-row
-    {
-        font-weight: bold;
-    }
-</style>
 
 
 @{
@@ -76,8 +13,8 @@
         selectedRowStyle: "webgrid-selected-row",
         rowStyle: "webgrid-row-style",
         columns: grid.Columns(
-            grid.Column("Title", Html.Resource("Name_Course"), format: @<text><i>@item.Title</i> </text>),
-            grid.Column("Category.Category1", Html.Resource("Layout, category"), format: @<i>@item.Category.Category1</i>),
-            grid.Column("User.Login", Html.Resource("Layout, teacher"), format: @<text><i>@item.User.Login</i> </text>),
-            grid.Column("IsSubscribing", Html.Resource("Layout, stat_private")+Html.TextHtml(":"), format: (item) => new HtmlString(Html.CheckBox("ki", (bool) item.IsSubscribing, new {@readonly = true}).ToString()))))
+            grid.Column("Title", Html.Resource("Name_Course"), format: @<text><i>@item.Title</i> </text>,canSort: false),
+            grid.Column("Category.Category1", Html.Resource("Layout, category"), format: @<i>@item.Category.Category1</i>,canSort: false),
+            grid.Column("User.Login", Html.Resource("Layout, teacher"), format: @<text><i>@item.User.Login</i> </text>,canSort: false),
+            grid.Column("IsSubscribing", Html.Resource("Layout, stat_private")+Html.TextHtml(":"),canSort: false, format: (item) => new HtmlString(Html.CheckBox("ki", (bool) item.IsSubscribing, new {@readonly = true}).ToString()))))
 }
