@@ -699,6 +699,15 @@
     <Content Include="Views\Education\App_LocalResources\Courses.cshtml.resx" />
     <Content Include="Views\Education\App_LocalResources\Courses.cshtml.ru-ru.resx" />
     <Content Include="Views\Education\App_LocalResources\Courses.cshtml.en-us.resx" />
+    <Content Include="Views\Search\App_LocalResources\Course.cshtml.resx" />
+    <Content Include="Views\Search\App_LocalResources\Course.cshtml.ru-ru.resx" />
+    <Content Include="Views\Search\App_LocalResources\Course.cshtml.en-us.resx" />
+    <Content Include="Views\Search\App_LocalResources\Lesson.cshtml.resx" />
+    <Content Include="Views\Search\App_LocalResources\Lesson.cshtml.ru-ru.resx" />
+    <Content Include="Views\Search\App_LocalResources\Lesson.cshtml.en-us.resx" />
+    <Content Include="Views\Search\App_LocalResources\UsersSearch.cshtml.resx" />
+    <Content Include="Views\Search\App_LocalResources\UsersSearch.cshtml.ru-ru.resx" />
+    <Content Include="Views\Search\App_LocalResources\UsersSearch.cshtml.en-us.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<DistanceLessons.Models.User>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Пошук користувачів</h2>
+<h2>@Html.Resource("search_for_users")</h2>
 
 @using (Html.BeginForm())
 {
@@ -21,27 +21,25 @@
         <td class="editor-field"> @Html.TextBox("login", null, new { @class = "editor" }) </td>
          <td class="editor-field"> 
              @{
-                  List<DistanceLessons.Models.Role> roleList = ViewBag.RoleList; 
-                  var roleItems = new SelectList(roleList, "RoleID", "Name");
-                  
+    List<DistanceLessons.Models.Role> roleList = ViewBag.RoleList;
+    var roleItems = new SelectList(roleList, "RoleID", "Name");
               }
               
-             @Html.DropDownList("role", @roleItems, new { @class = "editor" }) 
-             
-            Не знаю статус: @Html.CheckBox("isKnown")
+             @Html.DropDownList("role", @roleItems, new { @class = "editor" })<br/>
+            @Html.Resource("do_not_known") @Html.CheckBox("isKnown")
              
          </td>
          </tr>
        <tr>
-           <td class="editor-field">  Ім'я </td>
-           <td class="editor-field">  Прізвище </td>
+           <td class="editor-field">@Html.Resource("Metadata, Information_FirstName")</td>
+           <td class="editor-field">@Html.Resource("Metadata, Information_LastName")</td>
        </tr>
        <tr>
-           <td class="editor-field">  @Html.TextBox("name","", new { @class = "editor" }) </td>
-           <td class="editor-field">  @Html.TextBox("sureName","", new { @class = "editor" }) </td>
+           <td class="editor-field">  @Html.TextBox("name", "", new { @class = "editor" }) </td>
+           <td class="editor-field">  @Html.TextBox("sureName", "", new { @class = "editor" }) </td>
        </tr>
      <tr>
-        <td class="error" colspan="2" align="center" style="padding-top: 5px;"> <button type="submit">Шукати</button></td>
+        <td class="error" colspan="2" align="center" style="padding-top: 5px;"> <button type="submit">@Html.Resource("Layout, go_search")</button></td>
     </tr>
     
     <tr>
