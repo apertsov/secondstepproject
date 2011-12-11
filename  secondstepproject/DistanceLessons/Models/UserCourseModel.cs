@@ -12,6 +12,8 @@ namespace DistanceLessons.Models
     {
         public List<Category> Categories { get; set; }
         public List<UserCours> UserCourses { get; set; }
-        public List<Lesson> CoursesLessons { get; set; } 
+        public List<Module> Modules { get; set; } 
+        public List<Lesson> CoursesLessonsInModule { get; set; }
+        public List<Lesson> CoursesLessonsInNullModule { get; set; }
     }
 }

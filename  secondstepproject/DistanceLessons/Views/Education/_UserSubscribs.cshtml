@@ -15,30 +15,40 @@
 </script>
 
     <div style="padding: 10px;">
-        @foreach (Category item in Model.Categories)
+        @foreach (var item in Model.Categories)
         {
             <div colspan="2"  style="border-bottom: 1px solid silver;"><b class="center">&nbsp;&nbsp;@item.Category1</b></div>
-            foreach (UserCours subitem in Model.UserCourses)
+            foreach (var subitem in Model.UserCourses)
             {
                 <div style="margin: 10px;">
                     @if (subitem.Cours.Category.Category1 == item.Category1)
                     {
                         <div style="margin-left: 15px; font-size: 0.8em; text-decoration: underline;" class="spoiler">@subitem.Cours.Title</div>
-                        <div class="text" style="margin: 10px;">
-                            @foreach (Lesson subitem1 in Model.CoursesLessons)
+                        <div class="text">
+                        <div style="margin: 10px;">
+                            @foreach (var subitem1 in Model.Modules)
                             {
-                                if (subitem1.CourseId == subitem.CourseId)
-                                {
-                                    <div style="margin-left: 25px; font-size: 0.8em;">@Html.Resource("Layout, module") @subitem1.Module.Title @Ajax.ActionLink("[" + Html.Resource("Layout, start_test") + "]", "ModuleInfo", "Education", new { id = subitem1.ModuleId }, new AjaxOptions { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace }, null)</div>
-                                    foreach (Lesson subitem2 in Model.CoursesLessons)
+                                <div style="margin-left: 25px; font-size: 0.8em;">@Html.Resource("Layout, module") @subitem1.Title @Ajax.ActionLink("[" + Html.Resource("Layout, start_test") + "]", "ModuleInfo", "Education", new { id = subitem1.ModuleId }, new AjaxOptions { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace }, null)</div>
+                                <div style="margin: 10px;">
+                                    @foreach (var subitem2 in Model.CoursesLessonsInModule)
                                     {
-                                        if ((subitem2.CourseId == subitem.CourseId) && (subitem1.ModuleId == subitem2.ModuleId))
+                                        if((subitem2.ModuleId==subitem1.ModuleId)&&(subitem2.CourseId==subitem.CourseId))
                                         {
                                             <div style="font-size: 0.8em;">@Html.ActionLink("[" + Html.Resource("Layout, read") + "]", "ShowFile", "Education", new { filename = subitem2.Text }, new { target = "_blank" }) @subitem2.Title</div>
                                         }
                                     }
-                                }
+                                </div>
                             }
+                        </div>
+                        <div class="text" style="margin: 10px;">
+                        <div style="margin-left: 25px; font-size: 0.8em;">Додаткові лекції</div>
+                        <div style="margin: 10px;">
+                            @foreach (var subitem2 in Model.CoursesLessonsInNullModule)
+                            {
+                                <div style="font-size: 0.8em;">@Html.ActionLink("[" + Html.Resource("Layout, read") + "]", "ShowFile", "Education", new { filename = subitem2.Text }, new { target = "_blank" }) @subitem2.Title</div>
+                            }
+                        </div>
+                        </div>
                         </div>
                     }
                 </div>

@@ -107,5 +107,16 @@ namespace DistanceLessons.Models
                     where modules.ModuleId == moduleId
                     select modules).Count() > 0 ? true : false;
         }
+
+        public List<Module> GetModulesListByCoursesList(List<Lesson> lst)
+        {
+            var modules = GetModuleList();
+            var temp = new List<Module>();
+            foreach (var item in modules)
+            {
+                if((lst.Find(m=>m.ModuleId==item.ModuleId)!=null)&&(temp.Find(m=>m.ModuleId==item.ModuleId)==null)) temp.Add(item);
+            }
+            return temp;
+        }
     }
 }

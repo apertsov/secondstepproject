@@ -428,3 +428,28 @@ E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\obj\Debug\
 E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\obj\Debug\GenerateResource.read.1.tlog
 E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\obj\Debug\GenerateResource.write.1.tlog
 E:\Project\secondstepproject\trunk\ secondstepproject\DistanceLessons\obj\Debug\en-us\DistanceLessons.resources.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\DistanceLessons.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\DistanceLessons.pdb
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\en-us\DistanceLessons.resources.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\AntiXSSLibrary.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\EntityFramework.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\Microsoft.Web.Optimization.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\System.Web.Helpers.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\System.Web.Mvc.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\System.Web.Providers.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\System.Web.Razor.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\System.Web.WebPages.Deployment.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\System.Web.WebPages.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\System.Web.WebPages.Razor.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\AntiXSSLibrary.xml
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\EntityFramework.xml
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.xml
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.Views.Account.App_LocalResources.ChangePassword.cshtml.en-us.resources
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\en-us\DistanceLessons.resources.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.dll
+C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.pdb
