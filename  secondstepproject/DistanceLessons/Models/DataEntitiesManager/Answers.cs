@@ -62,7 +62,7 @@ namespace DistanceLessons.Models
             }
         }
 
-        public bool IsAnswer(Guid id)
+        public bool ExistAnswer(Guid id)
         {
             return (from answer in _db.Answers
                     where answer.AnswerId == id

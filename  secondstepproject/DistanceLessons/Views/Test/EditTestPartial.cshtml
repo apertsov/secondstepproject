@@ -3,7 +3,13 @@
 @{
     ViewBag.Title = "Редагувати тест";
 }
-
+<script>
+    $(function () {
+        $('.delete').click(function () {
+            return confirm('Видалити відповідь?');
+        });
+    });
+</script>
 <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
 @Html.ValidationSummary(true, "Не вдалось зберегти результати. Виправте помилки і спробуйте ще раз.")
@@ -25,7 +31,7 @@
              <div class="editor-field">
              @Html.CheckBoxFor(model => model.AnswerList[j].Valid)
              @Html.EditorFor(model => model.AnswerList[j].Answer1)
-             @Ajax.ActionLink("Видалити відповідь", "DeleteAnswer", "Test", new { id = Model.AnswerList[j].AnswerId, testId = Model.Test.TestId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace }, new { onclick = "return confirm('@Html.Resource('Layout', 'delete')');" })      
+             @Ajax.ActionLink("Видалити відповідь", "DeleteAnswer", "Test", new { id = Model.AnswerList[j].AnswerId, testId = Model.Test.TestId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace }, new { @class="delete"})      
              @Html.ValidationMessageFor(model => model.AnswerList[j].Answer1) 
              </div>   
          }

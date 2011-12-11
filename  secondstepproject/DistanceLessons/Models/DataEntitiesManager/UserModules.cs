@@ -94,6 +94,14 @@ namespace DistanceLessons.Models
                     select userResults).Count() == 0 ? true : false;
         }
 
+
+        public bool ExistUserModule(Guid userModuleId)
+        {
+            return (from userModules in GetUserModuleList()
+                    where userModules.UserModuleId == userModuleId
+                    select userModules).Count() > 0 ? true : false;
+        }
+
         public void DeleteModuleTest(Guid moduleId, string username)
         {
             UserModule _userResult = (from userResult in GetUserModuleList()

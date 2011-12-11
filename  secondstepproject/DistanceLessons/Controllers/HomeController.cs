@@ -56,6 +56,7 @@ namespace DistanceLessons.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public ActionResult MessageBox()
         {
             Session["MessageCount"] = (_db.GetNewMessageForUser(User.Identity.Name).Count != 0)

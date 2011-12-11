@@ -86,11 +86,11 @@ namespace DistanceLessons.Models
             return testList;
         }
 
-        public bool IsTest(Guid id)
+        public bool ExistTest(Guid id)
         {
             return (from test in _db.Tests
                     where test.TestId == id
-                    select test).FirstOrDefault() == null ? false : true;
+                    select test).Count() >0 ? true : false;
         }
     }
 }

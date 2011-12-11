@@ -51,12 +51,13 @@
         <td></td>
         <td class="error">@Html.ValidationMessageFor(model => model.CategoryId)</td>
     </tr>
-
+    @if (User.IsInRole("Admin"))
+    {
       <tr>
         <td class="editor-label">  @Html.LabelFor(model => model.User.Login)</td>
         @{ 
-            List<DistanceLessons.Models.User> User_list = ViewBag.Users;
-            var user_items = new SelectList(User_list, "UserID", "Login");
+        List<DistanceLessons.Models.User> User_list = ViewBag.Users;
+        var user_items = new SelectList(User_list, "UserID", "Login");
           }
         <td class="editor-field"> @Html.DropDownListFor(model => model.UserId, @user_items, new { @class = "editor" })</td>
    
@@ -65,6 +66,7 @@
         <td></td>
         <td class="error">@Html.ValidationMessageFor(model => model.UserId)</td>
     </tr>
+    }
      <tr>
         <td class="editor-label">  @Html.LabelFor(model => model.IsSubscribing)</td>
         <td class="editor-field" align="left"> @Html.CheckBoxFor(model => model.IsSubscribing)</td>
@@ -81,5 +83,12 @@
 }
 
 <div>
-    @Html.ActionLink("Повернутись без збереження", "Courses")
+@if (User.IsInRole("Teacher"))
+{
+    @Html.ActionLink("Повернутись без збереження", "Courses","Teacher")
+}
+else if(User.IsInRole("Admin"))
+{
+     @Html.ActionLink("Повернутись без збереження", "Courses","Admin")
+}
 </div>

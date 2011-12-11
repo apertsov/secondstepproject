@@ -7,9 +7,10 @@ using NotFoundMvc;
 namespace DistanceLessons.Controllers
 {
     [Localization]
+    [Authorize]
     public class ProfileController : Controller
     {
-        private readonly DataEntitiesManager _db = new DataEntitiesManager();
+        private DataEntitiesManager _db = new DataEntitiesManager();
 
         //
         // GET: /Profile/
@@ -117,10 +118,9 @@ namespace DistanceLessons.Controllers
         {
             Session["choose_type"] = type;
             ViewBag.Exist = false;
-            foreach (MessageStatusWithAuthorModel item in _db.GetMessagesByUser(User.Identity.Name, type))
+            foreach (var item in _db.GetMessagesByUser(User.Identity.Name, type))
             {
-                if ((item.Messages.Status == 10) || (item.Messages.Status == 11) || (item.Messages.Status == 12) ||
-                    (item.Messages.Status == 0) || (item.Messages.Status == 1)) ViewBag.Exist = true;
+                if ((item.Messages.Status == 10) || (item.Messages.Status == 11) || (item.Messages.Status == 12) || (item.Messages.Status == 0) || (item.Messages.Status == 1)) ViewBag.Exist = true;
             }
             return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, type));
         }
@@ -133,16 +133,14 @@ namespace DistanceLessons.Controllers
         [HttpGet]
         public ActionResult NewMessage(String user)
         {
-            if (user != null)
-            {
-                var temp = new SendMessageModel();
-                temp.Name = user;
-                return View(temp);
-            }
-            else
+            if ((String.IsNullOrEmpty(user)) || (!_db.ExistUser(user)))
             {
                 return View();
             }
+
+            SendMessageModel temp = new SendMessageModel();
+            temp.Name = user;
+            return View(temp);
         }
 
         [HttpPost]
@@ -166,50 +164,59 @@ namespace DistanceLessons.Controllers
             return View(obj);
         }
 
-        public ActionResult DeleteMessage(Guid MessageId)
+        public ActionResult DeleteMessage(Guid? MessageId)
         {
-            Message_status upd_ = _db.GetMessageStatById(MessageId, _db.GetUserId(User.Identity.Name));
+            if ((MessageId == null) || (!_db.ExistMessage((Guid)MessageId)))
+            {
+                return new NotFoundViewResult();
+            }
+            Message_status upd_ = _db.GetMessageStatById((Guid)MessageId, _db.GetUserId(User.Identity.Name));
             upd_.Status = 2;
             UpdateModel(upd_);
             _db.Save();
             ViewBag.Exist = true;
-            return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, (byte) Session["choose_type"]));
+            return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, (byte)Session["choose_type"]));
         }
 
-        public ActionResult ReadMessage(Guid MessageId)
+        public ActionResult ReadMessage(Guid? MessageId)
         {
-            Message_status upd_ = _db.GetMessageStatById(MessageId, _db.GetUserId(User.Identity.Name));
+            if ((MessageId == null) || (!_db.ExistMessage((Guid)MessageId)))
+            {
+                return new NotFoundViewResult();
+            }
+            Message_status upd_ = _db.GetMessageStatById((Guid)MessageId, _db.GetUserId(User.Identity.Name));
             if (upd_.Status != 10) upd_.Status = 1;
             UpdateModel(upd_);
             _db.Save();
-            return PartialView("_Message", _db.GetMessageStatById(MessageId, _db.GetUserId(User.Identity.Name)));
+            return PartialView("_Message", _db.GetMessageStatById((Guid)MessageId, _db.GetUserId(User.Identity.Name)));
         }
 
-        public ActionResult ConfirmSubscribe(Guid CourId, Guid SubscribeUser, Guid MessId)
+        public ActionResult ConfirmSubscribe(Guid? CourId, Guid? SubscribeUser, Guid? MessId)
         {
-            var subscribe = new UserCours();
+            if ((CourId == null) || (SubscribeUser == null) || (MessId == null) || (!_db.ExistCourse((Guid)CourId))|| (!_db.ExistUser((Guid)SubscribeUser))|| (!_db.ExistMessage((Guid)MessId)))
+            {
+                return new NotFoundViewResult();
+            }
+            UserCours subscribe = new UserCours();
             subscribe.UserCourseId = Guid.NewGuid();
-            subscribe.CourseId = CourId;
-            subscribe.UserId = SubscribeUser;
+            subscribe.CourseId = (Guid)CourId;
+            subscribe.UserId = (Guid)SubscribeUser;
             _db.AddUserCourse(subscribe);
             _db.Save();
 
-            Message_status upd_ = _db.GetMessageStatById(MessId, _db.GetUserId(User.Identity.Name));
+            Message_status upd_ = _db.GetMessageStatById((Guid)MessId, _db.GetUserId(User.Identity.Name));
             upd_.UserId = _db.GetUserId(User.Identity.Name);
             upd_.Status = 11;
             UpdateModel(upd_);
             _db.Save();
 
-            var confirm = new Message();
+            Message confirm = new Message();
             confirm.MessageId = Guid.NewGuid();
-            confirm.Message1 = "Викладач <a href=profile/info?user=" + User.Identity.Name + ">" +
-                               _db.GetUser(User.Identity.Name).Login + "</a> затвердив Вашу підписку на курс - '" +
-                               _db.GetCourse(CourId).Title +
-                               "'.Про терміни здачі модуля, та інші новини по предмету, Ви будете оповіщенні особистим повідомленням.<br />&nbsp;---&nbsp;</br>Дякуємо за підписку. Вдалого навчання! ;)";
+            confirm.Message1 = "Викладач <a href=profile/info?user=" + User.Identity.Name + ">" + _db.GetUser(User.Identity.Name).Login + "</a> затвердив Вашу підписку на курс - '" + _db.GetCourse((Guid)CourId).Title + "'.Про терміни здачі модуля, та інші новини по предмету, Ви будете оповіщенні особистим повідомленням.<br />&nbsp;---&nbsp;</br>Дякуємо за підписку. Вдалого навчання! ;)";
             confirm.DateOfSender = DateTime.Now;
             confirm.UserId_From = _db.GetUserId(User.Identity.Name);
-            confirm.UserId_To = SubscribeUser;
-            confirm.Title = "Підписка на курс '" + _db.GetCourse(CourId).Title + "'";
+            confirm.UserId_To = (Guid)SubscribeUser;
+            confirm.Title = "Підписка на курс '" + _db.GetCourse((Guid)CourId).Title + "'";
 
             _db.AddMessage(confirm);
             _db.AddMessage_status(_db.GetMessageStatus(confirm, _db.GetUser(confirm.UserId_To).Login), 0);
@@ -218,24 +225,25 @@ namespace DistanceLessons.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult CancelSubscribe(Guid CourId, Guid SubscribeUser, Guid MessId)
+        public ActionResult CancelSubscribe(Guid? CourId, Guid? SubscribeUser, Guid? MessId)
         {
-            Message_status upd_ = _db.GetMessageStatById(MessId, _db.GetUserId(User.Identity.Name));
+            if ((CourId == null) || (SubscribeUser == null) || (MessId == null) || (!_db.ExistCourse((Guid)CourId)) || (!_db.ExistUser((Guid)SubscribeUser)) || (!_db.ExistMessage((Guid)MessId)))
+            {
+                return new NotFoundViewResult();
+            }
+            Message_status upd_ = _db.GetMessageStatById((Guid)MessId, _db.GetUserId(User.Identity.Name));
             upd_.UserId = _db.GetUserId(User.Identity.Name);
             upd_.Status = 12;
             UpdateModel(upd_);
             _db.Save();
 
-            var confirm = new Message();
+            Message confirm = new Message();
             confirm.MessageId = Guid.NewGuid();
-            confirm.Message1 = "Викладач <a href=profile/info?user=" + User.Identity.Name + ">" +
-                               _db.GetUser(User.Identity.Name).Login + "</a> відмовив Вам в підписці на курс - '" +
-                               _db.GetCourse(CourId).Title +
-                               "'.<br />&nbsp;---&nbsp;</br><i><b>Адміністрація:</b> Вибачте за незручнсті! Спробуйте загальнодоступні курси.</i>";
+            confirm.Message1 = "Викладач <a href=profile/info?user=" + User.Identity.Name + ">" + _db.GetUser(User.Identity.Name).Login + "</a> відмовив Вам в підписці на курс - '" + _db.GetCourse((Guid)CourId).Title + "'.<br />&nbsp;---&nbsp;</br><i><b>Адміністрація:</b> Вибачте за незручнсті! Спробуйте загальнодоступні курси.</i>";
             confirm.DateOfSender = DateTime.Now;
             confirm.UserId_From = _db.GetUserId(User.Identity.Name);
-            confirm.UserId_To = SubscribeUser;
-            confirm.Title = "Підписка на курс '" + _db.GetCourse(CourId).Title + "'";
+            confirm.UserId_To = (Guid)SubscribeUser;
+            confirm.Title = "Підписка на курс '" + _db.GetCourse((Guid)CourId).Title + "'";
 
             _db.AddMessage(confirm);
             _db.AddMessage_status(_db.GetMessageStatus(confirm, _db.GetUser(confirm.UserId_To).Login), 0);

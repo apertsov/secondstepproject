@@ -6,6 +6,7 @@ using DistanceLessons.Models;
 namespace DistanceLessons.Controllers
 {
     [Localization]
+    [Authorize]
     public class NewsController : Controller
     {
         private readonly DataEntitiesManager _db = new DataEntitiesManager();
@@ -56,15 +57,19 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(Guid? id)
         {
+            if ((id == null) || (!_db.ExistNew((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
             if (!Request.IsAjaxRequest())
             {
-                return View(_db.GetNew(id));
+                return View(_db.GetNew((Guid)id));
             }
             else
             {
-                return PartialView("_Edit_PartialPage", _db.GetNew(id));
+                return PartialView("_Edit_PartialPage", _db.GetNew((Guid)id));
             }
         }
 
@@ -78,28 +83,40 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(Guid? id)
         {
+            if ((id == null) || (!_db.ExistNew((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
             if (!Request.IsAjaxRequest())
             {
-                return View(_db.GetNew_withTag(id));
+                return View(_db.GetNew_withTag((Guid)id));
             }
             else
             {
-                return PartialView("_Delete_PartialPage", _db.GetNew_withTag(id));
+                return PartialView("_Delete_PartialPage", _db.GetNew_withTag((Guid)id));
             }
         }
 
         [HttpPost]
-        public ActionResult Delete(Guid id, FormCollection collection)
+        public ActionResult Delete(Guid? id, FormCollection collection)
         {
-            _db.DeleteNew(id);
+            if ((id == null) || (!_db.ExistNew((Guid)id))||(!User.IsInRole("Student")))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
+            _db.DeleteNew((Guid)id);
             return RedirectToAction("Index");
         }
 
         [HttpGet]
         public ActionResult Detail(Guid id)
         {
+            if ((id == null) || (!_db.ExistNew((Guid)id)))
+            {
+                return new NotFoundMvc.NotFoundViewResult();
+            }
             if (!Request.IsAjaxRequest())
             {
                 return View(_db.GetNew_withTag(id));

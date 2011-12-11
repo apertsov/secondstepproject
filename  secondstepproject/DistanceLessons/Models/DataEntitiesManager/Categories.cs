@@ -68,5 +68,12 @@ namespace DistanceLessons.Models
             }
             return temp;
         }
+
+        public bool ExistCategory(Guid categoryId)
+        {
+            return (from categories in GetCategoryList()
+                    where categories.CategoryId == categoryId
+                    select categories).Count() > 0 ? true : false;
+        }
     }
 }

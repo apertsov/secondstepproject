@@ -102,5 +102,12 @@ namespace DistanceLessons.Models
             _db.News.AddObject(obj);
             _db.SaveChanges();
         }
+
+        public bool ExistNew(Guid newId)
+        {
+            return (from news in GetNewsList()
+                    where news.NewId == newId
+                    select news).Count() > 0 ? true : false;
+        }
     }
 }

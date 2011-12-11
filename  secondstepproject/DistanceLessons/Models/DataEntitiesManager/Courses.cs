@@ -89,5 +89,19 @@ namespace DistanceLessons.Models
                     select courses).Count() > 0 ? true : false;
         }
 
+        public bool IsTeacherCourse(Guid courseId, Guid userId)
+        {
+            return (from courses in GetCourseList()
+                    where courses.CourseId == courseId && courses.UserId == userId
+                    select courses).Count() > 0 ? true : false;
+        }
+
+        public bool ExistCourse(Guid courseId)
+        {
+            return (from courses in GetCourseList()
+                    where courses.CourseId == courseId
+                    select courses).Count() > 0 ? true : false;
+        }
+
     }
 }
