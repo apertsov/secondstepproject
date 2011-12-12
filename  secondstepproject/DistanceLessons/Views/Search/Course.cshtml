@@ -20,7 +20,7 @@
             <td class="editor-field">  @Html.DisplayNameFor(model => model.Description) </td>
         </tr>
         <tr>          
-            <td class="editor-field"> @Html.TextBox("с_title", null, new { @class = "editor" })</td>
+            <td class="editor-field"> @Html.TextBox("c_title", null, new { @class = "editor" })</td>
             <td class="editor-field"> @Html.TextBox("description", null, new { @class = "editor" })</td>
         </tr>
         <tr>
@@ -34,5 +34,12 @@
 }
 
 <div id="CourseGrid">
-    @Html.Partial("_resultCourse", Model)
+@if (ViewBag.IsTeacherOrAdmin)
+{
+    @Html.Partial("_resultCourse", Model);
+}
+else
+{ 
+    @Html.Partial("_resultCourse_low", Model);
+}
 </div>
