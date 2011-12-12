@@ -20,14 +20,10 @@ namespace DistanceLessons.Controllers
         {
             db = new DataEntitiesManager();
         }
+  
 
         [HttpGet]
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        [HttpGet]
+        [EnableCompression]
         public ActionResult Lesson(Guid? id)
         {
             if ((id == null) || (!db.ExistModule((Guid)id)))
@@ -44,12 +40,15 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult AllMyLesson()
         {
             return View(db.UserLessons(User.Identity.Name));
         }
 
+        
         [HttpGet]
+        [EnableCompression]
         public ActionResult AllLessonsInCourse(Guid? courseId)
         {
             if ((courseId == null) || (!db.ExistCourse((Guid)courseId)))
@@ -63,6 +62,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult Course(Guid? id)
         {
             if ((id == null) || (!db.ExistCourse((Guid)id)))
@@ -86,12 +86,14 @@ namespace DistanceLessons.Controllers
         }
         */
         [HttpGet]
+        [EnableCompression]
         public ActionResult Courses()
         {
             return View(db.GetCourseList());
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult EditCours(Guid? id)
         {
             if ((id == null) || (!db.ExistCourse((Guid)id)))
@@ -104,6 +106,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult EditCours(Cours obj)
         {        
             Cours old = db.GetCourse(obj.CourseId);
@@ -120,6 +123,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult CreateModule(Guid? id)
         {
             if ((id == null) || (!db.ExistCourse((Guid)id)))
@@ -132,6 +136,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult CreateModule(Module obj)
         {
             ViewBag.CourseId = obj.CourseId;
@@ -147,6 +152,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult DetailsModule(Guid? id)
         {
             if ((id == null) || (!db.ExistModule((Guid)id)))
@@ -157,6 +163,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult DetailsLesson(Guid? id)
         {
             if ((id == null) || (!db.ExistLesson((Guid)id)))
@@ -168,6 +175,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult CreateLesson(Guid? courseId, Guid? mod_id, string path)
         {
             if ((courseId == null) || (String.IsNullOrEmpty(path)) || (!db.ExistCourse((Guid)courseId)))
@@ -191,7 +199,9 @@ namespace DistanceLessons.Controllers
             ViewBag.ModuleId = mod_id;
             return View(obj);
         }
+
         [HttpPost]
+        [EnableCompression]
         public ActionResult CreateLesson(Lesson obj)
         {
             obj.UserId = db.GetUser(User.Identity.Name).UserId;
@@ -210,6 +220,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult DeleteLesson(Guid? id)
         {
             if ((id == null) || (!db.ExistLesson((Guid)id)))
@@ -228,6 +239,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult EditLesson(Guid id)
         {
             if ((id == null) || (!db.ExistLesson((Guid)id)))
@@ -239,6 +251,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult EditLesson(Lesson obj)
         {
             Lesson old = db.GetLessonByID(obj.LessonId);
@@ -262,6 +275,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult AcceptLesson(Guid id)
         {
             if ((id == null) || (!db.ExistLesson((Guid)id)))
@@ -281,6 +295,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult DeleteModule(Guid id)
         {
             if ((id == null) || (!db.ExistModule((Guid)id)))
@@ -294,6 +309,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult EditModule(Guid id)
         {
             if ((id == null) || (!db.ExistModule((Guid)id)))
@@ -305,6 +321,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult EditModule(Module obj)
         {
             Module old = db.GetModulesByID(obj.ModuleId);
@@ -322,6 +339,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult UploadLesson(Guid? courseId, Guid? moduleId = null, string act = "create")
         {
             if ((courseId == null) || (!db.ExistCourse((Guid)courseId)))
@@ -340,6 +358,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult Upload()
         {
             string fileName = "";
