@@ -21,7 +21,12 @@ namespace DistanceLessons.Controllers
         public ActionResult Course()
         {
             var course = _db.GetCourseList();
+            ViewBag.IsTeacherOrAdmin = (_db.GetUserRoleId(User.Identity.Name) == _db.GetRoleId("Teacher") ||
+                                _db.GetUserRoleId(User.Identity.Name) == _db.GetRoleId("Admin")) 
+                                ? true : false; ;
+
             return View(course);
+
         }
 
        [HttpPost]
