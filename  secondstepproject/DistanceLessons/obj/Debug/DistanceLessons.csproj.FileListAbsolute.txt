@@ -453,3 +453,8 @@ C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\Gener
 C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\en-us\DistanceLessons.resources.dll
 C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.dll
 C:\Users\gAmmi\Desktop\stable__secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.pdb
+C:\Users\gAmmi\Desktop\stable_secondstepproject - копия\DistanceLessons\bin\en-us\DistanceLessons.resources.dll
+C:\Users\gAmmi\Desktop\stable_secondstepproject - копия\DistanceLessons\obj\Debug\DistanceLessons.Views.Account.App_LocalResources.ChangePassword.cshtml.en-us.resources
+C:\Users\gAmmi\Desktop\stable_secondstepproject - копия\DistanceLessons\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\gAmmi\Desktop\stable_secondstepproject - копия\DistanceLessons\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\gAmmi\Desktop\stable_secondstepproject - копия\DistanceLessons\obj\Debug\en-us\DistanceLessons.resources.dll

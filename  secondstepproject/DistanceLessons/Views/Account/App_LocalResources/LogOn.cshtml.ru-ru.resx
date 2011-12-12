@@ -124,7 +124,7 @@
     <value>зарегистрируйтесь</value>
   </data>
   <data name="SummaryError" xml:space="preserve">
-    <value>Не удалось ввойти. Исправьте ошибки и попробуйте еще раз.</value>
+    <value>Не удалось ввойти. Исправьте ошибки и попробуйте еще раз. Данные чувствительны к реестру!</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>Вход</value>
