@@ -44,13 +44,22 @@
                             }
                         </div>
                         <div class="text" style="margin: 10px;">
-                        <div style="margin-left: 25px; font-size: 0.8em;">Додаткові лекції</div>
-                        <div style="margin: 10px;">
-                            @foreach (var subitem2 in Model.CoursesLessonsInNullModule)
+                        @using(DataEntitiesManager _db = new DataEntitiesManager())
+                        {
+                            if (_db.ExistLessonsInCategory(Model.CoursesLessonsInNullModule, subitem.CourseId))
                             {
-                                <div style="font-size: 0.8em;">@Html.ActionLink("[" + Html.Resource("Layout, read") + "]", "ShowFile", "Education", new { filename = subitem2.Text }, new { target = "_blank" }) @subitem2.Title</div>
+                                <div style="margin-left: 25px; font-size: 0.8em;">Додаткові лекції</div>
+                            <div style="margin: 10px;">
+                                @foreach (var subitem2 in Model.CoursesLessonsInNullModule)
+                                {
+                                    if (subitem2.CourseId == subitem.CourseId)
+                                    {
+                                        <div style="font-size: 0.8em;">@Html.ActionLink("[" + Html.Resource("Layout, read") + "]", "ShowFile", "Education", new { filename = subitem2.Text }, new { target = "_blank" }) @subitem2.Title</div>
+                                    }
+                                }
+                            </div>
                             }
-                        </div>
+                        }
                         </div>
                         </div>
                     }

@@ -8,18 +8,18 @@ namespace DistanceLessons.Models
     {
         public List<Lesson> GetLessonList()
         {
-            return _db.Lessons.ToList<Lesson>();
+            return _db.Lessons.ToList();
         }
 
         public List<Lesson> UserLessons(string username)
         {
-            Guid userId = new Guid(GetUserId(username).ToString());
-            var result = (from l in GetLessonList()
-                         where l.UserId == userId
-                         select l).ToList<Lesson>();
+            var userId = new Guid(GetUserId(username).ToString());
+            List<Lesson> result = (from l in GetLessonList()
+                                   where l.UserId == userId
+                                   select l).ToList<Lesson>();
             return result;
         }
-        
+
         public Lesson GetLessonByID(Guid id)
         {
             return _db.Lessons.SingleOrDefault(c => c.LessonId == id);
@@ -28,7 +28,7 @@ namespace DistanceLessons.Models
 
         public void DeleteLesson(Guid id)
         {
-            var cat = _db.Lessons.SingleOrDefault(c => c.LessonId == id);
+            Lesson cat = _db.Lessons.SingleOrDefault(c => c.LessonId == id);
             _db.DeleteObject(cat);
             Save();
         }
@@ -38,11 +38,12 @@ namespace DistanceLessons.Models
             _db.Lessons.AddObject(obj);
             Save();
         }
+
         public List<Lesson> GetLessonsByCourse(Guid courseId)
         {
             return (from lessons in _db.Lessons
                     where lessons.CourseId == courseId
-                    orderby lessons.ModuleId, lessons.Title
+                    orderby lessons.ModuleId , lessons.Title
                     select lessons).ToList();
         }
 
@@ -70,20 +71,28 @@ namespace DistanceLessons.Models
         public bool ExistLesson(Guid id)
         {
             return (from lesson in _db.Lessons
-                    where lesson.LessonId==id
-                    select lesson).FirstOrDefault()==null?false:true;
+                    where lesson.LessonId == id
+                    select lesson).FirstOrDefault() == null
+                       ? false
+                       : true;
         }
 
         public List<Lesson> GetLessonsListByCoursesList(List<UserCours> lst)
         {
-            List<Lesson> temp = new List<Lesson>();
+            var temp = new List<Lesson>();
             List<Lesson> lessonsLst = GetLessonList();
-            foreach (var item in lessonsLst)
+            foreach (Lesson item in lessonsLst)
             {
                 if ((lst.Find(m => m.CourseId == item.CourseId) != null))
                     temp.Add(item);
             }
             return temp;
+        }
+
+        public bool ExistLessonsInCategory(List<Lesson> lst, Guid courseId)
+        {
+            if ((lst.Find(m => m.CourseId == courseId) != null)) return true;
+            return false;
         }
     }
 }
