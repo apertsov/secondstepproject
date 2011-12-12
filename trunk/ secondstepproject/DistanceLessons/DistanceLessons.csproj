@@ -665,7 +665,9 @@
     <Content Include="Views\Account\App_LocalResources\Register.cshtml.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Account\App_LocalResources\AdminSetup.cshtml.ru-ru.resx" />
+    <Content Include="Views\Account\App_LocalResources\AdminSetup.cshtml.ru-ru.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\App_LocalResources\AdminSetup.cshtml.en-us.resx" />
@@ -680,16 +682,24 @@
     <Content Include="Views\Account\App_LocalResources\ChangePassword.cshtml.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Account\App_LocalResources\ChangePassword.cshtml.ru-ru.resx" />
+    <Content Include="Views\Account\App_LocalResources\ChangePassword.cshtml.ru-ru.resx">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Account\App_LocalResources\ChangePassword.cshtml.en-us.resx" />
     <Content Include="Views\Account\App_LocalResources\ChangePasswordSuccess.cshtml.resx" />
     <Content Include="Views\Account\App_LocalResources\ChangePasswordSuccess.cshtml.en-us.resx" />
     <Content Include="Views\Account\App_LocalResources\ChangePasswordSuccess.cshtml.ru-ru.resx" />
-    <Content Include="Views\Account\App_LocalResources\LogOn.cshtml.resx" />
-    <Content Include="Views\Account\App_LocalResources\LogOn.cshtml.ru-ru.resx" />
-    <Content Include="Views\Account\App_LocalResources\LogOn.cshtml.en-us.resx" />
+    <Content Include="Views\Account\App_LocalResources\LogOn.cshtml.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Account\App_LocalResources\LogOn.cshtml.ru-ru.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Account\App_LocalResources\LogOn.cshtml.en-us.resx">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Account\App_LocalResources\Welcome.cshtml.resx" />
     <Content Include="Views\Account\App_LocalResources\Welcome.cshtml.ru-ru.resx" />
     <Content Include="Views\Account\App_LocalResources\Welcome.cshtml.en-us.resx" />
