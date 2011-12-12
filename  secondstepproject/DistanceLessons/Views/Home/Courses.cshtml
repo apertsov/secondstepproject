@@ -1,26 +1,25 @@
-﻿@model List<DistanceLessons.Models.CategoryCourse>
+﻿@using DistanceLessons.Models
+@model List<CategoryCourse>
 @{
-    ViewBag.Title = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <table style="width: 100%;">
     <caption>
-        <h2>
-            Курси</h2>
+        <h2>@Html.Resource("Courses")</h2>
     </caption>
     <tbody align="center">
         <tr>
             <td style="width: 33%;">
-                Курс
+                @Html.Resource("Course")
             </td>
             <td>
-                Опис
+                @Html.Resource("Desc")
             </td>
             <td>
-                Категорія
+                @Html.Resource("Category")
             </td>
         </tr>
-        @foreach (var item in Model)
+        @foreach (CategoryCourse item in Model)
         {
             <tr>
                 <td>@item.CourseTitle
