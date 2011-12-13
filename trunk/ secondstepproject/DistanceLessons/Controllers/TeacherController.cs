@@ -39,28 +39,6 @@ namespace DistanceLessons.Controllers
             return View(db.GetLessonsByModule((Guid)id));
         }
 
-        [HttpGet]
-        [EnableCompression]
-        public ActionResult AllMyLesson()
-        {
-            return View(db.UserLessons(User.Identity.Name));
-        }
-
-      
-        [HttpGet]
-        [EnableCompression]
-        public ActionResult AllLessonsInCourse(Guid? courseId)
-        {
-            if ((courseId == null) || (!db.ExistCourse((Guid)courseId)))
-            {
-                return new NotFoundMvc.NotFoundViewResult();
-            }
-            ViewBag.CourseId = courseId;
-            ViewBag.Course = db.GetCourse((Guid)courseId).Title;
-            ViewBag.Lessons = db.GetLessonsByCourse((Guid)courseId);
-            return View();
-        }
-    
 
         [HttpGet]
         [EnableCompression]
