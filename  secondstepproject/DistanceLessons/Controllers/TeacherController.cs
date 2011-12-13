@@ -46,7 +46,7 @@ namespace DistanceLessons.Controllers
             return View(db.UserLessons(User.Identity.Name));
         }
 
-        
+      
         [HttpGet]
         [EnableCompression]
         public ActionResult AllLessonsInCourse(Guid? courseId)
@@ -60,6 +60,7 @@ namespace DistanceLessons.Controllers
             ViewBag.Lessons = db.GetLessonsByCourse((Guid)courseId);
             return View();
         }
+    
 
         [HttpGet]
         [EnableCompression]
@@ -78,13 +79,13 @@ namespace DistanceLessons.Controllers
             ViewBag.IsAdmin = db.GetUserRoleId(User.Identity.Name) == db.GetRoleId("Admin") ? true : false;
             return View();
         }
-        /*
+        
         [HttpGet]
         public ActionResult MyCourses()
         {
             return View(db.GetCoursesByTeacherId(db.GetUser(User.Identity.Name).UserId));
         }
-        */
+      
         [HttpGet]
         [EnableCompression]
         public ActionResult Courses()
@@ -340,13 +341,13 @@ namespace DistanceLessons.Controllers
 
         [HttpGet]
         [EnableCompression]
-        public ActionResult UploadLesson(Guid? courseId, Guid? moduleId = null, string act = "create")
+        public ActionResult UploadLesson(Guid? courseId, Guid? moduleId=null, string act = "create")
         {
             if ((courseId == null) || (!db.ExistCourse((Guid)courseId)))
             {
                 return new NotFoundMvc.NotFoundViewResult();
             }
-            if (moduleId != null)
+            if (moduleId != Guid.Empty && moduleId != null )
             {
                 if (!db.ExistModule((Guid)moduleId))
                     return new NotFoundMvc.NotFoundViewResult();
