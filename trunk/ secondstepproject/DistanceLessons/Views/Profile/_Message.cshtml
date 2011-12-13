@@ -3,23 +3,23 @@
 
 <table class="left2" cellspacing="10">
     <tr>
-        <td class="text_right"><b>Тема:</b></td>
+        <td class="text_right"><b>@Html.Resource("Layout, mes_topic")</b></td>
         <td class="text_left">@Html.DisplayFor(model => model.Message.Title)</td>
     </tr>
     <tr>
-        <td class="text_right"><b>Від кого:</b></td>
-        <td class="text_left">@Html.ActionLink(Model.Message.User.Login, "Info", "Profile", new {user = Model.Message.User.Login}, null)</td>
+        <td class="text_right"><b>@Html.Resource("Layout, mes_from")</b></td>
+        <td class="text_left">@Html.ActionLink(Model.Message.User.Login, "Info", "Profile", new { user = Model.Message.User.Login }, null)</td>
     </tr>
     <tr>
-        <td class="text_right"><b>Кому:</b></td>
-        <td class="text_left">@Html.ActionLink(Model.Message.User1.Login, "Info", "Profile", new {user = Model.Message.User1.Login}, null)</td>
+        <td class="text_right"><b>@Html.Resource("Layout, mes_to")</b></td>
+        <td class="text_left">@Html.ActionLink(Model.Message.User1.Login, "Info", "Profile", new { user = Model.Message.User1.Login }, null)</td>
     </tr>
     <tr>
-        <td class="text_right"><b>Коли:</b></td>
+        <td class="text_right"><b>@Html.Resource("Layout, mes_when")</b></td>
         <td class="text_left">@Html.DisplayFor(model => model.Message.DateOfSender)</td>
     </tr>
     <tr>
-        <td class="text_right"><b>Повідомлення:</b></td>
+        <td class="text_right"><b>@Html.Resource("Layout, mes_message")</b></td>
         <td class="text_left">@Html.TextHtml(Model.Message.Message1)</td>
     </tr>
 </table>

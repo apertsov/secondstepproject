@@ -4,7 +4,7 @@
 @{
     if ((Model.Count() == 0) || (!ViewBag.Exist))
     {
-        <div class="data_null">Список повідомлень пустий.</div>
+        <div class="data_null">@Html.Resource("Layout, data_null_message")</div>
     }
     else
     {
@@ -21,35 +21,35 @@
 
                         <p>@if (item.Messages.Status == 0)
                            {
-                               <font color="red">[Не прочитане]</font>
+                               <font color="red">@Html.Resource("Layout, mes_not_read")</font>
                            }
                            else if (item.Messages.Status == 10)
-                                {
-                                    <font color="blue">[Не прочитане]</font>
-                                }
-                                else if (item.Messages.Status == 11)
-                                     {
-                                         <font color="green">[Підтверджено]</font>
-                                     }
-                                     else if (item.Messages.Status == 12)
-                                          {
-                                              <font color="violet">[Відмовлено]</font>
-                                          }
+                           {
+                                    <font color="blue">@Html.Resource("Layout, mes_not_read")</font>
+                           }
+                           else if (item.Messages.Status == 11)
+                           {
+                                         <font color="green">@Html.Resource("Layout, mes_confirmed")</font>
+                           }
+                           else if (item.Messages.Status == 12)
+                           {
+                                              <font color="violet">@Html.Resource("Layout, mes_rejected")</font>
+                           }
                         </p>
                         <p>Тема: @item.Messages.Message.Title</p>
                         <p>@if (item.Author)
                            {
-                               <span>Кому:</span>
+                               <span>@Html.Resource("Layout, mes_to")</span>
                            }
                            else
                            {
-                               <span>Від кого:</span>
+                               <span>@Html.Resource("Layout, mes_from")</span>
                            } @item.username</p>
                         <p>
-                            Дата: @item.Messages.Message.DateOfSender
+                            @Html.Resource("Layout, date") @item.Messages.Message.DateOfSender
                             <span class="right">
-                                @Ajax.ActionLink("Видалити", "DeleteMessage", new {item.Messages.MessageId}, new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})
-                                @Ajax.ActionLink("Читати...", "ReadMessage", new {item.Messages.MessageId}, new AjaxOptions {UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace})
+                                @Ajax.ActionLink(Html.Resource("Layout, delete"), "DeleteMessage", new { item.Messages.MessageId }, new AjaxOptions { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })
+                                @Ajax.ActionLink(Html.Resource("Layout, read"), "ReadMessage", new { item.Messages.MessageId }, new AjaxOptions { UpdateTargetId = "profile_ajax", InsertionMode = InsertionMode.Replace })
                             </span>
                         </p>
                     </div>

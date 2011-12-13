@@ -629,6 +629,7 @@
     <Content Include="App_GlobalResources\Metadata.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Metadata.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Примітка:.
+        /// </summary>
+        internal static string attention {
+            get {
+                return ResourceManager.GetString("attention", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Назад.
         /// </summary>
         internal static string back {
@@ -151,6 +160,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Контактні дані не вказано.
+        /// </summary>
+        internal static string data_null_cd {
+            get {
+                return ResourceManager.GetString("data_null_cd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Курсів поки що не створено. Очікуйте..
         /// </summary>
         internal static string data_null_courses {
@@ -160,11 +178,47 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Список повідомлень пустий..
+        /// </summary>
+        internal static string data_null_message {
+            get {
+                return ResourceManager.GetString("data_null_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Нових повідомлень немає..
+        /// </summary>
+        internal static string data_null_newmessage {
+            get {
+                return ResourceManager.GetString("data_null_newmessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Особисті дані не вказано.
+        /// </summary>
+        internal static string data_null_pd {
+            get {
+                return ResourceManager.GetString("data_null_pd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Немає підписок на курси..
         /// </summary>
         internal static string data_null_subscribs {
             get {
                 return ResourceManager.GetString("data_null_subscribs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата:.
+        /// </summary>
+        internal static string date {
+            get {
+                return ResourceManager.GetString("date", resourceCulture);
             }
         }
         
@@ -196,11 +250,119 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to uk.
+        /// </summary>
+        internal static string local_short {
+            get {
+                return ResourceManager.GetString("local_short", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Меню навчання.
         /// </summary>
         internal static string menu_education {
             get {
                 return ResourceManager.GetString("menu_education", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Підтверджено].
+        /// </summary>
+        internal static string mes_confirmed {
+            get {
+                return ResourceManager.GetString("mes_confirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Від кого:.
+        /// </summary>
+        internal static string mes_from {
+            get {
+                return ResourceManager.GetString("mes_from", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Повідомлення:.
+        /// </summary>
+        internal static string mes_message {
+            get {
+                return ResourceManager.GetString("mes_message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Написати нове повідомлення.
+        /// </summary>
+        internal static string mes_new {
+            get {
+                return ResourceManager.GetString("mes_new", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Не прочитане].
+        /// </summary>
+        internal static string mes_not_read {
+            get {
+                return ResourceManager.GetString("mes_not_read", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Особисті повідомлення:.
+        /// </summary>
+        internal static string mes_private_messages {
+            get {
+                return ResourceManager.GetString("mes_private_messages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Відмовлено].
+        /// </summary>
+        internal static string mes_rejected {
+            get {
+                return ResourceManager.GetString("mes_rejected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Кому:.
+        /// </summary>
+        internal static string mes_to {
+            get {
+                return ResourceManager.GetString("mes_to", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тема:.
+        /// </summary>
+        internal static string mes_topic {
+            get {
+                return ResourceManager.GetString("mes_topic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Коли:.
+        /// </summary>
+        internal static string mes_when {
+            get {
+                return ResourceManager.GetString("mes_when", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Написати повідомлення.
+        /// </summary>
+        internal static string mes_write_message {
+            get {
+                return ResourceManager.GetString("mes_write_message", resourceCulture);
             }
         }
         
@@ -300,6 +462,15 @@ namespace Resources {
         internal static string search_the_subject {
             get {
                 return ResourceManager.GetString("search_the_subject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Відправити.
+        /// </summary>
+        internal static string send {
+            get {
+                return ResourceManager.GetString("send", resourceCulture);
             }
         }
         
@@ -498,6 +669,114 @@ namespace Resources {
         internal static string _NewMessageBox_NewMesseges {
             get {
                 return ResourceManager.GetString("_NewMessageBox_NewMesseges", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to При вказуванні дати народження - будьте обачні. Після задання дати народження, її вже не можна буде змінити..
+        /// </summary>
+        internal static string _profile_attention_dob {
+            get {
+                return ResourceManager.GetString("_profile_attention_dob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to У випадку, якщо Ви захочете заповнити особисті дані: поля, що відмічені.
+        /// </summary>
+        internal static string _profile_attention_required_1 {
+            get {
+                return ResourceManager.GetString("_profile_attention_required_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to - є обовязкові..
+        /// </summary>
+        internal static string _profile_attention_required_2 {
+            get {
+                return ResourceManager.GetString("_profile_attention_required_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Контактні дані.
+        /// </summary>
+        internal static string _profile_cd {
+            get {
+                return ResourceManager.GetString("_profile_cd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагування контактних даних.
+        /// </summary>
+        internal static string _profile_edit_cd {
+            get {
+                return ResourceManager.GetString("_profile_edit_cd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагування особистих даних.
+        /// </summary>
+        internal static string _profile_edit_pd {
+            get {
+                return ResourceManager.GetString("_profile_edit_pd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Особиста інформація.
+        /// </summary>
+        internal static string _profile_pd {
+            get {
+                return ResourceManager.GetString("_profile_pd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Реєстрування в базі контактних даних.
+        /// </summary>
+        internal static string _profile_register_in_db_cd {
+            get {
+                return ResourceManager.GetString("_profile_register_in_db_cd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Реєстрування в базі даних особистої інформації.
+        /// </summary>
+        internal static string _profile_register_in_db_pd {
+            get {
+                return ResourceManager.GetString("_profile_register_in_db_pd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Профіль користувача.
+        /// </summary>
+        internal static string _profile_user {
+            get {
+                return ResourceManager.GetString("_profile_user", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Профіль користувача -.
+        /// </summary>
+        internal static string _profile_username {
+            get {
+                return ResourceManager.GetString("_profile_username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ваш профіль.
+        /// </summary>
+        internal static string _profile_your {
+            get {
+                return ResourceManager.GetString("_profile_your", resourceCulture);
             }
         }
         

@@ -273,4 +273,128 @@
   <data name="_theme_orange" xml:space="preserve">
     <value>Orange</value>
   </data>
+  <data name="attention" xml:space="preserve">
+    <value>Note:</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_cd" xml:space="preserve">
+    <value>Contact information is empty</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_message" xml:space="preserve">
+    <value>List messages is empty</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_newmessage" xml:space="preserve">
+    <value>No new posts</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_pd" xml:space="preserve">
+    <value>Personal data is empty</value>
+    <comment>1</comment>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Date:</value>
+    <comment>1</comment>
+  </data>
+  <data name="local_short" xml:space="preserve">
+    <value>en-GB</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_confirmed" xml:space="preserve">
+    <value>[Confirmed]</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_from" xml:space="preserve">
+    <value>From:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_message" xml:space="preserve">
+    <value>Message:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_new" xml:space="preserve">
+    <value>Write new message</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_not_read" xml:space="preserve">
+    <value>[Do not read]</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_private_messages" xml:space="preserve">
+    <value>Personal Message:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_rejected" xml:space="preserve">
+    <value>[Rejected]</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_to" xml:space="preserve">
+    <value>To:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_topic" xml:space="preserve">
+    <value>Subject:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_when" xml:space="preserve">
+    <value>When:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_write_message" xml:space="preserve">
+    <value>Send a message</value>
+    <comment>1</comment>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>Send</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_attention_dob" xml:space="preserve">
+    <value>When specifying a date of birth - be careful. After setting the date of birth, and it can not be changed.</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_attention_required_1" xml:space="preserve">
+    <value>If you want to fill in personal information: Fields marked</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_attention_required_2" xml:space="preserve">
+    <value>- are mandatory.</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_cd" xml:space="preserve">
+    <value>Contact Information</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_edit_cd" xml:space="preserve">
+    <value>Editing contact information</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_edit_pd" xml:space="preserve">
+    <value>Edit personal data</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_pd" xml:space="preserve">
+    <value>Personal information</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_register_in_db_cd" xml:space="preserve">
+    <value>Recording in a database of contact information</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_register_in_db_pd" xml:space="preserve">
+    <value>Recording in a database of personal information</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_user" xml:space="preserve">
+    <value>Profile</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_username" xml:space="preserve">
+    <value>Profile -</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_your" xml:space="preserve">
+    <value>Your profile</value>
+    <comment>1</comment>
+  </data>
 </root>

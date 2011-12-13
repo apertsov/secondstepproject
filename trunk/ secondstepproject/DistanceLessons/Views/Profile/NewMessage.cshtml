@@ -2,17 +2,20 @@
 @model SendMessageModel
 
 @{
-    ViewBag.Title = "Написати нове повідомлення";
+    ViewBag.Title = Html.Resource("Layout, mes_new");
 }
 
 
 <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"> </script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"> </script>
 
+
 @{ Html.EnableClientValidation(); }
 @using (Html.BeginForm())
 {
+    <div style="margin: 0 auto; background:black; width:100%;">
     @Html.ValidationSummary(true)
+    </div>
     <table class="left" cellspacing="10">
         <tr>
             <td class="editor-label">@Html.LabelFor(model => model.Messages.Title)</td>
@@ -41,7 +44,7 @@
         </tr>
     </table>
     <div class="item" align="center">
-        <input type="submit" value="Відправити" />
-        @Html.ActionLink("Повернутись в профіль", "Index", "Profile")
+        <input type="submit" value=@Html.Resource("Layout, send") />
+        @Html.ActionLink(Html.Resource("Layout, back"), "Index", "Profile")
     </div>
 }
