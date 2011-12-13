@@ -1,22 +1,20 @@
 ﻿@using DistanceLessons.Models
 @model List<CategoryCourse>
 @{
+    ViewBag.Title = Html.Resource("Courses");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <table style="width: 100%;">
-    <caption>
-        <h2>@Html.Resource("Courses")</h2>
-    </caption>
     <tbody align="center">
         <tr>
             <td style="width: 33%;">
-                @Html.Resource("Course")
+                <b>@Html.Resource("Course")</b>
             </td>
             <td>
-                @Html.Resource("Desc")
+                <b>@Html.Resource("Desc")</b>
             </td>
             <td>
-                @Html.Resource("Category")
+                <b>@Html.Resource("Category")</b>
             </td>
         </tr>
         @foreach (CategoryCourse item in Model)
