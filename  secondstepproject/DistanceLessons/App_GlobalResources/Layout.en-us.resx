@@ -397,4 +397,112 @@
     <value>Your profile</value>
     <comment>1</comment>
   </data>
+  <data name="course" xml:space="preserve">
+    <value>The course:</value>
+    <comment>2</comment>
+  </data>
+  <data name="data_null_detail_course" xml:space="preserve">
+    <value>No one has not been tested on this subject</value>
+    <comment>2</comment>
+  </data>
+  <data name="data_null_detail_module" xml:space="preserve">
+    <value>No one has not been tested with this module</value>
+    <comment>2</comment>
+  </data>
+  <data name="data_null_student_result" xml:space="preserve">
+    <value>Your test book is still empty.</value>
+    <comment>2</comment>
+  </data>
+  <data name="data_null_testing" xml:space="preserve">
+    <value>has not been tested on this subject</value>
+    <comment>2</comment>
+  </data>
+  <data name="data_null_testing2" xml:space="preserve">
+    <value>No testing is not covered</value>
+    <comment>2</comment>
+  </data>
+  <data name="modules" xml:space="preserve">
+    <value>Modules:</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_back_to_result" xml:space="preserve">
+    <value>Go to module</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_begin_test" xml:space="preserve">
+    <value>Begin testing</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_complete_module" xml:space="preserve">
+    <value>Complete modules</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_course" xml:space="preserve">
+    <value>The result of course</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_courses_points" xml:space="preserve">
+    <value>Assessment for the course</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_detail_testing" xml:space="preserve">
+    <value>Details of testing</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_in_action" xml:space="preserve">
+    <value>delivers test</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_loginPIP" xml:space="preserve">
+    <value>Login and initials</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_modules" xml:space="preserve">
+    <value>The results of modules</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_module_result" xml:space="preserve">
+    <value>The result of testing the module</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_null_answer" xml:space="preserve">
+    <value>No answer</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_other_action" xml:space="preserve">
+    <value>More actions</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_refresh_result" xml:space="preserve">
+    <value>Reset the test result</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_result" xml:space="preserve">
+    <value>Result</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_result_title" xml:space="preserve">
+    <value>The result of passing the module</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_result_title2" xml:space="preserve">
+    <value>by</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_result_title3" xml:space="preserve">
+    <value>points</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_test" xml:space="preserve">
+    <value>Test</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_user_answer" xml:space="preserve">
+    <value>Answer user</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_user_points" xml:space="preserve">
+    <value>User points</value>
+    <comment>2</comment>
+  </data>
 </root>
