@@ -1,4 +1,11 @@
-﻿.title
+﻿body
+{
+    background-image: url('img/background/background_orange.png');
+    background-repeat: repeat-x;
+    background-position: top center;
+}
+
+.title
 {
     background-image: url('img/passive_active/fill_active.png');
 }
@@ -28,10 +35,10 @@ ul.topnav ul li a:hover {
 }
 
 ul.topnav ul ul li a:hover {
-    background-image: url('img/passive_active/fill_passive.png');
+    background-image: url('img/passive_active/fill_active.png');
 }
 
 .message:hover
 {
-    
+    background-image: url('img/passive_active/fill_active.png');
 }
