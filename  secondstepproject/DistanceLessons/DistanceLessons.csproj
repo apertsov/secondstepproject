@@ -702,9 +702,9 @@
     <Content Include="Views\Account\App_LocalResources\Welcome.cshtml.resx" />
     <Content Include="Views\Account\App_LocalResources\Welcome.cshtml.ru-ru.resx" />
     <Content Include="Views\Account\App_LocalResources\Welcome.cshtml.en-us.resx" />
-    <Content Include="Views\Education\App_LocalResources\Courses.cshtml.resx" />
-    <Content Include="Views\Education\App_LocalResources\Courses.cshtml.ru-ru.resx" />
-    <Content Include="Views\Education\App_LocalResources\Courses.cshtml.en-us.resx" />
+    <Content Include="Views\Home\App_LocalResources\Courses.cshtml.resx" />
+    <Content Include="Views\Home\App_LocalResources\Courses.cshtml.ru-ru.resx" />
+    <Content Include="Views\Home\App_LocalResources\Courses.cshtml.en-us.resx" />
     <Content Include="Views\Search\App_LocalResources\Course.cshtml.resx" />
     <Content Include="Views\Search\App_LocalResources\Course.cshtml.ru-ru.resx" />
     <Content Include="Views\Search\App_LocalResources\Course.cshtml.en-us.resx" />

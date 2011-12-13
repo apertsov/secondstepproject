@@ -28,7 +28,7 @@ namespace DistanceLessons.Controllers
                 ViewBag.Thema = "orange";
             }
 
-            return View ("Index");
+            return RedirectToAction("Index");
         }
         
         public ActionResult Index()

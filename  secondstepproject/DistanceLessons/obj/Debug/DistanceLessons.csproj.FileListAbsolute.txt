@@ -483,3 +483,28 @@ D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj
 D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj\Debug\en-us\DistanceLessons.resources.dll
 D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.dll
 D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.pdb
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\DistanceLessons.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\DistanceLessons.pdb
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\en-us\DistanceLessons.resources.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\AntiXSSLibrary.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\EntityFramework.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\Microsoft.Web.Infrastructure.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\Microsoft.Web.Optimization.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\System.Web.Helpers.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\System.Web.Mvc.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\System.Web.Providers.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\System.Web.Razor.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\System.Web.WebPages.Deployment.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\System.Web.WebPages.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\System.Web.WebPages.Razor.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\AntiXSSLibrary.xml
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\EntityFramework.xml
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.xml
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.Views.Account.App_LocalResources.ChangePassword.cshtml.en-us.resources
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\obj\Debug\GenerateResource.read.1.tlog
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\obj\Debug\GenerateResource.write.1.tlog
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\obj\Debug\en-us\DistanceLessons.resources.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.dll
+E:\Project\trunk_secondstepproject\trunk\secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.pdb
