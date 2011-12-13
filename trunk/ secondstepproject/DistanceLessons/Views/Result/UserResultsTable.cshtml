@@ -3,33 +3,35 @@
 {
     if (Model.Count == 0)
     {
-       @Html.TextHtml("<h3>Ніхто не проходив тестування з цього предмету </h3>")
+        <div class="data_null">
+            @Html.Resource("Layout, data_null_detail_course")
+        </div>
     }
     else
     {
     <h2>
-        Результати тестування з курсу</h2>
+        @Html.Resource("Layout, _result_course")</h2>
     <table style="width: 100%;">
         <tbody>
             <tr>
                 <th style="border: 1px solid black;width: 35%;">
-                    Логін та ініціали користувача
+                    @Html.Resource("Layout, _result_loginPIP")
                 </th>
                 <th style="border: 1px solid black;width: 35%;">
-                    Здані модулі
+                    @Html.Resource("Layout, _result_complete_module")
                 </th>
                 <th style="border: 1px solid black;width: 15%;">
-                    Результати модулів
+                    @Html.Resource("Layout, _result_modules")
                 </th>
                 <th style="border: 1px solid black;width: 15%;">
-                    Оцінка за курс
+                    @Html.Resource("Layout, _result_courses_points")
                 </th>
             </tr>
             @foreach (var userResult in Model)
             { 
                 <tr align='center'>
                     <td style="border: 1px solid black;" >
-                           @Ajax.ActionLink(userResult.Login, (string)ViewBag.controller, new { id=userResult.UserId, divIdToReplace = ViewBag.replaceDiv, type = DistanceLessons.Models.ElementsType.User }, new AjaxOptions() { UpdateTargetId = ViewBag.replaceDiv, InsertionMode = InsertionMode.Replace })   
+                           @Ajax.ActionLink(userResult.Login, (string)ViewBag.controller, new { id = userResult.UserId, divIdToReplace = ViewBag.replaceDiv, type = DistanceLessons.Models.ElementsType.User }, new AjaxOptions() { UpdateTargetId = ViewBag.replaceDiv, InsertionMode = InsertionMode.Replace })   
                             <br />
                         @userResult.FirstName @userResult.LastName @userResult.MiddleName
                     </td>

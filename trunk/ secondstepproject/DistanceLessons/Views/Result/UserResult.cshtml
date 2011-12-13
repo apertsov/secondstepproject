@@ -1,27 +1,29 @@
 ﻿@model List<DistanceLessons.Models.UserResultModel>
 @if (Model.Count == 0)
 {
-    @Html.TextHtml("<h3>:Жодного тестування не пройдено </h3>")
+    <div class="data_null">
+        @Html.Resource("Layout, data_null_testing2")
+    </div>
 }
 else
 {
     <h2>
-        Результати тестування
+        @Html.Resource("Layout, _result_module_result")
     </h2>
     <table style="width: 100%;">
         <tbody align="center">
             <tr>
                 <td>
-                    Назва курсу
+                    @Html.Resource("Layout, course")
                 </td>
                 <td>
-                    Здані модулі
+                    @Html.Resource("Layout, _result_complete_module")
                 </td>
                 <td>
-                    Результати модулів
+                    @Html.Resource("Layout, _result_modules")
                 </td>
                 <td>
-                    Оцінка за курс
+                    @Html.Resource("Layout, _result_courses_points")
                 </td>
             </tr>
             @foreach (var userResult in Model)

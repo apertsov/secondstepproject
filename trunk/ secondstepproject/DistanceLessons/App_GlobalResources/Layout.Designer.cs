@@ -133,6 +133,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Курс:.
+        /// </summary>
+        internal static string course {
+            get {
+                return ResourceManager.GetString("course", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Курси.
         /// </summary>
         internal static string courses {
@@ -178,6 +187,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ніхто не проходив тестування з цього предмету.
+        /// </summary>
+        internal static string data_null_detail_course {
+            get {
+                return ResourceManager.GetString("data_null_detail_course", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ніхто не проходив тестування з цього модуля.
+        /// </summary>
+        internal static string data_null_detail_module {
+            get {
+                return ResourceManager.GetString("data_null_detail_module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Список повідомлень пустий..
         /// </summary>
         internal static string data_null_message {
@@ -205,11 +232,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ваша залікова книжка поки що пуста..
+        /// </summary>
+        internal static string data_null_student_result {
+            get {
+                return ResourceManager.GetString("data_null_student_result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Немає підписок на курси..
         /// </summary>
         internal static string data_null_subscribs {
             get {
                 return ResourceManager.GetString("data_null_subscribs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to не проходив тестування з цього предмету.
+        /// </summary>
+        internal static string data_null_testing {
+            get {
+                return ResourceManager.GetString("data_null_testing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Жодного тестування не пройдено.
+        /// </summary>
+        internal static string data_null_testing2 {
+            get {
+                return ResourceManager.GetString("data_null_testing2", resourceCulture);
             }
         }
         
@@ -372,6 +426,15 @@ namespace Resources {
         internal static string module {
             get {
                 return ResourceManager.GetString("module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Модулі:.
+        /// </summary>
+        internal static string modules {
+            get {
+                return ResourceManager.GetString("modules", resourceCulture);
             }
         }
         
@@ -777,6 +840,186 @@ namespace Resources {
         internal static string _profile_your {
             get {
                 return ResourceManager.GetString("_profile_your", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Повернутись до результатів модуля.
+        /// </summary>
+        internal static string _result_back_to_result {
+            get {
+                return ResourceManager.GetString("_result_back_to_result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Початок тестування.
+        /// </summary>
+        internal static string _result_begin_test {
+            get {
+                return ResourceManager.GetString("_result_begin_test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Здані модулі.
+        /// </summary>
+        internal static string _result_complete_module {
+            get {
+                return ResourceManager.GetString("_result_complete_module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Результат курсу.
+        /// </summary>
+        internal static string _result_course {
+            get {
+                return ResourceManager.GetString("_result_course", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Оцінка за курс.
+        /// </summary>
+        internal static string _result_courses_points {
+            get {
+                return ResourceManager.GetString("_result_courses_points", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Деталі тестування.
+        /// </summary>
+        internal static string _result_detail_testing {
+            get {
+                return ResourceManager.GetString("_result_detail_testing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Здає тест.
+        /// </summary>
+        internal static string _result_in_action {
+            get {
+                return ResourceManager.GetString("_result_in_action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Логін та ініціали користувача.
+        /// </summary>
+        internal static string _result_loginPIP {
+            get {
+                return ResourceManager.GetString("_result_loginPIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Результати модулів.
+        /// </summary>
+        internal static string _result_modules {
+            get {
+                return ResourceManager.GetString("_result_modules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Результат тестування з модуля.
+        /// </summary>
+        internal static string _result_module_result {
+            get {
+                return ResourceManager.GetString("_result_module_result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Немає відповіді.
+        /// </summary>
+        internal static string _result_null_answer {
+            get {
+                return ResourceManager.GetString("_result_null_answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Додаткові дії.
+        /// </summary>
+        internal static string _result_other_action {
+            get {
+                return ResourceManager.GetString("_result_other_action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Онулити результат тестування.
+        /// </summary>
+        internal static string _result_refresh_result {
+            get {
+                return ResourceManager.GetString("_result_refresh_result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Результат.
+        /// </summary>
+        internal static string _result_result {
+            get {
+                return ResourceManager.GetString("_result_result", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Результат здачі модуля.
+        /// </summary>
+        internal static string _result_result_title {
+            get {
+                return ResourceManager.GetString("_result_result_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to користувачем.
+        /// </summary>
+        internal static string _result_result_title2 {
+            get {
+                return ResourceManager.GetString("_result_result_title2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to балів.
+        /// </summary>
+        internal static string _result_result_title3 {
+            get {
+                return ResourceManager.GetString("_result_result_title3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Тест.
+        /// </summary>
+        internal static string _result_test {
+            get {
+                return ResourceManager.GetString("_result_test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Відповідь користувача.
+        /// </summary>
+        internal static string _result_user_answer {
+            get {
+                return ResourceManager.GetString("_result_user_answer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Бали користувача.
+        /// </summary>
+        internal static string _result_user_points {
+            get {
+                return ResourceManager.GetString("_result_user_points", resourceCulture);
             }
         }
         

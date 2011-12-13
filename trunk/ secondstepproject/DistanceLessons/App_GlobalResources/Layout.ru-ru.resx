@@ -397,4 +397,112 @@
     <value>Ваш профиль</value>
     <comment>1</comment>
   </data>
+  <data name="course" xml:space="preserve">
+    <value>Предмет:</value>
+    <comment>2</comment>
+  </data>
+  <data name="data_null_detail_course" xml:space="preserve">
+    <value>Никто не проходил тестирование с данного предмета.</value>
+    <comment>2</comment>
+  </data>
+  <data name="data_null_detail_module" xml:space="preserve">
+    <value>Никто не проходил тестирование с данного модуля.</value>
+    <comment>2</comment>
+  </data>
+  <data name="data_null_student_result" xml:space="preserve">
+    <value>Ваша зачетка пока что пуста.</value>
+    <comment>2</comment>
+  </data>
+  <data name="data_null_testing" xml:space="preserve">
+    <value>Не проходил тестирование с этого предмета.</value>
+    <comment>2</comment>
+  </data>
+  <data name="data_null_testing2" xml:space="preserve">
+    <value>Ни одного тестирования не пройдено.</value>
+    <comment>2</comment>
+  </data>
+  <data name="modules" xml:space="preserve">
+    <value>Модули:</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_back_to_result" xml:space="preserve">
+    <value>Вернуться к результатам модуля</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_begin_test" xml:space="preserve">
+    <value>Начало тестирования</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_complete_module" xml:space="preserve">
+    <value>Сданые модули</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_course" xml:space="preserve">
+    <value>Результат курса:</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_courses_points" xml:space="preserve">
+    <value>Оценка за курс</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_detail_testing" xml:space="preserve">
+    <value>Детали тестирования</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_in_action" xml:space="preserve">
+    <value>Сдает тест</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_loginPIP" xml:space="preserve">
+    <value>Логин и инициалы пользователя</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_modules" xml:space="preserve">
+    <value>Результаты модулей:</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_module_result" xml:space="preserve">
+    <value>Результат тестирования с модуля</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_null_answer" xml:space="preserve">
+    <value>Нет ответа</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_other_action" xml:space="preserve">
+    <value>Дополнительные действия</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_refresh_result" xml:space="preserve">
+    <value>Обнулить результаты тестирования</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_result" xml:space="preserve">
+    <value>Результат</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_result_title" xml:space="preserve">
+    <value>Результат сдачи модуля</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_result_title2" xml:space="preserve">
+    <value>пользователем</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_result_title3" xml:space="preserve">
+    <value>баллов</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_test" xml:space="preserve">
+    <value>Тест</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_user_answer" xml:space="preserve">
+    <value>Ответ пользователя</value>
+    <comment>2</comment>
+  </data>
+  <data name="_result_user_points" xml:space="preserve">
+    <value>Баллы пользователя</value>
+    <comment>2</comment>
+  </data>
 </root>

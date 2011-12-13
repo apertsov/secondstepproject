@@ -1,43 +1,42 @@
 ﻿@model DistanceLessons.Models.DetailModuleTestResultsModel
 @if (Model.TestResults.Count == 0)
 {
-    <h3>
-        ніхто не проходив тестування з цього модуля
-    </h3>
+    <div class="data_null">
+        @Html.Resource("Layout, data_null_detail_module")
+    </div>
 }
 else
 {
-    <h2>
-        Результат тестування з модуля</h2>
+    <h2>@Html.Resource("Layout, _result_module_result")</h2>
 
     <table style="width: 100%;">
         <tbody>
             <tr>
                 <th style="width: 25%; border: 1px solid black;">
-                    Логін та ініціали користувача
+                    @Html.Resource("Layout, _result_loginPIP")
                 </th>
                 <th style="border: 1px solid black;">
-                    Бали користувача
+                    @Html.Resource("Layout, _result_user_points")
                 </th>
                 <th style="border: 1px solid black;">
-                    Початок тестування
+                    @Html.Resource("Layout, _result_begin_test")
                 </th>
                 <th style="border: 1px solid black;">
-                    Додаткові дії
+                    @Html.Resource("Layout, _result_other_action")
                 </th>
             </tr>
             @foreach (DistanceLessons.Models.TestResultModel userModuleResult in Model.TestResults)
             {
                 <tr align="center">
                     <td style="padding: 10px; border: 1px solid black;">
-                            @Ajax.ActionLink(userModuleResult.Login, Model.Parameters.ControllerName, new { id = userModuleResult.UserId, divIdToReplace = Model.Parameters.DivIdToReplace, type = DistanceLessons.Models.ElementsType.User}, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace })                           
+                        @Ajax.ActionLink(userModuleResult.Login, Model.Parameters.ControllerName, new { id = userModuleResult.UserId, divIdToReplace = Model.Parameters.DivIdToReplace, type = DistanceLessons.Models.ElementsType.User }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace })                           
                         <br />
                         @userModuleResult.FirstName @userModuleResult.LastName @userModuleResult.MiddleName
                     </td>
                     <td style="border: 1px solid black;">
                         @if (userModuleResult.Result == null)
                         {
-                            @Html.TextHtml("Здає тест")
+                            @Html.Resource("Layout, _result_in_action")
                         }
                         else
                         { 
@@ -48,11 +47,11 @@ else
                         @userModuleResult.StartTesting
                     </td>
                     <td style="border: 1px solid black;">
-                        @Ajax.ActionLink("Деталі тестування", "DetailsModuleUserAnswers", "Result", new { id = Model.Parameters.pickedElement, username = userModuleResult.Login, controllerName = Model.Parameters.ControllerName, divIdToReplace = Model.Parameters.DivIdToReplace }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace })
+                        @Ajax.ActionLink(Html.Resource("Layout, _result_detail_testing"), "DetailsModuleUserAnswers", "Result", new { id = Model.Parameters.pickedElement, username = userModuleResult.Login, controllerName = Model.Parameters.ControllerName, divIdToReplace = Model.Parameters.DivIdToReplace }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace })
                         @if ((ViewBag.IsTeacherCourse) && (userModuleResult.Result != null))
                         {
                             <br />
-                            @Ajax.ActionLink("Онулити результат тестування", "DeletePassModule", "Result", new { id = Model.Parameters.pickedElement, username = userModuleResult.Login, controllerName = Model.Parameters.ControllerName, divIdToReplace = Model.Parameters.DivIdToReplace }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace })                    
+                            @Ajax.ActionLink(Html.Resource("Layout, _result_refresh_result"), "DeletePassModule", "Result", new { id = Model.Parameters.pickedElement, username = userModuleResult.Login, controllerName = Model.Parameters.ControllerName, divIdToReplace = Model.Parameters.DivIdToReplace }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace })                    
                         }
                     </td>
                 </tr>

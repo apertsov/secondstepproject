@@ -2,7 +2,7 @@
 @model List<StudentResultModel>
 @if (Model.Count == 0)
 {
-    <div class="data_null">Ваша залікова книжка поки що пуста.</div>
+    <div class="data_null">@Html.Resource("Layout, data_null_student_result")</div>
 }
 else
 {
@@ -10,16 +10,16 @@ else
         <tbody>
             <tr>
                 <th style="border: 1px solid black; width: 35%;">
-                    Курс
+                    @Html.Resource("Layout, course")
                 </th>
                 <th style="border: 1px solid black; width: 35%;">
-                    Модулі
+                    @Html.Resource("Layout, modules")
                 </th>
                 <th style="border: 1px solid black; width: 15%;">
-                    Результати модулів
+                    @Html.Resource("Layout, _result_modules")
                 </th>
                 <th style="border: 1px solid black; width: 15%;">
-                    Результат курсу
+                    @Html.Resource("Layout, _result_course")
                 </th>
             </tr>
             @foreach (StudentResultModel categoryResult in Model)
@@ -34,10 +34,10 @@ else
                             }
                             else
                             {
-                                @Ajax.ActionLink(courseResult.CourseTitle.Value, (string) ViewBag.controller, new {id = courseResult.CourseTitle.Key, divIdToReplace = ViewBag.replaceDiv, type = ElementsType.Course}, new AjaxOptions {UpdateTargetId = ViewBag.replaceDiv, InsertionMode = InsertionMode.Replace})
+                                @Ajax.ActionLink(courseResult.CourseTitle.Value, (string)ViewBag.controller, new { id = courseResult.CourseTitle.Key, divIdToReplace = ViewBag.replaceDiv, type = ElementsType.Course }, new AjaxOptions { UpdateTargetId = ViewBag.replaceDiv, InsertionMode = InsertionMode.Replace })
                             }
                             <br />
-                            @Html.TextHtml("Категорія:")
+                            @Html.Resource("Layout, category")
                             @categoryResult.CategoryTitle
                         </td>
                         <td style="border: 1px solid black;">
@@ -49,7 +49,7 @@ else
                                 }
                                 else
                                 {
-                                    @Ajax.ActionLink(modules.Value, (string) ViewBag.controller, new {id = modules.Key, divIdToReplace = ViewBag.replaceDiv, type = ElementsType.Module}, new AjaxOptions {UpdateTargetId = ViewBag.replaceDiv, InsertionMode = InsertionMode.Replace})
+                                    @Ajax.ActionLink(modules.Value, (string)ViewBag.controller, new { id = modules.Key, divIdToReplace = ViewBag.replaceDiv, type = ElementsType.Module }, new AjaxOptions { UpdateTargetId = ViewBag.replaceDiv, InsertionMode = InsertionMode.Replace })
                                 }
                                 <br />
                             }
