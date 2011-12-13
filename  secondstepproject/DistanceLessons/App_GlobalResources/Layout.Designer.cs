@@ -500,5 +500,32 @@ namespace Resources {
                 return ResourceManager.GetString("_NewMessageBox_NewMesseges", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Стиль:.
+        /// </summary>
+        internal static string _theme {
+            get {
+                return ResourceManager.GetString("_theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Синій.
+        /// </summary>
+        internal static string _theme_blue {
+            get {
+                return ResourceManager.GetString("_theme_blue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Помаранчовий.
+        /// </summary>
+        internal static string _theme_orange {
+            get {
+                return ResourceManager.GetString("_theme_orange", resourceCulture);
+            }
+        }
     }
 }

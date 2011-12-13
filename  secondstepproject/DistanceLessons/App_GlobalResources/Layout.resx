@@ -264,4 +264,13 @@
   <data name="search_the_subject" xml:space="preserve">
     <value>Пошук предмету</value>
   </data>
+  <data name="_theme_blue" xml:space="preserve">
+    <value>Синій</value>
+  </data>
+  <data name="_theme_orange" xml:space="preserve">
+    <value>Помаранчовий</value>
+  </data>
+  <data name="_theme" xml:space="preserve">
+    <value>Стиль:</value>
+  </data>
 </root>
