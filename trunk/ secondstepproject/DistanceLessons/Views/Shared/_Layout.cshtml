@@ -51,7 +51,7 @@
         <script src="@Url.Content("~/Content/script/jquerycssmenu.js")" type="text/javascript"> </script>
         <script src="@Url.Content("~/Content/script/browser_selector.js")" type="text/javascript"> </script>
          <link href="@((Session["themaStyle"] == "orange") ? Url.Content("~/Content/OrangeStyle.css") : Url.Content("~/Content/Layout.css"))" rel="stylesheet" type="text/css" />
-                <br />
+
 @*Html.ActionLink("Стандартний(синій)", "SetThema", "Home", new { themaName = "default" }, null)*@
 @*Html.ActionLink("Помаранчевий", "SetThema", "Home", new { themaName = "orange" }, null)*@
                
@@ -117,7 +117,7 @@
                     e-mail: <a href="mailto:chnudotnet_forwardstep@googlegroups.com">chnudotnet_forwardstep@googlegroups.com</a></p>
                 <p>
                     Стилі:
-                    @Html.ActionLink("Стандартний(синій)", "SetThema", "Home", new { themaName = "default" }, null)
+                    @Html.ActionLink("Стандартний", "SetThema", "Home", new { themaName = "default" }, null) |
                     @Html.ActionLink("Помаранчевий", "SetThema", "Home", new { themaName = "orange" }, null)
                 </p>
             </div>

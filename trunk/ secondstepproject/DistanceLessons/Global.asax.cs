@@ -6,6 +6,7 @@ using System.Web.Routing;
 using DistanceLessons.Models;
 using ModelMetadataExtensions;
 using Resources;
+using System.Collections.Generic;
 
 namespace DistanceLessons
 {
@@ -24,6 +25,12 @@ namespace DistanceLessons
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute("Annonymous", "Courses", new { controller = "Home", action = "Courses" });
+            routes.MapRoute("ua", "Ukraine", new { controller = "Home", action = "Ukraine" });
+            routes.MapRoute("ru", "Russian", new { controller = "Home", action = "Russian" });
+            routes.MapRoute("eng", "English", new { controller = "Home", action = "English" });
+            routes.MapRoute("theme", "Theme", new { controller = "Home", action = "SetThema" });
+
             routes.MapRoute(
                 "Activate",
                 "Account/Activate/{username}/{key}",
