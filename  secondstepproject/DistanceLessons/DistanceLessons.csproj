@@ -328,6 +328,7 @@
     <Content Include="Content\img\slider\slide_reclame.png" />
     <Content Include="Content\img\slider\slide_welcome.png" />
     <Content Include="Content\Layout.css" />
+    <Content Include="Content\OrangeStyle.css" />
     <Content Include="Content\script\browser_selector.js" />
     <Content Include="Content\script\jquery.nivo.slider.js" />
     <Content Include="Content\script\jquery.nivo.slider.pack.js" />

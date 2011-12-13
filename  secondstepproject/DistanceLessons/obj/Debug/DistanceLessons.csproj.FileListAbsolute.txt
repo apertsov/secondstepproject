@@ -458,3 +458,28 @@ C:\Users\gAmmi\Desktop\stable_secondstepproject - копия\DistanceLessons\obj
 C:\Users\gAmmi\Desktop\stable_secondstepproject - копия\DistanceLessons\obj\Debug\GenerateResource.read.1.tlog
 C:\Users\gAmmi\Desktop\stable_secondstepproject - копия\DistanceLessons\obj\Debug\GenerateResource.write.1.tlog
 C:\Users\gAmmi\Desktop\stable_secondstepproject - копия\DistanceLessons\obj\Debug\en-us\DistanceLessons.resources.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\DistanceLessons.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\DistanceLessons.pdb
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\en-us\DistanceLessons.resources.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\AntiXSSLibrary.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\EntityFramework.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\Microsoft.Web.Infrastructure.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\Microsoft.Web.Optimization.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\System.Web.Helpers.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\System.Web.Mvc.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\System.Web.Providers.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\System.Web.Razor.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\System.Web.WebPages.Deployment.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\System.Web.WebPages.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\System.Web.WebPages.Razor.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\AntiXSSLibrary.xml
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\EntityFramework.xml
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\bin\HtmlSanitizationLibrary.xml
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj\Debug\ResolveAssemblyReference.cache
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.Views.Account.App_LocalResources.ChangePassword.cshtml.en-us.resources
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj\Debug\GenerateResource.read.1.tlog
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj\Debug\GenerateResource.write.1.tlog
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj\Debug\en-us\DistanceLessons.resources.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.dll
+D:\Programming\C#\FinalProjectSS_13_12_11\ secondstepproject\DistanceLessons\obj\Debug\DistanceLessons.pdb

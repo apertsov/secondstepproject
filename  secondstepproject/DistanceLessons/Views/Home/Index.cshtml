@@ -6,6 +6,8 @@
 <link href="@Url.Content("~/Content/nivo-slider.css")" rel="stylesheet" type="text/css" />
 <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
 
+<link href="@((Session["themaStyle"] == "orange") ? Url.Content("~/Content/OrangeStyle.css") : Url.Content("~/Content/Layout.css"))" rel="stylesheet" type="text/css" />
+
 <div class="slider-wrapper theme-default">
     <div class="ribbon">
     </div>
@@ -25,3 +27,10 @@
 </script>
 
 @Html.ActionLink("Курси що вивчаються в університеті","Courses","Home")
+
+<!--<link href="@((Session["themaStyle"] == "orange") ? Url.Content("~/Content/OrangeStyle.css") : Url.Content("~/Content/Layout.css"))" rel="stylesheet" type="text/css" />
+                <br /> 
+                -->
+@Html.ActionLink("Стандартний(синій)", "SetThema", "Home", new { themaName = "default" }, null)
+@Html.ActionLink("Помаранчевий", "SetThema", "Home", new { themaName = "orange" }, null)
+                

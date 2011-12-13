@@ -13,6 +13,24 @@ namespace DistanceLessons.Controllers
         private string chooseLang = "uk-ua";
         private HttpCookie university_cookies;
 
+
+        public ActionResult SetThema(string themaName)
+        {
+
+            if (themaName == "default")
+            {
+                Session["themaStyle"] = "default"; 
+                ViewBag.Thema = "default";
+            }
+            if (themaName == "orange")
+            {
+                Session["themaStyle"] = "orange"; 
+                ViewBag.Thema = "orange";
+            }
+
+            return View ("Index");
+        }
+        
         public ActionResult Index()
         {
             return View();
