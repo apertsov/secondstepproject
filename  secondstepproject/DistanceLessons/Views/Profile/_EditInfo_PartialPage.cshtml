@@ -2,13 +2,13 @@
 @model Information
 
 @{
-    ViewBag.Title = "Редагування особистих даних";
+    ViewBag.Title = Html.Resource("Layout, _profile_edit_pd");
 }
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"> </script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"> </script>
 
-<h3>Особиста інформація</h3>
+<h3>@Html.Resource("Layout, _profile_pd")</h3>
 
 @using (Html.BeginForm())
 {
@@ -18,7 +18,7 @@
     <table class="center" cellspacing="10">
         <tr>
             <td class="editor-label">@Html.LabelFor(model => model.LastName)</td>
-            <td class="editor-field">@Html.TextBoxFor(model => model.LastName, new {@class = "editor"}) <font color="red">*</font></td>
+            <td class="editor-field">@Html.TextBoxFor(model => model.LastName, new { @class = "editor" }) <font color="red">*</font></td>
         </tr>
         <tr>
             <td></td>
@@ -26,7 +26,7 @@
         </tr>
         <tr>
             <td class="editor-label">@Html.LabelFor(model => model.FirstName)</td>
-            <td class="editor-field">@Html.TextBoxFor(model => model.FirstName, new {@class = "editor"}) <font color="red">*</font></td>
+            <td class="editor-field">@Html.TextBoxFor(model => model.FirstName, new { @class = "editor" }) <font color="red">*</font></td>
         </tr>
         <tr>
             <td></td>
@@ -34,7 +34,7 @@
         </tr>
         <tr>
             <td class="editor-label">@Html.LabelFor(model => model.MidName)</td>
-            <td class="editor-field">@Html.TextBoxFor(model => model.MidName, new {@class = "editor"}) <font color="red">*</font></td>
+            <td class="editor-field">@Html.TextBoxFor(model => model.MidName, new { @class = "editor" }) <font color="red">*</font></td>
         </tr>
         <tr>
             <td></td>
@@ -50,12 +50,12 @@
 
             <tr>
                 <td class="editor-label">@Html.LabelFor(model => model.DateOfBirth)</td>
-                <td class="editor-field">@Html.TextBoxFor(model => model.DateOfBirth, new {@class = "editor", @id = "datePicker", @readonly = true})</td>
+                <td class="editor-field">@Html.TextBoxFor(model => model.DateOfBirth, new { @class = "editor", @id = "datePicker", @readonly = true })</td>
             </tr>
             <tr>
                 <td>
                 </td>
-                <td class="error"><u>Примітка</u>: При вказуванні дати народження - будьте обачні. Після задання дати народження, її вже не можна буде змінити.</td>
+                <td class="error"><u>@Html.Resource("Layout, attention")</u> @Html.Resource("Layout, _profile_attention_dob")</td>
             </tr>
 
             <script type="text/javascript">
@@ -66,7 +66,7 @@
 
     $(function() {
         $.datepicker.setDefaults(
-            $.extend($.datepicker.regional["uk"]));
+            $.extend($.datepicker.regional['@Html.Resource("Layout, local_short")']));
         $("#datepicker").datepicker();
     });
 </script>
@@ -77,7 +77,7 @@
         </tr>
         <tr>
             <td class="editor-label">@Html.LabelFor(model => model.About)</td>
-            <td class="editor-field">@Html.TextAreaFor(model => model.About, new {@class = "textboxarea_short"})</td>
+            <td class="editor-field">@Html.TextAreaFor(model => model.About, new { @class = "textboxarea_short" })</td>
         </tr>
         <tr>
             <td></td>
@@ -89,6 +89,6 @@
     </table>
 
     <div class="item" align="center">
-        <input type="submit" value="Зберегти" />
+        <input type="submit" value=@Html.Resource("Layout, save") />
     </div>
 }

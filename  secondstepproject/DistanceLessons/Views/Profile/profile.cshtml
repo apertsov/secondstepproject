@@ -2,13 +2,12 @@
 @model ProfileModel
 
 @{
-    ViewBag.Title = "Профіль користувача - " + (string) ViewData["username"];
+    ViewBag.Title = Html.Resource("Layout, _profile_username") + (string) ViewData["username"];
 }
 
 <table class="center2" cellspacing="10">
-    <th colspan="2">Ваш профіль</th>
     <tr>
-        <td colspan="2"  style="border-bottom: 1px solid silver;"><b class="center">&nbsp;&nbsp;Особисті дані:</b></td>
+        <td colspan="2"  style="border-bottom: 1px solid silver;"><b class="center">&nbsp;&nbsp;@Html.Resource("Layout, _profile_pd"):</b></td>
     </tr>
     @if (Model.informationModel != null)
     {
@@ -44,11 +43,11 @@
     else
     {
         <tr>
-            <td colspan="2" class="data_null">Особисті дані не вказано</td>
+            <td colspan="2" class="data_null">@Html.Resource("Layout, data_null_pd")</td>
         </tr>
     }
     <tr>
-        <td colspan="2"  style="border-bottom: 1px solid silver;"><b class="center">&nbsp;&nbsp;Контактні дані:</b></td>
+        <td colspan="2"  style="border-bottom: 1px solid silver;"><b class="center">&nbsp;&nbsp;@Html.Resource("Layout, _profile_cd")</b></td>
     </tr>
     @if (Model.contactModel != null)
     {
@@ -83,7 +82,7 @@
     }
     
     <tr>
-        <td class="text_right">Особисті повідомлення:</td>
-        <td class="text_left">@Html.ActionLink("Написати повідомлення", "NewMessage", "Profile", new {Model.user}, null)</td>
+        <td class="text_right">@Html.Resource("Layout, mes_private_messages")</td>
+        <td class="text_left">@Html.ActionLink(Html.Resource("Layout, mes_write_message"), "NewMessage", "Profile", new { Model.user }, null)</td>
     </tr>
 </table>

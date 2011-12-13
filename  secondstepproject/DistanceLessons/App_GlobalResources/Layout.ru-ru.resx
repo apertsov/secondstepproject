@@ -273,4 +273,128 @@
   <data name="_theme" xml:space="preserve">
     <value>Стиль:</value>
   </data>
+  <data name="attention" xml:space="preserve">
+    <value>Примечание:</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_cd" xml:space="preserve">
+    <value>Контактные данные не указано</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_message" xml:space="preserve">
+    <value>Список сообщений пуст.</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_newmessage" xml:space="preserve">
+    <value>Новых сообщений нет.</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_pd" xml:space="preserve">
+    <value>Личные данные не указано</value>
+    <comment>1</comment>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Дата:</value>
+    <comment>1</comment>
+  </data>
+  <data name="local_short" xml:space="preserve">
+    <value>ru</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_confirmed" xml:space="preserve">
+    <value>[Подтвержденно]</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_from" xml:space="preserve">
+    <value>От кого:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_message" xml:space="preserve">
+    <value>Сообщение:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_new" xml:space="preserve">
+    <value>Написать новое сообщение:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_not_read" xml:space="preserve">
+    <value>[Не прочитаное]</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_private_messages" xml:space="preserve">
+    <value>Личные сообщения:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_rejected" xml:space="preserve">
+    <value>[Отказано]</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_to" xml:space="preserve">
+    <value>Кому:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_topic" xml:space="preserve">
+    <value>Тема:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_when" xml:space="preserve">
+    <value>Когда:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_write_message" xml:space="preserve">
+    <value>Написать сообщение</value>
+    <comment>1</comment>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>Отправить</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_attention_dob" xml:space="preserve">
+    <value>При указании даты рождения - будьте внимательны. После задания даты рождения, ее уже не можно будет изменить.</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_attention_required_1" xml:space="preserve">
+    <value>В случае, если Вы пожелаете заполнить личные данные: поля что отмечены</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_attention_required_2" xml:space="preserve">
+    <value>- обязательны.</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_cd" xml:space="preserve">
+    <value>Контактные данные</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_edit_cd" xml:space="preserve">
+    <value>Редактирование контактных данных</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_edit_pd" xml:space="preserve">
+    <value>Редактирование личных данных</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_pd" xml:space="preserve">
+    <value>Личные данные</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_register_in_db_cd" xml:space="preserve">
+    <value>Регистрация в базе данных контактных данных</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_register_in_db_pd" xml:space="preserve">
+    <value>Регистрация в базе данных личной информации</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_user" xml:space="preserve">
+    <value>Профиль пользователя</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_username" xml:space="preserve">
+    <value>Профиль пользователя - </value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_your" xml:space="preserve">
+    <value>Ваш профиль</value>
+    <comment>1</comment>
+  </data>
 </root>

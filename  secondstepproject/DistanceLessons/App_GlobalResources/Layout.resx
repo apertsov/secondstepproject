@@ -273,4 +273,128 @@
   <data name="_theme" xml:space="preserve">
     <value>Стиль:</value>
   </data>
+  <data name="_profile_cd" xml:space="preserve">
+    <value>Контактні дані</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_register_in_db_cd" xml:space="preserve">
+    <value>Реєстрування в базі контактних даних</value>
+    <comment>1</comment>
+  </data>
+  <data name="attention" xml:space="preserve">
+    <value>Примітка:</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_cd" xml:space="preserve">
+    <value>Контактні дані не вказано</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_message" xml:space="preserve">
+    <value>Список повідомлень пустий.</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_newmessage" xml:space="preserve">
+    <value>Нових повідомлень немає.</value>
+    <comment>1</comment>
+  </data>
+  <data name="data_null_pd" xml:space="preserve">
+    <value>Особисті дані не вказано</value>
+    <comment>1</comment>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>Дата:</value>
+    <comment>1</comment>
+  </data>
+  <data name="local_short" xml:space="preserve">
+    <value>uk</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_confirmed" xml:space="preserve">
+    <value>[Підтверджено]</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_from" xml:space="preserve">
+    <value>Від кого:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_message" xml:space="preserve">
+    <value>Повідомлення:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_new" xml:space="preserve">
+    <value>Написати нове повідомлення</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_not_read" xml:space="preserve">
+    <value>[Не прочитане]</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_private_messages" xml:space="preserve">
+    <value>Особисті повідомлення:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_rejected" xml:space="preserve">
+    <value>[Відмовлено]</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_to" xml:space="preserve">
+    <value>Кому:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_topic" xml:space="preserve">
+    <value>Тема:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_when" xml:space="preserve">
+    <value>Коли:</value>
+    <comment>1</comment>
+  </data>
+  <data name="mes_write_message" xml:space="preserve">
+    <value>Написати повідомлення</value>
+    <comment>1</comment>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>Відправити</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_attention_dob" xml:space="preserve">
+    <value>При вказуванні дати народження - будьте обачні. Після задання дати народження, її вже не можна буде змінити.</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_attention_required_1" xml:space="preserve">
+    <value>У випадку, якщо Ви захочете заповнити особисті дані: поля, що відмічені</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_attention_required_2" xml:space="preserve">
+    <value>- є обовязкові.</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_edit_cd" xml:space="preserve">
+    <value>Редагування контактних даних</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_edit_pd" xml:space="preserve">
+    <value>Редагування особистих даних</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_pd" xml:space="preserve">
+    <value>Особиста інформація</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_register_in_db_pd" xml:space="preserve">
+    <value>Реєстрування в базі даних особистої інформації</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_user" xml:space="preserve">
+    <value>Профіль користувача</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_username" xml:space="preserve">
+    <value>Профіль користувача -</value>
+    <comment>1</comment>
+  </data>
+  <data name="_profile_your" xml:space="preserve">
+    <value>Ваш профіль</value>
+    <comment>1</comment>
+  </data>
 </root>

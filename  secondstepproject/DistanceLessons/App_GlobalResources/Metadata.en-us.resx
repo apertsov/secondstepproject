@@ -171,7 +171,7 @@
   <data name="C_Title_StringLength" xml:space="preserve">
     <value>The name is limited to 64 characters</value>
   </data>
-  <data name="Information_About1" xml:space="preserve">
+  <data name="Information_About" xml:space="preserve">
     <value>About Me:</value>
   </data>
   <data name="Information_About_StringLength" xml:space="preserve">
