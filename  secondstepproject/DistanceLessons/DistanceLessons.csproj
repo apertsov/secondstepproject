@@ -391,16 +391,11 @@
     <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
     <Content Include="Views\Account\LogOn.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\Categories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Account\AdminSetup.cshtml" />
@@ -702,9 +697,6 @@
     <Content Include="Views\Account\App_LocalResources\Welcome.cshtml.resx" />
     <Content Include="Views\Account\App_LocalResources\Welcome.cshtml.ru-ru.resx" />
     <Content Include="Views\Account\App_LocalResources\Welcome.cshtml.en-us.resx" />
-    <Content Include="Views\Home\App_LocalResources\Courses.cshtml.resx" />
-    <Content Include="Views\Home\App_LocalResources\Courses.cshtml.ru-ru.resx" />
-    <Content Include="Views\Home\App_LocalResources\Courses.cshtml.en-us.resx" />
     <Content Include="Views\Search\App_LocalResources\Course.cshtml.resx" />
     <Content Include="Views\Search\App_LocalResources\Course.cshtml.ru-ru.resx" />
     <Content Include="Views\Search\App_LocalResources\Course.cshtml.en-us.resx" />
@@ -717,6 +709,9 @@
     <Content Include="Views\Profile\App_LocalResources\Index.cshtml.resx" />
     <Content Include="Views\Profile\App_LocalResources\Index.cshtml.ru-ru.resx" />
     <Content Include="Views\Profile\App_LocalResources\Index.cshtml.en-us.resx" />
+    <Content Include="Views\Home\App_LocalResources\Courses.cshtml.resx" />
+    <Content Include="Views\Home\App_LocalResources\Courses.cshtml.en-us.resx" />
+    <Content Include="Views\Home\App_LocalResources\Courses.cshtml.ru-ru.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
