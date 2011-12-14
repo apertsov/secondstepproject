@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <br/>
-<h2>Навчальні елементи модуля</h2>
+<h2>@Html.Resource("Layout, edu_elements")</h2>
 <h2> @Html.ActionLink((string)ViewBag.Module, "Course", new { id = (Guid)ViewBag.CourseId })
 </h2>
 <br/>
@@ -18,7 +18,7 @@
 {
     <tr>
         <td>
-            @Html.ActionLink(item.Title, "ShowFile","Education" ,new { filename = item.Text },null)
+            @Html.ActionLink(item.Title, "ShowFile", "Education", new { filename = item.Text }, null)
         </td>
          
 
@@ -28,18 +28,18 @@
              if (item.IsAcceptMainTeacher)
              {
             <text>
-            @Html.ActionLink("___", "ShowLessonTests", "Test", new { id = item.LessonId, courseId = (Guid)ViewBag.CourseId }, new { @class = "tests", title = "Тести" })  
-           @Html.ActionLink("___", "EditLesson", new { id = item.LessonId }, new { @class = "edit", title = "Редагувати" }) 
+            @Html.ActionLink("___", "ShowLessonTests", "Test", new { id = item.LessonId, courseId = (Guid)ViewBag.CourseId }, new { @class = "tests", title = Html.Resource("Layout, tests") })  
+           @Html.ActionLink("___", "EditLesson", new { id = item.LessonId }, new { @class = "edit", title = Html.Resource("Layout, edit") }) 
              </text>
            }
              else
              {
             <text>
-            @Html.ActionLink("___", "AcceptLesson", new { id = item.LessonId }, new { @class = "accept", title = "Затвердити" })  
+            @Html.ActionLink("___", "AcceptLesson", new { id = item.LessonId }, new { @class = "accept", title = Html.Resource("Layout, accept") })  
             </text>
            } 
-            @Html.ActionLink("___", "DetailsLesson", new { id = item.LessonId }, new { @class = "details", title = "Переглянути" }) 
-            @Html.ActionLink("___", "DeleteLesson", new { id = item.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')", @class = "delete", title = "Видалити" })
+            @Html.ActionLink("___", "DetailsLesson", new { id = item.LessonId }, new { @class = "details", title = Html.Resource("Layout, detail") }) 
+            @Html.ActionLink("___", "DeleteLesson", new { id = item.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')", @class = "delete", title = Html.Resource("Layout, delete") })
          }
         </td>
     </tr>
@@ -53,7 +53,7 @@
 @if ((bool)ViewBag.IsTeacher)
 {
     <p>
-    @Html.ActionLink("Добавити лекцію", "UploadLesson", new { courseId = (Guid)ViewBag.CourseId, moduleId = (Guid)ViewBag.ModuleId })
+    @Html.ActionLink(Html.Resource("Layout, _lesson_add"), "UploadLesson", new { courseId = (Guid)ViewBag.CourseId, moduleId = (Guid)ViewBag.ModuleId })
     </p>
-    }
+}
     

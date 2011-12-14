@@ -1,20 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Result/f:EducationElementsPartial.cshtml" caret="1097" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Result/f:ShowAnswersPartial.cshtml" caret="205" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Result/f:StudentResult.cshtml" caret="3542" fromTop="31" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Result/f:UserResult.cshtml" caret="1838" fromTop="31" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Result/f:UserResults.cshtml" caret="394" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Result/f:UserResultsTable.cshtml" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:TeacherController.cs" caret="350" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLessonTests.cshtml" caret="272" fromTop="12" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:DetailsModule.cshtml" caret="192" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_LayoutAdmin.cshtml" caret="1584" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Search/f:Course.cshtml" caret="1326" fromTop="22" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:OrangeStyle.css" caret="75" fromTop="2" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Delete.cshtml" caret="645" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:DetailModuleResultsPartial(old).cshtml" caret="1338" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:Index.cshtml" caret="249" fromTop="7" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_Delete_PartialPage.cshtml" caret="499" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Scripts/f:jquery.validate.unobtrusive.js" caret="21" fromTop="0" />
@@ -31,44 +17,58 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:Users.cshtml" caret="47" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="4821" fromTop="145" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:Categories.cshtml" caret="197" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Course.cshtml" caret="3985" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Courses.cshtml" caret="855" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:CreateLesson.cshtml" caret="2033" fromTop="28" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:CreateModule.cshtml" caret="5046" fromTop="124" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:DetailsLesson.cshtml" caret="1717" fromTop="29" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:DetailsModule.cshtml" caret="2115" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditCours.cshtml" caret="3095" fromTop="24" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLesson.cshtml" caret="3159" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLessonTests.cshtml" caret="252" fromTop="9" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditModule.cshtml" caret="5110" fromTop="29" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Lesson.cshtml" caret="2216" fromTop="31" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:MyCourses.cshtml" caret="1804" fromTop="58" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Upload.cshtml" caret="688" fromTop="21" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:UploadLesson.cshtml" caret="1193" fromTop="16" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:CreateUser.cshtml" caret="494" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsCours.cshtml" caret="92" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsCours.cshtml" caret="1639" fromTop="29" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsCours.cshtml" caret="186" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="95" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="192" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="307" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="2262" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="3862" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="2527" fromTop="14" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="2718" fromTop="19" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="2912" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="3138" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="3389" fromTop="14" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="4155" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="4375" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="4600" fromTop="12" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="4821" fromTop="20" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:EditCategory.cshtml" caret="103" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:EditCategory.cshtml" caret="165" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:EditCategory.cshtml" caret="1395" fromTop="29" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:EditCategory.cshtml" caret="1312" fromTop="12" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:EditUser.cshtml" caret="95" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:EditUser.cshtml" caret="192" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:EditUser.cshtml" caret="2164" fromTop="24" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:EditUser.cshtml" caret="2247" fromTop="29" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:Users.cshtml" caret="103" fromTop="3" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:Users.cshtml" caret="967" fromTop="23" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:DetailsUser.cshtml" caret="5223" fromTop="145" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Admin/f:Categories.cshtml" caret="197" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLesson.cshtml" caret="196" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLesson.cshtml" caret="1614" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLesson.cshtml" caret="1916" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLesson.cshtml" caret="2602" fromTop="19" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLesson.cshtml" caret="2884" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLesson.cshtml" caret="2999" fromTop="24" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLesson.cshtml" caret="3105" fromTop="28" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLessonTests.cshtml" caret="117" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditLessonTests.cshtml" caret="202" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditModule.cshtml" caret="99" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditModule.cshtml" caret="196" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditModule.cshtml" caret="1326" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditModule.cshtml" caret="1715" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditModule.cshtml" caret="4010" fromTop="16" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditModule.cshtml" caret="5025" fromTop="23" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:EditModule.cshtml" caret="5110" fromTop="29" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Lesson.cshtml" caret="191" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Lesson.cshtml" caret="1165" fromTop="18" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Lesson.cshtml" caret="1801" fromTop="28" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Lesson.cshtml" caret="2098" fromTop="27" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:MyCourses.cshtml" caret="109" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Upload.cshtml" caret="59" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Upload.cshtml" caret="156" fromTop="5" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Upload.cshtml" caret="404" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Upload.cshtml" caret="588" fromTop="17" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Upload.cshtml" caret="688" fromTop="21" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:UploadLesson.cshtml" caret="298" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:UploadLesson.cshtml" caret="1004" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:UploadLesson.cshtml" caret="1094" fromTop="12" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:UploadLesson.cshtml" caret="1226" fromTop="16" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
     <ItemStatistics item="RazorTransitionCompletionContext">
       <Item value="Ajax" priority="57" />
-      <Item value="Html" priority="1538" />
+      <Item value="Html" priority="1708" />
       <Item value="Model" priority="19" />
       <Item value="if" priority="93" />
       <Item value="using" priority="45" />
@@ -106,7 +106,7 @@
       <Item value="false" priority="223" />
       <Item value="id" priority="117" />
       <Item value="Model" priority="1371" />
-      <Item value="Html" priority="8861" />
+      <Item value="Html" priority="10872" />
       <Item value="RouteValueDictionary" priority="28" />
       <Item value="null" priority="1567" />
       <Item value="DetailsNew" priority="32" />
@@ -548,7 +548,7 @@
       <Item value="ActionLink`0" priority="242" />
       <Item value="Text`0" priority="134" />
       <Item value="TextHtml`0" priority="188" />
-      <Item value="Resource`0" priority="7105" />
+      <Item value="Resource`0" priority="8902" />
       <Item value="TextAreaFor`2" priority="53" />
       <Item value="ViewData" priority="26" />
       <Item value="RenderPartial`0" priority="26" />
@@ -577,8 +577,8 @@
       <Item value="true" priority="54" />
       <Item value="$" priority="79" />
       <Item value="ScriptEngine" priority="10" />
-      <Item value="Html" priority="17" />
-      <Item value="Resource`0" priority="11" />
+      <Item value="Html" priority="23" />
+      <Item value="Resource`0" priority="17" />
       <Item value="var" priority="43" />
       <Item value="alert" priority="43" />
       <Item value="if" priority="32" />
@@ -771,6 +771,7 @@
       <Item value="slideDown" priority="18" />
       <Item value="slideUp" priority="8" />
       <Item value="addClass" priority="8" />
+      <Item value="Resource`0" priority="3" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:DistanceLessons.Models.UserCourseAndCategoriesModel">
       <Item value="CoursesLessons" priority="134" />
@@ -786,6 +787,9 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:DistanceLessons.Models.UserRoles">
       <Item value="ToString`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="CompletionContextInStringLiterals">
+      <Item value="Resource`0" priority="1" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <NAntValidationSettings>

@@ -1,23 +1,23 @@
 ﻿@{
-    ViewBag.Title = "Помилка завантаження";
+    ViewBag.Title = Html.Resource("Layout, upload_error");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Помилка завантаження</h2>
+<h2>@Html.Resource("Layout, upload_error")</h2>
 @{
     string c_id = ViewBag.CourseId;
     string m_id = (ViewBag.ModuleId != null) ? ViewBag.ModuleId : Guid.Empty.ToString();
     
     }
 <h5 style="color:Red">@ViewBag.Error</h5>
-@Html.ActionLink("Повторити завантаження", "UploadLesson", new { courseId = c_id, moduleId = m_id, act=ViewBag.Action })
+@Html.ActionLink(Html.Resource("Layout, upload_retry"), "UploadLesson", new { courseId = c_id, moduleId = m_id, act = ViewBag.Action })
 
 <br/>
  @if (m_id == Guid.Empty.ToString())
-{
-    @Html.ActionLink("Повернутися до предмету", "Course", new { id = c_id });
-}
+ {
+    @Html.ActionLink(Html.Resource("Layout, back"), "Course", new { id = c_id });
+ }
  else
  {
-    @Html.ActionLink("Повернутися до списку лекцій", "Lesson", new { id = m_id });
+    @Html.ActionLink(Html.Resource("Layout, back"), "Lesson", new { id = m_id });
  }

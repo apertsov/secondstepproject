@@ -1,11 +1,11 @@
 ﻿@model DistanceLessons.Models.Module
 
 @{
-    ViewBag.Title = "Детальна інформація про модуль";
+    ViewBag.Title = Html.Resource("Layout, _module_about");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Детальна інформація про модуль</h2>
+<h2>@Html.Resource("Layout, _module_about")</h2>
 
     <table class="center" cellspacing="10">
     <tr>
@@ -18,7 +18,7 @@
   
   <tr>
         <td class="display-label">  @Html.DisplayNameFor(model => model.Cours.Title)</td>
-        <td class="display-field">     @Html.ActionLink(Model.Cours.Title, "Course", new { id = Model.CourseId})</td>
+        <td class="display-field">     @Html.ActionLink(Model.Cours.Title, "Course", new { id = Model.CourseId })</td>
     </tr>
 
     <tr>
@@ -52,6 +52,6 @@
 </table>
  
 <p>
-    @Html.ActionLink("Редагувати", "EditModule", new { id = Model.ModuleId }) 
+    @Html.ActionLink(Html.Resource("Layout, edit"), "EditModule", new { id = Model.ModuleId }) 
 
 </p>

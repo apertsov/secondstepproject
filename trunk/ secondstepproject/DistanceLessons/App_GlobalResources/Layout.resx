@@ -553,4 +553,113 @@
     <value>Інформація про користувача</value>
     <comment>3</comment>
   </data>
+  <data name="accept" xml:space="preserve">
+    <value>Затвердити</value>
+    <comment>4</comment>
+  </data>
+  <data name="add_edu_elem" xml:space="preserve">
+    <value>Новий навчальний елемент</value>
+    <comment>4</comment>
+  </data>
+  <data name="edu_elements" xml:space="preserve">
+    <value>Навчальні елементи модуля</value>
+    <comment>4</comment>
+  </data>
+  <data name="lesson" xml:space="preserve">
+    <value>Лекція</value>
+    <comment>4</comment>
+  </data>
+  <data name="my_courses" xml:space="preserve">
+    <value>Мої предмети</value>
+    <comment>4</comment>
+  </data>
+  <data name="tests" xml:space="preserve">
+    <value>Тести</value>
+    <comment>4</comment>
+  </data>
+  <data name="upld" xml:space="preserve">
+    <value>Завантажити</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload" xml:space="preserve">
+    <value>Завантаження</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_edu_elem" xml:space="preserve">
+    <value>Завантаження навчального елементу</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_error" xml:space="preserve">
+    <value>Помилка завантаження</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_info1" xml:space="preserve">
+    <value>Максимальний розмір завантажувального файлу - 5 Мб.</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_info2" xml:space="preserve">
+    <value>Допустимі розширення - .pdf, .doc, .docx, .rtf, .txt, .htm, .html, .mhtml, .xhtml,
+    .jpg, .jpeg, .bmp!</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_retry" xml:space="preserve">
+    <value>Повторити завантаження</value>
+    <comment>4</comment>
+  </data>
+  <data name="_course_edit" xml:space="preserve">
+    <value>Редагування предмету</value>
+    <comment>4</comment>
+  </data>
+  <data name="_course_null_module" xml:space="preserve">
+    <value>Лекції, що не належать до модуля</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_about" xml:space="preserve">
+    <value>Інформація про дану лекцію</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_add" xml:space="preserve">
+    <value>Добавити лекцію</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_change_url" xml:space="preserve">
+    <value>Обновити джерело лекції</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_edit" xml:space="preserve">
+    <value>Редагування лекції</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_to_null_module" xml:space="preserve">
+    <value>Помістити лекцію за межі модулів</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_url" xml:space="preserve">
+    <value>Джерело лекції</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_about" xml:space="preserve">
+    <value>Інформація про модуль</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_create" xml:space="preserve">
+    <value>Створити модуль</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_creating" xml:space="preserve">
+    <value>Створення модулю</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_edit" xml:space="preserve">
+    <value>Редагування модулю</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_time_invalid" xml:space="preserve">
+    <value>Дата початку здачі модуля має бути меншою дати закінчення!</value>
+    <comment>4</comment>
+  </data>
+  <data name="_tests_edit" xml:space="preserve">
+    <value>Редагування тестів</value>
+    <comment>4</comment>
+  </data>
 </root>
