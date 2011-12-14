@@ -1,15 +1,15 @@
 ﻿@model DistanceLessons.Models.User
 
 @{
-    ViewBag.Title = "Інформація про користувача";
+    ViewBag.Title = Html.Resource("Layout, _user_info");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Інформація про користувача</h2>
+<h2>@Html.Resource("Layout, _user_info")</h2>
 
 <table class="center" cellspacing="10">
    <tr>
-   <th colspan="2">Загальна інформація</th>
+   <th colspan="2">@Html.Resource("Layout, _summary_info")</th>
    </tr>
   <tr>
     <tr>
@@ -63,29 +63,29 @@
     <table class="center" cellspacing="10">
    
    <tr>
-   <th colspan="2">Особиста інформація</th>
+   <th colspan="2">@Html.Resource("Layout, _profile_pd")</th>
    </tr>
   <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
     </tr> 
     <tr>
-        <td class="display-label">  @Html.DisplayName("Прізвище")</td>
+        <td class="display-label">  @Html.DisplayName(Html.Resource("Metadata, Information_LastName"))</td>
         <td class="display-field"> @Info.LastName</td>
     </tr>
     
       <tr>
-        <td class="display-label">  @Html.DisplayName("Ім'я")</td>
+        <td class="display-label">  @Html.DisplayName(Html.Resource("Metadata, Information_FirstName"))</td>
         <td class="display-field"> @Info.FirstName</td>
     </tr>
     
       <tr>
-        <td class="display-label">  @Html.DisplayName("По-батькові")</td>
+        <td class="display-label">  @Html.DisplayName(Html.Resource("Metadata, Information_MidName"))</td>
         <td class="display-field"> @Info.MidName</td>
     </tr>
 @if (Info.DateOfBirth != null)
 {
     <tr>
-        <td class="display-label"> @Html.DisplayName("Дата народження")</td>
+        <td class="display-label"> @Html.DisplayName(Html.Resource("Metadata, Information_DateOfBirth"))</td>
         <td class="display-field"> @Info.DateOfBirth.Value.Date.ToShortDateString()</td>
     </tr>
 }
@@ -93,7 +93,7 @@
 @if (Info.About != null)
 {
      <tr>
-        <td class="display-label"> @Html.DisplayName("Про себе")</td>
+        <td class="display-label"> @Html.DisplayName(Html.Resource("Metadata, Information_About"))</td>
         <td class="display-field"> @Info.About</td>
     </tr>
 }
@@ -110,7 +110,7 @@
 
     <table class="center" cellspacing="10">
     <tr>
-   <th colspan="2">Контактні дані</th>
+   <th colspan="2">@Html.Resource("Layout, _profile_cd")</th>
    </tr>
 <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
@@ -118,7 +118,7 @@
 @if (Contact.Telephone != null)
 {   
     <tr>
-        <td class="display-label">  @Html.DisplayName("Номер телефону")</td>
+        <td class="display-label">  @Html.DisplayName(Html.Resource("Metadata, Contact_Tel"))</td>
         <td class="display-field"> @Contact.Telephone</td>
     </tr>
 }
@@ -126,7 +126,7 @@
 @if (Contact.Skype != null)
 {
     <tr>
-        <td class="display-label">  @Html.DisplayName("Skype")</td>
+        <td class="display-label">  @Html.DisplayName(Html.Resource("Metadata, Contact_Skype"))</td>
         <td class="display-field"> @Contact.Skype</td>
     </tr>
     
@@ -135,7 +135,7 @@
 @if (Contact.ICQ_QIP != null)
 {
     <tr>
-        <td class="display-label">  @Html.DisplayName("ICQ_QIP")</td>
+        <td class="display-label">  @Html.DisplayName(Html.Resource("Metadata, Contact_ICQ"))</td>
         <td class="display-field"> @Contact.ICQ_QIP</td>
     </tr>
 }
@@ -143,7 +143,7 @@
 @if (Contact.Other != null)
 {
      <tr>
-        <td class="display-label"> @Html.DisplayName("Інше")</td>
+        <td class="display-label"> @Html.DisplayName(Html.Resource("Metadata, Contact_Other"))</td>
         <td class="display-field"> @Contact.Other</td>
      </tr>
 }
@@ -154,6 +154,6 @@
 
 }
 <p>
-    @Html.ActionLink("Редагувати", "EditUser", new { id = Model.UserId }) |
-    @Html.ActionLink("Повернутись до списку користувачів", "Users")
+    @Html.ActionLink(Html.Resource("Layout, edit"), "EditUser", new { id = Model.UserId }) |
+    @Html.ActionLink(Html.Resource("Layout, back"), "Users")
 </p>

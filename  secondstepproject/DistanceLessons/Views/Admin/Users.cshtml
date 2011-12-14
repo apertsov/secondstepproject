@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<DistanceLessons.Models.User>
 
 @{
-    ViewBag.Title = "Користувачі";
+    ViewBag.Title = Html.Resource("Layout, users");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -16,12 +16,12 @@
    @grid.GetHtml(
         tableStyle: "center",
         columns: grid.Columns(
-            grid.Column("Login", "Логін", format: @<text>@item.Login</text>),
-            grid.Column("Role.Name", "Роль", format:@<i>@item.Role.Name</i>),
+            grid.Column("Login", Html.Resource("Metadata, Lo_Login"), format: @<text>@item.Login</text>),
+            grid.Column("Role.Name", Html.Resource("Layout, role"), format:@<i>@item.Role.Name</i>),
             grid.Column(format: (item) =>
                 new HtmlString(
-                    Html.ActionLink("___", "EditUser", new { id = item.UserId }, new { title = "Редагувати", @class = "edit" }).ToString()
-                  + Html.ActionLink("___", "DetailsUser", new { id = item.UserId }, new { title="Переглянути", @class="details"}).ToString()
+                    Html.ActionLink("___", "EditUser", new { id = item.UserId }, new { title = Html.Resource("Layout, edit"), @class = "edit" }).ToString()
+                  + Html.ActionLink("___", "DetailsUser", new { id = item.UserId }, new { title=Html.Resource("Layout, detail"), @class="details"}).ToString()
                               )
                               )));
             

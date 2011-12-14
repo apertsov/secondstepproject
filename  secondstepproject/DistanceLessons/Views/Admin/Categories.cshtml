@@ -1,27 +1,27 @@
 ﻿@model IEnumerable<DistanceLessons.Models.Category>
 
 @{
-    ViewBag.Title = "Категорії";
+    ViewBag.Title = Html.Resource("Layout, categories");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Категорії предметів</h2>
+<h2>@Html.Resource("Layout, categories_courses")</h2>
 <br/>
 <p>
-    @Html.ActionLink("Створити категорію", "CreateCategory")
+    @Html.ActionLink(Html.Resource("Layout, create"), "CreateCategory")
 </p>
 <br/>
 @{
     var grid = new WebGrid(Model, rowsPerPage: 10, defaultSort: "Category1");
    @grid.GetHtml(
         tableStyle: "center",
-        headerStyle:"left",
+        headerStyle: "left",
         columns: grid.Columns(
-            grid.Column("Category1", "Назва категорії", format: @<text>@item.Category1</text>),
+            grid.Column("Category1", Html.Resource("Layout, category"), format: @<text>@item.Category1</text>),
             grid.Column(format: (item) =>
                 new HtmlString(
-                    Html.ActionLink("___", "EditCategory", new { id = item.CategoryId }, new { @class="edit", title="Редагувати"}).ToString() +
-                    Html.ActionLink("___", "DeleteCategory", new { id = item.CategoryId }, new {@class="delete", title="Видалити", onclick = "return confirm('Дійсно бажаєте видалити категорію? З видаленням категорії автоматично будуть видалені всі предмети, які містить категорія, і всі дані, що з ними пов`язані!!!')" }).ToString()
+                    Html.ActionLink("___", "EditCategory", new { id = item.CategoryId }, new { @class = "edit", title = Html.Resource("Layout, edit") }).ToString() +
+                    Html.ActionLink("___", "DeleteCategory", new { id = item.CategoryId }, new { @class = "delete", title = Html.Resource("Layout, delete"), onclick = "return confirm('Дійсно бажаєте видалити категорію? З видаленням категорії автоматично будуть видалені всі предмети, які містить категорія, і всі дані, що з ними пов`язані!!!')" }).ToString()
                               )
                               )));
             

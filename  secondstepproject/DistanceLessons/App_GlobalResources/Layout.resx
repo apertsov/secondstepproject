@@ -505,4 +505,52 @@
     <value>Бали користувача</value>
     <comment>2</comment>
   </data>
+  <data name="categories_courses" xml:space="preserve">
+    <value>Категорії предметів</value>
+    <comment>3</comment>
+  </data>
+  <data name="detail" xml:space="preserve">
+    <value>Переглянути</value>
+    <comment>3</comment>
+  </data>
+  <data name="detailing" xml:space="preserve">
+    <value>Детальніше:</value>
+    <comment>3</comment>
+  </data>
+  <data name="role" xml:space="preserve">
+    <value>Роль:</value>
+    <comment>3</comment>
+  </data>
+  <data name="users" xml:space="preserve">
+    <value>Користувачі</value>
+    <comment>3</comment>
+  </data>
+  <data name="_category_create" xml:space="preserve">
+    <value>Створення категорії</value>
+    <comment>3</comment>
+  </data>
+  <data name="_category_edit" xml:space="preserve">
+    <value>Редагування категорії</value>
+    <comment>3</comment>
+  </data>
+  <data name="_course_create" xml:space="preserve">
+    <value>Створення предмету</value>
+    <comment>3</comment>
+  </data>
+  <data name="_summary_info" xml:space="preserve">
+    <value>Загальна інформація</value>
+    <comment>3</comment>
+  </data>
+  <data name="_user_create" xml:space="preserve">
+    <value>Створення користувача</value>
+    <comment>3</comment>
+  </data>
+  <data name="_user_edit" xml:space="preserve">
+    <value>Редагувати користувача</value>
+    <comment>3</comment>
+  </data>
+  <data name="_user_info" xml:space="preserve">
+    <value>Інформація про користувача</value>
+    <comment>3</comment>
+  </data>
 </root>

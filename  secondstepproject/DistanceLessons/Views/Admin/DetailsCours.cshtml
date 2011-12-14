@@ -1,11 +1,11 @@
 ﻿@model DistanceLessons.Models.Cours
 
 @{
-    ViewBag.Title = "Предмет";
+    ViewBag.Title = Html.Resource("Layout, course");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Детальніше про предмет</h2>
+<h2>@Html.Resource("Layout, detailing")</h2>
 
    
     <table class="center" cellspacing="10">
@@ -47,5 +47,5 @@
 
 
 <p>
-    @Html.ActionLink("Повернутись до списку", "Courses")
+    @Html.ActionLink(Html.Resource("Layout, back"), "Courses")
 </p>

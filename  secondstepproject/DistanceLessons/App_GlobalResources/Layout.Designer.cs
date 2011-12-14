@@ -124,6 +124,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Категорії предметів.
+        /// </summary>
+        internal static string categories_courses {
+            get {
+                return ResourceManager.GetString("categories_courses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Категорія:.
         /// </summary>
         internal static string category {
@@ -282,6 +291,24 @@ namespace Resources {
         internal static string delete {
             get {
                 return ResourceManager.GetString("delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Переглянути.
+        /// </summary>
+        internal static string detail {
+            get {
+                return ResourceManager.GetString("detail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Детальніше:.
+        /// </summary>
+        internal static string detailing {
+            get {
+                return ResourceManager.GetString("detailing", resourceCulture);
             }
         }
         
@@ -484,6 +511,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Роль:.
+        /// </summary>
+        internal static string role {
+            get {
+                return ResourceManager.GetString("role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Зберегти.
         /// </summary>
         internal static string save {
@@ -628,6 +664,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Користувачі.
+        /// </summary>
+        internal static string users {
+            get {
+                return ResourceManager.GetString("users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Очікуємо підтвердження.
         /// </summary>
         internal static string wait {
@@ -642,6 +687,33 @@ namespace Resources {
         internal static string welcome {
             get {
                 return ResourceManager.GetString("welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створення категорії.
+        /// </summary>
+        internal static string _category_create {
+            get {
+                return ResourceManager.GetString("_category_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагування категорії.
+        /// </summary>
+        internal static string _category_edit {
+            get {
+                return ResourceManager.GetString("_category_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створення предмету.
+        /// </summary>
+        internal static string _course_create {
+            get {
+                return ResourceManager.GetString("_course_create", resourceCulture);
             }
         }
         
@@ -1024,6 +1096,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Загальна інформація.
+        /// </summary>
+        internal static string _summary_info {
+            get {
+                return ResourceManager.GetString("_summary_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Стиль:.
         /// </summary>
         internal static string _theme {
@@ -1047,6 +1128,33 @@ namespace Resources {
         internal static string _theme_orange {
             get {
                 return ResourceManager.GetString("_theme_orange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створення користувача.
+        /// </summary>
+        internal static string _user_create {
+            get {
+                return ResourceManager.GetString("_user_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагувати користувача.
+        /// </summary>
+        internal static string _user_edit {
+            get {
+                return ResourceManager.GetString("_user_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Інформація про користувача.
+        /// </summary>
+        internal static string _user_info {
+            get {
+                return ResourceManager.GetString("_user_info", resourceCulture);
             }
         }
     }
