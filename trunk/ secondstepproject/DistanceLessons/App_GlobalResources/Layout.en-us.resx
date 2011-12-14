@@ -505,4 +505,52 @@
     <value>User points</value>
     <comment>2</comment>
   </data>
+  <data name="categories_courses" xml:space="preserve">
+    <value>Categories of courses</value>
+    <comment>3</comment>
+  </data>
+  <data name="detail" xml:space="preserve">
+    <value>Review</value>
+    <comment>3</comment>
+  </data>
+  <data name="detailing" xml:space="preserve">
+    <value>More:</value>
+    <comment>3</comment>
+  </data>
+  <data name="role" xml:space="preserve">
+    <value>Role:</value>
+    <comment>3</comment>
+  </data>
+  <data name="users" xml:space="preserve">
+    <value>Users</value>
+    <comment>3</comment>
+  </data>
+  <data name="_category_create" xml:space="preserve">
+    <value>Creating a category</value>
+    <comment>3</comment>
+  </data>
+  <data name="_category_edit" xml:space="preserve">
+    <value>Editing category</value>
+    <comment>3</comment>
+  </data>
+  <data name="_course_create" xml:space="preserve">
+    <value>Creating a course</value>
+    <comment>3</comment>
+  </data>
+  <data name="_summary_info" xml:space="preserve">
+    <value>Summary Information</value>
+    <comment>3</comment>
+  </data>
+  <data name="_user_create" xml:space="preserve">
+    <value>Creating a user</value>
+    <comment>3</comment>
+  </data>
+  <data name="_user_edit" xml:space="preserve">
+    <value>Editing user</value>
+    <comment>3</comment>
+  </data>
+  <data name="_user_info" xml:space="preserve">
+    <value>User Info</value>
+    <comment>3</comment>
+  </data>
 </root>
