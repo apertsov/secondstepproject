@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Адмін-панель.
+        /// </summary>
+        internal static string admin_panel {
+            get {
+                return ResourceManager.GetString("admin_panel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Всі курси.
         /// </summary>
         internal static string all_courses {
@@ -268,6 +277,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Поки що немає ніяких новин..
+        /// </summary>
+        internal static string data_null_news {
+            get {
+                return ResourceManager.GetString("data_null_news", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Особисті дані не вказано.
         /// </summary>
         internal static string data_null_pd {
@@ -367,6 +385,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Навчання.
+        /// </summary>
+        internal static string education {
+            get {
+                return ResourceManager.GetString("education", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Навчальні елементи модуля.
         /// </summary>
         internal static string edu_elements {
@@ -390,6 +417,24 @@ namespace Resources {
         internal static string hours {
             get {
                 return ResourceManager.GetString("hours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Наш сайт не підтримує ваш браузер.\nДля корректної роботи, встановіть інший браузер.\nНаприклад: Google Chrome(рекомендуємо), Opera, Mozilla Firefox, Safari, etc...\n\nВибачте за будь-які можливі незручності ;).
+        /// </summary>
+        internal static string ie_error {
+            get {
+                return ResourceManager.GetString("ie_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Журнал успішності.
+        /// </summary>
+        internal static string journal {
+            get {
+                return ResourceManager.GetString("journal", resourceCulture);
             }
         }
         
@@ -579,6 +624,64 @@ namespace Resources {
         internal static string next {
             get {
                 return ResourceManager.GetString("next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сторінка не знайдена.
+        /// </summary>
+        internal static string page_not_found {
+            get {
+                return ResourceManager.GetString("page_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Чому виникає така помилка?.
+        /// </summary>
+        internal static string page_not_found_question {
+            get {
+                return ResourceManager.GetString("page_not_found_question", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;-Можливо, у вас немає права доступу до сторінки&lt;/p&gt;
+        ///        &lt;p&gt;-Можливо, сторінки, до якої Ви звертаєтесь - не існує&lt;/p&gt;
+        ///        &lt;p&gt;-Можливо, на сервері ведуться роботи і сторінка тимчасово не доступна&lt;/p&gt;.
+        /// </summary>
+        internal static string page_not_found_theory {
+            get {
+                return ResourceManager.GetString("page_not_found_theory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;-Перевірте введені дані&lt;/p&gt;
+        ///        &lt;p&gt;-Спробуйте ще раз звернутись до потрібної Вам адреси&lt;/p&gt;
+        ///        &lt;p&gt;-Зверніться до адміністрації, якщо Ви впевнені що сторінка, до якої ви звертаїтесь - існує&lt;/p&gt;.
+        /// </summary>
+        internal static string page_not_found_theory2 {
+            get {
+                return ResourceManager.GetString("page_not_found_theory2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сторінки по вашому запиту не знайдено.
+        /// </summary>
+        internal static string page_not_found_title {
+            get {
+                return ResourceManager.GetString("page_not_found_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Можливі шляхи вирішення проблеми.
+        /// </summary>
+        internal static string page_not_found_try {
+            get {
+                return ResourceManager.GetString("page_not_found_try", resourceCulture);
             }
         }
         
@@ -786,6 +889,15 @@ namespace Resources {
         internal static string teacher {
             get {
                 return ResourceManager.GetString("teacher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Викладацька.
+        /// </summary>
+        internal static string teacher_panel {
+            get {
+                return ResourceManager.GetString("teacher_panel", resourceCulture);
             }
         }
         

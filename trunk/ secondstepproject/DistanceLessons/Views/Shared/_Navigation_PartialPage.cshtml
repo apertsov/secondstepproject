@@ -11,11 +11,11 @@
             var _db = new DataEntitiesManager();
             if (_db.UserRole(User.Identity.Name) == UserRoles.Admin.ToString())
             {
-                <li><a>Адміністраторська</a>
+                <li><a>@Html.Resource("Layout, admin_panel")</a>
                     <ul>
-                        <li>@Html.ActionLink("Користувачі", "Users", "Admin")</li>
-                        <li>@Html.ActionLink("Категорії предметів", "Categories", "Admin")</li>
-                        <li>@Html.ActionLink("Предмети", "Courses", "Admin")</li>
+                        <li>@Html.ActionLink(Html.Resource("Layout, users"), "Users", "Admin")</li>
+                        <li>@Html.ActionLink(Html.Resource("Layout, categories"), "Categories", "Admin")</li>
+                        <li>@Html.ActionLink(Html.Resource("Layout, courses"), "Courses", "Admin")</li>
                     </ul>
                 </li>
             }
@@ -23,16 +23,16 @@
             {
                 if (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Dean.ToString())
                 {
-                    <li>@Html.ActionLink("Журнал успішності", "Index", "Result")</li>
+                    <li>@Html.ActionLink(Html.Resource("Layout, journal"), "Index", "Result")</li>
                 }
                 else
                 {
                     if (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Teacher.ToString())
                     {
-                        <li><a>Викладацька</a>
+                        <li><a>@Html.Resource("Layout, teacher_panel")</a>
                             <ul>
-                                <li>@Html.ActionLink("Предмети", "Courses", "Teacher")</li>
-                                <li>@Html.ActionLink("Журнал успішності", "Index", "Result")</li>
+                                <li>@Html.ActionLink(Html.Resource("Layout, courses"), "Courses", "Teacher")</li>
+                                <li>@Html.ActionLink(Html.Resource("Layout, journal"), "Index", "Result")</li>
                             </ul>
                         </li>
                     }

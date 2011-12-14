@@ -1,24 +1,20 @@
 ﻿@{
-    ViewBag.Title = "Сторінка не знайдена";
+    ViewBag.Title = Html.Resource("Layout, page_not_found");
 }
 
 <div>
     <div id="error_body"></div>
 
     <div>
-        <h3>Сторінки по вашому запиту не знайдено</h3>
+        <h3>@Html.Resource("Layout, page_not_found_title")</h3>
         <div align="center">[<a href=@ViewBag.RequestedUrl>@ViewBag.RequestedUrl</a>]</div>
         <br/>
-        <b>Чому виникає така помилка?</b>
+        <b>@Html.Resource("Layout, page_not_found_question")</b>
         <br/>
-        <p>-Можливо, у вас немає права доступу до сторінки</p>
-        <p>-Можливо, сторінки, до якої Ви звертаєтесь - не існує</p>
-        <p>-Можливо, на сервері ведуться роботи і сторінка тимчасово не доступна</p>
+        @Html.TextHtml(Html.Resource("Layout, page_not_found_theory"))
         <br/>
-        <b>Можливі шляхи вирішення проблеми</b><br/>
-        <p>-Перевірте введені дані</p>
-        <p>-Спробуйте ще раз звернутись до <a href=@ViewBag.RequestedUrl>потрібної Вам адреси</a></p>
-        <p>-Зверніться до адміністрації, якщо Ви впевнені що сторінка, до якої ви звертаїтесь - існує</p>
+        <b>@Html.Resource("Layout, page_not_found_try")</b><br/>
+        @Html.TextHtml(Html.Resource("Layout, page_not_found_theory2"))
     </div>
 </div>
 

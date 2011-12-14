@@ -754,4 +754,55 @@
     <value>вопросов на какие отведено</value>
     <comment>5</comment>
   </data>
+  <data name="admin_panel" xml:space="preserve">
+    <value>Админ-панель</value>
+    <comment>6</comment>
+  </data>
+  <data name="data_null_news" xml:space="preserve">
+    <value>Пока что нет никаких новостей</value>
+    <comment>6</comment>
+  </data>
+  <data name="ie_error" xml:space="preserve">
+    <value>Наш сайт не поддерживает ваш браузер.\nДля правильной работы, устоновите другой браузер.\nНапример: Google Chrome(рекомендуем), Opera, Mozilla Firefox, Safari, etc...\n\nПросим прощения за возможные неудобства ;)</value>
+    <comment>6</comment>
+  </data>
+  <data name="journal" xml:space="preserve">
+    <value>Журнал успеваемости</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found" xml:space="preserve">
+    <value>Страница не найдена</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found_question" xml:space="preserve">
+    <value>Почему возникает такая ошибка?</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found_theory" xml:space="preserve">
+    <value>&lt;p&gt;-Возможно, у Вас нет прав доступа к данной странице&lt;/p&gt;
+        &lt;p&gt;-Возможно, страницы к которой Вы обращаетесь - не существует&lt;/p&gt;
+        &lt;p&gt;-Возможно, на сервере ведуться работы и страница временно недоступна&lt;/p&gt;</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found_theory2" xml:space="preserve">
+    <value>&lt;p&gt;-Проверьте введенные данные&lt;/p&gt;
+        &lt;p&gt;-Попробуйте еще раз обратиться к нужной Вам странице&lt;/p&gt;
+        &lt;p&gt;-Обратитесь к администрации, если Вы уверены, что страница, к которой вы обращаетесь - существует&lt;/p&gt;</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found_title" xml:space="preserve">
+    <value>Страницы по вашему запросу не найдено</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found_try" xml:space="preserve">
+    <value>Возможные пути решения проблемы</value>
+    <comment>6</comment>
+  </data>
+  <data name="teacher_panel" xml:space="preserve">
+    <value>Преподавательская</value>
+    <comment>6</comment>
+  </data>
+  <data name="education" xml:space="preserve">
+    <value>Обучение</value>
+  </data>
 </root>

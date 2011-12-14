@@ -14,12 +14,11 @@
         var ie = (document.getElementById && document.documentElement.behaviorUrns) ? true : false;
 
         if (ie) {
-            alert("Наш сайт не підтримує ваш браузер.\nДля корректної роботи, встановіть інший браузер.\nНаприклад: Google Chrome(рекомендуємо), Opera, Mozilla Firefox, Safari, etc...\n\nВибачте за будь-які можливі незручності ;)");
-            //location.replace("http://www.google.com/chrome?hl=uk");
+            alert('@Html.Resource("Layout, ie_error")');
         }
         </script>
         <script type="text/javascript">
-    <!--
+        <!--
         jQuery(document).ready(function() {
             if ((jQuery.browser.msie == true) & (jQuery.browser.version <= 8)) {
                 var deg2radians = Math.PI * 2 / 360,
@@ -31,19 +30,22 @@
             }
             ;
         });
-    -->
-    </script>
+        //-->
+        </script>
+    
         @if (Request.IsAuthenticated)
         {
-            <script type="text/javascript">        
-    $.ajax({
+        <script type="text/javascript">
+        <!--    
+        $.ajax({
             url: '/Home/MessageBox',
             type: "GET",
             success: function(result) {
                 $("#header_logo").html(result);
             }
         });
-    </script>
+        //-->
+        </script>
         }
         
         <link href="@Url.Content("~/Content/Layout.css")" rel="stylesheet" type="text/css" />
@@ -51,12 +53,6 @@
         <script src="@Url.Content("~/Content/script/jquerycssmenu.js")" type="text/javascript"> </script>
         <script src="@Url.Content("~/Content/script/browser_selector.js")" type="text/javascript"> </script>
         <link href="@((Session["themaStyle"] == "orange") ? Url.Content("~/Content/OrangeStyle.css") : Url.Content("~/Content/Layout.css"))" rel="stylesheet" type="text/css" />
-
-        @*Html.ActionLink("Стандартний(синій)", "SetThema", "Home", new { themaName = "default" }, null)*@
-        @*Html.ActionLink("Помаранчевий", "SetThema", "Home", new { themaName = "orange" }, null)*@
-               
-        
-
     </head>
     <body>
         <a name="top_page"></a>
@@ -68,9 +64,9 @@
                 </div>
                 <div id="header_upper">
                     <div class="lang">
-                        @Html.ActionLink(" ", "English", "Home", null, new {@id = "us"})
-                        @Html.ActionLink(" ", "Russian", "Home", null, new {@id = "ru"})
-                        @Html.ActionLink(" ", "Ukraine", "Home", null, new {@id = "ua"})
+                        @Html.ActionLink(" ", "English", "Home", null, new { @id = "us" })
+                        @Html.ActionLink(" ", "Russian", "Home", null, new { @id = "ru" })
+                        @Html.ActionLink(" ", "Ukraine", "Home", null, new { @id = "ua" })
                     </div>
                 </div>
                 <div id="header_middle">
@@ -85,7 +81,7 @@
         <!--Container for page-->
         <div id="container">
             <div>
-                @Html.ActionLink(Html.Resource("Layout, App_HomePage"), "Index", "Home", null, new {@id = "toStartPage"})
+                @Html.ActionLink(Html.Resource("Layout, App_HomePage"), "Index", "Home", null, new { @id = "toStartPage" })
             </div>
             <!--Navigation-->
             <div id="myjquerymenu" class="nav">
@@ -112,8 +108,8 @@
                     <a href="#top_page">@Html.Resource("Layout, App_Footer_TopPage")</a></p>
                 <p>
                     @Html.Resource("Layout, _theme")
-                    @Html.ActionLink(Html.Resource("Layout, _theme_blue"), "SetThema", "Home", new {themaName = "default"}, null) |
-                    @Html.ActionLink(Html.Resource("Layout, _theme_orange"), "SetThema", "Home", new {themaName = "orange"}, null)
+                    @Html.ActionLink(Html.Resource("Layout, _theme_blue"), "SetThema", "Home", new { themaName = "default" }, null) |
+                    @Html.ActionLink(Html.Resource("Layout, _theme_orange"), "SetThema", "Home", new { themaName = "orange" }, null)
                 </p>
                 <p>
                     &copy; First Team, CHNU &amp; SoftServe Course, @DateTime.Now.Year | All
