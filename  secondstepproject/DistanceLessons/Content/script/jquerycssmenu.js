@@ -44,8 +44,8 @@ var jquerycssmenu = {
 }
 
 var arrowimages = {
-    down: ['downarrowclass', "http://" + document.location.host + "/Content/img/navigation/arrow_down.png", 25],
-    right: ['rightarrowclass', "http://" + document.location.host + "/Content/img/navigation/arrow_right.png"]
+    down: ['downarrowclass', document.location.protocol + "//" + document.location.host + "/Content/img/navigation/arrow_down.png", 25],
+    right: ['rightarrowclass', document.location.protocol + "//" + document.location.host + "/Content/img/navigation/arrow_right.png"]
         }
 
 jquerycssmenu.buildmenu("myjquerymenu", arrowimages)
