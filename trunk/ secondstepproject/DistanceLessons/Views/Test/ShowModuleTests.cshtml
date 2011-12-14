@@ -3,19 +3,19 @@
     ViewBag.Title = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h3> Всі тести з модуля @Model.Module.Title . Тестування складається з @Model.Module.CountQuestions запитань на які відведено @Model.Module.TimeForPassTest хвилин. <br />
-    @Html.ActionLink("Повернутись до курсу", "Course", "Teacher", new { id = Model.Module.CourseId }, null)</h3>
+<h3>@Html.Resource("Layout, _test_showmodtests") @Model.Module.Title . @Html.Resource("Layout, _test_showmodtests2") @Model.Module.CountQuestions @Html.Resource("Layout, _test_showmodtests3") @Model.Module.TimeForPassTest @Html.Resource("Layout, minutes") <br />
+    @Html.ActionLink(Html.Resource("Layout, back"), "Course", "Teacher", new { id = Model.Module.CourseId }, null)</h3>
 @foreach (DistanceLessons.Models.LessonTestAndAnswersModel lessonTests in Model.LessonsTestsAndAnswers)
 {
     <div style="text-align: center;">
-        Лекція: @lessonTests.Lesson.Title
+        @Html.Resource("Layout, lesson"): @lessonTests.Lesson.Title
         <br />
-        @Html.ActionLink("Редагувати тести", "ShowLessonTests", "Test", new { id = lessonTests.Lesson.LessonId, courseId = lessonTests.Lesson.Cours.CourseId }, null)
+        @Html.ActionLink(Html.Resource("Layout, edit"), "ShowLessonTests", "Test", new { id = lessonTests.Lesson.LessonId, courseId = lessonTests.Lesson.Cours.CourseId }, null)
     </div>
-           <div> Тести:</div>
+           <div>@Html.Resource("Layout, tests"):</div>
     if (lessonTests.TestAndAnswers.Count == 0)
     {
-        <div style="padding: 5px 10px;"> Тести не створені</div>
+        <div class="data_null">@Html.Resource("Layout, data_null_test")</div>
     }
     else
     {

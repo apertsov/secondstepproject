@@ -5,4 +5,4 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Тестування з модуля @Model.Title не можливе. Зверніться до викладача за деталями </h2>
+<h2>@Html.Resource("Layout, _test_not_prepared") @Model.Title @Html.Resource("Layout, _test_not_prepared2")</h2>

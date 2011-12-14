@@ -662,4 +662,96 @@
     <value>Editing tests</value>
     <comment>4</comment>
   </data>
+  <data name="add" xml:space="preserve">
+    <value>Add Item</value>
+    <comment>5</comment>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>and</value>
+    <comment>5</comment>
+  </data>
+  <data name="data_null_test" xml:space="preserve">
+    <value>Tests aren't created</value>
+    <comment>5</comment>
+  </data>
+  <data name="hours" xml:space="preserve">
+    <value>h.</value>
+    <comment>5</comment>
+  </data>
+  <data name="minutes" xml:space="preserve">
+    <value>min.</value>
+    <comment>5</comment>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>Next</value>
+    <comment>5</comment>
+  </data>
+  <data name="question" xml:space="preserve">
+    <value>question</value>
+    <comment>5</comment>
+  </data>
+  <data name="save_error" xml:space="preserve">
+    <value>Failed to save the results. Correct the errors and try again.</value>
+    <comment>5</comment>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>sec.</value>
+    <comment>5</comment>
+  </data>
+  <data name="_module_passing" xml:space="preserve">
+    <value>Passing testing</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_editing" xml:space="preserve">
+    <value>Editing tests</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_edit_legend" xml:space="preserve">
+    <value>User information</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_have_time" xml:space="preserve">
+    <value>Remaining time</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_not_prepared" xml:space="preserve">
+    <value>Testing of the module</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_not_prepared2" xml:space="preserve">
+    <value>is impossible. Contact instructor for details</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_not_testing" xml:space="preserve">
+    <value>Testing of the module</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_not_testing2" xml:space="preserve">
+    <value>not performed.</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_not_testing3" xml:space="preserve">
+    <value>The last time specified in</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_result" xml:space="preserve">
+    <value>Test results</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_result_say" xml:space="preserve">
+    <value>Your results testing module</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_showmodtests" xml:space="preserve">
+    <value>All tests from the module</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_showmodtests2" xml:space="preserve">
+    <value>Testing consists of</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_showmodtests3" xml:space="preserve">
+    <value>questions that are given</value>
+    <comment>5</comment>
+  </data>
 </root>

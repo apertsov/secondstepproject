@@ -1,7 +1,7 @@
 ﻿@model DistanceLessons.Models.PassTestModel
 
 @{
-    ViewBag.Title = "Здача модуля";
+    ViewBag.Title = Html.Resource("Layout, _module_passing");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script language="javascript" type="text/javascript">
@@ -9,9 +9,9 @@
         hours=@Model.TimeToResolve.Hours;
         minutes = @Model.TimeToResolve.Minutes;
         seconds =    @Model.TimeToResolve.Seconds;
-          if (hours!=0) str=hours+' годин '+minutes+' хвилини '+seconds + ' секунди';
-                else if (minutes!=0) str=minutes+' хвилини '+seconds + ' секунди';
-                     else str=seconds + ' секунди';
+          if (hours!=0) str=hours+' @Html.Resource("Layout, hours") '+minutes+' @Html.Resource("Layout, minutes") '+seconds + ' @Html.Resource("Layout, seconds")';
+                else if (minutes!=0) str=minutes+' @Html.Resource("Layout, minutes") '+seconds + ' @Html.Resource("Layout, seconds")';
+                     else str=seconds + ' @Html.Resource("Layout, seconds")';
         document.getElementById('timer').innerHTML = str;
         timer = setInterval(
             function () {
@@ -36,17 +36,17 @@
                 }
                 else 
                 seconds--;
-                if (hours!=0) str=hours+' годин '+minutes+' хвилини '+seconds + ' секунди';
-                else if (minutes!=0) str=minutes+' хвилини '+seconds + ' секунди';
-                     else str=seconds + ' секунди';
+                if (hours!=0) str=hours+' @Html.Resource("Layout, hours") '+minutes+' @Html.Resource("Layout, minutes") '+seconds + ' @Html.Resource("Layout, seconds")';
+                else if (minutes!=0) str=minutes+' @Html.Resource("Layout, minutes") '+seconds + ' @Html.Resource("Layout, seconds")';
+                     else str=seconds + ' @Html.Resource("Layout, seconds")';
                 document.getElementById('timer').innerHTML = str;
             },
             1000
         );    
     }
 </script>
-<h2>@Model.PassedModule.Title <br /> Залишилось часу <span id="timer"></span> та @Model.CountQuestions запитання</h2>
-@using (Html.BeginForm("PassModule", "Test", new { moduleId=Model.PassedModule.ModuleId, testId=Model.TestAndAnswers.Test.TestId}, FormMethod.Post))
+<h2>@Model.PassedModule.Title <br /> @Html.Resource("Layout, _test_have_time") <span id="timer"></span> @Html.Resource("Layout, and") @Model.CountQuestions @Html.Resource("Layout, question")</h2>
+@using (Html.BeginForm("PassModule", "Test", new { moduleId = Model.PassedModule.ModuleId, testId = Model.TestAndAnswers.Test.TestId }, FormMethod.Post))
 {
     /*
  @Html.HiddenFor(model => model.PassedModule.ModuleId)
@@ -60,6 +60,6 @@
      @Model.TestAndAnswers.AnswerList[answer].Answer1 <br />
     }
   <p>
-    <input type="submit"  value="Перейти до наступного запитання" />
+    <input type="submit"  value=@Html.Resource("Layout, next") />
   </p>      
 }

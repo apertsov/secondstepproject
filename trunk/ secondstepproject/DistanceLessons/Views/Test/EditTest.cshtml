@@ -1,20 +1,20 @@
 ﻿@model DistanceLessons.Models.TestAndAnswersModel
 
 @{
-    ViewBag.Title = "Редагувати тест";
+    ViewBag.Title = Html.Resource("Layout, _tests_edit");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
 
-@Html.ValidationSummary(true, "Не вдалось зберегти результати. Виправте помилки і спробуйте ще раз.")
+@Html.ValidationSummary(true, Html.Resource("Layout, save_error"))
 
-@using(Html.BeginForm("EditTest","Test", FormMethod.Post))
+@using (Html.BeginForm("EditTest", "Test", FormMethod.Post))
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Інформація користувача</legend>
+        <legend>@Html.Resource("Layout, _test_edit_legend")</legend>
          @Html.HiddenFor(model => model.Test.TestId)
          @Html.HiddenFor(model => model.Test.LessonId)
           <div class="editor-field">
@@ -22,18 +22,18 @@
           @Html.ValidationMessageFor(model => model.Test.Question)
          </div>         
          @for (int j = 0; j < Model.AnswerList.Count; j++)
-        {
+         {
              @Html.HiddenFor(model => model.AnswerList[j].AnswerId)
              <div class="editor-field">
              @Html.CheckBoxFor(model => model.AnswerList[j].Valid)
              @Html.EditorFor(model => model.AnswerList[j].Answer1)             
-             @Html.ActionLink("Видалити відповідь", "DeleteAnswer", "Test", new { id = Model.AnswerList[j].AnswerId, testId=Model.Test.TestId }, new { onclick = "return confirm('"+@Html.Resource("Layout, delete")+"');" })      
+             @Html.ActionLink(Html.Resource("Layout, delete"), "DeleteAnswer", "Test", new { id = Model.AnswerList[j].AnswerId, testId = Model.Test.TestId }, new { onclick = "return confirm('" + @Html.Resource("Layout, delete") + "');" })      
              @Html.ValidationMessageFor(model => model.AnswerList[j].Answer1) 
              </div>   
-        }
-        @Html.ActionLink("Додати відповідь", "AddAnswer", new { id = Model.Test.TestId },null)
+         }
+        @Html.ActionLink(Html.Resource("Layout, add"), "AddAnswer", new { id = Model.Test.TestId }, null)
         <p>
-            <input type="submit"  value="Зберегти" />
+            <input type="submit"  value=@Html.Resource("Layout, save") />
         </p>
         
         </fieldset>
