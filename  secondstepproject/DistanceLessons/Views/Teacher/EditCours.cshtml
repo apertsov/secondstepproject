@@ -1,11 +1,11 @@
 ﻿@model DistanceLessons.Models.Cours
 
 @{
-    ViewBag.Title = "Редагування предмету";
+    ViewBag.Title = Html.Resource("Layout, _course_edit");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Редагування предмету</h2>
+<h2>@Html.Resource("Layout, _course_edit")</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
@@ -85,10 +85,10 @@
 <div>
 @if (User.IsInRole("Teacher"))
 {
-    @Html.ActionLink("Повернутись без збереження", "Courses","Teacher")
+    @Html.ActionLink(Html.Resource("Layout, cancel"), "Courses","Teacher")
 }
 else if(User.IsInRole("Admin"))
 {
-     @Html.ActionLink("Повернутись без збереження", "Courses","Admin")
+     @Html.ActionLink(Html.Resource("Layout, cancel"), "Courses", "Admin")
 }
 </div>

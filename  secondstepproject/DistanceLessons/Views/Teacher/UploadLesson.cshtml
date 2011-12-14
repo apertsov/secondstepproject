@@ -1,18 +1,15 @@
 ﻿@{
-    ViewBag.Title = "Завантаження";
+    ViewBag.Title = Html.Resource("Layout, upload");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>
-    Завантаження навчального елементу</h2>
+<h2>@Html.Resource("Layout, upload_edu_elem")</h2>
 <div style="font-style: italic; font-size: smaller">
-    Максимальний розмір завантажувального файлу - 5 Мб.<br />
-    Допустимі розширення - .pdf, .doc, .docx, .rtf, .txt, .htm, .html, .mhtml, .xhtml,
-    .jpg, .jpeg, .bmp!
+    @Html.Resource("Layout, upload_info1")<br />@Html.Resource("Layout, upload_info2")
 </div>
-@{  Guid mod = (ViewBag.ModuleId != null?  (Guid)ViewBag.ModuleId: Guid.Empty);
+@{  Guid mod = (ViewBag.ModuleId != null ? (Guid)ViewBag.ModuleId : Guid.Empty);
 
-   Guid course = (Guid)ViewBag.CourseId;
-   string act = ViewBag.Action;
+    Guid course = (Guid)ViewBag.CourseId;
+    string act = ViewBag.Action;
 }
 <br />
 @using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -24,13 +21,13 @@
     <input type="hidden" id="act" name="act" value="@act" runat="server"/>
     <input type="hidden" id="course_id" name="course_id" value="@course" runat="server"/>
     <p>
-        <input type="submit" value="Завантажити" /></p>
+        <input type="submit" value=@Html.Resource("Layout, upld") /></p>
 }
 @if (mod == Guid.Empty)
 {
-    @Html.ActionLink("Повернутися до предмету", "Course", new { id = course });
+    @Html.ActionLink(Html.Resource("Layout, back"), "Course", new { id = course });
 }
 else
 {
-    @Html.ActionLink("Повернутися до списку лекцій", "Lesson", new { id = mod });
+    @Html.ActionLink(Html.Resource("Layout, back"), "Lesson", new { id = mod });
 }

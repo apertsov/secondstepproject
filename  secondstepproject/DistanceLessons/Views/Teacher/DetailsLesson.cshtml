@@ -1,10 +1,10 @@
 ﻿@model DistanceLessons.Models.Lesson
 @{
-    ViewBag.Title = "Лекція";
+    ViewBag.Title = Html.Resource("Layout, lesson");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Інформація по даній лекції</h2>
+<h2>@Html.Resource("Layout, _lesson_about")</h2>
 
      <table class="center" cellspacing="5">
     <tr>
@@ -44,5 +44,5 @@
     </tr>
 </table>
 
-@Html.ActionLink("Редагувати лекцію", "EditLesson", new { id = Model.LessonId })
+@Html.ActionLink(Html.Resource("Layout, edit"), "EditLesson", new { id = Model.LessonId })
 

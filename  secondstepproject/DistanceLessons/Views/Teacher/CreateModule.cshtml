@@ -1,11 +1,11 @@
 ﻿@model DistanceLessons.Models.Module
 
 @{
-    ViewBag.Title = "Створення модулю";
+    ViewBag.Title = Html.Resource("Layout, _module_creating");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Створення модулю</h2>
+<h2>@Html.Resource("Layout, _module_creating")</h2>
 @{Guid c_id = ViewBag.CourseId;}
 
 
@@ -27,7 +27,7 @@
 
       $(function () {
           $.datepicker.setDefaults(
-        $.extend($.datepicker.regional["uk"]));
+        $.extend($.datepicker.regional['@Html.Resource("Layout, local_short")']));
           $("#datepickerBegin").datepicker();
       });
 
@@ -37,7 +37,7 @@
 
       $(function () {
           $.datepicker.setDefaults(
-        $.extend($.datepicker.regional["uk"]));
+        $.extend($.datepicker.regional['@Html.Resource("Layout, local_short")']));
           $("#datepickerEnd").datepicker();
       });
 </script>
@@ -45,7 +45,7 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    @Html.HiddenFor(model => model.CourseId, new { @Value=c_id})
+    @Html.HiddenFor(model => model.CourseId, new { @Value = c_id })
    <table class="center" cellspacing="10">
     <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
@@ -89,7 +89,7 @@
         <td class="error">@Html.ValidationMessageFor(model => model.DateEndTesting)
         
         @if (!ViewBag.DateIsGood)
-        {@Html.Label("Дата завершення здачі модуля має бути меншою дати початку!",new {style="color:red"})}</td>
+        {@Html.Label(Html.Resource("Layout, _module_time_invalid"), new { style = "color:red" })}</td>
     </tr>
  
      <tr>
@@ -115,10 +115,10 @@
     </tr>
 </table>
         <p>
-            <input type="submit" value="Зберегти зміни" />
+            <input type="submit" value=@Html.Resource("Layout, save") />
         </p>
 }
 
 <div>
-    @Html.ActionLink("Повернутись до предмету", "Course", new { id = c_id })
+    @Html.ActionLink(Html.Resource("Layout, back"), "Course", new { id = c_id })
 </div>

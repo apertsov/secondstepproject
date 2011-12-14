@@ -61,6 +61,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Затвердити.
+        /// </summary>
+        internal static string accept {
+            get {
+                return ResourceManager.GetString("accept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Новий навчальний елемент.
+        /// </summary>
+        internal static string add_edu_elem {
+            get {
+                return ResourceManager.GetString("add_edu_elem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Всі курси.
         /// </summary>
         internal static string all_courses {
@@ -322,11 +340,29 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Навчальні елементи модуля.
+        /// </summary>
+        internal static string edu_elements {
+            get {
+                return ResourceManager.GetString("edu_elements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Шукати.
         /// </summary>
         internal static string go_search {
             get {
                 return ResourceManager.GetString("go_search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Лекція.
+        /// </summary>
+        internal static string lesson {
+            get {
+                return ResourceManager.GetString("lesson", resourceCulture);
             }
         }
         
@@ -462,6 +498,15 @@ namespace Resources {
         internal static string modules {
             get {
                 return ResourceManager.GetString("modules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Мої предмети.
+        /// </summary>
+        internal static string my_courses {
+            get {
+                return ResourceManager.GetString("my_courses", resourceCulture);
             }
         }
         
@@ -664,6 +709,79 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Тести.
+        /// </summary>
+        internal static string tests {
+            get {
+                return ResourceManager.GetString("tests", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Завантажити.
+        /// </summary>
+        internal static string upld {
+            get {
+                return ResourceManager.GetString("upld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Завантаження.
+        /// </summary>
+        internal static string upload {
+            get {
+                return ResourceManager.GetString("upload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Завантаження навчального елементу.
+        /// </summary>
+        internal static string upload_edu_elem {
+            get {
+                return ResourceManager.GetString("upload_edu_elem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Помилка завантаження.
+        /// </summary>
+        internal static string upload_error {
+            get {
+                return ResourceManager.GetString("upload_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Максимальний розмір завантажувального файлу - 5 Мб..
+        /// </summary>
+        internal static string upload_info1 {
+            get {
+                return ResourceManager.GetString("upload_info1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Допустимі розширення - .pdf, .doc, .docx, .rtf, .txt, .htm, .html, .mhtml, .xhtml,
+        ///    .jpg, .jpeg, .bmp!.
+        /// </summary>
+        internal static string upload_info2 {
+            get {
+                return ResourceManager.GetString("upload_info2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Повторити завантаження.
+        /// </summary>
+        internal static string upload_retry {
+            get {
+                return ResourceManager.GetString("upload_retry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Користувачі.
         /// </summary>
         internal static string users {
@@ -718,6 +836,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Редагування предмету.
+        /// </summary>
+        internal static string _course_edit {
+            get {
+                return ResourceManager.GetString("_course_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Лекції, що не належать до модуля.
+        /// </summary>
+        internal static string _course_null_module {
+            get {
+                return ResourceManager.GetString("_course_null_module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Предмети.
         /// </summary>
         internal static string _HorizontalNavigation_Courses {
@@ -763,6 +899,60 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Інформація про дану лекцію.
+        /// </summary>
+        internal static string _lesson_about {
+            get {
+                return ResourceManager.GetString("_lesson_about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Добавити лекцію.
+        /// </summary>
+        internal static string _lesson_add {
+            get {
+                return ResourceManager.GetString("_lesson_add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Обновити джерело лекції.
+        /// </summary>
+        internal static string _lesson_change_url {
+            get {
+                return ResourceManager.GetString("_lesson_change_url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагування лекції.
+        /// </summary>
+        internal static string _lesson_edit {
+            get {
+                return ResourceManager.GetString("_lesson_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Помістити лекцію за межі модулів.
+        /// </summary>
+        internal static string _lesson_to_null_module {
+            get {
+                return ResourceManager.GetString("_lesson_to_null_module", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Джерело лекції.
+        /// </summary>
+        internal static string _lesson_url {
+            get {
+                return ResourceManager.GetString("_lesson_url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Вийти.
         /// </summary>
         internal static string _LogOnPartial_Exit {
@@ -795,6 +985,51 @@ namespace Resources {
         internal static string _LogOnPartial_SignIn {
             get {
                 return ResourceManager.GetString("_LogOnPartial_SignIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Інформація про модуль.
+        /// </summary>
+        internal static string _module_about {
+            get {
+                return ResourceManager.GetString("_module_about", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створити модуль.
+        /// </summary>
+        internal static string _module_create {
+            get {
+                return ResourceManager.GetString("_module_create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Створення модулю.
+        /// </summary>
+        internal static string _module_creating {
+            get {
+                return ResourceManager.GetString("_module_creating", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагування модулю.
+        /// </summary>
+        internal static string _module_edit {
+            get {
+                return ResourceManager.GetString("_module_edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Дата початку здачі модуля має бути меншою дати закінчення!.
+        /// </summary>
+        internal static string _module_time_invalid {
+            get {
+                return ResourceManager.GetString("_module_time_invalid", resourceCulture);
             }
         }
         
@@ -1101,6 +1336,15 @@ namespace Resources {
         internal static string _summary_info {
             get {
                 return ResourceManager.GetString("_summary_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Редагування тестів.
+        /// </summary>
+        internal static string _tests_edit {
+            get {
+                return ResourceManager.GetString("_tests_edit", resourceCulture);
             }
         }
         

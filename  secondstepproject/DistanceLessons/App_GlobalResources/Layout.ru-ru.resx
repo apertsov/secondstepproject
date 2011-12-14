@@ -553,4 +553,113 @@
     <value>Информация о пользователе</value>
     <comment>3</comment>
   </data>
+  <data name="accept" xml:space="preserve">
+    <value>Подтвердить</value>
+    <comment>4</comment>
+  </data>
+  <data name="add_edu_elem" xml:space="preserve">
+    <value>Новый учебный элемент</value>
+    <comment>4</comment>
+  </data>
+  <data name="edu_elements" xml:space="preserve">
+    <value>Учебные элементы модуля</value>
+    <comment>4</comment>
+  </data>
+  <data name="lesson" xml:space="preserve">
+    <value>Лекция</value>
+    <comment>4</comment>
+  </data>
+  <data name="my_courses" xml:space="preserve">
+    <value>Мои предметы</value>
+    <comment>4</comment>
+  </data>
+  <data name="tests" xml:space="preserve">
+    <value>Тесты</value>
+    <comment>4</comment>
+  </data>
+  <data name="upld" xml:space="preserve">
+    <value>Загрузить</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload" xml:space="preserve">
+    <value>Загрузка</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_edu_elem" xml:space="preserve">
+    <value>Загрузка учебного элемента</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_error" xml:space="preserve">
+    <value>Ошибка загрузки файла</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_info1" xml:space="preserve">
+    <value>Максимальный размер файла - 5 Мб.</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_info2" xml:space="preserve">
+    <value>Доступные файловые форматы - .pdf, .doc, .docx, .rtf, .txt, .htm, .html, .mhtml, .xhtml,
+    .jpg, .jpeg, .bmp!</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_retry" xml:space="preserve">
+    <value>Повторите загрузку</value>
+    <comment>4</comment>
+  </data>
+  <data name="_course_edit" xml:space="preserve">
+    <value>Редактирование предмета</value>
+    <comment>4</comment>
+  </data>
+  <data name="_course_null_module" xml:space="preserve">
+    <value>Лекции, что не входят в модуль</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_about" xml:space="preserve">
+    <value>Информация о лекцие</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_add" xml:space="preserve">
+    <value>Добавить лекцию</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_change_url" xml:space="preserve">
+    <value>Обновить исходные данные по лекции</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_edit" xml:space="preserve">
+    <value>Редактирование лекции</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_to_null_module" xml:space="preserve">
+    <value>Разместить лекцию вне модулей</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_url" xml:space="preserve">
+    <value>Джерело лекції</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_about" xml:space="preserve">
+    <value>Информация о модуле</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_create" xml:space="preserve">
+    <value>Создать модуль</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_creating" xml:space="preserve">
+    <value>Создание модуля</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_edit" xml:space="preserve">
+    <value>Редактирование модуля</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_time_invalid" xml:space="preserve">
+    <value>Дата начала должна быть меньше даты окончания!</value>
+    <comment>4</comment>
+  </data>
+  <data name="_tests_edit" xml:space="preserve">
+    <value>Редактирование тестов</value>
+    <comment>4</comment>
+  </data>
 </root>

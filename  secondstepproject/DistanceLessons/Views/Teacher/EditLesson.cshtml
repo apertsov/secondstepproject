@@ -1,16 +1,17 @@
 ﻿@model DistanceLessons.Models.Lesson
 
 @{
-    ViewBag.Title = "Редагування лекції";
+    ViewBag.Title = Html.Resource("Layout, _lesson_edit");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Редагування лекції</h2>
+<h2>@Html.Resource("Layout, _lesson_edit")</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.LessonId)
 
@@ -38,15 +39,15 @@
     </tr>
     
         <tr>
-        <td class="editor-label">  @Html.Label("Джерело лекції")</td>
-        <td class="editor-field">  @Html.ActionLink("Переглянути лекцію", "ShowFile","Education" ,new { filename = Model.Text },null)</td>
+        <td class="editor-label">  @Html.Label(Html.Resource("Layout, _lesson_url"))</td>
+        <td class="editor-field">  @Html.ActionLink(Html.Resource("Layout, detail"), "ShowFile", "Education", new { filename = Model.Text }, null)</td>
     </tr>
     <tr>
         <td></td>
         @{
-            Guid mod=(Model.ModuleId.HasValue)?Model.ModuleId.Value:Guid.Empty;
+    Guid mod = (Model.ModuleId.HasValue) ? Model.ModuleId.Value : Guid.Empty;
             }
-        <td class="error">@Html.ActionLink("Обновити джерело лекції", "UploadLesson", new { courseId = Model.CourseId, moduleId = mod, act = Model.LessonId.ToString() })
+        <td class="error">@Html.ActionLink(Html.Resource("Layout, _lesson_change_url"), "UploadLesson", new { courseId = Model.CourseId, moduleId = mod, act = Model.LessonId.ToString() })
 </td>
     </tr>
 
@@ -62,7 +63,7 @@
         <td></td>
         <td class="error"><div>  
      <span>@Html.CheckBox("NoModule", false)</span>
-        <span>Помістити лекцію за межі модулів</span>
+        <span>@Html.Resource("Layout, _lesson_to_null_module")</span>
         </div></td>
     </tr>   
     <tr>
@@ -71,17 +72,17 @@
       
 </table>
         <p>
-            <input type="submit" value="Зберегти" />
+            <input type="submit" value=@Html.Resource("Layout, save") />
         </p>
 }
 
 <div>
 @if (Model.ModuleId != null)
 { 
-    @Html.ActionLink("Повернутись до модулю", "Lesson", new { id = Model.ModuleId });
+    @Html.ActionLink(Html.Resource("Layout, back"), "Lesson", new { id = Model.ModuleId });
 }
 else
 {
-   @Html.ActionLink("Повернутись до курсу", "Course", new { id = Model.CourseId });
+   @Html.ActionLink(Html.Resource("Layout, back"), "Course", new { id = Model.CourseId });
 }
 </div>

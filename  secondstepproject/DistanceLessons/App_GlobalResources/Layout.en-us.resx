@@ -553,4 +553,113 @@
     <value>User Info</value>
     <comment>3</comment>
   </data>
+  <data name="accept" xml:space="preserve">
+    <value>Accept</value>
+    <comment>4</comment>
+  </data>
+  <data name="add_edu_elem" xml:space="preserve">
+    <value>New educational element</value>
+    <comment>4</comment>
+  </data>
+  <data name="edu_elements" xml:space="preserve">
+    <value>Teaching elements of the module</value>
+    <comment>4</comment>
+  </data>
+  <data name="lesson" xml:space="preserve">
+    <value>Lecture</value>
+    <comment>4</comment>
+  </data>
+  <data name="my_courses" xml:space="preserve">
+    <value>My courses</value>
+    <comment>4</comment>
+  </data>
+  <data name="tests" xml:space="preserve">
+    <value>Tests</value>
+    <comment>4</comment>
+  </data>
+  <data name="upld" xml:space="preserve">
+    <value>Upload</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload" xml:space="preserve">
+    <value>Uploading</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_edu_elem" xml:space="preserve">
+    <value>Uploading education element</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_error" xml:space="preserve">
+    <value>Error uploading</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_info1" xml:space="preserve">
+    <value>The maximum size of the boot file - 5 MB.</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_info2" xml:space="preserve">
+    <value>Possible extensions -. Pdf,. Doc,. Docx,. Rtf,. Txt,. Htm,. Html,. Mhtml,. Xhtml,
+     . jpg,. jpeg,. bmp!</value>
+    <comment>4</comment>
+  </data>
+  <data name="upload_retry" xml:space="preserve">
+    <value>Retry upload</value>
+    <comment>4</comment>
+  </data>
+  <data name="_course_edit" xml:space="preserve">
+    <value>Editing course</value>
+    <comment>4</comment>
+  </data>
+  <data name="_course_null_module" xml:space="preserve">
+    <value>Lectures, which are not part of the module</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_about" xml:space="preserve">
+    <value>Information about this lecture</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_add" xml:space="preserve">
+    <value>Add a lecture</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_change_url" xml:space="preserve">
+    <value>Update the source of the lecture</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_edit" xml:space="preserve">
+    <value>Editing lectures</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_to_null_module" xml:space="preserve">
+    <value>Move beyond the lecture modules</value>
+    <comment>4</comment>
+  </data>
+  <data name="_lesson_url" xml:space="preserve">
+    <value>Source lectures</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_about" xml:space="preserve">
+    <value>Information about the module</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_create" xml:space="preserve">
+    <value>Create a module</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_creating" xml:space="preserve">
+    <value>Creating a module</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_edit" xml:space="preserve">
+    <value>Editing module</value>
+    <comment>4</comment>
+  </data>
+  <data name="_module_time_invalid" xml:space="preserve">
+    <value>Date of the module should be less than end date!</value>
+    <comment>4</comment>
+  </data>
+  <data name="_tests_edit" xml:space="preserve">
+    <value>Editing tests</value>
+    <comment>4</comment>
+  </data>
 </root>

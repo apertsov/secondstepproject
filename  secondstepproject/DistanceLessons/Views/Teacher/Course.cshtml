@@ -18,8 +18,7 @@ else if ((bool)ViewBag.IsAdmin)
     </h2>
 }
 <br />
-<h4>
-    Лекції, що не належать до модуля</h4>
+<h4>@Html.Resource("Layout, course_null_module")</h4>
 <table class="center" cellspacing="10">
     <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver;
@@ -29,7 +28,7 @@ else if ((bool)ViewBag.IsAdmin)
     @foreach (DistanceLessons.Models.Lesson les in ViewBag.OrphanLessons)
     {
         <tr>
-            <td>@Html.ActionLink(les.Title, "ShowFile", "Education", new { filename = les.Text },null)
+            <td>@Html.ActionLink(les.Title, "ShowFile", "Education", new { filename = les.Text }, null)
             </td>
             <td align="right">
                 @if ((bool)ViewBag.IsOwner)
@@ -37,15 +36,15 @@ else if ((bool)ViewBag.IsAdmin)
                     if (les.IsAcceptMainTeacher)
                     {
                     <text>
-                   @Html.ActionLink("___", "EditLesson", new { id = les.LessonId }, new { @class = "edit", title = "Редагувати" })
+                   @Html.ActionLink("___", "EditLesson", new { id = les.LessonId }, new { @class = "edit", title = Html.Resource("Layout, edit") })
                     </text>            }
                     else
                     {
                     <text>
-                    @Html.ActionLink("___", "AcceptLesson", new { id = les.LessonId }, new { @class = "accept", title = "Затвердити" })
+                    @Html.ActionLink("___", "AcceptLesson", new { id = les.LessonId }, new { @class = "accept", title = Html.Resource("Layout, accept") })
                     </text>            } 
-                    @Html.ActionLink("___", "DetailsLesson", new { id = les.LessonId }, new { @class = "details", title = "Переглянути" }) 
-                    @Html.ActionLink("___", "DeleteLesson", new { id = les.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')", @class = "delete", title = "Видалити" })
+                    @Html.ActionLink("___", "DetailsLesson", new { id = les.LessonId }, new { @class = "details", title = Html.Resource("Layout, detail") }) 
+                    @Html.ActionLink("___", "DeleteLesson", new { id = les.LessonId }, new { onclick = "return confirm('Дійсно бажаєте видалити?')", @class = "delete", title = Html.Resource("Layout, delete") })
                 }
             </td>
         </tr>
@@ -58,11 +57,10 @@ else if ((bool)ViewBag.IsAdmin)
     </tr>
 </table>
 @if ((bool)ViewBag.IsTeacher)
-{ @Html.ActionLink("Створити навчальний елемент", "UploadLesson", new { courseId = ViewBag.CourseId })}
+{ @Html.ActionLink(Html.Resource("Layout, add_edu_elem"), "UploadLesson", new { courseId = ViewBag.CourseId })}
 <br />
 <br />
-<h4>
-    Модулі предмету</h4>
+<h4>@Html.Resource("Layout, modules")</h4>
 <table class="center" cellspacing="10">
     <tr>
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver;
@@ -79,10 +77,10 @@ else if ((bool)ViewBag.IsAdmin)
             <td align="right">
                 @if ((bool)ViewBag.IsOwner)
                 {
-                    @Html.ActionLink("___", "ShowModuleTests", "Test", new { id = mod.ModuleId }, new { @class = "tests", title = "Тести модуля" })  
-                    @Html.ActionLink("___", "EditModule", new { id = mod.ModuleId }, new { @class = "edit", title = "Edit" }) 
-                    @Html.ActionLink("___", "DetailsModule", new { id = mod.ModuleId }, new { @class = "details", title = "Details" }) 
-                    @Html.ActionLink("___", "DeleteModule", new { id = mod.ModuleId }, new { onclick = "return confirm('Дійсно бажаєте видалити модуль? З видаленням модуля пропадуть також всі лекції, тести і все, що з ним зв`язане!')", @class = "delete", title = "Delete" })
+                    @Html.ActionLink("___", "ShowModuleTests", "Test", new { id = mod.ModuleId }, new { @class = "tests", title = Html.Resource("Layout, tests") })  
+                    @Html.ActionLink("___", "EditModule", new { id = mod.ModuleId }, new { @class = "edit", title = Html.Resource("Layout, edit") }) 
+                    @Html.ActionLink("___", "DetailsModule", new { id = mod.ModuleId }, new { @class = "details", title = Html.Resource("Layout, detail") }) 
+                    @Html.ActionLink("___", "DeleteModule", new { id = mod.ModuleId }, new { onclick = "return confirm('Дійсно бажаєте видалити модуль? З видаленням модуля пропадуть також всі лекції, тести і все, що з ним зв`язане!')", @class = "delete", title = Html.Resource("Layout, delete") })
                 }
             </td>
         </tr>
@@ -94,4 +92,4 @@ else if ((bool)ViewBag.IsAdmin)
     </tr>
 </table>
 @if ((bool)ViewBag.IsOwner)
-{@Html.ActionLink("Створити модуль", "CreateModule", new { id = ViewBag.CourseId }) }
+{@Html.ActionLink(Html.Resource("Layout, _module_create"), "CreateModule", new { id = ViewBag.CourseId }) }
