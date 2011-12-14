@@ -662,4 +662,96 @@
     <value>Редактирование тестов</value>
     <comment>4</comment>
   </data>
+  <data name="add" xml:space="preserve">
+    <value>Добавить элемент</value>
+    <comment>5</comment>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>и</value>
+    <comment>5</comment>
+  </data>
+  <data name="data_null_test" xml:space="preserve">
+    <value>Тесты не созданы</value>
+    <comment>5</comment>
+  </data>
+  <data name="hours" xml:space="preserve">
+    <value>ч.</value>
+    <comment>5</comment>
+  </data>
+  <data name="minutes" xml:space="preserve">
+    <value>мин.</value>
+    <comment>5</comment>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>Далее</value>
+    <comment>5</comment>
+  </data>
+  <data name="question" xml:space="preserve">
+    <value>вопрос</value>
+    <comment>5</comment>
+  </data>
+  <data name="save_error" xml:space="preserve">
+    <value>Не удалось сохранить результаты. Исправьте ошибки и попробуйте еще раз.</value>
+    <comment>5</comment>
+  </data>
+  <data name="seconds" xml:space="preserve">
+    <value>сек.</value>
+    <comment>5</comment>
+  </data>
+  <data name="_module_passing" xml:space="preserve">
+    <value>Сдача модуля</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_editing" xml:space="preserve">
+    <value>Редактирование тестов</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_edit_legend" xml:space="preserve">
+    <value>Информация пользователя</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_have_time" xml:space="preserve">
+    <value>Осталось времени</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_not_prepared" xml:space="preserve">
+    <value>Тестирование с модуля</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_not_prepared2" xml:space="preserve">
+    <value>не возможно. Обратисье к преподавателю за информацией.</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_not_testing" xml:space="preserve">
+    <value>Тестирование с модуля</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_not_testing2" xml:space="preserve">
+    <value>не проводиться.</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_not_testing3" xml:space="preserve">
+    <value>Последнее указаное время с</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_result" xml:space="preserve">
+    <value>Результаты тестирования</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_result_say" xml:space="preserve">
+    <value>Ваш результат тестирования с модуля</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_showmodtests" xml:space="preserve">
+    <value>Все тесты с модуля</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_showmodtests2" xml:space="preserve">
+    <value>Тестирование состоит из</value>
+    <comment>5</comment>
+  </data>
+  <data name="_test_showmodtests3" xml:space="preserve">
+    <value>вопросов на какие отведено</value>
+    <comment>5</comment>
+  </data>
 </root>

@@ -11,7 +11,7 @@ namespace DistanceLessons.Controllers
     public class EducationController : Controller
     {
         private readonly DataEntitiesManager _db = new DataEntitiesManager();
-        private int itemOnPage = 10;
+        private int itemOnPage = 5;
 
         //
         // GET: /Education/

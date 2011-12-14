@@ -1,10 +1,10 @@
 ﻿@model DistanceLessons.Models.LessonTestAndAnswersModel
-  <h2>Редагування тестів лекції</h2>
+  <h2>@Html.Resource("Layout, _test_editing")</h2>
              @if (Model != null)
              {
                  foreach (DistanceLessons.Models.TestAndAnswersModel model in Model.TestAndAnswers)
-                 {    
-                    {Html.RenderPartial("ShowTestPartial", model, Html.ViewData);}
+                 {
+                     { Html.RenderPartial("ShowTestPartial", model, Html.ViewData); }
                  }
              }
-  @Ajax.ActionLink("Додати новий тест", "AddTest", new { id = Model.Lesson.LessonId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace })
+  @Ajax.ActionLink(Html.Resource("Layout, add"), "AddTest", new { id = Model.Lesson.LessonId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace })

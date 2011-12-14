@@ -439,8 +439,6 @@
     <Content Include="Views\Result\DetailsModuleUserAnswers.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Profile\_Info_PartialPage.cshtml" />
-    <Content Include="Views\Test\DetailModuleResultsPartial%28old%29.cshtml" />
-    <Content Include="Views\Test\Index.cshtml" />
     <Content Include="Views\Result\EducationElementsPartial.cshtml" />
     <Content Include="Views\Result\Index.cshtml" />
     <Content Include="Views\Result\UserResults.cshtml" />

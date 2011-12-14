@@ -1,5 +1,5 @@
 ﻿@model DistanceLessons.Models.Module
 
-<h2>Тестування з модуля @Model.Title не проводиться.</h2>
- Останній вказаний час з @Model.DateBeginTesting до @Model.DateEndTesting.<br />
-  @Html.ActionLink("Повернутись до навчання", "Index", "Education")
+<h2>@Html.Resource("Layout, _test_not_testing") @Model.Title @Html.Resource("Layout, _test_not_testing2")</h2>
+ @Html.Resource("Layout, _test_not_testing3") @Model.DateBeginTesting - @Model.DateEndTesting.<br />
+  @Html.ActionLink(Html.Resource("Layout, back"), "Index", "Education")
