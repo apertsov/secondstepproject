@@ -754,4 +754,55 @@
     <value>questions that are given</value>
     <comment>5</comment>
   </data>
+  <data name="admin_panel" xml:space="preserve">
+    <value>Admin-panel</value>
+    <comment>6</comment>
+  </data>
+  <data name="data_null_news" xml:space="preserve">
+    <value>So far no news.</value>
+    <comment>6</comment>
+  </data>
+  <data name="ie_error" xml:space="preserve">
+    <value>Our site is not supported by your browser.\nOrder to work properly, install a different browser.\nExample: Google Chrome (recommended), Opera, Mozilla Firefox, Safari, etc ...\n\nSorry for any inconvenience this may cause;)</value>
+    <comment>6</comment>
+  </data>
+  <data name="journal" xml:space="preserve">
+    <value>Journal of success</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found" xml:space="preserve">
+    <value>Page not found</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found_question" xml:space="preserve">
+    <value>Why is there such a mistake?</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found_theory" xml:space="preserve">
+    <value>&lt;p&gt;-Maybe you do not have access rights to the page &lt;/ p&gt;
+&lt;p&gt;-Perhaps the page to which you apply - does not exist &lt;/ p&gt;
+&lt;p&gt;-Maybe the server are working and the page is temporarily not available &lt;/ p&gt;</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found_theory2" xml:space="preserve">
+    <value>&lt;p&gt;-check your input &lt;/ p&gt;
+&lt;p&gt;-Try again refer you to the desired address &lt;/ p&gt;
+&lt;p&gt;-Contact the office if you are sure that the page to which you are applying - there &lt;/ p&gt;</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found_title" xml:space="preserve">
+    <value>Pages on your request not found</value>
+    <comment>6</comment>
+  </data>
+  <data name="page_not_found_try" xml:space="preserve">
+    <value>Possible solutions to problems</value>
+    <comment>6</comment>
+  </data>
+  <data name="teacher_panel" xml:space="preserve">
+    <value>Teaching</value>
+    <comment>6</comment>
+  </data>
+  <data name="education" xml:space="preserve">
+    <value>Education</value>
+  </data>
 </root>
