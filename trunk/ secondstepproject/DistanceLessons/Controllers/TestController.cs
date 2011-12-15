@@ -15,12 +15,6 @@ namespace DistanceLessons.Controllers
         // GET: /Test/
 
         [HttpGet]
-        public ActionResult Index()
-        {
-            return View(_db.GetLessonList());
-        }
-
-        [HttpGet]
         public ActionResult ShowLessonTests(Guid? id, Guid? courseId)
         {
             if ((id == null) || (courseId == null) || (!_db.ExistLesson((Guid)id)) || (!_db.ExistCourse((Guid)courseId)))

@@ -389,10 +389,6 @@
     <Content Include="Views\Teacher\UploadLesson.cshtml" />
     <Content Include="packages.config" />
     <None Include="Content\img\Thumbs.db" />
-    <EntityDeploy Include="Models\DistanceLessonsModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DistanceLessonsModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -464,6 +460,10 @@
     <Content Include="Views\Education\ModuleInfo.cshtml" />
     <Content Include="Views\Home\Courses.cshtml" />
     <Content Include="Views\Search\_resultCourse_low.cshtml" />
+    <EntityDeploy Include="Models\DistanceLessonsModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DistanceLessonsModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">
