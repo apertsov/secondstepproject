@@ -1,12 +1,7 @@
 ﻿@{
     ViewBag.Title = ViewBag.Course;
 }
-@if ((bool)ViewBag.IsOwner)
-{
-    <h2>@Html.ActionLink((string)ViewBag.Course, "MyCourses")
-    </h2>
-}
-else if ((bool)ViewBag.IsTeacher)
+@if ((bool)ViewBag.IsTeacher)
 {
     <h2>@Html.ActionLink((string)ViewBag.Course, "Courses")
     </h2>

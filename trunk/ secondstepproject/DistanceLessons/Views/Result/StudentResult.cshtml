@@ -9,16 +9,16 @@ else
     <table style="width: 100%;">
         <tbody>
             <tr>
-                <th style="border: 1px solid black; width: 35%;">
+               <th style="border: 1px solid silver; width: 35%; border-radius: 5px;" class="title">
                     @Html.Resource("Layout, course")
                 </th>
-                <th style="border: 1px solid black; width: 35%;">
+                <th style="border: 1px solid silver; width: 35%; border-radius: 5px;" class="title">
                     @Html.Resource("Layout, modules")
                 </th>
-                <th style="border: 1px solid black; width: 15%;">
+                <th style="border: 1px solid silver; width: 15%; border-radius: 5px;" class="title">
                     @Html.Resource("Layout, _result_modules")
                 </th>
-                <th style="border: 1px solid black; width: 15%;">
+                <th style="border: 1px solid silver; width: 15%; border-radius: 5px;" class="title">
                     @Html.Resource("Layout, _result_course")
                 </th>
             </tr>
@@ -27,7 +27,7 @@ else
                 foreach (UserResultModel courseResult in categoryResult.CourseResults)
                 {
                     <tr align='center'>
-                        <td style="border: 1px solid black;">
+                        <td style="border: 1px solid silver;">
                             @if (String.IsNullOrEmpty(ViewBag.controller))
                             {
                                 @courseResult.CourseTitle.Value
@@ -40,7 +40,7 @@ else
                             @Html.Resource("Layout, category")
                             @categoryResult.CategoryTitle
                         </td>
-                        <td style="border: 1px solid black;">
+                        <td style="border: 1px solid silver;">
                             @foreach (var modules in courseResult.ModuleTitles)
                             {
                                 if (String.IsNullOrEmpty(ViewBag.controller))
@@ -54,7 +54,7 @@ else
                                 <br />
                             }
                         </td>
-                        <td style="border: 1px solid black;">
+                        <td style="border: 1px solid silver;">
                             @foreach (var moduleResult in courseResult.ResultModules)
                             {
                                 @moduleResult.Value.ToString()
@@ -63,7 +63,7 @@ else
                                 <br />
                             }
                         </td>
-                        <td style="border: 1px solid black;">
+                        <td style="border: 1px solid silver;">
                             @courseResult.CourseResult
                         </td>
                     </tr>

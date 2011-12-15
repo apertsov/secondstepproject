@@ -14,7 +14,6 @@
 {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>@Html.Resource("Layout, _test_edit_legend")</legend>
          @Html.HiddenFor(model => model.Test.TestId)
          @Html.HiddenFor(model => model.Test.LessonId)
           <div class="editor-field">
@@ -31,7 +30,10 @@
              @Html.ValidationMessageFor(model => model.AnswerList[j].Answer1) 
              </div>   
          }
+
+           <div class="item">
         @Html.ActionLink(Html.Resource("Layout, add"), "AddAnswer", new { id = Model.Test.TestId }, null)
+        </div>
         <p>
             <input type="submit"  value=@Html.Resource("Layout, save") />
         </p>

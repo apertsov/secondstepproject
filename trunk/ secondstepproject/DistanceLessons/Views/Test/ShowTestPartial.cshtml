@@ -1,7 +1,7 @@
 ﻿@model DistanceLessons.Models.TestAndAnswersModel
 
 
-<div style="padding: 5px 10px;"> @Model.Test.Question      
+<div style="padding: 5px 10px;"> @Model.Test.Question    
 @Ajax.ActionLink(Html.Resource("Layout, edit"), "EditTest", new { id=Model.Test.TestId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace }) 
 @Ajax.ActionLink(Html.Resource("Layout, delete"), "DeleteTest", new { testId = Model.Test.TestId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace }, new { onclick = "return confirm('Дійсно бажаєте видалити тест? З ним знищаться і всі відповіді на цей тест.')" }) 
 </div>   

@@ -1,5 +1,7 @@
 ﻿@model DistanceLessons.Models.Module
 
 <h2>@Html.Resource("Layout, _test_not_testing") @Model.Title @Html.Resource("Layout, _test_not_testing2")</h2>
- @Html.Resource("Layout, _test_not_testing3") @Model.DateBeginTesting - @Model.DateEndTesting.<br />
+ @Html.Resource("Layout, _test_not_testing3") @Model.DateBeginTesting - @Model.DateEndTesting.
+  <div class="item">
   @Html.ActionLink(Html.Resource("Layout, back"), "Index", "Education")
+  </div>

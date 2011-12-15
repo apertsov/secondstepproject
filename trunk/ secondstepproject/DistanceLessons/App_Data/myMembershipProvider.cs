@@ -234,7 +234,12 @@ namespace DistanceLessons
         public override bool ValidateUser(string username, string password)
         {
             DataEntitiesManager user = new DataEntitiesManager();
-            return user.ValidateUser(username, password);
+            if (user.ValidateUser(username, password))
+            {
+                user.SetUserLoginDate(username);
+                return true;
+            }
+            return false;
         }
 
         //
