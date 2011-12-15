@@ -210,7 +210,7 @@
     <Property Name="DateOfSender" Type="datetime" Nullable="false" />
     <Property Name="UserId_From" Type="uniqueidentifier" Nullable="false" />
     <Property Name="UserId_To" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Title" Type="varchar" Nullable="false" MaxLength="64" />
+    <Property Name="Title" Type="varchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Modules">
     <Key>
