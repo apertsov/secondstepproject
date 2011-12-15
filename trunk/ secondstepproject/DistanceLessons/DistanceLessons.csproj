@@ -314,6 +314,10 @@
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\AjaxLogin.js" />
+    <Content Include="Uploads\24e63835-4c70-461f-8504-91dfa28957e2.txt" />
+    <Content Include="Uploads\596b0d9b-3478-4e1f-b996-fdb6470bd40f.txt" />
+    <Content Include="Uploads\5e6911b8-edf7-445d-8219-48be7a8af7a2.txt" />
+    <Content Include="Uploads\f1fc622e-6e30-4a75-8379-e23a7e1b6a47.txt" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\ChangePassword.cshtml" />
     <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
@@ -464,6 +468,22 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DistanceLessonsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Uploads\03ccb9df-1fb3-4160-a410-69895e94998a.pdf" />
+    <None Include="Uploads\10160ee9-e579-4973-b30c-2428facb40cc.docx" />
+    <None Include="Uploads\193818fa-d4a3-4865-81bb-c400839de57e.pdf" />
+    <None Include="Uploads\1d176a5d-f116-4d8f-be05-62810a2ef681.pdf" />
+    <None Include="Uploads\1efef7fe-f03d-4885-8b09-5489ec86a0cc.mhtml" />
+    <None Include="Uploads\547cc9b5-3ad2-4a4e-b456-18f8c3ad27b8.pdf" />
+    <None Include="Uploads\6047bf58-4914-4759-b99e-ef857a4ae186.docx" />
+    <None Include="Uploads\6f40ebfa-d63c-423f-8a2b-126e504a6446.mhtml" />
+    <None Include="Uploads\84849772-54a5-4851-8b96-ab02b3d1ef13.pdf" />
+    <None Include="Uploads\9d0e9c7e-fba5-4d6c-8025-262f1296c132.mhtml" />
+    <None Include="Uploads\a1fc608f-4caf-45ae-af4c-4d1ef480fc03.docx" />
+    <None Include="Uploads\ab634c93-eb37-4fbe-99e8-b2a0c25ce5f0.docx" />
+    <None Include="Uploads\b865634e-f844-4859-b23d-98ee34117de2.pdf" />
+    <None Include="Uploads\ba473829-5f64-420e-b1ba-d1c927e1d068.pdf" />
+    <None Include="Uploads\f070c637-d41f-4a3d-a68f-daac4ea03ce6.docx" />
+    <None Include="Uploads\f5dab992-bfc3-4fe2-aa30-0ec57bd85d26.docx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">
@@ -534,7 +554,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\img\header\" />
-    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Metadata.resx">
