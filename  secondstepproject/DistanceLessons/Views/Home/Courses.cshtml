@@ -30,3 +30,8 @@
         }
     </tbody>
 </table>
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <h4 style="margin-top: 50px;">@Html.Resource("Layout, do_u_want") @Html.ActionLink(Html.Resource("Layout, register_now"), "Register", "Account")</h4>
+}

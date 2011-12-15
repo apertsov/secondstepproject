@@ -205,6 +205,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Список та опис доступних курсів.
+        /// </summary>
+        internal static string courses_list_and_desc {
+            get {
+                return ResourceManager.GetString("courses_list_and_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Створити.
         /// </summary>
         internal static string create {
@@ -372,6 +381,15 @@ namespace Resources {
         internal static string detailing {
             get {
                 return ResourceManager.GetString("detailing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Хочеш навчатись?.
+        /// </summary>
+        internal static string do_u_want {
+            get {
+                return ResourceManager.GetString("do_u_want", resourceCulture);
             }
         }
         
@@ -718,6 +736,15 @@ namespace Resources {
         internal static string read {
             get {
                 return ResourceManager.GetString("read", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Приєднуйся до нас, бро!.
+        /// </summary>
+        internal static string register_now {
+            get {
+                return ResourceManager.GetString("register_now", resourceCulture);
             }
         }
         
