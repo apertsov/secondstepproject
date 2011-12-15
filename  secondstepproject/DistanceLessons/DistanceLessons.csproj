@@ -350,9 +350,6 @@
     <Content Include="Views\Admin\CreateCours.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Admin\CreateUser.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Admin\DetailsCours.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -388,7 +385,6 @@
     <Content Include="Views\Teacher\EditLesson.cshtml" />
     <Content Include="Views\Teacher\EditModule.cshtml" />
     <Content Include="Views\Teacher\Lesson.cshtml" />
-    <Content Include="Views\Teacher\MyCourses.cshtml" />
     <Content Include="Views\Teacher\Upload.cshtml" />
     <Content Include="Views\Teacher\UploadLesson.cshtml" />
     <Content Include="packages.config" />

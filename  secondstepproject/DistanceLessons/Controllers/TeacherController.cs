@@ -58,11 +58,6 @@ namespace DistanceLessons.Controllers
             return View();
         }
         
-        [HttpGet]
-        public ActionResult MyCourses()
-        {
-            return View(db.GetCoursesByTeacherId(db.GetUser(User.Identity.Name).UserId));
-        }
       
         [HttpGet]
         [EnableCompression]

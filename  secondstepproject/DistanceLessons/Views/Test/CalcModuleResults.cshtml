@@ -1,14 +1,15 @@
 ﻿@model DistanceLessons.Models.UserModule
-
 @{
     ViewBag.Title = Html.Resource("Layout, _test_result");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h3>
-@Html.Resource("Layout, _test_result_say") "@Model.Module.Title" <br />
-@Model.Passed % - @ViewBag.ModulePoints @Html.TextHtml("/") @Model.Module.MaxPoints !
- <br />
- @Html.ActionLink(Html.Resource("Layout, back"), "Index", "Education")
-
- </h3>
+    @Html.Resource("Layout, _test_result_say") "@Model.Module.Title"
+    <br />
+    @Model.Passed % - @ViewBag.ModulePoints @Html.TextHtml("/") @Model.Module.MaxPoints
+    !
+    <br />
+    <div class="item">
+        @Html.ActionLink(Html.Resource("Layout, back"), "Index", "Education")
+    </div>
+</h3>

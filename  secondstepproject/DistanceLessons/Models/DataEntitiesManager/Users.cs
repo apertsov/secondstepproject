@@ -147,6 +147,16 @@ namespace DistanceLessons.Models
             return dbuser != null && (dbuser.IsActived) && (!dbuser.IsLockedOut) && dbuser.Password == CreatePasswordHash(password, dbuser.PasswordSalt);
         }
 
+        public void SetUserLoginDate(string username)
+        {
+            User user = _db.Users.FirstOrDefault(x => x.Login == username);
+            if (user != null)
+            {
+                user.LastLoginDate = DateTime.Now;
+                Save();
+            }
+        }
+
         public User GetUser(string username)
         {
             return _db.Users.SingleOrDefault(x => x.Login == username);

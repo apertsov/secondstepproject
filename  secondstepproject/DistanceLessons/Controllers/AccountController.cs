@@ -151,7 +151,7 @@ namespace DistanceLessons.Controllers
         }
 
 
-
+/*
         // GET: /Account/ChangePassword
 
         public ActionResult ChangePassword()
@@ -203,6 +203,7 @@ namespace DistanceLessons.Controllers
         {
             return View();
         }
+ * */
         [AllowAnonymous]
         public ActionResult Welcome()
         {

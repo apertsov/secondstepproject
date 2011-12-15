@@ -79,7 +79,7 @@ namespace DistanceLessons.Controllers
             _db.UpdateAnswers(obj.AnswerList);
             if (!Request.IsAjaxRequest())
             {
-                return View("Index", _db.LessonTestsAndAnswers(obj.Test.LessonId));
+                return RedirectToAction("ShowLessonTests", new { id=obj.Test.LessonId, courseId=obj.Test.Lesson.CourseId });
             }
             else
             {
@@ -157,15 +157,15 @@ namespace DistanceLessons.Controllers
             {
                 return new NotFoundMvc.NotFoundViewResult();
             }
-            Guid lessonId = _db.Test((Guid)testId).LessonId;
+            Lesson lesson=_db.Lesson(_db.Test((Guid)testId).LessonId);
             _db.DeleteTestWithAnswers((Guid)testId);
             if (!Request.IsAjaxRequest())
             {
-                return View("Index", _db.LessonTestsAndAnswers(lessonId));
+                return RedirectToAction("ShowLessonTests", new { id = lesson.LessonId, courseId = lesson.CourseId });
             }
             else
             {
-                LessonTestAndAnswersModel model = new LessonTestAndAnswersModel { Lesson = _db.Lesson(lessonId), TestAndAnswers = _db.LessonTestsAndAnswers(lessonId) };
+                LessonTestAndAnswersModel model = new LessonTestAndAnswersModel { Lesson = _db.Lesson(lesson.LessonId), TestAndAnswers = _db.LessonTestsAndAnswers(lesson.LessonId) };
                 return PartialView("QuestionsAndAnswersPartialPage", model);
             }
         }

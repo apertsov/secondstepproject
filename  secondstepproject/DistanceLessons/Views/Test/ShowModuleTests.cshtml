@@ -10,7 +10,9 @@
     <div style="text-align: center;">
         @Html.Resource("Layout, lesson"): @lessonTests.Lesson.Title
         <br />
+         <div class="item">
         @Html.ActionLink(Html.Resource("Layout, edit"), "ShowLessonTests", "Test", new { id = lessonTests.Lesson.LessonId, courseId = lessonTests.Lesson.Cours.CourseId }, null)
+    </div>
     </div>
            <div>@Html.Resource("Layout, tests"):</div>
     if (lessonTests.TestAndAnswers.Count == 0)

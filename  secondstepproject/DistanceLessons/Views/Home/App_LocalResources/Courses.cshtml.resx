@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Category" xml:space="preserve">
-    <value>Категорія:</value>
+    <value>Категорія</value>
   </data>
   <data name="Course" xml:space="preserve">
-    <value>Курс:</value>
+    <value>Курс</value>
   </data>
   <data name="Courses" xml:space="preserve">
     <value>Курси</value>
   </data>
   <data name="Desc" xml:space="preserve">
-    <value>Опис курсу:</value>
+    <value>Опис</value>
   </data>
 </root>

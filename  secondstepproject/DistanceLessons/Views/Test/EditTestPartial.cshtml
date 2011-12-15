@@ -17,11 +17,10 @@
 @using (Ajax.BeginForm("EditTest", "Test", new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace, HttpMethod = "POST" }))
 {
     <fieldset>
-        <legend>Інформація користувача</legend>
          @Html.HiddenFor(model => model.Test.TestId)
          @Html.HiddenFor(model => model.Test.LessonId)
           <div class="editor-field">
-          @Html.LabelFor(model => model.Test.Question):
+          @Html.LabelFor(model => model.Test.Question) <br />
           @Html.EditorFor(model => model.Test.Question)
           @Html.ValidationMessageFor(model => model.Test.Question)
          </div>         
@@ -31,13 +30,17 @@
              <div class="editor-field">
              @Html.CheckBoxFor(model => model.AnswerList[j].Valid)
              @Html.EditorFor(model => model.AnswerList[j].Answer1)
-             @Ajax.ActionLink("Видалити відповідь", "DeleteAnswer", "Test", new { id = Model.AnswerList[j].AnswerId, testId = Model.Test.TestId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace }, new { @class="delete"})      
+              <span class="item">
+             @Ajax.ActionLink(Html.Resource("Layout, delete"), "DeleteAnswer", "Test", new { id = Model.AnswerList[j].AnswerId, testId = Model.Test.TestId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace }, new { @class = "delete" })      
+             </span>
              @Html.ValidationMessageFor(model => model.AnswerList[j].Answer1) 
              </div>   
          }
-        @Ajax.ActionLink("Додати відповідь", "AddAnswer", "Test", new { id = Model.Test.TestId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace })
-        <p>
-            <input type="submit"  value="Зберегти" />
-        </p>
+          <span class="item">
+        @Ajax.ActionLink(Html.Resource("Layout, add"), "AddAnswer", "Test", new { id = Model.Test.TestId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace })
+        </span>
+         <div class="item">
+            <input type="submit"  value=@Html.Resource("Layout, save") />
+        </div>
     </fieldset>
 }

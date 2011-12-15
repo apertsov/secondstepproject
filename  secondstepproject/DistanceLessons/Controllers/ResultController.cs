@@ -150,11 +150,11 @@ namespace DistanceLessons.Controllers
             return PartialView("UserResultsTable", null);
         }
 
-        [Authorize(Roles = "Admin, Teacher, Dean")]
-        [HttpGet]
+         [HttpGet]
+        [Authorize(Roles = "Admin, Teacher, Dean")]       
         public ActionResult DetailsModuleUserAnswers(Guid? id, string username, string controllerName, string divIdToReplace)
         {
-            if ((id == null) || (!_db.ExistModule((Guid)id)))
+            if ((id == null) || (!_db.ExistModule((Guid)id)) || (String.IsNullOrEmpty(username)) || (!_db.ExistUser(username)))
             {
                 return new NotFoundMvc.NotFoundViewResult();
             }

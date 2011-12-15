@@ -59,7 +59,7 @@
      @Html.CheckBox(Model.TestAndAnswers.AnswerList[answer].AnswerId.ToString(), false) 
      @Model.TestAndAnswers.AnswerList[answer].Answer1 <br />
     }
-  <p>
+  <div  class="item">
     <input type="submit"  value=@Html.Resource("Layout, next") />
-  </p>      
+  </div>      
 }

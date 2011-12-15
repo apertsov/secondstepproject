@@ -80,24 +80,6 @@ namespace DistanceLessons.Controllers
             return View(_db.GetCourse((Guid)id));
         }
 
-
-        [HttpGet]
-        public ActionResult CreateUser()
-        {
-            ViewBag.Roles = _db.GetRoleList();
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult CreateUser(User obj)
-        {
-            obj.UserId = Guid.NewGuid();
-            obj.CreatedDate = DateTime.Now;
-            obj.LastLoginDate = DateTime.Now;
-            _db.AddUser(obj);
-            return RedirectToAction("Users");
-        }
-
         [HttpGet]
         public ActionResult EditUser(Guid? id)
         {
