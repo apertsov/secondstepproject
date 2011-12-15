@@ -1173,7 +1173,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ввійти.
+        ///   Looks up a localized string similar to Війти.
         /// </summary>
         internal static string _LogOnPartial_SignIn {
             get {

@@ -1,16 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:UploadLesson.cshtml" caret="1193" fromTop="16" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:CalcModuleResults.cshtml" caret="380" fromTop="11" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:EditTest.cshtml" caret="49" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:NotInTestTime.cshtml" caret="300" fromTop="4" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:PassModule.cshtml" caret="3030" fromTop="31" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Teacher/f:Course.cshtml" caret="386" fromTop="18" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:QuestionsAndAnswersPartialPage.cshtml" caret="405" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowAnswersPartial.cshtml" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowLessonTests.cshtml" caret="0" fromTop="0" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowModuleTests.cshtml" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowTestPartial.cshtml" caret="661" fromTop="7" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:TestingNotPrepared.cshtml" caret="225" fromTop="7" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:EducationController.cs" caret="139" fromTop="5" />
@@ -24,26 +14,25 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Navigation_PartialPage.cshtml" caret="29" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_NewMessageBox.cshtml" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_News_PartialPage.cshtml" caret="330" fromTop="10" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:NotFound.cshtml" caret="599" fromTop="13" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Education/f:Index.cshtml" caret="56" fromTop="1" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:TestController.cs" caret="502" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:script/f:jquerycssmenu.js" caret="2160" fromTop="19" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="2601" fromTop="72" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:_New_PartialPage.cshtml" caret="0" fromTop="0" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:News/f:Index.cshtml" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Helpers/f:Localization.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:LocalizationAttribute.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:ValidationData.cs" caret="191" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:NotFound.cshtml" caret="69" fromTop="3" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:NotFoundViewResult.cs" caret="23" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:PreApplicationStarter.cs" caret="17" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:ActionInvokerWrapper.cs" caret="348" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:ControllerFactoryWrapper.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:InstallerModule.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:NotFoundController.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:NotFoundHandler.cs" caret="0" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:TestController.cs" caret="502" fromTop="16" />
     </RecentFiles>
     <RecentEdits>
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:QuestionsAndAnswersPartialPage.cshtml" caret="100" fromTop="1" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:QuestionsAndAnswersPartialPage.cshtml" caret="448" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowLessonTests.cshtml" caret="117" fromTop="2" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowLessonTests.cshtml" caret="664" fromTop="9" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowLessonTests.cshtml" caret="865" fromTop="15" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowLessonTests.cshtml" caret="1001" fromTop="19" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowModuleTests.cshtml" caret="448" fromTop="6" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowModuleTests.cshtml" caret="1083" fromTop="17" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:ShowTestPartial.cshtml" caret="344" fromTop="5" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Test/f:TestingNotPrepared.cshtml" caret="226" fromTop="7" />
-      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Controllers/f:EducationController.cs" caret="426" fromTop="13" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="960" fromTop="16" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="2657" fromTop="12" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Views/d:Shared/f:_Layout.cshtml" caret="1816" fromTop="15" />
@@ -63,6 +52,17 @@
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/d:script/f:jquerycssmenu.js" caret="2160" fromTop="19" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="2279" fromTop="11" />
       <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Content/f:Layout.css" caret="2794" fromTop="22" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Attributes/f:ValidationData.cs" caret="191" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:NotFoundController.cs" caret="78" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:NotFoundViewResult.cs" caret="241" fromTop="7" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:NotFoundHandler.cs" caret="65" fromTop="2" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:InstallerModule.cs" caret="95" fromTop="5" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:ControllerFactoryWrapper.cs" caret="127" fromTop="6" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:NotFoundController.cs" caret="48" fromTop="1" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:PreApplicationStarter.cs" caret="274" fromTop="10" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:PreApplicationStarter.cs" caret="17" fromTop="0" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:ActionInvokerWrapper.cs" caret="242" fromTop="8" />
+      <File id="A9B17B66-A81D-4ADB-A34C-E6C8EF1A24AA/d:Other Classes/d:Error/f:ActionInvokerWrapper.cs" caret="21" fromTop="0" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
@@ -281,7 +281,7 @@
       <Item value="Metadata`0" priority="107" />
       <Item value="Href`0" priority="29" />
       <Item value="TextHtml`0" priority="3" />
-      <Item value="Localization" priority="95" />
+      <Item value="Localization" priority="127" />
       <Item value="TimeSpan`0" priority="30" />
       <Item value="ITempDataProvider`0" priority="29" />
       <Item value="partial" priority="92" />
