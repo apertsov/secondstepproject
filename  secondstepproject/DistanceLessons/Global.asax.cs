@@ -69,10 +69,12 @@ namespace DistanceLessons
                 roleProv.CreateRole(UserRoles.Admin.ToString());
 
             testingTimer.Elapsed += OnTimedEvent;
-            //    testingTimer.Interval = 1000 * 60;
             testingTimer.Interval = DateTime.Now.AddDays(1).Date.Subtract(DateTime.Now).TotalMilliseconds + 1;
                 //інтервал до завтрішнього дня .
-            testingTimer.Enabled = true; //Вкючаем таймер.
+            testingTimer.Enabled = true;
+            // use only razor for views 
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new RazorViewEngine());
         }
 
         private void OnTimedEvent(object source, ElapsedEventArgs e)

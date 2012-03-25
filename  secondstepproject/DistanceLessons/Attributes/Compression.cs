@@ -24,6 +24,7 @@ namespace DistanceLessons.Attributes
             else
                 if (acceptEncoding.ToLower().Contains("deflate"))
                 {
+                    if (responce.Filter == null) return; 
                     responce.Filter = new DeflateStream(responce.Filter, compress);
                     responce.AppendHeader("Content-Encoding", "deflate");
                 }

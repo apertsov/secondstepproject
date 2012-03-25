@@ -63,6 +63,7 @@ namespace DistanceLessons.Controllers
         [EnableCompression]
         public ActionResult Courses()
         {
+
             return View(db.GetCourseList());
         }
 

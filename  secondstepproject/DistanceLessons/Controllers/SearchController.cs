@@ -18,6 +18,7 @@ namespace DistanceLessons.Controllers
         private DataEntitiesManager _db = new DataEntitiesManager();
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult Course()
         {
             var course = _db.GetCourseList();
@@ -30,6 +31,7 @@ namespace DistanceLessons.Controllers
         }
 
        [HttpPost]
+       [EnableCompression]
         public ActionResult Course(string c_title, string description)
         {
             var course = _db.GetCourseList();
@@ -45,6 +47,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
        public ActionResult Lesson()
        {
            var course = _db.GetLessonList();
@@ -52,6 +55,7 @@ namespace DistanceLessons.Controllers
        }
 
        [HttpPost]
+       [EnableCompression]
        public ActionResult Lesson(string l_title, string description)
        {
            var lesson = _db.GetLessonList();
@@ -67,6 +71,7 @@ namespace DistanceLessons.Controllers
        }
 
        [HttpGet]
+       [EnableCompression]
        public ActionResult UsersSearch()
        {
            var usersList = _db.GetUserList();
@@ -79,6 +84,7 @@ namespace DistanceLessons.Controllers
        }
 
        [HttpPost]
+       [EnableCompression]
        public ActionResult UsersSearch(string login, Guid role, bool isKnown, string name, string sureName)
        {
            var usersList = _db.GetUserList();

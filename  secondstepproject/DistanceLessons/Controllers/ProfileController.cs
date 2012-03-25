@@ -14,7 +14,8 @@ namespace DistanceLessons.Controllers
 
         //
         // GET: /Profile/
-
+    [HttpGet]
+          [EnableCompression]
         public ActionResult Index()
         {
             if (!Request.IsAjaxRequest())
@@ -28,6 +29,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult Information()
         {
             if (_db.ExistInformation(User.Identity.Name))
@@ -41,6 +43,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult Information(Information obj)
         {
             if (_db.ExistInformation(User.Identity.Name))
@@ -61,6 +64,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult ContactInformation()
         {
             if (_db.ExistContact(User.Identity.Name))
@@ -74,6 +78,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult ContactInformation(Contact obj)
         {
             if (_db.ExistContact(User.Identity.Name))
@@ -94,6 +99,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult Info(string user)
         {
             if ((String.IsNullOrEmpty(user)) || (!_db.ExistUser(user)))
@@ -114,6 +120,8 @@ namespace DistanceLessons.Controllers
             }
         }
 
+        [HttpGet]
+          [EnableCompression]
         public ActionResult Messages(byte type)
         {
             Session["choose_type"] = type;
@@ -125,12 +133,15 @@ namespace DistanceLessons.Controllers
             return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, type));
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult NewMessages()
         {
             return PartialView("_NewMessages", _db.GetNewMessageForUser(User.Identity.Name));
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult NewMessage(String user)
         {
             if ((String.IsNullOrEmpty(user)) || (!_db.ExistUser(user)))
@@ -144,6 +155,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult NewMessage(SendMessageModel obj)
         {
             if (ModelState.IsValid)
@@ -164,6 +176,8 @@ namespace DistanceLessons.Controllers
             return View(obj);
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult DeleteMessage(Guid? MessageId)
         {
             if ((MessageId == null) || (!_db.ExistMessage((Guid)MessageId)))
@@ -178,6 +192,8 @@ namespace DistanceLessons.Controllers
             return PartialView("_Messages", _db.GetMessagesByUser(User.Identity.Name, (byte)Session["choose_type"]));
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult ReadMessage(Guid? MessageId)
         {
             if ((MessageId == null) || (!_db.ExistMessage((Guid)MessageId)))
@@ -191,6 +207,8 @@ namespace DistanceLessons.Controllers
             return PartialView("_Message", _db.GetMessageStatById((Guid)MessageId, _db.GetUserId(User.Identity.Name)));
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult ConfirmSubscribe(Guid? CourId, Guid? SubscribeUser, Guid? MessId)
         {
             if ((CourId == null) || (SubscribeUser == null) || (MessId == null) || (!_db.ExistCourse((Guid)CourId))|| (!_db.ExistUser((Guid)SubscribeUser))|| (!_db.ExistMessage((Guid)MessId)))
@@ -225,6 +243,8 @@ namespace DistanceLessons.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult CancelSubscribe(Guid? CourId, Guid? SubscribeUser, Guid? MessId)
         {
             if ((CourId == null) || (SubscribeUser == null) || (MessId == null) || (!_db.ExistCourse((Guid)CourId)) || (!_db.ExistUser((Guid)SubscribeUser)) || (!_db.ExistMessage((Guid)MessId)))

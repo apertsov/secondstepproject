@@ -15,6 +15,7 @@ namespace DistanceLessons.Controllers
         // GET: /Test/
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult ShowLessonTests(Guid? id, Guid? courseId)
         {
             if ((id == null) || (courseId == null) || (!_db.ExistLesson((Guid)id)) || (!_db.ExistCourse((Guid)courseId)))
@@ -27,6 +28,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult ShowModuleTests(Guid? id)
         {
             if ((id == null) || (!_db.ExistModule((Guid)id)))
@@ -39,6 +41,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult EditTest(Guid? id)
         {
             if ((id == null) || (!_db.ExistTest((Guid)id)))
@@ -57,6 +60,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult EditTest(TestAndAnswersModel obj)
         {
             if (!Request.IsAjaxRequest())
@@ -89,6 +93,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult AddAnswer(Guid? id)
         {
             if ((id == null) || (!_db.ExistTest((Guid)id)))
@@ -107,6 +112,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult DeleteAnswer(Guid? id, Guid? testId)
         {
             if ((id == null) || (testId==null)||(!_db.ExistAnswer((Guid)id))||(!_db.ExistTest((Guid)testId)))
@@ -126,6 +132,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult AddTest(Guid? id)
         {
             if ((id == null) || (!_db.ExistLesson((Guid)id)))
@@ -151,6 +158,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult DeleteTest(Guid? testId)
         {
             if ((testId == null) || (!_db.ExistTest((Guid)testId)))
@@ -171,6 +179,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+          [EnableCompression]
         public ActionResult PassModule(Guid? id)
         {
             if ((id == null) || (!_db.ExistModule((Guid)id)))
@@ -206,6 +215,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult PassModule(Guid? moduleId, Guid? testId)
         {
             if ((moduleId == null) || (testId == null) || (!_db.ExistModule((Guid)moduleId)) || (!_db.ExistTest((Guid)testId)))
@@ -230,6 +240,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult CalcModuleResults(Guid? id)
         {
             if ((id == null) || (!_db.ExistModule((Guid)id)))

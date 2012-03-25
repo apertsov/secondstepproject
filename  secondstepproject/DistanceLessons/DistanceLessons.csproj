@@ -52,9 +52,11 @@
       <HintPath>..\packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -163,10 +165,10 @@
     <Compile Include="Helpers\Text.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\DataEntitiesManager\MessagesAndStatus.cs" />
-    <Compile Include="Models\DistanceLessonsModel.Designer.cs">
+    <Compile Include="Models\DIstanceLessonsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DistanceLessonsModel.edmx</DependentUpon>
+      <DependentUpon>DIstanceLessonsModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\FileModels.cs" />
     <Compile Include="Models\MessageModels.cs" />
@@ -233,6 +235,7 @@
     <Content Include="Content\Calendar\js\i18n\jquery-ui-i18n.js" />
     <Content Include="Content\Calendar\js\jquery-1.6.2.min.js" />
     <Content Include="Content\Calendar\js\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Content\css\WebGridDefault.css" />
     <Content Include="Content\img\action\accept %282%29.png" />
     <Content Include="Content\img\action\accept.png" />
     <Content Include="Content\img\action\delete.gif" />
@@ -460,9 +463,9 @@
     <Content Include="Views\Education\ModuleInfo.cshtml" />
     <Content Include="Views\Home\Courses.cshtml" />
     <Content Include="Views\Search\_resultCourse_low.cshtml" />
-    <EntityDeploy Include="Models\DistanceLessonsModel.edmx">
+    <EntityDeploy Include="Models\DIstanceLessonsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DistanceLessonsModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>DIstanceLessonsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Uploads\03ccb9df-1fb3-4160-a410-69895e94998a.pdf" />
     <None Include="Uploads\10160ee9-e579-4973-b30c-2428facb40cc.docx" />
@@ -480,6 +483,7 @@
     <None Include="Uploads\ba473829-5f64-420e-b1ba-d1c927e1d068.pdf" />
     <None Include="Uploads\f070c637-d41f-4a3d-a68f-daac4ea03ce6.docx" />
     <None Include="Uploads\f5dab992-bfc3-4fe2-aa30-0ec57bd85d26.docx" />
+    <Content Include="Views\Home\TestPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Layout.en-us.resx">

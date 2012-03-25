@@ -15,6 +15,8 @@ namespace DistanceLessons.Controllers
         //
         // GET: /News/
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult Index(int numPage = 0)
         {
             ViewData["numPage"] = numPage;
@@ -32,12 +34,14 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult Create()
         {
             return PartialView("_Create_PartialPage");
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult Create(News obj)
         {
             try
@@ -57,6 +61,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult Edit(Guid? id)
         {
             if ((id == null) || (!_db.ExistNew((Guid)id)))
@@ -74,6 +79,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult Edit(News obj)
         {
             News old = _db.GetNew(obj.NewId);
@@ -83,6 +89,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult Delete(Guid? id)
         {
             if ((id == null) || (!_db.ExistNew((Guid)id)))
@@ -100,6 +107,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult Delete(Guid? id, FormCollection collection)
         {
             if ((id == null) || (!_db.ExistNew((Guid)id))||(User.IsInRole("Student")))
@@ -111,6 +119,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult Detail(Guid id)
         {
             if ((id == null) || (!_db.ExistNew((Guid)id)))

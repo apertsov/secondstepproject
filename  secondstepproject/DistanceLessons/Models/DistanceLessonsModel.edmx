@@ -150,7 +150,7 @@
         </EntityType>
         <EntityType Name="Contacts">
           <Key>
-            <PropertyRef Name="ContactId" />
+            <PropertyRef Name="UserId" />
           </Key>
           <Property Name="ContactId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Skype" Type="varchar" MaxLength="50" />
@@ -172,7 +172,7 @@
         </EntityType>
         <EntityType Name="Informations">
           <Key>
-            <PropertyRef Name="InformationId" />
+            <PropertyRef Name="UserId" />
           </Key>
           <Property Name="InformationId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
@@ -331,7 +331,7 @@
           <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Contacts" Type="DistanceLessons.Models.Store.Contacts" Multiplicity="*" />
+          <End Role="Contacts" Type="DistanceLessons.Models.Store.Contacts" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -373,7 +373,7 @@
           <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Informations" Type="DistanceLessons.Models.Store.Informations" Multiplicity="*" />
+          <End Role="Informations" Type="DistanceLessons.Models.Store.Informations" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -818,7 +818,7 @@
         </EntityType>
         <EntityType Name="Contact">
           <Key>
-            <PropertyRef Name="ContactId" />
+            <PropertyRef Name="UserId" />
           </Key>
           <Property Name="ContactId" Type="Guid" Nullable="false" />
           <Property Name="Skype" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -846,7 +846,7 @@
         </EntityType>
         <EntityType Name="Information">
           <Key>
-            <PropertyRef Name="InformationId" />
+            <PropertyRef Name="UserId" />
           </Key>
           <Property Name="InformationId" Type="Guid" Nullable="false" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
@@ -1018,9 +1018,9 @@
           <Property Name="PasswordAnswer" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
           <Property Name="EmailKey" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
           <Property Name="LastLoginIp" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Contacts" Relationship="DistanceLessons.Models.FK_Contacts_Users" FromRole="Users" ToRole="Contacts" />
+          <NavigationProperty Name="Contact" Relationship="DistanceLessons.Models.FK_Contacts_Users" FromRole="Users" ToRole="Contacts" />
           <NavigationProperty Name="Courses" Relationship="DistanceLessons.Models.FK_Courses_Users" FromRole="Users" ToRole="Courses" />
-          <NavigationProperty Name="Informations" Relationship="DistanceLessons.Models.FK_Informations_Users" FromRole="Users" ToRole="Informations" />
+          <NavigationProperty Name="Information" Relationship="DistanceLessons.Models.FK_Informations_Users" FromRole="Users" ToRole="Informations" />
           <NavigationProperty Name="Lessons" Relationship="DistanceLessons.Models.FK_Lessons_Users" FromRole="Users" ToRole="Lessons" />
           <NavigationProperty Name="Message_status" Relationship="DistanceLessons.Models.FK_Message_status_Users" FromRole="Users" ToRole="Message_status" />
           <NavigationProperty Name="Messages" Relationship="DistanceLessons.Models.FK_Messages_Users" FromRole="Users" ToRole="Messages" />
@@ -1078,7 +1078,7 @@
           <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Contacts" Type="DistanceLessons.Models.Contact" Multiplicity="*" />
+          <End Role="Contacts" Type="DistanceLessons.Models.Contact" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -1148,7 +1148,7 @@
           <End Role="Users" Type="DistanceLessons.Models.User" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Informations" Type="DistanceLessons.Models.Information" Multiplicity="*" />
+          <End Role="Informations" Type="DistanceLessons.Models.Information" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserId" />
@@ -1540,7 +1540,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="DistanceLessonsModel">
+      <Diagram Name="DIstanceLessonsModel">
         <EntityTypeShape EntityType="DistanceLessons.Models.Answer" Width="1.5" PointX="17.25" PointY="21.125" Height="2.1725878906250031" IsExpanded="true" />
         <EntityTypeShape EntityType="DistanceLessons.Models.Category" Width="1.5" PointX="6" PointY="15" Height="1.5956835937500014" IsExpanded="true" />
         <EntityTypeShape EntityType="DistanceLessons.Models.Contact" Width="1.5" PointX="5.25" PointY="10.625" Height="2.3648893229166674" IsExpanded="true" />

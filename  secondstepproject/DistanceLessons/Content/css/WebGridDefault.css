@@ -1,0 +1,36 @@
+﻿
+.title>th
+{  
+    font-size: 90%;
+    padding: 8px;
+    width : 20%;
+}
+
+
+.title>th>a:link
+{
+    color: #FFFF00;
+    text-decoration: none; 
+}
+
+.title>th>a:visited 
+{
+    color: #FFFF00;
+}
+
+.tableRows>td
+{
+    font-size: 90%;
+    text-align:center;
+    padding: 8px;
+}
+
+.tableRows>td>a:visited 
+{
+    color: Blue;
+}
+
+.tableRows>td>a:link
+{
+    color: Blue;
+}

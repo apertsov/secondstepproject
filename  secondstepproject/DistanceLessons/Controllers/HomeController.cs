@@ -36,6 +36,8 @@ namespace DistanceLessons.Controllers
             return View();
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult Courses()
         {
             return View("Courses", _db.GetValidCourses());
@@ -86,6 +88,11 @@ namespace DistanceLessons.Controllers
                                           ? _db.GetNewMessageForUser(User.Identity.Name).Count
                                           : 0;
             return PartialView("_NewMessageBox");
+        }
+
+        public ActionResult TestPage()
+        {
+            return View();
         }
     }
 }
