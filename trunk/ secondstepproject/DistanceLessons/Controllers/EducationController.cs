@@ -16,16 +16,22 @@ namespace DistanceLessons.Controllers
         //
         // GET: /Education/
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult Index()
         {
             return View(_db.GetCategoryListASC());
         }      
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult category()
         {
             return PartialView("_Category", _db.GetCategoryListASC());
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult courses_list(Guid? id)
         {
             if ((id == null) || (!_db.ExistCategory((Guid)id)))
@@ -44,6 +50,8 @@ namespace DistanceLessons.Controllers
                                                  itemOnPage, 0));
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult courses(int withStatus, int numPage)
         {
             Session["page"] = numPage;
@@ -56,6 +64,8 @@ namespace DistanceLessons.Controllers
                                                  withStatus, itemOnPage, numPage));
         }
 
+    [HttpGet]
+    [EnableCompression]
         public ActionResult SubscribeOnCourse(Guid? CourseId)
         {
             if ((CourseId == null) || (!_db.ExistCourse((Guid)CourseId)))
@@ -74,6 +84,8 @@ namespace DistanceLessons.Controllers
                                                  (int) Session["withStatus"], itemOnPage, (int) Session["page"]));
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult DeleteSubscribeOnCourse(Guid? CourseId)
         {
             if ((CourseId == null) || (!_db.ExistCourse((Guid)CourseId)))
@@ -86,6 +98,8 @@ namespace DistanceLessons.Controllers
                                                  (int) Session["withStatus"], itemOnPage, (int) Session["page"]));
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult ConfirmSubscribeOnCourse(Guid? CourseId, Guid? TeacherId)
         {
             if ((TeacherId==null) || (CourseId == null) || (!_db.ExistCourse((Guid)CourseId)) || (!_db.IsTeacherCourse((Guid)CourseId,(Guid)TeacherId)))
@@ -116,6 +130,8 @@ namespace DistanceLessons.Controllers
                                                  (int) Session["withStatus"], itemOnPage, (int) Session["page"]));
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult UserSubscribs()
         {
             var temp = new UserCourseAndCategoriesModel();
@@ -134,6 +150,8 @@ namespace DistanceLessons.Controllers
             return PartialView("_UserSubscribs", temp);
         }
 
+        [HttpGet]
+        [EnableCompression]
         public ActionResult ModuleInfo(Guid? id)
         {
             if ((id == null) || (!_db.ExistModule((Guid)id)))

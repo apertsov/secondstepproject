@@ -21,6 +21,7 @@ namespace DistanceLessons.Controllers
         }
 */
         [HttpGet]
+        [EnableCompression]
         public ActionResult Users()
         {
             return View(_db.GetUserList());
@@ -28,27 +29,31 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult Categories()
         {
             return View(_db.GetCategoryList());
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult Courses()
         {
             return View(_db.GetCourseList());
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult CreateCours()
         {
             ViewBag.Categories = _db.GetCategoryList();
             ViewBag.Users = _db.GetGetUserByRole("Teacher");
-            return View();
+            return View(new Cours());
         }
 
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult CreateCours(Cours obj)
         {
             obj.CourseId = Guid.NewGuid();
@@ -59,6 +64,7 @@ namespace DistanceLessons.Controllers
 
       
         [HttpGet]
+        [EnableCompression]
         public ActionResult DeleteCours(Guid? id)
         {
             if ((id == null) || (!_db.ExistCourse((Guid)id)))
@@ -71,6 +77,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult DetailsCours(Guid? id)
         {
             if ((id == null) || (!_db.ExistCourse((Guid)id)))
@@ -81,6 +88,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult EditUser(Guid? id)
         {
             if ((id==null)||(!_db.ExistUser((Guid)id)))
@@ -94,6 +102,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult EditUser(User obj)
         {
             User old = _db.GetUser(obj.UserId);
@@ -104,6 +113,7 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult DeleteUser(Guid? id)
         {
             if ((id == null) || (!_db.ExistUser((Guid)id)))
@@ -115,6 +125,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult DetailsUser(Guid? id)
         {
             if ((id == null) || (!_db.ExistUser((Guid)id)))
@@ -131,12 +142,14 @@ namespace DistanceLessons.Controllers
 
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult CreateCategory()
         {
             return View();
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult CreateCategory(Category obj)
         {
             obj.CategoryId = Guid.NewGuid();
@@ -147,6 +160,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult EditCategory(Guid? id)
         {
             if ((id==null)||(!_db.ExistCategory((Guid)id)))
@@ -157,6 +171,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpPost]
+        [EnableCompression]
         public ActionResult EditCategory(Category obj)
         {
             Category old = _db.GetCategory(obj.CategoryId);
@@ -168,6 +183,7 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult DeleteCategory(Guid? id)
         {
             if  ((id==null)||(!_db.ExistCategory((Guid)id)))

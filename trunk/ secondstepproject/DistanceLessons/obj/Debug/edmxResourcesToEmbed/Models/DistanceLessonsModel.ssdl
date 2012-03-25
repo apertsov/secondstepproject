@@ -145,7 +145,7 @@
   </EntityType>
   <EntityType Name="Contacts">
     <Key>
-      <PropertyRef Name="ContactId" />
+      <PropertyRef Name="UserId" />
     </Key>
     <Property Name="ContactId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Skype" Type="varchar" MaxLength="50" />
@@ -167,7 +167,7 @@
   </EntityType>
   <EntityType Name="Informations">
     <Key>
-      <PropertyRef Name="InformationId" />
+      <PropertyRef Name="UserId" />
     </Key>
     <Property Name="InformationId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
@@ -326,7 +326,7 @@
     <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Contacts" Type="DistanceLessons.Models.Store.Contacts" Multiplicity="*" />
+    <End Role="Contacts" Type="DistanceLessons.Models.Store.Contacts" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserId" />
@@ -368,7 +368,7 @@
     <End Role="Users" Type="DistanceLessons.Models.Store.Users" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="Informations" Type="DistanceLessons.Models.Store.Informations" Multiplicity="*" />
+    <End Role="Informations" Type="DistanceLessons.Models.Store.Informations" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="Users">
         <PropertyRef Name="UserId" />

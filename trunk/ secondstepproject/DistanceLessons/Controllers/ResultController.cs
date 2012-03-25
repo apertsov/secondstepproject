@@ -26,6 +26,7 @@ namespace DistanceLessons.Controllers
 
         [Authorize(Roles = "Admin, Teacher, Dean")]
         [HttpGet]
+        [EnableCompression]
         public ActionResult Index()
         {
             return View(new EducationElementsModel { Categories = _db.CategoriesDictionaryAll(), Courses = new Dictionary<Guid, string>(), Modules = new Dictionary<Guid, string>(), Parameters = new BetweenPartialModel { pickedElement = null, ElementType = ElementsType.None } });
@@ -33,6 +34,7 @@ namespace DistanceLessons.Controllers
 
         [Authorize(Roles = "Admin, Teacher, Dean")]
         [HttpGet]
+        [EnableCompression]
         public ActionResult UserResults(Guid? id, string divIdToReplace, ElementsType type = ElementsType.None)
         {
             return PartialView("UserResults", new BetweenPartialModel { pickedElement = id, ControllerName = "UserResults", ElementType = type, DivIdToReplace = divIdToReplace });
@@ -40,6 +42,7 @@ namespace DistanceLessons.Controllers
 
         [Authorize(Roles = "Admin, Teacher, Dean")]
         [HttpGet]
+        [EnableCompression]
         public ActionResult EducationElements(Guid? id, string redirectController, string divIdToReplace, ElementsType type = ElementsType.None)
         {
             if ((id != null) && (type != ElementsType.User))
@@ -78,6 +81,7 @@ namespace DistanceLessons.Controllers
 
         [Authorize(Roles = "Admin, Teacher, Dean")]
         [HttpGet]
+        [EnableCompression]
         public ActionResult UserResultsTable(Guid? id, string redirectController, string divIdToReplace, ElementsType type = ElementsType.None)
         {
             if (id == null)
@@ -151,7 +155,8 @@ namespace DistanceLessons.Controllers
         }
 
          [HttpGet]
-        [Authorize(Roles = "Admin, Teacher, Dean")]       
+        [Authorize(Roles = "Admin, Teacher, Dean")]
+        [EnableCompression]
         public ActionResult DetailsModuleUserAnswers(Guid? id, string username, string controllerName, string divIdToReplace)
         {
             if ((id == null) || (!_db.ExistModule((Guid)id)) || (String.IsNullOrEmpty(username)) || (!_db.ExistUser(username)))
@@ -183,6 +188,7 @@ namespace DistanceLessons.Controllers
 
         [Authorize(Roles = "Admin, Teacher, Dean")]
         [HttpGet]
+        [EnableCompression]
         public ActionResult DeletePassModule(Guid? id, string username, string controllerName, string divIdToReplace)
         {
             if ((id == null) ||(String.IsNullOrEmpty(username))||(!_db.ExistUser(username))|| (!_db.ExistModule((Guid)id)))
@@ -194,12 +200,14 @@ namespace DistanceLessons.Controllers
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult UserResult()
         {
             return PartialView(_db.ResultUserCourse(User.Identity.Name));
         }
 
         [HttpGet]
+        [EnableCompression]
         public ActionResult StudentResult()   //string username, string divIdToReplace = "", string redirectController = "")
         {
             ViewBag.controller = "";
