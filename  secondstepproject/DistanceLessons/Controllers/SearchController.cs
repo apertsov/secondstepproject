@@ -24,7 +24,7 @@ namespace DistanceLessons.Controllers
             var course = _db.GetCourseList();
             ViewBag.IsTeacherOrAdmin = (_db.GetUserRoleId(User.Identity.Name) == _db.GetRoleId("Teacher") ||
                                 _db.GetUserRoleId(User.Identity.Name) == _db.GetRoleId("Admin")) 
-                                ? true : false; ;
+                                ? true : false;
 
             return View(course);
 

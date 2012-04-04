@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
-
-namespace DistanceLessons.Models
+﻿namespace DistanceLessons.Models
 {
     public partial class ChangePasswordModel
     {

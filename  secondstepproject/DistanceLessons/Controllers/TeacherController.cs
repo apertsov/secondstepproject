@@ -4,8 +4,6 @@ using System.Web.Mvc;
 using DistanceLessons.Attributes;
 using DistanceLessons.Models;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DistanceLessons.Controllers
 {
@@ -13,14 +11,7 @@ namespace DistanceLessons.Controllers
     [Authorize(Roles = "Admin, Teacher")]
     public class TeacherController : Controller
     {
-        private DataEntitiesManager db;
-
-        public TeacherController()
-            : base()
-        {
-            db = new DataEntitiesManager();
-        }
-  
+        private DataEntitiesManager db = new DataEntitiesManager();
 
         [HttpGet]
         [EnableCompression]
