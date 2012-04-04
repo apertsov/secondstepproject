@@ -740,7 +740,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Приєднуйся до нас, бро!.
+        ///   Looks up a localized string similar to Приєднуйся до нас!.
         /// </summary>
         internal static string register_now {
             get {

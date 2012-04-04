@@ -16,13 +16,7 @@ namespace DistanceLessons.Controllers
     {
         //
         // GET: /Dean/
-        private DataEntitiesManager _db;
-
-        public ResultController()
-            : base()
-        {
-            _db = new DataEntitiesManager();
-        }
+        private DataEntitiesManager _db = new DataEntitiesManager();
 
         [Authorize(Roles = "Admin, Teacher, Dean")]
         [HttpGet]
