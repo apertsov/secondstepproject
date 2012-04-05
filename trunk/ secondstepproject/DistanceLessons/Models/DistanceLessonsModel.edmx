@@ -1540,7 +1540,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="DIstanceLessonsModel">
+      <Diagram Name="DIstanceLessonsModel" ZoomLevel="100">
         <EntityTypeShape EntityType="DistanceLessons.Models.Answer" Width="1.5" PointX="17.25" PointY="21.125" Height="2.1725878906250031" IsExpanded="true" />
         <EntityTypeShape EntityType="DistanceLessons.Models.Category" Width="1.5" PointX="6" PointY="15" Height="1.5956835937500014" IsExpanded="true" />
         <EntityTypeShape EntityType="DistanceLessons.Models.Contact" Width="1.5" PointX="5.25" PointY="10.625" Height="2.3648893229166674" IsExpanded="true" />

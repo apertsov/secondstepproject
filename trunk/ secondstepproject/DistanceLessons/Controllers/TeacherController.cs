@@ -346,6 +346,8 @@ namespace DistanceLessons.Controllers
                     switch (fileType)
                     {
                         case ".pdf":
+                        case ".ppt":
+                        case ".pptx":
                         case ".doc":
                         case ".docx":
                         case ".txt":

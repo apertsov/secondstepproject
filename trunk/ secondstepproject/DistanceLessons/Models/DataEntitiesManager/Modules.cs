@@ -116,6 +116,7 @@ namespace DistanceLessons.Models
             {
                 if((lst.Find(m=>m.ModuleId==item.ModuleId)!=null)&&(temp.Find(m=>m.ModuleId==item.ModuleId)==null)) temp.Add(item);
             }
+            temp.Sort((a, b) => a.Title.CompareTo(b.Title));
             return temp;
         }
     }
