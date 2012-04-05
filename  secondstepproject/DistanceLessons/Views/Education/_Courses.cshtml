@@ -33,32 +33,43 @@
                                                                                                                {
                                                                                                                    <font color="green">@Html.Resource("Layout, stat_public")&nbsp;&nbsp;</font>
                                                                                                                }</span>
-                                <span class="no_button"><i>@Html.Resource("Layout, teacher")</i> @Html.ActionLink(item.Course.User.Login, "Info", "Profile", new {user = item.Course.User.Login}, null)&nbsp;&nbsp;</span>
+                                <span class="no_button"><i>@Html.Resource("Layout, teacher")</i> 
+                                
+                                @if(item.Course.User.Information==null)
+                                {
+                                    @Html.ActionLink(item.Course.User.Login, "Info", "Profile", new {user = item.Course.User.Login}, null)
+                                }
+                                else
+                                {
+                                    @Html.ActionLink(String.Format("{0} {1}.{2}.",item.Course.User.Information.LastName, item.Course.User.Information.FirstName[0],item.Course.User.Information.MidName[0]), "Info", "Profile", new { user = item.Course.User.Login }, null)
+                                }
+                                
+                                &nbsp;&nbsp;</span>
                                 @if (!item.Course.IsSubscribing)
                                 {
                                     if (item.Subscribe == 1)
                                     {
-                                        <span onClick= alert_public();  >@Ajax.ActionLink(Html.Resource("Layout, subscribe"), "SubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</span>
+                                        <span onClick= alert_public();  >@Ajax.ActionLink(Html.Resource("Layout, subscribe"), "SubscribeOnCourse", new { item.Course.CourseId }, new AjaxOptions { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })</span>
                                     }
                                     else if (item.Subscribe == 0)
-                                         {
-                                             @Ajax.ActionLink(Html.Resource("Layout, cancel"), "DeleteSubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})
-                                         }
+                                    {
+                                             @Ajax.ActionLink(Html.Resource("Layout, cancel"), "DeleteSubscribeOnCourse", new { item.Course.CourseId }, new AjaxOptions { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })
+                                    }
                                 }
                                 else
                                 {
                                     if (item.Subscribe == 1)
                                     {
-                                        <span onClick= alert_private();  >@Ajax.ActionLink(Html.Resource("Layout, subscribe"), "ConfirmSubscribeOnCourse", new {item.Course.CourseId, TeacherId = item.Course.UserId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})</span>
+                                        <span onClick= alert_private();  >@Ajax.ActionLink(Html.Resource("Layout, subscribe"), "ConfirmSubscribeOnCourse", new { item.Course.CourseId, TeacherId = item.Course.UserId }, new AjaxOptions { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })</span>
                                     }
                                     else if (item.Subscribe == 2)
-                                         {
+                                    {
                                              <span class="current_page">@Html.Resource("Layout, wait")</span>
-                                         }
-                                         else if (item.Subscribe == 0)
-                                              {
-                                                  @Ajax.ActionLink(Html.Resource("Layout, cancel"), "DeleteSubscribeOnCourse", new {item.Course.CourseId}, new AjaxOptions {UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace})
-                                              }
+                                    }
+                                    else if (item.Subscribe == 0)
+                                    {
+                                                  @Ajax.ActionLink(Html.Resource("Layout, cancel"), "DeleteSubscribeOnCourse", new { item.Course.CourseId }, new AjaxOptions { UpdateTargetId = "course_ajax", InsertionMode = InsertionMode.Replace })
+                                    }
                                 }
                             </div>
                         </li>
@@ -67,7 +78,7 @@
             }
         </ul>
         <div class="item">
-            @Ajax.PagesType((int) Session["page"], (int) Session["itemsCount"], (int) Session["itemOnPage"], "course_ajax", "courses", (int) Session["withStatus"])
+            @Ajax.PagesType((int)Session["page"], (int)Session["itemsCount"], (int)Session["itemOnPage"], "course_ajax", "courses", (int)Session["withStatus"])
         </div>
     </div>
 }

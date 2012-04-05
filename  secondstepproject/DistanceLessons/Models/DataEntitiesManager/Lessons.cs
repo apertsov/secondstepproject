@@ -86,6 +86,7 @@ namespace DistanceLessons.Models
                 if ((lst.Find(m => m.CourseId == item.CourseId) != null))
                     temp.Add(item);
             }
+            temp.Sort((a, b) => a.Title.CompareTo(b.Title));
             return temp;
         }
 

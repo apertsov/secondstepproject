@@ -30,7 +30,15 @@
                             {
                                 if (subitem1.CourseId==subitem.CourseId)
                                 {
-                                <div style="margin-left: 25px; font-size: 0.8em;">@Html.Resource("Layout, module") @subitem1.Title @Ajax.ActionLink("[" + Html.Resource("Layout, start_test") + "]", "ModuleInfo", "Education", new { id = subitem1.ModuleId }, new AjaxOptions { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace }, null)</div>
+                                    using (DataEntitiesManager _db = new DataEntitiesManager()){
+                                <div style="margin-left: 25px; font-size: 0.8em;">@Html.Resource("Layout, module") @subitem1.Title
+                                <br /> 
+                                @if (_db.ModuleTests(subitem1.ModuleId).Count > 0)
+                                {
+                                                                      @Ajax.ActionLink("[" + Html.Resource("Layout, start_test") + "]", "ModuleInfo", "Education", new { id = subitem1.ModuleId }, new AjaxOptions { UpdateTargetId = "choose_ajax", InsertionMode = InsertionMode.Replace }, null)
+                                }
+                                </div>
+                                        }
                                 }
                                 <div style="margin: 10px;">
                                     @foreach (var subitem2 in Model.CoursesLessonsInModule)
@@ -44,11 +52,11 @@
                             }
                         </div>
                         <div class="text" style="margin: 10px;">
-                        @using(DataEntitiesManager _db = new DataEntitiesManager())
+                        @using (DataEntitiesManager _db = new DataEntitiesManager())
                         {
                             if (_db.ExistLessonsInCategory(Model.CoursesLessonsInNullModule, subitem.CourseId))
                             {
-                                <div style="margin-left: 25px; font-size: 0.8em;">Додаткові лекції</div>
+                                <div style="margin-left: 25px; font-size: 0.8em;">Додатковий матеріал</div>
                             <div style="margin: 10px;">
                                 @foreach (var subitem2 in Model.CoursesLessonsInNullModule)
                                 {
