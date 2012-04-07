@@ -128,9 +128,10 @@ namespace DistanceLessons.Models
             [ScaffoldColumn(false)]
             public Guid TestId { get; set; }
 
+            [AllowHtml]
             [Display(Name = "T_Question", ResourceType = typeof(Resources.Metadata))]
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "T_Question_Required")]
-            [StringLength(256, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "T_Question_StringLength")]
+            //[StringLength(256, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "T_Question_StringLength")]
             public string Question { get; set; }
 
             [ScaffoldColumn(false)]
@@ -149,7 +150,8 @@ namespace DistanceLessons.Models
 
             [Display(Name = "A_Answer", ResourceType = typeof(Resources.Metadata))]
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "A_Answer_Required")]
-            [StringLength(128, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "A_Answer_StringLength")]
+           // [StringLength(128, ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "A_Answer_StringLength")]
+            [AllowHtml]
             public string Answer1 { get; set; }
 
             [Display(Name = "A_Valid", ResourceType = typeof(Resources.Metadata))]
