@@ -12,7 +12,7 @@
 <h5 style="color:Red">@ViewBag.Error</h5>
 @Html.ActionLink(Html.Resource("Layout, upload_retry"), "UploadLesson", new { courseId = c_id, moduleId = m_id, act = ViewBag.Action })
 
-<br/>
+<div class="item" align="right">
  @if (m_id == Guid.Empty.ToString())
  {
     @Html.ActionLink(Html.Resource("Layout, back"), "Course", new { id = c_id });
@@ -21,3 +21,4 @@
  {
     @Html.ActionLink(Html.Resource("Layout, back"), "Lesson", new { id = m_id });
  }
+ </div>

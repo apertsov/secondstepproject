@@ -1,7 +1,9 @@
 ﻿@model List<DistanceLessons.Models.Answer>
 
+<div align="left" style="margin: 2px; background: rgba(50,50,50,0.1); border: 1px dotted silver; padding:5px;">
  @for (int j = 0; j < Model.Count; j++)
  {
-        @Html.CheckBoxFor(model => model[j].Valid, new { disabled="true" })
+        @Html.CheckBoxFor(model => model[j].Valid, new { disabled="true" })<span>&nbsp;</span>
         @Model[j].Answer1<br />
  }
+ </div>

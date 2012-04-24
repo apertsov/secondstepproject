@@ -25,8 +25,6 @@
                 {
                     <li>@Html.ActionLink(Html.Resource("Layout, journal"), "Index", "Result")</li>
                 }
-                else
-                {
                     if (_db.UserRole(User.Identity.Name) == DistanceLessons.Models.UserRoles.Teacher.ToString())
                     {
                         <li><a>@Html.Resource("Layout, teacher_panel")</a>
@@ -36,7 +34,6 @@
                             </ul>
                         </li>
                     }
-                }
             }
         }
         <li><a>@Html.Resource("Layout, search")</a>

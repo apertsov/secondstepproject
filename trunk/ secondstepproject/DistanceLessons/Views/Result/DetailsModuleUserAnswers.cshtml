@@ -10,7 +10,7 @@ else
     <h3>
         @Html.Resource("Layout, _result_result_title") @Model.ModuleTitle @Html.Resource("Layout, _result_result_title2") @Model.Username : @Model.ResultPercent % -  @Model.Result
         @Html.Resource("Layout, _result_result_title3")</h3>
-    <div class="item">
+    <div class="item" align="right">
     @Ajax.ActionLink(Html.Resource("Layout, _result_back_to_result"), Model.Parameters.ControllerName, new { id = Model.Parameters.pickedElement, divIdToReplace = Model.Parameters.DivIdToReplace, type = DistanceLessons.Models.ElementsType.Module }, new AjaxOptions() { UpdateTargetId = Model.Parameters.DivIdToReplace, InsertionMode = InsertionMode.Replace }) <br />
  </div>
     <table style="width: 100%;">
@@ -26,14 +26,15 @@ else
                     @Html.Resource("Layout, _result_result")
                 </td>
             </tr>
+            
             @foreach (DistanceLessons.Models.DetailAnswersModel detailModel in Model.Answers)
             {
-                <tr>
-                    <td align="justify" style="padding: 10px;border: 1px solid silver;">
-                        @detailModel.TestAndAnswers.Test.Question<br />
+                <tr style="font-size: 85%;">
+                    <td style="padding: 10px;border: 1px solid silver;">
+                        @Html.TextHtml(detailModel.TestAndAnswers.Test.Question)<br />
                         @{Html.RenderPartial("ShowAnswersPartial", detailModel.TestAndAnswers.AnswerList, Html.ViewData);}
                     </td>
-                    <td style="border: 1px solid silver;">
+                    <td style="border: 1px solid silver; padding:5px;">
                         @if (detailModel.UserAnswers.Count == 0)
                         {
                             @Html.Resource("Layout, _result_null_answer")
@@ -48,6 +49,6 @@ else
                     </td>
                 </tr>
             }
-        </tbody>
+            </tbody>
     </table>
 }

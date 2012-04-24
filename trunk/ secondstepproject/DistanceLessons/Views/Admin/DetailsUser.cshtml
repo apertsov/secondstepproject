@@ -153,7 +153,7 @@
 </table>
 
 }
-<p>
-    @Html.ActionLink(Html.Resource("Layout, edit"), "EditUser", new { id = Model.UserId }) |
+<div class="item" align="right">
+    @Html.ActionLink(Html.Resource("Layout, edit"), "EditUser", new { id = Model.UserId })
     @Html.ActionLink(Html.Resource("Layout, back"), "Users")
-</p>
+</div>

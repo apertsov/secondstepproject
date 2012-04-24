@@ -1,42 +1,59 @@
 ﻿@model DistanceLessons.Models.TestAndAnswersModel
 
 @{
-    ViewBag.Title = Html.Resource("Layout, _tests_edit");
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Редагувати тест";
 }
-
+<script>
+    $(function () {
+        $('.delete').click(function () {
+            return confirm('Видалити відповідь?');
+        });
+    });
+</script>
 <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")" type="text/javascript"></script>
+<div class="box_shdw_bottom_full" style="margin-top: -10px;">
+@Html.ValidationSummary(true, "Не вдалось зберегти результати. Виправте помилки і спробуйте ще раз.")
 
-@Html.ValidationSummary(true, Html.Resource("Layout, save_error"))
-
-@using (Html.BeginForm("EditTest", "Test", FormMethod.Post))
+@using (Ajax.BeginForm("EditTest", "Test", new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace, HttpMethod = "POST" }))
 {
     @Html.ValidationSummary(true)
-    <fieldset>
-         @Html.HiddenFor(model => model.Test.TestId)
-         @Html.HiddenFor(model => model.Test.LessonId)
-          <div class="editor-field">
-          @Html.EditorFor(model => model.Test.Question)
-          @Html.ValidationMessageFor(model => model.Test.Question)
-         </div>         
-         @for (int j = 0; j < Model.AnswerList.Count; j++)
-         {
-             @Html.HiddenFor(model => model.AnswerList[j].AnswerId)
-             <div class="editor-field">
-             @Html.CheckBoxFor(model => model.AnswerList[j].Valid)
-             @Html.EditorFor(model => model.AnswerList[j].Answer1)             
-             @Html.ActionLink(Html.Resource("Layout, delete"), "DeleteAnswer", "Test", new { id = Model.AnswerList[j].AnswerId, testId = Model.Test.TestId }, new { onclick = "return confirm('" + @Html.Resource("Layout, delete") + "');" })      
-             @Html.ValidationMessageFor(model => model.AnswerList[j].Answer1) 
-             </div>   
-         }
+    @Html.HiddenFor(model => model.Test.TestId)
+    @Html.HiddenFor(model => model.Test.LessonId)
+    <table class="left" cellspacing="10" style="margin: 20px 10px; padding:5px; background: rgba(50,50,155,0); border: 1px dotted silver; font-size:95%;">
+        <tr>
+            <td class="editor-label">@Html.LabelFor(model => model.Test.Question)</td>
+            <td class="editor-field">@Html.TextAreaFor(model => model.Test.Question, new { @class = "textboxarea" })</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="error">@Html.ValidationMessageFor(model => model.Test.Question)</td>
+        </tr>
+        @for (int j = 0; j < Model.AnswerList.Count; j++)
+        {
+            <tr>
+                <td class="editor-label">@Html.HiddenFor(model => model.AnswerList[j].AnswerId)</td>
+                <td class="editor-field">
+                @Html.CheckBoxFor(model => model.AnswerList[j].Valid)
+                &nbsp;
+                @Html.TextBoxFor(model => model.AnswerList[j].Answer1, new { @class = "editor75" }) 
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <span class="item">@Html.ActionLink(Html.Resource("Layout, delete"), "DeleteAnswer", "Test", new { id = Model.AnswerList[j].AnswerId, testId = Model.Test.TestId }, new { onclick = "return confirm('" + @Html.Resource("Layout, delete") + "');" })</span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="error">@Html.ValidationMessageFor(model => model.AnswerList[j].Answer1)</td>
+            </tr>
+        }
+        <tr>
+            <td colspan="2"><div class="item" align="right">@Html.ActionLink(Html.Resource("Layout, add"), "AddAnswer", new { id = Model.Test.TestId }, null)</div></td>
+        </tr>
+    </table>
 
-           <div class="item">
-        @Html.ActionLink(Html.Resource("Layout, add"), "AddAnswer", new { id = Model.Test.TestId }, null)
+        <div class="item" align="right">
+            <input type="submit" value=@Html.Resource("Layout, save") />
         </div>
-        <p>
-            <input type="submit"  value=@Html.Resource("Layout, save") />
-        </p>
-        
-        </fieldset>
 }
+</div>

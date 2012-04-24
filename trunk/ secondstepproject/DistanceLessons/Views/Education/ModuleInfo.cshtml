@@ -1,5 +1,6 @@
 ﻿@model DistanceLessons.Models.Module
 
+<div style="font-size: 85%; padding:5px;">
 <h2> Модуль @Model.Title </h2>
 <p> Тестування проходить з @Model.DateBeginTesting до @Model.DateEndTesting .</p>
 <p> Тест складається з 
@@ -18,10 +19,11 @@
 <h3>
 @if (ViewBag.CanPass)
 {
-@Html.ActionLink("Розпочати тестування", "PassModule", "Test", new { id = Model.ModuleId }, null)
+    <div class="item" align="center">@Html.ActionLink("Розпочати тестування", "PassModule", "Test", new { id = Model.ModuleId }, null)</div>
 }
 else
 {
     @Html.TextHtml("Тестування з цього модуля не проводиться");
 }
 </h3>
+</div>

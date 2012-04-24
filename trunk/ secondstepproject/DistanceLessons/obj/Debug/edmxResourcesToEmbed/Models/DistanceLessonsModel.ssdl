@@ -132,7 +132,7 @@
       <PropertyRef Name="AnswerId" />
     </Key>
     <Property Name="AnswerId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Answer" Type="varchar" MaxLength="128" />
+    <Property Name="Answer" Type="varchar(max)" />
     <Property Name="Valid" Type="bit" Nullable="false" />
     <Property Name="TestId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
@@ -257,7 +257,7 @@
       <PropertyRef Name="TestId" />
     </Key>
     <Property Name="TestId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Question" Type="varchar" MaxLength="256" />
+    <Property Name="Question" Type="varchar(max)" />
     <Property Name="LessonId" Type="uniqueidentifier" Nullable="false" />
   </EntityType>
   <EntityType Name="UserAnswers">

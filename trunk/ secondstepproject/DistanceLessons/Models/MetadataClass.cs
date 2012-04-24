@@ -289,6 +289,7 @@ namespace DistanceLessons.Models
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "M_Title_Required")]
             public string Title { get; set; }
 
+            [AllowHtml]
             [Display(Name = "M_Mes", ResourceType = typeof(Resources.Metadata))]
             [Required(ErrorMessageResourceType = typeof(Resources.Metadata), ErrorMessageResourceName = "M_Mes_Required")]
             public string Message1 { get; set; }
@@ -373,7 +374,7 @@ namespace DistanceLessons.Models
         public class SendMessageMetadata
         {
             [Display(Name = "M_ToUser", ResourceType = typeof(Resources.Metadata))]
-            [ExistUserInDB(ErrorMessage = " ")]
+            [ExistUserInDB(ErrorMessage = "Такого користувача не існує")]
             public String Name { get; set; }
         }
     }

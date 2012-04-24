@@ -4,7 +4,7 @@
     ViewBag.Title = Html.Resource("Courses");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<table style="width: 100%;">
+<table style="width: 100%; font-size:85%;">
     <tbody align="center">
         <tr>
             <td style="width: 33%;">
@@ -33,5 +33,5 @@
 
 @if (!User.Identity.IsAuthenticated)
 {
-    <h4 style="margin-top: 50px;">@Html.Resource("Layout, do_u_want") @Html.ActionLink(Html.Resource("Layout, register_now"), "Register", "Account")</h4>
+    <h4 style="margin-top: 50px;">@Html.Resource("Layout, do_u_want") &nbsp; <span class="item">@Html.ActionLink(Html.Resource("Layout, register_now"), "Register", "Account")</span></h4>
 }

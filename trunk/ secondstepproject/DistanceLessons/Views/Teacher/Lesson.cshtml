@@ -52,8 +52,8 @@
 
 @if ((bool)ViewBag.IsTeacher)
 {
-    <p>
+    <div class="item" align="right">
     @Html.ActionLink(Html.Resource("Layout, _lesson_add"), "UploadLesson", new { courseId = (Guid)ViewBag.CourseId, moduleId = (Guid)ViewBag.ModuleId })
-    </p>
+    </div>
 }
     

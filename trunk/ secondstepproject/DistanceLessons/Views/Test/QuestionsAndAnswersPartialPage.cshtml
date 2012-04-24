@@ -4,9 +4,11 @@
 {
     foreach (DistanceLessons.Models.TestAndAnswersModel model in Model.TestAndAnswers)
     {
-        { Html.RenderPartial("ShowTestPartial", model, Html.ViewData); }
+        <div style="margin: 20px 10px; padding:5px; background: rgba(50,50,155,0); border: 1px dotted silver; font-size:95%;">
+        @{ Html.RenderPartial("ShowTestPartial", model, Html.ViewData); }
+        </div>
     }
 }
-<div class="item">
+<div class="item" align="right">
     @Ajax.ActionLink(Html.Resource("Layout, add"), "AddTest", new { id = Model.Lesson.LessonId }, new AjaxOptions() { UpdateTargetId = "testsdiv", InsertionMode = InsertionMode.Replace })
 </div>

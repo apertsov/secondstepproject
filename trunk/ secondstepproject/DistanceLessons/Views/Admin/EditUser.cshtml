@@ -55,12 +55,9 @@
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
     </tr>
 </table>
-
-        <p>
+    
+    <div class="item" align="right">
         <input type="submit" value=@Html.Resource("Layout, save") />
-        </p>
+        @Html.ActionLink(Html.Resource("Layout, cancel"), "Users")
+    </div>
 }
-
-<div>
-    @Html.ActionLink(Html.Resource("Layout, cancel"), "Users")
-</div>

@@ -77,12 +77,8 @@
     </tr>
 </table>
 
-        <p>
-        <input type="submit" value="Зберегти" />
-        </p>
-}
-
-<div>
+<div class="item" align="right">
+  <input type="submit" value="Зберегти" />
 @if (User.IsInRole("Teacher"))
 {
     @Html.ActionLink(Html.Resource("Layout, cancel"), "Courses","Teacher")
@@ -92,3 +88,4 @@ else if(User.IsInRole("Admin"))
      @Html.ActionLink(Html.Resource("Layout, cancel"), "Courses", "Admin")
 }
 </div>
+}

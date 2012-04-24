@@ -6,16 +6,14 @@
 }
 
 <h2>@Html.Resource("Layout, categories_courses")</h2>
-<br/>
-<p>
+<div class="item" align="left">
     @Html.ActionLink(Html.Resource("Layout, create"), "CreateCategory")
-</p>
-<br/>
+</div>
 @{
-    var grid = new WebGrid(Model, rowsPerPage: 10, defaultSort: "Category1");
+    var grid = new WebGrid(Model, rowsPerPage: 100, defaultSort: "Category1");
    @grid.GetHtml(
         tableStyle: "center",
-        headerStyle: "left",
+        headerStyle: "center",
         columns: grid.Columns(
             grid.Column("Category1", Html.Resource("Layout, category"), format: @<text>@item.Category1</text>),
             grid.Column(format: (item) =>

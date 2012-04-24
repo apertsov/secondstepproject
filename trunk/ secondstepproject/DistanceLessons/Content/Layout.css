@@ -289,6 +289,22 @@ body
     border: 1px solid silver;    
 }
 
+.editor-field .editor75
+{
+    min-width: 75% !important;
+    max-width: 75% !important;
+    font: 12px Arial, Verdana, Sans-Serif;
+        font-family: "CenturyGothicRegular", "Century Gothic", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    padding: 3px;
+    margin: 5px 0;
+    color: black;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border: 1px solid silver;    
+}
+
 /*news*/
 .title
 {
