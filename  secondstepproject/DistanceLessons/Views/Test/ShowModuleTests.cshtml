@@ -3,16 +3,13 @@
     ViewBag.Title = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h3>@Html.Resource("Layout, _test_showmodtests") @Model.Module.Title . @Html.Resource("Layout, _test_showmodtests2") @Model.Module.CountQuestions @Html.Resource("Layout, _test_showmodtests3") @Model.Module.TimeForPassTest @Html.Resource("Layout, minutes") <br />
-    @Html.ActionLink(Html.Resource("Layout, back"), "Course", "Teacher", new { id = Model.Module.CourseId }, null)</h3>
+<h3>@Html.Resource("Layout, _test_showmodtests") @Model.Module.Title . @Html.Resource("Layout, _test_showmodtests2") @Model.Module.CountQuestions @Html.Resource("Layout, _test_showmodtests3") @Model.Module.TimeForPassTest @Html.Resource("Layout, minutes")</h3>
 @foreach (DistanceLessons.Models.LessonTestAndAnswersModel lessonTests in Model.LessonsTestsAndAnswers)
 {
-    <div style="text-align: center;">
-        @Html.Resource("Layout, lesson"): @lessonTests.Lesson.Title
+    <div style="text-align: center; border-bottom: 1px solid silver; margin: 25px 0;">
+        <b class="left">&nbsp;&nbsp;@Html.Resource("Layout, lesson"): @lessonTests.Lesson.Title</b>
+        
         <br />
-         <div class="item">
-        @Html.ActionLink(Html.Resource("Layout, edit"), "ShowLessonTests", "Test", new { id = lessonTests.Lesson.LessonId, courseId = lessonTests.Lesson.Cours.CourseId }, null)
-    </div>
     </div>
            <div>@Html.Resource("Layout, tests"):</div>
     if (lessonTests.TestAndAnswers.Count == 0)
@@ -23,12 +20,20 @@
     {
         foreach (DistanceLessons.Models.TestAndAnswersModel testAndAnswers in lessonTests.TestAndAnswers)
         {
+        <div style="margin: 20px 10px; padding:5px; background: rgba(50,50,155,0); border: 1px dotted silver; font-size:95%;">
         <div style="padding: 5px 10px;">
-            @testAndAnswers.Test.Question
+            @Html.TextHtml(testAndAnswers.Test.Question)
         </div>
         <div style="padding: 5px 20px;">
             @{Html.RenderPartial("ShowAnswersPartial", testAndAnswers.AnswerList, Html.ViewData);}
         </div>
+        </div>
         }
     }
+    <div class="item" align="right">
+        @Html.ActionLink(Html.Resource("Layout, edit"), "ShowLessonTests", "Test", new { id = lessonTests.Lesson.LessonId, courseId = lessonTests.Lesson.Cours.CourseId }, null)
+    </div>
 }
+<div class="item" align="right">
+@Html.ActionLink(Html.Resource("Layout, back"), "Course", "Teacher", new { id = Model.Module.CourseId }, null)
+</div>

@@ -48,14 +48,9 @@
         <td class="error" colspan="2" align="center" style="border-top: 1px solid silver; padding-top: 20px;"></td>
     </tr>
 </table>
-        <p>
-            <input type="submit" value=@Html.Resource("Layout, create") />
-        </p>
-
-
-}
-
-<div>
+            
+<div class="item" align="right">
+<input type="submit" value=@Html.Resource("Layout, create") />
 @if (Model.ModuleId != null)
 { 
     @Html.ActionLink(Html.Resource("Layout, back"), "Lesson", new { id = Model.ModuleId });
@@ -65,3 +60,4 @@ else
    @Html.ActionLink(Html.Resource("Layout, back"), "Course", new { id = Model.CourseId });
 }
 </div>
+}

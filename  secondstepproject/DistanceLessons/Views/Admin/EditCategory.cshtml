@@ -33,11 +33,8 @@
     </tr>
 </table>
 
-        <p>
-          <input type="submit" value=@Html.Resource("Layout, save") />
-        </p>
+    <div class="item" align="right">
+        <input type="submit" value=@Html.Resource("Layout, save") />
+        @Html.ActionLink(Html.Resource("Layout, cancel"), "Categories")
+    </div>
 }
-
-<div>
-    @Html.ActionLink(Html.Resource("Layout, cancel"), "Categories")
-</div>

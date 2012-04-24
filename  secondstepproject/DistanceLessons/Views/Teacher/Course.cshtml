@@ -86,5 +86,10 @@ else if ((bool)ViewBag.IsAdmin)
         </td>
     </tr>
 </table>
+
 @if ((bool)ViewBag.IsOwner)
-{@Html.ActionLink(Html.Resource("Layout, _module_create"), "CreateModule", new { id = ViewBag.CourseId }) }
+{
+    <div class="item" align="right">
+    @Html.ActionLink(Html.Resource("Layout, _module_create"), "CreateModule", new { id = ViewBag.CourseId })
+    </div>
+}

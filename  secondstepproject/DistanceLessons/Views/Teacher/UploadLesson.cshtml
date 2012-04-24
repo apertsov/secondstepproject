@@ -3,6 +3,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>@Html.Resource("Layout, upload_edu_elem")</h2>
+<br/><br/>
+<div align="center">
 <div style="font-style: italic; font-size: smaller">
     @Html.Resource("Layout, upload_info1")<br />@Html.Resource("Layout, upload_info2")
 </div>
@@ -14,16 +16,15 @@
 <br />
 @using (Html.BeginForm("Upload", "Teacher", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <p>
+    <div class="item" style="margin: 50px 0">
         <input type="file" id="fileUpload" name="fileUpload" accept="" />
-    </p>
+    </div>
     <input type="hidden" id="mod_id" name="mod_id" value="@mod" runat="server"/>
     <input type="hidden" id="act" name="act" value="@act" runat="server"/>
     <input type="hidden" id="course_id" name="course_id" value="@course" runat="server"/>
-    <p>
-        <input type="submit" value=@Html.Resource("Layout, upld") /></p>
-}
-@if (mod == Guid.Empty)
+    <div class="item" align="center">
+        <input type="submit" value=@Html.Resource("Layout, upld") />
+        @if (mod == Guid.Empty)
 {
     @Html.ActionLink(Html.Resource("Layout, back"), "Course", new { id = course });
 }
@@ -31,3 +32,6 @@ else
 {
     @Html.ActionLink(Html.Resource("Layout, back"), "Lesson", new { id = mod });
 }
+    </div>
+}
+</div>

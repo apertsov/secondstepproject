@@ -132,7 +132,7 @@
       <PropertyRef Name="AnswerId" />
     </Key>
     <Property Name="AnswerId" Type="Guid" Nullable="false" />
-    <Property Name="Answer1" Type="String" MaxLength="128" Unicode="false" FixedLength="false" />
+    <Property Name="Answer1" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="Valid" Type="Boolean" Nullable="false" />
     <Property Name="TestId" Type="Guid" Nullable="false" />
     <NavigationProperty Name="Test" Relationship="DistanceLessons.Models.FK_Answers_Tests" FromRole="Answers" ToRole="Tests" />
@@ -286,7 +286,7 @@
       <PropertyRef Name="TestId" />
     </Key>
     <Property Name="TestId" Type="Guid" Nullable="false" />
-    <Property Name="Question" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="Question" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="LessonId" Type="Guid" Nullable="false" />
     <NavigationProperty Name="Answers" Relationship="DistanceLessons.Models.FK_Answers_Tests" FromRole="Tests" ToRole="Answers" />
     <NavigationProperty Name="Lesson" Relationship="DistanceLessons.Models.FK_Tests_Lessons" FromRole="Tests" ToRole="Lessons" />

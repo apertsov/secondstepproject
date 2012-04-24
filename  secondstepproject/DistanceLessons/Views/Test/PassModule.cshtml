@@ -45,6 +45,9 @@
         );    
     }
 </script>
+
+<div class="box_shdw_bottom_full">
+
 <h2>@Model.PassedModule.Title <br /> @Html.Resource("Layout, _test_have_time") <span id="timer"></span> @Html.Resource("Layout, and") @Model.CountQuestions @Html.Resource("Layout, question")</h2>
 @using (Html.BeginForm("PassModule", "Test", new { moduleId = Model.PassedModule.ModuleId, testId = Model.TestAndAnswers.Test.TestId }, FormMethod.Post))
 {
@@ -53,13 +56,23 @@
  @Html.HiddenFor(model => model.PassedModule.CourseId)
  @Html.HiddenFor(model => model.TestAndAnswers.Test.TestId)
  */
- @Model.TestAndAnswers.Test.Question <br />
-    for (int answer = 0; answer < Model.TestAndAnswers.AnswerList.Count; answer++)
+ <div style="margin: 20px 10px; padding:5px; background: rgba(50,50,155,0); border: 1px dotted silver; font-size:95%;">
+ <div style="padding: 5px 10px;">
+    @Html.TextHtml(Model.TestAndAnswers.Test.Question)
+ </div>
+ <div style="margin: 10px; padding: 15px; background: rgba(50,50,50,0.1); font-size: 90%; border: 1px dotted silver;">
+    @for (int answer = 0; answer < Model.TestAndAnswers.AnswerList.Count; answer++)
     {
      @Html.CheckBox(Model.TestAndAnswers.AnswerList[answer].AnswerId.ToString(), false) 
-     @Model.TestAndAnswers.AnswerList[answer].Answer1 <br />
+     <span>&nbsp;</span>
+     @Model.TestAndAnswers.AnswerList[answer].Answer1
+     <br />
     }
-  <div  class="item">
+ </div>
+ </div>
+  <div  class="item" align="right">
     <input type="submit"  value=@Html.Resource("Layout, next") />
   </div>      
 }
+
+</div>

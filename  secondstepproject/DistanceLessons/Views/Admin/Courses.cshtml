@@ -6,14 +6,11 @@
 }
 
 <h2>@Html.Resource("Layout, courses")</h2>
-<p>
+<div class="item" align="left">
     @Html.ActionLink(Html.Resource("Layout, create"), "CreateCours")
-</p>
-
-<br/>
-
+</div>
 @{
-    var grid = new WebGrid(Model, rowsPerPage: 10, defaultSort: "Title");
+    var grid = new WebGrid(Model, rowsPerPage: 100, defaultSort: "Title");
    @grid.GetHtml(
         tableStyle: "center",
         alternatingRowStyle: "alt",

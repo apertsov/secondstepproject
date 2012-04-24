@@ -7,9 +7,9 @@
 <link href="@Url.Content("~/Content/css/WebGridDefault.css")" rel="stylesheet" type="text/css" />
 
 @{
-    var grid = new WebGrid(Model, rowsPerPage: 30, defaultSort: "Category");
+    var grid = new WebGrid(Model, rowsPerPage: 5, defaultSort: "Category");
     @grid.GetHtml(
-        tableStyle: "border: 1px solid silver;border-radius: 5px;   text-align:center;",
+        tableStyle: "border: 1px solid silver;border-radius: 5px;text-align:center;",
         headerStyle: "title",
         rowStyle: "tableRows",
         alternatingRowStyle: "tableRows",

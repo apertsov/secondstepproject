@@ -3,6 +3,7 @@
     ViewBag.Title = Html.Resource("Layout, _test_result");
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="box_shdw_bottom_full">
 <h3>
     @Html.Resource("Layout, _test_result_say") "@Model.Module.Title"
     <br />
@@ -13,3 +14,4 @@
         @Html.ActionLink(Html.Resource("Layout, back"), "Index", "Education")
     </div>
 </h3>
+</div>
